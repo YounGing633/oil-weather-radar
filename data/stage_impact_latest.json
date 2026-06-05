@@ -936,69 +936,6 @@
     "rule_id": null
   },
   {
-    "weather_region_id": "palm::Thailand::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Russia::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": "花蕾/开花",
-    "matched_weather_condition": "高温干旱",
-    "impact_cn": "授粉受损、结实率下降",
-    "web_message_cn": "当前处于黑海葵花籽花蕾/开花敏感窗口，高温干旱可能影响授粉和结实。",
-    "rule_id": "BS_SF_05"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::China::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "rapeseed_canola::India::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Nigeria::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Ukraine::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": "花蕾/开花",
-    "matched_weather_condition": "高温干旱",
-    "impact_cn": "授粉受损、结实率下降",
-    "web_message_cn": "当前处于黑海葵花籽花蕾/开花敏感窗口，高温干旱可能影响授粉和结实。",
-    "rule_id": "BS_SF_02"
-  },
-  {
-    "weather_region_id": "palm::Colombia::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
     "weather_region_id": "rapeseed_canola::France::national::菜油",
     "current_month": 6,
     "matched_growth_stage": null,
@@ -1008,52 +945,7 @@
     "rule_id": null
   },
   {
-    "weather_region_id": "rapeseed_canola::Russia::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Guatemala::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
     "weather_region_id": "rapeseed_canola::Germany::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Argentina::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Ukraine::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Papua New Guinea::national::棕榈油",
     "current_month": 6,
     "matched_growth_stage": null,
     "matched_weather_condition": null,
@@ -1080,52 +972,7 @@
     "rule_id": null
   },
   {
-    "weather_region_id": "palm::Ghana::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Cameroon::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Ecuador::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
     "weather_region_id": "rapeseed_canola::Romania::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::China::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Cote d'Ivoire::national::棕榈油",
     "current_month": 6,
     "matched_growth_stage": null,
     "matched_weather_condition": null,
@@ -1152,97 +999,7 @@
     "rule_id": null
   },
   {
-    "weather_region_id": "palm::DR Congo::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Honduras::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Kazakhstan::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
     "weather_region_id": "sunflower::Romania::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Hungary::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Bulgaria::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::France::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Peru::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Mexico::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Costa Rica::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Tanzania::national::葵油",
     "current_month": 6,
     "matched_growth_stage": null,
     "matched_weather_condition": null,
@@ -1269,15 +1026,6 @@
     "rule_id": null
   },
   {
-    "weather_region_id": "rapeseed_canola::Belarus::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
     "weather_region_id": "rapeseed_canola::Czechia::national::菜油",
     "current_month": 6,
     "matched_growth_stage": null,
@@ -1296,115 +1044,7 @@
     "rule_id": null
   },
   {
-    "weather_region_id": "palm::Guinea::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Spain::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "rapeseed_canola::United Kingdom of Great Britain and Northern Ireland::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Benin::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
     "weather_region_id": "rapeseed_canola::Denmark::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::China::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Bangladesh::national::菜油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::South Africa::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Serbia::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "sunflower::Republic of Moldova::national::葵油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Gabon::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Venezuela::national::棕榈油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "palm::Philippines::national::棕榈油",
     "current_month": 6,
     "matched_growth_stage": null,
     "matched_weather_condition": null,

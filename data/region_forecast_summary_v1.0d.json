@@ -1,16 +1,5 @@
 [
   {
-    "weather_region_id": "palm::Benin::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 77.3,
-    "rain_16d_sum": 146.35,
-    "temp_max_7d_avg": 30.66,
-    "temp_max_16d_avg": 30.24,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
-  },
-  {
     "weather_region_id": "palm::Brazil::national::棕榈油",
     "forecast_date": "2026-06-05",
     "rain_7d_sum": 1.2,
@@ -20,138 +9,6 @@
     "rain_trend_label_cn": "未来7天降雨偏少",
     "temp_trend_label_cn": "未来7天高温维持",
     "forecast_summary_cn": "未来7天降雨偏少，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "palm::Cameroon::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 50.2,
-    "rain_16d_sum": 92.9,
-    "temp_max_7d_avg": 24.17,
-    "temp_max_16d_avg": 24.48,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
-  },
-  {
-    "weather_region_id": "palm::China::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 2.8,
-    "rain_16d_sum": 11.2,
-    "temp_max_7d_avg": 25.46,
-    "temp_max_16d_avg": 27.81,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Colombia::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 213.8,
-    "rain_16d_sum": 363.7,
-    "temp_max_7d_avg": 16.04,
-    "temp_max_16d_avg": 15.96,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天气温偏低",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天气温偏低"
-  },
-  {
-    "weather_region_id": "palm::Costa Rica::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 314.6,
-    "rain_16d_sum": 460.85,
-    "temp_max_7d_avg": 21.36,
-    "temp_max_16d_avg": 22.06,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Cote d'Ivoire::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 41.8,
-    "rain_16d_sum": 107.7,
-    "temp_max_7d_avg": 30.23,
-    "temp_max_16d_avg": 29.45,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "palm::DR Congo::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 14.2,
-    "rain_16d_sum": 29.35,
-    "temp_max_7d_avg": 33.31,
-    "temp_max_16d_avg": 32.77,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "降雨持平，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "palm::Ecuador::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 139.5,
-    "rain_16d_sum": 215.3,
-    "temp_max_7d_avg": 22.43,
-    "temp_max_16d_avg": 22.21,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Gabon::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 24.8,
-    "rain_16d_sum": 98.0,
-    "temp_max_7d_avg": 28.14,
-    "temp_max_16d_avg": 27.75,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "降雨持平，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Ghana::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 60.2,
-    "rain_16d_sum": 114.8,
-    "temp_max_7d_avg": 30.69,
-    "temp_max_16d_avg": 30.28,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "palm::Guatemala::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 44.3,
-    "rain_16d_sum": 113.05,
-    "temp_max_7d_avg": 30.59,
-    "temp_max_16d_avg": 30.42,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "palm::Guinea::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 72.9,
-    "rain_16d_sum": 146.15,
-    "temp_max_7d_avg": 30.11,
-    "temp_max_16d_avg": 29.69,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "palm::Honduras::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 59.0,
-    "rain_16d_sum": 85.0,
-    "temp_max_7d_avg": 28.31,
-    "temp_max_16d_avg": 28.0,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
@@ -572,83 +429,6 @@
     "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
   },
   {
-    "weather_region_id": "palm::Mexico::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 14.7,
-    "rain_16d_sum": 78.9,
-    "temp_max_7d_avg": 26.51,
-    "temp_max_16d_avg": 26.47,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "降雨持平，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Nigeria::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 48.6,
-    "rain_16d_sum": 91.8,
-    "temp_max_7d_avg": 27.27,
-    "temp_max_16d_avg": 27.2,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Papua New Guinea::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 48.8,
-    "rain_16d_sum": 82.85,
-    "temp_max_7d_avg": 20.61,
-    "temp_max_16d_avg": 19.54,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Peru::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 56.0,
-    "rain_16d_sum": 146.8,
-    "temp_max_7d_avg": 28.07,
-    "temp_max_16d_avg": 27.85,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Philippines::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 17.0,
-    "rain_16d_sum": 42.5,
-    "temp_max_7d_avg": 29.73,
-    "temp_max_16d_avg": 29.62,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "降雨持平，气温持平"
-  },
-  {
-    "weather_region_id": "palm::Thailand::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 61.1,
-    "rain_16d_sum": 131.8,
-    "temp_max_7d_avg": 32.07,
-    "temp_max_16d_avg": 31.58,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "palm::Venezuela::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 91.5,
-    "rain_16d_sum": 160.65,
-    "temp_max_7d_avg": 31.06,
-    "temp_max_16d_avg": 29.53,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
-  },
-  {
     "weather_region_id": "rapeseed_canola::Australia::New_South_Wales::admin1::rapeseed_canola",
     "forecast_date": "2026-06-04",
     "rain_7d_sum": 11.2,
@@ -713,28 +493,6 @@
     "rain_trend_label_cn": "未来7天降雨偏少",
     "temp_trend_label_cn": "气温持平",
     "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Bangladesh::national::菜油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 67.2,
-    "rain_16d_sum": 180.3,
-    "temp_max_7d_avg": 31.57,
-    "temp_max_16d_avg": 31.17,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Belarus::national::菜油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 41.83,
-    "rain_16d_sum": 52.63,
-    "temp_max_7d_avg": 21.43,
-    "temp_max_16d_avg": 21.84,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Alberta::admin1::rapeseed_canola",
@@ -814,17 +572,6 @@
     "forecast_summary_cn": "降雨持平，未来7天气温偏低"
   },
   {
-    "weather_region_id": "rapeseed_canola::China::national::菜油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 2.8,
-    "rain_16d_sum": 11.2,
-    "temp_max_7d_avg": 25.46,
-    "temp_max_16d_avg": 27.81,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
     "weather_region_id": "rapeseed_canola::Czechia::national::菜油",
     "forecast_date": "2026-06-05",
     "rain_7d_sum": 23.25,
@@ -869,17 +616,6 @@
     "forecast_summary_cn": "未来7天降雨偏少，气温持平"
   },
   {
-    "weather_region_id": "rapeseed_canola::India::national::菜油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 22.9,
-    "rain_16d_sum": 40.75,
-    "temp_max_7d_avg": 40.21,
-    "temp_max_16d_avg": 39.19,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "降雨偏少状态有望缓解，未来7天高温维持"
-  },
-  {
     "weather_region_id": "rapeseed_canola::Lithuania::national::菜油",
     "forecast_date": "2026-06-05",
     "rain_7d_sum": 31.23,
@@ -911,39 +647,6 @@
     "rain_trend_label_cn": "未来7天降雨偏少",
     "temp_trend_label_cn": "气温持平",
     "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::national::菜油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 9.5,
-    "rain_16d_sum": 17.3,
-    "temp_max_7d_avg": 22.17,
-    "temp_max_16d_avg": 22.09,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Ukraine::national::菜油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 10.8,
-    "rain_16d_sum": 34.5,
-    "temp_max_7d_avg": 23.96,
-    "temp_max_16d_avg": 24.87,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "降雨持平，气温持平"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::United Kingdom of Great Britain and Northern Ireland::national::菜油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 58.28,
-    "rain_16d_sum": 110.08,
-    "temp_max_7d_avg": 11.34,
-    "temp_max_16d_avg": 12.15,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "未来7天气温偏低",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天气温偏低"
   },
   {
     "weather_region_id": "rapeseed_canola::United Kingdom::national::菜油",
@@ -1518,28 +1221,6 @@
     "forecast_summary_cn": "降雨偏少状态有望缓解，气温持平"
   },
   {
-    "weather_region_id": "sunflower::Argentina::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 16.4,
-    "rain_16d_sum": 28.4,
-    "temp_max_7d_avg": 15.09,
-    "temp_max_16d_avg": 14.23,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "未来7天气温偏低",
-    "forecast_summary_cn": "降雨持平，未来7天气温偏低"
-  },
-  {
-    "weather_region_id": "sunflower::Bulgaria::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 12.4,
-    "rain_16d_sum": 38.95,
-    "temp_max_7d_avg": 20.83,
-    "temp_max_16d_avg": 20.02,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "降雨持平，气温持平"
-  },
-  {
     "weather_region_id": "sunflower::Canada::Alberta::admin1::sunflower_seed",
     "forecast_date": "2026-06-04",
     "rain_7d_sum": 33.2,
@@ -1584,61 +1265,6 @@
     "forecast_summary_cn": "降雨持平，未来7天气温偏低"
   },
   {
-    "weather_region_id": "sunflower::China::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 2.8,
-    "rain_16d_sum": 11.2,
-    "temp_max_7d_avg": 25.46,
-    "temp_max_16d_avg": 27.81,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "sunflower::France::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 5.5,
-    "rain_16d_sum": 45.4,
-    "temp_max_7d_avg": 19.63,
-    "temp_max_16d_avg": 23.93,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "未来7天气温偏低",
-    "forecast_summary_cn": "未来7天降雨偏少，未来7天气温偏低"
-  },
-  {
-    "weather_region_id": "sunflower::Hungary::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 2.4,
-    "rain_16d_sum": 3.9,
-    "temp_max_7d_avg": 27.91,
-    "temp_max_16d_avg": 29.11,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "sunflower::Kazakhstan::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 0.8,
-    "rain_16d_sum": 18.95,
-    "temp_max_7d_avg": 28.01,
-    "temp_max_16d_avg": 27.69,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "sunflower::Republic of Moldova::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 40.8,
-    "rain_16d_sum": 41.85,
-    "temp_max_7d_avg": 22.63,
-    "temp_max_16d_avg": 24.31,
-    "rain_trend_label_cn": "未来7天降雨偏多",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
-  },
-  {
     "weather_region_id": "sunflower::Romania::national::葵油",
     "forecast_date": "2026-06-05",
     "rain_7d_sum": 8.1,
@@ -1650,78 +1276,12 @@
     "forecast_summary_cn": "未来7天降雨偏少，气温持平"
   },
   {
-    "weather_region_id": "sunflower::Russia::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 9.5,
-    "rain_16d_sum": 17.3,
-    "temp_max_7d_avg": 22.17,
-    "temp_max_16d_avg": 22.09,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "sunflower::Serbia::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 0.5,
-    "rain_16d_sum": 6.35,
-    "temp_max_7d_avg": 27.37,
-    "temp_max_16d_avg": 27.73,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
-    "weather_region_id": "sunflower::South Africa::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 0.8,
-    "rain_16d_sum": 0.8,
-    "temp_max_7d_avg": 14.89,
-    "temp_max_16d_avg": 16.73,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "未来7天气温偏低",
-    "forecast_summary_cn": "未来7天降雨偏少，未来7天气温偏低"
-  },
-  {
-    "weather_region_id": "sunflower::Spain::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 0,
-    "rain_16d_sum": 22.95,
-    "temp_max_7d_avg": 30.93,
-    "temp_max_16d_avg": 31.34,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏少，未来7天高温维持"
-  },
-  {
-    "weather_region_id": "sunflower::Tanzania::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 0.3,
-    "rain_16d_sum": 0.3,
-    "temp_max_7d_avg": 28.43,
-    "temp_max_16d_avg": 28.24,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏少，气温持平"
-  },
-  {
     "weather_region_id": "sunflower::Türkiye::national::葵油",
     "forecast_date": "2026-06-05",
     "rain_7d_sum": 13.35,
     "rain_16d_sum": 15.15,
     "temp_max_7d_avg": 26.53,
     "temp_max_16d_avg": 26.77,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "降雨持平，气温持平"
-  },
-  {
-    "weather_region_id": "sunflower::Ukraine::national::葵油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 10.8,
-    "rain_16d_sum": 34.5,
-    "temp_max_7d_avg": 23.96,
-    "temp_max_16d_avg": 24.87,
     "rain_trend_label_cn": "降雨持平",
     "temp_trend_label_cn": "气温持平",
     "forecast_summary_cn": "降雨持平，气温持平"

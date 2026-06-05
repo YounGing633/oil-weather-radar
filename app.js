@@ -31,7 +31,10 @@ const CN = {
     'excessive_rain|high_temperature':'降雨偏多+高温',
     insufficient_data:'数据积累中'
   },
-  level: { high:'重点关注', medium:'一般关注', normal:'正常监控', low:'低风险' },
+  level: { 
+    high:'重点关注', medium:'一般关注', normal:'正常监控', low:'低风险',
+    stress:'显著压力', attention:'重点关注', watch:'一般关注'
+  },
   country: {
     'Indonesia':'印度尼西亚', 'Malaysia':'马来西亚', 'Australia':'澳大利亚',
     'Canada':'加拿大', 'United States':'美国', 'United States of America':'美国',
@@ -334,23 +337,34 @@ function showAdmin1Detail(country, admin1Name){
   );
   if(!pts.length) return;
   
-  const high = pts.filter(p => (p.anomaly_level || 'normal') === 'high').length;
-  const medium = pts.filter(p => (p.anomaly_level || 'normal') === 'medium').length;
-  const normal = pts.filter(p => (p.anomaly_level || 'normal') === 'normal').length;
+  // Aggregate using risk_level_v2 from water stress where available
+  const RISK_V2_CN = {normal:'正常监控', watch:'一般关注', attention:'重点关注', stress:'显著压力'};
+  const RISK_V2_COLOR = {normal:'#16a34a', watch:'#ca8a04', attention:'#ea580c', stress:'#dc2626'};
+  var v2Counts = {stress:0, attention:0, watch:0, normal:0};
+  pts.forEach(function(p){
+    var wsEntry = allData.waterStress ? allData.waterStress.find(function(w){ return w.weather_region_id===p.weather_region_id; }) : null;
+    var rv2 = wsEntry ? (wsEntry.risk_level_v2 || p.anomaly_level || 'normal') : (p.anomaly_level || 'normal');
+    if(rv2==='stress') v2Counts.stress++;
+    else if(rv2==='attention') v2Counts.attention++;
+    else if(rv2==='watch') v2Counts.watch++;
+    else v2Counts.normal++;
+  });
+  var topRisk = v2Counts.stress>0?'stress':v2Counts.attention>0?'attention':v2Counts.watch>0?'watch':'normal';
   
   let html = '<div class="info-block">' +
     '<div class="title-row">' +
     '<span class="name">' + admin1Name + '</span>' +
-    '<span class="badge ' + (high > 0 ? 'high' : medium > 0 ? 'medium' : 'normal') + '">' +
-    (high > 0 ? '重点关注' : medium > 0 ? '一般关注' : '正常监控') + '</span>' +
+    '<span class="badge" style="background:' + (RISK_V2_COLOR[topRisk]||'#64748b') + ';color:#fff;">' +
+    (RISK_V2_CN[topRisk]||'正常监控') + '</span>' +
     '</div>' +
     '<div class="sub">' + cnCountry(country) + ' · ' + 
     (selectedCrop === 'all' ? '全部品种' : cnCrop(selectedCrop)) + 
     ' · ' + pts.length + ' 个产区</div>' +
     '<div class="data-grid" style="margin-top:10px;">' +
-    '<div class="data-cell"><span class="lbl">重点关注</span><span class="val high">' + high + '</span></div>' +
-    '<div class="data-cell"><span class="lbl">一般关注</span><span class="val medium">' + medium + '</span></div>' +
-    '<div class="data-cell"><span class="lbl">正常监控</span><span class="val normal">' + normal + '</span></div>' +
+    '<div class="data-cell"><span class="lbl">显著压力</span><span class="val high">' + v2Counts.stress + '</span></div>' +
+    '<div class="data-cell"><span class="lbl">重点关注</span><span class="val" style="color:#ea580c;">' + v2Counts.attention + '</span></div>' +
+    '<div class="data-cell"><span class="lbl">一般关注</span><span class="val" style="color:#ca8a04;">' + v2Counts.watch + '</span></div>' +
+    '<div class="data-cell"><span class="lbl">正常监控</span><span class="val normal">' + v2Counts.normal + '</span></div>' +
     '<div class="data-cell"><span class="lbl">产区数</span><span class="val">' + pts.length + '</span></div>' +
     '</div>' +
     '</div>';
@@ -358,10 +372,11 @@ function showAdmin1Detail(country, admin1Name){
   // Show individual points as a list in the detail panel
   html += '<div class="info-block"><h3>产区点位</h3>';
   pts.forEach(pt => {
-    const lev = pt.anomaly_level || 'normal';
+    var wsPt = allData.waterStress ? allData.waterStress.find(function(w){ return w.weather_region_id===pt.weather_region_id; }) : null;
+    var rv2Pt = wsPt ? (wsPt.risk_level_v2 || pt.anomaly_level || 'normal') : (pt.anomaly_level || 'normal');
     html += '<div style="padding:6px 0;border-bottom:1px solid #f0f0f0;cursor:pointer;" ' +
       'onclick="showDetail(\'' + pt.weather_region_id + '\')">' +
-      '<span class="badge ' + lev + '" style="margin-right:6px;">' + cnLevel(lev) + '</span>' +
+      '<span class="badge" style="background:' + (RISK_V2_COLOR[rv2Pt]||'#64748b') + ';color:#fff;margin-right:6px;">' + (RISK_V2_CN[rv2Pt]||'正常监控') + '</span>' +
       '<b>' + pt.display_region_name + '</b>' +
       '<div style="font-size:11px;color:var(--text3);margin-top:2px;">' +
       cnCrop(pt.crop_group) + ' · ' + cnLabel(pt.anomaly_label) + '</div>' +
@@ -433,16 +448,21 @@ function renderGeoJSON(){
         csEntry2 = allData.countrySummary.find(function(c){ return c.country===normalized && (selectedCrop==='all'||c.crop_group===selectedCrop); });
       }
       var labelText = cnCountry(normalized);
-      if(csEntry2 && csEntry2.total_production_tonnes) {
-        labelText += '\n' + fmtProduction(csEntry2.total_production_tonnes);
+      if(csEntry2) {
+        var cropCn = csEntry2.crop_group_cn || cnCrop(csEntry2.crop_group);
+        labelText += '\n' + cropCn;
+        if(csEntry2.total_production_tonnes) {
+          labelText += '｜' + fmtProduction(csEntry2.total_production_tonnes);
+        }
       }
       var center = layer.getBounds().getCenter();
+      var oilColor = (csEntry2 && csEntry2.oil_type_color) ? csEntry2.oil_type_color : '#64748b';
       var labelMarker = L.tooltip({
         permanent: true,
         direction: 'center',
         className: 'country-label',
         opacity: 0.85
-      }).setContent(labelText).setLatLng(center);
+      }).setContent('<span style="border-left: 3px solid ' + oilColor + '; padding-left: 4px;">' + labelText + '</span>').setLatLng(center);
       labelMarker.addTo(map);
       // Store reference for cleanup
       if(!window._countryLabels) window._countryLabels = [];
@@ -468,7 +488,7 @@ function renderMarkers(){
     const lev = pt.anomaly_level||'normal';
     const c = colorByLevel(lev);
     const m = L.circleMarker([pt.latitude, pt.longitude], {
-      radius: Math.max(4, Math.min(14, Math.sqrt((pt.production_tonnes||1000)/1000) * 1.2)),
+      radius: Math.max(6, Math.min(32, Math.sqrt((pt.production_tonnes||1000)/500) * 2.5)),
       fillColor:c, color:'#fff', weight:1.5, opacity:1, fillOpacity:0.85
     }).addTo(map);
     var shareText = '—';
@@ -623,9 +643,19 @@ function populateFilters(){
 function showCountrySummary(country){
   const pts = allData.latest.filter(pt=>pt.country===country && (selectedCrop==='all'||pt.crop_group===selectedCrop));
   if(!pts.length) return;
-  const high=pts.filter(p=>(p.anomaly_level||'normal')==='high').length;
-  const medium=pts.filter(p=>(p.anomaly_level||'normal')==='medium').length;
-  const normal=pts.filter(p=>(p.anomaly_level||'normal')==='normal').length;
+  // Aggregate using risk_level_v2 from water stress where available
+  const RISK_V2_CN = {normal:'正常监控', watch:'一般关注', attention:'重点关注', stress:'显著压力'};
+  const RISK_V2_COLOR = {normal:'#16a34a', watch:'#ca8a04', attention:'#ea580c', stress:'#dc2626'};
+  var v2Counts = {stress:0, attention:0, watch:0, normal:0};
+  pts.forEach(function(p){
+    var wsEntry = allData.waterStress ? allData.waterStress.find(function(w){ return w.weather_region_id===p.weather_region_id; }) : null;
+    var rv2 = wsEntry ? (wsEntry.risk_level_v2 || p.anomaly_level || 'normal') : (p.anomaly_level || 'normal');
+    if(rv2==='stress') v2Counts.stress++;
+    else if(rv2==='attention') v2Counts.attention++;
+    else if(rv2==='watch') v2Counts.watch++;
+    else v2Counts.normal++;
+  });
+  var topRisk = v2Counts.stress>0?'stress':v2Counts.attention>0?'attention':v2Counts.watch>0?'watch':'normal';
   
   const cs = (allData.countrySummary||[]).find(c=>c.country===country && (selectedCrop==='all'||c.crop_group===selectedCrop));
   
@@ -633,13 +663,14 @@ function showCountrySummary(country){
     <div class="info-block">
       <div class="title-row">
         <span class="name">${cnCountry(country)}</span>
-        <span class="badge ${high>0?'high':medium>0?'medium':'normal'}">${high>0?'重点关注':medium>0?'一般关注':'正常监控'}</span>
+        <span class="badge" style="background:${RISK_V2_COLOR[topRisk]||'#64748b'};color:#fff;">${RISK_V2_CN[topRisk]||'正常监控'}</span>
       </div>
       <div class="sub">${selectedCrop==='all'?'全部品种':cnCrop(selectedCrop)} · ${pts.length} 个产区</div>
       <div class="data-grid" style="margin-top:10px;">
-        <div class="data-cell"><span class="lbl">重点关注</span><span class="val high">${high}</span></div>
-        <div class="data-cell"><span class="lbl">一般关注</span><span class="val medium">${medium}</span></div>
-        <div class="data-cell"><span class="lbl">正常监控</span><span class="val normal">${normal}</span></div>
+        <div class="data-cell"><span class="lbl">显著压力</span><span class="val high">${v2Counts.stress}</span></div>
+        <div class="data-cell"><span class="lbl">重点关注</span><span class="val" style="color:#ea580c;">${v2Counts.attention}</span></div>
+        <div class="data-cell"><span class="lbl">一般关注</span><span class="val" style="color:#ca8a04;">${v2Counts.watch}</span></div>
+        <div class="data-cell"><span class="lbl">正常监控</span><span class="val normal">${v2Counts.normal}</span></div>
         <div class="data-cell"><span class="lbl">产量(吨)</span><span class="val">${cs&&cs.total_production_tonnes?fmtNum(cs.total_production_tonnes,0):'—'}</span></div>
       </div>
     </div>
@@ -661,12 +692,15 @@ function showDetail(rid){
   
   if(!pt) return;
   const level = pt.anomaly_level||'normal';
+  const riskV2 = ws ? (ws.risk_level_v2 || level) : level;
+  const RISK_V2_CN = {normal:'正常监控', watch:'一般关注', attention:'重点关注', stress:'显著压力'};
+  const RISK_V2_COLOR = {normal:'#16a34a', watch:'#ca8a04', attention:'#ea580c', stress:'#dc2626'};
   
   let html = `
     <div class="info-block">
       <div class="title-row">
         <span class="name">${pt.display_region_name}</span>
-        <span class="badge ${level}">${cnLevel(level)}</span>
+        <span class="badge" style="background:${RISK_V2_COLOR[riskV2]||'#64748b'};color:#fff;">${RISK_V2_CN[riskV2]||'正常监控'}</span>
       </div>
       <div class="sub">${cnCrop(pt.crop_group)} · ${cnCountry(pt.country)}${pt.admin1?' · '+pt.admin1:''}</div>
       <div style="font-size:11px;color:var(--text3);margin-top:4px;">${(function(){
@@ -681,6 +715,31 @@ function showDetail(rid){
 })()}</div>    </div>
   `;
   
+  // Core conclusion section (结论先行)
+  var conclusionHtml = '<div class="info-block" style="background:#f8fafc;border-left:3px solid #2563eb;">';
+  conclusionHtml += '<h3 style="font-size:16px;margin-bottom:8px;">核心结论</h3>';
+  if(st && st.matched_growth_stage) {
+    conclusionHtml += '<div style="font-size:14px;margin-bottom:6px;"><strong>当前生长周期：</strong>' + st.matched_growth_stage + '</div>';
+  }
+  var riskText = ws ? (ws.risk_reason_cn || ws.water_stress_explanation_cn || '暂无明显天气压力') : '暂无水分压力数据';
+  conclusionHtml += '<div style="font-size:14px;margin-bottom:6px;"><strong>目前天气风险：</strong>' + riskText + '</div>';
+  var soilRiskText = '当前根据降雨和蒸散指标综合判断。';
+  if(ws) {
+    if(ws.et0_30d_avg_mm && ws.et0_30d_avg_mm > 4.5 && ws.precipitation_30d_status && ws.precipitation_30d_status.includes('偏少')) {
+      soilRiskText = '大气失水需求偏强，叠加降雨偏少，存在失墒风险。';
+    } else if(ws.vpd_30d_avg_kpa && ws.vpd_30d_avg_kpa > 1.8) {
+      soilRiskText = '大气干燥度偏高，蒸散压力较大。';
+    } else if(ws.precipitation_30d_status && ws.precipitation_30d_status.includes('偏多')) {
+      soilRiskText = '降雨偏多，土壤含水量可能偏高。';
+    }
+  }
+  conclusionHtml += '<div style="font-size:14px;margin-bottom:6px;"><strong>土壤墑情风险：</strong>' + soilRiskText + '</div>';
+  if(fcSum) {
+    conclusionHtml += '<div style="font-size:14px;"><strong>未来预报：</strong>' + fcSum.forecast_summary_cn + '</div>';
+  }
+  conclusionHtml += '</div>';
+  html += conclusionHtml;
+  
   if(ws){
     html += `
       <div class="info-block">
@@ -694,14 +753,7 @@ function showDetail(rid){
           <div class="data-cell"><span class="lbl">30日降雨状态</span><span class="val">${ws.precipitation_30d_status}</span></div>
           <div class="data-cell"><span class="lbl">7日温度状态</span><span class="val">${ws.temp_7d_status}</span></div>
           <div class="data-cell"><span class="lbl">土壤墒情</span><span class="val" style="font-size:12px;">${ws.soil_moisture_status||'待接入'}</span></div>
-          <div class="data-cell"><span class="lbl">蒸散/水汽压</span><span class="val" style="font-size:12px;">${ws.et0_status||'待接入'} / ${ws.vpd_status||'待接入'}</span></div>
-        </div>
-        <div style="margin-top:10px;padding-top:8px;border-top:1px dashed #e5e7eb;">
-          <h3 style="margin-bottom:6px;">蒸散与大气需求</h3>
-          <div class="data-grid">
-            <div class="data-cell"><span class="lbl">参考蒸散量 (ET0)</span><span class="val" style="font-size:12px;">${ws.et0_status||'ET0/VPD 数据待接入'}</span></div>
-            <div class="data-cell"><span class="lbl">水汽压亏缺 (VPD)</span><span class="val" style="font-size:12px;">${ws.vpd_status||'ET0/VPD 数据待接入'}</span></div>
-          </div>
+          <div class="data-cell"><span class="lbl">大气失水需求</span><span class="val" style="font-size:12px;">${ws.et0_status && ws.vpd_status ? ws.et0_status + '，' + ws.vpd_status : '数据待积累'}</span></div>
         </div>
       </div>
     `;

@@ -1,66 +1,33 @@
 [
   {
-    "generated_at": "2026-06-05 15:57:27",
-    "version": "v1.0-f3",
+    "generated_at": "2026-06-05 17:10:08",
+    "version": "v1.0-h2",
     "baseline_period": "1991-2020",
     "data_sources": [
       "NASA POWER (historical)",
-      "Open-Meteo (forecast)"
+      "Open-Meteo (forecast + ET0/VPD)"
     ],
-    "active_points": 158,
+    "active_points": 118,
+    "excluded_faostat_points": 40,
     "countries": [
       "Argentina",
       "Australia",
-      "Bangladesh",
-      "Belarus",
-      "Benin",
       "Brazil",
-      "Bulgaria",
-      "Cameroon",
       "Canada",
-      "China",
-      "Colombia",
-      "Costa Rica",
-      "Cote d'Ivoire",
       "Czechia",
-      "DR Congo",
       "Denmark",
-      "Ecuador",
       "France",
-      "Gabon",
       "Germany",
-      "Ghana",
-      "Guatemala",
-      "Guinea",
-      "Honduras",
-      "Hungary",
-      "India",
       "Indonesia",
       "Italy",
-      "Kazakhstan",
       "Lithuania",
       "Malaysia",
-      "Mexico",
-      "Nigeria",
-      "Papua New Guinea",
-      "Peru",
-      "Philippines",
       "Poland",
-      "Republic of Moldova",
       "Romania",
-      "Russia",
-      "Serbia",
-      "South Africa",
-      "Spain",
-      "Tanzania",
-      "Thailand",
       "Türkiye",
-      "Ukraine",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "United States",
-      "United States of America",
-      "Venezuela"
+      "United States of America"
     ],
     "crop_groups": [
       "palm",
@@ -69,6 +36,6 @@
       "sunflower"
     ],
     "total_alerts": 70,
-    "run_id": "daily_export_20260605_155727"
+    "run_id": "daily_export_20260605_171008"
   }
 ]
