@@ -677,52 +677,184 @@ function showDetail(rid){
 }
 
 function renderRainChart(hist){
-  const ctx = document.getElementById('chart-rain');
-  if(!ctx) return;
-  if(charts.rain) charts.rain.destroy();
-  const labels = hist.map(d=>d.date.slice(5));
-  charts.rain = new Chart(ctx,{
-    type:'bar',
-    data:{ labels, datasets:[{
-      label:'降雨 mm', data:hist.map(d=>d.precipitation_mm),
-      backgroundColor:'rgba(59,130,246,0.4)', barThickness:3
-    }] },
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
-      scales:{ x:{display:false}, y:{grid:{color:'#f3f4f6'}, ticks:{font:{size:9}} } } }
-  });
+  try {
+    var ctx = document.getElementById('chart-rain');
+    if(!ctx) return;
+    if(charts.rain) { charts.rain.destroy(); charts.rain = null; }
+
+    var labels = hist.map(function(d){ return d.date.slice(5); });
+    var rainData = hist.map(function(d){ return d.precipitation_mm; });
+
+    var dataset = {
+      label: '降雨 mm',
+      data: rainData,
+      backgroundColor: 'rgba(59,130,246,0.4)',
+      barThickness: 3
+    };
+
+    var chartConfig = {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [dataset]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { display: false },
+          y: {
+            grid: { color: '#f3f4f6' },
+            ticks: { font: { size: 9 } }
+          }
+        }
+      }
+    };
+
+    charts.rain = new Chart(ctx, chartConfig);
+  } catch(e) {
+    console.warn('[CHART] renderRainChart failed:', e.message);
+  }
 }
 
 function renderTempChart(hist){
-  const ctx = document.getElementById('chart-temp');
-  if(!ctx) return;
-  if(charts.temp) charts.temp.destroy();
-  const labels = hist.map(d=>d.date.slice(5));
-  charts.temp = new Chart(ctx,{
-    type:'line',
-    data:{ labels, datasets:[
-      {label:'最高温', data:hist.map(d=>d.temp_max_c), borderColor:'#f59e0b', borderWidth:1.5, pointRadius:0, tension:0.3},
-      {label:'最低温', data:hist.map(d=>d.temp_min_c), borderColor:'#3b82f6', borderWidth:1.5, pointRadius:0, tension:0.3}
-    ]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{boxWidth:8,font:{size:9}}}},
-      scales:{ x:{display:false}, y:{grid:{color:'#f3f4f6'}, ticks:{font:{size:9}} } } }
-  });
+  try {
+    var ctx = document.getElementById('chart-temp');
+    if(!ctx) return;
+    if(charts.temp) { charts.temp.destroy(); charts.temp = null; }
+
+    var labels = hist.map(function(d){ return d.date.slice(5); });
+    var maxData = hist.map(function(d){ return d.temp_max_c; });
+    var minData = hist.map(function(d){ return d.temp_min_c; });
+
+    var maxDataset = {
+      label: '最高温',
+      data: maxData,
+      borderColor: '#f59e0b',
+      borderWidth: 1.5,
+      pointRadius: 0,
+      tension: 0.3
+    };
+
+    var minDataset = {
+      label: '最低温',
+      data: minData,
+      borderColor: '#3b82f6',
+      borderWidth: 1.5,
+      pointRadius: 0,
+      tension: 0.3
+    };
+
+    var chartConfig = {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [maxDataset, minDataset]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: { boxWidth: 8, font: { size: 9 } }
+          }
+        },
+        scales: {
+          x: { display: false },
+          y: {
+            grid: { color: '#f3f4f6' },
+            ticks: { font: { size: 9 } }
+          }
+        }
+      }
+    };
+
+    charts.temp = new Chart(ctx, chartConfig);
+  } catch(e) {
+    console.warn('[CHART] renderTempChart failed:', e.message);
+  }
 }
 
 function renderFcChart(fc){
-  const ctx = document.getElementById('chart-fc');
-  if(!ctx) return;
-  if(charts.fc) charts.fc.destroy();
-  const labels = fc.map(d=>d.target_date.slice(5));
-  charts.fc = new Chart(ctx,{
-    type:'bar',
-    data:{ labels, datasets:[
-      {type:'line', label:'最高温', data:fc.map(d=>d.temp_max_c), borderColor:'#f59e0b', borderWidth:1.5, pointRadius:1, yAxisID:'y', tension:0.3},
-      {type:'line', label:'最低温', data:fc.map(d=>d.temp_min_c), borderColor:'#3b82f6', borderWidth:1.5, pointRadius:1, yAxisID:'y', tension:0.3},
-      {type:'bar', label:'降雨', data:fc.map(d=>d.precipitation_mm), backgroundColor:'rgba(59,130,246,0.25)', yAxisID:'y1', barThickness:5}
-    ]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{boxWidth:8,font:{size:9}}}},
-      scales:{ x:{ticks:{font:{size:8},maxTicksLimit:8}}, y:{position:'left',grid:{color:'#f3f4f6'},ticks:{font:{size:9}}}, y1:{position:'right',grid:{display:false},ticks:{font:{size:9}},min:0} } }
-  });
+  try {
+    var ctx = document.getElementById('chart-fc');
+    if(!ctx) return;
+    if(charts.fc) { charts.fc.destroy(); charts.fc = null; }
+
+    var labels = fc.map(function(d){ return d.target_date.slice(5); });
+    var maxData = fc.map(function(d){ return d.temp_max_c; });
+    var minData = fc.map(function(d){ return d.temp_min_c; });
+    var rainData = fc.map(function(d){ return d.precipitation_mm; });
+
+    var maxDataset = {
+      type: 'line',
+      label: '最高温',
+      data: maxData,
+      borderColor: '#f59e0b',
+      borderWidth: 1.5,
+      pointRadius: 1,
+      yAxisID: 'y',
+      tension: 0.3
+    };
+
+    var minDataset = {
+      type: 'line',
+      label: '最低温',
+      data: minData,
+      borderColor: '#3b82f6',
+      borderWidth: 1.5,
+      pointRadius: 1,
+      yAxisID: 'y',
+      tension: 0.3
+    };
+
+    var rainDataset = {
+      type: 'bar',
+      label: '降雨',
+      data: rainData,
+      backgroundColor: 'rgba(59,130,246,0.25)',
+      yAxisID: 'y1',
+      barThickness: 5
+    };
+
+    var chartConfig = {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [maxDataset, minDataset, rainDataset]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: { boxWidth: 8, font: { size: 9 } }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { font: { size: 8 }, maxTicksLimit: 8 }
+          },
+          y: {
+            position: 'left',
+            grid: { color: '#f3f4f6' },
+            ticks: { font: { size: 9 } }
+          },
+          y1: {
+            position: 'right',
+            grid: { display: false },
+            ticks: { font: { size: 9 } },
+            min: 0
+          }
+        }
+      }
+    };
+
+    charts.fc = new Chart(ctx, chartConfig);
+  } catch(e) {
+    console.warn('[CHART] renderFcChart failed:', e.message);
+  }
 }
 
 function bindEvents(){
