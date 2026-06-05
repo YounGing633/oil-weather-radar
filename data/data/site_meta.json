@@ -1,0 +1,27 @@
+[
+  {
+    "generated_at": "2026-06-05 14:00:42",
+    "version": "v1.0-f3",
+    "baseline_period": "1991-2020",
+    "data_sources": [
+      "NASA POWER (historical)",
+      "Open-Meteo (forecast)"
+    ],
+    "active_points": 102,
+    "countries": [
+      "Australia",
+      "Canada",
+      "Indonesia",
+      "Malaysia",
+      "United States"
+    ],
+    "crop_groups": [
+      "palm",
+      "rapeseed_canola",
+      "soybean",
+      "sunflower"
+    ],
+    "total_alerts": 61,
+    "run_id": "daily_export_20260605_140042"
+  }
+]

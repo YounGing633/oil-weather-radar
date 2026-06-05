@@ -32,13 +32,35 @@ const CN = {
     insufficient_data:'数据积累中'
   },
   level: { high:'重点关注', medium:'一般关注', normal:'正常监控', low:'低风险' },
-  country: { 'Indonesia':'印度尼西亚', 'Malaysia':'马来西亚', 'Australia':'澳大利亚', 'Canada':'加拿大', 'United States':'美国' }
+  country: {
+    'Indonesia':'印度尼西亚', 'Malaysia':'马来西亚', 'Australia':'澳大利亚',
+    'Canada':'加拿大', 'United States':'美国', 'United States of America':'美国',
+    'Brazil':'巴西', 'Argentina':'阿根廷', 'Ukraine':'乌克兰', 'Russia':'俄罗斯',
+    'France':'法国', 'Germany':'德国', 'Poland':'波兰', 'Romania':'罗马尼亚',
+    'Kazakhstan':'哈萨克斯坦', 'China':'中国', 'India':'印度', 'Thailand':'泰国',
+    'Nigeria':'尼日利亚', 'Colombia':'哥伦比亚', 'Guatemala':'危地马拉',
+    'Turkey':'土耳其', 'Türkiye':'土耳其', 'Hungary':'匈牙利', 'Bulgaria':'保加利亚',
+    'Italy':'意大利', 'United Kingdom':'英国', 'Belarus':'白俄罗斯', 'Czechia':'捷克',
+    'Spain':'西班牙', 'Denmark':'丹麦', 'Bangladesh':'孟加拉国', 'South Africa':'南非',
+    'Serbia':'塞尔维亚', 'Paraguay':'巴拉圭', 'Peru':'秘鲁', 'Mexico':'墨西哥',
+    'Ecuador':'厄瓜多尔', 'Honduras':'洪都拉斯', 'Costa Rica':'哥斯达黎加',
+    'Philippines':'菲律宾', 'Venezuela':'委内瑞拉', 'Tanzania':'坦桑尼亚',
+    'Papua New Guinea':'巴布亚新几内亚', 'Cameroon':'喀麦隆', 'Ghana':'加纳',
+    'Cote d\'Ivoire':'科特迪瓦', 'DR Congo':'刚果(金)', 'Guinea':'几内亚',
+    'Benin':'贝宁', 'Gabon':'加蓬', 'Republic of Moldova':'摩尔多瓦',
+    'Lithuania':'立陶宛'
+  }
 };
 
 // GeoJSON name -> our country name mapping
 const GEOJSON_NAME_MAP = {
   'United States of America': 'United States',
-  'USA': 'United States'
+  'USA': 'United States',
+  'Türkiye': 'Turkey',
+  'Côte d\'Ivoire': 'Cote d\'Ivoire',
+  'Ivory Coast': 'Cote d\'Ivoire',
+  'Democratic Republic of the Congo': 'DR Congo',
+  'Moldova': 'Republic of Moldova'
 };
 
 // admin1 GeoJSON shapeName -> our data admin1 name mapping
@@ -97,8 +119,9 @@ function fmt(v) { return (v===null||v===undefined||v===''||v==='nan')?'—':v; }
 function fmtNum(v,d=1){ return (v===null||v===undefined||isNaN(v))?'—':Number(v).toFixed(d); }
 function fmtProduction(v){
   if(v===null||v===undefined||isNaN(v)) return '产量权重待接入';
-  if(v >= 10000) return (v/10000).toFixed(2) + ' 万吨';
-  return v.toFixed(0) + ' 吨';
+  if(v >= 100000000) return (v/100000000).toFixed(2) + '亿吨';
+  if(v >= 10000) return (v/10000).toFixed(2) + '万吨';
+  return v.toFixed(0) + '吨';
 }
 function fmtShare(v){
   if(v===null||v===undefined||isNaN(v)) return '产量权重待接入';
@@ -351,6 +374,11 @@ function showAdmin1Detail(country, admin1Name){
 
 function renderGeoJSON(){
   if(geoJsonLayer){ map.removeLayer(geoJsonLayer); geoJsonLayer=null; }
+  // Clean up old country labels
+  if(window._countryLabels) {
+    window._countryLabels.forEach(function(lm){ map.removeLayer(lm); });
+    window._countryLabels = [];
+  }
   if(!allData.geojson) {
     debugInfo.matchedCountries = 0;
     updateMapStatus();
@@ -399,6 +427,26 @@ function renderGeoJSON(){
       var popup = '<b>' + cnCountry(normalized) + '</b><br>产区：' + pts.length + ' 个<br>重点：' + high + ' · 一般：' + medium;
       if(prodText) popup += '<br>产量：' + prodText;
       layer.bindTooltip(popup, {sticky:true});
+      // Add permanent country label with production
+      var csEntry2 = null;
+      if(allData.countrySummary) {
+        csEntry2 = allData.countrySummary.find(function(c){ return c.country===normalized && (selectedCrop==='all'||c.crop_group===selectedCrop); });
+      }
+      var labelText = cnCountry(normalized);
+      if(csEntry2 && csEntry2.total_production_tonnes) {
+        labelText += '\n' + fmtProduction(csEntry2.total_production_tonnes);
+      }
+      var center = layer.getBounds().getCenter();
+      var labelMarker = L.tooltip({
+        permanent: true,
+        direction: 'center',
+        className: 'country-label',
+        opacity: 0.85
+      }).setContent(labelText).setLatLng(center);
+      labelMarker.addTo(map);
+      // Store reference for cleanup
+      if(!window._countryLabels) window._countryLabels = [];
+      window._countryLabels.push(labelMarker);
       layer.on('click', ()=>enterCountry(normalized));
     }
   }).addTo(map);
@@ -420,10 +468,17 @@ function renderMarkers(){
     const lev = pt.anomaly_level||'normal';
     const c = colorByLevel(lev);
     const m = L.circleMarker([pt.latitude, pt.longitude], {
-      radius: lev==='high'?9:lev==='medium'?7:5,
+      radius: Math.max(4, Math.min(14, Math.sqrt((pt.production_tonnes||1000)/1000) * 1.2)),
       fillColor:c, color:'#fff', weight:1.5, opacity:1, fillOpacity:0.85
     }).addTo(map);
-    m.bindTooltip('<b>' + pt.display_region_name + '</b><br>' + cnCrop(pt.crop_group) + ' · ' + cnCountry(pt.country) + '<br>' + cnLabel(pt.anomaly_label) + '<br>' + fmtProduction(pt.production_tonnes) + ' · 占比 ' + fmtShare(pt.national_share));
+    var shareText = '—';
+    if(pt.production_tonnes && allData.countrySummary) {
+      var csMatch = allData.countrySummary.find(function(c){ return c.country===pt.country && c.crop_group===pt.crop_group; });
+      if(csMatch && csMatch.total_production_tonnes > 0) {
+        shareText = (pt.production_tonnes / csMatch.total_production_tonnes * 100).toFixed(1) + '%';
+      }
+    }
+    m.bindTooltip('<b>' + pt.display_region_name + '（' + shareText + '）</b><br>' + cnCrop(pt.crop_group) + ' · ' + cnCountry(pt.country) + '<br>' + cnLabel(pt.anomaly_label) + '<br>' + fmtProduction(pt.production_tonnes) + ' · 占比 ' + shareText);
     m.on('click', ()=>showDetail(pt.weather_region_id));
     markerLayer.push(m);
   });
@@ -614,8 +669,16 @@ function showDetail(rid){
         <span class="badge ${level}">${cnLevel(level)}</span>
       </div>
       <div class="sub">${cnCrop(pt.crop_group)} · ${cnCountry(pt.country)}${pt.admin1?' · '+pt.admin1:''}</div>
-      ${pt.national_share!=null?`<div style="font-size:11px;color:var(--text3);margin-top:4px;">占该国产量 ${fmtNum(pt.national_share,2)}% · ${fmtNum(pt.production_tonnes,0)} 吨</div>`:''}
-    </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:4px;">${(function(){
+  var shareVal = '—';
+  if(pt.production_tonnes && allData.countrySummary) {
+    var cs = allData.countrySummary.find(function(c){ return c.country===pt.country && c.crop_group===pt.crop_group; });
+    if(cs && cs.total_production_tonnes > 0) {
+      shareVal = (pt.production_tonnes / cs.total_production_tonnes * 100).toFixed(1) + '%';
+    }
+  }
+  return '地区产量：' + fmtProduction(pt.production_tonnes) + ' · 占该国产量：' + shareVal;
+})()}</div>    </div>
   `;
   
   if(ws){
@@ -632,6 +695,13 @@ function showDetail(rid){
           <div class="data-cell"><span class="lbl">7日温度状态</span><span class="val">${ws.temp_7d_status}</span></div>
           <div class="data-cell"><span class="lbl">土壤墒情</span><span class="val" style="font-size:12px;">${ws.soil_moisture_status||'待接入'}</span></div>
           <div class="data-cell"><span class="lbl">蒸散/水汽压</span><span class="val" style="font-size:12px;">${ws.et0_status||'待接入'} / ${ws.vpd_status||'待接入'}</span></div>
+        </div>
+        <div style="margin-top:10px;padding-top:8px;border-top:1px dashed #e5e7eb;">
+          <h3 style="margin-bottom:6px;">蒸散与大气需求</h3>
+          <div class="data-grid">
+            <div class="data-cell"><span class="lbl">参考蒸散量 (ET0)</span><span class="val" style="font-size:12px;">${ws.et0_status||'ET0/VPD 数据待接入'}</span></div>
+            <div class="data-cell"><span class="lbl">水汽压亏缺 (VPD)</span><span class="val" style="font-size:12px;">${ws.vpd_status||'ET0/VPD 数据待接入'}</span></div>
+          </div>
         </div>
       </div>
     `;
@@ -665,16 +735,62 @@ function showDetail(rid){
   }
   
   if(hist.length>0){
-    html += `
-      <div class="info-block">
-        <h3>近90天降雨距平</h3>
-        <div class="chart-box small"><canvas id="chart-rain"></canvas></div>
-      </div>
-      <div class="info-block">
-        <h3>近90天温度距平</h3>
-        <div class="chart-box small"><canvas id="chart-temp"></canvas></div>
-      </div>
-    `;
+    // Get latest record with cumulative data
+    var latestCum = null;
+    for(var hi = hist.length - 1; hi >= 0; hi--) {
+      if(hist[hi].precipitation_30d_actual_mm !== null && hist[hi].precipitation_30d_actual_mm !== undefined) {
+        latestCum = hist[hi];
+        break;
+      }
+    }
+    
+    if(latestCum) {
+      var actual30 = latestCum.precipitation_30d_actual_mm;
+      var normal30 = latestCum.precipitation_30d_normal_mm;
+      var anom30 = latestCum.precipitation_30d_anomaly_mm;
+      var ratio30 = latestCum.precipitation_30d_ratio_pct;
+      var fcRain7 = fcSum ? fcSum.rain_7d_sum : null;
+      var fcRain16 = fcSum ? fcSum.rain_16d_sum : null;
+      
+      // Build cumulative assessment text
+      var cumText = '';
+      if(anom30 !== null && normal30 !== null) {
+        if(anom30 < -20) {
+          cumText = '近30天累计降雨较常年偏少' + Math.abs(anom30).toFixed(1) + 'mm';
+          if(fcRain16 && fcRain16 > Math.abs(anom30) * 0.5) {
+            cumText += '，未来16天降雨有望部分补充前期缺口，但需继续观察是否兑现。';
+          } else if(fcRain16) {
+            cumText += '，未来16天预报降雨' + fcRain16.toFixed(1) + 'mm，补充力度有限。';
+          }
+        } else if(anom30 > 30) {
+          cumText = '近30天累计降雨较常年偏多' + anom30.toFixed(1) + 'mm（实际' + ratio30.toFixed(0) + '%），土壤含水量可能偏高。';
+        } else {
+          cumText = '近30天累计降雨接近常年水平（实际/常年 ' + ratio30.toFixed(0) + '%）。';
+        }
+      }
+      
+      html += '<div class="info-block">' +
+        '<h3>累积降雨情况</h3>' +
+        '<div class="data-grid">' +
+        '<div class="data-cell"><span class="lbl">近30天实际降雨</span><span class="val">' + (actual30 !== null ? actual30.toFixed(1) + ' mm' : '—') + '</span></div>' +
+        '<div class="data-cell"><span class="lbl">近30天常年降雨</span><span class="val">' + (normal30 !== null ? normal30.toFixed(1) + ' mm' : '—') + '</span></div>' +
+        '<div class="data-cell"><span class="lbl">近30天降雨距平</span><span class="val' + (anom30 !== null && anom30 < -20 ? ' high' : anom30 !== null && anom30 > 30 ? ' medium' : '') + '">' + (anom30 !== null ? (anom30 > 0 ? '+' : '') + anom30.toFixed(1) + ' mm' : '—') + '</span></div>' +
+        '<div class="data-cell"><span class="lbl">实际/常年</span><span class="val">' + (ratio30 !== null ? ratio30.toFixed(0) + '%' : '—') + '</span></div>' +
+        '<div class="data-cell"><span class="lbl">未来7天预报降雨</span><span class="val">' + (fcRain7 !== null ? fcRain7.toFixed(1) + ' mm' : '—') + '</span></div>' +
+        '<div class="data-cell"><span class="lbl">未来16天预报降雨</span><span class="val">' + (fcRain16 !== null ? fcRain16.toFixed(1) + ' mm' : '—') + '</span></div>' +
+        '</div>' +
+        (cumText ? '<div class="trend-text">' + cumText + '</div>' : '') +
+        '</div>';
+    }
+    
+    html += '<div class="info-block">' +
+      '<h3>近90天降雨距平</h3>' +
+      '<div class="chart-box small"><canvas id="chart-rain"></canvas></div>' +
+      '</div>' +
+      '<div class="info-block">' +
+      '<h3>近90天温度距平</h3>' +
+      '<div class="chart-box small"><canvas id="chart-temp"></canvas></div>' +
+      '</div>';
   }
   
   if(st){
@@ -721,30 +837,32 @@ function renderRainChart(hist){
     if(!ctx) return;
     if(charts.rain) { charts.rain.destroy(); charts.rain = null; }
 
-    var labels = hist.map(function(d){ return d.date.slice(5); });
-    // Use 30-day precipitation percentile for anomaly display
-    var pctlData = hist.map(function(d){ return d.precipitation_percentile_30d; });
-    // Color bars by percentile: <20 = red (dry), 20-80 = blue (normal), >80 = orange (wet)
-    var barColors = pctlData.map(function(v){
+    var labels = hist.map(function(d){ return d.date ? d.date.slice(5) : ''; });
+    
+    // Primary: 30-day cumulative rainfall anomaly (mm)
+    var anomalyData = hist.map(function(d){ return d.precipitation_30d_anomaly_mm; });
+    var anomalyColors = anomalyData.map(function(v){
       if(v === null || v === undefined) return 'rgba(148,163,184,0.3)';
-      if(v < 20) return 'rgba(220,38,38,0.6)';
-      if(v > 80) return 'rgba(234,88,12,0.6)';
-      return 'rgba(59,130,246,0.4)';
+      if(v < -30) return 'rgba(220,38,38,0.6)';     // red = very dry
+      if(v < 0) return 'rgba(251,146,60,0.5)';       // orange = dry
+      if(v > 50) return 'rgba(37,99,235,0.6)';       // blue = very wet
+      return 'rgba(59,130,246,0.4)';                  // light blue = normal/wet
     });
 
-    var pctlDataset = {
-      label: '30日降雨分位',
-      data: pctlData,
-      backgroundColor: barColors,
+    var anomalyDataset = {
+      type: 'bar',
+      label: '30日降雨距平 mm',
+      data: anomalyData,
+      backgroundColor: anomalyColors,
       barThickness: 3
     };
 
-    // Also show raw precipitation as a thin line overlay
+    // Secondary: daily rainfall (reference)
     var rawLine = {
       type: 'line',
       label: '日降雨 mm',
       data: hist.map(function(d){ return d.precipitation_mm; }),
-      borderColor: 'rgba(59,130,246,0.7)',
+      borderColor: 'rgba(100,116,139,0.5)',
       borderWidth: 1,
       pointRadius: 0,
       yAxisID: 'y1',
@@ -755,7 +873,7 @@ function renderRainChart(hist){
       type: 'bar',
       data: {
         labels: labels,
-        datasets: [pctlDataset, rawLine]
+        datasets: [anomalyDataset, rawLine]
       },
       options: {
         responsive: true,
@@ -767,14 +885,13 @@ function renderRainChart(hist){
           x: { display: false },
           y: {
             position: 'left',
-            title: { display: true, text: '分位 (%)', font: { size: 9 } },
+            title: { display: true, text: '距平 mm', font: { size: 9 } },
             grid: { color: '#f3f4f6' },
-            ticks: { font: { size: 9 } },
-            min: 0, max: 100
+            ticks: { font: { size: 9 } }
           },
           y1: {
             position: 'right',
-            title: { display: true, text: 'mm', font: { size: 9 } },
+            title: { display: true, text: '日降雨 mm', font: { size: 9 } },
             grid: { display: false },
             ticks: { font: { size: 9 } },
             min: 0
@@ -795,23 +912,14 @@ function renderTempChart(hist){
     if(!ctx) return;
     if(charts.temp) { charts.temp.destroy(); charts.temp = null; }
 
-    var labels = hist.map(function(d){ return d.date.slice(5); });
-    // Primary: temp_max_percentile (anomaly indicator)
-    var pctlData = hist.map(function(d){ return d.temp_max_percentile; });
-    // Secondary: raw temp_max_c as reference line
-    var maxData = hist.map(function(d){ return d.temp_max_c; });
+    var labels = hist.map(function(d){ return d.date ? d.date.slice(5) : ''; });
+    
+    // Primary: daily max temp anomaly (°C)
+    var anomalyData = hist.map(function(d){ return d.temp_max_anomaly_c; });
 
-    // Color the percentile line: >90 = red (hot anomaly), 70-90 = orange, <70 = blue
-    var pctlColors = pctlData.map(function(v){
-      if(v === null || v === undefined) return 'rgba(148,163,184,0.5)';
-      if(v > 90) return 'rgba(220,38,38,0.8)';
-      if(v > 70) return 'rgba(234,88,12,0.7)';
-      return 'rgba(59,130,246,0.6)';
-    });
-
-    var pctlDataset = {
-      label: '最高温分位 (%)',
-      data: pctlData,
+    var anomalyDataset = {
+      label: '最高温距平 °C',
+      data: anomalyData,
       borderColor: '#f59e0b',
       borderWidth: 2,
       pointRadius: 0,
@@ -821,17 +929,19 @@ function renderTempChart(hist){
         borderColor: function(ctx2){
           var v = ctx2.p1.parsed.y;
           if(v === null || v === undefined) return 'rgba(148,163,184,0.5)';
-          if(v > 90) return 'rgba(220,38,38,0.8)';
-          if(v > 70) return 'rgba(234,88,12,0.7)';
-          return 'rgba(59,130,246,0.6)';
+          if(v > 3) return 'rgba(220,38,38,0.8)';    // red = very hot anomaly
+          if(v > 1.5) return 'rgba(234,88,12,0.7)';   // orange = warm anomaly
+          if(v < -1.5) return 'rgba(59,130,246,0.6)';  // blue = cool anomaly
+          return 'rgba(100,116,139,0.5)';               // gray = normal
         }
       }
     };
 
+    // Secondary: raw temp_max_c as dashed reference
     var rawDataset = {
-      label: '最高温 (°C)',
-      data: maxData,
-      borderColor: 'rgba(245,158,11,0.4)',
+      label: '最高温 °C',
+      data: hist.map(function(d){ return d.temp_max_c; }),
+      borderColor: 'rgba(245,158,11,0.3)',
       borderWidth: 1,
       pointRadius: 0,
       tension: 0.3,
@@ -843,7 +953,7 @@ function renderTempChart(hist){
       type: 'line',
       data: {
         labels: labels,
-        datasets: [pctlDataset, rawDataset]
+        datasets: [anomalyDataset, rawDataset]
       },
       options: {
         responsive: true,
@@ -855,10 +965,9 @@ function renderTempChart(hist){
           x: { display: false },
           y: {
             position: 'left',
-            title: { display: true, text: '分位 (%)', font: { size: 9 } },
+            title: { display: true, text: '距平 °C', font: { size: 9 } },
             grid: { color: '#f3f4f6' },
-            ticks: { font: { size: 9 } },
-            min: 0, max: 100
+            ticks: { font: { size: 9 } }
           },
           y1: {
             position: 'right',
