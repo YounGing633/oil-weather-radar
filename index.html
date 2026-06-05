@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>油脂产区天气雷达</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --c-high: #dc2626;
+  --c-medium: #ea580c;
+  --c-normal: #16a34a;
+  --c-warn: #ca8a04;
+  --c-none: #64748b;
+  --bg: #f1f3f5;
+  --panel: #ffffff;
+  --text: #1a1a1a;
+  --text2: #5a5a5a;
+  --text3: #8a8a8a;
+  --border: #d4d6d9;
+  --radius: 8px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.04);
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 13px;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  background: #1a1d21;
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  flex-shrink: 0;
+}
+header h1 { font-size: 15px; font-weight: 600; letter-spacing: 0.3px; }
+header .meta { font-size: 11px; color: #9ca3af; }
+
+/* App layout */
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+}
+#body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Toolbar */
+.toolbar {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+.crop-tabs {
+  display: flex;
+  gap: 4px;
+}
+.crop-tab {
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text2);
+}
+.crop-tab:hover { background: #f3f4f6; }
+.crop-tab.active { background: #1a1d21; color: #fff; }
+.toolbar select {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  background: var(--panel);
+}
+.toolbar button {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Map */
+#map-wrap {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  background: #e5e7eb;
+}
+#map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.map-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 500;
+  background: rgba(255,255,255,0.95);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  max-width: 300px;
+  pointer-events: none;
+}
+.map-overlay > * { pointer-events: auto; }
+.map-overlay h3 { font-size: 13px; margin-bottom: 6px; }
+.map-overlay .ov-row { display: flex; gap: 12px; margin-top: 4px; }
+.map-overlay .ov-item { text-align: center; }
+.map-overlay .ov-item .num { font-size: 18px; font-weight: 700; }
+.map-overlay .ov-item .lbl { font-size: 10px; color: var(--text3); }
+.map-status {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 10px;
+  color: var(--text3);
+  line-height: 1.6;
+}
+.map-status .ok { color: var(--c-normal); }
+.map-status .err { color: var(--c-high); }
+
+/* Detail panel */
+#detail-panel {
+  width: 380px;
+  background: var(--panel);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+#detail-panel .empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text3);
+  font-size: 13px;
+}
+
+/* Info cards in detail panel */
+.info-block {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+}
+.info-block h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.info-block .title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.info-block .title-row .name { font-size: 15px; font-weight: 700; }
+.info-block .title-row .sub { font-size: 11px; color: var(--text3); }
+
+/* Data grid */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.data-cell {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 10px;
+}
+.data-cell .lbl { font-size: 10px; color: var(--text3); display: block; margin-bottom: 3px; }
+.data-cell .val { font-size: 15px; font-weight: 700; }
+.data-cell .val.high { color: var(--c-high); }
+.data-cell .val.medium { color: var(--c-medium); }
+.data-cell .val.normal { color: var(--c-normal); }
+
+/* Water stress box */
+.stress-box {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.stress-box.high { background: #fef2f2; color: #991b1b; border-left: 3px solid var(--c-high); }
+.stress-box.medium { background: #fff7ed; color: #9a3412; border-left: 3px solid var(--c-medium); }
+.stress-box.normal { background: #f0fdf4; color: #166534; border-left: 3px solid var(--c-normal); }
+.stress-box .stress-title { font-weight: 600; margin-bottom: 4px; }
+.stress-box .stress-note { font-size: 11px; color: var(--text3); margin-top: 4px; }
+
+/* Charts */
+.chart-box {
+  height: 180px;
+  position: relative;
+  margin-top: 8px;
+}
+.chart-box.small { height: 140px; }
+
+/* Trend text */
+.trend-text {
+  font-size: 12px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.badge.high { background: #fee2e2; color: var(--c-high); }
+.badge.medium { background: #ffedd5; color: var(--c-medium); }
+.badge.normal { background: #dcfce7; color: var(--c-normal); }
+.badge.warn { background: #fef9c3; color: var(--c-warn); }
+
+/* Back button */
+.back-btn {
+  display: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #374151;
+  color: #fff;
+  font-size: 11px;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.back-btn.show { display: inline-block; }
+
+/* Legend for map */
+.map-legend {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 500;
+  background: rgba(255,255,255,0.95);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  font-size: 11px;
+}
+.map-legend .lg-item { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+.map-legend .lg-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* Scrollbar styling */
+#detail-panel::-webkit-scrollbar { width: 5px; }
+#detail-panel::-webkit-scrollbar-track { background: transparent; }
+#detail-panel::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+
+@media (max-width: 900px) {
+  #detail-panel { width: 300px; }
+}
+@media (max-width: 720px) {
+  #body { flex-direction: column; }
+  #detail-panel { width: 100%; height: 45vh; border-left: none; border-top: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <h1>油脂产区天气雷达</h1>
+      <button class="back-btn" id="back-btn" onclick="backToGlobal()">← 返回全球</button>
+    </div>
+    <div class="meta">基线期 1991-2020 · 数据更新 <span id="meta-date">—</span></div>
+  </header>
+
+  <div class="toolbar">
+    <div class="crop-tabs" id="crop-tabs">
+      <div class="crop-tab active" data-crop="all" onclick="selectCrop('all')">全部</div>
+      <div class="crop-tab" data-crop="palm" onclick="selectCrop('palm')">棕榈油</div>
+      <div class="crop-tab" data-crop="soybean" onclick="selectCrop('soybean')">豆油</div>
+      <div class="crop-tab" data-crop="rapeseed_canola" onclick="selectCrop('rapeseed_canola')">菜油</div>
+      <div class="crop-tab" data-crop="sunflower" onclick="selectCrop('sunflower')">葵油</div>
+    </div>
+    <select id="f-country" onchange="onFilterChange()"><option value="all">全部国家</option></select>
+    <select id="f-level" onchange="onFilterChange()">
+      <option value="all">全部风险</option>
+      <option value="high">重点关注</option>
+      <option value="medium">一般关注</option>
+      <option value="normal">正常监控</option>
+    </select>
+    <select id="f-label" onchange="onFilterChange()"><option value="all">全部异常</option></select>
+    <button onclick="resetFilters()">重置</button>
+  </div>
+
+  <div id="body">
+    <div id="map-wrap">
+      <div id="map"></div>
+      <div class="map-overlay" id="map-overlay">
+        <h3 id="overlay-title">全球概览</h3>
+        <div class="ov-row">
+          <div class="ov-item"><div class="num" id="ov-points">—</div><div class="lbl">产区</div></div>
+          <div class="ov-item"><div class="num" id="ov-high" style="color:var(--c-high)">—</div><div class="lbl">重点</div></div>
+          <div class="ov-item"><div class="num" id="ov-medium" style="color:var(--c-medium)">—</div><div class="lbl">一般</div></div>
+        </div>
+        <div class="map-status" id="map-status">
+          正在加载数据...
+        </div>
+      </div>
+      <div class="map-legend">
+        <div class="lg-item"><div class="lg-dot" style="background:var(--c-high)"></div>重点关注</div>
+        <div class="lg-item"><div class="lg-dot" style="background:var(--c-medium)"></div>一般关注</div>
+        <div class="lg-item"><div class="lg-dot" style="background:var(--c-normal)"></div>正常监控</div>
+      </div>
+    </div>
+
+    <div id="detail-panel">
+      <div class="empty">点击地图上的国家或产区点位查看详情</div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
