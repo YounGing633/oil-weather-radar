@@ -298,28 +298,28 @@ header .meta { font-size: 11px; color: #9ca3af; }
   <header>
     <div style="display:flex;align-items:center;gap:10px;">
       <h1>油脂产区天气雷达</h1>
-      <button class="back-btn" id="back-btn" onclick="backToGlobal()">← 返回全球</button>
+      <button class="back-btn" id="back-btn">← 返回全球</button>
     </div>
     <div class="meta">基线期 1991-2020 · 数据更新 <span id="meta-date">—</span></div>
   </header>
 
   <div class="toolbar">
     <div class="crop-tabs" id="crop-tabs">
-      <div class="crop-tab active" data-crop="all" onclick="selectCrop('all')">全部</div>
-      <div class="crop-tab" data-crop="palm" onclick="selectCrop('palm')">棕榈油</div>
-      <div class="crop-tab" data-crop="soybean" onclick="selectCrop('soybean')">豆油</div>
-      <div class="crop-tab" data-crop="rapeseed_canola" onclick="selectCrop('rapeseed_canola')">菜油</div>
-      <div class="crop-tab" data-crop="sunflower" onclick="selectCrop('sunflower')">葵油</div>
+      <div class="crop-tab active" data-crop="all">全部</div>
+      <div class="crop-tab" data-crop="palm">棕榈油</div>
+      <div class="crop-tab" data-crop="soybean">豆油</div>
+      <div class="crop-tab" data-crop="rapeseed_canola">菜油</div>
+      <div class="crop-tab" data-crop="sunflower">葵油</div>
     </div>
-    <select id="f-country" onchange="onFilterChange()"><option value="all">全部国家</option></select>
-    <select id="f-level" onchange="onFilterChange()">
+    <select id="f-country"><option value="all">全部国家</option></select>
+    <select id="f-level">
       <option value="all">全部风险</option>
       <option value="high">重点关注</option>
       <option value="medium">一般关注</option>
       <option value="normal">正常监控</option>
     </select>
-    <select id="f-label" onchange="onFilterChange()"><option value="all">全部异常</option></select>
-    <button onclick="resetFilters()">重置</button>
+    <select id="f-label"><option value="all">全部异常</option></select>
+    <button id="btn-reset">重置</button>
   </div>
 
   <div id="body">

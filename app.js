@@ -688,7 +688,7 @@ function renderRainChart(hist){
       backgroundColor:'rgba(59,130,246,0.4)', barThickness:3
     }] },
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
-      scales:{ x:{display:false}, y:{grid:{color:'#f3f4f6'}, ticks:{font:{size:9}} } }
+      scales:{ x:{display:false}, y:{grid:{color:'#f3f4f6'}, ticks:{font:{size:9}} } } }
   });
 }
 
@@ -704,7 +704,7 @@ function renderTempChart(hist){
       {label:'最低温', data:hist.map(d=>d.temp_min_c), borderColor:'#3b82f6', borderWidth:1.5, pointRadius:0, tension:0.3}
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{boxWidth:8,font:{size:9}}}},
-      scales:{ x:{display:false}, y:{grid:{color:'#f3f4f6'}, ticks:{font:{size:9}} } }
+      scales:{ x:{display:false}, y:{grid:{color:'#f3f4f6'}, ticks:{font:{size:9}} } } }
   });
 }
 
@@ -721,12 +721,35 @@ function renderFcChart(fc){
       {type:'bar', label:'降雨', data:fc.map(d=>d.precipitation_mm), backgroundColor:'rgba(59,130,246,0.25)', yAxisID:'y1', barThickness:5}
     ]},
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{boxWidth:8,font:{size:9}}}},
-      scales:{ x:{ticks:{font:{size:8},maxTicksLimit:8}}, y:{position:'left',grid:{color:'#f3f4f6'},ticks:{font:{size:9}}}, y1:{position:'right',grid:{display:false},ticks:{font:{size:9}},min:0} }
+      scales:{ x:{ticks:{font:{size:8},maxTicksLimit:8}}, y:{position:'left',grid:{color:'#f3f4f6'},ticks:{font:{size:9}}}, y1:{position:'right',grid:{display:false},ticks:{font:{size:9}},min:0} } }
   });
+}
+
+function bindEvents(){
+  // Back button
+  document.getElementById('back-btn').addEventListener('click', backToGlobal);
+
+  // Crop tabs (event delegation on container)
+  document.getElementById('crop-tabs').addEventListener('click', function(e){
+    const tab = e.target.closest('.crop-tab');
+    if(tab && tab.dataset.crop) selectCrop(tab.dataset.crop);
+  });
+
+  // Filter selects
+  document.getElementById('f-country').addEventListener('change', onFilterChange);
+  document.getElementById('f-level').addEventListener('change', onFilterChange);
+  document.getElementById('f-label').addEventListener('change', onFilterChange);
+
+  // Reset button
+  document.getElementById('btn-reset').addEventListener('click', resetFilters);
+
+  // Expose showDetail globally for dynamically generated HTML onclick
+  window.showDetail = showDetail;
 }
 
 async function init(){
   initMap();
+  bindEvents();
   
   // Load core data first (must not fail)
   const [meta, latest, forecast, anomaly, stage, alerts] = await Promise.all([
