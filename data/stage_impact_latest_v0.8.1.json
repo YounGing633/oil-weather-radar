@@ -918,24 +918,6 @@
     "rule_id": null
   },
   {
-    "weather_region_id": "soybean::Brazil::national::豆油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
-    "weather_region_id": "soybean::Argentina::national::豆油",
-    "current_month": 6,
-    "matched_growth_stage": null,
-    "matched_weather_condition": null,
-    "impact_cn": null,
-    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
-    "rule_id": null
-  },
-  {
     "weather_region_id": "rapeseed_canola::France::national::菜油",
     "current_month": 6,
     "matched_growth_stage": null,

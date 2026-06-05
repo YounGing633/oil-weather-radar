@@ -1,13 +1,15 @@
 [
   {
-    "generated_at": "2026-06-05 17:10:08",
-    "version": "v1.0-h2",
+    "generated_at": "2026-06-05 21:19:57",
+    "version": "v1.0-i1",
     "baseline_period": "1991-2020",
+    "baseline_method": "monthly_normal + doy_pentad (v1.0-i1)",
     "data_sources": [
       "NASA POWER (historical)",
-      "Open-Meteo (forecast + ET0/VPD)"
+      "Open-Meteo (forecast + ET0/VPD)",
+      "DOY pentad baseline (i1)"
     ],
-    "active_points": 118,
+    "active_points": 143,
     "excluded_faostat_points": 40,
     "countries": [
       "Argentina",
@@ -35,7 +37,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 70,
-    "run_id": "daily_export_20260605_171008"
+    "total_alerts": 79,
+    "run_id": "daily_export_20260605_211957"
   }
 ]

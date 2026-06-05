@@ -11,7 +11,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
@@ -25,7 +26,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Bangka_Belitung::admin1::crude_palm_oil",
@@ -39,7 +41,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Banten::admin1::crude_palm_oil",
@@ -53,7 +56,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Bengkulu::admin1::crude_palm_oil",
@@ -67,7 +71,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Gorontalo::admin1::crude_palm_oil",
@@ -81,7 +86,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Jambi::admin1::crude_palm_oil",
@@ -95,7 +101,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Jawa_Barat::admin1::crude_palm_oil",
@@ -109,7 +116,8 @@
     "anomaly_label": "excessive_rain|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Barat::admin1::crude_palm_oil",
@@ -123,7 +131,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Selatan::admin1::crude_palm_oil",
@@ -137,7 +146,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Tengah::admin1::crude_palm_oil",
@@ -151,7 +161,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Timur::admin1::crude_palm_oil",
@@ -165,7 +176,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Utara::admin1::crude_palm_oil",
@@ -179,7 +191,8 @@
     "anomaly_label": "rainfall_low",
     "anomaly_level": "medium",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Kepulauan_Riau::admin1::crude_palm_oil",
@@ -193,7 +206,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Lampung::admin1::crude_palm_oil",
@@ -207,7 +221,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Maluku::admin1::crude_palm_oil",
@@ -221,7 +236,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Maluku_Utara::admin1::crude_palm_oil",
@@ -235,7 +251,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua::admin1::crude_palm_oil",
@@ -249,7 +266,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Barat::admin1::crude_palm_oil",
@@ -263,7 +281,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Barat_Daya::admin1::crude_palm_oil",
@@ -277,7 +296,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Selatan::admin1::crude_palm_oil",
@@ -291,7 +311,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Tengah::admin1::crude_palm_oil",
@@ -305,7 +326,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Riau::admin1::crude_palm_oil",
@@ -319,7 +341,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Barat::admin1::crude_palm_oil",
@@ -333,7 +356,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Selatan::admin1::crude_palm_oil",
@@ -347,7 +371,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Tengah::admin1::crude_palm_oil",
@@ -361,7 +386,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Tenggara::admin1::crude_palm_oil",
@@ -375,7 +401,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Barat::admin1::crude_palm_oil",
@@ -389,7 +416,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Selatan::admin1::crude_palm_oil",
@@ -403,7 +431,8 @@
     "anomaly_label": "excessive_rain|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Utara::admin1::crude_palm_oil",
@@ -417,7 +446,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Johor::admin1::oil_palm",
@@ -431,7 +461,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Kelantan::admin1::oil_palm",
@@ -445,7 +476,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Negeri_Sembilan::admin1::oil_palm",
@@ -459,7 +491,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Pahang::admin1::oil_palm",
@@ -473,7 +506,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Perak::admin1::oil_palm",
@@ -487,7 +521,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Sabah::admin1::oil_palm",
@@ -501,7 +536,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Sarawak::admin1::oil_palm",
@@ -515,7 +551,8 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Selangor::admin1::oil_palm",
@@ -529,7 +566,8 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "palm::Malaysia::Terengganu::admin1::oil_palm",
@@ -543,7 +581,8 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::New_South_Wales::admin1::rapeseed_canola",
@@ -557,7 +596,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Queensland::admin1::rapeseed_canola",
@@ -571,7 +611,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::South_Australia::admin1::rapeseed_canola",
@@ -585,7 +626,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Tasmania::admin1::rapeseed_canola",
@@ -599,7 +641,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Victoria::admin1::rapeseed_canola",
@@ -613,7 +656,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Western_Australia::admin1::rapeseed_canola",
@@ -627,7 +671,8 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Alberta::admin1::rapeseed_canola",
@@ -641,7 +686,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::British_Columbia::admin1::rapeseed_canola",
@@ -655,7 +701,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Manitoba::admin1::rapeseed_canola",
@@ -669,7 +716,8 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::New_Brunswick::admin1::rapeseed_canola",
@@ -683,7 +731,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Ontario::admin1::rapeseed_canola",
@@ -697,7 +746,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
@@ -711,7 +761,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Saskatchewan::admin1::rapeseed_canola",
@@ -725,7 +776,8 @@
     "anomaly_label": "rainfall_low|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::France::national::菜油",
@@ -739,7 +791,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Germany::national::菜油",
@@ -753,7 +806,8 @@
     "anomaly_label": "rainfall_low",
     "anomaly_level": "low",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Poland::national::菜油",
@@ -767,7 +821,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::Romania::national::菜油",
@@ -781,7 +836,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::IDAHO::admin1::canola",
@@ -795,7 +851,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::KANSAS::admin1::canola",
@@ -809,7 +866,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::MINNESOTA::admin1::canola",
@@ -823,7 +881,8 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::MONTANA::admin1::canola",
@@ -837,7 +896,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::NORTH_DAKOTA::admin1::canola",
@@ -851,7 +911,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::OKLAHOMA::admin1::canola",
@@ -865,7 +926,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::OREGON::admin1::canola",
@@ -879,7 +941,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::WASHINGTON::admin1::canola",
@@ -893,35 +956,413 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
-    "weather_region_id": "soybean::Argentina::national::豆油",
+    "weather_region_id": "soybean::Argentina::Buenos Aires::admin1::豆油",
     "date": "2026-06-05",
-    "precipitation_percentile_15d": 6.666666666666667,
-    "precipitation_percentile_30d": 3.3333333333333335,
-    "temp_max_percentile": 50.0,
+    "precipitation_percentile_15d": 20.0,
+    "precipitation_percentile_30d": 6.666666666666667,
+    "temp_max_percentile": 76.66666666666667,
     "dry_days_count": 12,
     "wet_days_count": 0,
     "hot_days_count": 0,
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
-    "weather_region_id": "soybean::Brazil::national::豆油",
+    "weather_region_id": "soybean::Argentina::Chaco::admin1::豆油",
     "date": "2026-06-05",
-    "precipitation_percentile_15d": 36.666666666666664,
-    "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 36.666666666666664,
-    "dry_days_count": 12,
+    "precipitation_percentile_15d": 26.666666666666668,
+    "precipitation_percentile_30d": 16.666666666666664,
+    "temp_max_percentile": 80.0,
+    "dry_days_count": 11,
     "wet_days_count": 0,
     "hot_days_count": 0,
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Corrientes::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 63.33333333333333,
+    "precipitation_percentile_30d": 33.33333333333333,
+    "temp_max_percentile": 70.0,
+    "dry_days_count": 11,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Córdoba::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 66.66666666666666,
+    "precipitation_percentile_30d": 43.333333333333336,
+    "temp_max_percentile": 63.33333333333333,
+    "dry_days_count": 10,
+    "wet_days_count": 2,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Entre Ríos::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 6.666666666666667,
+    "precipitation_percentile_30d": 53.333333333333336,
+    "temp_max_percentile": 36.666666666666664,
+    "dry_days_count": 12,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Formosa::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 6.666666666666667,
+    "precipitation_percentile_30d": 6.666666666666667,
+    "temp_max_percentile": 80.0,
+    "dry_days_count": 11,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "high",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Jujuy::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 100.0,
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 13.333333333333334,
+    "dry_days_count": 5,
+    "wet_days_count": 4,
+    "hot_days_count": 0,
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Misiones::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 13.333333333333334,
+    "precipitation_percentile_30d": 6.666666666666667,
+    "temp_max_percentile": 76.66666666666667,
+    "dry_days_count": 8,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "high",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Santa Fe::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 10.0,
+    "precipitation_percentile_30d": 43.333333333333336,
+    "temp_max_percentile": 63.33333333333333,
+    "dry_days_count": 12,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Tucumán::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 96.66666666666667,
+    "precipitation_percentile_30d": 96.66666666666667,
+    "temp_max_percentile": 20.0,
+    "dry_days_count": 5,
+    "wet_days_count": 3,
+    "hot_days_count": 0,
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Bahia::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 53.333333333333336,
+    "precipitation_percentile_30d": 23.333333333333332,
+    "temp_max_percentile": 36.666666666666664,
+    "dry_days_count": 8,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "low",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Ceará::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 43.333333333333336,
+    "precipitation_percentile_30d": 83.33333333333334,
+    "temp_max_percentile": 30.0,
+    "dry_days_count": 6,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Distrito Federal::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 66.66666666666666,
+    "precipitation_percentile_30d": 30.0,
+    "temp_max_percentile": 60.0,
+    "dry_days_count": 11,
+    "wet_days_count": 2,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Goiás::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 46.666666666666664,
+    "precipitation_percentile_30d": 26.666666666666668,
+    "temp_max_percentile": 83.33333333333334,
+    "dry_days_count": 12,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "medium",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Maranhão::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 56.666666666666664,
+    "precipitation_percentile_30d": 80.0,
+    "temp_max_percentile": 36.666666666666664,
+    "dry_days_count": 9,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Mato Grosso do Sul::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 13.333333333333334,
+    "precipitation_percentile_30d": 36.666666666666664,
+    "temp_max_percentile": 96.66666666666667,
+    "dry_days_count": 12,
+    "wet_days_count": 0,
+    "hot_days_count": 2,
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 43.333333333333336,
+    "precipitation_percentile_30d": 63.33333333333333,
+    "temp_max_percentile": 46.666666666666664,
+    "dry_days_count": 12,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Minas Gerais::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 63.33333333333333,
+    "precipitation_percentile_30d": 83.33333333333334,
+    "temp_max_percentile": 33.33333333333333,
+    "dry_days_count": 12,
+    "wet_days_count": 2,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Paraná::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 23.333333333333332,
+    "precipitation_percentile_30d": 56.666666666666664,
+    "temp_max_percentile": 56.666666666666664,
+    "dry_days_count": 6,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 50.0,
+    "precipitation_percentile_30d": 80.0,
+    "temp_max_percentile": 56.666666666666664,
+    "dry_days_count": 1,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Piauí::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 20.0,
+    "precipitation_percentile_30d": 33.33333333333333,
+    "temp_max_percentile": 83.33333333333334,
+    "dry_days_count": 12,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Rio Grande do Sul::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 0.0,
+    "precipitation_percentile_30d": 0.0,
+    "temp_max_percentile": 56.666666666666664,
+    "dry_days_count": 10,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "high",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Rio de Janeiro::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 46.666666666666664,
+    "precipitation_percentile_30d": 46.666666666666664,
+    "temp_max_percentile": 33.33333333333333,
+    "dry_days_count": 4,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Rondônia::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 30.0,
+    "precipitation_percentile_30d": 70.0,
+    "temp_max_percentile": 43.333333333333336,
+    "dry_days_count": 11,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Santa Catarina::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 53.333333333333336,
+    "precipitation_percentile_30d": 36.666666666666664,
+    "temp_max_percentile": 53.333333333333336,
+    "dry_days_count": 5,
+    "wet_days_count": 0,
+    "hot_days_count": 0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::São Paulo::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 36.666666666666664,
+    "precipitation_percentile_30d": 3.3333333333333335,
+    "temp_max_percentile": 90.0,
+    "dry_days_count": 11,
+    "wet_days_count": 0,
+    "hot_days_count": 2,
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "high",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Tocantins::admin1::豆油",
+    "date": "2026-06-05",
+    "precipitation_percentile_15d": 46.666666666666664,
+    "precipitation_percentile_30d": 33.33333333333333,
+    "temp_max_percentile": 93.33333333333333,
+    "dry_days_count": 12,
+    "wet_days_count": 0,
+    "hot_days_count": 4,
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "baseline_sample_size": 30,
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::Canada::Alberta::admin1::soybean",
@@ -935,7 +1376,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::Canada::Manitoba::admin1::soybean",
@@ -949,7 +1391,8 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::Canada::New_Brunswick::admin1::soybean",
@@ -963,7 +1406,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::Canada::Nova_Scotia::admin1::soybean",
@@ -977,7 +1421,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::Canada::Ontario::admin1::soybean",
@@ -991,7 +1436,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::Canada::Prince_Edward_Island::admin1::soybean",
@@ -1005,7 +1451,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::Canada::Quebec::admin1::soybean",
@@ -1019,7 +1466,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::Canada::Saskatchewan::admin1::soybean",
@@ -1033,7 +1481,8 @@
     "anomaly_label": "rainfall_low|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::ALABAMA::admin1::soybean",
@@ -1047,7 +1496,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::ARKANSAS::admin1::soybean",
@@ -1061,7 +1511,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::DELAWARE::admin1::soybean",
@@ -1075,7 +1526,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::FLORIDA::admin1::soybean",
@@ -1089,7 +1541,8 @@
     "anomaly_label": "rainfall_low",
     "anomaly_level": "low",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::GEORGIA::admin1::soybean",
@@ -1103,7 +1556,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::ILLINOIS::admin1::soybean",
@@ -1117,7 +1571,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::INDIANA::admin1::soybean",
@@ -1131,7 +1586,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::IOWA::admin1::soybean",
@@ -1145,7 +1601,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::KANSAS::admin1::soybean",
@@ -1159,7 +1616,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::KENTUCKY::admin1::soybean",
@@ -1173,7 +1631,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::LOUISIANA::admin1::soybean",
@@ -1187,7 +1646,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::MARYLAND::admin1::soybean",
@@ -1201,7 +1661,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::MICHIGAN::admin1::soybean",
@@ -1215,7 +1676,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::MINNESOTA::admin1::soybean",
@@ -1229,7 +1691,8 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::MISSISSIPPI::admin1::soybean",
@@ -1243,7 +1706,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::MISSOURI::admin1::soybean",
@@ -1257,7 +1721,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::NEBRASKA::admin1::soybean",
@@ -1271,7 +1736,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::NEW_JERSEY::admin1::soybean",
@@ -1285,7 +1751,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::NEW_YORK::admin1::soybean",
@@ -1299,7 +1766,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::NORTH_CAROLINA::admin1::soybean",
@@ -1313,7 +1781,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::NORTH_DAKOTA::admin1::soybean",
@@ -1327,7 +1796,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::OHIO::admin1::soybean",
@@ -1341,7 +1811,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::OKLAHOMA::admin1::soybean",
@@ -1355,7 +1826,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::PENNSYLVANIA::admin1::soybean",
@@ -1369,7 +1841,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::SOUTH_CAROLINA::admin1::soybean",
@@ -1383,7 +1856,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::SOUTH_DAKOTA::admin1::soybean",
@@ -1397,7 +1871,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::TENNESSEE::admin1::soybean",
@@ -1411,7 +1886,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::TEXAS::admin1::soybean",
@@ -1425,7 +1901,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::VIRGINIA::admin1::soybean",
@@ -1439,7 +1916,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::WEST_VIRGINIA::admin1::soybean",
@@ -1453,7 +1931,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "soybean::United_States::WISCONSIN::admin1::soybean",
@@ -1467,7 +1946,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "sunflower::Canada::Alberta::admin1::sunflower_seed",
@@ -1481,7 +1961,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "sunflower::Canada::Manitoba::admin1::sunflower_seed",
@@ -1495,7 +1976,8 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "sunflower::Canada::Ontario::admin1::sunflower_seed",
@@ -1509,7 +1991,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "sunflower::Canada::Saskatchewan::admin1::sunflower_seed",
@@ -1523,7 +2006,8 @@
     "anomaly_label": "rainfall_low|high_temperature",
     "anomaly_level": "high",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "sunflower::Romania::national::葵油",
@@ -1537,7 +2021,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   },
   {
     "weather_region_id": "sunflower::Türkiye::national::葵油",
@@ -1551,6 +2036,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok"
+    "anomaly_calc_status": "ok",
+    "baseline_method": "monthly_normal+doy_pentad"
   }
 ]
