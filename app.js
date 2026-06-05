@@ -95,6 +95,15 @@ const ADMIN1_FILES = {
 
 function fmt(v) { return (v===null||v===undefined||v===''||v==='nan')?'—':v; }
 function fmtNum(v,d=1){ return (v===null||v===undefined||isNaN(v))?'—':Number(v).toFixed(d); }
+function fmtProduction(v){
+  if(v===null||v===undefined||isNaN(v)) return '产量权重待接入';
+  if(v >= 10000) return (v/10000).toFixed(2) + ' 万吨';
+  return v.toFixed(0) + ' 吨';
+}
+function fmtShare(v){
+  if(v===null||v===undefined||isNaN(v)) return '产量权重待接入';
+  return (v*100).toFixed(1) + '%';
+}
 function cnCrop(c){ return CN.crop[c]||c||'—'; }
 function cnLabel(l){ return CN.label[l]||l||'—'; }
 function cnLevel(l){ return CN.level[l]||l||'—'; }
@@ -348,13 +357,25 @@ function renderGeoJSON(){
     return;
   }
   
-  const dataCountries = [...new Set(allData.latest.map(x=>x.country))];
-  let matched = 0;
+  // Build set of countries with coverage for the selected crop
+  var cropCountries = new Set();
+  if(allData.countrySummary && selectedCrop !== 'all') {
+    allData.countrySummary.forEach(function(cs){
+      if(cs.crop_group === selectedCrop && cs.region_count > 0) {
+        cropCountries.add(cs.country);
+      }
+    });
+  } else {
+    // "all" crop: show all countries that have any data
+    allData.latest.forEach(function(x){ cropCountries.add(x.country); });
+  }
+  
+  var matched = 0;
   
   geoJsonLayer = L.geoJSON(allData.geojson, {
     filter: feature=>{
-      const normalized = normalizeGeojsonName(feature.properties.name);
-      const ok = dataCountries.includes(normalized);
+      var normalized = normalizeGeojsonName(feature.properties.name);
+      var ok = cropCountries.has(normalized);
       if(ok) matched++;
       return ok;
     },
@@ -369,7 +390,14 @@ function renderGeoJSON(){
       const pts = allData.latest.filter(pt=>pt.country===normalized && (selectedCrop==='all'||pt.crop_group===selectedCrop));
       const high = pts.filter(p=>(p.anomaly_level||'normal')==='high').length;
       const medium = pts.filter(p=>(p.anomaly_level||'normal')==='medium').length;
-      const popup = `<b>${cnCountry(normalized)}</b><br>产区：${pts.length} 个<br>重点：${high} · 一般：${medium}`;
+      // Find country crop summary for production
+      var csEntry = null;
+      if(allData.countrySummary) {
+        csEntry = allData.countrySummary.find(function(c){ return c.country===normalized && (selectedCrop==='all'||c.crop_group===selectedCrop); });
+      }
+      var prodText = csEntry && csEntry.total_production_tonnes ? fmtProduction(csEntry.total_production_tonnes) : '';
+      var popup = '<b>' + cnCountry(normalized) + '</b><br>产区：' + pts.length + ' 个<br>重点：' + high + ' · 一般：' + medium;
+      if(prodText) popup += '<br>产量：' + prodText;
       layer.bindTooltip(popup, {sticky:true});
       layer.on('click', ()=>enterCountry(normalized));
     }
@@ -395,7 +423,7 @@ function renderMarkers(){
       radius: lev==='high'?9:lev==='medium'?7:5,
       fillColor:c, color:'#fff', weight:1.5, opacity:1, fillOpacity:0.85
     }).addTo(map);
-    m.bindTooltip(`<b>${pt.display_region_name}</b><br>${cnCrop(pt.crop_group)} · ${cnCountry(pt.country)}<br>${cnLabel(pt.anomaly_label)}`);
+    m.bindTooltip('<b>' + pt.display_region_name + '</b><br>' + cnCrop(pt.crop_group) + ' · ' + cnCountry(pt.country) + '<br>' + cnLabel(pt.anomaly_label) + '<br>' + fmtProduction(pt.production_tonnes) + ' · 占比 ' + fmtShare(pt.national_share));
     m.on('click', ()=>showDetail(pt.weather_region_id));
     markerLayer.push(m);
   });
@@ -602,6 +630,8 @@ function showDetail(rid){
         <div class="data-grid">
           <div class="data-cell"><span class="lbl">30日降雨状态</span><span class="val">${ws.precipitation_30d_status}</span></div>
           <div class="data-cell"><span class="lbl">7日温度状态</span><span class="val">${ws.temp_7d_status}</span></div>
+          <div class="data-cell"><span class="lbl">土壤墒情</span><span class="val" style="font-size:12px;">${ws.soil_moisture_status||'待接入'}</span></div>
+          <div class="data-cell"><span class="lbl">蒸散/水汽压</span><span class="val" style="font-size:12px;">${ws.et0_status||'待接入'} / ${ws.vpd_status||'待接入'}</span></div>
         </div>
       </div>
     `;
@@ -637,11 +667,11 @@ function showDetail(rid){
   if(hist.length>0){
     html += `
       <div class="info-block">
-        <h3>近90天降雨</h3>
+        <h3>近90天降雨距平</h3>
         <div class="chart-box small"><canvas id="chart-rain"></canvas></div>
       </div>
       <div class="info-block">
-        <h3>近90天温度</h3>
+        <h3>近90天温度距平</h3>
         <div class="chart-box small"><canvas id="chart-temp"></canvas></div>
       </div>
     `;
@@ -667,11 +697,20 @@ function showDetail(rid){
     `;
   }
   
+  // Water stress / anomaly level history from region_history_90d
+  if(hist.length>0){
+    html += '<div class="info-block">' +
+      '<h3>近90天异常等级</h3>' +
+      '<div class="chart-box small"><canvas id="chart-stress"></canvas></div>' +
+      '</div>';
+  }
+  
   document.getElementById('detail-panel').innerHTML = html;
   
   if(hist.length>0){
     renderRainChart(hist);
     renderTempChart(hist);
+    renderStressChart(hist);
   }
   if(fc.length>0) renderFcChart(fc);
 }
@@ -683,30 +722,62 @@ function renderRainChart(hist){
     if(charts.rain) { charts.rain.destroy(); charts.rain = null; }
 
     var labels = hist.map(function(d){ return d.date.slice(5); });
-    var rainData = hist.map(function(d){ return d.precipitation_mm; });
+    // Use 30-day precipitation percentile for anomaly display
+    var pctlData = hist.map(function(d){ return d.precipitation_percentile_30d; });
+    // Color bars by percentile: <20 = red (dry), 20-80 = blue (normal), >80 = orange (wet)
+    var barColors = pctlData.map(function(v){
+      if(v === null || v === undefined) return 'rgba(148,163,184,0.3)';
+      if(v < 20) return 'rgba(220,38,38,0.6)';
+      if(v > 80) return 'rgba(234,88,12,0.6)';
+      return 'rgba(59,130,246,0.4)';
+    });
 
-    var dataset = {
-      label: '降雨 mm',
-      data: rainData,
-      backgroundColor: 'rgba(59,130,246,0.4)',
+    var pctlDataset = {
+      label: '30日降雨分位',
+      data: pctlData,
+      backgroundColor: barColors,
       barThickness: 3
+    };
+
+    // Also show raw precipitation as a thin line overlay
+    var rawLine = {
+      type: 'line',
+      label: '日降雨 mm',
+      data: hist.map(function(d){ return d.precipitation_mm; }),
+      borderColor: 'rgba(59,130,246,0.7)',
+      borderWidth: 1,
+      pointRadius: 0,
+      yAxisID: 'y1',
+      tension: 0.3
     };
 
     var chartConfig = {
       type: 'bar',
       data: {
         labels: labels,
-        datasets: [dataset]
+        datasets: [pctlDataset, rawLine]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
+        plugins: {
+          legend: { labels: { boxWidth: 8, font: { size: 9 } } }
+        },
         scales: {
           x: { display: false },
           y: {
+            position: 'left',
+            title: { display: true, text: '分位 (%)', font: { size: 9 } },
             grid: { color: '#f3f4f6' },
-            ticks: { font: { size: 9 } }
+            ticks: { font: { size: 9 } },
+            min: 0, max: 100
+          },
+          y1: {
+            position: 'right',
+            title: { display: true, text: 'mm', font: { size: 9 } },
+            grid: { display: false },
+            ticks: { font: { size: 9 } },
+            min: 0
           }
         }
       }
@@ -725,45 +796,74 @@ function renderTempChart(hist){
     if(charts.temp) { charts.temp.destroy(); charts.temp = null; }
 
     var labels = hist.map(function(d){ return d.date.slice(5); });
+    // Primary: temp_max_percentile (anomaly indicator)
+    var pctlData = hist.map(function(d){ return d.temp_max_percentile; });
+    // Secondary: raw temp_max_c as reference line
     var maxData = hist.map(function(d){ return d.temp_max_c; });
-    var minData = hist.map(function(d){ return d.temp_min_c; });
 
-    var maxDataset = {
-      label: '最高温',
-      data: maxData,
+    // Color the percentile line: >90 = red (hot anomaly), 70-90 = orange, <70 = blue
+    var pctlColors = pctlData.map(function(v){
+      if(v === null || v === undefined) return 'rgba(148,163,184,0.5)';
+      if(v > 90) return 'rgba(220,38,38,0.8)';
+      if(v > 70) return 'rgba(234,88,12,0.7)';
+      return 'rgba(59,130,246,0.6)';
+    });
+
+    var pctlDataset = {
+      label: '最高温分位 (%)',
+      data: pctlData,
       borderColor: '#f59e0b',
-      borderWidth: 1.5,
+      borderWidth: 2,
       pointRadius: 0,
-      tension: 0.3
+      tension: 0.3,
+      yAxisID: 'y',
+      segment: {
+        borderColor: function(ctx2){
+          var v = ctx2.p1.parsed.y;
+          if(v === null || v === undefined) return 'rgba(148,163,184,0.5)';
+          if(v > 90) return 'rgba(220,38,38,0.8)';
+          if(v > 70) return 'rgba(234,88,12,0.7)';
+          return 'rgba(59,130,246,0.6)';
+        }
+      }
     };
 
-    var minDataset = {
-      label: '最低温',
-      data: minData,
-      borderColor: '#3b82f6',
-      borderWidth: 1.5,
+    var rawDataset = {
+      label: '最高温 (°C)',
+      data: maxData,
+      borderColor: 'rgba(245,158,11,0.4)',
+      borderWidth: 1,
       pointRadius: 0,
-      tension: 0.3
+      tension: 0.3,
+      yAxisID: 'y1',
+      borderDash: [3, 3]
     };
 
     var chartConfig = {
       type: 'line',
       data: {
         labels: labels,
-        datasets: [maxDataset, minDataset]
+        datasets: [pctlDataset, rawDataset]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: {
-            labels: { boxWidth: 8, font: { size: 9 } }
-          }
+          legend: { labels: { boxWidth: 8, font: { size: 9 } } }
         },
         scales: {
           x: { display: false },
           y: {
+            position: 'left',
+            title: { display: true, text: '分位 (%)', font: { size: 9 } },
             grid: { color: '#f3f4f6' },
+            ticks: { font: { size: 9 } },
+            min: 0, max: 100
+          },
+          y1: {
+            position: 'right',
+            title: { display: true, text: '°C', font: { size: 9 } },
+            grid: { display: false },
             ticks: { font: { size: 9 } }
           }
         }
@@ -773,6 +873,81 @@ function renderTempChart(hist){
     charts.temp = new Chart(ctx, chartConfig);
   } catch(e) {
     console.warn('[CHART] renderTempChart failed:', e.message);
+  }
+}
+
+function renderStressChart(hist){
+  try {
+    var ctx = document.getElementById('chart-stress');
+    if(!ctx) return;
+    if(charts.stress) { charts.stress.destroy(); charts.stress = null; }
+
+    var labels = hist.map(function(d){ return d.date.slice(5); });
+
+    // Map anomaly_level to numeric: high=3, medium=2, normal=1, low=0
+    var levelMap = { high:3, medium:2, normal:1, low:0 };
+    var levelLabels = ['低风险','正常','一般关注','重点关注'];
+    var levelColors = ['#94a3b8','#16a34a','#ea580c','#dc2626'];
+
+    var barData = hist.map(function(d){
+      var lev = d.anomaly_level || 'normal';
+      return levelMap[lev] !== undefined ? levelMap[lev] : 1;
+    });
+
+    var barColors = hist.map(function(d){
+      var lev = d.anomaly_level || 'normal';
+      var idx = levelMap[lev] !== undefined ? levelMap[lev] : 1;
+      return levelColors[idx];
+    });
+
+    var stressDataset = {
+      label: '异常等级',
+      data: barData,
+      backgroundColor: barColors,
+      barThickness: 3
+    };
+
+    var chartConfig = {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [stressDataset]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(tipCtx){
+                var v = tipCtx.parsed.y;
+                return levelLabels[v] || '未知';
+              }
+            }
+          }
+        },
+        scales: {
+          x: { display: false },
+          y: {
+            min: -0.5,
+            max: 3.5,
+            ticks: {
+              stepSize: 1,
+              callback: function(value){
+                return levelLabels[value] || '';
+              },
+              font: { size: 9 }
+            },
+            grid: { color: '#f3f4f6' }
+          }
+        }
+      }
+    };
+
+    charts.stress = new Chart(ctx, chartConfig);
+  } catch(e) {
+    console.warn('[CHART] renderStressChart failed:', e.message);
   }
 }
 
