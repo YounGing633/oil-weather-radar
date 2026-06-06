@@ -498,7 +498,9 @@ function renderMarkers(){
         shareText = (pt.production_tonnes / csMatch.total_production_tonnes * 100).toFixed(1) + '%';
       }
     }
-    m.bindTooltip('<b>' + pt.display_region_name + '（' + shareText + '）</b><br>' + cnCrop(pt.crop_group) + ' · ' + cnCountry(pt.country) + '<br>' + cnLabel(pt.anomaly_label) + '<br>' + fmtProduction(pt.production_tonnes) + ' · 占比 ' + shareText);
+    var soilEntry = allData.soilMoistureIndex ? allData.soilMoistureIndex[pt.weather_region_id] : null;
+    var soilText = soilEntry ? (soilEntry.soil_moisture_status || '土壤观测') : '无土壤观测';
+    m.bindTooltip('<b>' + pt.display_region_name + '（' + shareText + '）</b><br>' + cnCrop(pt.crop_group) + ' · ' + cnCountry(pt.country) + '<br>' + cnLabel(pt.anomaly_label) + '<br>' + fmtProduction(pt.production_tonnes) + ' · 占比 ' + shareText + '<br>' + soilText);
     m.on('click', ()=>showDetail(pt.weather_region_id));
     markerLayer.push(m);
   });
@@ -658,6 +660,8 @@ function showCountrySummary(country){
   var topRisk = v2Counts.stress>0?'stress':v2Counts.attention>0?'attention':v2Counts.watch>0?'watch':'normal';
   
   const cs = (allData.countrySummary||[]).find(c=>c.country===country && (selectedCrop==='all'||c.crop_group===selectedCrop));
+  const soilSupport = pts.filter(p=>allData.soilMoistureIndex && allData.soilMoistureIndex[p.weather_region_id]).length;
+  const oilLabel = cs && cs.oil_type ? cs.oil_type : '—';
   
   let html = `
     <div class="info-block">
@@ -671,7 +675,8 @@ function showCountrySummary(country){
         <div class="data-cell"><span class="lbl">重点关注</span><span class="val" style="color:#ea580c;">${v2Counts.attention}</span></div>
         <div class="data-cell"><span class="lbl">一般关注</span><span class="val" style="color:#ca8a04;">${v2Counts.watch}</span></div>
         <div class="data-cell"><span class="lbl">正常监控</span><span class="val normal">${v2Counts.normal}</span></div>
-        <div class="data-cell"><span class="lbl">产量(吨)</span><span class="val">${cs&&cs.total_production_tonnes?fmtNum(cs.total_production_tonnes,0):'—'}</span></div>
+        <div class="data-cell"><span class="lbl">油种</span><span class="val">${oilLabel}</span></div>
+        <div class="data-cell"><span class="lbl">土壤监测点</span><span class="val">${soilSupport} / ${pts.length}</span></div>
       </div>
     </div>
     <div class="info-block">
@@ -695,6 +700,8 @@ function showDetail(rid){
   const riskV2 = ws ? (ws.risk_level_v2 || level) : level;
   const RISK_V2_CN = {normal:'正常监控', watch:'一般关注', attention:'重点关注', stress:'显著压力'};
   const RISK_V2_COLOR = {normal:'#16a34a', watch:'#ca8a04', attention:'#ea580c', stress:'#dc2626'};
+  const soilEntry = allData.soilMoistureIndex ? allData.soilMoistureIndex[pt.weather_region_id] : null;
+  const soilLabel = soilEntry && soilEntry.soil_moisture_status ? soilEntry.soil_moisture_status : '待接入';
   
   let html = `
     <div class="info-block">
@@ -703,6 +710,9 @@ function showDetail(rid){
         <span class="badge" style="background:${RISK_V2_COLOR[riskV2]||'#64748b'};color:#fff;">${RISK_V2_CN[riskV2]||'正常监控'}</span>
       </div>
       <div class="sub">${cnCrop(pt.crop_group)} · ${cnCountry(pt.country)}${pt.admin1?' · '+pt.admin1:''}</div>
+      <div style="font-size:11px;color:var(--text3);margin-top:4px;">
+        ${pt.oil_type ? '油种：' + pt.oil_type + ' · ' : ''}来源：${pt.source || '—'}
+      </div>
       <div style="font-size:11px;color:var(--text3);margin-top:4px;">${(function(){
   var shareVal = '—';
   if(pt.production_tonnes && allData.countrySummary) {
@@ -712,7 +722,20 @@ function showDetail(rid){
     }
   }
   return '地区产量：' + fmtProduction(pt.production_tonnes) + ' · 占该国产量：' + shareVal;
-})()}</div>    </div>
+})()}</div>
+      ${(function(){
+        var shareVal = '—';
+        var sharePct = 0;
+        if(pt.production_tonnes && allData.countrySummary) {
+          var cs = allData.countrySummary.find(function(c){ return c.country===pt.country && c.crop_group===pt.crop_group; });
+          if(cs && cs.total_production_tonnes > 0) {
+            shareVal = (pt.production_tonnes / cs.total_production_tonnes * 100).toFixed(1) + '%';
+            sharePct = Math.min(100, Math.max(6, pt.production_tonnes / cs.total_production_tonnes * 100));
+          }
+        }
+        return sharePct > 0 ? '<div class="share-bar-container"><div class="share-bar" style="width:' + sharePct + '%"></div><div class="share-bar-value">' + shareVal + '</div></div>' : '';
+      })()}</div>
+    </div>
   `;
   
   // Core conclusion section (结论先行)
@@ -739,6 +762,20 @@ function showDetail(rid){
   }
   conclusionHtml += '</div>';
   html += conclusionHtml;
+  
+  if(soilEntry){
+    html += `
+      <div class="info-block">
+        <h3>土壤观测</h3>
+        <div class="data-grid">
+          <div class="data-cell"><span class="lbl">土壤墒情状态</span><span class="val">${soilEntry.soil_moisture_status || '—'}</span></div>
+          <div class="data-cell"><span class="lbl">30日蒸散需求</span><span class="val">${fmt(soilEntry.et0_30d_avg_mm)} mm</span></div>
+          <div class="data-cell"><span class="lbl">30日大气干燥度</span><span class="val">${fmt(soilEntry.vpd_30d_avg_kpa)} kPa</span></div>
+          <div class="data-cell"><span class="lbl">数据说明</span><span class="val" style="font-size:12px;">${soilEntry.data_completeness_note || '—'}</span></div>
+        </div>
+      </div>
+    `;
+  }
   
   if(ws){
     html += `
@@ -1234,18 +1271,30 @@ async function init(){
   console.log('[DEBUG] loaded weather_latest count:', latest.length);
   
   // Load optional data (can fail without blocking)
-  const [history, forecastSummary, countrySummary, waterStress, geojson] = await Promise.all([
+  const [history, forecastSummary, countrySummary, waterStress, geojson, soilMoistureAlias, soilMoistureVersioned] = await Promise.all([
     safeLoadJSON('region_history_90d_v1.0d.json'),
     safeLoadJSON('region_forecast_summary_v1.0d.json'),
     safeLoadJSON('country_crop_summary_v1.0d.json'),
     safeLoadJSON('water_stress_latest_v1.0e.json'),
-    safeLoadJSON('countries.geo.json')
+    safeLoadJSON('countries.geo.json'),
+    safeLoadJSON('soil_moisture_latest.json'),
+    safeLoadJSON('soil_moisture_latest_v1.0e.json')
   ]);
   
   if(history) allData.history = history;
   if(forecastSummary) allData.forecastSummary = forecastSummary;
   if(countrySummary) allData.countrySummary = countrySummary;
   if(waterStress) allData.waterStress = waterStress;
+  const soilMoisture = soilMoistureAlias || soilMoistureVersioned;
+  if(soilMoisture) {
+    allData.soilMoisture = soilMoisture;
+    allData.soilMoistureIndex = soilMoisture.reduce(function(acc, e){
+      if(e && e.weather_region_id) acc[e.weather_region_id] = e;
+      return acc;
+    }, {});
+  } else {
+    allData.soilMoistureIndex = {};
+  }
   if(geojson) {
     allData.geojson = geojson;
     debugInfo.geojsonFeatures = geojson.features ? geojson.features.length : 0;

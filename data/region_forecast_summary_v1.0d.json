@@ -1,5 +1,71 @@
 [
   {
+    "weather_region_id": "coconut::Indonesia::Jambi::admin1::椰子油",
+    "forecast_date": "2026-06-05",
+    "rain_7d_sum": 51.7,
+    "rain_16d_sum": 106.75,
+    "temp_max_7d_avg": 30.66,
+    "temp_max_16d_avg": 30.66,
+    "rain_trend_label_cn": "未来7天降雨偏多",
+    "temp_trend_label_cn": "未来7天高温维持",
+    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Maluku Utara::admin1::椰子油",
+    "forecast_date": "2026-06-05",
+    "rain_7d_sum": 71.7,
+    "rain_16d_sum": 233.75,
+    "temp_max_7d_avg": 28.01,
+    "temp_max_16d_avg": 26.62,
+    "rain_trend_label_cn": "未来7天降雨偏多",
+    "temp_trend_label_cn": "气温持平",
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Maluku::admin1::椰子油",
+    "forecast_date": "2026-06-05",
+    "rain_7d_sum": 43.7,
+    "rain_16d_sum": 115.5,
+    "temp_max_7d_avg": 25.3,
+    "temp_max_16d_avg": 24.16,
+    "rain_trend_label_cn": "未来7天降雨偏多",
+    "temp_trend_label_cn": "气温持平",
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Riau::admin1::椰子油",
+    "forecast_date": "2026-06-05",
+    "rain_7d_sum": 58.2,
+    "rain_16d_sum": 127.8,
+    "temp_max_7d_avg": 31.07,
+    "temp_max_16d_avg": 30.64,
+    "rain_trend_label_cn": "未来7天降雨偏多",
+    "temp_trend_label_cn": "未来7天高温维持",
+    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sulawesi Tengah::admin1::椰子油",
+    "forecast_date": "2026-06-05",
+    "rain_7d_sum": 58.7,
+    "rain_16d_sum": 159.5,
+    "temp_max_7d_avg": 20.73,
+    "temp_max_16d_avg": 19.38,
+    "rain_trend_label_cn": "未来7天降雨偏多",
+    "temp_trend_label_cn": "气温持平",
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::national::椰子油",
+    "forecast_date": "2026-06-05",
+    "rain_7d_sum": 25.1,
+    "rain_16d_sum": 51.65,
+    "temp_max_7d_avg": 29.64,
+    "temp_max_16d_avg": 29.55,
+    "rain_trend_label_cn": "降雨持平",
+    "temp_trend_label_cn": "气温持平",
+    "forecast_summary_cn": "降雨偏少状态有望缓解，气温持平"
+  },
+  {
     "weather_region_id": "palm::Brazil::national::棕榈油",
     "forecast_date": "2026-06-05",
     "rain_7d_sum": 1.2,

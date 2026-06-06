@@ -1042,5 +1042,527 @@
     "impact_cn": null,
     "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
     "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Paraná::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Rio Grande do Sul::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Goiás::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Mato Grosso do Sul::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Minas Gerais::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Bahia::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::São Paulo::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Santa Catarina::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Maranhão::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Piauí::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Tocantins::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Rondônia::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Distrito Federal::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Ceará::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Rio de Janeiro::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Buenos Aires::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Córdoba::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Entre Ríos::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Santa Fe::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Formosa::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Corrientes::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Tucumán::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Chaco::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Misiones::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Jujuy::admin1::豆油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Philippines::national::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Riau::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Maluku Utara::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sulawesi Tengah::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Jambi::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Maluku::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sumatera Utara::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Jawa Barat::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Lampung::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sumatera Barat::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Kalimantan Barat::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sulawesi Selatan::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Gorontalo::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Aceh::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sumatera Selatan::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Banten::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sulawesi Tenggara::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sulawesi Barat::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Kalimantan Selatan::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Kalimantan Tengah::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Papua Barat Daya::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Kepulauan Riau::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Papua::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Kalimantan Timur::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Bengkulu::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Bangka Belitung::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Papua Selatan::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Papua Barat::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Papua Tengah::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Kalimantan Utara::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::national::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": null,
+    "matched_weather_condition": null,
+    "impact_cn": null,
+    "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
+    "rule_id": null
   }
 ]
