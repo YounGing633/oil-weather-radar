@@ -1708,5 +1708,941 @@
     "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
     "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
     "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Altai Krai::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Belgorod Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Bryansk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Chechen Republic::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Chelyabinsk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Chuvash Republic::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Irkutsk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Ivanovo Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Kabardino-Balkarian Republic::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Kaliningrad Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Kaluga Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Kirov Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Kostroma Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Krasnodar Krai::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Krasnoyarsk Krai::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Kurgan Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Kursk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Lipetsk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Mari El Republic::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Moscow Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Nizhny Novgorod Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Novosibirsk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Omsk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Orenburg Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Oryol Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Penza Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Perm Krai::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Pskov Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Adygea::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Bashkortostan::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Buryatia::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Crimea::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Ingushetia::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Kalmykia::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Khakassia::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Mordovia::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of North Ossetia-Alania::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Tatarstan::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Rostov Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Ryazan Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Samara Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Saratov Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Smolensk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Stavropol Krai::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Sverdlovsk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Tambov Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Tomsk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Tula Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Tuva Republic::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Tver Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Tyumen Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Udmurt Republic::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Ulyanovsk Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Vladimir Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Volgograd Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Vologda Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Voronezh Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Yaroslavl Oblast::admin1::菜油",
+    "current_month": 6,
+    "matched_growth_stage": "开花/结荚",
+    "matched_weather_condition": "高温干旱或持续降雨",
+    "impact_cn": "授粉和结荚受压、产量和含油率下降",
+    "web_message_cn": "当前处于俄罗斯油菜开花结荚敏感窗口，高温干旱可能影响授粉和结实。",
+    "rule_id": "RU_RP_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Altai Krai::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Amur Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Belgorod Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Bryansk Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Chechen Republic::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Chelyabinsk Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Ivanovo Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Kabardino-Balkarian Republic::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Kaliningrad Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Karachay-Cherkess Republic::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Kemerovo Oblast - Kuzbass::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Krasnodar Krai::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Krasnoyarsk Krai::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Kurgan Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Kursk Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Lipetsk Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Moscow Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Nizhny Novgorod Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Novosibirsk Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Omsk Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Orenburg Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Oryol Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Penza Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Perm Krai::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Primorsky Krai::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Adygea::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Bashkortostan::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Crimea::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Dagestan::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Ingushetia::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Mordovia::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of North Ossetia-Alania::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Tatarstan::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Rostov Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Ryazan Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Samara Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "高温或降雨不足可能影响授粉和结实。",
+    "impact_cn": "开花期干热叠加会提高产量形成风险。",
+    "web_message_cn": "俄罗斯葵籽处于花蕾/开花窗口，重点观察高温和降雨偏少。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Saratov Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Stavropol Krai::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Tambov Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Tula Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Udmurt Republic::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Ulyanovsk Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Vladimir Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Volgograd Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Voronezh Oblast::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Zabaykalsky Krai::admin1::葵油",
+    "current_month": 6,
+    "matched_growth_stage": "花蕾/开花",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前开花期需要适度降雨和避免持续高温。，暂无异常天气影响。",
+    "web_message_cn": "当前处于花蕾/开花阶段，天气条件基本正常。",
+    "rule_id": "RU_SF_02"
   }
 ]
