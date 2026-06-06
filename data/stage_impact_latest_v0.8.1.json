@@ -1287,15 +1287,6 @@
     "rule_id": null
   },
   {
-    "weather_region_id": "coconut::Philippines::national::椰子油",
-    "current_month": 6,
-    "matched_growth_stage": "全年生长/干旱敏感期",
-    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
-    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
-    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
-    "rule_id": "PH_COCO_01"
-  },
-  {
     "weather_region_id": "coconut::Indonesia::Riau::admin1::椰子油",
     "current_month": 6,
     "matched_growth_stage": null,
@@ -1564,5 +1555,158 @@
     "impact_cn": null,
     "web_message_cn": "暂无该地区生长期规则，当前仅展示天气事实。",
     "rule_id": null
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION XI (DAVAO REGION)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION IX (ZAMBOANGA PENINSULA)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION X (NORTHERN MINDANAO)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION XII (SOCCSKSARGEN)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION IV-A (CALABARZON)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO (BARMM)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION VIII (EASTERN VISAYAS)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION XIII (CARAGA)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::MIMAROPA REGION::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION VI (WESTERN VISAYAS)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::NEGROS ISLAND REGION::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION VII (CENTRAL VISAYAS)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION II (CAGAYAN VALLEY)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION I (ILOCOS REGION)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION III (CENTRAL LUZON)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "rule_id": "PH_COCO_01"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::CORDILLERA ADMINISTRATIVE REGION (CAR)::admin1::椰子油",
+    "current_month": 6,
+    "matched_growth_stage": "全年生长/干旱敏感期",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "rule_id": "PH_COCO_01"
   }
 ]

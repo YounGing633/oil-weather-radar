@@ -55,17 +55,6 @@
     "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
-    "weather_region_id": "coconut::Philippines::national::椰子油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 25.1,
-    "rain_16d_sum": 51.65,
-    "temp_max_7d_avg": 29.64,
-    "temp_max_16d_avg": 29.55,
-    "rain_trend_label_cn": "降雨持平",
-    "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "降雨偏少状态有望缓解，气温持平"
-  },
-  {
     "weather_region_id": "palm::Brazil::national::棕榈油",
     "forecast_date": "2026-06-05",
     "rain_7d_sum": 1.2,
