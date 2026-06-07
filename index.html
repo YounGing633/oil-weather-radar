@@ -10,14 +10,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 :root {
-  --risk-severe: #b91c1c;
-  --risk-pressure: #f97316;
-  --risk-watch: #eab308;
-  --risk-mild: #fde047;
-  --risk-normal: #16a34a;
-  --risk-none: #64748b;
+  --risk-severe: #c0392b;
+  --risk-pressure: #e67e22;
+  --risk-watch: #d4a017;
+  --risk-mild: #f0d264;
+  --risk-normal: #27ae60;
+  --risk-none: #94a3b8;
   --oil-palm: #15803d;
-  --oil-soybean: #b45309;
+  --oil-soybean: #a16207;
   --oil-rapeseed-canola: #2563eb;
   --oil-sunflower: #7c3aed;
   --oil-coconut: #0891b2;
@@ -28,7 +28,7 @@
   --muted: #5f6b7a;
   --muted-2: #8b95a3;
   --border: #d6dae0;
-  --shadow: 0 1px 2px rgba(15,23,42,0.06), 0 8px 20px rgba(15,23,42,0.08);
+  --shadow: 0 1px 2px rgba(15,23,42,0.06), 0 6px 16px rgba(15,23,42,0.06);
   --radius: 8px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -154,7 +154,7 @@ header h1 {
   top: 12px;
   left: 12px;
   z-index: 500;
-  width: min(330px, calc(100% - 24px));
+  width: min(310px, calc(100% - 24px));
   padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -162,29 +162,34 @@ header h1 {
   box-shadow: var(--shadow);
 }
 .map-overlay h2 {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .ov-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 6px;
 }
 .ov-item {
-  padding: 7px 8px;
-  border-radius: 6px;
+  padding: 6px 7px;
+  border-radius: 5px;
   background: var(--panel-soft);
 }
 .ov-item .num {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.1;
-  font-weight: 750;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 .ov-item .lbl {
   margin-top: 2px;
   color: var(--muted-2);
-  font-size: 10px;
+  font-size: 9.5px;
+  letter-spacing: 0.2px;
 }
 .map-status {
   margin-top: 8px;
@@ -207,33 +212,37 @@ header h1 {
   position: absolute;
   z-index: 500;
   right: 14px;
-  padding: 9px 10px;
+  padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: rgba(255,255,255,0.96);
   box-shadow: var(--shadow);
-  font-size: 11px;
+  font-size: 10px;
 }
 .map-legend {
   bottom: 14px;
 }
 .oil-legend {
-  bottom: 142px;
+  bottom: 136px;
 }
 .legend-title {
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--muted-2);
 }
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin: 3px 0;
+  gap: 5px;
+  margin: 2px 0;
 }
 .legend-swatch {
-  width: 11px;
-  height: 11px;
-  border-radius: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
   flex: 0 0 auto;
 }
 .legend-dot {
@@ -253,59 +262,78 @@ header h1 {
   color: var(--muted-2);
   text-align: center;
 }
-.detail-header,
-.detail-block {
-  padding: 14px 16px;
+.detail-header {
+  padding: 16px 18px 14px;
   border-bottom: 1px solid #e9ebee;
+  background: linear-gradient(180deg, #f8f9fb 0%, #fff 100%);
+}
+.detail-block {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eef0f2;
 }
 .detail-header h2 {
-  font-size: 18px;
-  line-height: 1.25;
-  margin-bottom: 7px;
+  font-size: 17px;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
 }
 .subtitle {
   color: var(--muted);
   font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 .detail-block h3 {
   margin-bottom: 10px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 750;
+  color: var(--muted-2);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
 }
 .detail-block p,
 .detail-block li {
   color: #2d3440;
+  font-size: 12.5px;
+  line-height: 1.55;
 }
 .detail-block ol {
   padding-left: 18px;
 }
 .detail-block li {
-  margin: 5px 0;
+  margin: 4px 0;
 }
 .data-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 7px;
+}
+.data-grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .data-cell {
   min-width: 0;
-  padding: 9px 10px;
-  border: 1px solid #e6e8ec;
-  border-radius: 7px;
+  padding: 8px 10px;
+  border: 1px solid #e9ebee;
+  border-radius: 6px;
   background: var(--panel-soft);
 }
 .data-cell .lbl {
   display: block;
   color: var(--muted-2);
   font-size: 10px;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
+  letter-spacing: 0.2px;
 }
 .data-cell .val {
   display: block;
   overflow-wrap: anywhere;
-  font-size: 14px;
-  font-weight: 750;
+  font-size: 13.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #1e2530;
 }
 .badge {
   display: inline-flex;
@@ -338,9 +366,9 @@ header h1 {
 }
 .risk-stack {
   display: flex;
-  height: 18px;
+  height: 16px;
   overflow: hidden;
-  border-radius: 999px;
+  border-radius: 4px;
   background: #e8ebef;
 }
 .risk-stack-seg {
@@ -350,45 +378,78 @@ header h1 {
 .risk-stack-labels {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 10px;
-  margin-top: 7px;
+  gap: 4px 10px;
+  margin-top: 6px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 10.5px;
 }
 .region-list {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 5px;
 }
 .region-row {
   width: 100%;
-  border: 1px solid #e6e8ec;
-  border-radius: 7px;
+  border: 1px solid #e9ebee;
+  border-radius: 6px;
   background: #fff;
-  padding: 9px 10px;
+  padding: 8px 10px;
   text-align: left;
+  transition: border-color 0.15s, background 0.15s;
 }
 .region-row:hover {
-  border-color: #aab4c1;
-  background: #f9fafb;
+  border-color: #b0b8c4;
+  background: #f7f8fa;
+}
+.region-row .subtitle {
+  margin-top: 3px;
+  font-size: 11px;
 }
 .chart-box {
   position: relative;
-  height: 178px;
-  margin-top: 8px;
+  height: 172px;
+  margin-top: 10px;
 }
 .chart-box.compact {
-  height: 148px;
+  height: 140px;
 }
 .two-charts {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 16px;
 }
 .chart-title {
-  color: var(--muted);
-  font-size: 11px;
+  color: var(--muted-2);
+  font-size: 10px;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 2px;
+}
+.chart-box canvas {
+  border-radius: 4px;
+}
+.disturbed-bar-wrap {
+  margin-top: 10px;
+}
+.disturbed-bar {
+  display: flex;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #e8ebef;
+  margin-bottom: 6px;
+}
+.disturbed-bar-fill {
+  min-width: 0;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+.disturbed-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
 }
 .leaflet-tooltip.country-map-label,
 .leaflet-tooltip.region-map-label {
@@ -399,18 +460,18 @@ header h1 {
 }
 .map-label {
   display: grid;
-  grid-template-columns: 4px auto;
-  gap: 5px;
+  grid-template-columns: 3px auto;
+  gap: 4px;
   align-items: stretch;
-  max-width: 150px;
-  padding: 4px 6px;
-  border: 1px solid rgba(75,85,99,0.22);
-  border-radius: 6px;
-  background: rgba(255,255,255,0.92);
-  box-shadow: 0 1px 4px rgba(15,23,42,0.14);
+  max-width: 136px;
+  padding: 3px 5px;
+  border: 1px solid rgba(75,85,99,0.18);
+  border-radius: 5px;
+  background: rgba(255,255,255,0.93);
+  box-shadow: 0 1px 3px rgba(15,23,42,0.12);
   color: #202733;
-  font-size: 10px;
-  line-height: 1.25;
+  font-size: 9.5px;
+  line-height: 1.2;
   white-space: normal;
 }
 .map-label .stripe {
@@ -420,14 +481,23 @@ header h1 {
 .map-label strong {
   display: block;
   overflow-wrap: anywhere;
-  font-size: 10px;
+  font-size: 9.5px;
+  font-weight: 650;
 }
 .map-label span:last-child {
   color: var(--muted);
+  font-size: 8.5px;
 }
 .region-map-label .map-label {
-  max-width: 130px;
-  font-size: 9px;
+  max-width: 118px;
+  font-size: 8.5px;
+  padding: 2px 4px;
+}
+.region-map-label .map-label strong {
+  font-size: 8.5px;
+}
+.region-map-label .map-label span:last-child {
+  font-size: 8px;
 }
 .leaflet-container {
   background: #dfe5eb;
@@ -520,11 +590,11 @@ header h1 {
     </div>
 
     <div id="detail-panel">
-      <div class="empty">点击国家边界查看国家详情和地区层。</div>
+      <div class="empty">点击地图上的国家边界查看详情。</div>
     </div>
   </div>
 </div>
 
-<script src="app.js?v=20260607-v2b"></script>
+<script src="app.js?v=20260608-v2d"></script>
 </body>
 </html>

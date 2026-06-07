@@ -1,11 +1,11 @@
 const DATA_DIR = './data/';
 
 const RISK = {
-  4: { code: 'severe', cn: '显著压力', color: '#b91c1c' },
-  3: { code: 'pressure', cn: '重点压力', color: '#f97316' },
-  2: { code: 'watch', cn: '一般关注', color: '#eab308' },
-  1: { code: 'mild', cn: '轻度异常', color: '#fde047' },
-  0: { code: 'normal', cn: '正常监控', color: '#16a34a' }
+  4: { code: 'severe', cn: '显著压力', color: '#c0392b' },
+  3: { code: 'pressure', cn: '重点压力', color: '#e67e22' },
+  2: { code: 'watch', cn: '一般关注', color: '#d4a017' },
+  1: { code: 'mild', cn: '轻度异常', color: '#f0d264' },
+  0: { code: 'normal', cn: '正常监控', color: '#27ae60' }
 };
 
 const RISK_CODE_TO_NUM = {
@@ -151,6 +151,9 @@ let store = {
   geojson: null,
   adminById: new Map()
 };
+
+let currentModels = [];
+let currentCountryLabelCenters = [];
 
 function isNum(value) {
   return value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
@@ -298,6 +301,7 @@ function initMap() {
 
   map.on('zoomend', () => {
     if (state.layer === 'region') refreshRegionLabels();
+    if (state.layer === 'country') refreshCountryLabels();
   });
 
   requestAnimationFrame(() => map.invalidateSize());
@@ -463,25 +467,29 @@ function createCountryTooltip(model) {
   const rows = model.records
     .sort((a, b) => riskNumFromCountry(b) - riskNumFromCountry(a))
     .map(row => `
-      <div style="margin:4px 0;">
+      <div style="margin:3px 0;">
         <b>${esc(cropLabel(row))}</b> ${riskBadge(riskNumFromCountry(row), row.weighted_risk_level_cn)}
-        <br>产量 ${esc(fmtProduction(row.total_production_tonnes))}；受扰 ${esc(fmtPct(row.disturbed_share))}
-        <br>${esc(row.production_basis_cn)}：${esc(row.production_basis_note_cn || '')}
+        <span style="color:#8b95a3;margin-left:4px;">${esc(fmtProduction(row.total_production_tonnes))}</span>
       </div>
     `).join('');
   return `
-    <div style="min-width:220px;">
-      <b>${esc(model.top.country_cn || getCountryName(model.key))}</b><br>
+    <div style="min-width:210px;font-size:12px;">
+      <b style="font-size:13px;">${esc(model.top.country_cn || getCountryName(model.key))}</b>
       ${rows}
     </div>
   `;
 }
 
-function countryLabelHtml(record) {
+function countryLabelHtml(record, zoom) {
+  const showDetail = (zoom || 3) >= 4;
+  const name = record.country_cn || record.country;
+  const sub = showDetail
+    ? `<span>${esc(cropLabel(record))} ${esc(fmtProduction(record.total_production_tonnes))}</span>`
+    : '';
   return `
     <div class="map-label" style="--oil-color:${cropColor(record.crop_group)}">
       <span class="stripe"></span>
-      <div><strong>${esc(record.country_cn || record.country)}｜${esc(cropLabel(record))}</strong><span>${esc(fmtProduction(record.total_production_tonnes))}</span></div>
+      <div><strong>${esc(name)}</strong>${sub}</div>
     </div>
   `;
 }
@@ -491,6 +499,8 @@ function renderCountryLayer() {
   clearMap();
   setLayerButtons();
   const models = getCountryModels();
+  currentModels = models;
+  currentCountryLabelCenters = [];
   const byKey = new Map(models.map(model => [model.key, model]));
   let polygonCount = 0;
   let fallbackCount = 0;
@@ -521,15 +531,18 @@ function renderCountryLayer() {
         });
 
         const center = layer.getBounds().getCenter();
-        L.tooltip({
-          permanent: true,
-          direction: 'center',
-          className: 'country-map-label',
-          opacity: 1
-        })
-          .setLatLng(center)
-          .setContent(countryLabelHtml(model.top))
-          .addTo(layers.countryLabels);
+        currentCountryLabelCenters.push({ center, model, direction: 'center', offset: [0, 0] });
+        if (shouldShowCountryLabel(model, map.getZoom())) {
+          L.tooltip({
+            permanent: true,
+            direction: 'center',
+            className: 'country-map-label',
+            opacity: 1
+          })
+            .setLatLng(center)
+            .setContent(countryLabelHtml(model.top, map.getZoom()))
+            .addTo(layers.countryLabels);
+        }
       }
     }).addTo(layers.country);
   }
@@ -553,13 +566,16 @@ function renderCountryLayer() {
     }).addTo(layers.fallback);
     marker.bindTooltip(createCountryTooltip(model), { sticky: true });
     marker.on('click', () => selectCountry(model));
-    L.tooltip({
-      permanent: true,
-      direction: 'top',
-      offset: [0, -8],
-      className: 'country-map-label',
-      opacity: 1
-    }).setLatLng(center).setContent(countryLabelHtml(model.top)).addTo(layers.countryLabels);
+    currentCountryLabelCenters.push({ center, model, direction: 'top', offset: [0, -8] });
+    if (shouldShowCountryLabel(model, map.getZoom())) {
+      L.tooltip({
+        permanent: true,
+        direction: 'top',
+        offset: [0, -8],
+        className: 'country-map-label',
+        opacity: 1
+      }).setLatLng(center).setContent(countryLabelHtml(model.top, map.getZoom())).addTo(layers.countryLabels);
+    }
   });
 
   const bounds = boundsFor(['country', 'fallback', 'virtual']);
@@ -571,10 +587,10 @@ function renderCountryLayer() {
     main: models.length,
     risk: highCount,
     fallback: fallbackCount,
-    note: '国家层按国家边界着色；圆点只用于无边界或欧盟虚拟单元。'
+    note: '国家层按风险着色；圆点仅用于无边界或欧盟虚拟单元。'
   };
   updateOverlay();
-  document.getElementById('detail-panel').innerHTML = '<div class="empty">点击国家边界查看国家详情和地区层。</div>';
+  document.getElementById('detail-panel').innerHTML = '<div class="empty">点击地图上的国家边界查看详情。</div>';
 }
 
 function hasRenderedCountryPolygon(countryKey) {
@@ -598,6 +614,34 @@ function countryCentroid(countryKey) {
   return [lat, lon];
 }
 
+function shouldShowCountryLabel(model, zoom) {
+  const risk = riskNumFromCountry(model.top);
+  const production = Number(model.top.total_production_tonnes) || 0;
+  if (zoom <= 2) return risk >= 4 || production > 20000000;
+  if (zoom <= 3) return risk >= 3 || production > 5000000;
+  if (zoom <= 4) return true;
+  return true;
+}
+
+function refreshCountryLabels() {
+  layers.countryLabels.clearLayers();
+  if (state.layer !== 'country') return;
+  const zoom = map.getZoom();
+  currentCountryLabelCenters.forEach(item => {
+    if (!shouldShowCountryLabel(item.model, zoom)) return;
+    L.tooltip({
+      permanent: true,
+      direction: item.direction || 'center',
+      offset: item.offset || [0, 0],
+      className: 'country-map-label',
+      opacity: 1
+    })
+      .setLatLng(item.center)
+      .setContent(countryLabelHtml(item.model.top, zoom))
+      .addTo(layers.countryLabels);
+  });
+}
+
 function renderEuCountryMarker(model) {
   const center = [50.3, 10.5];
   const marker = L.circleMarker(center, {
@@ -610,13 +654,16 @@ function renderEuCountryMarker(model) {
   }).addTo(layers.virtual);
   marker.bindTooltip(createCountryTooltip(model), { sticky: true });
   marker.on('click', () => selectCountry(model));
-  L.tooltip({
-    permanent: true,
-    direction: 'top',
-    offset: [0, -10],
-    className: 'country-map-label',
-    opacity: 1
-  }).setLatLng(center).setContent(countryLabelHtml(model.top)).addTo(layers.countryLabels);
+  currentCountryLabelCenters.push({ center, model, direction: 'top', offset: [0, -10] });
+  if (shouldShowCountryLabel(model, map.getZoom())) {
+    L.tooltip({
+      permanent: true,
+      direction: 'top',
+      offset: [0, -10],
+      className: 'country-map-label',
+      opacity: 1
+    }).setLatLng(center).setContent(countryLabelHtml(model.top, map.getZoom())).addTo(layers.countryLabels);
+  }
 }
 
 async function selectCountry(model) {
@@ -648,41 +695,59 @@ function showCountryDetail(record) {
   if (record.weather_condition_summary_cn) conclusionItems.push(`天气：${record.weather_condition_summary_cn}`);
   if (record.soil_condition_summary_cn) conclusionItems.push(`土壤：${record.soil_condition_summary_cn}`);
   if (record.production_basis_cn && record.production_impact_cn) conclusionItems.push(`产量影响：${record.production_impact_cn}`);
-  if (record.forecast_summary_cn) conclusionItems.push(`未来展望：${record.forecast_summary_cn}`);
+  if (record.forecast_summary_cn) conclusionItems.push(`展望：${record.forecast_summary_cn}`);
+
+  const disturbed = Number(record.disturbed_production_tonnes) || 0;
+  const total = Number(record.total_production_tonnes) || 0;
+  const normal = Math.max(0, total - disturbed);
+  const disturbedPct = total > 0 ? (disturbed / total * 100).toFixed(1) : '0.0';
 
   document.getElementById('detail-panel').innerHTML = `
     <div class="detail-header">
-      <h2>${esc(record.country_cn || getCountryName(countryKey))}｜${esc(cropLabel(record))}</h2>
-      <div class="subtitle">${riskBadge(riskNumFromCountry(record), record.weighted_risk_level_cn)} <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropLabel(record))}</span></div>
-    </div>
-    <div class="detail-block">
-      <h3>1. 产量口径</h3>
-      <div class="data-grid">
-        <div class="data-cell"><span class="lbl">产量</span><span class="val">${esc(fmtProduction(record.total_production_tonnes))}</span></div>
-        <div class="data-cell"><span class="lbl">地区数</span><span class="val">${esc(fmtInt(record.region_count || regionRecords.length))}</span></div>
-        <div class="data-cell"><span class="lbl">产量口径</span><span class="val">${esc(record.production_basis_cn)}</span></div>
-        <div class="data-cell"><span class="lbl">来源</span><span class="val">${esc(record.source_name)}</span></div>
+      <h2>${esc(record.country_cn || getCountryName(countryKey))}</h2>
+      <div class="subtitle">
+        ${riskBadge(riskNumFromCountry(record), record.weighted_risk_level_cn)}
+        <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropLabel(record))}</span>
+        <span class="pill">${esc(fmtProduction(record.total_production_tonnes))}</span>
       </div>
-      <p style="margin-top:8px;color:var(--muted);">${esc(record.production_basis_note_cn || record.aggregation_note_cn || '')}</p>
     </div>
     <div class="detail-block">
-      <h3>2. 国家风险</h3>
+      <h3>产量口径</h3>
+      <div class="data-grid cols-3">
+        <div class="data-cell"><span class="lbl">地区数</span><span class="val">${esc(fmtInt(record.region_count || regionRecords.length))}</span></div>
+        <div class="data-cell"><span class="lbl">口径</span><span class="val">${esc(record.production_basis_cn || '—')}</span></div>
+        <div class="data-cell"><span class="lbl">来源</span><span class="val">${esc(record.source_name || '—')}</span></div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <h3>风险概览</h3>
       <div class="data-grid">
-        <div class="data-cell"><span class="lbl">加权风险分</span><span class="val">${esc(fmtNum(record.weighted_risk_score, 2))}</span></div>
+        <div class="data-cell"><span class="lbl">加权风险</span><span class="val">${esc(fmtNum(record.weighted_risk_score, 2))}</span></div>
         <div class="data-cell"><span class="lbl">主要风险</span><span class="val">${esc(riskTypeText(record.dominant_risk_type))}</span></div>
-        <div class="data-cell"><span class="lbl">受扰产量</span><span class="val">${esc(fmtProduction(record.disturbed_production_tonnes))}</span></div>
-        <div class="data-cell"><span class="lbl">受扰占比</span><span class="val">${esc(fmtPct(record.disturbed_share))}</span></div>
+      </div>
+      <div class="disturbed-bar-wrap">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+          <span style="font-size:10px;color:var(--muted-2);letter-spacing:0.2px;">受扰产量</span>
+          <span style="font-size:10px;font-weight:600;color:#1e2530;">${esc(fmtProduction(disturbed))} (${disturbedPct}%)</span>
+        </div>
+        <div class="disturbed-bar">
+          <div class="disturbed-bar-fill" style="width:${disturbedPct}%;background:${riskColor(riskNumFromCountry(record))};"></div>
+        </div>
+        <div class="disturbed-bar-labels">
+          <span>受扰 ${esc(fmtProduction(disturbed))}</span>
+          <span>正常 ${esc(fmtProduction(normal))}</span>
+        </div>
       </div>
       <div style="margin-top:10px;">${stackHtml}</div>
     </div>
     <div class="detail-block">
-      <h3>3. 结论</h3>
-      <ol>${conclusionItems.map(item => `<li>${esc(item)}</li>`).join('')}</ol>
+      <h3>核心结论</h3>
+      <ol>${conclusionItems.map(item => `<li>${esc(item)}</li>`).join('') || '<li style="color:var(--muted-2);">暂无结论摘要</li>'}</ol>
     </div>
     <div class="detail-block">
-      <h3>地区入口</h3>
+      <h3>主要地区</h3>
       <div class="region-list">
-        ${topRegions.map(row => regionRowButton(row)).join('') || '<p class="subtitle">该国家当前无可展示地区记录。</p>'}
+        ${topRegions.map(row => regionRowButton(row)).join('') || '<p style="color:var(--muted-2);font-size:12px;">该国家当前无可展示地区记录。</p>'}
       </div>
     </div>
   `;
@@ -695,16 +760,15 @@ function renderRiskStack(records) {
     const level = riskNum(row.risk_level_v3);
     totals.set(level, totals.get(level) + (Number(row.production_tonnes) || 0));
   });
-  if (!total) return '<p class="subtitle">地区产量权重不足，无法绘制风险结构。</p>';
+  if (!total) return '';
   const segments = [4, 3, 2, 1, 0].map(level => {
     const share = totals.get(level) / total * 100;
     if (share <= 0) return '';
     return `<div class="risk-stack-seg" title="${RISK[level].cn} ${share.toFixed(1)}%" style="width:${share}%;background:${RISK[level].color}"></div>`;
   }).join('');
-  const labels = [4, 3, 2, 1, 0].map(level => {
+  const labels = [4, 3, 2, 1, 0].filter(level => totals.get(level) > 0).map(level => {
     const share = totals.get(level) / total * 100;
-    if (share <= 0) return '';
-    return `<span><span class="legend-swatch" style="display:inline-block;background:${RISK[level].color};vertical-align:-1px;"></span> ${RISK[level].cn} ${share.toFixed(1)}%</span>`;
+    return `<span><span class="legend-swatch" style="display:inline-block;width:8px;height:8px;background:${RISK[level].color};border-radius:2px;vertical-align:-1px;margin-right:3px;"></span>${RISK[level].cn} ${share.toFixed(0)}%</span>`;
   }).join('');
   return `<div class="risk-stack">${segments}</div><div class="risk-stack-labels">${labels}</div>`;
 }
@@ -713,10 +777,10 @@ function regionRowButton(row) {
   return `
     <button type="button" class="region-row" data-region-id="${escAttr(row.weather_region_id)}">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
-        <b>${esc(shortRegionName(row))}</b>
+        <b style="font-size:12.5px;">${esc(shortRegionName(row))}</b>
         ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
       </div>
-      <div class="subtitle">${esc(cropLabel(row))}｜全国占比 ${esc(fmtPct(row.national_share))}｜${esc(riskTypeText(row.risk_type))}</div>
+      <div class="subtitle">${esc(cropLabel(row))} ${esc(fmtPct(row.national_share))}</div>
     </button>
   `;
 }
@@ -870,11 +934,10 @@ function renderRegionFallbackMarker(row) {
 
 function regionTooltip(row) {
   return `
-    <div style="min-width:190px;">
-      <b>${esc(shortRegionName(row))}</b><br>
-      ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
-      <div style="margin-top:4px;">${esc(cropLabel(row))}｜全国占比 ${esc(fmtPct(row.national_share))}</div>
-      <div>${esc(row.risk_reason_cn || riskTypeText(row.risk_type))}</div>
+    <div style="min-width:180px;font-size:12px;">
+      <b>${esc(shortRegionName(row))}</b> ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
+      <div style="margin-top:4px;color:var(--muted);">${esc(cropLabel(row))} ${esc(fmtPct(row.national_share))}</div>
+      <div style="margin-top:2px;">${esc(row.risk_reason_cn || riskTypeText(row.risk_type))}</div>
     </div>
   `;
 }
@@ -908,10 +971,11 @@ function currentRegionRecords() {
 
 function shouldShowRegionLabel(row, zoom) {
   const share = Number(row.national_share ?? row.eu_share ?? 0);
-  if (share >= 0.2) return true;
-  if (zoom >= 5 && share >= 0.1) return true;
-  if (zoom >= 6 && share >= 0.03) return true;
-  return zoom >= 7;
+  if (zoom >= 7) return true;
+  if (zoom >= 6) return share >= 0.03;
+  if (zoom >= 5) return share >= 0.08;
+  if (zoom >= 4) return share >= 0.15;
+  return share >= 0.25;
 }
 
 function regionLabelHtml(row) {
@@ -919,7 +983,7 @@ function regionLabelHtml(row) {
   return `
     <div class="map-label" style="--oil-color:${cropColor(row.crop_group)}">
       <span class="stripe"></span>
-      <div><strong>${esc(shortRegionName(row))}｜${esc(cropLabel(row))}</strong><span>${esc(fmtPct(share))}</span></div>
+      <div><strong>${esc(shortRegionName(row))}</strong><span>${esc(cropLabel(row))}</span></div>
     </div>
   `;
 }
@@ -1031,16 +1095,20 @@ function showEuRegionDetail(euRow) {
   destroyCharts();
   document.getElementById('detail-panel').innerHTML = `
     <div class="detail-header">
-      <h2>${esc(euRow.region_cn || euRow.region)}｜${esc(cropLabel(euRow))}</h2>
-      <div class="subtitle">${riskBadge(euRow.risk_level_v3, euRow.risk_level_v3_cn)} <span class="pill">欧盟成员国</span></div>
+      <h2>${esc(euRow.region_cn || euRow.region)}</h2>
+      <div class="subtitle">
+        ${riskBadge(euRow.risk_level_v3, euRow.risk_level_v3_cn)}
+        <span class="pill oil-pill" style="--oil-color:${cropColor(euRow.crop_group)}">${esc(cropLabel(euRow))}</span>
+        <span class="pill">欧盟成员国</span>
+      </div>
     </div>
     <div class="detail-block">
       <h3>核心结论</h3>
       <div class="data-grid">
-        <div class="data-cell"><span class="lbl">成员国产量</span><span class="val">${esc(fmtProduction(euRow.production_tonnes))}</span></div>
+        <div class="data-cell"><span class="lbl">产量</span><span class="val">${esc(fmtProduction(euRow.production_tonnes))}</span></div>
         <div class="data-cell"><span class="lbl">欧盟占比</span><span class="val">${esc(fmtPct(euRow.eu_share))}</span></div>
       </div>
-      <p style="margin-top:8px;">该成员国暂无完整地区序列，当前显示欧盟聚合记录。</p>
+      <p style="margin-top:8px;color:var(--muted);font-size:11.5px;">该成员国暂无完整地区序列，当前显示欧盟聚合记录。</p>
     </div>
   `;
 }
@@ -1053,64 +1121,67 @@ function showRegionDetail(row) {
     row.weather_condition_summary_cn ? `天气：${row.weather_condition_summary_cn}` : '',
     row.soil_condition_summary_cn ? `土壤：${row.soil_condition_summary_cn}` : '',
     row.production_impact_cn ? `产量影响：${row.production_impact_cn}` : '',
-    row.forecast_summary_cn ? `未来展望：${row.forecast_summary_cn}` : ''
+    row.forecast_summary_cn ? `展望：${row.forecast_summary_cn}` : ''
   ].filter(Boolean);
+
+  const soilStatus = esc(row.soil_status_cn || '—');
+  const rzPct = isNum(row.rootzone_percentile) ? Math.round(Number(row.rootzone_percentile)) : null;
+  const sfPct = isNum(row.surface_percentile) ? Math.round(Number(row.surface_percentile)) : null;
 
   document.getElementById('detail-panel').innerHTML = `
     <div class="detail-header">
       <h2>${esc(shortRegionName(row))}</h2>
-      <div class="subtitle">${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)} <span class="pill oil-pill" style="--oil-color:${cropColor(row.crop_group)}">${esc(cropLabel(row))}</span></div>
+      <div class="subtitle">
+        ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
+        <span class="pill oil-pill" style="--oil-color:${cropColor(row.crop_group)}">${esc(cropLabel(row))}</span>
+        <span class="pill">全国占比 ${esc(fmtPct(row.national_share))}</span>
+      </div>
     </div>
     <div class="detail-block">
-      <h3>1. 核心结论</h3>
-      <ol>${conclusion.map(item => `<li>${esc(item)}</li>`).join('')}</ol>
+      <h3>核心结论</h3>
+      <ol>${conclusion.map(item => `<li>${esc(item)}</li>`).join('') || '<li style="color:var(--muted-2);">暂无结论摘要</li>'}</ol>
       <div class="data-grid" style="margin-top:10px;">
         <div class="data-cell"><span class="lbl">产量</span><span class="val">${esc(fmtProduction(row.production_tonnes))}</span></div>
         <div class="data-cell"><span class="lbl">全国占比</span><span class="val">${esc(fmtPct(row.national_share))}</span></div>
       </div>
     </div>
     <div class="detail-block">
-      <h3>2. 土壤情况</h3>
-      <div class="data-grid">
-        <div class="data-cell"><span class="lbl">土壤状态</span><span class="val">${esc(row.soil_status_cn)}</span></div>
-        <div class="data-cell"><span class="lbl">根区分位</span><span class="val">${esc(fmtNum(row.rootzone_percentile, 1, ''))}</span></div>
-        <div class="data-cell"><span class="lbl">表层分位</span><span class="val">${esc(fmtNum(row.surface_percentile, 1, ''))}</span></div>
-        <div class="data-cell"><span class="lbl">根区含水量</span><span class="val">${esc(fmtNum(row.soil_water_rootzone, 4, ' m³/m³'))}</span></div>
+      <h3>土壤情况</h3>
+      <div class="data-grid cols-3">
+        <div class="data-cell"><span class="lbl">状态</span><span class="val">${soilStatus}</span></div>
+        <div class="data-cell"><span class="lbl">根区分位</span><span class="val">${rzPct !== null ? rzPct : '—'}</span></div>
+        <div class="data-cell"><span class="lbl">表层分位</span><span class="val">${sfPct !== null ? sfPct : '—'}</span></div>
       </div>
       <div class="chart-box"><canvas id="chart-soil"></canvas></div>
     </div>
     <div class="detail-block">
-      <h3>3. 累积降雨距平</h3>
+      <h3>累积降雨</h3>
       <div class="data-grid">
-        <div class="data-cell"><span class="lbl">近30天实际</span><span class="val">${esc(fmtNum(row.precip_30d_actual, 1, ' mm'))}</span></div>
-        <div class="data-cell"><span class="lbl">近30天常年</span><span class="val">${esc(fmtNum(row.precip_30d_normal, 1, ' mm'))}</span></div>
-        <div class="data-cell"><span class="lbl">距平</span><span class="val">${esc(fmtSigned(row.precip_30d_anomaly_mm, 1, ' mm'))}</span></div>
-        <div class="data-cell"><span class="lbl">实际/常年</span><span class="val">${esc(fmtPct(row.precip_30d_ratio_pct, 0, false))}</span></div>
+        <div class="data-cell"><span class="lbl">近30天实际</span><span class="val">${esc(fmtNum(row.precip_30d_actual, 0, ' mm'))}</span></div>
+        <div class="data-cell"><span class="lbl">近30天常年</span><span class="val">${esc(fmtNum(row.precip_30d_normal, 0, ' mm'))}</span></div>
       </div>
       <div class="chart-box compact"><canvas id="chart-precip-cum"></canvas></div>
     </div>
     <div class="detail-block">
-      <h3>4. 降雨距平 + 温度距平</h3>
+      <h3>降雨距平 + 温度距平</h3>
       <div class="two-charts">
         <div>
-          <div class="chart-title">近90天 30日降雨距平</div>
+          <div class="chart-title">30日降雨距平（近90天）</div>
           <div class="chart-box compact"><canvas id="chart-rain-anomaly"></canvas></div>
         </div>
         <div>
-          <div class="chart-title">近90天 最高温距平</div>
+          <div class="chart-title">最高温距平（近90天）</div>
           <div class="chart-box compact"><canvas id="chart-temp-anomaly"></canvas></div>
         </div>
       </div>
     </div>
     <div class="detail-block">
-      <h3>5. 未来天气预报</h3>
+      <h3>未来预报</h3>
       <div class="data-grid">
-        <div class="data-cell"><span class="lbl">未来7天降雨</span><span class="val">${esc(fmtNum(row.forecast_7d_precip, 1, ' mm'))}</span></div>
-        <div class="data-cell"><span class="lbl">未来16天降雨</span><span class="val">${esc(fmtNum(row.forecast_16d_precip, 1, ' mm'))}</span></div>
-        <div class="data-cell"><span class="lbl">16天最高温</span><span class="val">${esc(fmtNum(row.forecast_16d_temp_max, 1, ' °C'))}</span></div>
-        <div class="data-cell"><span class="lbl">16天最低温</span><span class="val">${esc(fmtNum(row.forecast_16d_temp_min, 1, ' °C'))}</span></div>
+        <div class="data-cell"><span class="lbl">7天降雨</span><span class="val">${esc(fmtNum(row.forecast_7d_precip, 0, ' mm'))}</span></div>
+        <div class="data-cell"><span class="lbl">16天降雨</span><span class="val">${esc(fmtNum(row.forecast_16d_precip, 0, ' mm'))}</span></div>
       </div>
-      <p style="margin-top:8px;color:var(--muted);">${esc(forecastReliefText(row))}</p>
+      <p style="margin-top:6px;color:var(--muted);font-size:11.5px;">${esc(forecastReliefText(row))}</p>
       <div class="chart-box"><canvas id="chart-forecast"></canvas></div>
     </div>
   `;
@@ -1143,11 +1214,11 @@ const soilBandPlugin = {
     const area = chart.chartArea;
     if (!y || !area) return;
     const bands = [
-      [0, 10, 'rgba(185,28,28,0.10)'],
-      [10, 30, 'rgba(249,115,22,0.09)'],
-      [30, 70, 'rgba(22,163,74,0.08)'],
-      [70, 90, 'rgba(37,99,235,0.08)'],
-      [90, 100, 'rgba(124,58,237,0.08)']
+      [0, 10, 'rgba(192,57,43,0.08)'],
+      [10, 30, 'rgba(230,126,34,0.06)'],
+      [30, 70, 'rgba(39,174,96,0.06)'],
+      [70, 90, 'rgba(37,99,235,0.06)'],
+      [90, 100, 'rgba(124,58,237,0.06)']
     ];
     const ctx = chart.ctx;
     ctx.save();
@@ -1177,11 +1248,11 @@ function renderSoilChart(series) {
     data: {
       labels: chartLabels(series),
       datasets: [
-        { label: '根区分位', data: chartValues(series, 'rootzone_percentile'), borderColor: '#111827', borderWidth: 2, pointRadius: 0, tension: 0.25 },
-        { label: '表层分位', data: chartValues(series, 'surface_percentile'), borderColor: '#2563eb', borderWidth: 1.4, pointRadius: 0, tension: 0.25 }
+        { label: '根区分位', data: chartValues(series, 'rootzone_percentile'), borderColor: '#1e293b', borderWidth: 1.8, pointRadius: 0, tension: 0.3, fill: false },
+        { label: '表层分位', data: chartValues(series, 'surface_percentile'), borderColor: '#3b82f6', borderWidth: 1.2, pointRadius: 0, tension: 0.3, borderDash: [3, 2], fill: false }
       ]
     },
-    options: chartBaseOptions({ yMin: 0, yMax: 100, yTitle: 'percentile' }),
+    options: chartBaseOptions({ yMin: 0, yMax: 100, yTitle: 'percentile', showXAxis: true }),
     plugins: [soilBandPlugin]
   });
 }
@@ -1194,11 +1265,11 @@ function renderPrecipCumChart(series) {
     data: {
       labels: chartLabels(series),
       datasets: [
-        { label: '实际', data: chartValues(series, 'precip_30d_actual'), borderColor: '#2563eb', borderWidth: 1.8, pointRadius: 0, tension: 0.25 },
-        { label: '常年', data: chartValues(series, 'precip_30d_normal'), borderColor: '#64748b', borderWidth: 1.2, pointRadius: 0, borderDash: [4, 3], tension: 0.25 }
+        { label: '实际', data: chartValues(series, 'precip_30d_actual'), borderColor: '#2563eb', borderWidth: 1.6, pointRadius: 0, tension: 0.3, fill: { target: 'origin', above: 'rgba(37,99,235,0.06)' } },
+        { label: '常年', data: chartValues(series, 'precip_30d_normal'), borderColor: '#94a3b8', borderWidth: 1, pointRadius: 0, borderDash: [4, 3], tension: 0.3 }
       ]
     },
-    options: chartBaseOptions({ yMin: 0, yTitle: 'mm' })
+    options: chartBaseOptions({ yMin: 0, yTitle: 'mm', showXAxis: true })
   });
 }
 
@@ -1213,32 +1284,35 @@ function renderRainAnomalyChart(series) {
       datasets: [{
         label: '降雨距平',
         data: values,
-        backgroundColor: values.map(v => v === null ? 'rgba(148,163,184,0.25)' : v < 0 ? 'rgba(249,115,22,0.6)' : 'rgba(37,99,235,0.55)'),
-        barThickness: 3
+        backgroundColor: values.map(v => v === null ? 'rgba(148,163,184,0.15)' : v < 0 ? 'rgba(192,57,43,0.45)' : 'rgba(37,99,235,0.4)'),
+        borderRadius: 1,
+        barThickness: 2.5
       }]
     },
-    options: chartBaseOptions({ yTitle: 'mm' })
+    options: chartBaseOptions({ yTitle: 'mm', showXAxis: true })
   });
 }
 
 function renderTempAnomalyChart(series) {
   const canvas = document.getElementById('chart-temp-anomaly');
   if (!canvas || !series.length) return;
+  const values = chartValues(series, 'temp_max_anomaly_c');
   charts.tempAnomaly = new Chart(canvas, {
     type: 'line',
     data: {
       labels: chartLabels(series),
       datasets: [{
         label: '最高温距平',
-        data: chartValues(series, 'temp_max_anomaly_c'),
+        data: values,
         borderColor: '#b45309',
-        backgroundColor: 'rgba(180,83,9,0.12)',
-        borderWidth: 1.8,
+        backgroundColor: 'rgba(180,83,9,0.08)',
+        borderWidth: 1.5,
         pointRadius: 0,
-        tension: 0.25
+        tension: 0.3,
+        fill: true
       }]
     },
-    options: chartBaseOptions({ yTitle: '°C' })
+    options: chartBaseOptions({ yTitle: '°C', showXAxis: true })
   });
 }
 
@@ -1250,19 +1324,23 @@ function renderForecastChart(series) {
     data: {
       labels: chartLabels(series, 'target_date'),
       datasets: [
-        { type: 'bar', label: '降雨', data: chartValues(series, 'precipitation_mm'), backgroundColor: 'rgba(37,99,235,0.34)', yAxisID: 'y1', barThickness: 7 },
-        { type: 'line', label: '最高温', data: chartValues(series, 'temp_max_c'), borderColor: '#b45309', borderWidth: 1.7, pointRadius: 1.5, yAxisID: 'y', tension: 0.25 },
-        { type: 'line', label: '最低温', data: chartValues(series, 'temp_min_c'), borderColor: '#2563eb', borderWidth: 1.7, pointRadius: 1.5, yAxisID: 'y', tension: 0.25 }
+        { type: 'bar', label: '降雨', data: chartValues(series, 'precipitation_mm'), backgroundColor: 'rgba(37,99,235,0.28)', borderColor: 'rgba(37,99,235,0.5)', borderWidth: 0.5, yAxisID: 'y1', barThickness: 6, borderRadius: 2 },
+        { type: 'line', label: '最高温', data: chartValues(series, 'temp_max_c'), borderColor: '#b45309', borderWidth: 1.5, pointRadius: 1.5, pointBackgroundColor: '#b45309', yAxisID: 'y', tension: 0.3 },
+        { type: 'line', label: '最低温', data: chartValues(series, 'temp_min_c'), borderColor: '#3b82f6', borderWidth: 1.5, pointRadius: 1.5, pointBackgroundColor: '#3b82f6', yAxisID: 'y', tension: 0.3 }
       ]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { labels: { boxWidth: 10, font: { size: 10 } } } },
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: { labels: { boxWidth: 8, boxHeight: 8, font: { size: 9 }, padding: 8, usePointStyle: true } },
+        tooltip: { titleFont: { size: 10 }, bodyFont: { size: 10 }, padding: 6 }
+      },
       scales: {
-        x: { ticks: { font: { size: 9 }, maxTicksLimit: 8 }, grid: { display: false } },
-        y: { position: 'left', ticks: { font: { size: 9 } }, grid: { color: '#edf0f3' }, title: { display: true, text: '°C', font: { size: 9 } } },
-        y1: { position: 'right', min: 0, ticks: { font: { size: 9 } }, grid: { display: false }, title: { display: true, text: 'mm', font: { size: 9 } } }
+        x: { ticks: { font: { size: 8 }, maxTicksLimit: 8, maxRotation: 0 }, grid: { display: false } },
+        y: { position: 'left', ticks: { font: { size: 8 }, maxTicksLimit: 5 }, grid: { color: 'rgba(0,0,0,0.04)' }, title: { display: true, text: '°C', font: { size: 8 }, color: '#8b95a3' } },
+        y1: { position: 'right', min: 0, ticks: { font: { size: 8 }, maxTicksLimit: 4 }, grid: { display: false }, title: { display: true, text: 'mm', font: { size: 8 }, color: '#8b95a3' } }
       }
     }
   });
@@ -1270,14 +1348,16 @@ function renderForecastChart(series) {
 
 function chartBaseOptions(opts = {}) {
   const yScale = {
-    grid: { color: '#edf0f3' },
-    ticks: { font: { size: 9 } }
+    grid: { color: 'rgba(0,0,0,0.04)', drawBorder: false },
+    ticks: { font: { size: 9 }, maxTicksLimit: 5, color: '#8b95a3' }
   };
-  if (opts.yTitle) yScale.title = { display: true, text: opts.yTitle, font: { size: 9 } };
-  const scales = {
-    x: { display: false, grid: { display: false } },
-    y: yScale
+  if (opts.yTitle) yScale.title = { display: true, text: opts.yTitle, font: { size: 8 }, color: '#8b95a3' };
+  const xScale = {
+    display: !!opts.showXAxis,
+    grid: { display: false },
+    ticks: { font: { size: 8 }, maxTicksLimit: 6, maxRotation: 0, color: '#8b95a3' }
   };
+  const scales = { x: xScale, y: yScale };
   if (opts.yMin !== undefined) scales.y.min = opts.yMin;
   if (opts.yMax !== undefined) scales.y.max = opts.yMax;
   return {
@@ -1285,7 +1365,8 @@ function chartBaseOptions(opts = {}) {
     maintainAspectRatio: false,
     interaction: { intersect: false, mode: 'index' },
     plugins: {
-      legend: { labels: { boxWidth: 10, font: { size: 10 } } }
+      legend: { labels: { boxWidth: 8, boxHeight: 8, font: { size: 9 }, padding: 8, usePointStyle: true } },
+      tooltip: { titleFont: { size: 10 }, bodyFont: { size: 10 }, padding: 6, backgroundColor: 'rgba(23,27,34,0.92)', cornerRadius: 4 }
     },
     scales
   };
