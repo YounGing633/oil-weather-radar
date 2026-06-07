@@ -1,23 +1,19 @@
 [
   {
     "country": "Indonesia",
-    "country_cn": "印度尼西亚",
+    "country_cn": "?????",
     "geojson_file": "admin1_geojson/indonesia_admin1.geojson",
-    "feature_count": 34,
-    "matched_region_count": 26,
-    "unmatched_region_names": [
-      "Papua Barat Daya",
-      "Papua Selatan",
-      "Papua Tengah"
-    ],
-    "source_name": "geoBoundaries (simplified)",
-    "source_url": "https://www.geoboundaries.org/countryDownloads.html",
+    "feature_count": 38,
+    "matched_region_count": 29,
+    "unmatched_region_names": [],
+    "source_name": "GeoJson-Indonesia-38-Provinsi province GeoJSON (38 provinces, 2023 update)",
+    "source_url": "https://github.com/ardian28/GeoJson-Indonesia-38-Provinsi/blob/main/Provinsi/38%20Provinsi%20Indonesia%20-%20Provinsi.json",
     "status": "ok",
-    "note": "3个新省份(2022-2023年设立)在GeoJSON中尚未收录，使用点位兜底"
+    "note": "Replaced old 34-province source; Papua Barat Daya, Papua Selatan, and Papua Tengah now match admin1 polygons."
   },
   {
     "country": "Malaysia",
-    "country_cn": "马来西亚",
+    "country_cn": "????",
     "geojson_file": "admin1_geojson/malaysia_admin1.geojson",
     "feature_count": 16,
     "matched_region_count": 9,
@@ -25,11 +21,11 @@
     "source_name": "geoBoundaries (simplified)",
     "source_url": "https://www.geoboundaries.org/countryDownloads.html",
     "status": "ok",
-    "note": "9个油棕产区州全部匹配"
+    "note": "9 oil palm producing states matched."
   },
   {
     "country": "United States",
-    "country_cn": "美国",
+    "country_cn": "??",
     "geojson_file": "admin1_geojson/united_states_admin1.geojson",
     "feature_count": 56,
     "matched_region_count": 35,
@@ -37,11 +33,11 @@
     "source_name": "geoBoundaries (simplified)",
     "source_url": "https://www.geoboundaries.org/countryDownloads.html",
     "status": "ok",
-    "note": "35个大豆/油菜产区州全部匹配，含District of Columbia和海外领地"
+    "note": "US state abbreviations normalized to state polygons."
   },
   {
     "country": "Canada",
-    "country_cn": "加拿大",
+    "country_cn": "???",
     "geojson_file": "admin1_geojson/canada_admin1.geojson",
     "feature_count": 13,
     "matched_region_count": 9,
@@ -49,11 +45,11 @@
     "source_name": "geoBoundaries (simplified)",
     "source_url": "https://www.geoboundaries.org/countryDownloads.html",
     "status": "ok",
-    "note": "9个油菜籽/大豆/葵花籽产区省全部匹配，文件较大(26MB)因含海域边界"
+    "note": "Canadian canola provinces matched."
   },
   {
     "country": "Australia",
-    "country_cn": "澳大利亚",
+    "country_cn": "????",
     "geojson_file": "admin1_geojson/australia_admin1.geojson",
     "feature_count": 9,
     "matched_region_count": 6,
@@ -61,6 +57,58 @@
     "source_name": "geoBoundaries (simplified)",
     "source_url": "https://www.geoboundaries.org/countryDownloads.html",
     "status": "ok",
-    "note": "6个油菜籽产区州全部匹配"
+    "note": "Australian canola states matched."
+  },
+  {
+    "country": "Brazil",
+    "country_cn": "??",
+    "geojson_file": "admin1_geojson/brazil_admin1.geojson",
+    "feature_count": 27,
+    "matched_region_count": 17,
+    "unmatched_region_names": [],
+    "source_name": "geoBoundaries gbOpen ADM1 (display simplified)",
+    "source_url": "https://www.geoboundaries.org/api/current/gbOpen/BRA/ADM1/",
+    "status": "ok",
+    "note": "17 soybean admin1 regions matched. The Brazil palm row remains a national proxy and is intentionally rendered as a point fallback."
+  },
+  {
+    "country": "Argentina",
+    "country_cn": "???",
+    "geojson_file": "admin1_geojson/argentina_admin1.geojson",
+    "feature_count": 24,
+    "matched_region_count": 10,
+    "unmatched_region_names": [],
+    "source_name": "GADM 4.1 ADM1 (display simplified)",
+    "source_url": "https://geodata.ucdavis.edu/gadm/gadm4.1/json/gadm41_ARG_1.json",
+    "status": "ok",
+    "note": "Switched to complete admin1 source because the previous geoBoundaries file lacked Entre Rios."
+  },
+  {
+    "country": "Russia",
+    "country_cn": "???",
+    "geojson_file": "admin1_geojson/russia_admin1.geojson",
+    "feature_count": 83,
+    "matched_region_count": 63,
+    "unmatched_region_names": [
+      "Republic of Crimea"
+    ],
+    "source_name": "geoBoundaries gbOpen ADM1 (display simplified)",
+    "source_url": "https://www.geoboundaries.org/api/current/gbOpen/RUS/ADM1/",
+    "status": "partial",
+    "note": "Republic naming variants are normalized. Republic of Crimea is not present in the selected boundary source and remains point fallback."
+  },
+  {
+    "country": "Philippines",
+    "country_cn": "???",
+    "geojson_file": "admin1_geojson/philippines_admin1.geojson",
+    "feature_count": 17,
+    "matched_region_count": 16,
+    "unmatched_region_names": [
+      "NEGROS ISLAND REGION"
+    ],
+    "source_name": "geoBoundaries gbOpen ADM1 (display simplified)",
+    "source_url": "https://www.geoboundaries.org/api/current/gbOpen/PHL/ADM1/",
+    "status": "partial",
+    "note": "PSA region names normalized to boundary source names. Negros Island Region is not present in the selected admin1 boundary source and remains point fallback."
   }
 ]

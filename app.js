@@ -85,6 +85,47 @@ const ADMIN1_NAME_MAP = {
   Malacca: 'Melaka'
 };
 
+const ADMIN1_REGION_NAME_MAP = {
+  Russia: {
+    'Republic of Tatarstan': 'Tatarstan',
+    'Republic of Bashkortostan': 'Bashkortostan',
+    'Chechen Republic': 'Chechnya',
+    'Republic of Adygea': 'Adygea',
+    'Republic of Khakassia': 'Khakassia',
+    'Republic of North Ossetia-Alania': 'North Ossetia-Alania',
+    'Chuvash Republic': 'Chuvashia',
+    'Udmurt Republic': 'Udmurtia',
+    'Kabardino-Balkarian Republic': 'Kabardino-Balkaria',
+    'Mari El Republic': 'Mari El',
+    'Republic of Ingushetia': 'Ingushetia',
+    'Republic of Buryatia': 'Buryatia',
+    'Republic of Kalmykia': 'Kalmykia',
+    'Tuva Republic': 'Tuva',
+    'Karachay-Cherkess Republic': 'Karachay-Cherkessia',
+    'Republic of Dagestan': 'Dagestan',
+    'Kemerovo Oblast - Kuzbass': 'Kemerovo Oblast',
+    'Kaliningrad Oblast': 'Kaliningrad'
+  },
+  Philippines: {
+    'REGION XI (DAVAO REGION)': 'Davao Region',
+    'REGION IX (ZAMBOANGA PENINSULA)': 'Zamboanga Peninsula',
+    'REGION X (NORTHERN MINDANAO)': 'Northern Mindanao',
+    'REGION XII (SOCCSKSARGEN)': 'Soccsksargen',
+    'REGION IV-A (CALABARZON)': 'Calabarzon',
+    'BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO (BARMM)': 'ARMM',
+    'REGION VIII (EASTERN VISAYAS)': 'Eastern Visayas',
+    'REGION V (BICOL REGION)': 'Bicol Region',
+    'REGION XIII (CARAGA)': 'Caraga',
+    'MIMAROPA REGION': 'Mimaropa',
+    'REGION VI (WESTERN VISAYAS)': 'Western Visayas',
+    'REGION VII (CENTRAL VISAYAS)': 'Central Visayas',
+    'REGION II (CAGAYAN VALLEY)': 'Cagayan Valley',
+    'REGION I (ILOCOS REGION)': 'Ilocos Region',
+    'REGION III (CENTRAL LUZON)': 'Central Luzon',
+    'CORDILLERA ADMINISTRATIVE REGION (CAR)': 'CAR'
+  }
+};
+
 let map;
 let layers = {};
 let charts = {};
@@ -792,9 +833,17 @@ async function loadAdminGeo(file) {
 }
 
 function regionBoundaryKey(row) {
-  const key = row.boundary_id || shortRegionName(row);
+  const key = normalizeRegionRecordName(row.boundary_id || shortRegionName(row), row.country_key);
   if (row.country_key === 'United States') return String(key).toUpperCase();
   return key;
+}
+
+function normalizeRegionRecordName(name, countryKey) {
+  let key = String(name || '').trim();
+  if (countryKey === 'Russia') key = key.replace(/^Russia\s*-\s*/, '');
+  if (countryKey === 'Philippines') key = key.replace(/^Philippines\s*-\s*/, '');
+  const countryMap = ADMIN1_REGION_NAME_MAP[countryKey];
+  return (countryMap && countryMap[key]) || key;
 }
 
 function normalizeAdminShapeName(name, countryKey) {
