@@ -956,7 +956,7 @@
     "has_admin1_geojson": true,
     "has_history": false,
     "has_forecast": true,
-    "has_soil_moisture": true,
+    "has_soil_moisture": false,
     "has_et0_vpd": false,
     "source_name": "usda_nass",
     "source_valid_for_frontend": true,
