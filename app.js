@@ -1,74 +1,57 @@
 const DATA_DIR = './data/';
-let allData = {};
-let geoJsonLayer = null;
-let markerLayer = [];
-let admin1Layer = null;
-let map;
-let charts = {};
-let currentView = 'global';
-let selectedCountry = null;
-let selectedCrop = 'all';
-let debugInfo = {
-  latestCount: 0,
-  geojsonFeatures: 0,
-  matchedCountries: 0,
-  renderedMarkers: 0,
-  geojsonError: null,
-  admin1Loaded: false,
-  admin1FeatureCount: 0,
-  admin1MatchedCount: 0,
-  admin1FallbackNames: [],
-  currentLevel: 'country'
+
+const RISK = {
+  4: { code: 'severe', cn: '显著压力', color: '#b91c1c' },
+  3: { code: 'pressure', cn: '重点压力', color: '#f97316' },
+  2: { code: 'watch', cn: '一般关注', color: '#eab308' },
+  1: { code: 'mild', cn: '轻度异常', color: '#fde047' },
+  0: { code: 'normal', cn: '正常监控', color: '#16a34a' }
 };
 
-const CN = {
-  crop: { palm:'棕榈油', soybean:'豆油', rapeseed_canola:'菜油', sunflower:'葵油', coconut:'椰子油' },
-  label: {
-    rainfall_deficit:'降雨显著偏少', rainfall_low:'降雨偏少', excessive_rain:'降雨偏多/过湿',
-    high_temperature:'高温异常', normal:'正常',
-    'rainfall_deficit|high_temperature':'降雨偏少+高温',
-    'rainfall_low|high_temperature':'降雨偏少+高温',
-    'excessive_rain|high_temperature':'降雨偏多+高温',
-    insufficient_data:'数据积累中'
-  },
-  level: { 
-    high:'重点关注', medium:'一般关注', normal:'正常监控', low:'低风险',
-    stress:'显著压力', attention:'重点关注', watch:'一般关注'
-  },
-  country: {
-    'Indonesia':'印度尼西亚', 'Malaysia':'马来西亚', 'Australia':'澳大利亚',
-    'Canada':'加拿大', 'United States':'美国', 'United States of America':'美国',
-    'Brazil':'巴西', 'Argentina':'阿根廷', 'Ukraine':'乌克兰', 'Russia':'俄罗斯',
-    'France':'法国', 'Germany':'德国', 'Poland':'波兰', 'Romania':'罗马尼亚',
-    'Kazakhstan':'哈萨克斯坦', 'China':'中国', 'India':'印度', 'Thailand':'泰国',
-    'Nigeria':'尼日利亚', 'Colombia':'哥伦比亚', 'Guatemala':'危地马拉',
-    'Turkey':'土耳其', 'Türkiye':'土耳其', 'Hungary':'匈牙利', 'Bulgaria':'保加利亚',
-    'Italy':'意大利', 'United Kingdom':'英国', 'Belarus':'白俄罗斯', 'Czechia':'捷克',
-    'Spain':'西班牙', 'Denmark':'丹麦', 'Bangladesh':'孟加拉国', 'South Africa':'南非',
-    'Serbia':'塞尔维亚', 'Paraguay':'巴拉圭', 'Peru':'秘鲁', 'Mexico':'墨西哥',
-    'Ecuador':'厄瓜多尔', 'Honduras':'洪都拉斯', 'Costa Rica':'哥斯达黎加',
-    'Philippines':'菲律宾', 'Venezuela':'委内瑞拉', 'Tanzania':'坦桑尼亚',
-    'Papua New Guinea':'巴布亚新几内亚', 'Cameroon':'喀麦隆', 'Ghana':'加纳',
-    'Cote d\'Ivoire':'科特迪瓦', 'DR Congo':'刚果(金)', 'Guinea':'几内亚',
-    'Benin':'贝宁', 'Gabon':'加蓬', 'Republic of Moldova':'摩尔多瓦',
-    'Lithuania':'立陶宛'
-  }
+const RISK_CODE_TO_NUM = {
+  severe: 4,
+  pressure: 3,
+  stress: 4,
+  attention: 3,
+  watch: 2,
+  mild: 1,
+  normal: 0,
+  low: 0
 };
 
-// GeoJSON name -> our country name mapping
-const GEOJSON_NAME_MAP = {
+const CROP_META = {
+  palm: { tab: '棕榈油', label: '棕榈/棕榈油', oil: '棕榈油', color: '#15803d' },
+  soybean: { tab: '豆油', label: '大豆/豆油', oil: '豆油', color: '#b45309' },
+  rapeseed_canola: { tab: '菜油', label: '菜籽/菜油', oil: '菜油', color: '#2563eb' },
+  sunflower: { tab: '葵油', label: '葵籽/葵油', oil: '葵油', color: '#7c3aed' },
+  coconut: { tab: '椰子油', label: '椰子/椰子油', oil: '椰子油', color: '#0891b2' }
+};
+
+const RISK_TYPE_CN = {
+  drought_water_deficit: '干旱/水分不足',
+  heat_drydown: '高温干化',
+  wetness_waterlogging: '偏湿/渍涝',
+  no_clear_pressure: '无明确压力'
+};
+
+const GEO_NAME_TO_COUNTRY = {
   'United States of America': 'United States',
-  'USA': 'United States',
-  'Türkiye': 'Turkey',
-  'Côte d\'Ivoire': 'Cote d\'Ivoire',
-  'Ivory Coast': 'Cote d\'Ivoire',
-  'Democratic Republic of the Congo': 'DR Congo',
-  'Moldova': 'Republic of Moldova'
+  USA: 'United States',
+  Turkey: 'Türkiye',
+  'Czech Republic': 'Czechia',
+  Moldova: 'Republic of Moldova',
+  'Ivory Coast': "Cote d'Ivoire",
+  'Côte d’Ivoire': "Cote d'Ivoire",
+  'Democratic Republic of the Congo': 'DR Congo'
 };
 
-// admin1 GeoJSON shapeName -> our data admin1 name mapping
+const COUNTRY_ALIAS = {
+  'United States of America': 'United States',
+  USA: 'United States',
+  Turkey: 'Türkiye'
+};
+
 const ADMIN1_NAME_MAP = {
-  // Indonesia: English -> Indonesian native names used in data
   'Riau Islands': 'Kepulauan Riau',
   'South Kalimantan': 'Kalimantan Selatan',
   'North Sumatra': 'Sumatera Utara',
@@ -97,1231 +80,1313 @@ const ADMIN1_NAME_MAP = {
   'Bangka-Belitung Islands': 'Bangka Belitung',
   'Jakarta Special Capital Region': 'DKI Jakarta',
   'Special Region of Yogyakarta': 'Daerah Istimewa Yogyakarta',
-  // Malaysia
-  'Penang': 'Pulau Pinang',
-  'Johore': 'Johor',
-  'Malacca': 'Melaka'
+  Penang: 'Pulau Pinang',
+  Johore: 'Johor',
+  Malacca: 'Melaka'
 };
 
-// Reverse lookup: our data admin1 -> GeoJSON shapeName
-const ADMIN1_NAME_RMAP = {};
-for (const [k, v] of Object.entries(ADMIN1_NAME_MAP)) {
-  ADMIN1_NAME_RMAP[v] = k;
-}
+let map;
+let layers = {};
+let charts = {};
+let adminGeoCache = {};
+let mapStats = { main: 0, risk: 0, fallback: 0, note: '' };
 
-// Admin1 GeoJSON file mapping
-const ADMIN1_FILES = {
-  'Indonesia': 'admin1_geojson/indonesia_admin1.geojson',
-  'Malaysia': 'admin1_geojson/malaysia_admin1.geojson',
-  'United States': 'admin1_geojson/united_states_admin1.geojson',
-  'Canada': 'admin1_geojson/canada_admin1.geojson',
-  'Australia': 'admin1_geojson/australia_admin1.geojson'
+let state = {
+  crop: 'all',
+  country: 'all',
+  risk: 'all',
+  anomaly: 'all',
+  layer: 'country',
+  selectedCountry: null,
+  selectedCountryCrop: null,
+  selectedCountryRecord: null
 };
 
-function fmt(v) { return (v===null||v===undefined||v===''||v==='nan')?'—':v; }
-function fmtNum(v,d=1){ return (v===null||v===undefined||isNaN(v))?'—':Number(v).toFixed(d); }
-function fmtProduction(v){
-  if(v===null||v===undefined||isNaN(v)) return '产量权重待接入';
-  if(v >= 100000000) return (v/100000000).toFixed(2) + '亿吨';
-  if(v >= 10000) return (v/10000).toFixed(2) + '万吨';
-  return v.toFixed(0) + '吨';
-}
-function fmtShare(v){
-  if(v===null||v===undefined||isNaN(v)) return '产量权重待接入';
-  return (v*100).toFixed(1) + '%';
-}
-function cnCrop(c){ return CN.crop[c]||c||'—'; }
-function cnLabel(l){ return CN.label[l]||l||'—'; }
-function cnLevel(l){ return CN.level[l]||l||'—'; }
-function cnCountry(c){ return CN.country[c]||c||'—'; }
-function colorByLevel(level){
-  if(level==='high') return '#dc2626';
-  if(level==='medium') return '#ea580c';
-  if(level==='normal') return '#16a34a';
-  return '#64748b';
+let store = {
+  countryRecords: [],
+  adminRecords: [],
+  coverage: [],
+  euRecords: [],
+  geojson: null,
+  adminById: new Map()
+};
+
+function isNum(value) {
+  return value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
 }
 
-async function loadJSON(name){
-  const r = await fetch(DATA_DIR+name);
-  if(!r.ok) throw new Error(`${name}: HTTP ${r.status}`);
-  return r.json();
+function fmtDash(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  return String(value);
 }
 
-function safeLoadJSON(name){
-  return loadJSON(name).catch(e=>{
-    console.warn('Failed to load', name, e.message);
-    return null;
-  });
+function fmtNum(value, digits = 1, suffix = '') {
+  if (!isNum(value)) return '—';
+  return Number(value).toLocaleString('zh-CN', {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits
+  }) + suffix;
 }
 
-function initMap(){
-  const container = document.getElementById('map');
-  container.style.width = '100%';
-  container.style.height = '100%';
-  map = L.map('map',{zoomControl:false}).setView([15,100],3);
-  L.control.zoom({position:'topright'}).addTo(map);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
-    attribution:'&copy; OpenStreetMap &copy; CARTO', subdomains:'abcd', maxZoom:19
+function fmtInt(value, suffix = '') {
+  if (!isNum(value)) return '—';
+  return Number(value).toLocaleString('zh-CN', {
+    maximumFractionDigits: 0
+  }) + suffix;
+}
+
+function fmtPct(value, digits = 1, fraction = true) {
+  if (!isNum(value)) return '—';
+  let n = Number(value);
+  if (fraction) n *= 100;
+  return n.toLocaleString('zh-CN', {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits
+  }) + '%';
+}
+
+function fmtSigned(value, digits = 1, suffix = '') {
+  if (!isNum(value)) return '—';
+  const n = Number(value);
+  const sign = n > 0 ? '+' : '';
+  return sign + n.toLocaleString('zh-CN', {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits
+  }) + suffix;
+}
+
+function fmtProduction(value) {
+  if (!isNum(value)) return '产量待接入';
+  const n = Number(value);
+  if (Math.abs(n) >= 100000000) return (n / 100000000).toLocaleString('zh-CN', { maximumFractionDigits: 2 }) + '亿吨';
+  if (Math.abs(n) >= 10000) return (n / 10000).toLocaleString('zh-CN', { maximumFractionDigits: 1 }) + '万吨';
+  return n.toLocaleString('zh-CN', { maximumFractionDigits: 0 }) + '吨';
+}
+
+function esc(value) {
+  return fmtDash(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function escAttr(value) {
+  return esc(value).replaceAll('`', '&#96;');
+}
+
+function canonicalCountry(country) {
+  return COUNTRY_ALIAS[country] || country;
+}
+
+function countryFromGeoName(name) {
+  return GEO_NAME_TO_COUNTRY[name] || name;
+}
+
+function cropLabel(record) {
+  if (record && record.crop_oil_label_cn) return record.crop_oil_label_cn;
+  return CROP_META[record && record.crop_group] ? CROP_META[record.crop_group].label : fmtDash(record && record.crop_group);
+}
+
+function cropColor(crop) {
+  return CROP_META[crop] ? CROP_META[crop].color : '#64748b';
+}
+
+function riskNum(value) {
+  if (isNum(value)) return Math.max(0, Math.min(4, Math.round(Number(value))));
+  if (!value) return 0;
+  return RISK_CODE_TO_NUM[String(value)] ?? 0;
+}
+
+function riskNumFromCountry(record) {
+  return riskNum(record && record.weighted_risk_level);
+}
+
+function riskInfo(value) {
+  const n = riskNum(value);
+  return RISK[n] || RISK[0];
+}
+
+function riskBadge(value, text) {
+  const info = riskInfo(value);
+  return `<span class="badge" style="background:${info.color}">${esc(text || info.cn)}</span>`;
+}
+
+function riskColor(value) {
+  return riskInfo(value).color;
+}
+
+function riskText(value) {
+  return riskInfo(value).cn;
+}
+
+function riskTypeText(value) {
+  return RISK_TYPE_CN[value] || fmtDash(value);
+}
+
+function firstDateShort(value) {
+  const s = fmtDash(value);
+  if (s === '—') return '';
+  return s.slice(5, 10);
+}
+
+async function loadJSON(name) {
+  const response = await fetch(DATA_DIR + name);
+  if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
+  return response.json();
+}
+
+function initMap() {
+  map = L.map('map', { zoomControl: false, worldCopyJump: true }).setView([16, 25], 3);
+  L.control.zoom({ position: 'topright' }).addTo(map);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 18
   }).addTo(map);
-  // Fix for flex layout: invalidate size after container is properly sized
-  requestAnimationFrame(()=>{ map.invalidateSize(); });
-  setTimeout(()=>{ map.invalidateSize(); }, 300);
-  setTimeout(()=>{ map.invalidateSize(); }, 800);
+
+  layers = {
+    country: L.layerGroup().addTo(map),
+    countryLabels: L.layerGroup().addTo(map),
+    region: L.layerGroup().addTo(map),
+    regionLabels: L.layerGroup().addTo(map),
+    fallback: L.layerGroup().addTo(map),
+    virtual: L.layerGroup().addTo(map)
+  };
+
+  map.on('zoomend', () => {
+    if (state.layer === 'region') refreshRegionLabels();
+  });
+
+  requestAnimationFrame(() => map.invalidateSize());
+  setTimeout(() => map.invalidateSize(), 300);
 }
 
-function getFilteredPoints(){
-  const country = document.getElementById('f-country').value;
-  const level = document.getElementById('f-level').value;
-  const label = document.getElementById('f-label').value;
-  return allData.latest.filter(pt=>{
-    const lev = pt.anomaly_level||'normal';
-    if(selectedCrop!=='all' && pt.crop_group!==selectedCrop) return false;
-    if(country!=='all' && pt.country!==country) return false;
-    if(level!=='all' && lev!==level) return false;
-    if(label!=='all' && pt.anomaly_label!==label) return false;
-    return true;
+function clearMap() {
+  Object.values(layers).forEach(layer => layer.clearLayers());
+  destroyCharts();
+}
+
+function boundsFor(layerNames) {
+  const group = L.featureGroup();
+  layerNames.forEach(name => {
+    const layerGroup = layers[name];
+    if (!layerGroup || !layerGroup.eachLayer) return;
+    layerGroup.eachLayer(layer => group.addLayer(layer));
+  });
+  return group.getBounds();
+}
+
+function destroyCharts() {
+  Object.values(charts).forEach(chart => {
+    if (chart && typeof chart.destroy === 'function') chart.destroy();
+  });
+  charts = {};
+}
+
+function prepareData(raw) {
+  store.countryRecords = raw.countryRecords
+    .filter(row => row && row.source_valid_for_frontend !== false)
+    .map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
+
+  store.adminRecords = raw.adminRecords
+    .filter(row => row && row.source_valid_for_frontend !== false)
+    .map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
+
+  store.coverage = raw.coverage.map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
+  store.euRecords = raw.euRecords || [];
+  store.geojson = raw.geojson;
+  store.adminById = new Map(store.adminRecords.map(row => [row.weather_region_id, row]));
+}
+
+function getCountryName(key) {
+  if (key === 'European Union') return '欧盟';
+  const rec = store.countryRecords.find(row => row.country_key === key) || store.adminRecords.find(row => row.country_key === key);
+  return rec ? (rec.country_cn || rec.country || key) : key;
+}
+
+function getCoverage(countryKey) {
+  return store.coverage.find(row => row.country_key === countryKey) || null;
+}
+
+function countryRecordsFor(key, crop = state.crop) {
+  return store.countryRecords.filter(row => {
+    if (row.country_key !== key) return false;
+    return crop === 'all' || row.crop_group === crop;
   });
 }
 
-function getCountryRiskLevel(country, crop){
-  const pts = allData.latest.filter(pt=>pt.country===country && (crop==='all'||pt.crop_group===crop));
-  if(!pts.length) return 'normal';
-  const high = pts.filter(p=>(p.anomaly_level||'normal')==='high').length;
-  const medium = pts.filter(p=>(p.anomaly_level||'normal')==='medium').length;
-  if(high>0) return 'high';
-  if(medium>0) return 'medium';
-  return 'normal';
+function recordConfidenceRank(record) {
+  const rank = { high: 3, medium: 2, low: 1 };
+  return rank[record.aggregation_confidence] || 0;
 }
 
-function normalizeGeojsonName(name){
-  return GEOJSON_NAME_MAP[name] || name;
+function chooseCountryRecord(records) {
+  return [...records].sort((a, b) => {
+    const riskDiff = riskNumFromCountry(b) - riskNumFromCountry(a);
+    if (riskDiff) return riskDiff;
+    const confDiff = recordConfidenceRank(b) - recordConfidenceRank(a);
+    if (confDiff) return confDiff;
+    const regionDiff = (Number(b.region_count) || 0) - (Number(a.region_count) || 0);
+    if (regionDiff) return regionDiff;
+    return (Number(b.total_production_tonnes) || 0) - (Number(a.total_production_tonnes) || 0);
+  })[0] || null;
 }
 
-// Normalize admin1 name: GeoJSON shapeName -> our data admin1 name
-function normalizeAdmin1Name(name, country){
-  if(ADMIN1_NAME_MAP[name]) return ADMIN1_NAME_MAP[name];
-  // US: our data uses ALL CAPS, GeoJSON uses Title Case
-  if(country === 'United States') return name.toUpperCase();
-  return name;
+function aggregateEuRecords(crop = state.crop) {
+  if (!(crop === 'all' || crop === 'rapeseed_canola' || crop === 'sunflower')) return [];
+  const filtered = store.euRecords.filter(row => crop === 'all' || row.crop_group === crop);
+  const groups = new Map();
+  filtered.forEach(row => {
+    const key = crop === 'all' ? row.crop_group : crop;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(row);
+  });
+  return [...groups.entries()].map(([cropGroup, rows]) => {
+    const total = rows.reduce((sum, row) => sum + (Number(row.production_tonnes) || 0), 0);
+    const weighted = total
+      ? rows.reduce((sum, row) => sum + (Number(row.risk_score_v3) || 0) * (Number(row.production_tonnes) || 0), 0) / total
+      : 0;
+    const top = [...rows].sort((a, b) => riskNum(b.risk_level_v3) - riskNum(a.risk_level_v3) || (Number(b.production_tonnes) || 0) - (Number(a.production_tonnes) || 0))[0];
+    const level = Math.max(riskNum(top && top.risk_level_v3), Math.round(weighted));
+    return {
+      is_eu: true,
+      country: 'European Union',
+      country_key: 'European Union',
+      country_cn: '欧盟',
+      crop_group: cropGroup,
+      oil_group: top ? top.oil_group : '',
+      crop_oil_label_cn: top ? top.crop_oil_label_cn : (CROP_META[cropGroup] ? CROP_META[cropGroup].label : cropGroup),
+      production_basis_cn: '成员国产量聚合',
+      production_basis_note_cn: '欧盟作为虚拟国家单元，成员国在地区层展示；未生成欧盟整体假边界。',
+      total_production_tonnes: total,
+      weighted_risk_level: RISK[level].code,
+      weighted_risk_level_cn: RISK[level].cn,
+      weighted_risk_score: weighted,
+      dominant_risk_type: top ? top.risk_level_v3_code : 'no_clear_pressure',
+      dominant_risk_reason_cn: top ? `${top.region_cn || top.region} 为主要风险贡献成员` : '',
+      weather_condition_summary_cn: '成员国风险按产量权重聚合。',
+      soil_condition_summary_cn: '成员国土壤和天气详情见地区层。',
+      production_impact_cn: '',
+      forecast_summary_cn: '成员国预报见地区详情。',
+      region_count: rows.length,
+      source_name: 'eurostat',
+      aggregation_confidence: 'medium',
+      aggregation_note_cn: 'virtual country，用成员国记录聚合。',
+      updated_at: top ? top.updated_at : ''
+    };
+  });
 }
 
-// Reverse: our data admin1 -> GeoJSON shapeName
-function reverseAdmin1Name(name, country){
-  if(ADMIN1_NAME_RMAP[name]) return ADMIN1_NAME_RMAP[name];
-  // US: our data uses ALL CAPS
-  if(country === 'United States') {
-    const titleCase = name.split(' ').map(w => w.charAt(0) + w.slice(1).toLowerCase()).join(' ');
-    return titleCase;
+function getCountryModels() {
+  const byCountry = new Map();
+  store.countryRecords.forEach(row => {
+    if (state.crop !== 'all' && row.crop_group !== state.crop) return;
+    if (state.country !== 'all' && row.country_key !== state.country) return;
+    if (!byCountry.has(row.country_key)) byCountry.set(row.country_key, []);
+    byCountry.get(row.country_key).push(row);
+  });
+
+  const models = [];
+  byCountry.forEach((records, key) => {
+    const top = chooseCountryRecord(records);
+    if (!top) return;
+    if (state.risk !== 'all' && String(riskNumFromCountry(top)) !== state.risk) return;
+    if (state.anomaly !== 'all' && !records.some(row => row.dominant_risk_type === state.anomaly)) return;
+    models.push({ key, top, records, isEu: false });
+  });
+
+  const euAggregates = aggregateEuRecords(state.crop);
+  if (euAggregates.length && (state.country === 'all' || state.country === 'European Union')) {
+    const top = chooseCountryRecord(euAggregates);
+    if (top) {
+      const riskOk = state.risk === 'all' || String(riskNumFromCountry(top)) === state.risk;
+      const anomalyOk = state.anomaly === 'all' || euAggregates.some(row => row.dominant_risk_type === state.anomaly);
+      if (riskOk && anomalyOk) models.push({ key: 'European Union', top, records: euAggregates, isEu: true });
+    }
   }
-  return name;
+
+  return models.sort((a, b) => {
+    const riskDiff = riskNumFromCountry(b.top) - riskNumFromCountry(a.top);
+    if (riskDiff) return riskDiff;
+    return (Number(b.top.total_production_tonnes) || 0) - (Number(a.top.total_production_tonnes) || 0);
+  });
 }
 
-// Get admin1 risk level for coloring
-function getAdmin1RiskLevel(country, admin1Name, crop){
-  const pts = allData.latest.filter(pt => 
-    pt.country === country && pt.admin1 === admin1Name && (crop === 'all' || pt.crop_group === crop)
-  );
-  if(!pts.length) return null;
-  const high = pts.filter(p => (p.anomaly_level || 'normal') === 'high').length;
-  const medium = pts.filter(p => (p.anomaly_level || 'normal') === 'medium').length;
-  if(high > 0) return 'high';
-  if(medium > 0) return 'medium';
-  return 'normal';
+function getFeatureCountry(feature) {
+  return countryFromGeoName(feature.properties && feature.properties.name);
 }
 
-// Load and render admin1 GeoJSON for a country
-async function loadAndRenderAdmin1(country){
-  // Clean up previous admin1 layer
-  if(admin1Layer){ map.removeLayer(admin1Layer); admin1Layer = null; }
-  
-  const filePath = ADMIN1_FILES[country];
-  if(!filePath){
-    console.log('[DEBUG] No admin1 GeoJSON file for:', country);
-    debugInfo.admin1Loaded = false;
-    return false;
-  }
-  
-  try {
-    const resp = await fetch(DATA_DIR + filePath);
-    if(!resp.ok) throw new Error('HTTP ' + resp.status);
-    const geojson = await resp.json();
-    
-    const features = geojson.features || [];
-    debugInfo.admin1FeatureCount = features.length;
-    console.log('[DEBUG] loaded admin1 geojson:', filePath, 'features:', features.length);
-    
-    // Get data admin1 names for this country
-    const dataAdmin1 = [...new Set(
-      allData.latest.filter(pt => pt.country === country).map(pt => pt.admin1)
-    )];
-    
-    let matched = 0;
-    const unmatchedGeo = [];
-    
-    admin1Layer = L.geoJSON(geojson, {
-      filter: feature => {
-        const geoName = feature.properties.shapeName || '';
-        const normalized = normalizeAdmin1Name(geoName, country);
-        const isInData = dataAdmin1.includes(normalized);
-        if(isInData) matched++;
-        return isInData;
-      },
+function createCountryTooltip(model) {
+  const rows = model.records
+    .sort((a, b) => riskNumFromCountry(b) - riskNumFromCountry(a))
+    .map(row => `
+      <div style="margin:4px 0;">
+        <b>${esc(cropLabel(row))}</b> ${riskBadge(riskNumFromCountry(row), row.weighted_risk_level_cn)}
+        <br>产量 ${esc(fmtProduction(row.total_production_tonnes))}；受扰 ${esc(fmtPct(row.disturbed_share))}
+        <br>${esc(row.production_basis_cn)}：${esc(row.production_basis_note_cn || '')}
+      </div>
+    `).join('');
+  return `
+    <div style="min-width:220px;">
+      <b>${esc(model.top.country_cn || getCountryName(model.key))}</b><br>
+      ${rows}
+    </div>
+  `;
+}
+
+function countryLabelHtml(record) {
+  return `
+    <div class="map-label" style="--oil-color:${cropColor(record.crop_group)}">
+      <span class="stripe"></span>
+      <div><strong>${esc(record.country_cn || record.country)}｜${esc(cropLabel(record))}</strong><span>${esc(fmtProduction(record.total_production_tonnes))}</span></div>
+    </div>
+  `;
+}
+
+function renderCountryLayer() {
+  state.layer = 'country';
+  clearMap();
+  setLayerButtons();
+  const models = getCountryModels();
+  const byKey = new Map(models.map(model => [model.key, model]));
+  let polygonCount = 0;
+  let fallbackCount = 0;
+
+  if (store.geojson) {
+    const countryGeo = L.geoJSON(store.geojson, {
+      filter: feature => byKey.has(getFeatureCountry(feature)),
       style: feature => {
-        const geoName = feature.properties.shapeName || '';
-        const normalized = normalizeAdmin1Name(geoName, country);
-        const level = getAdmin1RiskLevel(country, normalized, selectedCrop);
-        const c = level ? colorByLevel(level) : '#ccc';
+        const model = byKey.get(getFeatureCountry(feature));
+        const color = riskColor(riskNumFromCountry(model.top));
         return {
-          fillColor: c, weight: 1.5, opacity: 0.8, color: '#555',
-          fillOpacity: level === 'high' ? 0.5 : level === 'medium' ? 0.4 : 0.3
+          color: '#4b5563',
+          weight: 1.1,
+          opacity: 0.86,
+          fillColor: color,
+          fillOpacity: 0.52
         };
       },
       onEachFeature: (feature, layer) => {
-        const geoName = feature.properties.shapeName || '';
-        const normalized = normalizeAdmin1Name(geoName, country);
-        const pts = allData.latest.filter(pt => 
-          pt.country === country && pt.admin1 === normalized && 
-          (selectedCrop === 'all' || pt.crop_group === selectedCrop)
-        );
-        const high = pts.filter(p => (p.anomaly_level || 'normal') === 'high').length;
-        const medium = pts.filter(p => (p.anomaly_level || 'normal') === 'medium').length;
-        const level = getAdmin1RiskLevel(country, normalized, selectedCrop);
-        
-        const tooltip = '<b>' + normalized + '</b><br>' +
-          '产区：' + pts.length + ' 个<br>' +
-          '重点：' + high + ' · 一般：' + medium + '<br>' +
-          '风险：' + (level === 'high' ? '重点关注' : level === 'medium' ? '一般关注' : '正常监控');
-        layer.bindTooltip(tooltip, {sticky: true});
-        
-        layer.on('click', () => {
-          showAdmin1Detail(country, normalized);
+        const key = getFeatureCountry(feature);
+        const model = byKey.get(key);
+        polygonCount += 1;
+        layer.bindTooltip(createCountryTooltip(model), { sticky: true, direction: 'auto' });
+        layer.on({
+          click: () => selectCountry(model),
+          mouseover: () => layer.setStyle({ weight: 2.2, fillOpacity: 0.68 }),
+          mouseout: () => countryGeo.resetStyle(layer)
         });
+
+        const center = layer.getBounds().getCenter();
+        L.tooltip({
+          permanent: true,
+          direction: 'center',
+          className: 'country-map-label',
+          opacity: 1
+        })
+          .setLatLng(center)
+          .setContent(countryLabelHtml(model.top))
+          .addTo(layers.countryLabels);
       }
-    }).addTo(map);
-    
-    debugInfo.admin1MatchedCount = matched;
-    debugInfo.admin1Loaded = matched > 0;
-    
-    // Collect unmatched GeoJSON names for logging
-    features.forEach(f => {
-      const geoName = f.properties.shapeName || '';
-      const normalized = normalizeAdmin1Name(geoName, country);
-      if(!dataAdmin1.includes(normalized)) unmatchedGeo.push(geoName);
-    });
-    debugInfo.admin1UnmatchedGeoNames = unmatchedGeo;
-    
-    console.log('[DEBUG] admin1 matched:', matched, '/', dataAdmin1.length);
-    console.log('[DEBUG] unmatched geo names:', unmatchedGeo);
-    
-    // Fit to admin1 layer bounds
-    if(admin1Layer.getBounds().isValid()){
-      map.fitBounds(admin1Layer.getBounds().pad(0.15));
+    }).addTo(layers.country);
+  }
+
+  models.forEach(model => {
+    if (model.isEu) {
+      renderEuCountryMarker(model);
+      fallbackCount += 1;
+      return;
     }
-    
-    updateMapStatus();
-    return matched > 0;
-    
-  } catch(e) {
-    console.warn('[DEBUG] admin1 GeoJSON failed:', e.message);
-    debugInfo.admin1Loaded = false;
-    debugInfo.admin1Error = e.message;
-    return false;
-  }
+    if (polygonCount && hasRenderedCountryPolygon(model.key)) return;
+    const center = countryCentroid(model.key);
+    if (!center) return;
+    fallbackCount += 1;
+    const marker = L.circleMarker(center, {
+      radius: 8,
+      color: '#ffffff',
+      weight: 1.5,
+      fillColor: riskColor(riskNumFromCountry(model.top)),
+      fillOpacity: 0.86
+    }).addTo(layers.fallback);
+    marker.bindTooltip(createCountryTooltip(model), { sticky: true });
+    marker.on('click', () => selectCountry(model));
+    L.tooltip({
+      permanent: true,
+      direction: 'top',
+      offset: [0, -8],
+      className: 'country-map-label',
+      opacity: 1
+    }).setLatLng(center).setContent(countryLabelHtml(model.top)).addTo(layers.countryLabels);
+  });
+
+  const bounds = boundsFor(['country', 'fallback', 'virtual']);
+  if (bounds.isValid()) map.fitBounds(bounds.pad(0.14));
+  else map.setView([16, 25], 3);
+
+  const highCount = models.filter(model => riskNumFromCountry(model.top) >= 3).length;
+  mapStats = {
+    main: models.length,
+    risk: highCount,
+    fallback: fallbackCount,
+    note: '国家层按国家边界着色；圆点只用于无边界或欧盟虚拟单元。'
+  };
+  updateOverlay();
+  document.getElementById('detail-panel').innerHTML = '<div class="empty">点击国家边界查看国家详情和地区层。</div>';
 }
 
-// Show detail for a specific admin1 region
-function showAdmin1Detail(country, admin1Name){
-  const pts = allData.latest.filter(pt => 
-    pt.country === country && pt.admin1 === admin1Name && 
-    (selectedCrop === 'all' || pt.crop_group === selectedCrop)
-  );
-  if(!pts.length) return;
-  
-  // Aggregate using risk_level_v2 from water stress where available
-  const RISK_V2_CN = {normal:'正常监控', watch:'一般关注', attention:'重点关注', stress:'显著压力'};
-  const RISK_V2_COLOR = {normal:'#16a34a', watch:'#ca8a04', attention:'#ea580c', stress:'#dc2626'};
-  var v2Counts = {stress:0, attention:0, watch:0, normal:0};
-  pts.forEach(function(p){
-    var wsEntry = allData.waterStress ? allData.waterStress.find(function(w){ return w.weather_region_id===p.weather_region_id; }) : null;
-    var rv2 = wsEntry ? (wsEntry.risk_level_v2 || p.anomaly_level || 'normal') : (p.anomaly_level || 'normal');
-    if(rv2==='stress') v2Counts.stress++;
-    else if(rv2==='attention') v2Counts.attention++;
-    else if(rv2==='watch') v2Counts.watch++;
-    else v2Counts.normal++;
+function hasRenderedCountryPolygon(countryKey) {
+  let rendered = false;
+  layers.country.eachLayer(layer => {
+    if (layer.eachLayer) {
+      layer.eachLayer(child => {
+        const feature = child.feature;
+        if (feature && getFeatureCountry(feature) === countryKey) rendered = true;
+      });
+    }
   });
-  var topRisk = v2Counts.stress>0?'stress':v2Counts.attention>0?'attention':v2Counts.watch>0?'watch':'normal';
-  
-  let html = '<div class="info-block">' +
-    '<div class="title-row">' +
-    '<span class="name">' + admin1Name + '</span>' +
-    '<span class="badge" style="background:' + (RISK_V2_COLOR[topRisk]||'#64748b') + ';color:#fff;">' +
-    (RISK_V2_CN[topRisk]||'正常监控') + '</span>' +
-    '</div>' +
-    '<div class="sub">' + cnCountry(country) + ' · ' + 
-    (selectedCrop === 'all' ? '全部品种' : cnCrop(selectedCrop)) + 
-    ' · ' + pts.length + ' 个产区</div>' +
-    '<div class="data-grid" style="margin-top:10px;">' +
-    '<div class="data-cell"><span class="lbl">显著压力</span><span class="val high">' + v2Counts.stress + '</span></div>' +
-    '<div class="data-cell"><span class="lbl">重点关注</span><span class="val" style="color:#ea580c;">' + v2Counts.attention + '</span></div>' +
-    '<div class="data-cell"><span class="lbl">一般关注</span><span class="val" style="color:#ca8a04;">' + v2Counts.watch + '</span></div>' +
-    '<div class="data-cell"><span class="lbl">正常监控</span><span class="val normal">' + v2Counts.normal + '</span></div>' +
-    '<div class="data-cell"><span class="lbl">产区数</span><span class="val">' + pts.length + '</span></div>' +
-    '</div>' +
-    '</div>';
-  
-  // Show individual points as a list in the detail panel
-  html += '<div class="info-block"><h3>产区点位</h3>';
-  pts.forEach(pt => {
-    var wsPt = allData.waterStress ? allData.waterStress.find(function(w){ return w.weather_region_id===pt.weather_region_id; }) : null;
-    var rv2Pt = wsPt ? (wsPt.risk_level_v2 || pt.anomaly_level || 'normal') : (pt.anomaly_level || 'normal');
-    html += '<div style="padding:6px 0;border-bottom:1px solid #f0f0f0;cursor:pointer;" ' +
-      'onclick="showDetail(\'' + pt.weather_region_id + '\')">' +
-      '<span class="badge" style="background:' + (RISK_V2_COLOR[rv2Pt]||'#64748b') + ';color:#fff;margin-right:6px;">' + (RISK_V2_CN[rv2Pt]||'正常监控') + '</span>' +
-      '<b>' + pt.display_region_name + '</b>' +
-      '<div style="font-size:11px;color:var(--text3);margin-top:2px;">' +
-      cnCrop(pt.crop_group) + ' · ' + cnLabel(pt.anomaly_label) + '</div>' +
-      '</div>';
-  });
-  html += '</div>';
-  
-  document.getElementById('detail-panel').innerHTML = html;
+  return rendered;
 }
 
-function renderGeoJSON(){
-  if(geoJsonLayer){ map.removeLayer(geoJsonLayer); geoJsonLayer=null; }
-  // Clean up old country labels
-  if(window._countryLabels) {
-    window._countryLabels.forEach(function(lm){ map.removeLayer(lm); });
-    window._countryLabels = [];
-  }
-  if(!allData.geojson) {
-    debugInfo.matchedCountries = 0;
-    updateMapStatus();
+function countryCentroid(countryKey) {
+  const rows = store.adminRecords.filter(row => row.country_key === countryKey && isNum(row.lat) && isNum(row.lon));
+  if (!rows.length) return null;
+  const lat = rows.reduce((sum, row) => sum + Number(row.lat), 0) / rows.length;
+  const lon = rows.reduce((sum, row) => sum + Number(row.lon), 0) / rows.length;
+  return [lat, lon];
+}
+
+function renderEuCountryMarker(model) {
+  const center = [50.3, 10.5];
+  const marker = L.circleMarker(center, {
+    radius: 10,
+    color: '#ffffff',
+    weight: 2,
+    fillColor: riskColor(riskNumFromCountry(model.top)),
+    fillOpacity: 0.9,
+    dashArray: '3,3'
+  }).addTo(layers.virtual);
+  marker.bindTooltip(createCountryTooltip(model), { sticky: true });
+  marker.on('click', () => selectCountry(model));
+  L.tooltip({
+    permanent: true,
+    direction: 'top',
+    offset: [0, -10],
+    className: 'country-map-label',
+    opacity: 1
+  }).setLatLng(center).setContent(countryLabelHtml(model.top)).addTo(layers.countryLabels);
+}
+
+async function selectCountry(model) {
+  state.selectedCountry = model.key;
+  state.selectedCountryCrop = model.isEu && state.crop === 'all' ? 'all' : (state.crop === 'all' ? model.top.crop_group : state.crop);
+  state.selectedCountryRecord = model.top;
+  state.country = model.key;
+  const select = document.getElementById('f-country');
+  if ([...select.options].some(opt => opt.value === model.key)) select.value = model.key;
+  state.layer = 'region';
+  setLayerButtons();
+  showCountryDetail(model.top);
+  await renderRegionLayer();
+}
+
+function showCountryDetail(record) {
+  destroyCharts();
+  const countryKey = record.country_key || canonicalCountry(record.country);
+  const crop = state.selectedCountryCrop || record.crop_group;
+  const regionRecords = countryKey === 'European Union' ? euDisplayRows() : getRegionRecords(countryKey, crop);
+  const stackHtml = renderRiskStack(regionRecords);
+  const topRegions = regionRecords
+    .filter(row => row.weather_region_id)
+    .sort((a, b) => riskNum(b.risk_level_v3) - riskNum(a.risk_level_v3) || (Number(b.national_share) || 0) - (Number(a.national_share) || 0))
+    .slice(0, 8);
+
+  const conclusionItems = [];
+  if (record.current_growth_stage_cn) conclusionItems.push(`生长期：${record.current_growth_stage_cn}`);
+  if (record.weather_condition_summary_cn) conclusionItems.push(`天气：${record.weather_condition_summary_cn}`);
+  if (record.soil_condition_summary_cn) conclusionItems.push(`土壤：${record.soil_condition_summary_cn}`);
+  if (record.production_basis_cn && record.production_impact_cn) conclusionItems.push(`产量影响：${record.production_impact_cn}`);
+  if (record.forecast_summary_cn) conclusionItems.push(`未来展望：${record.forecast_summary_cn}`);
+
+  document.getElementById('detail-panel').innerHTML = `
+    <div class="detail-header">
+      <h2>${esc(record.country_cn || getCountryName(countryKey))}｜${esc(cropLabel(record))}</h2>
+      <div class="subtitle">${riskBadge(riskNumFromCountry(record), record.weighted_risk_level_cn)} <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropLabel(record))}</span></div>
+    </div>
+    <div class="detail-block">
+      <h3>1. 产量口径</h3>
+      <div class="data-grid">
+        <div class="data-cell"><span class="lbl">产量</span><span class="val">${esc(fmtProduction(record.total_production_tonnes))}</span></div>
+        <div class="data-cell"><span class="lbl">地区数</span><span class="val">${esc(fmtInt(record.region_count || regionRecords.length))}</span></div>
+        <div class="data-cell"><span class="lbl">产量口径</span><span class="val">${esc(record.production_basis_cn)}</span></div>
+        <div class="data-cell"><span class="lbl">来源</span><span class="val">${esc(record.source_name)}</span></div>
+      </div>
+      <p style="margin-top:8px;color:var(--muted);">${esc(record.production_basis_note_cn || record.aggregation_note_cn || '')}</p>
+    </div>
+    <div class="detail-block">
+      <h3>2. 国家风险</h3>
+      <div class="data-grid">
+        <div class="data-cell"><span class="lbl">加权风险分</span><span class="val">${esc(fmtNum(record.weighted_risk_score, 2))}</span></div>
+        <div class="data-cell"><span class="lbl">主要风险</span><span class="val">${esc(riskTypeText(record.dominant_risk_type))}</span></div>
+        <div class="data-cell"><span class="lbl">受扰产量</span><span class="val">${esc(fmtProduction(record.disturbed_production_tonnes))}</span></div>
+        <div class="data-cell"><span class="lbl">受扰占比</span><span class="val">${esc(fmtPct(record.disturbed_share))}</span></div>
+      </div>
+      <div style="margin-top:10px;">${stackHtml}</div>
+    </div>
+    <div class="detail-block">
+      <h3>3. 结论</h3>
+      <ol>${conclusionItems.map(item => `<li>${esc(item)}</li>`).join('')}</ol>
+    </div>
+    <div class="detail-block">
+      <h3>地区入口</h3>
+      <div class="region-list">
+        ${topRegions.map(row => regionRowButton(row)).join('') || '<p class="subtitle">该国家当前无可展示地区记录。</p>'}
+      </div>
+    </div>
+  `;
+}
+
+function renderRiskStack(records) {
+  const totals = new Map([[4, 0], [3, 0], [2, 0], [1, 0], [0, 0]]);
+  const total = records.reduce((sum, row) => sum + (Number(row.production_tonnes) || 0), 0);
+  records.forEach(row => {
+    const level = riskNum(row.risk_level_v3);
+    totals.set(level, totals.get(level) + (Number(row.production_tonnes) || 0));
+  });
+  if (!total) return '<p class="subtitle">地区产量权重不足，无法绘制风险结构。</p>';
+  const segments = [4, 3, 2, 1, 0].map(level => {
+    const share = totals.get(level) / total * 100;
+    if (share <= 0) return '';
+    return `<div class="risk-stack-seg" title="${RISK[level].cn} ${share.toFixed(1)}%" style="width:${share}%;background:${RISK[level].color}"></div>`;
+  }).join('');
+  const labels = [4, 3, 2, 1, 0].map(level => {
+    const share = totals.get(level) / total * 100;
+    if (share <= 0) return '';
+    return `<span><span class="legend-swatch" style="display:inline-block;background:${RISK[level].color};vertical-align:-1px;"></span> ${RISK[level].cn} ${share.toFixed(1)}%</span>`;
+  }).join('');
+  return `<div class="risk-stack">${segments}</div><div class="risk-stack-labels">${labels}</div>`;
+}
+
+function regionRowButton(row) {
+  return `
+    <button type="button" class="region-row" data-region-id="${escAttr(row.weather_region_id)}">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+        <b>${esc(shortRegionName(row))}</b>
+        ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
+      </div>
+      <div class="subtitle">${esc(cropLabel(row))}｜全国占比 ${esc(fmtPct(row.national_share))}｜${esc(riskTypeText(row.risk_type))}</div>
+    </button>
+  `;
+}
+
+function shortRegionName(row) {
+  const name = row.region_name_cn || row.region_name || row.boundary_id || row.country_cn || row.country;
+  return String(name).split(' / ')[0].split(', ')[0];
+}
+
+function getRegionRecords(countryKey, crop) {
+  let rows = store.adminRecords.filter(row => row.country_key === countryKey && (crop === 'all' || row.crop_group === crop));
+  const admin1Rows = rows.filter(row => row.admin_level === 'admin1' || row.admin_level_for_map === 'admin1');
+  if (admin1Rows.length) rows = admin1Rows;
+  return rows.sort((a, b) => (Number(b.national_share) || 0) - (Number(a.national_share) || 0));
+}
+
+async function renderRegionLayer() {
+  Object.values(layers).forEach(layer => layer.clearLayers());
+  destroyCharts();
+  setLayerButtons();
+
+  if (!state.selectedCountry) {
+    renderCountryLayer();
     return;
   }
-  
-  // Build set of countries with coverage for the selected crop
-  var cropCountries = new Set();
-  if(allData.countrySummary && selectedCrop !== 'all') {
-    allData.countrySummary.forEach(function(cs){
-      if(cs.crop_group === selectedCrop && cs.region_count > 0) {
-        cropCountries.add(cs.country);
-      }
-    });
-  } else {
-    // "all" crop: show all countries that have any data
-    allData.latest.forEach(function(x){ cropCountries.add(x.country); });
+
+  if (state.selectedCountry === 'European Union') {
+    renderEuRegionLayer();
+    return;
   }
-  
-  var matched = 0;
-  
-  geoJsonLayer = L.geoJSON(allData.geojson, {
-    filter: feature=>{
-      var normalized = normalizeGeojsonName(feature.properties.name);
-      var ok = cropCountries.has(normalized);
-      if(ok) matched++;
-      return ok;
-    },
-    style: feature=>{
-      const normalized = normalizeGeojsonName(feature.properties.name);
-      const level = getCountryRiskLevel(normalized, selectedCrop);
-      const c = colorByLevel(level);
-      return { fillColor:c, weight:1.2, opacity:0.8, color:'#666', dashArray:'', fillOpacity:0.45 };
-    },
-    onEachFeature: (feature, layer)=>{
-      const normalized = normalizeGeojsonName(feature.properties.name);
-      const pts = allData.latest.filter(pt=>pt.country===normalized && (selectedCrop==='all'||pt.crop_group===selectedCrop));
-      const high = pts.filter(p=>(p.anomaly_level||'normal')==='high').length;
-      const medium = pts.filter(p=>(p.anomaly_level||'normal')==='medium').length;
-      // Find country crop summary for production
-      var csEntry = null;
-      if(allData.countrySummary) {
-        csEntry = allData.countrySummary.find(function(c){ return c.country===normalized && (selectedCrop==='all'||c.crop_group===selectedCrop); });
-      }
-      var prodText = csEntry && csEntry.total_production_tonnes ? fmtProduction(csEntry.total_production_tonnes) : '';
-      var popup = '<b>' + cnCountry(normalized) + '</b><br>产区：' + pts.length + ' 个<br>重点：' + high + ' · 一般：' + medium;
-      if(prodText) popup += '<br>产量：' + prodText;
-      layer.bindTooltip(popup, {sticky:true});
-      // Add permanent country label with production
-      var csEntry2 = null;
-      if(allData.countrySummary) {
-        csEntry2 = allData.countrySummary.find(function(c){ return c.country===normalized && (selectedCrop==='all'||c.crop_group===selectedCrop); });
-      }
-      var labelText = cnCountry(normalized);
-      if(csEntry2) {
-        var cropCn = csEntry2.crop_group_cn || cnCrop(csEntry2.crop_group);
-        labelText += '\n' + cropCn;
-        if(csEntry2.total_production_tonnes) {
-          labelText += '｜' + fmtProduction(csEntry2.total_production_tonnes);
+
+  const countryKey = state.selectedCountry;
+  const crop = state.selectedCountryCrop || state.crop;
+  const records = getRegionRecords(countryKey, crop);
+  const coverage = getCoverage(countryKey);
+  let fallbackCount = 0;
+  let matchedCount = 0;
+  let notice = '';
+
+  if (coverage && coverage.has_admin1_boundary && coverage.admin1_boundary_file) {
+    const geojson = await loadAdminGeo(coverage.admin1_boundary_file);
+    if (geojson) {
+      const recordByBoundary = new Map(records.map(row => [regionBoundaryKey(row), row]));
+      const matchedIds = new Set();
+      const regionGeo = L.geoJSON(geojson, {
+        filter: feature => {
+          const key = normalizeAdminShapeName(feature.properties && feature.properties.shapeName, countryKey);
+          return recordByBoundary.has(key);
+        },
+        style: feature => {
+          const key = normalizeAdminShapeName(feature.properties && feature.properties.shapeName, countryKey);
+          const row = recordByBoundary.get(key);
+          return {
+            color: '#4b5563',
+            weight: 1,
+            opacity: 0.82,
+            fillColor: riskColor(row.risk_level_v3),
+            fillOpacity: 0.6
+          };
+        },
+        onEachFeature: (feature, layer) => {
+          const key = normalizeAdminShapeName(feature.properties && feature.properties.shapeName, countryKey);
+          const row = recordByBoundary.get(key);
+          if (!row) return;
+          matchedIds.add(row.weather_region_id);
+          matchedCount += 1;
+          layer.bindTooltip(regionTooltip(row), { sticky: true });
+          layer.on({
+            click: () => showRegionDetail(row),
+            mouseover: () => layer.setStyle({ weight: 2.2, fillOpacity: 0.72 }),
+            mouseout: () => regionGeo.resetStyle(layer)
+          });
         }
-      }
-      var center = layer.getBounds().getCenter();
-      var oilColor = (csEntry2 && csEntry2.oil_type_color) ? csEntry2.oil_type_color : '#64748b';
-      var labelMarker = L.tooltip({
-        permanent: true,
-        direction: 'center',
-        className: 'country-label',
-        opacity: 0.85
-      }).setContent('<span style="border-left: 3px solid ' + oilColor + '; padding-left: 4px;">' + labelText + '</span>').setLatLng(center);
-      labelMarker.addTo(map);
-      // Store reference for cleanup
-      if(!window._countryLabels) window._countryLabels = [];
-      window._countryLabels.push(labelMarker);
-      layer.on('click', ()=>enterCountry(normalized));
-    }
-  }).addTo(map);
-  
-  debugInfo.matchedCountries = matched;
-  updateMapStatus();
-  
-  // Fit to country layer if in global view
-  if(currentView==='global' && geoJsonLayer.getBounds().isValid()){
-    map.fitBounds(geoJsonLayer.getBounds().pad(0.15));
-  }
-}
+      }).addTo(layers.region);
 
-function renderMarkers(){
-  markerLayer.forEach(m=>map.removeLayer(m));
-  markerLayer = [];
-  const pts = getFilteredPoints();
-  pts.forEach(pt=>{
-    const lev = pt.anomaly_level||'normal';
-    const c = colorByLevel(lev);
-    const m = L.circleMarker([pt.latitude, pt.longitude], {
-      radius: Math.max(6, Math.min(32, Math.sqrt((pt.production_tonnes||1000)/500) * 2.5)),
-      fillColor:c, color:'#fff', weight:1.5, opacity:1, fillOpacity:0.85
-    }).addTo(map);
-    var shareText = '—';
-    if(pt.production_tonnes && allData.countrySummary) {
-      var csMatch = allData.countrySummary.find(function(c){ return c.country===pt.country && c.crop_group===pt.crop_group; });
-      if(csMatch && csMatch.total_production_tonnes > 0) {
-        shareText = (pt.production_tonnes / csMatch.total_production_tonnes * 100).toFixed(1) + '%';
-      }
-    }
-    var soilEntry = allData.soilMoistureIndex ? allData.soilMoistureIndex[pt.weather_region_id] : null;
-    var soilText = soilEntry ? (soilEntry.soil_moisture_status || '土壤观测') : '无土壤观测';
-    m.bindTooltip('<b>' + pt.display_region_name + '（' + shareText + '）</b><br>' + cnCrop(pt.crop_group) + ' · ' + cnCountry(pt.country) + '<br>' + cnLabel(pt.anomaly_label) + '<br>' + fmtProduction(pt.production_tonnes) + ' · 占比 ' + shareText + '<br>' + soilText);
-    m.on('click', ()=>showDetail(pt.weather_region_id));
-    markerLayer.push(m);
-  });
-  debugInfo.renderedMarkers = markerLayer.length;
-  updateMapStatus();
-}
-
-function updateMapStatus(){
-  const el = document.getElementById('map-status');
-  const geoStatus = allData.geojson 
-    ? `<span class="ok">国家边界：已加载 (${debugInfo.matchedCountries} 个匹配)</span>`
-    : `<span class="err">国家边界：加载失败${debugInfo.geojsonError?' ('+debugInfo.geojsonError+')':''}</span>`;
-  const markerStatus = debugInfo.renderedMarkers > 0
-    ? `<span class="ok">产区点位：${debugInfo.renderedMarkers} 个</span>`
-    : `<span class="err">产区点位：未显示</span>`;
-  
-  let admin1Status = '';
-  if(currentView === 'country' && selectedCountry){
-    const levelLabel = debugInfo.currentLevel === 'admin1' ? '省州' : '点位';
-    const admin1Info = debugInfo.admin1Loaded
-      ? `<span class="ok">省州边界：已加载 (${debugInfo.admin1MatchedCount}/${debugInfo.admin1FeatureCount})</span>`
-      : `<span class="err">省州边界：未加载</span>`;
-    admin1Status = `<br>当前层级：${levelLabel} · ${cnCountry(selectedCountry)}<br>${admin1Info}`;
-  }
-  
-  el.innerHTML = `${geoStatus}<br>${markerStatus}${admin1Status}<br>数据点：${debugInfo.latestCount} · 地图状态：已渲染`;
-}
-
-function enterCountry(country){
-  currentView = 'country';
-  selectedCountry = country;
-  debugInfo.currentLevel = 'admin1';
-  document.getElementById('back-btn').classList.add('show');
-  document.getElementById('f-country').value = country;
-  document.getElementById('overlay-title').textContent = cnCountry(country);
-  
-  // Try to load admin1 GeoJSON; if fails, fall back to markers only
-  loadAndRenderAdmin1(country).then(ok => {
-    if(!ok){
-      // Admin1 failed or not available - fall back to points
-      console.log('[DEBUG] admin1 fallback to markers for', country);
-      debugInfo.currentLevel = 'points';
-      renderMarkers();
-      const pts = getFilteredPoints();
-      if(pts.length > 0){
-        const lats = pts.map(p => p.latitude), lons = pts.map(p => p.longitude);
-        map.fitBounds([[Math.min(...lats)-1, Math.min(...lons)-1], [Math.max(...lats)+1, Math.max(...lons)+1]]);
-      }
-    } else {
-      // Admin1 loaded successfully - also render markers on top
-      renderMarkers();
-    }
-    showCountrySummary(country);
-  });
-}
-
-function backToGlobal(){
-  currentView='global'; selectedCountry=null;
-  debugInfo.currentLevel = 'country';
-  document.getElementById('back-btn').classList.remove('show');
-  document.getElementById('f-country').value='all';
-  document.getElementById('overlay-title').textContent='全球概览';
-  // Clean up admin1 layer
-  if(admin1Layer){ map.removeLayer(admin1Layer); admin1Layer = null; }
-  debugInfo.admin1Loaded = false;
-  renderGeoJSON(); renderMarkers(); updateOverview();
-  document.getElementById('detail-panel').innerHTML='<div class="empty">点击地图上的国家或产区点位查看详情</div>';
-  if(allData.geojson && geoJsonLayer && geoJsonLayer.getBounds().isValid()){
-    map.fitBounds(geoJsonLayer.getBounds().pad(0.15));
-  } else {
-    fitToPointsOrDefault();
-  }
-}
-
-function fitToPointsOrDefault(){
-  const pts = allData.latest;
-  if(pts && pts.length>0){
-    const lats=pts.map(p=>p.latitude), lons=pts.map(p=>p.longitude);
-    const bounds = [[Math.min(...lats)-2,Math.min(...lons)-2],[Math.max(...lats)+2,Math.max(...lons)+2]];
-    map.fitBounds(bounds);
-  } else {
-    map.setView([15,100],3);
-  }
-}
-
-function selectCrop(crop){
-  selectedCrop = crop;
-  document.querySelectorAll('.crop-tab').forEach(t=>t.classList.toggle('active', t.dataset.crop===crop));
-  if(currentView==='country' && selectedCountry){
-    // Re-render admin1 if loaded, otherwise just markers
-    if(admin1Layer){
-      loadAndRenderAdmin1(selectedCountry).then(ok => {
-        renderMarkers();
-        const pts = getFilteredPoints().filter(p=>p.country===selectedCountry);
-        if(pts.length===0) backToGlobal();
-        else showCountrySummary(selectedCountry);
+      records.filter(row => !matchedIds.has(row.weather_region_id)).forEach(row => {
+        if (renderRegionFallbackMarker(row)) fallbackCount += 1;
       });
-    } else {
-      renderMarkers();
-      const pts = getFilteredPoints().filter(p=>p.country===selectedCountry);
-      if(pts.length===0) backToGlobal();
-      else showCountrySummary(selectedCountry);
+      if (fallbackCount) notice = `${getCountryName(countryKey)} 有 ${fallbackCount} 个地区未匹配到 admin1 边界，已使用质心 fallback。`;
     }
-  } else {
-    renderGeoJSON(); renderMarkers(); updateOverview();
+  }
+
+  if (!matchedCount) {
+    records.forEach(row => {
+      if (renderRegionFallbackMarker(row)) fallbackCount += 1;
+    });
+    notice = `${getCountryName(countryKey)} 暂无 admin1 polygon，地区层使用质心 fallback。`;
+  }
+
+  refreshRegionLabels(records);
+  const bounds = boundsFor(['region', 'fallback']);
+  if (bounds.isValid()) map.fitBounds(bounds.pad(0.16));
+  else map.setView(countryCentroid(countryKey) || [16, 25], 5);
+
+  mapStats = {
+    main: records.length,
+    risk: records.filter(row => riskNum(row.risk_level_v3) >= 3).length,
+    fallback: fallbackCount,
+    note: notice || `${getCountryName(countryKey)} 地区层使用 admin1 polygon。`
+  };
+  updateOverlay();
+}
+
+async function loadAdminGeo(file) {
+  if (adminGeoCache[file]) return adminGeoCache[file];
+  try {
+    const geo = await loadJSON(file);
+    adminGeoCache[file] = geo;
+    return geo;
+  } catch (err) {
+    console.warn('admin1 boundary load failed', file, err);
+    return null;
   }
 }
 
-function onFilterChange(){
-  renderMarkers(); updateOverview();
-  if(currentView==='global') renderGeoJSON();
+function regionBoundaryKey(row) {
+  const key = row.boundary_id || shortRegionName(row);
+  if (row.country_key === 'United States') return String(key).toUpperCase();
+  return key;
 }
 
-function resetFilters(){
-  selectedCrop='all';
-  document.querySelectorAll('.crop-tab').forEach(t=>t.classList.toggle('active', t.dataset.crop==='all'));
-  document.getElementById('f-country').value='all';
-  document.getElementById('f-level').value='all';
-  document.getElementById('f-label').value='all';
-  backToGlobal();
+function normalizeAdminShapeName(name, countryKey) {
+  if (!name) return '';
+  if (ADMIN1_NAME_MAP[name]) return ADMIN1_NAME_MAP[name];
+  if (countryKey === 'United States') return String(name).toUpperCase();
+  return name;
 }
 
-function updateOverview(){
-  const pts = getFilteredPoints();
-  document.getElementById('ov-points').textContent = pts.length;
-  document.getElementById('ov-high').textContent = pts.filter(p=>(p.anomaly_level||'normal')==='high').length;
-  document.getElementById('ov-medium').textContent = pts.filter(p=>(p.anomaly_level||'normal')==='medium').length;
-  document.getElementById('meta-date').textContent = allData.meta?.generated_at?.split(' ')[0]||'—';
+function renderRegionFallbackMarker(row) {
+  if (!isNum(row.lat) || !isNum(row.lon)) return false;
+  const radius = Math.max(5, Math.min(15, 5 + Math.sqrt((Number(row.national_share) || 0) * 100) * 1.4));
+  const marker = L.circleMarker([Number(row.lat), Number(row.lon)], {
+    radius,
+    color: '#ffffff',
+    weight: 1.3,
+    fillColor: riskColor(row.risk_level_v3),
+    fillOpacity: 0.88
+  }).addTo(layers.fallback);
+  marker.bindTooltip(regionTooltip(row), { sticky: true });
+  marker.on('click', () => showRegionDetail(row));
+  return true;
 }
 
-function populateFilters(){
-  const countries = [...new Set(allData.latest.map(x=>x.country))].sort();
-  const labels = [...new Set(allData.latest.map(x=>x.anomaly_label).filter(Boolean))].sort();
-  const selCountry = document.getElementById('f-country');
-  selCountry.innerHTML='<option value="all">全部国家</option>';
-  countries.forEach(c=>{ const o=document.createElement('option'); o.value=c; o.textContent=cnCountry(c); selCountry.appendChild(o); });
-  const selLabel = document.getElementById('f-label');
-  selLabel.innerHTML='<option value="all">全部异常</option>';
-  labels.forEach(l=>{ const o=document.createElement('option'); o.value=l; o.textContent=cnLabel(l); selLabel.appendChild(o); });
+function regionTooltip(row) {
+  return `
+    <div style="min-width:190px;">
+      <b>${esc(shortRegionName(row))}</b><br>
+      ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
+      <div style="margin-top:4px;">${esc(cropLabel(row))}｜全国占比 ${esc(fmtPct(row.national_share))}</div>
+      <div>${esc(row.risk_reason_cn || riskTypeText(row.risk_type))}</div>
+    </div>
+  `;
 }
 
-function showCountrySummary(country){
-  const pts = allData.latest.filter(pt=>pt.country===country && (selectedCrop==='all'||pt.crop_group===selectedCrop));
-  if(!pts.length) return;
-  // Aggregate using risk_level_v2 from water stress where available
-  const RISK_V2_CN = {normal:'正常监控', watch:'一般关注', attention:'重点关注', stress:'显著压力'};
-  const RISK_V2_COLOR = {normal:'#16a34a', watch:'#ca8a04', attention:'#ea580c', stress:'#dc2626'};
-  var v2Counts = {stress:0, attention:0, watch:0, normal:0};
-  pts.forEach(function(p){
-    var wsEntry = allData.waterStress ? allData.waterStress.find(function(w){ return w.weather_region_id===p.weather_region_id; }) : null;
-    var rv2 = wsEntry ? (wsEntry.risk_level_v2 || p.anomaly_level || 'normal') : (p.anomaly_level || 'normal');
-    if(rv2==='stress') v2Counts.stress++;
-    else if(rv2==='attention') v2Counts.attention++;
-    else if(rv2==='watch') v2Counts.watch++;
-    else v2Counts.normal++;
+function refreshRegionLabels(recordsArg) {
+  layers.regionLabels.clearLayers();
+  if (state.layer !== 'region') return;
+  const records = recordsArg || currentRegionRecords();
+  const zoom = map.getZoom();
+  records.forEach(row => {
+    if (!isNum(row.lat) || !isNum(row.lon)) return;
+    if (!shouldShowRegionLabel(row, zoom)) return;
+    L.tooltip({
+      permanent: true,
+      direction: 'top',
+      offset: [0, -6],
+      className: 'region-map-label',
+      opacity: 1
+    })
+      .setLatLng([Number(row.lat), Number(row.lon)])
+      .setContent(regionLabelHtml(row))
+      .addTo(layers.regionLabels);
   });
-  var topRisk = v2Counts.stress>0?'stress':v2Counts.attention>0?'attention':v2Counts.watch>0?'watch':'normal';
-  
-  const cs = (allData.countrySummary||[]).find(c=>c.country===country && (selectedCrop==='all'||c.crop_group===selectedCrop));
-  const soilSupport = pts.filter(p=>allData.soilMoistureIndex && allData.soilMoistureIndex[p.weather_region_id]).length;
-  const oilLabel = cs && cs.oil_type ? cs.oil_type : '—';
-  
-  let html = `
-    <div class="info-block">
-      <div class="title-row">
-        <span class="name">${cnCountry(country)}</span>
-        <span class="badge" style="background:${RISK_V2_COLOR[topRisk]||'#64748b'};color:#fff;">${RISK_V2_CN[topRisk]||'正常监控'}</span>
-      </div>
-      <div class="sub">${selectedCrop==='all'?'全部品种':cnCrop(selectedCrop)} · ${pts.length} 个产区</div>
-      <div class="data-grid" style="margin-top:10px;">
-        <div class="data-cell"><span class="lbl">显著压力</span><span class="val high">${v2Counts.stress}</span></div>
-        <div class="data-cell"><span class="lbl">重点关注</span><span class="val" style="color:#ea580c;">${v2Counts.attention}</span></div>
-        <div class="data-cell"><span class="lbl">一般关注</span><span class="val" style="color:#ca8a04;">${v2Counts.watch}</span></div>
-        <div class="data-cell"><span class="lbl">正常监控</span><span class="val normal">${v2Counts.normal}</span></div>
-        <div class="data-cell"><span class="lbl">油种</span><span class="val">${oilLabel}</span></div>
-        <div class="data-cell"><span class="lbl">土壤监测点</span><span class="val">${soilSupport} / ${pts.length}</span></div>
-      </div>
-    </div>
-    <div class="info-block">
-      <h3>天气摘要</h3>
-      <div class="trend-text">${cs?cs.overall_status_cn:'暂无该国汇总数据'}</div>
-    </div>
-  `;
-  document.getElementById('detail-panel').innerHTML = html;
 }
 
-function showDetail(rid){
-  const pt = allData.latest.find(x=>x.weather_region_id===rid);
-  const st = allData.stage.find(x=>x.weather_region_id===rid);
-  const ws = allData.waterStress?allData.waterStress.find(x=>x.weather_region_id===rid):null;
-  const fc = allData.forecast.filter(x=>x.weather_region_id===rid).sort((a,b)=>a.horizon_day-b.horizon_day);
-  const fcSum = allData.forecastSummary?allData.forecastSummary.find(x=>x.weather_region_id===rid):null;
-  const hist = allData.history?allData.history.filter(x=>x.weather_region_id===rid).sort((a,b)=>a.date.localeCompare(b.date)):[];
-  
-  if(!pt) return;
-  const level = pt.anomaly_level||'normal';
-  const riskV2 = ws ? (ws.risk_level_v2 || level) : level;
-  const RISK_V2_CN = {normal:'正常监控', watch:'一般关注', attention:'重点关注', stress:'显著压力'};
-  const RISK_V2_COLOR = {normal:'#16a34a', watch:'#ca8a04', attention:'#ea580c', stress:'#dc2626'};
-  const soilEntry = allData.soilMoistureIndex ? allData.soilMoistureIndex[pt.weather_region_id] : null;
-  const soilLabel = soilEntry && soilEntry.soil_moisture_status ? soilEntry.soil_moisture_status : '待接入';
-  
-  let html = `
-    <div class="info-block">
-      <div class="title-row">
-        <span class="name">${pt.display_region_name}</span>
-        <span class="badge" style="background:${RISK_V2_COLOR[riskV2]||'#64748b'};color:#fff;">${RISK_V2_CN[riskV2]||'正常监控'}</span>
-      </div>
-      <div class="sub">${cnCrop(pt.crop_group)} · ${cnCountry(pt.country)}${pt.admin1?' · '+pt.admin1:''}</div>
-      <div style="font-size:11px;color:var(--text3);margin-top:4px;">
-        ${pt.oil_type ? '油种：' + pt.oil_type + ' · ' : ''}来源：${pt.source || '—'}
-      </div>
-      <div style="font-size:11px;color:var(--text3);margin-top:4px;">${(function(){
-  var shareVal = '—';
-  if(pt.production_tonnes && allData.countrySummary) {
-    var cs = allData.countrySummary.find(function(c){ return c.country===pt.country && c.crop_group===pt.crop_group; });
-    if(cs && cs.total_production_tonnes > 0) {
-      shareVal = (pt.production_tonnes / cs.total_production_tonnes * 100).toFixed(1) + '%';
-    }
-  }
-  return '地区产量：' + fmtProduction(pt.production_tonnes) + ' · 占该国产量：' + shareVal;
-})()}</div>
-      ${(function(){
-        var shareVal = '—';
-        var sharePct = 0;
-        if(pt.production_tonnes && allData.countrySummary) {
-          var cs = allData.countrySummary.find(function(c){ return c.country===pt.country && c.crop_group===pt.crop_group; });
-          if(cs && cs.total_production_tonnes > 0) {
-            shareVal = (pt.production_tonnes / cs.total_production_tonnes * 100).toFixed(1) + '%';
-            sharePct = Math.min(100, Math.max(6, pt.production_tonnes / cs.total_production_tonnes * 100));
-          }
-        }
-        return sharePct > 0 ? '<div class="share-bar-container"><div class="share-bar" style="width:' + sharePct + '%"></div><div class="share-bar-value">' + shareVal + '</div></div>' : '';
-      })()}</div>
+function currentRegionRecords() {
+  if (!state.selectedCountry) return [];
+  if (state.selectedCountry === 'European Union') return euDisplayRows();
+  return getRegionRecords(state.selectedCountry, state.selectedCountryCrop || state.crop);
+}
+
+function shouldShowRegionLabel(row, zoom) {
+  const share = Number(row.national_share ?? row.eu_share ?? 0);
+  if (share >= 0.2) return true;
+  if (zoom >= 5 && share >= 0.1) return true;
+  if (zoom >= 6 && share >= 0.03) return true;
+  return zoom >= 7;
+}
+
+function regionLabelHtml(row) {
+  const share = row.eu_share !== undefined ? row.eu_share : row.national_share;
+  return `
+    <div class="map-label" style="--oil-color:${cropColor(row.crop_group)}">
+      <span class="stripe"></span>
+      <div><strong>${esc(shortRegionName(row))}｜${esc(cropLabel(row))}</strong><span>${esc(fmtPct(share))}</span></div>
     </div>
   `;
-  
-  // Core conclusion section (结论先行)
-  var conclusionHtml = '<div class="info-block" style="background:#f8fafc;border-left:3px solid #2563eb;">';
-  conclusionHtml += '<h3 style="font-size:16px;margin-bottom:8px;">核心结论</h3>';
-  if(st && st.matched_growth_stage) {
-    conclusionHtml += '<div style="font-size:14px;margin-bottom:6px;"><strong>当前生长周期：</strong>' + st.matched_growth_stage + '</div>';
+}
+
+function euDisplayRows() {
+  const crop = state.selectedCountryCrop || state.crop;
+  const rows = store.euRecords.filter(row => crop === 'all' || row.crop_group === crop);
+  return rows.map(row => {
+    const admin = findEuAdminRecord(row);
+    return {
+      ...row,
+      weather_region_id: admin ? admin.weather_region_id : `eu::${row.region}::${row.crop_group}`,
+      country_key: row.region,
+      country_cn: row.region_cn,
+      region_name: row.region,
+      region_name_cn: row.region_cn,
+      national_share: row.eu_share,
+      lat: admin ? admin.lat : null,
+      lon: admin ? admin.lon : null,
+      risk_type: admin ? admin.risk_type : row.risk_level_v3_code,
+      risk_reason_cn: admin ? admin.risk_reason_cn : row.risk_level_v3_cn
+    };
+  });
+}
+
+function renderEuRegionLayer() {
+  const rows = euDisplayRows();
+  const byCountry = new Map();
+  rows.forEach(row => {
+    const key = canonicalCountry(row.region);
+    if (!byCountry.has(key)) byCountry.set(key, []);
+    byCountry.get(key).push(row);
+  });
+  let polygonCount = 0;
+  let fallbackCount = 0;
+
+  if (store.geojson) {
+    L.geoJSON(store.geojson, {
+      filter: feature => byCountry.has(getFeatureCountry(feature)),
+      style: feature => {
+        const rowsForCountry = byCountry.get(getFeatureCountry(feature));
+        const top = chooseEuRow(rowsForCountry);
+        return {
+          color: '#4b5563',
+          weight: 1,
+          opacity: 0.82,
+          fillColor: riskColor(top.risk_level_v3),
+          fillOpacity: 0.58
+        };
+      },
+      onEachFeature: (feature, layer) => {
+        const rowsForCountry = byCountry.get(getFeatureCountry(feature));
+        const top = chooseEuRow(rowsForCountry);
+        polygonCount += 1;
+        layer.bindTooltip(regionTooltip(top), { sticky: true });
+        layer.on('click', () => showEuRegionDetail(top));
+      }
+    }).addTo(layers.region);
   }
-  var riskText = ws ? (ws.risk_reason_cn || ws.water_stress_explanation_cn || '暂无明显天气压力') : '暂无水分压力数据';
-  conclusionHtml += '<div style="font-size:14px;margin-bottom:6px;"><strong>目前天气风险：</strong>' + riskText + '</div>';
-  var soilRiskText = '当前根据降雨和蒸散指标综合判断。';
-  if(ws) {
-    if(ws.et0_30d_avg_mm && ws.et0_30d_avg_mm > 4.5 && ws.precipitation_30d_status && ws.precipitation_30d_status.includes('偏少')) {
-      soilRiskText = '大气失水需求偏强，叠加降雨偏少，存在失墒风险。';
-    } else if(ws.vpd_30d_avg_kpa && ws.vpd_30d_avg_kpa > 1.8) {
-      soilRiskText = '大气干燥度偏高，蒸散压力较大。';
-    } else if(ws.precipitation_30d_status && ws.precipitation_30d_status.includes('偏多')) {
-      soilRiskText = '降雨偏多，土壤含水量可能偏高。';
+
+  rows.forEach(row => {
+    if (hasRenderedEuPolygon(row.region)) return;
+    const admin = findEuAdminRecord(row);
+    if (admin && renderRegionFallbackMarker({ ...admin, national_share: row.eu_share })) fallbackCount += 1;
+  });
+
+  refreshRegionLabels(rows);
+  const bounds = boundsFor(['region', 'fallback']);
+  if (bounds.isValid()) map.fitBounds(bounds.pad(0.16));
+  else map.setView([50.3, 10.5], 4);
+
+  mapStats = {
+    main: rows.length,
+    risk: rows.filter(row => riskNum(row.risk_level_v3) >= 3).length,
+    fallback: fallbackCount + 1,
+    note: '欧盟为 virtual country；地区层展示成员国，不生成欧盟整体假边界。'
+  };
+  updateOverlay();
+}
+
+function chooseEuRow(rows) {
+  return [...rows].sort((a, b) => riskNum(b.risk_level_v3) - riskNum(a.risk_level_v3) || (Number(b.production_tonnes) || 0) - (Number(a.production_tonnes) || 0))[0];
+}
+
+function hasRenderedEuPolygon(region) {
+  const key = canonicalCountry(region);
+  let rendered = false;
+  layers.region.eachLayer(layer => {
+    if (layer.eachLayer) {
+      layer.eachLayer(child => {
+        const feature = child.feature;
+        if (feature && getFeatureCountry(feature) === key) rendered = true;
+      });
     }
+  });
+  return rendered;
+}
+
+function findEuAdminRecord(euRow) {
+  return store.adminRecords.find(row => canonicalCountry(row.country) === canonicalCountry(euRow.region) && row.crop_group === euRow.crop_group) || null;
+}
+
+function showEuRegionDetail(euRow) {
+  const admin = findEuAdminRecord(euRow);
+  if (admin) {
+    showRegionDetail(admin);
+    return;
   }
-  conclusionHtml += '<div style="font-size:14px;margin-bottom:6px;"><strong>土壤墑情风险：</strong>' + soilRiskText + '</div>';
-  if(fcSum) {
-    conclusionHtml += '<div style="font-size:14px;"><strong>未来预报：</strong>' + fcSum.forecast_summary_cn + '</div>';
-  }
-  conclusionHtml += '</div>';
-  html += conclusionHtml;
-  
-  if(soilEntry){
-    html += `
-      <div class="info-block">
-        <h3>土壤观测</h3>
-        <div class="data-grid">
-          <div class="data-cell"><span class="lbl">土壤墒情状态</span><span class="val">${soilEntry.soil_moisture_status || '—'}</span></div>
-          <div class="data-cell"><span class="lbl">30日蒸散需求</span><span class="val">${fmt(soilEntry.et0_30d_avg_mm)} mm</span></div>
-          <div class="data-cell"><span class="lbl">30日大气干燥度</span><span class="val">${fmt(soilEntry.vpd_30d_avg_kpa)} kPa</span></div>
-          <div class="data-cell"><span class="lbl">数据说明</span><span class="val" style="font-size:12px;">${soilEntry.data_completeness_note || '—'}</span></div>
-        </div>
-      </div>
-    `;
-  }
-  
-  if(ws){
-    html += `
-      <div class="info-block">
-        <h3>水分压力</h3>
-        <div class="stress-box ${ws.water_stress_level}">
-          <div class="stress-title">${ws.water_stress_label_cn}</div>
-          <div>${ws.water_stress_explanation_cn}</div>
-          <div class="stress-note">${ws.data_completeness_note}</div>
-        </div>
-        <div class="data-grid">
-          <div class="data-cell"><span class="lbl">30日降雨状态</span><span class="val">${ws.precipitation_30d_status}</span></div>
-          <div class="data-cell"><span class="lbl">7日温度状态</span><span class="val">${ws.temp_7d_status}</span></div>
-          <div class="data-cell"><span class="lbl">土壤墒情</span><span class="val" style="font-size:12px;">${ws.soil_moisture_status||'待接入'}</span></div>
-          <div class="data-cell"><span class="lbl">大气失水需求</span><span class="val" style="font-size:12px;">${ws.et0_status && ws.vpd_status ? ws.et0_status + '，' + ws.vpd_status : '数据待积累'}</span></div>
-        </div>
-      </div>
-    `;
-  }
-  
-  html += `
-    <div class="info-block">
-      <h3>最新天气 · ${fmt(pt.latest_raw_weather_date)}</h3>
+  destroyCharts();
+  document.getElementById('detail-panel').innerHTML = `
+    <div class="detail-header">
+      <h2>${esc(euRow.region_cn || euRow.region)}｜${esc(cropLabel(euRow))}</h2>
+      <div class="subtitle">${riskBadge(euRow.risk_level_v3, euRow.risk_level_v3_cn)} <span class="pill">欧盟成员国</span></div>
+    </div>
+    <div class="detail-block">
+      <h3>核心结论</h3>
       <div class="data-grid">
-        <div class="data-cell"><span class="lbl">最高气温</span><span class="val">${fmtNum(pt.temp_max_c)} °C</span></div>
-        <div class="data-cell"><span class="lbl">最低气温</span><span class="val">${fmtNum(pt.temp_min_c)} °C</span></div>
-        <div class="data-cell"><span class="lbl">平均气温</span><span class="val">${fmtNum(pt.temp_mean_c)} °C</span></div>
-        <div class="data-cell"><span class="lbl">降水量</span><span class="val">${fmtNum(pt.precipitation_mm)} mm</span></div>
+        <div class="data-cell"><span class="lbl">成员国产量</span><span class="val">${esc(fmtProduction(euRow.production_tonnes))}</span></div>
+        <div class="data-cell"><span class="lbl">欧盟占比</span><span class="val">${esc(fmtPct(euRow.eu_share))}</span></div>
       </div>
+      <p style="margin-top:8px;">该成员国暂无完整地区序列，当前显示欧盟聚合记录。</p>
     </div>
   `;
-  
-  if(fcSum){
-    html += `
-      <div class="info-block">
-        <h3>未来趋势</h3>
-        <div class="data-grid">
-          <div class="data-cell"><span class="lbl">7天累计降雨</span><span class="val">${fmtNum(fcSum.rain_7d_sum)} mm</span></div>
-          <div class="data-cell"><span class="lbl">16天累计降雨</span><span class="val">${fmtNum(fcSum.rain_16d_sum)} mm</span></div>
-          <div class="data-cell"><span class="lbl">7天平均最高温</span><span class="val">${fmtNum(fcSum.temp_max_7d_avg)} °C</span></div>
-          <div class="data-cell"><span class="lbl">16天平均最高温</span><span class="val">${fmtNum(fcSum.temp_max_16d_avg)} °C</span></div>
+}
+
+function showRegionDetail(row) {
+  destroyCharts();
+  const conclusion = [
+    row.risk_reason_cn ? `核心风险：${row.risk_reason_cn}` : '',
+    row.current_growth_stage_cn ? `生长期：${row.current_growth_stage_cn}` : '',
+    row.weather_condition_summary_cn ? `天气：${row.weather_condition_summary_cn}` : '',
+    row.soil_condition_summary_cn ? `土壤：${row.soil_condition_summary_cn}` : '',
+    row.production_impact_cn ? `产量影响：${row.production_impact_cn}` : '',
+    row.forecast_summary_cn ? `未来展望：${row.forecast_summary_cn}` : ''
+  ].filter(Boolean);
+
+  document.getElementById('detail-panel').innerHTML = `
+    <div class="detail-header">
+      <h2>${esc(shortRegionName(row))}</h2>
+      <div class="subtitle">${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)} <span class="pill oil-pill" style="--oil-color:${cropColor(row.crop_group)}">${esc(cropLabel(row))}</span></div>
+    </div>
+    <div class="detail-block">
+      <h3>1. 核心结论</h3>
+      <ol>${conclusion.map(item => `<li>${esc(item)}</li>`).join('')}</ol>
+      <div class="data-grid" style="margin-top:10px;">
+        <div class="data-cell"><span class="lbl">产量</span><span class="val">${esc(fmtProduction(row.production_tonnes))}</span></div>
+        <div class="data-cell"><span class="lbl">全国占比</span><span class="val">${esc(fmtPct(row.national_share))}</span></div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <h3>2. 土壤情况</h3>
+      <div class="data-grid">
+        <div class="data-cell"><span class="lbl">土壤状态</span><span class="val">${esc(row.soil_status_cn)}</span></div>
+        <div class="data-cell"><span class="lbl">根区分位</span><span class="val">${esc(fmtNum(row.rootzone_percentile, 1, ''))}</span></div>
+        <div class="data-cell"><span class="lbl">表层分位</span><span class="val">${esc(fmtNum(row.surface_percentile, 1, ''))}</span></div>
+        <div class="data-cell"><span class="lbl">根区含水量</span><span class="val">${esc(fmtNum(row.soil_water_rootzone, 4, ' m³/m³'))}</span></div>
+      </div>
+      <div class="chart-box"><canvas id="chart-soil"></canvas></div>
+    </div>
+    <div class="detail-block">
+      <h3>3. 累积降雨距平</h3>
+      <div class="data-grid">
+        <div class="data-cell"><span class="lbl">近30天实际</span><span class="val">${esc(fmtNum(row.precip_30d_actual, 1, ' mm'))}</span></div>
+        <div class="data-cell"><span class="lbl">近30天常年</span><span class="val">${esc(fmtNum(row.precip_30d_normal, 1, ' mm'))}</span></div>
+        <div class="data-cell"><span class="lbl">距平</span><span class="val">${esc(fmtSigned(row.precip_30d_anomaly_mm, 1, ' mm'))}</span></div>
+        <div class="data-cell"><span class="lbl">实际/常年</span><span class="val">${esc(fmtPct(row.precip_30d_ratio_pct, 0, false))}</span></div>
+      </div>
+      <div class="chart-box compact"><canvas id="chart-precip-cum"></canvas></div>
+    </div>
+    <div class="detail-block">
+      <h3>4. 降雨距平 + 温度距平</h3>
+      <div class="two-charts">
+        <div>
+          <div class="chart-title">近90天 30日降雨距平</div>
+          <div class="chart-box compact"><canvas id="chart-rain-anomaly"></canvas></div>
         </div>
-        <div class="trend-text"><strong>趋势判断：</strong>${fcSum.forecast_summary_cn}</div>
+        <div>
+          <div class="chart-title">近90天 最高温距平</div>
+          <div class="chart-box compact"><canvas id="chart-temp-anomaly"></canvas></div>
+        </div>
       </div>
-    `;
+    </div>
+    <div class="detail-block">
+      <h3>5. 未来天气预报</h3>
+      <div class="data-grid">
+        <div class="data-cell"><span class="lbl">未来7天降雨</span><span class="val">${esc(fmtNum(row.forecast_7d_precip, 1, ' mm'))}</span></div>
+        <div class="data-cell"><span class="lbl">未来16天降雨</span><span class="val">${esc(fmtNum(row.forecast_16d_precip, 1, ' mm'))}</span></div>
+        <div class="data-cell"><span class="lbl">16天最高温</span><span class="val">${esc(fmtNum(row.forecast_16d_temp_max, 1, ' °C'))}</span></div>
+        <div class="data-cell"><span class="lbl">16天最低温</span><span class="val">${esc(fmtNum(row.forecast_16d_temp_min, 1, ' °C'))}</span></div>
+      </div>
+      <p style="margin-top:8px;color:var(--muted);">${esc(forecastReliefText(row))}</p>
+      <div class="chart-box"><canvas id="chart-forecast"></canvas></div>
+    </div>
+  `;
+
+  renderRegionCharts(row);
+}
+
+function forecastReliefText(row) {
+  if (row.forecast_summary_cn) return row.forecast_summary_cn;
+  if (isNum(row.precip_30d_anomaly_mm) && Number(row.precip_30d_anomaly_mm) < -20) {
+    if (isNum(row.forecast_16d_precip) && Number(row.forecast_16d_precip) >= 30) return '未来降雨可能缓解前期水分缺口。';
+    return '未来补水不足，水分压力可能维持或加重。';
   }
-  
-  if(hist.length>0){
-    // Get latest record with cumulative data
-    var latestCum = null;
-    for(var hi = hist.length - 1; hi >= 0; hi--) {
-      if(hist[hi].precipitation_30d_actual_mm !== null && hist[hi].precipitation_30d_actual_mm !== undefined) {
-        latestCum = hist[hi];
-        break;
+  if (isNum(row.precip_30d_anomaly_mm) && Number(row.precip_30d_anomaly_mm) > 30) return '前期降雨偏多，需关注后续偏湿延续。';
+  return '未来天气对当前风险的方向性影响不明确。';
+}
+
+function renderRegionCharts(row) {
+  renderSoilChart(row.soil_rootzone_percentile_90d_series || []);
+  renderPrecipCumChart(row.precip_30d_anomaly_90d_series || []);
+  renderRainAnomalyChart(row.precip_30d_anomaly_90d_series || []);
+  renderTempAnomalyChart(row.precip_30d_anomaly_90d_series || []);
+  renderForecastChart(row.forecast_daily_16d_series || []);
+}
+
+const soilBandPlugin = {
+  id: 'soilBands',
+  beforeDraw(chart) {
+    const y = chart.scales.y;
+    const area = chart.chartArea;
+    if (!y || !area) return;
+    const bands = [
+      [0, 10, 'rgba(185,28,28,0.10)'],
+      [10, 30, 'rgba(249,115,22,0.09)'],
+      [30, 70, 'rgba(22,163,74,0.08)'],
+      [70, 90, 'rgba(37,99,235,0.08)'],
+      [90, 100, 'rgba(124,58,237,0.08)']
+    ];
+    const ctx = chart.ctx;
+    ctx.save();
+    bands.forEach(([from, to, color]) => {
+      const y1 = y.getPixelForValue(to);
+      const y2 = y.getPixelForValue(from);
+      ctx.fillStyle = color;
+      ctx.fillRect(area.left, y1, area.right - area.left, y2 - y1);
+    });
+    ctx.restore();
+  }
+};
+
+function chartLabels(series, dateKey = 'date') {
+  return series.map(row => firstDateShort(row[dateKey]));
+}
+
+function chartValues(series, key) {
+  return series.map(row => isNum(row[key]) ? Number(row[key]) : null);
+}
+
+function renderSoilChart(series) {
+  const canvas = document.getElementById('chart-soil');
+  if (!canvas || !series.length) return;
+  charts.soil = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: chartLabels(series),
+      datasets: [
+        { label: '根区分位', data: chartValues(series, 'rootzone_percentile'), borderColor: '#111827', borderWidth: 2, pointRadius: 0, tension: 0.25 },
+        { label: '表层分位', data: chartValues(series, 'surface_percentile'), borderColor: '#2563eb', borderWidth: 1.4, pointRadius: 0, tension: 0.25 }
+      ]
+    },
+    options: chartBaseOptions({ yMin: 0, yMax: 100, yTitle: 'percentile' }),
+    plugins: [soilBandPlugin]
+  });
+}
+
+function renderPrecipCumChart(series) {
+  const canvas = document.getElementById('chart-precip-cum');
+  if (!canvas || !series.length) return;
+  charts.precipCum = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: chartLabels(series),
+      datasets: [
+        { label: '实际', data: chartValues(series, 'precip_30d_actual'), borderColor: '#2563eb', borderWidth: 1.8, pointRadius: 0, tension: 0.25 },
+        { label: '常年', data: chartValues(series, 'precip_30d_normal'), borderColor: '#64748b', borderWidth: 1.2, pointRadius: 0, borderDash: [4, 3], tension: 0.25 }
+      ]
+    },
+    options: chartBaseOptions({ yMin: 0, yTitle: 'mm' })
+  });
+}
+
+function renderRainAnomalyChart(series) {
+  const canvas = document.getElementById('chart-rain-anomaly');
+  if (!canvas || !series.length) return;
+  const values = chartValues(series, 'precip_30d_anomaly_mm');
+  charts.rainAnomaly = new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels: chartLabels(series),
+      datasets: [{
+        label: '降雨距平',
+        data: values,
+        backgroundColor: values.map(v => v === null ? 'rgba(148,163,184,0.25)' : v < 0 ? 'rgba(249,115,22,0.6)' : 'rgba(37,99,235,0.55)'),
+        barThickness: 3
+      }]
+    },
+    options: chartBaseOptions({ yTitle: 'mm' })
+  });
+}
+
+function renderTempAnomalyChart(series) {
+  const canvas = document.getElementById('chart-temp-anomaly');
+  if (!canvas || !series.length) return;
+  charts.tempAnomaly = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: chartLabels(series),
+      datasets: [{
+        label: '最高温距平',
+        data: chartValues(series, 'temp_max_anomaly_c'),
+        borderColor: '#b45309',
+        backgroundColor: 'rgba(180,83,9,0.12)',
+        borderWidth: 1.8,
+        pointRadius: 0,
+        tension: 0.25
+      }]
+    },
+    options: chartBaseOptions({ yTitle: '°C' })
+  });
+}
+
+function renderForecastChart(series) {
+  const canvas = document.getElementById('chart-forecast');
+  if (!canvas || !series.length) return;
+  charts.forecast = new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels: chartLabels(series, 'target_date'),
+      datasets: [
+        { type: 'bar', label: '降雨', data: chartValues(series, 'precipitation_mm'), backgroundColor: 'rgba(37,99,235,0.34)', yAxisID: 'y1', barThickness: 7 },
+        { type: 'line', label: '最高温', data: chartValues(series, 'temp_max_c'), borderColor: '#b45309', borderWidth: 1.7, pointRadius: 1.5, yAxisID: 'y', tension: 0.25 },
+        { type: 'line', label: '最低温', data: chartValues(series, 'temp_min_c'), borderColor: '#2563eb', borderWidth: 1.7, pointRadius: 1.5, yAxisID: 'y', tension: 0.25 }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { labels: { boxWidth: 10, font: { size: 10 } } } },
+      scales: {
+        x: { ticks: { font: { size: 9 }, maxTicksLimit: 8 }, grid: { display: false } },
+        y: { position: 'left', ticks: { font: { size: 9 } }, grid: { color: '#edf0f3' }, title: { display: true, text: '°C', font: { size: 9 } } },
+        y1: { position: 'right', min: 0, ticks: { font: { size: 9 } }, grid: { display: false }, title: { display: true, text: 'mm', font: { size: 9 } } }
       }
     }
-    
-    if(latestCum) {
-      var actual30 = latestCum.precipitation_30d_actual_mm;
-      var normal30 = latestCum.precipitation_30d_normal_mm;
-      var anom30 = latestCum.precipitation_30d_anomaly_mm;
-      var ratio30 = latestCum.precipitation_30d_ratio_pct;
-      var fcRain7 = fcSum ? fcSum.rain_7d_sum : null;
-      var fcRain16 = fcSum ? fcSum.rain_16d_sum : null;
-      
-      // Build cumulative assessment text
-      var cumText = '';
-      if(anom30 !== null && normal30 !== null) {
-        if(anom30 < -20) {
-          cumText = '近30天累计降雨较常年偏少' + Math.abs(anom30).toFixed(1) + 'mm';
-          if(fcRain16 && fcRain16 > Math.abs(anom30) * 0.5) {
-            cumText += '，未来16天降雨有望部分补充前期缺口，但需继续观察是否兑现。';
-          } else if(fcRain16) {
-            cumText += '，未来16天预报降雨' + fcRain16.toFixed(1) + 'mm，补充力度有限。';
-          }
-        } else if(anom30 > 30) {
-          cumText = '近30天累计降雨较常年偏多' + anom30.toFixed(1) + 'mm（实际' + ratio30.toFixed(0) + '%），土壤含水量可能偏高。';
-        } else {
-          cumText = '近30天累计降雨接近常年水平（实际/常年 ' + ratio30.toFixed(0) + '%）。';
-        }
-      }
-      
-      html += '<div class="info-block">' +
-        '<h3>累积降雨情况</h3>' +
-        '<div class="data-grid">' +
-        '<div class="data-cell"><span class="lbl">近30天实际降雨</span><span class="val">' + (actual30 !== null ? actual30.toFixed(1) + ' mm' : '—') + '</span></div>' +
-        '<div class="data-cell"><span class="lbl">近30天常年降雨</span><span class="val">' + (normal30 !== null ? normal30.toFixed(1) + ' mm' : '—') + '</span></div>' +
-        '<div class="data-cell"><span class="lbl">近30天降雨距平</span><span class="val' + (anom30 !== null && anom30 < -20 ? ' high' : anom30 !== null && anom30 > 30 ? ' medium' : '') + '">' + (anom30 !== null ? (anom30 > 0 ? '+' : '') + anom30.toFixed(1) + ' mm' : '—') + '</span></div>' +
-        '<div class="data-cell"><span class="lbl">实际/常年</span><span class="val">' + (ratio30 !== null ? ratio30.toFixed(0) + '%' : '—') + '</span></div>' +
-        '<div class="data-cell"><span class="lbl">未来7天预报降雨</span><span class="val">' + (fcRain7 !== null ? fcRain7.toFixed(1) + ' mm' : '—') + '</span></div>' +
-        '<div class="data-cell"><span class="lbl">未来16天预报降雨</span><span class="val">' + (fcRain16 !== null ? fcRain16.toFixed(1) + ' mm' : '—') + '</span></div>' +
-        '</div>' +
-        (cumText ? '<div class="trend-text">' + cumText + '</div>' : '') +
-        '</div>';
-    }
-    
-    html += '<div class="info-block">' +
-      '<h3>近90天降雨距平</h3>' +
-      '<div class="chart-box small"><canvas id="chart-rain"></canvas></div>' +
-      '</div>' +
-      '<div class="info-block">' +
-      '<h3>近90天温度距平</h3>' +
-      '<div class="chart-box small"><canvas id="chart-temp"></canvas></div>' +
-      '</div>';
-  }
-  
-  if(st){
-    html += `
-      <div class="info-block">
-        <h3>生长期影响 · ${fmt(st.current_month)}月</h3>
-        <div style="font-size:12px;line-height:1.7;">${fmt(st.web_message_cn)}</div>
-        ${st.matched_growth_stage?`<div style="font-size:11px;color:var(--text3);margin-top:6px;">匹配阶段：${fmt(st.matched_growth_stage)}</div>`:''}
-        ${st.impact_cn?`<div style="font-size:11px;color:var(--text3);margin-top:4px;">影响说明：${fmt(st.impact_cn)}</div>`:''}
-      </div>
-    `;
-  }
-  
-  if(fc.length>0){
-    html += `
-      <div class="info-block">
-        <h3>未来16天预报</h3>
-        <div class="chart-box small"><canvas id="chart-fc"></canvas></div>
-      </div>
-    `;
-  }
-  
-  // Water stress / anomaly level history from region_history_90d
-  if(hist.length>0){
-    html += '<div class="info-block">' +
-      '<h3>近90天异常等级</h3>' +
-      '<div class="chart-box small"><canvas id="chart-stress"></canvas></div>' +
-      '</div>';
-  }
-  
-  document.getElementById('detail-panel').innerHTML = html;
-  
-  if(hist.length>0){
-    renderRainChart(hist);
-    renderTempChart(hist);
-    renderStressChart(hist);
-  }
-  if(fc.length>0) renderFcChart(fc);
+  });
 }
 
-function renderRainChart(hist){
-  try {
-    var ctx = document.getElementById('chart-rain');
-    if(!ctx) return;
-    if(charts.rain) { charts.rain.destroy(); charts.rain = null; }
-
-    var labels = hist.map(function(d){ return d.date ? d.date.slice(5) : ''; });
-    
-    // Primary: 30-day cumulative rainfall anomaly (mm)
-    var anomalyData = hist.map(function(d){ return d.precipitation_30d_anomaly_mm; });
-    var anomalyColors = anomalyData.map(function(v){
-      if(v === null || v === undefined) return 'rgba(148,163,184,0.3)';
-      if(v < -30) return 'rgba(220,38,38,0.6)';     // red = very dry
-      if(v < 0) return 'rgba(251,146,60,0.5)';       // orange = dry
-      if(v > 50) return 'rgba(37,99,235,0.6)';       // blue = very wet
-      return 'rgba(59,130,246,0.4)';                  // light blue = normal/wet
-    });
-
-    var anomalyDataset = {
-      type: 'bar',
-      label: '30日降雨距平 mm',
-      data: anomalyData,
-      backgroundColor: anomalyColors,
-      barThickness: 3
-    };
-
-    // Secondary: daily rainfall (reference)
-    var rawLine = {
-      type: 'line',
-      label: '日降雨 mm',
-      data: hist.map(function(d){ return d.precipitation_mm; }),
-      borderColor: 'rgba(100,116,139,0.5)',
-      borderWidth: 1,
-      pointRadius: 0,
-      yAxisID: 'y1',
-      tension: 0.3
-    };
-
-    var chartConfig = {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [anomalyDataset, rawLine]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { labels: { boxWidth: 8, font: { size: 9 } } }
-        },
-        scales: {
-          x: { display: false },
-          y: {
-            position: 'left',
-            title: { display: true, text: '距平 mm', font: { size: 9 } },
-            grid: { color: '#f3f4f6' },
-            ticks: { font: { size: 9 } }
-          },
-          y1: {
-            position: 'right',
-            title: { display: true, text: '日降雨 mm', font: { size: 9 } },
-            grid: { display: false },
-            ticks: { font: { size: 9 } },
-            min: 0
-          }
-        }
-      }
-    };
-
-    charts.rain = new Chart(ctx, chartConfig);
-  } catch(e) {
-    console.warn('[CHART] renderRainChart failed:', e.message);
-  }
+function chartBaseOptions(opts = {}) {
+  const yScale = {
+    grid: { color: '#edf0f3' },
+    ticks: { font: { size: 9 } }
+  };
+  if (opts.yTitle) yScale.title = { display: true, text: opts.yTitle, font: { size: 9 } };
+  const scales = {
+    x: { display: false, grid: { display: false } },
+    y: yScale
+  };
+  if (opts.yMin !== undefined) scales.y.min = opts.yMin;
+  if (opts.yMax !== undefined) scales.y.max = opts.yMax;
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { intersect: false, mode: 'index' },
+    plugins: {
+      legend: { labels: { boxWidth: 10, font: { size: 10 } } }
+    },
+    scales
+  };
 }
 
-function renderTempChart(hist){
-  try {
-    var ctx = document.getElementById('chart-temp');
-    if(!ctx) return;
-    if(charts.temp) { charts.temp.destroy(); charts.temp = null; }
-
-    var labels = hist.map(function(d){ return d.date ? d.date.slice(5) : ''; });
-    
-    // Primary: daily max temp anomaly (°C)
-    var anomalyData = hist.map(function(d){ return d.temp_max_anomaly_c; });
-
-    var anomalyDataset = {
-      label: '最高温距平 °C',
-      data: anomalyData,
-      borderColor: '#f59e0b',
-      borderWidth: 2,
-      pointRadius: 0,
-      tension: 0.3,
-      yAxisID: 'y',
-      segment: {
-        borderColor: function(ctx2){
-          var v = ctx2.p1.parsed.y;
-          if(v === null || v === undefined) return 'rgba(148,163,184,0.5)';
-          if(v > 3) return 'rgba(220,38,38,0.8)';    // red = very hot anomaly
-          if(v > 1.5) return 'rgba(234,88,12,0.7)';   // orange = warm anomaly
-          if(v < -1.5) return 'rgba(59,130,246,0.6)';  // blue = cool anomaly
-          return 'rgba(100,116,139,0.5)';               // gray = normal
-        }
-      }
-    };
-
-    // Secondary: raw temp_max_c as dashed reference
-    var rawDataset = {
-      label: '最高温 °C',
-      data: hist.map(function(d){ return d.temp_max_c; }),
-      borderColor: 'rgba(245,158,11,0.3)',
-      borderWidth: 1,
-      pointRadius: 0,
-      tension: 0.3,
-      yAxisID: 'y1',
-      borderDash: [3, 3]
-    };
-
-    var chartConfig = {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: [anomalyDataset, rawDataset]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { labels: { boxWidth: 8, font: { size: 9 } } }
-        },
-        scales: {
-          x: { display: false },
-          y: {
-            position: 'left',
-            title: { display: true, text: '距平 °C', font: { size: 9 } },
-            grid: { color: '#f3f4f6' },
-            ticks: { font: { size: 9 } }
-          },
-          y1: {
-            position: 'right',
-            title: { display: true, text: '°C', font: { size: 9 } },
-            grid: { display: false },
-            ticks: { font: { size: 9 } }
-          }
-        }
-      }
-    };
-
-    charts.temp = new Chart(ctx, chartConfig);
-  } catch(e) {
-    console.warn('[CHART] renderTempChart failed:', e.message);
+function populateFilters() {
+  const countrySelect = document.getElementById('f-country');
+  const current = countrySelect.value || 'all';
+  const countries = new Map();
+  store.countryRecords.forEach(row => {
+    if (state.crop !== 'all' && row.crop_group !== state.crop) return;
+    countries.set(row.country_key, row.country_cn || row.country_key);
+  });
+  if (state.crop === 'all' || state.crop === 'rapeseed_canola' || state.crop === 'sunflower') {
+    countries.set('European Union', '欧盟');
   }
+  const options = [...countries.entries()].sort((a, b) => a[1].localeCompare(b[1], 'zh-CN'));
+  countrySelect.innerHTML = '<option value="all">全部国家</option>' + options.map(([key, name]) => `<option value="${escAttr(key)}">${esc(name)}</option>`).join('');
+  countrySelect.value = options.some(([key]) => key === current) ? current : 'all';
+  state.country = countrySelect.value;
+
+  const anomalySelect = document.getElementById('f-label');
+  const anomalyValues = new Set();
+  store.countryRecords.forEach(row => row.dominant_risk_type && anomalyValues.add(row.dominant_risk_type));
+  store.adminRecords.forEach(row => row.risk_type && anomalyValues.add(row.risk_type));
+  anomalySelect.innerHTML = '<option value="all">全部异常</option>' + [...anomalyValues].sort().map(value => `<option value="${escAttr(value)}">${esc(riskTypeText(value))}</option>`).join('');
+  if (![...anomalySelect.options].some(opt => opt.value === state.anomaly)) state.anomaly = 'all';
+  anomalySelect.value = state.anomaly;
 }
 
-function renderStressChart(hist){
-  try {
-    var ctx = document.getElementById('chart-stress');
-    if(!ctx) return;
-    if(charts.stress) { charts.stress.destroy(); charts.stress = null; }
-
-    var labels = hist.map(function(d){ return d.date.slice(5); });
-
-    // Map anomaly_level to numeric: high=3, medium=2, normal=1, low=0
-    var levelMap = { high:3, medium:2, normal:1, low:0 };
-    var levelLabels = ['低风险','正常','一般关注','重点关注'];
-    var levelColors = ['#94a3b8','#16a34a','#ea580c','#dc2626'];
-
-    var barData = hist.map(function(d){
-      var lev = d.anomaly_level || 'normal';
-      return levelMap[lev] !== undefined ? levelMap[lev] : 1;
-    });
-
-    var barColors = hist.map(function(d){
-      var lev = d.anomaly_level || 'normal';
-      var idx = levelMap[lev] !== undefined ? levelMap[lev] : 1;
-      return levelColors[idx];
-    });
-
-    var stressDataset = {
-      label: '异常等级',
-      data: barData,
-      backgroundColor: barColors,
-      barThickness: 3
-    };
-
-    var chartConfig = {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [stressDataset]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: function(tipCtx){
-                var v = tipCtx.parsed.y;
-                return levelLabels[v] || '未知';
-              }
-            }
-          }
-        },
-        scales: {
-          x: { display: false },
-          y: {
-            min: -0.5,
-            max: 3.5,
-            ticks: {
-              stepSize: 1,
-              callback: function(value){
-                return levelLabels[value] || '';
-              },
-              font: { size: 9 }
-            },
-            grid: { color: '#f3f4f6' }
-          }
-        }
-      }
-    };
-
-    charts.stress = new Chart(ctx, chartConfig);
-  } catch(e) {
-    console.warn('[CHART] renderStressChart failed:', e.message);
-  }
-}
-
-function renderFcChart(fc){
-  try {
-    var ctx = document.getElementById('chart-fc');
-    if(!ctx) return;
-    if(charts.fc) { charts.fc.destroy(); charts.fc = null; }
-
-    var labels = fc.map(function(d){ return d.target_date.slice(5); });
-    var maxData = fc.map(function(d){ return d.temp_max_c; });
-    var minData = fc.map(function(d){ return d.temp_min_c; });
-    var rainData = fc.map(function(d){ return d.precipitation_mm; });
-
-    var maxDataset = {
-      type: 'line',
-      label: '最高温',
-      data: maxData,
-      borderColor: '#f59e0b',
-      borderWidth: 1.5,
-      pointRadius: 1,
-      yAxisID: 'y',
-      tension: 0.3
-    };
-
-    var minDataset = {
-      type: 'line',
-      label: '最低温',
-      data: minData,
-      borderColor: '#3b82f6',
-      borderWidth: 1.5,
-      pointRadius: 1,
-      yAxisID: 'y',
-      tension: 0.3
-    };
-
-    var rainDataset = {
-      type: 'bar',
-      label: '降雨',
-      data: rainData,
-      backgroundColor: 'rgba(59,130,246,0.25)',
-      yAxisID: 'y1',
-      barThickness: 5
-    };
-
-    var chartConfig = {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [maxDataset, minDataset, rainDataset]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            labels: { boxWidth: 8, font: { size: 9 } }
-          }
-        },
-        scales: {
-          x: {
-            ticks: { font: { size: 8 }, maxTicksLimit: 8 }
-          },
-          y: {
-            position: 'left',
-            grid: { color: '#f3f4f6' },
-            ticks: { font: { size: 9 } }
-          },
-          y1: {
-            position: 'right',
-            grid: { display: false },
-            ticks: { font: { size: 9 } },
-            min: 0
-          }
-        }
-      }
-    };
-
-    charts.fc = new Chart(ctx, chartConfig);
-  } catch(e) {
-    console.warn('[CHART] renderFcChart failed:', e.message);
-  }
-}
-
-function bindEvents(){
-  // Back button
-  document.getElementById('back-btn').addEventListener('click', backToGlobal);
-
-  // Crop tabs (event delegation on container)
-  document.getElementById('crop-tabs').addEventListener('click', function(e){
-    const tab = e.target.closest('.crop-tab');
-    if(tab && tab.dataset.crop) selectCrop(tab.dataset.crop);
+function bindEvents() {
+  document.getElementById('crop-tabs').addEventListener('click', event => {
+    const tab = event.target.closest('.crop-tab');
+    if (!tab) return;
+    state.crop = tab.dataset.crop;
+    state.selectedCountry = null;
+    state.selectedCountryCrop = null;
+    state.selectedCountryRecord = null;
+    document.querySelectorAll('.crop-tab').forEach(item => item.classList.toggle('active', item.dataset.crop === state.crop));
+    populateFilters();
+    renderCountryLayer();
   });
 
-  // Filter selects
-  document.getElementById('f-country').addEventListener('change', onFilterChange);
-  document.getElementById('f-level').addEventListener('change', onFilterChange);
-  document.getElementById('f-label').addEventListener('change', onFilterChange);
+  document.querySelectorAll('.layer-btn').forEach(button => {
+    button.addEventListener('click', async () => {
+      const target = button.dataset.layer;
+      if (target === 'region' && !state.selectedCountry) return;
+      if (target === 'country') {
+        state.layer = 'country';
+        renderCountryLayer();
+      } else {
+        state.layer = 'region';
+        await renderRegionLayer();
+        if (state.selectedCountryRecord) showCountryDetail(state.selectedCountryRecord);
+      }
+    });
+  });
 
-  // Reset button
-  document.getElementById('btn-reset').addEventListener('click', resetFilters);
+  document.getElementById('f-country').addEventListener('change', event => {
+    state.country = event.target.value;
+    state.selectedCountry = null;
+    state.selectedCountryCrop = null;
+    state.selectedCountryRecord = null;
+    renderCountryLayer();
+  });
 
-  // Expose showDetail globally for dynamically generated HTML onclick
-  window.showDetail = showDetail;
+  document.getElementById('f-level').addEventListener('change', event => {
+    state.risk = event.target.value;
+    renderCountryLayer();
+  });
+
+  document.getElementById('f-label').addEventListener('change', event => {
+    state.anomaly = event.target.value;
+    renderCountryLayer();
+  });
+
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    state = {
+      crop: 'all',
+      country: 'all',
+      risk: 'all',
+      anomaly: 'all',
+      layer: 'country',
+      selectedCountry: null,
+      selectedCountryCrop: null,
+      selectedCountryRecord: null
+    };
+    document.querySelectorAll('.crop-tab').forEach(item => item.classList.toggle('active', item.dataset.crop === 'all'));
+    document.getElementById('f-level').value = 'all';
+    populateFilters();
+    renderCountryLayer();
+  });
+
+  document.getElementById('detail-panel').addEventListener('click', event => {
+    const row = event.target.closest('[data-region-id]');
+    if (!row) return;
+    const record = store.adminById.get(row.dataset.regionId);
+    if (record) showRegionDetail(record);
+  });
 }
 
-async function init(){
+function setLayerButtons() {
+  document.querySelectorAll('.layer-btn').forEach(button => {
+    button.classList.toggle('active', button.dataset.layer === state.layer);
+  });
+  document.getElementById('layer-region').disabled = !state.selectedCountry;
+}
+
+function updateOverlay() {
+  const title = state.layer === 'country'
+    ? '国家层'
+    : `${getCountryName(state.selectedCountry)}｜地区层`;
+  document.getElementById('overlay-title').textContent = title;
+  document.getElementById('ov-main').textContent = mapStats.main;
+  document.getElementById('ov-main-label').textContent = state.layer === 'country' ? '国家' : '地区';
+  document.getElementById('ov-risk').textContent = mapStats.risk;
+  document.getElementById('ov-fallback').textContent = mapStats.fallback;
+  document.getElementById('map-status').innerHTML = mapStats.fallback
+    ? `<div class="map-notice">${esc(mapStats.note)}</div>`
+    : esc(mapStats.note);
+}
+
+function updateMetaDate() {
+  const dates = [
+    ...store.countryRecords.map(row => row.updated_at),
+    ...store.adminRecords.map(row => row.updated_at)
+  ].filter(Boolean).sort();
+  document.getElementById('meta-date').textContent = dates.length ? dates[dates.length - 1].slice(0, 10) : '-';
+}
+
+async function init() {
   initMap();
   bindEvents();
-  
-  // Load core data first (must not fail)
-  const [meta, latest, forecast, anomaly, stage, alerts] = await Promise.all([
-    loadJSON('site_meta_v0.8.1.json'),
-    loadJSON('weather_latest_v0.8.1.json'),
-    loadJSON('weather_forecast_v0.8.1.json'),
-    loadJSON('weather_anomaly_v0.8.1.json'),
-    loadJSON('stage_impact_latest_v0.8.1.json'),
-    loadJSON('alerts_v0.8.1.json')
+
+  const [countryRecords, adminRecords, coverage, euRecords, geojson] = await Promise.all([
+    loadJSON('country_crop_risk_latest.json'),
+    loadJSON('admin_region_risk_latest.json'),
+    loadJSON('geo_boundary_coverage.json'),
+    loadJSON('eu_virtual_country_summary.json'),
+    loadJSON('countries.geo.json')
   ]);
-  
-  allData = { meta, latest, forecast, anomaly, stage, alerts };
-  debugInfo.latestCount = latest.length;
-  console.log('[DEBUG] loaded weather_latest count:', latest.length);
-  
-  // Load optional data (can fail without blocking)
-  const [history, forecastSummary, countrySummary, waterStress, geojson, soilMoistureAlias, soilMoistureVersioned] = await Promise.all([
-    safeLoadJSON('region_history_90d_v1.0d.json'),
-    safeLoadJSON('region_forecast_summary_v1.0d.json'),
-    safeLoadJSON('country_crop_summary_v1.0d.json'),
-    safeLoadJSON('water_stress_latest_v1.0e.json'),
-    safeLoadJSON('countries.geo.json'),
-    safeLoadJSON('soil_moisture_latest.json'),
-    safeLoadJSON('soil_moisture_latest_v1.0e.json')
-  ]);
-  
-  if(history) allData.history = history;
-  if(forecastSummary) allData.forecastSummary = forecastSummary;
-  if(countrySummary) allData.countrySummary = countrySummary;
-  if(waterStress) allData.waterStress = waterStress;
-  const soilMoisture = soilMoistureAlias || soilMoistureVersioned;
-  if(soilMoisture) {
-    allData.soilMoisture = soilMoisture;
-    allData.soilMoistureIndex = soilMoisture.reduce(function(acc, e){
-      if(e && e.weather_region_id) acc[e.weather_region_id] = e;
-      return acc;
-    }, {});
-  } else {
-    allData.soilMoistureIndex = {};
-  }
-  if(geojson) {
-    allData.geojson = geojson;
-    debugInfo.geojsonFeatures = geojson.features ? geojson.features.length : 0;
-    console.log('[DEBUG] loaded countries.geo.json feature count:', debugInfo.geojsonFeatures);
-  } else {
-    debugInfo.geojsonError = '无法加载国家边界数据';
-    console.warn('[DEBUG] countries.geo.json failed to load');
-  }
-  
-  console.log('[DEBUG] matched country count will be shown after render');
-  console.log('[DEBUG] rendered point marker count will be shown after render');
-  
+
+  prepareData({ countryRecords, adminRecords, coverage, euRecords, geojson });
+  updateMetaDate();
   populateFilters();
-  updateOverview();
-  renderGeoJSON();
-  renderMarkers();
-  
-  // If no geojson, fit to points
-  if(!allData.geojson) {
-    fitToPointsOrDefault();
-  }
-  
-  // Final invalidateSize after everything is rendered
-  setTimeout(()=>{ map.invalidateSize(); }, 500);
+  renderCountryLayer();
+  setTimeout(() => map.invalidateSize(), 500);
 }
 
-init().catch(e=>{
-  console.error('Init failed:', e);
-  document.getElementById('map-status').innerHTML = '<span class="err">地图初始化失败: '+e.message+'</span>';
+init().catch(error => {
+  console.error('Init failed:', error);
+  document.getElementById('map-status').innerHTML = `<span style="color:#b91c1c;">数据加载失败：${esc(error.message)}</span>`;
 });
