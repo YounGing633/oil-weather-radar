@@ -1,0 +1,1454 @@
+{
+  "version": "risk_calendar_mapping_v4",
+  "created_at": "2026-06-09T09:43:57Z",
+  "notes": [
+    "Calendar groups are intended for risk_label_v4 execution.",
+    "City/admin2 weather points inherit admin1 or region_group crop calendar unless official admin2 crop calendar exists.",
+    "Derived stages must not be presented as official monthly phenology.",
+    "Argentina soybean Pampas is executed as first_crop + second_crop with temporary 0.75/0.25 weights."
+  ],
+  "growth_stage_codes": {
+    "OS": "off-season / non-growing",
+    "PE": "planting/emergence",
+    "V": "vegetative",
+    "FP": "flowering/pollination/early pod",
+    "PF": "pod/seed filling",
+    "MH": "maturity/harvest",
+    "DORM": "dormancy/overwintering",
+    "MIX": "mixed stage",
+    "perennial": "perennial crop, no annual growth calendar"
+  },
+  "calendar_groups": [
+    {
+      "calendar_group_id": "SOY_BR_CENTRAL_WEST_EARLY",
+      "crop_group": "soybean",
+      "countries": [
+        "Brazil"
+      ],
+      "admin1_matches": [
+        "Mato Grosso",
+        "Goiás",
+        "Goias",
+        "Mato Grosso do Sul"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "PF/MH",
+        "Feb": "MH",
+        "Mar": "MH/OS",
+        "Apr": "OS",
+        "May": "OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/FP",
+        "Dec": "FP/PF"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "sowing_confirmed_stage_derived",
+      "source_note": "Brazil MAPA 2025/26 soybean sowing calendar; stages derived from sowing window and crop cycle."
+    },
+    {
+      "calendar_group_id": "SOY_BR_PARANA_MIX",
+      "crop_group": "soybean",
+      "countries": [
+        "Brazil"
+      ],
+      "admin1_matches": [
+        "Paraná",
+        "Parana"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "PF/MH",
+        "Feb": "PF/MH",
+        "Mar": "MH",
+        "Apr": "MH/OS",
+        "May": "OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/FP",
+        "Dec": "FP/PF"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "region_mixed",
+      "source_note": "Paraná has MAPA Region I/II/III sowing windows; state-level group is mixed."
+    },
+    {
+      "calendar_group_id": "SOY_BR_RGS_LATE",
+      "crop_group": "soybean",
+      "countries": [
+        "Brazil"
+      ],
+      "admin1_matches": [
+        "Rio Grande do Sul"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "V/FP/PF",
+        "Feb": "PF",
+        "Mar": "PF/MH",
+        "Apr": "MH",
+        "May": "MH/OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS",
+        "Sep": "OS",
+        "Oct": "PE",
+        "Nov": "PE/V",
+        "Dec": "V/FP"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "sowing_confirmed_stage_derived",
+      "source_note": "MAPA sowing window later than Central-West."
+    },
+    {
+      "calendar_group_id": "SOY_BR_BA_R1_WEST_MAIN",
+      "crop_group": "soybean",
+      "countries": [
+        "Brazil"
+      ],
+      "admin1_matches": [
+        "Bahia"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "FP/PF",
+        "Feb": "PF",
+        "Mar": "PF/MH",
+        "Apr": "MH",
+        "May": "MH/OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS",
+        "Sep": "OS/PE",
+        "Oct": "PE/V",
+        "Nov": "V/FP",
+        "Dec": "FP/PF"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "region_main_default",
+      "source_note": "Bahia admin1 defaults to West main soybean area: Barreiras, Formosa do Rio Preto, Luís Eduardo Magalhães, São Desidério, Correntina, Riachão das Neves."
+    },
+    {
+      "calendar_group_id": "SOY_BR_MA_R1_SOUTH_MAIN",
+      "crop_group": "soybean",
+      "countries": [
+        "Brazil"
+      ],
+      "admin1_matches": [
+        "Maranhão",
+        "Maranhao"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "V/FP/PF",
+        "Feb": "PF",
+        "Mar": "PF/MH",
+        "Apr": "MH",
+        "May": "MH/OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS",
+        "Sep": "OS",
+        "Oct": "PE",
+        "Nov": "PE/V",
+        "Dec": "V/FP"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "region_main_default",
+      "source_note": "Maranhão admin1 defaults to South Cerrado main soybean area: Balsas, Alto Parnaíba, Tasso Fragoso, Riachão, São Raimundo das Mangabeiras."
+    },
+    {
+      "calendar_group_id": "SOY_BR_PI_R3_SOUTH_MAIN",
+      "crop_group": "soybean",
+      "countries": [
+        "Brazil"
+      ],
+      "admin1_matches": [
+        "Piauí",
+        "Piaui"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "V/FP/PF",
+        "Feb": "PF",
+        "Mar": "PF/MH",
+        "Apr": "MH",
+        "May": "MH/OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/FP",
+        "Dec": "FP/PF"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "region_main_default",
+      "source_note": "Piauí admin1 defaults to South Cerrado main soybean area: Baixa Grande do Ribeiro, Uruçuí, Bom Jesus, Santa Filomena."
+    },
+    {
+      "calendar_group_id": "SOY_BR_TO_SINGLE",
+      "crop_group": "soybean",
+      "countries": [
+        "Brazil"
+      ],
+      "admin1_matches": [
+        "Tocantins"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "FP/PF",
+        "Feb": "PF",
+        "Mar": "PF/MH",
+        "Apr": "MH",
+        "May": "MH/OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS",
+        "Sep": "OS",
+        "Oct": "PE",
+        "Nov": "PE/V",
+        "Dec": "V/FP"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "sowing_confirmed_stage_derived",
+      "source_note": "Tocantins MAPA unified sowing window."
+    },
+    {
+      "calendar_group_id": "SOY_US_MIDWEST_CORE",
+      "crop_group": "soybean",
+      "countries": [
+        "United States"
+      ],
+      "admin1_matches": [
+        "Iowa",
+        "Illinois",
+        "Indiana",
+        "Ohio",
+        "Missouri",
+        "Michigan",
+        "Wisconsin",
+        "Kentucky"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "PF/MH",
+        "Oct": "MH",
+        "Nov": "MH/OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "source_confirmed_stage_derived",
+      "source_note": "USDA NASS usual planting and harvest dates; monthly substages derived."
+    },
+    {
+      "calendar_group_id": "SOY_US_NORTHERN_PLAINS",
+      "crop_group": "soybean",
+      "countries": [
+        "United States"
+      ],
+      "admin1_matches": [
+        "Minnesota",
+        "North Dakota",
+        "South Dakota",
+        "Nebraska"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "PF/MH",
+        "Oct": "MH",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "source_confirmed_stage_derived",
+      "source_note": "USDA NASS usual planting and harvest dates; northern schedule."
+    },
+    {
+      "calendar_group_id": "SOY_US_DELTA_SOUTH",
+      "crop_group": "soybean",
+      "countries": [
+        "United States"
+      ],
+      "admin1_matches": [
+        "Arkansas",
+        "Mississippi",
+        "Louisiana",
+        "Tennessee",
+        "Alabama",
+        "Georgia",
+        "North Carolina",
+        "South Carolina",
+        "Texas",
+        "Oklahoma"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS/PE",
+        "Apr": "PE",
+        "May": "PE/V",
+        "Jun": "V/FP",
+        "Jul": "PF",
+        "Aug": "PF/MH",
+        "Sep": "MH",
+        "Oct": "MH",
+        "Nov": "MH/OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "source_confirmed_stage_derived",
+      "source_note": "USDA NASS usual planting and harvest dates; southern/delta schedule."
+    },
+    {
+      "calendar_group_id": "SOY_CA_EAST",
+      "crop_group": "soybean",
+      "countries": [
+        "Canada"
+      ],
+      "admin1_matches": [
+        "Ontario",
+        "Quebec",
+        "New Brunswick",
+        "Nova Scotia",
+        "Prince Edward Island",
+        "Maritimes"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE",
+        "Jun": "PE/V",
+        "Jul": "V/FP",
+        "Aug": "PF",
+        "Sep": "PF/MH",
+        "Oct": "MH",
+        "Nov": "MH/OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "source_confirmed_stage_derived",
+      "source_note": "Canada crop profile / provincial guidance; eastern Canada soybean."
+    },
+    {
+      "calendar_group_id": "SOY_CA_PRAIRIE",
+      "crop_group": "soybean",
+      "countries": [
+        "Canada"
+      ],
+      "admin1_matches": [
+        "Manitoba",
+        "Saskatchewan",
+        "Alberta"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH/PF",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "source_confirmed_stage_derived",
+      "source_note": "Prairie soybean proxy; Manitoba more relevant than Saskatchewan/Alberta."
+    },
+    {
+      "calendar_group_id": "SOY_AR_PAMPAS_FIRST",
+      "crop_group": "soybean",
+      "countries": [
+        "Argentina"
+      ],
+      "admin1_matches": [
+        "Buenos Aires",
+        "Córdoba",
+        "Cordoba",
+        "Santa Fe",
+        "Entre Ríos",
+        "Entre Rios",
+        "La Pampa",
+        "San Luis"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "first_crop",
+      "season_weight": 0.75,
+      "monthly_stage": {
+        "Jan": "FP/PF",
+        "Feb": "PF",
+        "Mar": "PF/MH",
+        "Apr": "MH",
+        "May": "MH/OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS",
+        "Sep": "OS",
+        "Oct": "PE",
+        "Nov": "PE/V",
+        "Dec": "V/FP"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "first_second_weighted",
+      "source_note": "Argentina first crop soybeans; FAS approximate national split 75/25 first/second as temporary weight."
+    },
+    {
+      "calendar_group_id": "SOY_AR_PAMPAS_SECOND",
+      "crop_group": "soybean",
+      "countries": [
+        "Argentina"
+      ],
+      "admin1_matches": [
+        "Buenos Aires",
+        "Córdoba",
+        "Cordoba",
+        "Santa Fe",
+        "Entre Ríos",
+        "Entre Rios",
+        "La Pampa",
+        "San Luis"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "second_crop",
+      "season_weight": 0.25,
+      "monthly_stage": {
+        "Jan": "PE/V",
+        "Feb": "V/FP",
+        "Mar": "FP/PF",
+        "Apr": "PF/MH",
+        "May": "MH",
+        "Jun": "MH",
+        "Jul": "MH/OS",
+        "Aug": "OS",
+        "Sep": "OS",
+        "Oct": "OS",
+        "Nov": "OS/PE",
+        "Dec": "PE"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "first_second_weighted",
+      "source_note": "Second crop soybeans after wheat; temporary 25% national split."
+    },
+    {
+      "calendar_group_id": "SOY_AR_NORTH_LATE_MIX",
+      "crop_group": "soybean",
+      "countries": [
+        "Argentina"
+      ],
+      "admin1_matches": [
+        "Chaco",
+        "Santiago del Estero",
+        "Salta",
+        "Tucumán",
+        "Tucuman",
+        "Formosa",
+        "Jujuy"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "mixed_late",
+      "season_weight": null,
+      "monthly_stage": {
+        "Jan": "V/FP/PF",
+        "Feb": "FP/PF",
+        "Mar": "PF",
+        "Apr": "PF/MH",
+        "May": "MH",
+        "Jun": "MH/OS",
+        "Jul": "OS",
+        "Aug": "OS/PE",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V",
+        "Dec": "FP"
+      },
+      "calendar_confidence": "low_medium",
+      "calendar_status": "mixed_late",
+      "source_note": "Northern Argentina late/mixed proxy."
+    },
+    {
+      "calendar_group_id": "SOY_EU_SPRING_SUMMER",
+      "crop_group": "soybean",
+      "countries": [
+        "Italy",
+        "France",
+        "Romania",
+        "Serbia",
+        "Croatia",
+        "Hungary",
+        "Austria"
+      ],
+      "admin1_matches": [],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "PE",
+        "May": "PE/V",
+        "Jun": "V/FP",
+        "Jul": "FP/PF",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "low_medium",
+      "calendar_status": "country_proxy",
+      "source_note": "European soybean proxy."
+    },
+    {
+      "calendar_group_id": "RAPE_CA_SK_SPRING_MAIN",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Canada"
+      ],
+      "admin1_matches": [
+        "Saskatchewan"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "high",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Canadian spring canola; prairie core."
+    },
+    {
+      "calendar_group_id": "RAPE_CA_AB_SPRING_WEST",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Canada"
+      ],
+      "admin1_matches": [
+        "Alberta"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "PF/MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "high",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Alberta spring canola, slightly later harvest overlap."
+    },
+    {
+      "calendar_group_id": "RAPE_CA_MB_SPRING_EAST",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Canada"
+      ],
+      "admin1_matches": [
+        "Manitoba"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "high",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Manitoba spring canola."
+    },
+    {
+      "calendar_group_id": "RAPE_CA_EAST_SPRING_LOWWEIGHT",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Canada"
+      ],
+      "admin1_matches": [
+        "Ontario",
+        "Quebec"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "PF/MH",
+        "Oct": "MH",
+        "Nov": "MH/OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "low_medium",
+      "calendar_status": "low_weight_proxy",
+      "source_note": "Eastern Canada low-weight spring canola proxy."
+    },
+    {
+      "calendar_group_id": "RAPE_AU_WA_WINTER_MAIN",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Australia"
+      ],
+      "admin1_matches": [
+        "Western Australia"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter_growing",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS/PE",
+        "Apr": "PE",
+        "May": "PE/V",
+        "Jun": "V",
+        "Jul": "V/FP",
+        "Aug": "FP",
+        "Sep": "PF",
+        "Oct": "PF/MH",
+        "Nov": "MH",
+        "Dec": "MH/OS"
+      },
+      "calendar_confidence": "high",
+      "calendar_status": "confirmed_derived",
+      "source_note": "WA winter-growing canola, autumn sowing, late-spring harvest."
+    },
+    {
+      "calendar_group_id": "RAPE_AU_NSW_WINTER",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Australia"
+      ],
+      "admin1_matches": [
+        "New South Wales"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter_growing",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS/PE",
+        "Apr": "PE",
+        "May": "PE/V",
+        "Jun": "V",
+        "Jul": "V/FP",
+        "Aug": "FP/PF",
+        "Sep": "PF",
+        "Oct": "PF/MH",
+        "Nov": "MH",
+        "Dec": "MH/OS"
+      },
+      "calendar_confidence": "high",
+      "calendar_status": "confirmed_derived",
+      "source_note": "NSW winter-growing canola."
+    },
+    {
+      "calendar_group_id": "RAPE_AU_VIC_WINTER",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Australia"
+      ],
+      "admin1_matches": [
+        "Victoria"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter_growing",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS/PE",
+        "Apr": "PE",
+        "May": "PE/V",
+        "Jun": "V",
+        "Jul": "V/FP",
+        "Aug": "FP",
+        "Sep": "PF",
+        "Oct": "PF/MH",
+        "Nov": "MH",
+        "Dec": "MH/OS"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Victoria winter-growing canola."
+    },
+    {
+      "calendar_group_id": "RAPE_AU_SA_WINTER",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Australia"
+      ],
+      "admin1_matches": [
+        "South Australia"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter_growing",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS/PE",
+        "Apr": "PE",
+        "May": "PE/V",
+        "Jun": "V",
+        "Jul": "V/FP",
+        "Aug": "FP",
+        "Sep": "PF",
+        "Oct": "PF/MH",
+        "Nov": "MH",
+        "Dec": "MH/OS"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "confirmed_derived",
+      "source_note": "South Australia winter-growing canola."
+    },
+    {
+      "calendar_group_id": "RAPE_UA_WINTER_SOUTH_EARLY",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Ukraine"
+      ],
+      "admin1_matches": [
+        "Odesa",
+        "Mykolaiv",
+        "Zaporizhzhia",
+        "Kherson",
+        "Dnipropetrovsk"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM",
+        "Feb": "DORM/V",
+        "Mar": "V/FP",
+        "Apr": "FP",
+        "May": "PF",
+        "Jun": "PF/MH",
+        "Jul": "MH",
+        "Aug": "MH/OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Ukraine south/southeast winter rapeseed, earlier harvest."
+    },
+    {
+      "calendar_group_id": "RAPE_UA_WINTER_CENTRAL_EAST",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Ukraine"
+      ],
+      "admin1_matches": [
+        "Poltava",
+        "Cherkasy",
+        "Kyiv",
+        "Kirovohrad",
+        "Chernihiv",
+        "Sumy",
+        "Kharkiv"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM",
+        "Feb": "DORM/V",
+        "Mar": "V",
+        "Apr": "V/FP",
+        "May": "FP/PF",
+        "Jun": "PF/MH",
+        "Jul": "MH",
+        "Aug": "MH/OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Ukraine central/east winter rapeseed."
+    },
+    {
+      "calendar_group_id": "RAPE_UA_WINTER_WEST_CENTRAL",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Ukraine"
+      ],
+      "admin1_matches": [
+        "Vinnytsia",
+        "Khmelnytskyi",
+        "Ternopil",
+        "Lviv",
+        "Rivne",
+        "Volyn"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM",
+        "Feb": "DORM",
+        "Mar": "V",
+        "Apr": "V/FP",
+        "May": "FP/PF",
+        "Jun": "PF",
+        "Jul": "PF/MH",
+        "Aug": "MH/OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Ukraine west/central winter rapeseed, later/wetter proxy."
+    },
+    {
+      "calendar_group_id": "RAPE_EU_WEST_ATLANTIC",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "France",
+        "United Kingdom",
+        "UK",
+        "Ireland",
+        "Belgium",
+        "Netherlands"
+      ],
+      "admin1_matches": [],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM/V",
+        "Feb": "V",
+        "Mar": "V/FP",
+        "Apr": "FP",
+        "May": "PF",
+        "Jun": "PF/MH",
+        "Jul": "MH",
+        "Aug": "OS/PE",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "West Atlantic winter rapeseed."
+    },
+    {
+      "calendar_group_id": "RAPE_EU_CENTRAL",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Germany",
+        "Czechia",
+        "Czech Republic",
+        "Austria",
+        "Slovakia"
+      ],
+      "admin1_matches": [],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM",
+        "Feb": "DORM/V",
+        "Mar": "V",
+        "Apr": "V/FP",
+        "May": "FP/PF",
+        "Jun": "PF/MH",
+        "Jul": "MH",
+        "Aug": "OS/PE",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Central EU winter rapeseed."
+    },
+    {
+      "calendar_group_id": "RAPE_EU_NORTH_EAST",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Poland",
+        "Lithuania",
+        "Latvia",
+        "Estonia"
+      ],
+      "admin1_matches": [],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM",
+        "Feb": "DORM",
+        "Mar": "DORM/V",
+        "Apr": "V/FP",
+        "May": "FP",
+        "Jun": "PF",
+        "Jul": "PF/MH",
+        "Aug": "MH/OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "low_medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "North/East EU winter rapeseed, later spring/harvest."
+    },
+    {
+      "calendar_group_id": "RAPE_EU_DANUBE_BALKAN",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Romania",
+        "Bulgaria",
+        "Hungary",
+        "Croatia",
+        "Serbia"
+      ],
+      "admin1_matches": [],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM/V",
+        "Feb": "V/FP",
+        "Mar": "FP",
+        "Apr": "FP/PF",
+        "May": "PF/MH",
+        "Jun": "MH",
+        "Jul": "MH/OS",
+        "Aug": "OS/PE",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Danube/Balkan winter rapeseed; earlier heat/drought risk."
+    },
+    {
+      "calendar_group_id": "RAPE_RU_WINTER_SOUTH_CAUCASUS",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Russia"
+      ],
+      "admin1_matches": [
+        "Stavropol Krai",
+        "Stavropol",
+        "Krasnodar Krai",
+        "Krasnodar",
+        "Rostov Oblast",
+        "Rostov",
+        "Republic of Adygea",
+        "Adygea",
+        "North Caucasus"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM",
+        "Feb": "DORM/V",
+        "Mar": "V/FP",
+        "Apr": "FP",
+        "May": "PF",
+        "Jun": "MH",
+        "Jul": "MH/OS",
+        "Aug": "OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "winter_south_proxy",
+      "source_note": "Russia southern / North Caucasus winter rapeseed."
+    },
+    {
+      "calendar_group_id": "RAPE_RU_WINTER_KALININGRAD",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Russia"
+      ],
+      "admin1_matches": [
+        "Kaliningrad Oblast",
+        "Kaliningrad"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "winter",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "DORM",
+        "Feb": "DORM",
+        "Mar": "V",
+        "Apr": "V/FP",
+        "May": "FP/PF",
+        "Jun": "PF/MH",
+        "Jul": "MH",
+        "Aug": "MH/OS",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/DORM",
+        "Dec": "DORM"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "winter_kaliningrad",
+      "source_note": "Kaliningrad winter rapeseed, more EU-like."
+    },
+    {
+      "calendar_group_id": "RAPE_RU_SPRING_CENTRAL_BLACK_SOIL",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Russia"
+      ],
+      "admin1_matches": [
+        "Belgorod Oblast",
+        "Voronezh Oblast",
+        "Kursk Oblast",
+        "Lipetsk Oblast",
+        "Oryol Oblast",
+        "Tambov Oblast"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "spring_central_proxy",
+      "source_note": "Russia Central/Black Soil spring rapeseed."
+    },
+    {
+      "calendar_group_id": "RAPE_RU_SPRING_VOLGA",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Russia"
+      ],
+      "admin1_matches": [
+        "Republic of Tatarstan",
+        "Tatarstan",
+        "Republic of Bashkortostan",
+        "Bashkortostan",
+        "Samara Oblast",
+        "Saratov Oblast",
+        "Orenburg Oblast",
+        "Penza Oblast",
+        "Ulyanovsk Oblast"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "spring_volga_proxy",
+      "source_note": "Russia Volga spring rapeseed."
+    },
+    {
+      "calendar_group_id": "RAPE_RU_SPRING_SIBERIA_URAL",
+      "crop_group": "rapeseed_canola",
+      "countries": [
+        "Russia"
+      ],
+      "admin1_matches": [
+        "Altai Krai",
+        "Omsk Oblast",
+        "Novosibirsk Oblast",
+        "Krasnoyarsk Krai",
+        "Kemerovo Oblast",
+        "Tomsk Oblast",
+        "Irkutsk Oblast",
+        "Tyumen Oblast",
+        "Kurgan Oblast",
+        "Chelyabinsk Oblast"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "PF/MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "spring_siberia_ural_proxy",
+      "source_note": "Russia Siberia/Ural spring rapeseed, later harvest overlap."
+    },
+    {
+      "calendar_group_id": "SUN_UA_BLACKSEA_SPRING",
+      "crop_group": "sunflower",
+      "countries": [
+        "Ukraine"
+      ],
+      "admin1_matches": [
+        "Kharkiv",
+        "Odesa",
+        "Mykolaiv",
+        "Dnipropetrovsk",
+        "Kirovohrad",
+        "Zaporizhzhia",
+        "Poltava"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "PE",
+        "May": "PE/V",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium_high",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Ukraine sunflower 4-5 month planting, Sep harvest proxy."
+    },
+    {
+      "calendar_group_id": "SUN_RU_BLACKSEA_VOLGA_SPRING",
+      "crop_group": "sunflower",
+      "countries": [
+        "Russia"
+      ],
+      "admin1_matches": [
+        "Rostov",
+        "Krasnodar",
+        "Saratov",
+        "Voronezh",
+        "Volgograd",
+        "Samara",
+        "Altai"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS/PE",
+        "May": "PE/V",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Russia sunflower spring/summer proxy."
+    },
+    {
+      "calendar_group_id": "SUN_AR_PAMPAS",
+      "crop_group": "sunflower",
+      "countries": [
+        "Argentina"
+      ],
+      "admin1_matches": [
+        "Buenos Aires",
+        "Córdoba",
+        "Cordoba",
+        "Santa Fe",
+        "La Pampa",
+        "Entre Ríos"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "single_crop",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "PF/MH",
+        "Feb": "MH",
+        "Mar": "MH/OS",
+        "Apr": "OS",
+        "May": "OS",
+        "Jun": "OS",
+        "Jul": "OS",
+        "Aug": "OS/PE",
+        "Sep": "PE",
+        "Oct": "PE/V",
+        "Nov": "V/FP",
+        "Dec": "FP/PF"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Argentina Pampas sunflower."
+    },
+    {
+      "calendar_group_id": "SUN_EU_SPRING_SUMMER",
+      "crop_group": "sunflower",
+      "countries": [
+        "Romania",
+        "Bulgaria",
+        "France",
+        "Hungary",
+        "Spain",
+        "Italy"
+      ],
+      "admin1_matches": [],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "PE",
+        "May": "PE/V",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "low_medium",
+      "calendar_status": "country_proxy",
+      "source_note": "EU spring-summer sunflower proxy."
+    },
+    {
+      "calendar_group_id": "SUN_CA_PRAIRIE",
+      "crop_group": "sunflower",
+      "countries": [
+        "Canada"
+      ],
+      "admin1_matches": [
+        "Manitoba",
+        "Saskatchewan",
+        "Alberta"
+      ],
+      "admin2_match_keywords": [],
+      "season_type": "spring",
+      "season_weight": 1.0,
+      "monthly_stage": {
+        "Jan": "OS",
+        "Feb": "OS",
+        "Mar": "OS",
+        "Apr": "OS",
+        "May": "PE",
+        "Jun": "V",
+        "Jul": "FP",
+        "Aug": "PF",
+        "Sep": "MH",
+        "Oct": "MH/OS",
+        "Nov": "OS",
+        "Dec": "OS"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "confirmed_derived",
+      "source_note": "Canada prairie sunflower proxy."
+    },
+    {
+      "calendar_group_id": "PALM_PERENNIAL",
+      "crop_group": "palm",
+      "countries": [
+        "Indonesia",
+        "Malaysia",
+        "Thailand",
+        "Nigeria",
+        "Colombia",
+        "Guatemala"
+      ],
+      "admin1_matches": [],
+      "admin2_match_keywords": [],
+      "season_type": "perennial",
+      "season_weight": 1.0,
+      "crop_lifecycle_type": "perennial",
+      "monthly_stage": {
+        "Jan": "perennial",
+        "Feb": "perennial",
+        "Mar": "perennial",
+        "Apr": "perennial",
+        "May": "perennial",
+        "Jun": "perennial",
+        "Jul": "perennial",
+        "Aug": "perennial",
+        "Sep": "perennial",
+        "Oct": "perennial",
+        "Nov": "perennial",
+        "Dec": "perennial"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "perennial_no_monthly_stage",
+      "source_note": "Palm uses current_operation + future_yield + supportive rules; no annual crop calendar."
+    },
+    {
+      "calendar_group_id": "COCONUT_PERENNIAL",
+      "crop_group": "coconut",
+      "countries": [
+        "Philippines",
+        "Indonesia",
+        "India",
+        "Sri Lanka",
+        "Vietnam",
+        "Brazil"
+      ],
+      "admin1_matches": [],
+      "admin2_match_keywords": [],
+      "season_type": "perennial",
+      "season_weight": 1.0,
+      "crop_lifecycle_type": "perennial",
+      "monthly_stage": {
+        "Jan": "perennial",
+        "Feb": "perennial",
+        "Mar": "perennial",
+        "Apr": "perennial",
+        "May": "perennial",
+        "Jun": "perennial",
+        "Jul": "perennial",
+        "Aug": "perennial",
+        "Sep": "perennial",
+        "Oct": "perennial",
+        "Nov": "perennial",
+        "Dec": "perennial"
+      },
+      "calendar_confidence": "medium",
+      "calendar_status": "perennial_no_monthly_stage",
+      "source_note": "Coconut uses current_operation + future_yield + supportive rules; no annual crop calendar."
+    }
+  ]
+}

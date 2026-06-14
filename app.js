@@ -343,6 +343,23 @@ function prepareData(raw) {
   store.euRecords = raw.euRecords || [];
   store.geojson = raw.geojson;
   store.adminById = new Map(store.adminRecords.map(row => [row.weather_region_id, row]));
+
+  // Crop progress index: keyed by (country_lower + '::' + crop_group + '::' + admin1_lower)
+  store.cropProgress = raw.cropProgress || [];
+  store.cropProgressIndex = new Map();
+  for (const cp of store.cropProgress) {
+    const key = (cp.country || '').toLowerCase() + '::' + (cp.crop_group || '') + '::' + (cp.admin1 || '').toLowerCase();
+    if (!store.cropProgressIndex.has(key)) store.cropProgressIndex.set(key, []);
+    store.cropProgressIndex.get(key).push(cp);
+  }
+
+  // Soil temperature index: keyed by weather_region_id
+  store.soilTempIndex = new Map();
+  for (const st of (raw.soilTemp || [])) {
+    if (st && st.weather_region_id) {
+      store.soilTempIndex.set(st.weather_region_id, st);
+    }
+  }
 }
 
 function getCountryName(key) {
@@ -980,10 +997,14 @@ function shouldShowRegionLabel(row, zoom) {
 
 function regionLabelHtml(row) {
   const share = row.eu_share !== undefined ? row.eu_share : row.national_share;
+  const badge = row.dominant_map_badge_cn || '';
+  const badgeHtml = badge
+    ? '<span style="font-size:8.5px;padding:0 4px;border-radius:2px;background:rgba(0,0,0,0.06);color:var(--muted);margin-left:3px;">' + esc(badge) + '</span>'
+    : '';
   return `
     <div class="map-label" style="--oil-color:${cropColor(row.crop_group)}">
       <span class="stripe"></span>
-      <div><strong>${esc(shortRegionName(row))}</strong><span>${esc(cropLabel(row))}</span></div>
+      <div><strong>${esc(shortRegionName(row))}</strong>${badgeHtml}<span>${esc(cropLabel(row))}</span></div>
     </div>
   `;
 }
@@ -1113,6 +1134,280 @@ function showEuRegionDetail(euRow) {
   `;
 }
 
+const CROP_PROGRESS_METRIC_CN = {
+  planted: '播种进度', emerged: '出苗进度', blooming: '开花进度',
+  flowering: '开花进度', setting_pods: '结荚进度', pod_filling: '灌浆进度',
+  mature: '成熟进度', harvested: '收割进度',
+  condition_good_excellent: '良好-优秀', condition_poor_very_poor: '差-极差',
+};
+
+const DELAY_LEVEL_CN = {
+  very_late: '明显偏慢', late: '偏慢', normal: '正常',
+  fast: '偏快', very_fast: '明显偏快', unknown: '待确认',
+};
+
+const DELAY_LEVEL_COLOR = {
+  very_late: '#c0392b', late: '#e67e22', normal: '#27ae60',
+  fast: '#2563eb', very_fast: '#7c3aed', unknown: '#94a3b8',
+};
+
+function findCropProgress(row) {
+  if (!store.cropProgressIndex) return [];
+  const country = (row.country || '').toLowerCase();
+  const crop = row.crop_group || '';
+  // Extract admin1 from region_name
+  let rn = row.region_name || '';
+  if (rn.includes(',')) rn = rn.split(',')[0].trim();
+  if (rn.includes(' / ')) rn = rn.rsplit ? rn.split(' / ')[0].trim() : rn.split(' / ').slice(0, -1).join(' / ').trim();
+  if (rn.includes(' - ')) rn = rn.split(' - ').slice(1).join(' - ').trim();
+  const key = country + '::' + crop + '::' + rn.toLowerCase();
+  const exact = store.cropProgressIndex.get(key);
+  if (exact && exact.length) return exact;
+  // Fallback: try without admin1 suffix stripping
+  for (const [k, v] of store.cropProgressIndex) {
+    if (k.startsWith(country + '::' + crop + '::') && rn.toLowerCase().includes(k.split('::')[2])) return v;
+  }
+  return [];
+}
+
+function renderCropProgressBlock(row) {
+  const records = findCropProgress(row);
+  if (!records || records.length === 0) {
+    return `<div class="detail-block"><h3>作物进度</h3><p style="color:var(--muted-2);font-size:12px;">当前地区暂无作物进度数据</p></div>`;
+  }
+  const calendarStage = row.calendar_growth_stage_code || row.growth_stage_code || '—';
+  const resolvedStage = row.resolved_growth_stage || calendarStage;
+  const progressStage = row.progress_resolved_growth_stage || '—';
+  const sourceDateForStage = row.progress_latest_source_date || records[0].source_date || '—';
+  const stageEvidence = row.progress_evidence_cn || '';
+  const progressUsed = row.progress_used_in_risk_label === true;
+  const stageResolutionText = progressUsed
+    ? `作物进度已用于生长期修正：作物历阶段 ${calendarStage}，进度修正为 ${resolvedStage}。依据：${stageEvidence || row.progress_stage_basis || '可用真实进度记录'}`
+    : `作物进度暂未用于生长期修正：${stageEvidence || '数据为样例/来源未激活/数据过期。'}`;
+  const stageResolutionColor = progressUsed ? '#166534' : '#6b7280';
+  const stageResolutionBg = progressUsed ? '#ecfdf3' : '#f8fafc';
+  const rows = records.map(r => {
+    const metricCn = CROP_PROGRESS_METRIC_CN[r.stage_metric] || r.stage_metric || '—';
+    const pct = isNum(r.progress_pct) ? Math.round(Number(r.progress_pct)) + '%' : '—';
+    const delay = r.delay_level || 'unknown';
+    const delayCn = DELAY_LEVEL_CN[delay] || '待确认';
+    const delayColor = DELAY_LEVEL_COLOR[delay] || '#94a3b8';
+    const yoy = isNum(r.yoy_diff_pp) ? (Number(r.yoy_diff_pp) >= 0 ? '+' : '') + Number(r.yoy_diff_pp).toFixed(1) + 'pp' : '—';
+    const avg5y = isNum(r.avg_5y_diff_pp) ? (Number(r.avg_5y_diff_pp) >= 0 ? '+' : '') + Number(r.avg_5y_diff_pp).toFixed(1) + 'pp' : '—';
+    const seasonType = r.season_type === 'first_crop' ? '(一季)' : r.season_type === 'second_crop' ? '(二季)' : '';
+    const sampleBadge = r.is_sample ? ' <span style="background:#fef3c7;color:#92400e;padding:1px 5px;border-radius:3px;font-size:10px;">样例</span>' : '';
+    return `<div class="data-grid cols-4" style="margin-bottom:6px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
+      <div class="data-cell"><span class="lbl">${esc(metricCn)}${esc(seasonType)}${sampleBadge}</span><span class="val">${esc(pct)}</span></div>
+      <div class="data-cell"><span class="lbl">节奏</span><span class="val" style="color:${delayColor};font-weight:600;">${esc(delayCn)}</span></div>
+      <div class="data-cell"><span class="lbl">同比</span><span class="val">${esc(yoy)}</span></div>
+      <div class="data-cell"><span class="lbl">vs 5年均值</span><span class="val">${esc(avg5y)}</span></div>
+    </div>`;
+  }).join('');
+  const srcDate = records[0].source_date || '—';
+  const srcName = records[0].source_name || '';
+  const allSample = records.every(r => r.is_sample);
+  const anyReal = records.some(r => !r.is_sample);
+  const dataStatus = records[0].data_status || '';
+  const notUsable = records.some(r => r.usable_for_stage_resolution === false);
+  const sampleNotice = allSample
+    ? '<div style="color:#92400e;background:#fef3c7;padding:4px 8px;border-radius:4px;margin-top:4px;font-size:11px">以上为样例数据，未用于风险判断</div>'
+    : (anyReal && records.some(r => r.is_sample)
+      ? '<div style="color:#92400e;background:#fef3c7;padding:4px 8px;border-radius:4px;margin-top:4px;font-size:11px">部分地区为样例数据</div>'
+      : '');
+  return `<div class="detail-block">
+    <h3>作物进度</h3>
+    <div style="color:${stageResolutionColor};background:${stageResolutionBg};padding:6px 8px;border-radius:4px;margin-bottom:8px;font-size:11.5px;line-height:1.45;">
+      ${esc(stageResolutionText)}
+      <div style="margin-top:3px;color:var(--muted);font-size:10.5px;">原作物历阶段 ${esc(calendarStage)} · 进度阶段 ${esc(progressStage)} · 修正后 ${esc(resolvedStage)} · 数据日期 ${esc(sourceDateForStage)}</div>
+    </div>
+    ${rows}
+    ${sampleNotice}
+    ${notUsable && !allSample ? '<div style="color:#6b7280;font-size:11px;margin-top:2px">暂未用于生长期修正</div>' : ''}
+    <p style="margin-top:6px;color:var(--muted);font-size:10.5px;">来源：${esc(srcName)} · ${esc(srcDate)}</p>
+  </div>`;
+}
+
+function renderSoilTemperatureBlock(row) {
+  const st = store.soilTempIndex ? store.soilTempIndex.get(row.weather_region_id) : null;
+  if (!st) {
+    return `<div class="detail-block"><h3>土壤温度</h3><p style="color:var(--muted-2);font-size:12px;">暂无土壤温度数据</p></div>`;
+  }
+
+  // e3a_patch2: check data_status / is_synthetic
+  const dataStatus = st.data_status || '';
+  const isSynthetic = st.is_synthetic === true || dataStatus === 'synthetic_test';
+  const isRecentOnly = dataStatus === 'real_recent_only';
+  const isRealActive = dataStatus === 'real_active';
+
+  const t0  = isNum(st.soil_temp_0_7cm_mean_c) ? Number(st.soil_temp_0_7cm_mean_c).toFixed(1) + '°C' : '—';
+  const t28 = isNum(st.soil_temp_7_28cm_mean_c) ? Number(st.soil_temp_7_28cm_mean_c).toFixed(1) + '°C' : '—';
+  const p0  = isNum(st.soil_temp_0_7cm_percentile) ? 'P' + Math.round(Number(st.soil_temp_0_7cm_percentile)) : '—';
+  const p28 = isNum(st.soil_temp_7_28cm_percentile) ? 'P' + Math.round(Number(st.soil_temp_7_28cm_percentile)) : '—';
+  const anom0  = isNum(st.soil_temp_0_7cm_anomaly_c) ? (Number(st.soil_temp_0_7cm_anomaly_c) >= 0 ? '+' : '') + Number(st.soil_temp_0_7cm_anomaly_c).toFixed(1) + '°C' : '—';
+  const coldDays = isNum(st.cold_soil_days_7d) ? Math.round(Number(st.cold_soil_days_7d)) : 0;
+  const hotDays  = isNum(st.hot_soil_days_7d)  ? Math.round(Number(st.hot_soil_days_7d))  : 0;
+  const signalCn = st.soil_temp_signal_cn || '—';
+  const evidence = st.evidence_cn || '';
+  const baseline = st.baseline_period || '—';
+  const conf     = st.signal_confidence || '—';
+  const confColor = conf === 'high' ? '#166534' : conf === 'medium' ? '#92400e' : '#6b7280';
+  const signalColor = (() => {
+    const s = st.soil_temp_signal || '';
+    if (s.includes('extreme_cold')) return '#1e40af';
+    if (s.includes('cold'))        return '#2563eb';
+    if (s.includes('hot'))         return '#c0392b';
+    if (s.includes('warm'))        return '#e67e22';
+    return '#374151';
+  })();
+  const srcDate = st.date || '—';
+
+  // e3a_patch2: status-specific notices
+  let statusNotice = '';
+  if (isSynthetic) {
+    statusNotice = `<div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:4px;padding:6px 8px;margin-bottom:6px;font-size:11px;color:#92400e;">
+      ⚠ 合成测试数据，仅用于验证流程，未用于风险判断。</div>`;
+  } else if (isRecentOnly) {
+    statusNotice = `<div style="background:#eff6ff;border:1px solid #93c5fd;border-radius:4px;padding:6px 8px;margin-bottom:6px;font-size:11px;color:#1e40af;">
+      已有近期真实土壤温度，历史同期基线待补，暂不生成正式分位信号。</div>`;
+  }
+
+  // Bottom note for real data
+  let bottomNote = '';
+  if (isRealActive) {
+    bottomNote = `<p style="margin-top:4px;color:var(--muted);font-size:10px;font-style:italic;">土壤温度当前仅作为辅助观察，本版未直接参与 risk_label 判断。</p>`;
+  } else if (isSynthetic) {
+    bottomNote = `<p style="margin-top:4px;color:var(--muted);font-size:10px;font-style:italic;">以上数值为测试数据，不反映实际土壤状况。</p>`;
+  }
+
+  return `<div class="detail-block">
+    <h3>土壤温度</h3>
+    ${statusNotice}
+    <div class="data-grid cols-3">
+      <div class="data-cell"><span class="lbl">0-7cm</span><span class="val">${esc(t0)}</span></div>
+      <div class="data-cell"><span class="lbl">7-28cm</span><span class="val">${esc(t28)}</span></div>
+      <div class="data-cell"><span class="lbl">信号</span><span class="val" style="color:${signalColor};font-weight:600;">${esc(signalCn)}</span></div>
+    </div>
+    <div class="data-grid cols-4" style="margin-top:4px;">
+      <div class="data-cell"><span class="lbl">0-7cm分位</span><span class="val">${esc(p0)}</span></div>
+      <div class="data-cell"><span class="lbl">7-28cm分位</span><span class="val">${esc(p28)}</span></div>
+      <div class="data-cell"><span class="lbl">距平</span><span class="val">${esc(anom0)}</span></div>
+      <div class="data-cell"><span class="lbl">偏冷/偏热天</span><span class="val">${coldDays}/${hotDays}</span></div>
+    </div>
+    <p style="margin-top:6px;color:var(--muted);font-size:11px;line-height:1.4;">${esc(evidence)}</p>
+    <div style="margin-top:4px;display:flex;gap:8px;align-items:center;font-size:10.5px;">
+      <span style="color:var(--muted);">基线 ${esc(baseline)}</span>
+      <span style="color:${confColor};font-weight:600;">置信 ${esc(conf)}</span>
+      <span style="color:var(--muted);">数据 ${esc(srcDate)}</span>
+    </div>
+    ${bottomNote}
+  </div>`;
+}
+
+function renderRiskTagsBlock(row) {
+  const tags = Array.isArray(row.risk_tags) ? row.risk_tags : [];
+  const badge = row.dominant_map_badge_cn || '';
+  const domLevel = row.dominant_risk_level || 0;
+  const domType = row.dominant_impact_type || '';
+  const evidence = row.risk_evidence_cn || '';
+  const prodImpact = row.production_impact_cn || '';
+  const curOpImpact = row.current_operation_impact_cn || '';
+  const futYieldImpact = row.future_yield_impact_cn || '';
+  const isPerennial = row.crop_group === 'palm' || row.crop_group === 'coconut';
+
+  // Risk level color helper
+  function lvlColor(lv) {
+    if (lv >= 4) return '#c0392b';
+    if (lv >= 3) return '#e67e22';
+    if (lv >= 2) return '#d4a017';
+    if (lv >= 1) return '#27ae60';
+    return 'var(--muted-2)';
+  }
+  function lvlName(lv) {
+    if (lv >= 4) return '极高';
+    if (lv >= 3) return '高';
+    if (lv >= 2) return '中';
+    if (lv >= 1) return '低';
+    return '—';
+  }
+  function dirName(d) {
+    if (d === 'supportive') return '利好';
+    if (d === 'adverse') return '不利';
+    if (d === 'mixed') return '混合';
+    return d || '—';
+  }
+
+  // Dominant badge header
+  let headerHtml = '';
+  if (badge) {
+    headerHtml = '<div style="margin-bottom:10px;">'
+      + '<span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;color:#fff;background:' + lvlColor(domLevel) + ';margin-right:6px;">' + esc(badge) + '</span>'
+      + '<span style="font-size:11px;color:var(--muted);">' + esc(lvlName(domLevel)) + ' · ' + esc(dirName(tags.length ? tags[0].direction : '')) + '</span>'
+      + '</div>';
+  }
+
+  // Evidence line
+  let evidenceHtml = '';
+  if (evidence) {
+    evidenceHtml = '<p style="font-size:11px;color:var(--muted);margin:0 0 8px 0;">' + esc(evidence) + '</p>';
+  }
+
+  // Production impact summary
+  let impactHtml = '';
+  if (prodImpact && prodImpact !== '暂无明显影响') {
+    impactHtml = '<p style="font-size:11.5px;margin:0 0 6px 0;"><span style="color:var(--muted);">生产影响：</span>' + esc(prodImpact) + '</p>';
+  }
+
+  // Perennial: separate current operation and future yield
+  if (isPerennial) {
+    if (curOpImpact) {
+      impactHtml += '<p style="font-size:11.5px;margin:0 0 4px 0;"><span style="color:var(--muted);">当前作业：</span>' + esc(curOpImpact) + '</p>';
+    }
+    if (futYieldImpact) {
+      impactHtml += '<p style="font-size:11.5px;margin:0 0 6px 0;"><span style="color:var(--muted);">远期产量：</span>' + esc(futYieldImpact) + '</p>';
+    }
+  }
+
+  // Tag list (max 6 tags)
+  let tagsHtml = '';
+  if (tags.length > 0) {
+    const shown = tags.slice(0, 6);
+    tagsHtml = '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;">';
+    for (const t of shown) {
+      const tColor = lvlColor(t.risk_level || 0);
+      const tLabel = esc(t.risk_label_cn || '');
+      const tStage = esc(t.growth_stage_cn || t.growth_stage_code || '');
+      const tConf = esc(t.confidence || '');
+      tagsHtml += '<span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:3px;font-size:10.5px;border:1px solid ' + tColor + '33;background:' + tColor + '0d;">'
+        + '<span style="width:6px;height:6px;border-radius:50%;background:' + tColor + ';"></span>'
+        + '<span style="font-weight:600;color:' + tColor + ';">' + tLabel + '</span>'
+        + '<span style="color:var(--muted-2);font-size:9.5px;">' + tStage + ' · ' + tConf + '</span>'
+        + '</span>';
+    }
+    if (tags.length > 6) {
+      tagsHtml += '<span style="font-size:10px;color:var(--muted);padding:2px 4px;">+' + (tags.length - 6) + '</span>';
+    }
+    tagsHtml += '</div>';
+  }
+
+  // E3B: soil temperature auxiliary note
+  let soilTempHtml = '';
+  if (row.soil_temp_used_in_risk_label && row.soil_temp_evidence_cn) {
+    soilTempHtml = '<p style="font-size:11px;color:var(--muted);margin:6px 0 0 0;padding:4px 8px;background:rgba(59,130,246,0.06);border-radius:4px;">'
+      + '<span style="font-weight:600;color:#3b82f6;">土壤温度辅助：</span>'
+      + esc(row.soil_temp_evidence_cn) + '</p>';
+  }
+
+  // Empty state
+  if (!badge && tags.length === 0 && !impactHtml) {
+    return '<div class="detail-block"><h3>风险标签</h3>'
+      + '<p style="color:var(--muted-2);font-size:11.5px;margin:0;">当前无明显风险标签</p>'
+      + soilTempHtml + '</div>';
+  }
+
+  return '<div class="detail-block"><h3>风险标签</h3>'
+    + headerHtml + evidenceHtml + impactHtml + tagsHtml + soilTempHtml + '</div>';
+}
+
 function showRegionDetail(row) {
   destroyCharts();
   const conclusion = [
@@ -1145,6 +1440,8 @@ function showRegionDetail(row) {
         <div class="data-cell"><span class="lbl">全国占比</span><span class="val">${esc(fmtPct(row.national_share))}</span></div>
       </div>
     </div>
+    ${renderRiskTagsBlock(row)}
+    ${renderCropProgressBlock(row)}
     <div class="detail-block">
       <h3>土壤情况</h3>
       <div class="data-grid cols-3">
@@ -1154,6 +1451,7 @@ function showRegionDetail(row) {
       </div>
       <div class="chart-box"><canvas id="chart-soil"></canvas></div>
     </div>
+    ${renderSoilTemperatureBlock(row)}
     <div class="detail-block">
       <h3>累积降雨</h3>
       <div class="data-grid">
@@ -1501,15 +1799,17 @@ async function init() {
   initMap();
   bindEvents();
 
-  const [countryRecords, adminRecords, coverage, euRecords, geojson] = await Promise.all([
+  const [countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp] = await Promise.all([
     loadJSON('country_crop_risk_latest.json'),
     loadJSON('admin_region_risk_latest.json'),
     loadJSON('geo_boundary_coverage.json'),
     loadJSON('eu_virtual_country_summary.json'),
-    loadJSON('countries.geo.json')
+    loadJSON('countries.geo.json'),
+    loadJSON('crop_progress_latest.json').catch(() => []),
+    loadJSON('soil_temperature_latest.json').catch(() => [])
   ]);
 
-  prepareData({ countryRecords, adminRecords, coverage, euRecords, geojson });
+  prepareData({ countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp });
   updateMetaDate();
   populateFilters();
   renderCountryLayer();

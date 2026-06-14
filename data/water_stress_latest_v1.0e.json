@@ -10,7 +10,7 @@
     "temp_7d_status": "高温显著",
     "soil_moisture_status": "略偏干",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度偏低",
+    "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
     "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著",
@@ -20,10 +20,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.63,
-    "vpd_30d_avg_kpa": 1.19,
-    "et0_7d_avg_mm": 3.86,
-    "vpd_7d_avg_kpa": 1.16,
+    "et0_30d_avg_mm": 3.76,
+    "vpd_30d_avg_kpa": 1.23,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3008,
       "soil_water_rootzone_m3m3": 0.349,
@@ -55,10 +55,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 3.7,
-    "vpd_30d_avg_kpa": 1.47,
-    "et0_7d_avg_mm": 4.11,
-    "vpd_7d_avg_kpa": 1.76,
+    "et0_30d_avg_mm": 3.75,
+    "vpd_30d_avg_kpa": 1.54,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2695,
       "soil_water_rootzone_m3m3": 0.3538,
@@ -88,10 +88,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.76,
-    "vpd_30d_avg_kpa": 1.81,
-    "et0_7d_avg_mm": 3.78,
-    "vpd_7d_avg_kpa": 2.03,
+    "et0_30d_avg_mm": 3.65,
+    "vpd_30d_avg_kpa": 1.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2674,
       "soil_water_rootzone_m3m3": 0.3173,
@@ -123,10 +123,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.86,
-    "vpd_30d_avg_kpa": 1.74,
-    "et0_7d_avg_mm": 4.25,
-    "vpd_7d_avg_kpa": 1.99,
+    "et0_30d_avg_mm": 3.89,
+    "vpd_30d_avg_kpa": 1.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3185,
       "soil_water_rootzone_m3m3": 0.3729,
@@ -158,10 +158,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.38,
-    "vpd_30d_avg_kpa": 0.97,
-    "et0_7d_avg_mm": 3.43,
-    "vpd_7d_avg_kpa": 1.01,
+    "et0_30d_avg_mm": 3.28,
+    "vpd_30d_avg_kpa": 0.91,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3961,
       "soil_water_rootzone_m3m3": 0.4008,
@@ -193,10 +193,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 3.64,
-    "vpd_30d_avg_kpa": 1.61,
-    "et0_7d_avg_mm": 4.12,
-    "vpd_7d_avg_kpa": 1.88,
+    "et0_30d_avg_mm": 3.74,
+    "vpd_30d_avg_kpa": 1.69,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3194,
       "soil_water_rootzone_m3m3": 0.3843,
@@ -229,10 +229,10 @@
       "high_temp",
       "high_vpd"
     ],
-    "et0_30d_avg_mm": 3.78,
-    "vpd_30d_avg_kpa": 1.91,
-    "et0_7d_avg_mm": 3.88,
-    "vpd_7d_avg_kpa": 2.12,
+    "et0_30d_avg_mm": 3.67,
+    "vpd_30d_avg_kpa": 1.87,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1035,
       "soil_water_rootzone_m3m3": 0.223,
@@ -264,10 +264,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.92,
-    "vpd_30d_avg_kpa": 1.74,
-    "et0_7d_avg_mm": 4.37,
-    "vpd_7d_avg_kpa": 2.16,
+    "et0_30d_avg_mm": 3.94,
+    "vpd_30d_avg_kpa": 1.76,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2656,
       "soil_water_rootzone_m3m3": 0.3687,
@@ -299,10 +299,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.42,
-    "vpd_30d_avg_kpa": 1.23,
-    "et0_7d_avg_mm": 3.71,
-    "vpd_7d_avg_kpa": 1.54,
+    "et0_30d_avg_mm": 3.46,
+    "vpd_30d_avg_kpa": 1.28,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3874,
       "soil_water_rootzone_m3m3": 0.4231,
@@ -334,10 +334,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.72,
-    "vpd_30d_avg_kpa": 1.71,
-    "et0_7d_avg_mm": 3.63,
-    "vpd_7d_avg_kpa": 1.75,
+    "et0_30d_avg_mm": 3.82,
+    "vpd_30d_avg_kpa": 1.8,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2634,
       "soil_water_rootzone_m3m3": 0.2598,
@@ -369,10 +369,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.36,
-    "vpd_30d_avg_kpa": 1.06,
-    "et0_7d_avg_mm": 3.48,
-    "vpd_7d_avg_kpa": 1.11,
+    "et0_30d_avg_mm": 3.19,
+    "vpd_30d_avg_kpa": 0.95,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4087,
       "soil_water_rootzone_m3m3": 0.4173,
@@ -405,10 +405,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 3.72,
-    "vpd_30d_avg_kpa": 1.52,
-    "et0_7d_avg_mm": 3.75,
-    "vpd_7d_avg_kpa": 1.62,
+    "et0_30d_avg_mm": 3.6,
+    "vpd_30d_avg_kpa": 1.51,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4695,
       "soil_water_rootzone_m3m3": 0.4477,
@@ -440,10 +440,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.83,
-    "vpd_30d_avg_kpa": 1.6,
-    "et0_7d_avg_mm": 4.49,
-    "vpd_7d_avg_kpa": 1.95,
+    "et0_30d_avg_mm": 3.86,
+    "vpd_30d_avg_kpa": 1.65,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2177,
       "soil_water_rootzone_m3m3": 0.2662,
@@ -475,10 +475,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.7,
-    "vpd_30d_avg_kpa": 1.6,
-    "et0_7d_avg_mm": 4.2,
-    "vpd_7d_avg_kpa": 1.9,
+    "et0_30d_avg_mm": 3.67,
+    "vpd_30d_avg_kpa": 1.62,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2015,
       "soil_water_rootzone_m3m3": 0.3392,
@@ -510,10 +510,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.27,
-    "vpd_30d_avg_kpa": 1.07,
-    "et0_7d_avg_mm": 3.62,
-    "vpd_7d_avg_kpa": 1.32,
+    "et0_30d_avg_mm": 3.21,
+    "vpd_30d_avg_kpa": 1.0,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.419,
       "soil_water_rootzone_m3m3": 0.4213,
@@ -545,10 +545,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.03,
-    "vpd_30d_avg_kpa": 0.94,
-    "et0_7d_avg_mm": 2.89,
-    "vpd_7d_avg_kpa": 0.82,
+    "et0_30d_avg_mm": 3.12,
+    "vpd_30d_avg_kpa": 0.93,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3874,
       "soil_water_rootzone_m3m3": 0.393,
@@ -580,10 +580,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.4,
-    "vpd_30d_avg_kpa": 1.41,
-    "et0_7d_avg_mm": 3.34,
-    "vpd_7d_avg_kpa": 1.47,
+    "et0_30d_avg_mm": 3.32,
+    "vpd_30d_avg_kpa": 1.36,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4192,
       "soil_water_rootzone_m3m3": 0.4206,
@@ -615,10 +615,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.05,
-    "vpd_30d_avg_kpa": 1.01,
-    "et0_7d_avg_mm": 3.21,
-    "vpd_7d_avg_kpa": 1.23,
+    "et0_30d_avg_mm": 3.01,
+    "vpd_30d_avg_kpa": 0.96,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4976,
       "soil_water_rootzone_m3m3": 0.4912,
@@ -651,10 +651,10 @@
       "excess_rain",
       "waterlogged_soil"
     ],
-    "et0_30d_avg_mm": 2.64,
-    "vpd_30d_avg_kpa": 0.56,
-    "et0_7d_avg_mm": 2.9,
-    "vpd_7d_avg_kpa": 0.64,
+    "et0_30d_avg_mm": 2.54,
+    "vpd_30d_avg_kpa": 0.54,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4275,
       "soil_water_rootzone_m3m3": 0.4278,
@@ -686,10 +686,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.14,
-    "vpd_30d_avg_kpa": 1.15,
-    "et0_7d_avg_mm": 3.71,
-    "vpd_7d_avg_kpa": 1.3,
+    "et0_30d_avg_mm": 3.17,
+    "vpd_30d_avg_kpa": 1.13,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4147,
       "soil_water_rootzone_m3m3": 0.4117,
@@ -721,10 +721,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.07,
-    "vpd_30d_avg_kpa": 1.02,
-    "et0_7d_avg_mm": 3.43,
-    "vpd_7d_avg_kpa": 1.14,
+    "et0_30d_avg_mm": 3.11,
+    "vpd_30d_avg_kpa": 1.04,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4111,
       "soil_water_rootzone_m3m3": 0.4122,
@@ -756,10 +756,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.79,
-    "vpd_30d_avg_kpa": 1.67,
-    "et0_7d_avg_mm": 4.41,
-    "vpd_7d_avg_kpa": 1.97,
+    "et0_30d_avg_mm": 3.86,
+    "vpd_30d_avg_kpa": 1.77,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2165,
       "soil_water_rootzone_m3m3": 0.2142,
@@ -791,10 +791,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 2.94,
-    "vpd_30d_avg_kpa": 0.69,
-    "et0_7d_avg_mm": 3.14,
-    "vpd_7d_avg_kpa": 0.74,
+    "et0_30d_avg_mm": 3.03,
+    "vpd_30d_avg_kpa": 0.75,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4138,
       "soil_water_rootzone_m3m3": 0.3803,
@@ -816,7 +816,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度偏低",
+    "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
     "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著",
@@ -826,10 +826,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.06,
-    "vpd_30d_avg_kpa": 1.19,
-    "et0_7d_avg_mm": 4.33,
-    "vpd_7d_avg_kpa": 1.38,
+    "et0_30d_avg_mm": 4.15,
+    "vpd_30d_avg_kpa": 1.25,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0,
       "soil_water_rootzone_m3m3": 0.0,
@@ -861,10 +861,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 2.51,
-    "vpd_30d_avg_kpa": 0.69,
-    "et0_7d_avg_mm": 2.67,
-    "vpd_7d_avg_kpa": 0.84,
+    "et0_30d_avg_mm": 2.58,
+    "vpd_30d_avg_kpa": 0.71,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4137,
       "soil_water_rootzone_m3m3": 0.4147,
@@ -894,10 +894,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.08,
-    "vpd_30d_avg_kpa": 1.0,
-    "et0_7d_avg_mm": 3.39,
-    "vpd_7d_avg_kpa": 1.22,
+    "et0_30d_avg_mm": 3.26,
+    "vpd_30d_avg_kpa": 1.1,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4058,
       "soil_water_rootzone_m3m3": 0.4081,
@@ -929,10 +929,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.94,
-    "vpd_30d_avg_kpa": 1.74,
-    "et0_7d_avg_mm": 4.26,
-    "vpd_7d_avg_kpa": 2.04,
+    "et0_30d_avg_mm": 4.0,
+    "vpd_30d_avg_kpa": 1.86,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.323,
       "soil_water_rootzone_m3m3": 0.3993,
@@ -964,10 +964,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.9,
-    "vpd_30d_avg_kpa": 1.69,
-    "et0_7d_avg_mm": 4.22,
-    "vpd_7d_avg_kpa": 1.88,
+    "et0_30d_avg_mm": 3.88,
+    "vpd_30d_avg_kpa": 1.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3961,
       "soil_water_rootzone_m3m3": 0.4192,
@@ -988,7 +988,7 @@
     "precipitation_30d_status": "30日降雨偏少",
     "temp_7d_status": "高温显著",
     "soil_moisture_status": "正常",
-    "et0_status": "蒸散需求偏低",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -1000,10 +1000,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 3.43,
-    "vpd_30d_avg_kpa": 1.29,
-    "et0_7d_avg_mm": 3.57,
-    "vpd_7d_avg_kpa": 1.45,
+    "et0_30d_avg_mm": 3.59,
+    "vpd_30d_avg_kpa": 1.4,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.36,
       "soil_water_rootzone_m3m3": 0.3816,
@@ -1035,10 +1035,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.44,
-    "vpd_30d_avg_kpa": 1.37,
-    "et0_7d_avg_mm": 3.8,
-    "vpd_7d_avg_kpa": 1.53,
+    "et0_30d_avg_mm": 3.47,
+    "vpd_30d_avg_kpa": 1.41,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4835,
       "soil_water_rootzone_m3m3": 0.4757,
@@ -1070,10 +1070,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.06,
-    "vpd_30d_avg_kpa": 1.65,
-    "et0_7d_avg_mm": 4.06,
-    "vpd_7d_avg_kpa": 1.67,
+    "et0_30d_avg_mm": 4.0,
+    "vpd_30d_avg_kpa": 1.64,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3675,
       "soil_water_rootzone_m3m3": 0.3535,
@@ -1105,10 +1105,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.45,
-    "vpd_30d_avg_kpa": 1.14,
-    "et0_7d_avg_mm": 3.11,
-    "vpd_7d_avg_kpa": 0.76,
+    "et0_30d_avg_mm": 4.31,
+    "vpd_30d_avg_kpa": 1.05,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.412,
       "soil_water_rootzone_m3m3": 0.3434,
@@ -1140,10 +1140,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.81,
-    "vpd_30d_avg_kpa": 0.95,
-    "et0_7d_avg_mm": 2.22,
-    "vpd_7d_avg_kpa": 0.37,
+    "et0_30d_avg_mm": 3.57,
+    "vpd_30d_avg_kpa": 0.8,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.406,
       "soil_water_rootzone_m3m3": 0.331,
@@ -1175,10 +1175,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.06,
-    "vpd_30d_avg_kpa": 1.34,
-    "et0_7d_avg_mm": 3.44,
-    "vpd_7d_avg_kpa": 1.06,
+    "et0_30d_avg_mm": 3.86,
+    "vpd_30d_avg_kpa": 1.21,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3323,
       "soil_water_rootzone_m3m3": 0.2425,
@@ -1210,10 +1210,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 5.37,
-    "vpd_30d_avg_kpa": 3.04,
-    "et0_7d_avg_mm": 3.66,
-    "vpd_7d_avg_kpa": 1.73,
+    "et0_30d_avg_mm": 5.07,
+    "vpd_30d_avg_kpa": 2.63,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3756,
       "soil_water_rootzone_m3m3": 0.1797,
@@ -1246,10 +1246,10 @@
       "high_temp",
       "high_vpd"
     ],
-    "et0_30d_avg_mm": 5.58,
-    "vpd_30d_avg_kpa": 2.86,
-    "et0_7d_avg_mm": 4.76,
-    "vpd_7d_avg_kpa": 2.49,
+    "et0_30d_avg_mm": 5.43,
+    "vpd_30d_avg_kpa": 2.64,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2719,
       "soil_water_rootzone_m3m3": 0.2037,
@@ -1282,10 +1282,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.34,
-    "vpd_30d_avg_kpa": 3.22,
-    "et0_7d_avg_mm": 3.04,
-    "vpd_7d_avg_kpa": 1.75,
+    "et0_30d_avg_mm": 5.01,
+    "vpd_30d_avg_kpa": 2.79,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.392,
       "soil_water_rootzone_m3m3": 0.1731,
@@ -1318,10 +1318,10 @@
       "excess_rain",
       "waterlogged_soil"
     ],
-    "et0_30d_avg_mm": 4.89,
-    "vpd_30d_avg_kpa": 2.26,
-    "et0_7d_avg_mm": 2.97,
-    "vpd_7d_avg_kpa": 1.11,
+    "et0_30d_avg_mm": 4.65,
+    "vpd_30d_avg_kpa": 2.04,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.34,
       "soil_water_rootzone_m3m3": 0.2055,
@@ -1343,7 +1343,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "湿润",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
     "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P92）",
@@ -1354,10 +1354,10 @@
       "excess_rain",
       "waterlogged_soil"
     ],
-    "et0_30d_avg_mm": 3.89,
-    "vpd_30d_avg_kpa": 1.22,
-    "et0_7d_avg_mm": 4.01,
-    "vpd_7d_avg_kpa": 1.44,
+    "et0_30d_avg_mm": 3.76,
+    "vpd_30d_avg_kpa": 1.13,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4819,
       "soil_water_rootzone_m3m3": 0.4382,
@@ -1378,7 +1378,7 @@
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
-    "et0_status": "蒸散需求偏强",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
@@ -1389,10 +1389,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 5.23,
-    "vpd_30d_avg_kpa": 2.83,
-    "et0_7d_avg_mm": 4.1,
-    "vpd_7d_avg_kpa": 1.92,
+    "et0_30d_avg_mm": 4.98,
+    "vpd_30d_avg_kpa": 2.53,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2429,
       "soil_water_rootzone_m3m3": 0.1644,
@@ -1425,10 +1425,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.95,
-    "vpd_30d_avg_kpa": 2.37,
-    "et0_7d_avg_mm": 3.94,
-    "vpd_7d_avg_kpa": 2.11,
+    "et0_30d_avg_mm": 4.69,
+    "vpd_30d_avg_kpa": 2.22,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3348,
       "soil_water_rootzone_m3m3": 0.291,
@@ -1451,20 +1451,19 @@
     "soil_moisture_status": "略偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "根区土壤偏干（P15）叠加蒸散需求，水分压力上升",
+    "water_stress_label_cn": "轻微异常",
+    "water_stress_level": "normal",
+    "water_stress_explanation_cn": "根区土壤偏干（P15），需关注降水补充",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "根区土壤偏干（P15）叠加蒸散需求，水分压力上升",
+    "risk_level_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P15），需关注降水补充",
     "risk_components": [
-      "dry_soil",
-      "high_et0"
+      "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.53,
-    "vpd_30d_avg_kpa": 1.78,
-    "et0_7d_avg_mm": 4.29,
-    "vpd_7d_avg_kpa": 1.72,
+    "et0_30d_avg_mm": 4.43,
+    "vpd_30d_avg_kpa": 1.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2833,
       "soil_water_rootzone_m3m3": 0.2775,
@@ -1497,10 +1496,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.6,
-    "vpd_30d_avg_kpa": 1.68,
-    "et0_7d_avg_mm": 4.02,
-    "vpd_7d_avg_kpa": 1.52,
+    "et0_30d_avg_mm": 4.58,
+    "vpd_30d_avg_kpa": 1.67,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.266,
       "soil_water_rootzone_m3m3": 0.2234,
@@ -1532,10 +1531,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.35,
-    "vpd_30d_avg_kpa": 0.83,
-    "et0_7d_avg_mm": 3.35,
-    "vpd_7d_avg_kpa": 0.95,
+    "et0_30d_avg_mm": 3.29,
+    "vpd_30d_avg_kpa": 0.81,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4977,
       "soil_water_rootzone_m3m3": 0.496,
@@ -1567,10 +1566,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.01,
-    "vpd_30d_avg_kpa": 1.16,
-    "et0_7d_avg_mm": 3.9,
-    "vpd_7d_avg_kpa": 1.03,
+    "et0_30d_avg_mm": 3.99,
+    "vpd_30d_avg_kpa": 1.13,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4923,
       "soil_water_rootzone_m3m3": 0.5005,
@@ -1591,7 +1590,7 @@
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏低",
     "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
@@ -1602,10 +1601,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.6,
-    "vpd_30d_avg_kpa": 1.04,
-    "et0_7d_avg_mm": 3.97,
-    "vpd_7d_avg_kpa": 1.26,
+    "et0_30d_avg_mm": 3.5,
+    "vpd_30d_avg_kpa": 1.01,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3587,
       "soil_water_rootzone_m3m3": 0.3241,
@@ -1637,10 +1636,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.91,
-    "vpd_30d_avg_kpa": 1.27,
-    "et0_7d_avg_mm": 3.7,
-    "vpd_7d_avg_kpa": 1.24,
+    "et0_30d_avg_mm": 3.9,
+    "vpd_30d_avg_kpa": 1.28,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.399,
       "soil_water_rootzone_m3m3": 0.3233,
@@ -1672,10 +1671,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.48,
-    "vpd_30d_avg_kpa": 3.26,
-    "et0_7d_avg_mm": 4.98,
-    "vpd_7d_avg_kpa": 3.54,
+    "et0_30d_avg_mm": 4.44,
+    "vpd_30d_avg_kpa": 3.35,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.172,
       "soil_water_rootzone_m3m3": 0.3496,
@@ -1707,10 +1706,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.61,
-    "vpd_30d_avg_kpa": 1.21,
-    "et0_7d_avg_mm": 4.44,
-    "vpd_7d_avg_kpa": 1.58,
+    "et0_30d_avg_mm": 3.77,
+    "vpd_30d_avg_kpa": 1.28,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3008,
       "soil_water_rootzone_m3m3": 0.349,
@@ -1742,10 +1741,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 3.67,
-    "vpd_30d_avg_kpa": 1.45,
-    "et0_7d_avg_mm": 3.99,
-    "vpd_7d_avg_kpa": 1.72,
+    "et0_30d_avg_mm": 3.71,
+    "vpd_30d_avg_kpa": 1.52,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2695,
       "soil_water_rootzone_m3m3": 0.3538,
@@ -1775,10 +1774,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.75,
-    "vpd_30d_avg_kpa": 1.81,
-    "et0_7d_avg_mm": 3.75,
-    "vpd_7d_avg_kpa": 2.08,
+    "et0_30d_avg_mm": 3.64,
+    "vpd_30d_avg_kpa": 1.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2674,
       "soil_water_rootzone_m3m3": 0.3173,
@@ -1810,10 +1809,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.84,
-    "vpd_30d_avg_kpa": 1.75,
-    "et0_7d_avg_mm": 4.27,
-    "vpd_7d_avg_kpa": 2.07,
+    "et0_30d_avg_mm": 3.88,
+    "vpd_30d_avg_kpa": 1.83,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3185,
       "soil_water_rootzone_m3m3": 0.3729,
@@ -1845,10 +1844,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.43,
-    "vpd_30d_avg_kpa": 0.98,
-    "et0_7d_avg_mm": 3.7,
-    "vpd_7d_avg_kpa": 1.1,
+    "et0_30d_avg_mm": 3.33,
+    "vpd_30d_avg_kpa": 0.92,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3961,
       "soil_water_rootzone_m3m3": 0.4008,
@@ -1880,10 +1879,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 3.62,
-    "vpd_30d_avg_kpa": 1.61,
-    "et0_7d_avg_mm": 4.12,
-    "vpd_7d_avg_kpa": 1.91,
+    "et0_30d_avg_mm": 3.73,
+    "vpd_30d_avg_kpa": 1.69,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3194,
       "soil_water_rootzone_m3m3": 0.3843,
@@ -1916,10 +1915,10 @@
       "high_temp",
       "high_vpd"
     ],
-    "et0_30d_avg_mm": 3.77,
-    "vpd_30d_avg_kpa": 1.89,
-    "et0_7d_avg_mm": 3.82,
-    "vpd_7d_avg_kpa": 2.05,
+    "et0_30d_avg_mm": 3.65,
+    "vpd_30d_avg_kpa": 1.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1035,
       "soil_water_rootzone_m3m3": 0.223,
@@ -1951,10 +1950,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.9,
-    "vpd_30d_avg_kpa": 1.73,
-    "et0_7d_avg_mm": 4.37,
-    "vpd_7d_avg_kpa": 2.18,
+    "et0_30d_avg_mm": 3.92,
+    "vpd_30d_avg_kpa": 1.75,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2656,
       "soil_water_rootzone_m3m3": 0.3687,
@@ -1986,10 +1985,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.4,
-    "vpd_30d_avg_kpa": 1.22,
-    "et0_7d_avg_mm": 3.65,
-    "vpd_7d_avg_kpa": 1.59,
+    "et0_30d_avg_mm": 3.44,
+    "vpd_30d_avg_kpa": 1.28,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3874,
       "soil_water_rootzone_m3m3": 0.4231,
@@ -2021,10 +2020,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.7,
-    "vpd_30d_avg_kpa": 1.7,
-    "et0_7d_avg_mm": 3.48,
-    "vpd_7d_avg_kpa": 1.68,
+    "et0_30d_avg_mm": 3.79,
+    "vpd_30d_avg_kpa": 1.78,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2634,
       "soil_water_rootzone_m3m3": 0.2598,
@@ -2056,10 +2055,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.35,
-    "vpd_30d_avg_kpa": 1.05,
-    "et0_7d_avg_mm": 3.49,
-    "vpd_7d_avg_kpa": 1.07,
+    "et0_30d_avg_mm": 3.18,
+    "vpd_30d_avg_kpa": 0.93,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4087,
       "soil_water_rootzone_m3m3": 0.4173,
@@ -2091,10 +2090,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.7,
-    "vpd_30d_avg_kpa": 1.51,
-    "et0_7d_avg_mm": 3.63,
-    "vpd_7d_avg_kpa": 1.59,
+    "et0_30d_avg_mm": 3.57,
+    "vpd_30d_avg_kpa": 1.49,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4695,
       "soil_water_rootzone_m3m3": 0.4477,
@@ -2126,10 +2125,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.8,
-    "vpd_30d_avg_kpa": 1.59,
-    "et0_7d_avg_mm": 4.47,
-    "vpd_7d_avg_kpa": 1.95,
+    "et0_30d_avg_mm": 3.83,
+    "vpd_30d_avg_kpa": 1.64,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2177,
       "soil_water_rootzone_m3m3": 0.2662,
@@ -2161,10 +2160,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.68,
-    "vpd_30d_avg_kpa": 1.59,
-    "et0_7d_avg_mm": 4.21,
-    "vpd_7d_avg_kpa": 1.92,
+    "et0_30d_avg_mm": 3.65,
+    "vpd_30d_avg_kpa": 1.62,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2015,
       "soil_water_rootzone_m3m3": 0.3392,
@@ -2196,10 +2195,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.0,
-    "vpd_30d_avg_kpa": 0.92,
-    "et0_7d_avg_mm": 2.69,
-    "vpd_7d_avg_kpa": 0.69,
+    "et0_30d_avg_mm": 3.08,
+    "vpd_30d_avg_kpa": 0.91,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3874,
       "soil_water_rootzone_m3m3": 0.393,
@@ -2231,10 +2230,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.31,
-    "vpd_30d_avg_kpa": 1.09,
-    "et0_7d_avg_mm": 3.93,
-    "vpd_7d_avg_kpa": 1.47,
+    "et0_30d_avg_mm": 3.26,
+    "vpd_30d_avg_kpa": 1.02,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.419,
       "soil_water_rootzone_m3m3": 0.4213,
@@ -2266,10 +2265,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.06,
-    "vpd_30d_avg_kpa": 1.02,
-    "et0_7d_avg_mm": 3.47,
-    "vpd_7d_avg_kpa": 1.13,
+    "et0_30d_avg_mm": 3.11,
+    "vpd_30d_avg_kpa": 1.03,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4111,
       "soil_water_rootzone_m3m3": 0.4122,
@@ -2301,10 +2300,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.04,
-    "vpd_30d_avg_kpa": 0.99,
-    "et0_7d_avg_mm": 3.15,
-    "vpd_7d_avg_kpa": 1.17,
+    "et0_30d_avg_mm": 2.99,
+    "vpd_30d_avg_kpa": 0.93,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4976,
       "soil_water_rootzone_m3m3": 0.4912,
@@ -2336,10 +2335,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.4,
-    "vpd_30d_avg_kpa": 1.4,
-    "et0_7d_avg_mm": 3.34,
-    "vpd_7d_avg_kpa": 1.45,
+    "et0_30d_avg_mm": 3.32,
+    "vpd_30d_avg_kpa": 1.35,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4192,
       "soil_water_rootzone_m3m3": 0.4206,
@@ -2372,10 +2371,10 @@
       "excess_rain",
       "waterlogged_soil"
     ],
-    "et0_30d_avg_mm": 2.63,
-    "vpd_30d_avg_kpa": 0.57,
-    "et0_7d_avg_mm": 2.91,
-    "vpd_7d_avg_kpa": 0.67,
+    "et0_30d_avg_mm": 2.53,
+    "vpd_30d_avg_kpa": 0.54,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4275,
       "soil_water_rootzone_m3m3": 0.4278,
@@ -2407,10 +2406,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.12,
-    "vpd_30d_avg_kpa": 1.13,
-    "et0_7d_avg_mm": 3.69,
-    "vpd_7d_avg_kpa": 1.26,
+    "et0_30d_avg_mm": 3.14,
+    "vpd_30d_avg_kpa": 1.11,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4147,
       "soil_water_rootzone_m3m3": 0.4117,
@@ -2442,10 +2441,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.75,
-    "vpd_30d_avg_kpa": 1.65,
-    "et0_7d_avg_mm": 4.29,
-    "vpd_7d_avg_kpa": 1.93,
+    "et0_30d_avg_mm": 3.81,
+    "vpd_30d_avg_kpa": 1.75,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2165,
       "soil_water_rootzone_m3m3": 0.2142,
@@ -2477,10 +2476,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 2.94,
-    "vpd_30d_avg_kpa": 0.69,
-    "et0_7d_avg_mm": 3.21,
-    "vpd_7d_avg_kpa": 0.74,
+    "et0_30d_avg_mm": 3.04,
+    "vpd_30d_avg_kpa": 0.75,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4138,
       "soil_water_rootzone_m3m3": 0.3803,
@@ -2502,7 +2501,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度偏低",
+    "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
     "water_stress_explanation_cn": "降雨偏多，土壤含水量可能偏高",
@@ -2512,10 +2511,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.03,
-    "vpd_30d_avg_kpa": 1.17,
-    "et0_7d_avg_mm": 4.24,
-    "vpd_7d_avg_kpa": 1.32,
+    "et0_30d_avg_mm": 4.12,
+    "vpd_30d_avg_kpa": 1.23,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0,
       "soil_water_rootzone_m3m3": 0.0,
@@ -2547,10 +2546,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 2.52,
-    "vpd_30d_avg_kpa": 0.69,
-    "et0_7d_avg_mm": 2.71,
-    "vpd_7d_avg_kpa": 0.87,
+    "et0_30d_avg_mm": 2.58,
+    "vpd_30d_avg_kpa": 0.71,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4137,
       "soil_water_rootzone_m3m3": 0.4147,
@@ -2580,10 +2579,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.05,
-    "vpd_30d_avg_kpa": 0.97,
-    "et0_7d_avg_mm": 3.3,
-    "vpd_7d_avg_kpa": 1.1,
+    "et0_30d_avg_mm": 3.24,
+    "vpd_30d_avg_kpa": 1.07,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4058,
       "soil_water_rootzone_m3m3": 0.4081,
@@ -2606,20 +2605,22 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少叠加高温，水分压力上升",
+    "water_stress_label_cn": "干热复合压力",
+    "water_stress_level": "high",
+    "water_stress_explanation_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著，根区土壤偏干（P0）",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升",
+    "risk_level_v2": "stress",
+    "risk_reason_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著，根区土壤偏干（P0）",
     "risk_components": [
       "rain_deficit",
-      "high_temp"
+      "high_temp",
+      "high_et0",
+      "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.93,
-    "vpd_30d_avg_kpa": 1.73,
-    "et0_7d_avg_mm": 4.25,
-    "vpd_7d_avg_kpa": 2.02,
+    "et0_30d_avg_mm": 3.99,
+    "vpd_30d_avg_kpa": 1.85,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.323,
       "soil_water_rootzone_m3m3": 0.3993,
@@ -2651,10 +2652,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.9,
-    "vpd_30d_avg_kpa": 1.7,
-    "et0_7d_avg_mm": 4.28,
-    "vpd_7d_avg_kpa": 1.97,
+    "et0_30d_avg_mm": 3.88,
+    "vpd_30d_avg_kpa": 1.76,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3961,
       "soil_water_rootzone_m3m3": 0.4192,
@@ -2675,7 +2676,7 @@
     "precipitation_30d_status": "30日降雨偏少",
     "temp_7d_status": "高温显著",
     "soil_moisture_status": "正常",
-    "et0_status": "蒸散需求偏低",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -2687,10 +2688,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 3.45,
-    "vpd_30d_avg_kpa": 1.3,
-    "et0_7d_avg_mm": 3.75,
-    "vpd_7d_avg_kpa": 1.53,
+    "et0_30d_avg_mm": 3.64,
+    "vpd_30d_avg_kpa": 1.42,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.36,
       "soil_water_rootzone_m3m3": 0.3816,
@@ -2722,10 +2723,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.52,
-    "vpd_30d_avg_kpa": 1.55,
-    "et0_7d_avg_mm": 4.08,
-    "vpd_7d_avg_kpa": 1.75,
+    "et0_30d_avg_mm": 3.55,
+    "vpd_30d_avg_kpa": 1.63,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2801,
       "soil_water_rootzone_m3m3": 0.4005,
@@ -2757,10 +2758,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.77,
-    "vpd_30d_avg_kpa": 1.86,
-    "et0_7d_avg_mm": 3.32,
-    "vpd_7d_avg_kpa": 1.57,
+    "et0_30d_avg_mm": 3.74,
+    "vpd_30d_avg_kpa": 1.83,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4598,
       "soil_water_rootzone_m3m3": 0.3661,
@@ -2790,10 +2791,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.83,
-    "vpd_30d_avg_kpa": 1.85,
-    "et0_7d_avg_mm": 3.97,
-    "vpd_7d_avg_kpa": 2.02,
+    "et0_30d_avg_mm": 3.88,
+    "vpd_30d_avg_kpa": 1.91,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3685,
       "soil_water_rootzone_m3m3": 0.3211,
@@ -2816,20 +2817,19 @@
     "soil_moisture_status": "正常",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "高温叠加大气干燥度偏高，蒸散增强",
+    "water_stress_label_cn": "轻微异常",
+    "water_stress_level": "normal",
+    "water_stress_explanation_cn": "单一指标轻微异常，未来可能缓解",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "高温叠加大气干燥度偏高，蒸散增强",
+    "risk_level_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解",
     "risk_components": [
-      "high_temp",
-      "high_vpd"
+      "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 4.0,
-    "vpd_30d_avg_kpa": 1.83,
-    "et0_7d_avg_mm": 3.86,
-    "vpd_7d_avg_kpa": 1.92,
+    "et0_30d_avg_mm": 3.94,
+    "vpd_30d_avg_kpa": 1.8,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.371,
       "soil_water_rootzone_m3m3": 0.3112,
@@ -2862,10 +2862,10 @@
       "high_temp",
       "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.34,
-    "vpd_30d_avg_kpa": 2.82,
-    "et0_7d_avg_mm": 4.54,
-    "vpd_7d_avg_kpa": 3.24,
+    "et0_30d_avg_mm": 4.46,
+    "vpd_30d_avg_kpa": 3.09,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1862,
       "soil_water_rootzone_m3m3": 0.2734,
@@ -2897,10 +2897,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.25,
-    "vpd_30d_avg_kpa": 1.79,
-    "et0_7d_avg_mm": 4.72,
-    "vpd_7d_avg_kpa": 2.19,
+    "et0_30d_avg_mm": 4.28,
+    "vpd_30d_avg_kpa": 1.8,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3448,
       "soil_water_rootzone_m3m3": 0.4105,
@@ -2923,20 +2923,21 @@
     "soil_moisture_status": "正常",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少叠加高温，水分压力上升",
+    "water_stress_label_cn": "干热复合压力",
+    "water_stress_level": "high",
+    "water_stress_explanation_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升",
+    "risk_level_v2": "stress",
+    "risk_reason_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著",
     "risk_components": [
       "rain_deficit",
-      "high_temp"
+      "high_temp",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 3.8,
-    "vpd_30d_avg_kpa": 1.67,
-    "et0_7d_avg_mm": 3.98,
-    "vpd_7d_avg_kpa": 2.03,
+    "et0_30d_avg_mm": 3.95,
+    "vpd_30d_avg_kpa": 1.81,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2453,
       "soil_water_rootzone_m3m3": 0.3025,
@@ -2970,10 +2971,10 @@
       "high_temp",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.12,
-    "vpd_30d_avg_kpa": 2.16,
-    "et0_7d_avg_mm": 4.24,
-    "vpd_7d_avg_kpa": 2.43,
+    "et0_30d_avg_mm": 4.16,
+    "vpd_30d_avg_kpa": 2.27,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1469,
       "soil_water_rootzone_m3m3": 0.3476,
@@ -3006,10 +3007,10 @@
       "high_temp",
       "high_vpd"
     ],
-    "et0_30d_avg_mm": 3.92,
-    "vpd_30d_avg_kpa": 1.93,
-    "et0_7d_avg_mm": 3.65,
-    "vpd_7d_avg_kpa": 1.24,
+    "et0_30d_avg_mm": 3.88,
+    "vpd_30d_avg_kpa": 1.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4488,
       "soil_water_rootzone_m3m3": 0.3258,
@@ -3031,7 +3032,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "湿润",
     "et0_status": "蒸散需求偏低",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
     "water_stress_explanation_cn": "表层土壤过湿（P100），排水不畅风险",
@@ -3041,10 +3042,10 @@
     "risk_components": [
       "waterlogged_soil"
     ],
-    "et0_30d_avg_mm": 2.26,
-    "vpd_30d_avg_kpa": 1.28,
-    "et0_7d_avg_mm": 2.16,
-    "vpd_7d_avg_kpa": 1.03,
+    "et0_30d_avg_mm": 2.07,
+    "vpd_30d_avg_kpa": 1.18,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4741,
       "soil_water_rootzone_m3m3": 0.3656,
@@ -3077,10 +3078,10 @@
       "dry_soil",
       "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.06,
-    "vpd_30d_avg_kpa": 2.07,
-    "et0_7d_avg_mm": 4.2,
-    "vpd_7d_avg_kpa": 2.55,
+    "et0_30d_avg_mm": 4.03,
+    "vpd_30d_avg_kpa": 2.15,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0428,
       "soil_water_rootzone_m3m3": 0.1469,
@@ -3102,7 +3103,7 @@
     "temp_7d_status": "高温偏强",
     "soil_moisture_status": "正常",
     "et0_status": "蒸散需求偏低",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "轻微异常",
     "water_stress_level": "normal",
     "water_stress_explanation_cn": "单一指标轻微异常，未来可能缓解",
@@ -3112,10 +3113,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 2.71,
-    "vpd_30d_avg_kpa": 1.28,
-    "et0_7d_avg_mm": 3.6,
-    "vpd_7d_avg_kpa": 1.46,
+    "et0_30d_avg_mm": 2.53,
+    "vpd_30d_avg_kpa": 1.16,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0325,
       "soil_water_rootzone_m3m3": 0.1584,
@@ -3147,10 +3148,10 @@
     "risk_components": [
       "waterlogged_soil"
     ],
-    "et0_30d_avg_mm": 0.9,
-    "vpd_30d_avg_kpa": 0.55,
-    "et0_7d_avg_mm": 0.61,
-    "vpd_7d_avg_kpa": 0.39,
+    "et0_30d_avg_mm": 0.81,
+    "vpd_30d_avg_kpa": 0.54,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3918,
       "soil_water_rootzone_m3m3": 0.2928,
@@ -3182,10 +3183,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 1.36,
-    "vpd_30d_avg_kpa": 0.66,
-    "et0_7d_avg_mm": 0.8,
-    "vpd_7d_avg_kpa": 0.41,
+    "et0_30d_avg_mm": 1.24,
+    "vpd_30d_avg_kpa": 0.61,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.394,
       "soil_water_rootzone_m3m3": 0.3215,
@@ -3219,10 +3220,10 @@
       "high_temp",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 3.93,
-    "vpd_30d_avg_kpa": 1.97,
-    "et0_7d_avg_mm": 3.38,
-    "vpd_7d_avg_kpa": 1.54,
+    "et0_30d_avg_mm": 3.73,
+    "vpd_30d_avg_kpa": 1.92,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1139,
       "soil_water_rootzone_m3m3": 0.1579,
@@ -3254,10 +3255,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.35,
-    "vpd_30d_avg_kpa": 1.13,
-    "et0_7d_avg_mm": 2.32,
-    "vpd_7d_avg_kpa": 0.74,
+    "et0_30d_avg_mm": 3.27,
+    "vpd_30d_avg_kpa": 1.06,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.396,
       "soil_water_rootzone_m3m3": 0.3517,
@@ -3289,10 +3290,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 2.46,
-    "vpd_30d_avg_kpa": 0.43,
-    "et0_7d_avg_mm": 3.49,
-    "vpd_7d_avg_kpa": 0.7,
+    "et0_30d_avg_mm": 2.63,
+    "vpd_30d_avg_kpa": 0.44,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4231,
       "soil_water_rootzone_m3m3": 0.4295,
@@ -3325,10 +3326,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 2.97,
-    "vpd_30d_avg_kpa": 0.78,
-    "et0_7d_avg_mm": 3.27,
-    "vpd_7d_avg_kpa": 1.01,
+    "et0_30d_avg_mm": 3.08,
+    "vpd_30d_avg_kpa": 0.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.6182,
       "soil_water_rootzone_m3m3": 0.5205,
@@ -3360,10 +3361,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.65,
-    "vpd_30d_avg_kpa": 1.25,
-    "et0_7d_avg_mm": 4.48,
-    "vpd_7d_avg_kpa": 1.66,
+    "et0_30d_avg_mm": 3.81,
+    "vpd_30d_avg_kpa": 1.35,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2554,
       "soil_water_rootzone_m3m3": 0.3293,
@@ -3384,7 +3385,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏湿",
-    "et0_status": "蒸散需求偏低",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -3395,10 +3396,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.48,
-    "vpd_30d_avg_kpa": 1.22,
-    "et0_7d_avg_mm": 4.99,
-    "vpd_7d_avg_kpa": 1.95,
+    "et0_30d_avg_mm": 3.75,
+    "vpd_30d_avg_kpa": 1.35,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.684,
       "soil_water_rootzone_m3m3": 0.6749,
@@ -3428,10 +3429,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 2.71,
-    "vpd_30d_avg_kpa": 0.74,
-    "et0_7d_avg_mm": 4.31,
-    "vpd_7d_avg_kpa": 1.38,
+    "et0_30d_avg_mm": 2.97,
+    "vpd_30d_avg_kpa": 0.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2045,
       "soil_water_rootzone_m3m3": 0.2818,
@@ -3454,20 +3455,21 @@
     "soil_moisture_status": "偏湿",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少叠加高温，水分压力上升",
+    "water_stress_label_cn": "干热复合压力",
+    "water_stress_level": "high",
+    "water_stress_explanation_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升",
+    "risk_level_v2": "stress",
+    "risk_reason_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著",
     "risk_components": [
       "rain_deficit",
-      "high_temp"
+      "high_temp",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.48,
-    "vpd_30d_avg_kpa": 1.61,
-    "et0_7d_avg_mm": 3.83,
-    "vpd_7d_avg_kpa": 1.67,
+    "et0_30d_avg_mm": 4.51,
+    "vpd_30d_avg_kpa": 1.64,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.289,
       "soil_water_rootzone_m3m3": 0.2448,
@@ -3489,7 +3491,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "略偏干",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
     "water_stress_explanation_cn": "根区土壤偏干（P14）叠加蒸散需求，水分压力上升",
@@ -3498,12 +3500,12 @@
     "risk_reason_cn": "根区土壤偏干（P14）叠加蒸散需求，水分压力上升",
     "risk_components": [
       "dry_soil",
-      "high_vpd"
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.35,
-    "vpd_30d_avg_kpa": 1.89,
-    "et0_7d_avg_mm": 3.65,
-    "vpd_7d_avg_kpa": 1.67,
+    "et0_30d_avg_mm": 4.63,
+    "vpd_30d_avg_kpa": 2.1,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2394,
       "soil_water_rootzone_m3m3": 0.1554,
@@ -3535,10 +3537,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.55,
-    "vpd_30d_avg_kpa": 0.93,
-    "et0_7d_avg_mm": 3.37,
-    "vpd_7d_avg_kpa": 0.72,
+    "et0_30d_avg_mm": 3.83,
+    "vpd_30d_avg_kpa": 1.0,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1324,
       "soil_water_rootzone_m3m3": 0.1552,
@@ -3561,19 +3563,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P4），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P4）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P4），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P4）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 3.95,
-    "vpd_30d_avg_kpa": 1.67,
-    "et0_7d_avg_mm": 3.6,
-    "vpd_7d_avg_kpa": 1.27,
+    "et0_30d_avg_mm": 4.23,
+    "vpd_30d_avg_kpa": 1.86,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2524,
       "soil_water_rootzone_m3m3": 0.2372,
@@ -3605,10 +3608,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.97,
-    "vpd_30d_avg_kpa": 1.45,
-    "et0_7d_avg_mm": 4.1,
-    "vpd_7d_avg_kpa": 1.71,
+    "et0_30d_avg_mm": 4.35,
+    "vpd_30d_avg_kpa": 1.62,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1419,
       "soil_water_rootzone_m3m3": 0.1877,
@@ -3640,10 +3643,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.05,
-    "vpd_30d_avg_kpa": 0.93,
-    "et0_7d_avg_mm": 4.05,
-    "vpd_7d_avg_kpa": 1.38,
+    "et0_30d_avg_mm": 3.43,
+    "vpd_30d_avg_kpa": 1.06,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2084,
       "soil_water_rootzone_m3m3": 0.279,
@@ -3675,10 +3678,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 3.68,
-    "vpd_30d_avg_kpa": 1.32,
-    "et0_7d_avg_mm": 3.42,
-    "vpd_7d_avg_kpa": 1.26,
+    "et0_30d_avg_mm": 3.97,
+    "vpd_30d_avg_kpa": 1.4,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2182,
       "soil_water_rootzone_m3m3": 0.3326,
@@ -3708,10 +3711,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 4.09,
-    "vpd_30d_avg_kpa": 1.53,
-    "et0_7d_avg_mm": 3.89,
-    "vpd_7d_avg_kpa": 1.5,
+    "et0_30d_avg_mm": 4.27,
+    "vpd_30d_avg_kpa": 1.57,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2825,
       "soil_water_rootzone_m3m3": 0.2832,
@@ -3743,10 +3746,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.85,
-    "vpd_30d_avg_kpa": 1.44,
-    "et0_7d_avg_mm": 5.72,
-    "vpd_7d_avg_kpa": 2.43,
+    "et0_30d_avg_mm": 4.09,
+    "vpd_30d_avg_kpa": 1.53,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0139,
       "soil_water_rootzone_m3m3": 0.1884,
@@ -3778,10 +3781,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.31,
-    "vpd_30d_avg_kpa": 1.66,
-    "et0_7d_avg_mm": 3.93,
-    "vpd_7d_avg_kpa": 1.41,
+    "et0_30d_avg_mm": 4.3,
+    "vpd_30d_avg_kpa": 1.63,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.189,
       "soil_water_rootzone_m3m3": 0.3589,
@@ -3813,10 +3816,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.96,
-    "vpd_30d_avg_kpa": 1.49,
-    "et0_7d_avg_mm": 4.17,
-    "vpd_7d_avg_kpa": 1.51,
+    "et0_30d_avg_mm": 4.18,
+    "vpd_30d_avg_kpa": 1.6,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1329,
       "soil_water_rootzone_m3m3": 0.2451,
@@ -3838,7 +3841,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
     "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著",
@@ -3848,10 +3851,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.8,
-    "vpd_30d_avg_kpa": 1.24,
-    "et0_7d_avg_mm": 4.64,
-    "vpd_7d_avg_kpa": 1.45,
+    "et0_30d_avg_mm": 3.63,
+    "vpd_30d_avg_kpa": 1.13,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2535,
       "soil_water_rootzone_m3m3": 0.3203,
@@ -3876,17 +3879,18 @@
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少，需关注土壤墒情变化",
+    "water_stress_explanation_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化",
+    "risk_reason_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
     "risk_components": [
-      "rain_deficit"
+      "rain_deficit",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.24,
-    "vpd_30d_avg_kpa": 1.71,
-    "et0_7d_avg_mm": 3.18,
-    "vpd_7d_avg_kpa": 1.06,
+    "et0_30d_avg_mm": 4.57,
+    "vpd_30d_avg_kpa": 1.89,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3803,
       "soil_water_rootzone_m3m3": 0.4075,
@@ -3918,10 +3922,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.22,
-    "vpd_30d_avg_kpa": 1.63,
-    "et0_7d_avg_mm": 3.78,
-    "vpd_7d_avg_kpa": 1.06,
+    "et0_30d_avg_mm": 4.44,
+    "vpd_30d_avg_kpa": 1.72,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1054,
       "soil_water_rootzone_m3m3": 0.2737,
@@ -3953,10 +3957,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.2,
-    "vpd_30d_avg_kpa": 1.2,
-    "et0_7d_avg_mm": 3.48,
-    "vpd_7d_avg_kpa": 1.05,
+    "et0_30d_avg_mm": 3.12,
+    "vpd_30d_avg_kpa": 1.09,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0988,
       "soil_water_rootzone_m3m3": 0.1739,
@@ -3988,10 +3992,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.69,
-    "vpd_30d_avg_kpa": 1.33,
-    "et0_7d_avg_mm": 3.58,
-    "vpd_7d_avg_kpa": 1.16,
+    "et0_30d_avg_mm": 4.0,
+    "vpd_30d_avg_kpa": 1.49,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1495,
       "soil_water_rootzone_m3m3": 0.3024,
@@ -4012,7 +4016,7 @@
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏低",
     "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
@@ -4023,10 +4027,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.58,
-    "vpd_30d_avg_kpa": 1.14,
-    "et0_7d_avg_mm": 4.14,
-    "vpd_7d_avg_kpa": 1.21,
+    "et0_30d_avg_mm": 3.45,
+    "vpd_30d_avg_kpa": 0.99,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2732,
       "soil_water_rootzone_m3m3": 0.3145,
@@ -4058,10 +4062,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.62,
-    "vpd_30d_avg_kpa": 1.08,
-    "et0_7d_avg_mm": 3.62,
-    "vpd_7d_avg_kpa": 1.15,
+    "et0_30d_avg_mm": 3.74,
+    "vpd_30d_avg_kpa": 1.1,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1982,
       "soil_water_rootzone_m3m3": 0.2404,
@@ -4093,10 +4097,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.96,
-    "vpd_30d_avg_kpa": 1.55,
-    "et0_7d_avg_mm": 4.15,
-    "vpd_7d_avg_kpa": 1.67,
+    "et0_30d_avg_mm": 4.26,
+    "vpd_30d_avg_kpa": 1.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1189,
       "soil_water_rootzone_m3m3": 0.2738,
@@ -4128,10 +4132,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.66,
-    "vpd_30d_avg_kpa": 1.37,
-    "et0_7d_avg_mm": 3.03,
-    "vpd_7d_avg_kpa": 0.77,
+    "et0_30d_avg_mm": 3.92,
+    "vpd_30d_avg_kpa": 1.53,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.366,
       "soil_water_rootzone_m3m3": 0.4096,
@@ -4163,10 +4167,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.59,
-    "vpd_30d_avg_kpa": 1.27,
-    "et0_7d_avg_mm": 3.58,
-    "vpd_7d_avg_kpa": 1.07,
+    "et0_30d_avg_mm": 3.88,
+    "vpd_30d_avg_kpa": 1.41,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0793,
       "soil_water_rootzone_m3m3": 0.1409,
@@ -4198,10 +4202,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.84,
-    "vpd_30d_avg_kpa": 1.31,
-    "et0_7d_avg_mm": 4.38,
-    "vpd_7d_avg_kpa": 1.53,
+    "et0_30d_avg_mm": 3.73,
+    "vpd_30d_avg_kpa": 1.22,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2051,
       "soil_water_rootzone_m3m3": 0.3633,
@@ -4231,10 +4235,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.55,
-    "vpd_30d_avg_kpa": 1.21,
-    "et0_7d_avg_mm": 5.08,
-    "vpd_7d_avg_kpa": 1.96,
+    "et0_30d_avg_mm": 3.61,
+    "vpd_30d_avg_kpa": 1.24,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0805,
       "soil_water_rootzone_m3m3": 0.3119,
@@ -4256,7 +4260,7 @@
     "temp_7d_status": "高温偏强",
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "干热复合压力",
     "water_stress_level": "high",
     "water_stress_explanation_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著，根区土壤偏干（P2）",
@@ -4269,10 +4273,10 @@
       "high_et0",
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.69,
-    "vpd_30d_avg_kpa": 1.97,
-    "et0_7d_avg_mm": 4.59,
-    "vpd_7d_avg_kpa": 1.77,
+    "et0_30d_avg_mm": 4.89,
+    "vpd_30d_avg_kpa": 2.11,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.185,
       "soil_water_rootzone_m3m3": 0.275,
@@ -4304,10 +4308,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.9,
-    "vpd_30d_avg_kpa": 1.41,
-    "et0_7d_avg_mm": 3.88,
-    "vpd_7d_avg_kpa": 1.32,
+    "et0_30d_avg_mm": 4.02,
+    "vpd_30d_avg_kpa": 1.44,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2624,
       "soil_water_rootzone_m3m3": 0.3404,
@@ -4330,19 +4334,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P0），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.39,
-    "vpd_30d_avg_kpa": 1.68,
-    "et0_7d_avg_mm": 4.26,
-    "vpd_7d_avg_kpa": 1.61,
+    "et0_30d_avg_mm": 4.52,
+    "vpd_30d_avg_kpa": 1.77,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0816,
       "soil_water_rootzone_m3m3": 0.255,
@@ -4374,10 +4379,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.17,
-    "vpd_30d_avg_kpa": 1.63,
-    "et0_7d_avg_mm": 3.52,
-    "vpd_7d_avg_kpa": 0.96,
+    "et0_30d_avg_mm": 4.41,
+    "vpd_30d_avg_kpa": 1.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1572,
       "soil_water_rootzone_m3m3": 0.2811,
@@ -4400,19 +4405,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P0），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.08,
-    "vpd_30d_avg_kpa": 1.79,
-    "et0_7d_avg_mm": 4.3,
-    "vpd_7d_avg_kpa": 1.83,
+    "et0_30d_avg_mm": 4.44,
+    "vpd_30d_avg_kpa": 2.0,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.08,
       "soil_water_rootzone_m3m3": 0.2454,
@@ -4444,10 +4450,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.0,
-    "vpd_30d_avg_kpa": 1.56,
-    "et0_7d_avg_mm": 3.73,
-    "vpd_7d_avg_kpa": 1.18,
+    "et0_30d_avg_mm": 4.28,
+    "vpd_30d_avg_kpa": 1.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0945,
       "soil_water_rootzone_m3m3": 0.2698,
@@ -4479,10 +4485,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.31,
-    "vpd_30d_avg_kpa": 1.22,
-    "et0_7d_avg_mm": 5.26,
-    "vpd_7d_avg_kpa": 2.11,
+    "et0_30d_avg_mm": 3.45,
+    "vpd_30d_avg_kpa": 1.29,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0706,
       "soil_water_rootzone_m3m3": 0.1475,
@@ -4505,19 +4511,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P1），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "高温叠加大气干燥度偏高，蒸散增强",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "高温叠加大气干燥度偏高，蒸散增强",
     "risk_components": [
-      "dry_soil"
+      "high_temp",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.32,
-    "vpd_30d_avg_kpa": 1.69,
-    "et0_7d_avg_mm": 5.59,
-    "vpd_7d_avg_kpa": 2.63,
+    "et0_30d_avg_mm": 4.61,
+    "vpd_30d_avg_kpa": 1.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1066,
       "soil_water_rootzone_m3m3": 0.2951,
@@ -4549,10 +4556,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 5.21,
-    "vpd_30d_avg_kpa": 2.18,
-    "et0_7d_avg_mm": 3.38,
-    "vpd_7d_avg_kpa": 1.28,
+    "et0_30d_avg_mm": 5.3,
+    "vpd_30d_avg_kpa": 2.3,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.453,
       "soil_water_rootzone_m3m3": 0.4365,
@@ -4584,10 +4591,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.17,
-    "vpd_30d_avg_kpa": 1.54,
-    "et0_7d_avg_mm": 4.2,
-    "vpd_7d_avg_kpa": 1.45,
+    "et0_30d_avg_mm": 4.4,
+    "vpd_30d_avg_kpa": 1.63,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1508,
       "soil_water_rootzone_m3m3": 0.27,
@@ -4620,10 +4627,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.59,
-    "vpd_30d_avg_kpa": 1.85,
-    "et0_7d_avg_mm": 3.92,
-    "vpd_7d_avg_kpa": 1.31,
+    "et0_30d_avg_mm": 4.74,
+    "vpd_30d_avg_kpa": 1.93,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.122,
       "soil_water_rootzone_m3m3": 0.2753,
@@ -4655,10 +4662,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.09,
-    "vpd_30d_avg_kpa": 1.7,
-    "et0_7d_avg_mm": 3.31,
-    "vpd_7d_avg_kpa": 0.93,
+    "et0_30d_avg_mm": 4.47,
+    "vpd_30d_avg_kpa": 1.92,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3137,
       "soil_water_rootzone_m3m3": 0.3049,
@@ -4690,10 +4697,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.16,
-    "vpd_30d_avg_kpa": 0.99,
-    "et0_7d_avg_mm": 3.6,
-    "vpd_7d_avg_kpa": 1.23,
+    "et0_30d_avg_mm": 3.19,
+    "vpd_30d_avg_kpa": 0.98,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2372,
       "soil_water_rootzone_m3m3": 0.2548,
@@ -4714,7 +4721,7 @@
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏低",
     "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
@@ -4725,10 +4732,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.54,
-    "vpd_30d_avg_kpa": 1.02,
-    "et0_7d_avg_mm": 4.07,
-    "vpd_7d_avg_kpa": 1.21,
+    "et0_30d_avg_mm": 3.48,
+    "vpd_30d_avg_kpa": 0.99,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3091,
       "soil_water_rootzone_m3m3": 0.3464,
@@ -4761,10 +4768,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.01,
-    "vpd_30d_avg_kpa": 2.25,
-    "et0_7d_avg_mm": 3.35,
-    "vpd_7d_avg_kpa": 1.09,
+    "et0_30d_avg_mm": 5.24,
+    "vpd_30d_avg_kpa": 2.44,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4052,
       "soil_water_rootzone_m3m3": 0.3664,
@@ -4796,10 +4803,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.74,
-    "vpd_30d_avg_kpa": 1.49,
-    "et0_7d_avg_mm": 3.74,
-    "vpd_7d_avg_kpa": 1.14,
+    "et0_30d_avg_mm": 3.9,
+    "vpd_30d_avg_kpa": 1.48,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0927,
       "soil_water_rootzone_m3m3": 0.1899,
@@ -4831,10 +4838,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.9,
-    "vpd_30d_avg_kpa": 1.18,
-    "et0_7d_avg_mm": 4.14,
-    "vpd_7d_avg_kpa": 1.25,
+    "et0_30d_avg_mm": 3.91,
+    "vpd_30d_avg_kpa": 1.16,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.269,
       "soil_water_rootzone_m3m3": 0.2856,
@@ -4855,7 +4862,7 @@
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
     "soil_moisture_status": "湿润",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏低",
     "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
@@ -4866,10 +4873,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.51,
-    "vpd_30d_avg_kpa": 0.94,
-    "et0_7d_avg_mm": 4.4,
-    "vpd_7d_avg_kpa": 1.11,
+    "et0_30d_avg_mm": 3.33,
+    "vpd_30d_avg_kpa": 0.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3451,
       "soil_water_rootzone_m3m3": 0.3889,
@@ -4901,10 +4908,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.09,
-    "vpd_30d_avg_kpa": 1.62,
-    "et0_7d_avg_mm": 3.55,
-    "vpd_7d_avg_kpa": 1.33,
+    "et0_30d_avg_mm": 3.99,
+    "vpd_30d_avg_kpa": 1.58,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2271,
       "soil_water_rootzone_m3m3": 0.2533,
@@ -4936,10 +4943,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.77,
-    "vpd_30d_avg_kpa": 1.44,
-    "et0_7d_avg_mm": 5.14,
-    "vpd_7d_avg_kpa": 2.06,
+    "et0_30d_avg_mm": 3.91,
+    "vpd_30d_avg_kpa": 1.5,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0136,
       "soil_water_rootzone_m3m3": 0.1344,
@@ -4972,10 +4979,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.56,
-    "vpd_30d_avg_kpa": 1.69,
-    "et0_7d_avg_mm": 4.02,
-    "vpd_7d_avg_kpa": 1.17,
+    "et0_30d_avg_mm": 4.67,
+    "vpd_30d_avg_kpa": 1.75,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1165,
       "soil_water_rootzone_m3m3": 0.2594,
@@ -5007,10 +5014,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.46,
-    "vpd_30d_avg_kpa": 0.92,
-    "et0_7d_avg_mm": 4.32,
-    "vpd_7d_avg_kpa": 1.13,
+    "et0_30d_avg_mm": 3.27,
+    "vpd_30d_avg_kpa": 0.83,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.291,
       "soil_water_rootzone_m3m3": 0.3874,
@@ -5043,10 +5050,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.52,
-    "vpd_30d_avg_kpa": 1.75,
-    "et0_7d_avg_mm": 3.5,
-    "vpd_7d_avg_kpa": 1.02,
+    "et0_30d_avg_mm": 4.62,
+    "vpd_30d_avg_kpa": 1.81,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1302,
       "soil_water_rootzone_m3m3": 0.1151,
@@ -5078,10 +5085,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.29,
-    "vpd_30d_avg_kpa": 1.76,
-    "et0_7d_avg_mm": 4.27,
-    "vpd_7d_avg_kpa": 1.61,
+    "et0_30d_avg_mm": 4.22,
+    "vpd_30d_avg_kpa": 1.67,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1595,
       "soil_water_rootzone_m3m3": 0.3224,
@@ -5113,10 +5120,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.97,
-    "vpd_30d_avg_kpa": 1.42,
-    "et0_7d_avg_mm": 4.16,
-    "vpd_7d_avg_kpa": 1.36,
+    "et0_30d_avg_mm": 4.17,
+    "vpd_30d_avg_kpa": 1.52,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2711,
       "soil_water_rootzone_m3m3": 0.3231,
@@ -5137,8 +5144,8 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "et0_status": "蒸散需求偏强",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
     "water_stress_explanation_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
@@ -5149,10 +5156,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.92,
-    "vpd_30d_avg_kpa": 1.98,
-    "et0_7d_avg_mm": 3.91,
-    "vpd_7d_avg_kpa": 1.19,
+    "et0_30d_avg_mm": 5.11,
+    "vpd_30d_avg_kpa": 2.09,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2251,
       "soil_water_rootzone_m3m3": 0.2963,
@@ -5185,10 +5192,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.54,
-    "vpd_30d_avg_kpa": 1.8,
-    "et0_7d_avg_mm": 3.83,
-    "vpd_7d_avg_kpa": 1.38,
+    "et0_30d_avg_mm": 4.79,
+    "vpd_30d_avg_kpa": 1.91,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1999,
       "soil_water_rootzone_m3m3": 0.2557,
@@ -5209,7 +5216,7 @@
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求偏低",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "轻微异常",
     "water_stress_level": "normal",
@@ -5220,10 +5227,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.49,
-    "vpd_30d_avg_kpa": 1.25,
-    "et0_7d_avg_mm": 4.29,
-    "vpd_7d_avg_kpa": 1.57,
+    "et0_30d_avg_mm": 3.84,
+    "vpd_30d_avg_kpa": 1.41,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0896,
       "soil_water_rootzone_m3m3": 0.2043,
@@ -5255,10 +5262,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.24,
-    "vpd_30d_avg_kpa": 0.89,
-    "et0_7d_avg_mm": 3.48,
-    "vpd_7d_avg_kpa": 0.94,
+    "et0_30d_avg_mm": 3.11,
+    "vpd_30d_avg_kpa": 0.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2469,
       "soil_water_rootzone_m3m3": 0.3566,
@@ -5283,17 +5290,18 @@
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少，需关注土壤墒情变化",
+    "water_stress_explanation_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化",
+    "risk_reason_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
     "risk_components": [
-      "rain_deficit"
+      "rain_deficit",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.3,
-    "vpd_30d_avg_kpa": 1.78,
-    "et0_7d_avg_mm": 3.41,
-    "vpd_7d_avg_kpa": 1.08,
+    "et0_30d_avg_mm": 4.6,
+    "vpd_30d_avg_kpa": 1.99,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3681,
       "soil_water_rootzone_m3m3": 0.312,
@@ -5316,19 +5324,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P0），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.36,
-    "vpd_30d_avg_kpa": 1.73,
-    "et0_7d_avg_mm": 3.69,
-    "vpd_7d_avg_kpa": 1.37,
+    "et0_30d_avg_mm": 4.53,
+    "vpd_30d_avg_kpa": 1.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.113,
       "soil_water_rootzone_m3m3": 0.2324,
@@ -5360,10 +5369,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.21,
-    "vpd_30d_avg_kpa": 1.12,
-    "et0_7d_avg_mm": 5.33,
-    "vpd_7d_avg_kpa": 2.0,
+    "et0_30d_avg_mm": 3.31,
+    "vpd_30d_avg_kpa": 1.16,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1299,
       "soil_water_rootzone_m3m3": 0.3267,
@@ -5395,10 +5404,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.93,
-    "vpd_30d_avg_kpa": 1.49,
-    "et0_7d_avg_mm": 4.21,
-    "vpd_7d_avg_kpa": 1.56,
+    "et0_30d_avg_mm": 4.13,
+    "vpd_30d_avg_kpa": 1.61,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1016,
       "soil_water_rootzone_m3m3": 0.2675,
@@ -5430,10 +5439,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.77,
-    "vpd_30d_avg_kpa": 1.57,
-    "et0_7d_avg_mm": 4.65,
-    "vpd_7d_avg_kpa": 1.82,
+    "et0_30d_avg_mm": 3.76,
+    "vpd_30d_avg_kpa": 1.47,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1234,
       "soil_water_rootzone_m3m3": 0.2372,
@@ -5465,10 +5474,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.69,
-    "vpd_30d_avg_kpa": 1.5,
-    "et0_7d_avg_mm": 4.07,
-    "vpd_7d_avg_kpa": 1.64,
+    "et0_30d_avg_mm": 3.96,
+    "vpd_30d_avg_kpa": 1.66,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0642,
       "soil_water_rootzone_m3m3": 0.2628,
@@ -5500,10 +5509,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.31,
-    "vpd_30d_avg_kpa": 1.79,
-    "et0_7d_avg_mm": 3.85,
-    "vpd_7d_avg_kpa": 1.4,
+    "et0_30d_avg_mm": 4.49,
+    "vpd_30d_avg_kpa": 1.94,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2926,
       "soil_water_rootzone_m3m3": 0.2702,
@@ -5526,19 +5535,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P6），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P6）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P6），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P6）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.15,
-    "vpd_30d_avg_kpa": 1.7,
-    "et0_7d_avg_mm": 3.56,
-    "vpd_7d_avg_kpa": 0.99,
+    "et0_30d_avg_mm": 4.41,
+    "vpd_30d_avg_kpa": 1.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3923,
       "soil_water_rootzone_m3m3": 0.4007,
@@ -5571,10 +5581,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.8,
-    "vpd_30d_avg_kpa": 1.81,
-    "et0_7d_avg_mm": 3.9,
-    "vpd_7d_avg_kpa": 1.07,
+    "et0_30d_avg_mm": 4.96,
+    "vpd_30d_avg_kpa": 1.88,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1921,
       "soil_water_rootzone_m3m3": 0.2726,
@@ -5606,10 +5616,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.84,
-    "vpd_30d_avg_kpa": 1.46,
-    "et0_7d_avg_mm": 3.85,
-    "vpd_7d_avg_kpa": 1.26,
+    "et0_30d_avg_mm": 4.14,
+    "vpd_30d_avg_kpa": 1.62,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1115,
       "soil_water_rootzone_m3m3": 0.2813,
@@ -5630,7 +5640,7 @@
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
     "soil_moisture_status": "略偏干",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏强",
     "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -5642,10 +5652,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.89,
-    "vpd_30d_avg_kpa": 2.13,
-    "et0_7d_avg_mm": 3.82,
-    "vpd_7d_avg_kpa": 1.57,
+    "et0_30d_avg_mm": 5.04,
+    "vpd_30d_avg_kpa": 2.18,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.241,
       "soil_water_rootzone_m3m3": 0.3561,
@@ -5666,7 +5676,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求偏低",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -5677,10 +5687,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.43,
-    "vpd_30d_avg_kpa": 1.23,
-    "et0_7d_avg_mm": 3.63,
-    "vpd_7d_avg_kpa": 1.04,
+    "et0_30d_avg_mm": 3.63,
+    "vpd_30d_avg_kpa": 1.35,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1541,
       "soil_water_rootzone_m3m3": 0.2782,
@@ -5712,10 +5722,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.31,
-    "vpd_30d_avg_kpa": 1.76,
-    "et0_7d_avg_mm": 4.0,
-    "vpd_7d_avg_kpa": 1.57,
+    "et0_30d_avg_mm": 4.37,
+    "vpd_30d_avg_kpa": 1.79,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0973,
       "soil_water_rootzone_m3m3": 0.2602,
@@ -5747,10 +5757,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.53,
-    "vpd_30d_avg_kpa": 1.26,
-    "et0_7d_avg_mm": 3.72,
-    "vpd_7d_avg_kpa": 1.14,
+    "et0_30d_avg_mm": 3.83,
+    "vpd_30d_avg_kpa": 1.4,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1343,
       "soil_water_rootzone_m3m3": 0.2741,
@@ -5773,19 +5783,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P7），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P7）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P7），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P7）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.13,
-    "vpd_30d_avg_kpa": 1.76,
-    "et0_7d_avg_mm": 3.68,
-    "vpd_7d_avg_kpa": 1.26,
+    "et0_30d_avg_mm": 4.42,
+    "vpd_30d_avg_kpa": 1.95,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1725,
       "soil_water_rootzone_m3m3": 0.2247,
@@ -5818,10 +5829,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.29,
-    "vpd_30d_avg_kpa": 2.14,
-    "et0_7d_avg_mm": 4.53,
-    "vpd_7d_avg_kpa": 1.81,
+    "et0_30d_avg_mm": 5.06,
+    "vpd_30d_avg_kpa": 2.08,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2918,
       "soil_water_rootzone_m3m3": 0.1721,
@@ -5853,10 +5864,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.06,
-    "vpd_30d_avg_kpa": 0.98,
-    "et0_7d_avg_mm": 4.48,
-    "vpd_7d_avg_kpa": 1.09,
+    "et0_30d_avg_mm": 3.97,
+    "vpd_30d_avg_kpa": 0.95,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3045,
       "soil_water_rootzone_m3m3": 0.3393,
@@ -5877,7 +5888,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "略偏干",
-    "et0_status": "蒸散需求偏强",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -5889,10 +5900,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.15,
-    "vpd_30d_avg_kpa": 1.98,
-    "et0_7d_avg_mm": 4.27,
-    "vpd_7d_avg_kpa": 1.62,
+    "et0_30d_avg_mm": 4.92,
+    "vpd_30d_avg_kpa": 1.89,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.362,
       "soil_water_rootzone_m3m3": 0.2173,
@@ -5915,20 +5926,22 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少叠加高温，水分压力上升",
+    "water_stress_label_cn": "干热复合压力",
+    "water_stress_level": "high",
+    "water_stress_explanation_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著，根区土壤偏干（P1）",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升",
+    "risk_level_v2": "stress",
+    "risk_reason_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著，根区土壤偏干（P1）",
     "risk_components": [
       "rain_deficit",
-      "high_temp"
+      "high_temp",
+      "high_et0",
+      "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.5,
-    "vpd_30d_avg_kpa": 1.77,
-    "et0_7d_avg_mm": 4.63,
-    "vpd_7d_avg_kpa": 1.89,
+    "et0_30d_avg_mm": 4.6,
+    "vpd_30d_avg_kpa": 1.92,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.176,
       "soil_water_rootzone_m3m3": 0.1162,
@@ -5958,10 +5971,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 4.03,
-    "vpd_30d_avg_kpa": 1.36,
-    "et0_7d_avg_mm": 2.68,
-    "vpd_7d_avg_kpa": 0.82,
+    "et0_30d_avg_mm": 3.79,
+    "vpd_30d_avg_kpa": 1.22,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2568,
       "soil_water_rootzone_m3m3": 0.2409,
@@ -5994,10 +6007,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.91,
-    "vpd_30d_avg_kpa": 1.79,
-    "et0_7d_avg_mm": 4.18,
-    "vpd_7d_avg_kpa": 1.35,
+    "et0_30d_avg_mm": 4.77,
+    "vpd_30d_avg_kpa": 1.75,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1943,
       "soil_water_rootzone_m3m3": 0.189,
@@ -6030,10 +6043,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.76,
+    "et0_30d_avg_mm": 4.72,
     "vpd_30d_avg_kpa": 1.75,
-    "et0_7d_avg_mm": 5.22,
-    "vpd_7d_avg_kpa": 2.11,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1668,
       "soil_water_rootzone_m3m3": 0.1846,
@@ -6065,10 +6078,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 5.23,
-    "vpd_30d_avg_kpa": 1.82,
-    "et0_7d_avg_mm": 5.48,
-    "vpd_7d_avg_kpa": 1.75,
+    "et0_30d_avg_mm": 5.02,
+    "vpd_30d_avg_kpa": 1.62,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0565,
       "soil_water_rootzone_m3m3": 0.1961,
@@ -6100,10 +6113,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.1,
+    "et0_30d_avg_mm": 4.17,
     "vpd_30d_avg_kpa": 1.46,
-    "et0_7d_avg_mm": 4.51,
-    "vpd_7d_avg_kpa": 1.57,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2749,
       "soil_water_rootzone_m3m3": 0.2654,
@@ -6135,10 +6148,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 1.52,
-    "vpd_30d_avg_kpa": 0.78,
-    "et0_7d_avg_mm": 1.02,
-    "vpd_7d_avg_kpa": 0.59,
+    "et0_30d_avg_mm": 1.3,
+    "vpd_30d_avg_kpa": 0.71,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.467,
       "soil_water_rootzone_m3m3": 0.4318,
@@ -6170,10 +6183,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 2.26,
-    "vpd_30d_avg_kpa": 1.2,
-    "et0_7d_avg_mm": 2.32,
-    "vpd_7d_avg_kpa": 1.41,
+    "et0_30d_avg_mm": 2.13,
+    "vpd_30d_avg_kpa": 1.16,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2792,
       "soil_water_rootzone_m3m3": 0.3193,
@@ -6205,10 +6218,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 1.98,
-    "vpd_30d_avg_kpa": 0.84,
-    "et0_7d_avg_mm": 1.9,
-    "vpd_7d_avg_kpa": 0.87,
+    "et0_30d_avg_mm": 1.88,
+    "vpd_30d_avg_kpa": 0.8,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4248,
       "soil_water_rootzone_m3m3": 0.4463,
@@ -6238,10 +6251,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 1.91,
-    "vpd_30d_avg_kpa": 1.05,
-    "et0_7d_avg_mm": 1.19,
-    "vpd_7d_avg_kpa": 0.75,
+    "et0_30d_avg_mm": 1.63,
+    "vpd_30d_avg_kpa": 0.92,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2839,
       "soil_water_rootzone_m3m3": 0.2037,
@@ -6271,10 +6284,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 1.86,
-    "vpd_30d_avg_kpa": 0.93,
-    "et0_7d_avg_mm": 1.56,
-    "vpd_7d_avg_kpa": 0.93,
+    "et0_30d_avg_mm": 1.68,
+    "vpd_30d_avg_kpa": 0.89,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3365,
       "soil_water_rootzone_m3m3": 0.3927,
@@ -6306,10 +6319,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 2.22,
-    "vpd_30d_avg_kpa": 1.01,
-    "et0_7d_avg_mm": 2.17,
-    "vpd_7d_avg_kpa": 1.05,
+    "et0_30d_avg_mm": 2.11,
+    "vpd_30d_avg_kpa": 0.96,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3907,
       "soil_water_rootzone_m3m3": 0.4328,
@@ -6341,10 +6354,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 2.06,
-    "vpd_30d_avg_kpa": 0.74,
-    "et0_7d_avg_mm": 1.37,
-    "vpd_7d_avg_kpa": 0.54,
+    "et0_30d_avg_mm": 1.96,
+    "vpd_30d_avg_kpa": 0.69,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3855,
       "soil_water_rootzone_m3m3": 0.3769,
@@ -6376,10 +6389,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 2.17,
-    "vpd_30d_avg_kpa": 1.13,
-    "et0_7d_avg_mm": 2.4,
-    "vpd_7d_avg_kpa": 1.4,
+    "et0_30d_avg_mm": 2.16,
+    "vpd_30d_avg_kpa": 1.12,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4455,
       "soil_water_rootzone_m3m3": 0.4493,
@@ -6409,10 +6422,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 1.98,
-    "vpd_30d_avg_kpa": 0.94,
-    "et0_7d_avg_mm": 1.8,
-    "vpd_7d_avg_kpa": 0.93,
+    "et0_30d_avg_mm": 1.81,
+    "vpd_30d_avg_kpa": 0.9,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3584,
       "soil_water_rootzone_m3m3": 0.4158,
@@ -6444,10 +6457,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 1.95,
-    "vpd_30d_avg_kpa": 0.91,
-    "et0_7d_avg_mm": 1.53,
-    "vpd_7d_avg_kpa": 0.78,
+    "et0_30d_avg_mm": 1.83,
+    "vpd_30d_avg_kpa": 0.86,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2807,
       "soil_water_rootzone_m3m3": 0.2787,
@@ -6479,10 +6492,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.34,
-    "vpd_30d_avg_kpa": 1.52,
-    "et0_7d_avg_mm": 2.93,
-    "vpd_7d_avg_kpa": 1.37,
+    "et0_30d_avg_mm": 3.17,
+    "vpd_30d_avg_kpa": 1.47,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1589,
       "soil_water_rootzone_m3m3": 0.2412,
@@ -6512,10 +6525,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.89,
-    "vpd_30d_avg_kpa": 1.65,
-    "et0_7d_avg_mm": 3.86,
-    "vpd_7d_avg_kpa": 1.78,
+    "et0_30d_avg_mm": 3.95,
+    "vpd_30d_avg_kpa": 1.71,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2274,
       "soil_water_rootzone_m3m3": 0.3214,
@@ -6547,10 +6560,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 3.44,
-    "vpd_30d_avg_kpa": 1.73,
-    "et0_7d_avg_mm": 3.41,
-    "vpd_7d_avg_kpa": 1.65,
+    "et0_30d_avg_mm": 3.34,
+    "vpd_30d_avg_kpa": 1.66,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1762,
       "soil_water_rootzone_m3m3": 0.3827,
@@ -6582,10 +6595,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.78,
-    "vpd_30d_avg_kpa": 2.23,
-    "et0_7d_avg_mm": 4.17,
-    "vpd_7d_avg_kpa": 2.5,
+    "et0_30d_avg_mm": 3.71,
+    "vpd_30d_avg_kpa": 2.22,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2,
       "soil_water_rootzone_m3m3": 0.3574,
@@ -6607,7 +6620,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "正常",
     "water_stress_level": "normal",
     "water_stress_explanation_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
@@ -6615,10 +6628,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 4.18,
-    "vpd_30d_avg_kpa": 1.97,
-    "et0_7d_avg_mm": 4.09,
-    "vpd_7d_avg_kpa": 2.08,
+    "et0_30d_avg_mm": 4.3,
+    "vpd_30d_avg_kpa": 2.08,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2449,
       "soil_water_rootzone_m3m3": 0.317,
@@ -6640,7 +6653,7 @@
     "temp_7d_status": "高温显著",
     "soil_moisture_status": "偏湿",
     "et0_status": "蒸散需求偏低",
-    "vpd_status": "大气干燥度偏低",
+    "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "轻微异常",
     "water_stress_level": "normal",
     "water_stress_explanation_cn": "单一指标轻微异常，未来可能缓解",
@@ -6650,10 +6663,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 2.57,
-    "vpd_30d_avg_kpa": 1.17,
-    "et0_7d_avg_mm": 3.22,
-    "vpd_7d_avg_kpa": 1.59,
+    "et0_30d_avg_mm": 2.63,
+    "vpd_30d_avg_kpa": 1.22,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3321,
       "soil_water_rootzone_m3m3": 0.4281,
@@ -6686,10 +6699,10 @@
       "dry_soil",
       "high_vpd"
     ],
-    "et0_30d_avg_mm": 3.75,
-    "vpd_30d_avg_kpa": 2.22,
-    "et0_7d_avg_mm": 4.03,
-    "vpd_7d_avg_kpa": 2.74,
+    "et0_30d_avg_mm": 3.72,
+    "vpd_30d_avg_kpa": 2.26,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3188,
       "soil_water_rootzone_m3m3": 0.422,
@@ -6719,10 +6732,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.45,
-    "vpd_30d_avg_kpa": 1.93,
-    "et0_7d_avg_mm": 3.45,
-    "vpd_7d_avg_kpa": 1.87,
+    "et0_30d_avg_mm": 3.3,
+    "vpd_30d_avg_kpa": 1.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2602,
       "soil_water_rootzone_m3m3": 0.4012,
@@ -6752,10 +6765,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 2.04,
-    "vpd_30d_avg_kpa": 0.85,
-    "et0_7d_avg_mm": 2.42,
-    "vpd_7d_avg_kpa": 1.0,
+    "et0_30d_avg_mm": 2.01,
+    "vpd_30d_avg_kpa": 0.81,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4295,
       "soil_water_rootzone_m3m3": 0.4713,
@@ -6785,10 +6798,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.81,
-    "vpd_30d_avg_kpa": 1.72,
-    "et0_7d_avg_mm": 3.54,
-    "vpd_7d_avg_kpa": 1.59,
+    "et0_30d_avg_mm": 3.9,
+    "vpd_30d_avg_kpa": 1.79,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4458,
       "soil_water_rootzone_m3m3": 0.4307,
@@ -6820,10 +6833,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 6.22,
-    "vpd_30d_avg_kpa": 3.51,
-    "et0_7d_avg_mm": 6.4,
-    "vpd_7d_avg_kpa": 3.84,
+    "et0_30d_avg_mm": 6.32,
+    "vpd_30d_avg_kpa": 3.66,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.101,
       "soil_water_rootzone_m3m3": 0.2619,
@@ -6855,10 +6868,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 2.03,
-    "vpd_30d_avg_kpa": 0.99,
-    "et0_7d_avg_mm": 2.1,
-    "vpd_7d_avg_kpa": 1.13,
+    "et0_30d_avg_mm": 1.96,
+    "vpd_30d_avg_kpa": 0.95,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4655,
       "soil_water_rootzone_m3m3": 0.4669,
@@ -6888,10 +6901,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 2.15,
-    "vpd_30d_avg_kpa": 0.79,
-    "et0_7d_avg_mm": 2.04,
-    "vpd_7d_avg_kpa": 0.76,
+    "et0_30d_avg_mm": 2.03,
+    "vpd_30d_avg_kpa": 0.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4122,
       "soil_water_rootzone_m3m3": 0.3849,
@@ -6914,19 +6927,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求偏低",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P0），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 3.35,
-    "vpd_30d_avg_kpa": 1.77,
-    "et0_7d_avg_mm": 4.06,
-    "vpd_7d_avg_kpa": 2.65,
+    "et0_30d_avg_mm": 3.47,
+    "vpd_30d_avg_kpa": 1.89,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3241,
       "soil_water_rootzone_m3m3": 0.3701,
@@ -6958,10 +6972,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 1.95,
-    "vpd_30d_avg_kpa": 1.07,
-    "et0_7d_avg_mm": 2.23,
-    "vpd_7d_avg_kpa": 1.26,
+    "et0_30d_avg_mm": 1.97,
+    "vpd_30d_avg_kpa": 1.08,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4676,
       "soil_water_rootzone_m3m3": 0.4644,
@@ -6994,10 +7008,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 3.01,
-    "vpd_30d_avg_kpa": 1.76,
-    "et0_7d_avg_mm": 3.69,
-    "vpd_7d_avg_kpa": 2.18,
+    "et0_30d_avg_mm": 2.85,
+    "vpd_30d_avg_kpa": 1.64,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.021,
       "soil_water_rootzone_m3m3": 0.0974,
@@ -7031,10 +7045,10 @@
       "high_temp",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.9,
-    "vpd_30d_avg_kpa": 3.21,
-    "et0_7d_avg_mm": 4.65,
-    "vpd_7d_avg_kpa": 2.91,
+    "et0_30d_avg_mm": 4.94,
+    "vpd_30d_avg_kpa": 3.22,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1076,
       "soil_water_rootzone_m3m3": 0.3772,
@@ -7066,10 +7080,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.35,
-    "vpd_30d_avg_kpa": 1.13,
-    "et0_7d_avg_mm": 2.32,
-    "vpd_7d_avg_kpa": 0.74,
+    "et0_30d_avg_mm": 3.27,
+    "vpd_30d_avg_kpa": 1.06,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.396,
       "soil_water_rootzone_m3m3": 0.3517,
@@ -7102,10 +7116,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 2.97,
-    "vpd_30d_avg_kpa": 0.78,
-    "et0_7d_avg_mm": 3.27,
-    "vpd_7d_avg_kpa": 1.01,
+    "et0_30d_avg_mm": 3.08,
+    "vpd_30d_avg_kpa": 0.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.6182,
       "soil_water_rootzone_m3m3": 0.5205,
@@ -7137,10 +7151,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.65,
-    "vpd_30d_avg_kpa": 1.25,
-    "et0_7d_avg_mm": 4.48,
-    "vpd_7d_avg_kpa": 1.66,
+    "et0_30d_avg_mm": 3.81,
+    "vpd_30d_avg_kpa": 1.35,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2554,
       "soil_water_rootzone_m3m3": 0.3293,
@@ -7172,10 +7186,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.22,
-    "vpd_30d_avg_kpa": 0.99,
-    "et0_7d_avg_mm": 3.05,
-    "vpd_7d_avg_kpa": 0.86,
+    "et0_30d_avg_mm": 3.41,
+    "vpd_30d_avg_kpa": 1.06,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3141,
       "soil_water_rootzone_m3m3": 0.3604,
@@ -7196,7 +7210,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏湿",
-    "et0_status": "蒸散需求偏低",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -7207,10 +7221,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.48,
-    "vpd_30d_avg_kpa": 1.22,
-    "et0_7d_avg_mm": 4.99,
-    "vpd_7d_avg_kpa": 1.95,
+    "et0_30d_avg_mm": 3.75,
+    "vpd_30d_avg_kpa": 1.35,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.684,
       "soil_water_rootzone_m3m3": 0.6749,
@@ -7242,10 +7256,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.1,
-    "vpd_30d_avg_kpa": 0.74,
-    "et0_7d_avg_mm": 3.78,
-    "vpd_7d_avg_kpa": 0.77,
+    "et0_30d_avg_mm": 3.22,
+    "vpd_30d_avg_kpa": 0.76,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1726,
       "soil_water_rootzone_m3m3": 0.2287,
@@ -7275,10 +7289,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 2.71,
-    "vpd_30d_avg_kpa": 0.74,
-    "et0_7d_avg_mm": 4.31,
-    "vpd_7d_avg_kpa": 1.38,
+    "et0_30d_avg_mm": 2.97,
+    "vpd_30d_avg_kpa": 0.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2045,
       "soil_water_rootzone_m3m3": 0.2818,
@@ -7311,10 +7325,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 4.28,
+    "et0_30d_avg_mm": 4.25,
     "vpd_30d_avg_kpa": 1.51,
-    "et0_7d_avg_mm": 3.21,
-    "vpd_7d_avg_kpa": 1.06,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.289,
       "soil_water_rootzone_m3m3": 0.2448,
@@ -7335,7 +7349,7 @@
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏强",
     "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "正常",
     "water_stress_level": "normal",
@@ -7344,10 +7358,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 4.94,
-    "vpd_30d_avg_kpa": 2.19,
-    "et0_7d_avg_mm": 5.33,
-    "vpd_7d_avg_kpa": 2.18,
+    "et0_30d_avg_mm": 5.27,
+    "vpd_30d_avg_kpa": 2.46,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1013,
       "soil_water_rootzone_m3m3": 0.226,
@@ -7379,10 +7393,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.38,
-    "vpd_30d_avg_kpa": 1.77,
-    "et0_7d_avg_mm": 5.58,
-    "vpd_7d_avg_kpa": 2.19,
+    "et0_30d_avg_mm": 4.63,
+    "vpd_30d_avg_kpa": 1.91,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3203,
       "soil_water_rootzone_m3m3": 0.4185,
@@ -7414,10 +7428,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.66,
-    "vpd_30d_avg_kpa": 1.78,
-    "et0_7d_avg_mm": 5.51,
-    "vpd_7d_avg_kpa": 2.12,
+    "et0_30d_avg_mm": 4.45,
+    "vpd_30d_avg_kpa": 1.61,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2823,
       "soil_water_rootzone_m3m3": 0.2909,
@@ -7450,10 +7464,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.85,
-    "vpd_30d_avg_kpa": 2.01,
-    "et0_7d_avg_mm": 6.04,
-    "vpd_7d_avg_kpa": 2.58,
+    "et0_30d_avg_mm": 4.86,
+    "vpd_30d_avg_kpa": 2.04,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1077,
       "soil_water_rootzone_m3m3": 0.1347,
@@ -7486,10 +7500,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.11,
-    "vpd_30d_avg_kpa": 2.37,
-    "et0_7d_avg_mm": 3.98,
-    "vpd_7d_avg_kpa": 1.56,
+    "et0_30d_avg_mm": 5.12,
+    "vpd_30d_avg_kpa": 2.28,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1162,
       "soil_water_rootzone_m3m3": 0.117,
@@ -7511,7 +7525,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
     "water_stress_explanation_cn": "降雨偏多，土壤含水量可能偏高",
@@ -7521,10 +7535,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.31,
-    "vpd_30d_avg_kpa": 1.96,
-    "et0_7d_avg_mm": 4.57,
-    "vpd_7d_avg_kpa": 1.95,
+    "et0_30d_avg_mm": 4.65,
+    "vpd_30d_avg_kpa": 2.11,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.312,
       "soil_water_rootzone_m3m3": 0.3133,
@@ -7545,7 +7559,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "高温偏强",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏强",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -7557,10 +7571,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.97,
-    "vpd_30d_avg_kpa": 1.65,
-    "et0_7d_avg_mm": 6.1,
-    "vpd_7d_avg_kpa": 2.1,
+    "et0_30d_avg_mm": 5.03,
+    "vpd_30d_avg_kpa": 1.68,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.119,
       "soil_water_rootzone_m3m3": 0.2614,
@@ -7592,10 +7606,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.28,
-    "vpd_30d_avg_kpa": 1.42,
-    "et0_7d_avg_mm": 5.18,
-    "vpd_7d_avg_kpa": 1.89,
+    "et0_30d_avg_mm": 4.2,
+    "vpd_30d_avg_kpa": 1.43,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1708,
       "soil_water_rootzone_m3m3": 0.3134,
@@ -7616,7 +7630,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求偏强",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -7628,10 +7642,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.07,
-    "vpd_30d_avg_kpa": 1.75,
-    "et0_7d_avg_mm": 6.04,
-    "vpd_7d_avg_kpa": 2.11,
+    "et0_30d_avg_mm": 4.99,
+    "vpd_30d_avg_kpa": 1.72,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3399,
       "soil_water_rootzone_m3m3": 0.2656,
@@ -7652,7 +7666,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "略偏干",
-    "et0_status": "蒸散需求偏强",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -7664,10 +7678,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.15,
-    "vpd_30d_avg_kpa": 1.98,
-    "et0_7d_avg_mm": 4.27,
-    "vpd_7d_avg_kpa": 1.62,
+    "et0_30d_avg_mm": 4.92,
+    "vpd_30d_avg_kpa": 1.89,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.362,
       "soil_water_rootzone_m3m3": 0.2173,
@@ -7697,10 +7711,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 4.67,
-    "vpd_30d_avg_kpa": 1.68,
-    "et0_7d_avg_mm": 5.6,
-    "vpd_7d_avg_kpa": 1.9,
+    "et0_30d_avg_mm": 4.45,
+    "vpd_30d_avg_kpa": 1.56,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1529,
       "soil_water_rootzone_m3m3": 0.1699,
@@ -7732,10 +7746,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.29,
-    "vpd_30d_avg_kpa": 1.52,
-    "et0_7d_avg_mm": 4.76,
-    "vpd_7d_avg_kpa": 1.76,
+    "et0_30d_avg_mm": 4.5,
+    "vpd_30d_avg_kpa": 1.61,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2585,
       "soil_water_rootzone_m3m3": 0.2909,
@@ -7767,10 +7781,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.24,
-    "vpd_30d_avg_kpa": 1.72,
-    "et0_7d_avg_mm": 5.87,
-    "vpd_7d_avg_kpa": 2.61,
+    "et0_30d_avg_mm": 4.34,
+    "vpd_30d_avg_kpa": 1.76,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1153,
       "soil_water_rootzone_m3m3": 0.2182,
@@ -7791,7 +7805,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "高温偏强",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏强",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -7803,10 +7817,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.68,
-    "vpd_30d_avg_kpa": 1.7,
-    "et0_7d_avg_mm": 6.62,
-    "vpd_7d_avg_kpa": 2.93,
+    "et0_30d_avg_mm": 5.15,
+    "vpd_30d_avg_kpa": 1.94,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0154,
       "soil_water_rootzone_m3m3": 0.0539,
@@ -7829,20 +7843,22 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少叠加高温，水分压力上升",
+    "water_stress_label_cn": "干热复合压力",
+    "water_stress_level": "high",
+    "water_stress_explanation_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著，根区土壤偏干（P1）",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升",
+    "risk_level_v2": "stress",
+    "risk_reason_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著，根区土壤偏干（P1）",
     "risk_components": [
       "rain_deficit",
-      "high_temp"
+      "high_temp",
+      "high_et0",
+      "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.5,
-    "vpd_30d_avg_kpa": 1.77,
-    "et0_7d_avg_mm": 4.63,
-    "vpd_7d_avg_kpa": 1.89,
+    "et0_30d_avg_mm": 4.6,
+    "vpd_30d_avg_kpa": 1.92,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.176,
       "soil_water_rootzone_m3m3": 0.1162,
@@ -7874,10 +7890,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.31,
-    "vpd_30d_avg_kpa": 1.51,
-    "et0_7d_avg_mm": 5.11,
-    "vpd_7d_avg_kpa": 1.76,
+    "et0_30d_avg_mm": 4.5,
+    "vpd_30d_avg_kpa": 1.6,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.323,
       "soil_water_rootzone_m3m3": 0.3864,
@@ -7902,18 +7918,17 @@
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
+    "water_stress_explanation_cn": "降雨偏少，需关注土壤墒情变化",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化",
     "risk_components": [
-      "rain_deficit",
-      "high_et0"
+      "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.57,
-    "vpd_30d_avg_kpa": 1.75,
-    "et0_7d_avg_mm": 5.58,
-    "vpd_7d_avg_kpa": 2.0,
+    "et0_30d_avg_mm": 4.42,
+    "vpd_30d_avg_kpa": 1.66,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2858,
       "soil_water_rootzone_m3m3": 0.3054,
@@ -7934,7 +7949,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求偏强",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -7946,10 +7961,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.15,
-    "vpd_30d_avg_kpa": 1.86,
-    "et0_7d_avg_mm": 5.28,
-    "vpd_7d_avg_kpa": 1.66,
+    "et0_30d_avg_mm": 4.86,
+    "vpd_30d_avg_kpa": 1.78,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2356,
       "soil_water_rootzone_m3m3": 0.1856,
@@ -7981,10 +7996,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.3,
-    "vpd_30d_avg_kpa": 1.8,
-    "et0_7d_avg_mm": 5.53,
-    "vpd_7d_avg_kpa": 2.39,
+    "et0_30d_avg_mm": 4.44,
+    "vpd_30d_avg_kpa": 1.88,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1487,
       "soil_water_rootzone_m3m3": 0.2461,
@@ -8016,10 +8031,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.77,
-    "vpd_30d_avg_kpa": 1.33,
-    "et0_7d_avg_mm": 4.9,
-    "vpd_7d_avg_kpa": 1.94,
+    "et0_30d_avg_mm": 4.08,
+    "vpd_30d_avg_kpa": 1.5,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0669,
       "soil_water_rootzone_m3m3": 0.1437,
@@ -8041,7 +8056,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
     "water_stress_explanation_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
@@ -8052,10 +8067,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.82,
-    "vpd_30d_avg_kpa": 2.0,
-    "et0_7d_avg_mm": 5.36,
-    "vpd_7d_avg_kpa": 2.33,
+    "et0_30d_avg_mm": 4.93,
+    "vpd_30d_avg_kpa": 2.12,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3014,
       "soil_water_rootzone_m3m3": 0.3739,
@@ -8088,10 +8103,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.91,
-    "vpd_30d_avg_kpa": 1.79,
-    "et0_7d_avg_mm": 4.18,
-    "vpd_7d_avg_kpa": 1.35,
+    "et0_30d_avg_mm": 4.77,
+    "vpd_30d_avg_kpa": 1.75,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1943,
       "soil_water_rootzone_m3m3": 0.189,
@@ -8123,10 +8138,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.28,
-    "vpd_30d_avg_kpa": 1.41,
-    "et0_7d_avg_mm": 5.55,
-    "vpd_7d_avg_kpa": 1.96,
+    "et0_30d_avg_mm": 4.36,
+    "vpd_30d_avg_kpa": 1.46,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.187,
       "soil_water_rootzone_m3m3": 0.2036,
@@ -8159,10 +8174,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.76,
+    "et0_30d_avg_mm": 4.72,
     "vpd_30d_avg_kpa": 1.75,
-    "et0_7d_avg_mm": 5.22,
-    "vpd_7d_avg_kpa": 2.11,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1668,
       "soil_water_rootzone_m3m3": 0.1846,
@@ -8194,10 +8209,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.9,
-    "vpd_30d_avg_kpa": 1.5,
-    "et0_7d_avg_mm": 5.62,
-    "vpd_7d_avg_kpa": 2.36,
+    "et0_30d_avg_mm": 4.14,
+    "vpd_30d_avg_kpa": 1.61,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0894,
       "soil_water_rootzone_m3m3": 0.1902,
@@ -8230,10 +8245,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.76,
-    "vpd_30d_avg_kpa": 2.16,
-    "et0_7d_avg_mm": 4.64,
-    "vpd_7d_avg_kpa": 1.83,
+    "et0_30d_avg_mm": 4.83,
+    "vpd_30d_avg_kpa": 2.22,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0957,
       "soil_water_rootzone_m3m3": 0.1081,
@@ -8266,10 +8281,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.33,
-    "vpd_30d_avg_kpa": 2.14,
-    "et0_7d_avg_mm": 5.43,
-    "vpd_7d_avg_kpa": 2.53,
+    "et0_30d_avg_mm": 5.22,
+    "vpd_30d_avg_kpa": 2.17,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.206,
       "soil_water_rootzone_m3m3": 0.2769,
@@ -8301,10 +8316,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.76,
-    "vpd_30d_avg_kpa": 1.72,
-    "et0_7d_avg_mm": 4.91,
-    "vpd_7d_avg_kpa": 1.58,
+    "et0_30d_avg_mm": 4.57,
+    "vpd_30d_avg_kpa": 1.57,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1775,
       "soil_water_rootzone_m3m3": 0.1651,
@@ -8336,10 +8351,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 5.49,
-    "vpd_30d_avg_kpa": 2.37,
-    "et0_7d_avg_mm": 6.41,
-    "vpd_7d_avg_kpa": 2.91,
+    "et0_30d_avg_mm": 5.47,
+    "vpd_30d_avg_kpa": 2.33,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0806,
       "soil_water_rootzone_m3m3": 0.1704,
@@ -8361,7 +8376,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "略偏干",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "正常",
     "water_stress_level": "normal",
     "water_stress_explanation_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
@@ -8369,10 +8384,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 4.84,
-    "vpd_30d_avg_kpa": 1.99,
-    "et0_7d_avg_mm": 5.81,
-    "vpd_7d_avg_kpa": 2.4,
+    "et0_30d_avg_mm": 4.87,
+    "vpd_30d_avg_kpa": 2.02,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2479,
       "soil_water_rootzone_m3m3": 0.2895,
@@ -8404,10 +8419,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.97,
-    "vpd_30d_avg_kpa": 1.11,
-    "et0_7d_avg_mm": 4.73,
-    "vpd_7d_avg_kpa": 1.35,
+    "et0_30d_avg_mm": 4.05,
+    "vpd_30d_avg_kpa": 1.14,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.252,
       "soil_water_rootzone_m3m3": 0.3055,
@@ -8440,10 +8455,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.7,
-    "vpd_30d_avg_kpa": 1.51,
-    "et0_7d_avg_mm": 5.77,
-    "vpd_7d_avg_kpa": 1.93,
+    "et0_30d_avg_mm": 4.87,
+    "vpd_30d_avg_kpa": 1.58,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1845,
       "soil_water_rootzone_m3m3": 0.3023,
@@ -8475,10 +8490,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.35,
-    "vpd_30d_avg_kpa": 1.13,
-    "et0_7d_avg_mm": 2.32,
-    "vpd_7d_avg_kpa": 0.74,
+    "et0_30d_avg_mm": 3.27,
+    "vpd_30d_avg_kpa": 1.06,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.396,
       "soil_water_rootzone_m3m3": 0.3517,
@@ -8511,10 +8526,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 2.97,
-    "vpd_30d_avg_kpa": 0.78,
-    "et0_7d_avg_mm": 3.27,
-    "vpd_7d_avg_kpa": 1.01,
+    "et0_30d_avg_mm": 3.08,
+    "vpd_30d_avg_kpa": 0.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.6182,
       "soil_water_rootzone_m3m3": 0.5205,
@@ -8535,7 +8550,7 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏湿",
-    "et0_status": "蒸散需求偏低",
+    "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -8546,10 +8561,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.48,
-    "vpd_30d_avg_kpa": 1.22,
-    "et0_7d_avg_mm": 4.99,
-    "vpd_7d_avg_kpa": 1.95,
+    "et0_30d_avg_mm": 3.75,
+    "vpd_30d_avg_kpa": 1.35,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.684,
       "soil_water_rootzone_m3m3": 0.6749,
@@ -8582,10 +8597,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 4.28,
+    "et0_30d_avg_mm": 4.25,
     "vpd_30d_avg_kpa": 1.51,
-    "et0_7d_avg_mm": 3.21,
-    "vpd_7d_avg_kpa": 1.06,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.289,
       "soil_water_rootzone_m3m3": 0.2448,
@@ -8615,10 +8630,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 4.09,
-    "vpd_30d_avg_kpa": 1.53,
-    "et0_7d_avg_mm": 3.89,
-    "vpd_7d_avg_kpa": 1.5,
+    "et0_30d_avg_mm": 4.27,
+    "vpd_30d_avg_kpa": 1.57,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2825,
       "soil_water_rootzone_m3m3": 0.2832,
@@ -8650,10 +8665,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.85,
-    "vpd_30d_avg_kpa": 1.44,
-    "et0_7d_avg_mm": 5.72,
-    "vpd_7d_avg_kpa": 2.43,
+    "et0_30d_avg_mm": 4.09,
+    "vpd_30d_avg_kpa": 1.53,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0139,
       "soil_water_rootzone_m3m3": 0.1884,
@@ -8685,10 +8700,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.21,
-    "vpd_30d_avg_kpa": 1.72,
-    "et0_7d_avg_mm": 3.08,
-    "vpd_7d_avg_kpa": 1.12,
+    "et0_30d_avg_mm": 4.05,
+    "vpd_30d_avg_kpa": 1.62,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3764,
       "soil_water_rootzone_m3m3": 0.2396,
@@ -8720,10 +8735,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.31,
-    "vpd_30d_avg_kpa": 1.66,
-    "et0_7d_avg_mm": 3.93,
-    "vpd_7d_avg_kpa": 1.41,
+    "et0_30d_avg_mm": 4.3,
+    "vpd_30d_avg_kpa": 1.63,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.189,
       "soil_water_rootzone_m3m3": 0.3589,
@@ -8755,10 +8770,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.96,
-    "vpd_30d_avg_kpa": 1.49,
-    "et0_7d_avg_mm": 4.17,
-    "vpd_7d_avg_kpa": 1.51,
+    "et0_30d_avg_mm": 4.18,
+    "vpd_30d_avg_kpa": 1.6,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1329,
       "soil_water_rootzone_m3m3": 0.2451,
@@ -8780,7 +8795,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
     "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著",
@@ -8790,10 +8805,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.8,
-    "vpd_30d_avg_kpa": 1.24,
-    "et0_7d_avg_mm": 4.64,
-    "vpd_7d_avg_kpa": 1.45,
+    "et0_30d_avg_mm": 3.63,
+    "vpd_30d_avg_kpa": 1.13,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2535,
       "soil_water_rootzone_m3m3": 0.3203,
@@ -8818,17 +8833,18 @@
     "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "降雨偏少，需关注土壤墒情变化",
+    "water_stress_explanation_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化",
+    "risk_reason_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
     "risk_components": [
-      "rain_deficit"
+      "rain_deficit",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.24,
-    "vpd_30d_avg_kpa": 1.71,
-    "et0_7d_avg_mm": 3.18,
-    "vpd_7d_avg_kpa": 1.06,
+    "et0_30d_avg_mm": 4.57,
+    "vpd_30d_avg_kpa": 1.89,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3803,
       "soil_water_rootzone_m3m3": 0.4075,
@@ -8860,10 +8876,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.69,
-    "vpd_30d_avg_kpa": 1.33,
-    "et0_7d_avg_mm": 3.58,
-    "vpd_7d_avg_kpa": 1.16,
+    "et0_30d_avg_mm": 4.0,
+    "vpd_30d_avg_kpa": 1.49,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1495,
       "soil_water_rootzone_m3m3": 0.3024,
@@ -8884,7 +8900,7 @@
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏低",
     "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
@@ -8895,10 +8911,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.58,
-    "vpd_30d_avg_kpa": 1.14,
-    "et0_7d_avg_mm": 4.14,
-    "vpd_7d_avg_kpa": 1.21,
+    "et0_30d_avg_mm": 3.45,
+    "vpd_30d_avg_kpa": 0.99,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2732,
       "soil_water_rootzone_m3m3": 0.3145,
@@ -8930,10 +8946,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 3.62,
-    "vpd_30d_avg_kpa": 1.08,
-    "et0_7d_avg_mm": 3.62,
-    "vpd_7d_avg_kpa": 1.15,
+    "et0_30d_avg_mm": 3.74,
+    "vpd_30d_avg_kpa": 1.1,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1982,
       "soil_water_rootzone_m3m3": 0.2404,
@@ -8965,10 +8981,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.37,
-    "vpd_30d_avg_kpa": 1.03,
-    "et0_7d_avg_mm": 3.76,
-    "vpd_7d_avg_kpa": 1.06,
+    "et0_30d_avg_mm": 3.27,
+    "vpd_30d_avg_kpa": 0.96,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3442,
       "soil_water_rootzone_m3m3": 0.3765,
@@ -8990,7 +9006,7 @@
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求偏低",
-    "vpd_status": "大气干燥度偏低",
+    "vpd_status": "大气干燥度中等",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
     "water_stress_explanation_cn": "降雨偏多，土壤含水量可能偏高",
@@ -9000,10 +9016,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.33,
-    "vpd_30d_avg_kpa": 1.17,
-    "et0_7d_avg_mm": 5.11,
-    "vpd_7d_avg_kpa": 1.99,
+    "et0_30d_avg_mm": 3.45,
+    "vpd_30d_avg_kpa": 1.21,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1409,
       "soil_water_rootzone_m3m3": 0.2486,
@@ -9035,10 +9051,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.84,
-    "vpd_30d_avg_kpa": 1.31,
-    "et0_7d_avg_mm": 4.38,
-    "vpd_7d_avg_kpa": 1.53,
+    "et0_30d_avg_mm": 3.73,
+    "vpd_30d_avg_kpa": 1.22,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2051,
       "soil_water_rootzone_m3m3": 0.3633,
@@ -9068,10 +9084,10 @@
     "risk_level_v2": "normal",
     "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "risk_components": [],
-    "et0_30d_avg_mm": 3.55,
-    "vpd_30d_avg_kpa": 1.21,
-    "et0_7d_avg_mm": 5.08,
-    "vpd_7d_avg_kpa": 1.96,
+    "et0_30d_avg_mm": 3.61,
+    "vpd_30d_avg_kpa": 1.24,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0805,
       "soil_water_rootzone_m3m3": 0.3119,
@@ -9093,7 +9109,7 @@
     "temp_7d_status": "高温偏强",
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "干热复合压力",
     "water_stress_level": "high",
     "water_stress_explanation_cn": "降雨显著偏少叠加高温和强蒸散需求，干热复合压力显著，根区土壤偏干（P2）",
@@ -9106,10 +9122,10 @@
       "high_et0",
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.69,
-    "vpd_30d_avg_kpa": 1.97,
-    "et0_7d_avg_mm": 4.59,
-    "vpd_7d_avg_kpa": 1.77,
+    "et0_30d_avg_mm": 4.89,
+    "vpd_30d_avg_kpa": 2.11,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.185,
       "soil_water_rootzone_m3m3": 0.275,
@@ -9141,10 +9157,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.9,
-    "vpd_30d_avg_kpa": 1.41,
-    "et0_7d_avg_mm": 3.88,
-    "vpd_7d_avg_kpa": 1.32,
+    "et0_30d_avg_mm": 4.02,
+    "vpd_30d_avg_kpa": 1.44,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2624,
       "soil_water_rootzone_m3m3": 0.3404,
@@ -9167,19 +9183,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P0），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.39,
-    "vpd_30d_avg_kpa": 1.68,
-    "et0_7d_avg_mm": 4.26,
-    "vpd_7d_avg_kpa": 1.61,
+    "et0_30d_avg_mm": 4.52,
+    "vpd_30d_avg_kpa": 1.77,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0816,
       "soil_water_rootzone_m3m3": 0.255,
@@ -9202,19 +9219,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P0），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.08,
-    "vpd_30d_avg_kpa": 1.79,
-    "et0_7d_avg_mm": 4.3,
-    "vpd_7d_avg_kpa": 1.83,
+    "et0_30d_avg_mm": 4.44,
+    "vpd_30d_avg_kpa": 2.0,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.08,
       "soil_water_rootzone_m3m3": 0.2454,
@@ -9246,10 +9264,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.0,
-    "vpd_30d_avg_kpa": 1.56,
-    "et0_7d_avg_mm": 3.73,
-    "vpd_7d_avg_kpa": 1.18,
+    "et0_30d_avg_mm": 4.28,
+    "vpd_30d_avg_kpa": 1.74,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0945,
       "soil_water_rootzone_m3m3": 0.2698,
@@ -9281,10 +9299,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.31,
-    "vpd_30d_avg_kpa": 1.22,
-    "et0_7d_avg_mm": 5.26,
-    "vpd_7d_avg_kpa": 2.11,
+    "et0_30d_avg_mm": 3.45,
+    "vpd_30d_avg_kpa": 1.29,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0706,
       "soil_water_rootzone_m3m3": 0.1475,
@@ -9307,19 +9325,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P1），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "高温叠加大气干燥度偏高，蒸散增强",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "高温叠加大气干燥度偏高，蒸散增强",
     "risk_components": [
-      "dry_soil"
+      "high_temp",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.32,
-    "vpd_30d_avg_kpa": 1.69,
-    "et0_7d_avg_mm": 5.59,
-    "vpd_7d_avg_kpa": 2.63,
+    "et0_30d_avg_mm": 4.61,
+    "vpd_30d_avg_kpa": 1.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1066,
       "soil_water_rootzone_m3m3": 0.2951,
@@ -9351,10 +9370,10 @@
     "risk_components": [
       "mild_anomaly"
     ],
-    "et0_30d_avg_mm": 5.21,
-    "vpd_30d_avg_kpa": 2.18,
-    "et0_7d_avg_mm": 3.38,
-    "vpd_7d_avg_kpa": 1.28,
+    "et0_30d_avg_mm": 5.3,
+    "vpd_30d_avg_kpa": 2.3,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.453,
       "soil_water_rootzone_m3m3": 0.4365,
@@ -9386,10 +9405,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.17,
-    "vpd_30d_avg_kpa": 1.54,
-    "et0_7d_avg_mm": 4.2,
-    "vpd_7d_avg_kpa": 1.45,
+    "et0_30d_avg_mm": 4.4,
+    "vpd_30d_avg_kpa": 1.63,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1508,
       "soil_water_rootzone_m3m3": 0.27,
@@ -9422,10 +9441,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.59,
-    "vpd_30d_avg_kpa": 1.85,
-    "et0_7d_avg_mm": 3.92,
-    "vpd_7d_avg_kpa": 1.31,
+    "et0_30d_avg_mm": 4.74,
+    "vpd_30d_avg_kpa": 1.93,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.122,
       "soil_water_rootzone_m3m3": 0.2753,
@@ -9457,10 +9476,10 @@
     "risk_components": [
       "rain_deficit"
     ],
-    "et0_30d_avg_mm": 4.09,
-    "vpd_30d_avg_kpa": 1.7,
-    "et0_7d_avg_mm": 3.31,
-    "vpd_7d_avg_kpa": 0.93,
+    "et0_30d_avg_mm": 4.47,
+    "vpd_30d_avg_kpa": 1.92,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3137,
       "soil_water_rootzone_m3m3": 0.3049,
@@ -9493,10 +9512,10 @@
       "rain_deficit",
       "high_temp"
     ],
-    "et0_30d_avg_mm": 3.17,
-    "vpd_30d_avg_kpa": 0.75,
-    "et0_7d_avg_mm": 3.45,
-    "vpd_7d_avg_kpa": 0.8,
+    "et0_30d_avg_mm": 3.09,
+    "vpd_30d_avg_kpa": 0.68,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.251,
       "soil_water_rootzone_m3m3": 0.2419,
@@ -9517,7 +9536,7 @@
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏低",
     "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
@@ -9528,10 +9547,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.54,
-    "vpd_30d_avg_kpa": 1.02,
-    "et0_7d_avg_mm": 4.07,
-    "vpd_7d_avg_kpa": 1.21,
+    "et0_30d_avg_mm": 3.48,
+    "vpd_30d_avg_kpa": 0.99,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3091,
       "soil_water_rootzone_m3m3": 0.3464,
@@ -9564,10 +9583,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.01,
-    "vpd_30d_avg_kpa": 2.25,
-    "et0_7d_avg_mm": 3.35,
-    "vpd_7d_avg_kpa": 1.09,
+    "et0_30d_avg_mm": 5.24,
+    "vpd_30d_avg_kpa": 2.44,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4052,
       "soil_water_rootzone_m3m3": 0.3664,
@@ -9599,10 +9618,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.9,
-    "vpd_30d_avg_kpa": 1.18,
-    "et0_7d_avg_mm": 4.14,
-    "vpd_7d_avg_kpa": 1.25,
+    "et0_30d_avg_mm": 3.91,
+    "vpd_30d_avg_kpa": 1.16,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.269,
       "soil_water_rootzone_m3m3": 0.2856,
@@ -9634,10 +9653,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.8,
-    "vpd_30d_avg_kpa": 0.96,
-    "et0_7d_avg_mm": 4.28,
-    "vpd_7d_avg_kpa": 0.99,
+    "et0_30d_avg_mm": 3.63,
+    "vpd_30d_avg_kpa": 0.91,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3384,
       "soil_water_rootzone_m3m3": 0.5139,
@@ -9658,7 +9677,7 @@
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
     "soil_moisture_status": "湿润",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏低",
     "vpd_status": "大气干燥度偏低",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
@@ -9669,10 +9688,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.51,
-    "vpd_30d_avg_kpa": 0.94,
-    "et0_7d_avg_mm": 4.4,
-    "vpd_7d_avg_kpa": 1.11,
+    "et0_30d_avg_mm": 3.33,
+    "vpd_30d_avg_kpa": 0.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3451,
       "soil_water_rootzone_m3m3": 0.3889,
@@ -9705,10 +9724,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.56,
-    "vpd_30d_avg_kpa": 1.69,
-    "et0_7d_avg_mm": 4.02,
-    "vpd_7d_avg_kpa": 1.17,
+    "et0_30d_avg_mm": 4.67,
+    "vpd_30d_avg_kpa": 1.75,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1165,
       "soil_water_rootzone_m3m3": 0.2594,
@@ -9740,10 +9759,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.46,
-    "vpd_30d_avg_kpa": 0.92,
-    "et0_7d_avg_mm": 4.32,
-    "vpd_7d_avg_kpa": 1.13,
+    "et0_30d_avg_mm": 3.27,
+    "vpd_30d_avg_kpa": 0.83,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.291,
       "soil_water_rootzone_m3m3": 0.3874,
@@ -9776,10 +9795,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.52,
-    "vpd_30d_avg_kpa": 1.75,
-    "et0_7d_avg_mm": 3.5,
-    "vpd_7d_avg_kpa": 1.02,
+    "et0_30d_avg_mm": 4.62,
+    "vpd_30d_avg_kpa": 1.81,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1302,
       "soil_water_rootzone_m3m3": 0.1151,
@@ -9811,10 +9830,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 4.29,
-    "vpd_30d_avg_kpa": 1.76,
-    "et0_7d_avg_mm": 4.27,
-    "vpd_7d_avg_kpa": 1.61,
+    "et0_30d_avg_mm": 4.22,
+    "vpd_30d_avg_kpa": 1.67,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1595,
       "soil_water_rootzone_m3m3": 0.3224,
@@ -9846,10 +9865,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.97,
-    "vpd_30d_avg_kpa": 1.42,
-    "et0_7d_avg_mm": 4.16,
-    "vpd_7d_avg_kpa": 1.36,
+    "et0_30d_avg_mm": 4.17,
+    "vpd_30d_avg_kpa": 1.52,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2711,
       "soil_water_rootzone_m3m3": 0.3231,
@@ -9870,8 +9889,8 @@
     "precipitation_30d_status": "30日降雨显著偏少",
     "temp_7d_status": "正常",
     "soil_moisture_status": "偏干",
-    "et0_status": "蒸散需求中等",
-    "vpd_status": "大气干燥度中等",
+    "et0_status": "蒸散需求偏强",
+    "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
     "water_stress_explanation_cn": "降雨偏少叠加强蒸散需求，水分压力上升",
@@ -9882,10 +9901,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.92,
-    "vpd_30d_avg_kpa": 1.98,
-    "et0_7d_avg_mm": 3.91,
-    "vpd_7d_avg_kpa": 1.19,
+    "et0_30d_avg_mm": 5.11,
+    "vpd_30d_avg_kpa": 2.09,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2251,
       "soil_water_rootzone_m3m3": 0.2963,
@@ -9918,10 +9937,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.54,
-    "vpd_30d_avg_kpa": 1.8,
-    "et0_7d_avg_mm": 3.83,
-    "vpd_7d_avg_kpa": 1.38,
+    "et0_30d_avg_mm": 4.79,
+    "vpd_30d_avg_kpa": 1.91,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1999,
       "soil_water_rootzone_m3m3": 0.2557,
@@ -9953,10 +9972,10 @@
     "risk_components": [
       "excess_rain"
     ],
-    "et0_30d_avg_mm": 3.24,
-    "vpd_30d_avg_kpa": 0.89,
-    "et0_7d_avg_mm": 3.48,
-    "vpd_7d_avg_kpa": 0.94,
+    "et0_30d_avg_mm": 3.11,
+    "vpd_30d_avg_kpa": 0.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2469,
       "soil_water_rootzone_m3m3": 0.3566,
@@ -9979,19 +9998,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P0），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P0）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_et0"
     ],
-    "et0_30d_avg_mm": 4.36,
-    "vpd_30d_avg_kpa": 1.73,
-    "et0_7d_avg_mm": 3.69,
-    "vpd_7d_avg_kpa": 1.37,
+    "et0_30d_avg_mm": 4.53,
+    "vpd_30d_avg_kpa": 1.82,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.113,
       "soil_water_rootzone_m3m3": 0.2324,
@@ -10023,10 +10043,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.93,
-    "vpd_30d_avg_kpa": 1.49,
-    "et0_7d_avg_mm": 4.21,
-    "vpd_7d_avg_kpa": 1.56,
+    "et0_30d_avg_mm": 4.13,
+    "vpd_30d_avg_kpa": 1.61,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1016,
       "soil_water_rootzone_m3m3": 0.2675,
@@ -10049,19 +10069,20 @@
     "soil_moisture_status": "偏干",
     "et0_status": "蒸散需求中等",
     "vpd_status": "大气干燥度中等",
-    "water_stress_label_cn": "轻微异常",
-    "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P6），需关注降水补充",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "根区土壤偏干（P6）叠加蒸散需求，水分压力上升",
     "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P6），需关注降水补充",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "根区土壤偏干（P6）叠加蒸散需求，水分压力上升",
     "risk_components": [
-      "dry_soil"
+      "dry_soil",
+      "high_vpd"
     ],
-    "et0_30d_avg_mm": 4.15,
-    "vpd_30d_avg_kpa": 1.7,
-    "et0_7d_avg_mm": 3.56,
-    "vpd_7d_avg_kpa": 0.99,
+    "et0_30d_avg_mm": 4.41,
+    "vpd_30d_avg_kpa": 1.84,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3923,
       "soil_water_rootzone_m3m3": 0.4007,
@@ -10094,10 +10115,10 @@
       "rain_deficit",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.8,
-    "vpd_30d_avg_kpa": 1.81,
-    "et0_7d_avg_mm": 3.9,
-    "vpd_7d_avg_kpa": 1.07,
+    "et0_30d_avg_mm": 4.96,
+    "vpd_30d_avg_kpa": 1.88,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1921,
       "soil_water_rootzone_m3m3": 0.2726,
@@ -10129,10 +10150,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.84,
-    "vpd_30d_avg_kpa": 1.46,
-    "et0_7d_avg_mm": 3.85,
-    "vpd_7d_avg_kpa": 1.26,
+    "et0_30d_avg_mm": 4.14,
+    "vpd_30d_avg_kpa": 1.62,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1115,
       "soil_water_rootzone_m3m3": 0.2813,
@@ -10153,7 +10174,7 @@
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
     "soil_moisture_status": "略偏干",
-    "et0_status": "蒸散需求中等",
+    "et0_status": "蒸散需求偏强",
     "vpd_status": "大气干燥度偏高",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
@@ -10165,10 +10186,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 4.89,
-    "vpd_30d_avg_kpa": 2.13,
-    "et0_7d_avg_mm": 3.82,
-    "vpd_7d_avg_kpa": 1.57,
+    "et0_30d_avg_mm": 5.04,
+    "vpd_30d_avg_kpa": 2.18,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.241,
       "soil_water_rootzone_m3m3": 0.3561,
@@ -10200,10 +10221,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.31,
-    "vpd_30d_avg_kpa": 1.76,
-    "et0_7d_avg_mm": 4.0,
-    "vpd_7d_avg_kpa": 1.57,
+    "et0_30d_avg_mm": 4.37,
+    "vpd_30d_avg_kpa": 1.79,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0973,
       "soil_water_rootzone_m3m3": 0.2602,
@@ -10235,10 +10256,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 3.96,
-    "vpd_30d_avg_kpa": 1.56,
-    "et0_7d_avg_mm": 3.53,
-    "vpd_7d_avg_kpa": 1.16,
+    "et0_30d_avg_mm": 4.11,
+    "vpd_30d_avg_kpa": 1.5,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2188,
       "soil_water_rootzone_m3m3": 0.3053,
@@ -10270,10 +10291,10 @@
     "risk_components": [
       "dry_soil"
     ],
-    "et0_30d_avg_mm": 4.26,
+    "et0_30d_avg_mm": 4.3,
     "vpd_30d_avg_kpa": 1.52,
-    "et0_7d_avg_mm": 5.66,
-    "vpd_7d_avg_kpa": 2.39,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.064,
       "soil_water_rootzone_m3m3": 0.1697,
@@ -10306,10 +10327,10 @@
       "dry_soil",
       "high_et0"
     ],
-    "et0_30d_avg_mm": 5.29,
-    "vpd_30d_avg_kpa": 2.14,
-    "et0_7d_avg_mm": 4.53,
-    "vpd_7d_avg_kpa": 1.81,
+    "et0_30d_avg_mm": 5.06,
+    "vpd_30d_avg_kpa": 2.08,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2918,
       "soil_water_rootzone_m3m3": 0.1721,

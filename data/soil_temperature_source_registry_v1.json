@@ -1,0 +1,22 @@
+[
+  {
+    "source_name": "Open-Meteo ERA5-Land",
+    "source_type": "reanalysis",
+    "variables": [
+      "soil_temperature_0_to_7cm",
+      "soil_temperature_7_to_28cm",
+      "soil_temperature_0_to_7cm_mean",
+      "soil_temperature_7_to_28cm_mean"
+    ],
+    "baseline_period_target": "2016-2025",
+    "baseline_period_actual": "2016-2025 temporary",
+    "baseline_status": "temporary",
+    "baseline_points": 294,
+    "update_frequency": "daily",
+    "data_status": "real_active",
+    "is_synthetic": false,
+    "source_status": "active",
+    "usable_for_risk_label": false,
+    "note": "e3a_patch2: real data verified"
+  }
+]

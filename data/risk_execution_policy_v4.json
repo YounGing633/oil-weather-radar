@@ -1,0 +1,110 @@
+{
+  "version": "risk_execution_policy_v4",
+  "created_at": "2026-06-09T09:43:57Z",
+  "patches": [
+    {
+      "patch_id": "PATCH_OS_01",
+      "rule": "OS 阶段不生成 high confidence yield risk；不生成缺水·结荚、缺水·灌浆、干热·授粉、干热·开花等高置信产量标签。"
+    },
+    {
+      "patch_id": "PATCH_V_01",
+      "rule": "V 阶段普通缺水默认 level 1-2，不直接 level 4。"
+    },
+    {
+      "patch_id": "PATCH_V_02",
+      "rule": "V 阶段极端缺水允许升到 level 3，但 rule_confidence 不高于 medium。"
+    },
+    {
+      "patch_id": "PATCH_EST_01",
+      "rule": "缺水·出苗 第一版不计入 yield_risk_affected_share，只计入 operation / establishment risk。"
+    },
+    {
+      "patch_id": "PATCH_MH_01",
+      "rule": "MH 阶段优先使用短雨作业信号；rootzone_dry 不单独生成缺水类产量风险。"
+    },
+    {
+      "patch_id": "PATCH_MIX_01",
+      "rule": "PF/MH 阶段允许同时生成灌浆风险和收获风险，右侧详情同时显示；地图主标签按 risk_level + 阶段权重选择。"
+    },
+    {
+      "patch_id": "PATCH_SOIL_01",
+      "rule": "seasonal soil 有值优先用 seasonal；seasonal pending/null 时 fallback 到 90d，confidence 降一级，evidence 写明“历史同期基线待补”。"
+    },
+    {
+      "patch_id": "PATCH_SUPPORT_01",
+      "rule": "偏干·收获、偏干·采收、水分改善永远不计入 yield 或 operation affected share。"
+    },
+    {
+      "patch_id": "PATCH_PERENNIAL_01",
+      "rule": "palm / coconut 固定拆成 current_operation 和 future_yield 两类，不走月度阶段。"
+    },
+    {
+      "patch_id": "PATCH_DOMINANT_01",
+      "rule": "主标签排序按 display_priority、risk_level、direction、impact_type、阶段优先级选择；supportive 只有在没有其他标签时才可成为主标签。"
+    }
+  ],
+  "soil_signal_selection": {
+    "if_rootzone_percentile_seasonal_non_null": {
+      "soil_signal_used": "soil_signal_seasonal",
+      "soil_basis": "seasonal",
+      "confidence_penalty": 0
+    },
+    "else": {
+      "soil_signal_used": "soil_signal_recent",
+      "soil_basis": "recent_90d_fallback",
+      "confidence_penalty": -1,
+      "evidence_phrase_cn": "历史同期基线待补"
+    }
+  },
+  "stage_split_policy": {
+    "FP/PF": {
+      "FP": 0.5,
+      "PF": 0.5
+    },
+    "PF/MH": {
+      "PF": 0.5,
+      "MH": 0.5
+    },
+    "V/FP": {
+      "V": 0.5,
+      "FP": 0.5
+    },
+    "PE/V": {
+      "PE": 0.5,
+      "V": 0.5
+    },
+    "MH/OS": {
+      "MH": 0.5,
+      "OS": 0.5
+    },
+    "OS/PE": {
+      "OS": 0.5,
+      "PE": 0.5
+    },
+    "V/FP/PF": {
+      "V": 0.33,
+      "FP": 0.34,
+      "PF": 0.33
+    },
+    "FP/PF/MIX": {
+      "FP": 0.5,
+      "PF": 0.5
+    }
+  },
+  "dominant_tag_sort_order": [
+    "display_priority",
+    "risk_level",
+    "impact_direction",
+    "impact_type",
+    "stage_priority"
+  ],
+  "affected_share_policy": {
+    "yield_risk_affected_share": "impact_type == yield and risk_level >= 3 and direction != supportive",
+    "operation_affected_share": "impact_type in [operation, establishment] and risk_level >= 2 and direction != supportive",
+    "supportive_never_counted": [
+      "偏干·收获",
+      "偏干·采收",
+      "水分改善"
+    ]
+  }
+}

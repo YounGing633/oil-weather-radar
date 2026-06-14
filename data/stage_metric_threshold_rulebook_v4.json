@@ -1,0 +1,1047 @@
+{
+  "version": "stage_metric_threshold_rulebook_v4",
+  "created_at": "2026-06-09T09:43:57Z",
+  "notes": [
+    "Rules are executable thresholds for risk_label_v4, not direct agronomic yield-loss thresholds.",
+    "Required_signal values are matched against normalized signal fields produced by e0/e0b."
+  ],
+  "rules": [
+    {
+      "rule_id": "SOY_PE_DRY_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "surface_extreme_dry"
+      ],
+      "auxiliary_signal": [
+        "dry_7d",
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·出苗",
+      "base_level": 2,
+      "impact_type": "establishment",
+      "impact_channel": "emergence",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "表层墒情不足，出苗和建苗压力上升。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_PE_DRY_02",
+      "crop_group": "soybean",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·出苗",
+      "base_level": 3,
+      "impact_type": "establishment",
+      "impact_channel": "emergence",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "播后补水不足，出苗不齐风险上升。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_PE_WET_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "surface_extreme_wet"
+      ],
+      "auxiliary_signal": [
+        "operation_disruption_wet"
+      ],
+      "risk_label_cn": "过湿·播种",
+      "base_level": 2,
+      "impact_type": "operation",
+      "impact_channel": "fieldwork",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "播种延迟、田间进入困难、烂种或板结风险上升。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_PE_WET_02",
+      "crop_group": "soybean",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "heavy_rain_disruption"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "过湿·播种",
+      "base_level": 3,
+      "impact_type": "operation",
+      "impact_channel": "fieldwork",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "播种窗口明显受扰。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_V_DRY_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "V",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "缺水·生长",
+      "base_level": 2,
+      "impact_type": "yield_watch",
+      "impact_channel": "vegetative_growth",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "营养生长受压，但后续仍有恢复空间。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_V_DRY_02",
+      "crop_group": "soybean",
+      "stage_or_dimension": "V",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "rain_severe_deficit",
+        "forecast_no_relief"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "缺水·生长",
+      "base_level": 3,
+      "impact_type": "yield_watch",
+      "impact_channel": "vegetative_growth",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "极端缺水若持续不缓解，可能影响冠层和后续开花基础；V阶段置信度不高于medium。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_FP_DRY_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "FP",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·结荚",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "pod_set",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "水分压力可能导致落花、落荚、结荚数下降。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_FP_HEAT_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "FP",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "heat_stress"
+      ],
+      "auxiliary_signal": [
+        "drying_demand_high"
+      ],
+      "risk_label_cn": "干热·结荚",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "pod_set",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "高温叠加缺水，定产风险显著。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_PF_DRY_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·灌浆",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "水分不足可能影响粒重和单产。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_PF_DRY_02",
+      "crop_group": "soybean",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "rain_severe_deficit"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "缺水·灌浆",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "灌浆压力明显。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_PF_HEAT_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_dry",
+        "heat_stress"
+      ],
+      "auxiliary_signal": [
+        "drying_demand_high"
+      ],
+      "risk_label_cn": "干热·灌浆",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "高温失墒可能压缩灌浆过程。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_MH_RAIN_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "heavy_rain_disruption"
+      ],
+      "auxiliary_signal": [
+        "forecast_wet_worsen"
+      ],
+      "risk_label_cn": "降雨·收获",
+      "base_level": 3,
+      "impact_type": "operation",
+      "impact_channel": "harvest",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "收获延迟、含水率和品质风险上升。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_MH_RAIN_02",
+      "crop_group": "soybean",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "operation_disruption_wet"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "降雨·收获",
+      "base_level": 2,
+      "impact_type": "operation",
+      "impact_channel": "harvest",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "田间收获窗口变差。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SOY_MH_DRY_01",
+      "crop_group": "soybean",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "operation_friendly_dry_window"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "偏干·收获",
+      "base_level": 1,
+      "impact_type": "supportive",
+      "impact_channel": "harvest",
+      "impact_direction": "supportive",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "有利收获推进，不计入受扰产量。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_PE_DRY_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "surface_extreme_dry"
+      ],
+      "auxiliary_signal": [
+        "dry_7d"
+      ],
+      "risk_label_cn": "缺水·出苗",
+      "base_level": 2,
+      "impact_type": "establishment",
+      "impact_channel": "emergence",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "出苗、返青、根系恢复受压。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_PE_DRY_02",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·返青",
+      "base_level": 3,
+      "impact_type": "establishment",
+      "impact_channel": "recovery",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "春季返青或苗期水分不足。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_PE_WET_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "surface_extreme_wet"
+      ],
+      "auxiliary_signal": [
+        "operation_disruption_wet"
+      ],
+      "risk_label_cn": "过湿·田间",
+      "base_level": 2,
+      "impact_type": "operation",
+      "impact_channel": "fieldwork",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "田间作业、根系环境、苗期建立受扰。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_DORM_COLD_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "DORM",
+      "required_signal": [
+        "cold_stress"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "越冬压力",
+      "base_level": 2,
+      "impact_type": "yield_watch",
+      "impact_channel": "overwintering",
+      "impact_direction": "adverse",
+      "impact_horizon": "short_1_3m",
+      "impact_text_cn": "冬油菜越冬压力；当前低温字段稳定后启用。",
+      "confidence_base": "low"
+    },
+    {
+      "rule_id": "RAPE_V_COLD_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "V",
+      "required_signal": [
+        "cold_stress"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "低温·返青",
+      "base_level": 2,
+      "impact_type": "yield_watch",
+      "impact_channel": "recovery",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "返青、生长恢复压力。",
+      "confidence_base": "low"
+    },
+    {
+      "rule_id": "RAPE_V_DRY_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "V",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "缺水·生长",
+      "base_level": 2,
+      "impact_type": "yield_watch",
+      "impact_channel": "vegetative_growth",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "营养生长受压，但仍可能恢复。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_FP_DRY_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "FP",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·开花",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "flowering_pod_set",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "开花、授粉、角果形成受压。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_FP_HEAT_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "FP",
+      "required_signal": [
+        "rootzone_dry",
+        "heat_stress"
+      ],
+      "auxiliary_signal": [
+        "drying_demand_high"
+      ],
+      "risk_label_cn": "干热·开花",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "flowering_pod_set",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "热旱叠加，产量形成风险明显。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_PF_DRY_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·灌浆",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling_oil_content",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "粒重和含油率形成压力。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_PF_DRY_02",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "rain_severe_deficit"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "缺水·灌浆",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling_oil_content",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "籽粒形成受压。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_PF_HEAT_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "heat_stress"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "高温·灌浆",
+      "base_level": 2,
+      "impact_type": "yield_watch",
+      "impact_channel": "seed_filling_oil_content",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "高温可能压缩灌浆过程。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_PF_HEAT_02",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_dry",
+        "heat_stress"
+      ],
+      "auxiliary_signal": [
+        "drying_demand_high"
+      ],
+      "risk_label_cn": "干热·灌浆",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling_oil_content",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "灌浆和含油率风险上升。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_MH_RAIN_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "heavy_rain_disruption"
+      ],
+      "auxiliary_signal": [
+        "forecast_wet_worsen"
+      ],
+      "risk_label_cn": "降雨·收获",
+      "base_level": 3,
+      "impact_type": "operation",
+      "impact_channel": "harvest",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "收获延迟、含水率、倒伏或品质风险。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_MH_RAIN_02",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "operation_disruption_wet"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "降雨·收获",
+      "base_level": 2,
+      "impact_type": "operation",
+      "impact_channel": "harvest",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "收获窗口偏差。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "RAPE_MH_DRY_01",
+      "crop_group": "rapeseed_canola",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "operation_friendly_dry_window"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "偏干·收获",
+      "base_level": 1,
+      "impact_type": "supportive",
+      "impact_channel": "harvest",
+      "impact_direction": "supportive",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "有利收获推进。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_PE_DRY_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "surface_extreme_dry"
+      ],
+      "auxiliary_signal": [
+        "dry_7d"
+      ],
+      "risk_label_cn": "缺水·出苗",
+      "base_level": 2,
+      "impact_type": "establishment",
+      "impact_channel": "emergence",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "出苗和建苗压力。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_PE_DRY_02",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·出苗",
+      "base_level": 3,
+      "impact_type": "establishment",
+      "impact_channel": "emergence",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "苗期水分供应不足。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_PE_WET_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "PE",
+      "required_signal": [
+        "surface_extreme_wet"
+      ],
+      "auxiliary_signal": [
+        "operation_disruption_wet"
+      ],
+      "risk_label_cn": "过湿·田间",
+      "base_level": 2,
+      "impact_type": "operation",
+      "impact_channel": "fieldwork",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "播种、根系环境和田间作业受扰。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_V_DRY_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "V",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "缺水·生长",
+      "base_level": 2,
+      "impact_type": "yield_watch",
+      "impact_channel": "vegetative_growth",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "营养生长受压，但低于开花期风险。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_V_DRY_02",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "V",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "rain_severe_deficit",
+        "forecast_no_relief"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "缺水·生长",
+      "base_level": 3,
+      "impact_type": "yield_watch",
+      "impact_channel": "vegetative_growth",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "极端缺水若持续，冠层和根系扩展受压；V阶段置信度不高于medium。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_FP_DRY_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "FP",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·授粉",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "flowering_pollination",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "花朵发育、授粉和结实率受压。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_FP_HEAT_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "FP",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "heat_stress"
+      ],
+      "auxiliary_signal": [
+        "drying_demand_high"
+      ],
+      "risk_label_cn": "干热·授粉",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "flowering_pollination",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "高温叠加缺水，授粉和结实风险显著。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_PF_DRY_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief"
+      ],
+      "risk_label_cn": "缺水·灌浆",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling_oil_content",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "粒重、含油率形成压力。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_PF_DRY_02",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "rain_severe_deficit"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "缺水·灌浆",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling_oil_content",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "灌浆压力明显。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_PF_HEAT_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "heat_stress"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "高温·灌浆",
+      "base_level": 2,
+      "impact_type": "yield_watch",
+      "impact_channel": "seed_filling_oil_content",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "可能压缩灌浆并影响含油率。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_PF_HEAT_02",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "PF",
+      "required_signal": [
+        "rootzone_dry",
+        "heat_stress"
+      ],
+      "auxiliary_signal": [
+        "drying_demand_high"
+      ],
+      "risk_label_cn": "干热·灌浆",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "seed_filling_oil_content",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "灌浆和油分形成风险上升。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_MH_RAIN_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "heavy_rain_disruption"
+      ],
+      "auxiliary_signal": [
+        "forecast_wet_worsen"
+      ],
+      "risk_label_cn": "降雨·收获",
+      "base_level": 3,
+      "impact_type": "operation",
+      "impact_channel": "harvest",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "收获延迟、霉变或品质风险。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_MH_RAIN_02",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "operation_disruption_wet"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "降雨·收获",
+      "base_level": 2,
+      "impact_type": "operation",
+      "impact_channel": "harvest",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "收获窗口偏差。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "SUN_MH_DRY_01",
+      "crop_group": "sunflower",
+      "stage_or_dimension": "MH",
+      "required_signal": [
+        "operation_friendly_dry_window"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "偏干·收获",
+      "base_level": 1,
+      "impact_type": "supportive",
+      "impact_channel": "harvest",
+      "impact_direction": "supportive",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "有利收获窗口。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "PALM_OP_DRY_01",
+      "crop_group": "palm",
+      "stage_or_dimension": "current_operation",
+      "required_signal": [
+        "operation_friendly_dry_window"
+      ],
+      "auxiliary_signal": [
+        "rootzone_not_dry"
+      ],
+      "risk_label_cn": "偏干·采收",
+      "base_level": 1,
+      "impact_type": "supportive",
+      "impact_channel": "harvest_transport_milling",
+      "impact_direction": "supportive",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "短期少雨可能改善采摘、道路运输、FFB入厂和压榨节奏。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "PALM_OP_WET_01",
+      "crop_group": "palm",
+      "stage_or_dimension": "current_operation",
+      "required_signal": [
+        "operation_disruption_wet"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "过湿·采收",
+      "base_level": 2,
+      "impact_type": "operation",
+      "impact_channel": "harvest_transport_milling",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "田间进入、采摘、运输和压榨节奏可能受扰。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "PALM_OP_WET_02",
+      "crop_group": "palm",
+      "stage_or_dimension": "current_operation",
+      "required_signal": [
+        "heavy_rain_disruption"
+      ],
+      "auxiliary_signal": [
+        "very_heavy_rain_day",
+        "very_heavy_3d"
+      ],
+      "risk_label_cn": "强雨·运输",
+      "base_level": 3,
+      "impact_type": "operation",
+      "impact_channel": "transport_logistics",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "道路通行和FFB运输风险上升。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "PALM_YIELD_DRY_01",
+      "crop_group": "palm",
+      "stage_or_dimension": "future_yield",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief",
+        "forecast_partial_relief"
+      ],
+      "risk_label_cn": "缺水·远期",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "flowering_fruit_set_bunch_formation",
+      "impact_direction": "mixed",
+      "impact_horizon": "medium_3_6m",
+      "impact_text_cn": "持续缺水可能影响后续花序、坐果和果串形成。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "PALM_YIELD_HEAT_01",
+      "crop_group": "palm",
+      "stage_or_dimension": "future_yield",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "heat_stress",
+        "forecast_no_relief"
+      ],
+      "auxiliary_signal": [
+        "drying_demand_high"
+      ],
+      "risk_label_cn": "干热·远期",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "yield_formation",
+      "impact_direction": "adverse",
+      "impact_horizon": "medium_3_6m",
+      "impact_text_cn": "远期产量形成压力显著。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "PALM_SUPPORT_WET_01",
+      "crop_group": "palm",
+      "stage_or_dimension": "supportive",
+      "required_signal": [
+        "rootzone_wet"
+      ],
+      "auxiliary_signal": [
+        "surface_not_extreme_wet"
+      ],
+      "risk_label_cn": "水分改善",
+      "base_level": 1,
+      "impact_type": "supportive",
+      "impact_channel": "future_moisture_support",
+      "impact_direction": "supportive",
+      "impact_horizon": "medium_3_6m",
+      "impact_text_cn": "远期水分条件改善，但不计入受扰产量。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "COC_OP_DRY_01",
+      "crop_group": "coconut",
+      "stage_or_dimension": "current_operation",
+      "required_signal": [
+        "operation_friendly_dry_window"
+      ],
+      "auxiliary_signal": [
+        "rootzone_not_dry"
+      ],
+      "risk_label_cn": "偏干·采收",
+      "base_level": 1,
+      "impact_type": "supportive",
+      "impact_channel": "harvest_drying_transport",
+      "impact_direction": "supportive",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "有利采收、晾晒和运输。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "COC_OP_WET_01",
+      "crop_group": "coconut",
+      "stage_or_dimension": "current_operation",
+      "required_signal": [
+        "operation_disruption_wet"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "过湿·采收",
+      "base_level": 2,
+      "impact_type": "operation",
+      "impact_channel": "harvest_drying_transport",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "采收、晾晒、道路运输和品质风险上升。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "COC_OP_WET_02",
+      "crop_group": "coconut",
+      "stage_or_dimension": "current_operation",
+      "required_signal": [
+        "heavy_rain_disruption"
+      ],
+      "auxiliary_signal": [
+        "very_heavy_rain_day",
+        "very_heavy_3d"
+      ],
+      "risk_label_cn": "强雨·运输",
+      "base_level": 3,
+      "impact_type": "operation",
+      "impact_channel": "transport_drying",
+      "impact_direction": "adverse",
+      "impact_horizon": "current_0_1m",
+      "impact_text_cn": "短期运输和晾晒扰动。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "COC_YIELD_DRY_01",
+      "crop_group": "coconut",
+      "stage_or_dimension": "future_yield",
+      "required_signal": [
+        "rootzone_dry",
+        "rain_deficit"
+      ],
+      "auxiliary_signal": [
+        "forecast_no_relief",
+        "forecast_partial_relief"
+      ],
+      "risk_label_cn": "缺水·坐果",
+      "base_level": 3,
+      "impact_type": "yield",
+      "impact_channel": "fruit_set_development",
+      "impact_direction": "adverse",
+      "impact_horizon": "medium_3_6m",
+      "impact_text_cn": "可能影响后续坐果和果实发育。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "COC_YIELD_DRY_02",
+      "crop_group": "coconut",
+      "stage_or_dimension": "future_yield",
+      "required_signal": [
+        "rootzone_extreme_dry",
+        "rain_severe_deficit",
+        "forecast_no_relief"
+      ],
+      "auxiliary_signal": [],
+      "risk_label_cn": "干旱·远期",
+      "base_level": 4,
+      "impact_type": "yield",
+      "impact_channel": "fruit_yield_lagged",
+      "impact_direction": "adverse",
+      "impact_horizon": "lagged_6_18m",
+      "impact_text_cn": "可能对后续椰果和椰干产量形成滞后压力。",
+      "confidence_base": "medium"
+    },
+    {
+      "rule_id": "COC_SUPPORT_WET_01",
+      "crop_group": "coconut",
+      "stage_or_dimension": "supportive",
+      "required_signal": [
+        "rootzone_wet"
+      ],
+      "auxiliary_signal": [
+        "surface_not_extreme_wet"
+      ],
+      "risk_label_cn": "水分改善",
+      "base_level": 1,
+      "impact_type": "supportive",
+      "impact_channel": "future_moisture_support",
+      "impact_direction": "supportive",
+      "impact_horizon": "medium_3_6m",
+      "impact_text_cn": "水分条件改善，可能支持后续果实发育。",
+      "confidence_base": "medium"
+    }
+  ]
+}

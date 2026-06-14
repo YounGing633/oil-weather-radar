@@ -1,0 +1,56 @@
+{
+  "version": "crop_progress_v1_schema_20260609",
+  "files": {
+    "source_registry": "07_weather_site_frontend/data/crop_progress_source_registry_v1.json",
+    "latest": "07_weather_site_frontend/data/crop_progress_latest.json",
+    "history_sample": "07_weather_site_frontend/data/crop_progress_history_sample.csv"
+  },
+  "stage_metric_enum": [
+    "planted",
+    "emerged",
+    "blooming",
+    "flowering",
+    "setting_pods",
+    "pod_filling",
+    "mature",
+    "harvested",
+    "condition_good_excellent",
+    "condition_poor_very_poor"
+  ],
+  "delay_level_enum": [
+    "very_late",
+    "late",
+    "normal",
+    "fast",
+    "very_fast",
+    "unknown"
+  ],
+  "confidence_enum": ["high", "medium", "low", "pending"],
+  "latest_required_fields": [
+    "crop_group",
+    "commodity_code",
+    "country",
+    "admin1",
+    "admin2",
+    "season_type",
+    "marketing_year",
+    "source_date",
+    "week_of_season",
+    "stage_metric",
+    "progress_pct",
+    "last_year_pct",
+    "avg_5y_pct",
+    "avg_10y_pct",
+    "yoy_diff_pp",
+    "avg_5y_diff_pp",
+    "avg_10y_diff_pp",
+    "progress_percentile",
+    "delay_level",
+    "progress_label_cn",
+    "progress_evidence_cn",
+    "source_id",
+    "source_name",
+    "source_url",
+    "confidence"
+  ]
+}

@@ -1,0 +1,105 @@
+[
+  {
+    "source_id": "US_NASS_CROP_PROGRESS",
+    "country": "United States",
+    "source_name": "USDA NASS Crop Progress / QuickStats",
+    "source_type": "official_api_or_report",
+    "base_url": "https://quickstats.nass.usda.gov/",
+    "update_frequency": "weekly",
+    "supported_crop_groups": [
+      "soybean",
+      "sunflower",
+      "rapeseed_canola"
+    ],
+    "supported_stage_metrics": [
+      "planted",
+      "emerged",
+      "blooming",
+      "setting_pods",
+      "harvested",
+      "condition"
+    ],
+    "admin_level": "state",
+    "seasonality_baseline_available": true,
+    "needs_api_key": true,
+    "fetch_status": "fetch_failed",
+    "confidence": "high",
+    "notes": "Official USDA NASS source. API key may be required.",
+    "latest_fetch_date": "2026-06-10"
+  },
+  {
+    "source_id": "BR_CONAB_PROGRESSO_SAFRA",
+    "country": "Brazil",
+    "source_name": "CONAB Progresso de Safra",
+    "source_type": "official_report",
+    "base_url": "https://www.gov.br/conab/pt-br/atuacao/informacoes-agropecuarias/safras/progresso-de-safra",
+    "update_frequency": "weekly",
+    "supported_crop_groups": [
+      "soybean"
+    ],
+    "supported_stage_metrics": [
+      "planted",
+      "harvested",
+      "phenology"
+    ],
+    "admin_level": "state",
+    "seasonality_baseline_available": true,
+    "needs_api_key": false,
+    "fetch_status": "active",
+    "confidence": "high",
+    "notes": "Official CONAB crop progress page. Parser may need to handle changing file links.",
+    "latest_fetch_date": "2026-06-10",
+    "latest_fetch_rows": 102
+  },
+  {
+    "source_id": "AR_MAGYP_AVANCE_SIEMBRA_COSECHA",
+    "country": "Argentina",
+    "source_name": "MAGyP Avance de siembra y cosecha / Monitor Semanal",
+    "source_type": "official_report_or_dataset",
+    "base_url": "https://www.magyp.gob.ar/sitio/areas/estimaciones/monitor_semanal/avance/index.php",
+    "update_frequency": "weekly",
+    "supported_crop_groups": [
+      "soybean",
+      "sunflower"
+    ],
+    "supported_stage_metrics": [
+      "planted",
+      "harvested"
+    ],
+    "admin_level": "province",
+    "seasonality_baseline_available": true,
+    "needs_api_key": false,
+    "fetch_status": "diagnosis_done_not_feasible",
+    "confidence": "high",
+    "notes": "Official Argentina agricultural progress source. Preserve first/second soybean crop where available.",
+    "diagnosis_date": "2026-06-10",
+    "diagnosis_notes": [
+      "MAGyP 暂不可自动: 需人工进一步调查页面结构",
+      "BCBA 暂不可自动: 需人工进一步调查 BCBA 数据结构"
+    ]
+  },
+  {
+    "source_id": "AR_BCBA_PAS_SUPPLEMENT",
+    "country": "Argentina",
+    "source_name": "Bolsa de Cereales PAS supplement",
+    "source_type": "industry_report",
+    "base_url": "https://www.bolsadecereales.com/estimaciones-agricolas",
+    "update_frequency": "weekly",
+    "supported_crop_groups": [
+      "soybean",
+      "sunflower"
+    ],
+    "supported_stage_metrics": [
+      "planted",
+      "harvested",
+      "crop_condition"
+    ],
+    "admin_level": "region",
+    "seasonality_baseline_available": true,
+    "needs_api_key": false,
+    "fetch_status": "diagnosis_done_not_feasible",
+    "confidence": "medium_high",
+    "notes": "Use as supplement when official MAGyP is delayed or less detailed.",
+    "diagnosis_date": "2026-06-10"
+  }
+]

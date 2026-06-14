@@ -1,0 +1,296 @@
+{
+  "version": "risk_label_output_mapping_v4",
+  "created_at": "2026-06-09T09:43:57Z",
+  "rows": [
+    {
+      "risk_label_cn": "干热·结荚",
+      "risk_type": "heat_drydown_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 100,
+      "right_panel_title_cn": "干热影响结荚",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "干热·授粉",
+      "risk_type": "heat_drydown_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 100,
+      "right_panel_title_cn": "干热影响授粉",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "干热·开花",
+      "risk_type": "heat_drydown_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 95,
+      "right_panel_title_cn": "干热影响开花",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "干热·灌浆",
+      "risk_type": "heat_drydown_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 90,
+      "right_panel_title_cn": "干热影响灌浆",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "干热·远期",
+      "risk_type": "perennial_lagged_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 95,
+      "right_panel_title_cn": "干热远期压力",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "干旱·远期",
+      "risk_type": "perennial_lagged_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 95,
+      "right_panel_title_cn": "干旱远期压力",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·结荚",
+      "risk_type": "water_deficit_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 85,
+      "right_panel_title_cn": "缺水影响结荚",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·授粉",
+      "risk_type": "water_deficit_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 85,
+      "right_panel_title_cn": "缺水影响授粉",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·开花",
+      "risk_type": "water_deficit_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 85,
+      "right_panel_title_cn": "缺水影响开花",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·灌浆",
+      "risk_type": "water_deficit_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 80,
+      "right_panel_title_cn": "缺水影响灌浆",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·远期",
+      "risk_type": "perennial_lagged_yield",
+      "direction": "mixed",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 75,
+      "right_panel_title_cn": "远期缺水压力",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·坐果",
+      "risk_type": "perennial_lagged_yield",
+      "direction": "adverse",
+      "count_yield_affected": true,
+      "count_operation_affected": false,
+      "display_priority": 75,
+      "right_panel_title_cn": "缺水影响坐果",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "高温·灌浆",
+      "risk_type": "heat_stress_yield",
+      "direction": "adverse",
+      "count_yield_affected": "risk_level>=3",
+      "count_operation_affected": false,
+      "display_priority": 70,
+      "right_panel_title_cn": "高温影响灌浆",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "强雨·运输",
+      "risk_type": "transport_delay",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 70,
+      "right_panel_title_cn": "强雨影响运输",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "降雨·收获",
+      "risk_type": "harvest_rain_disruption",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 65,
+      "right_panel_title_cn": "降雨影响收获",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "过湿·播种",
+      "risk_type": "wet_fieldwork_delay",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 60,
+      "right_panel_title_cn": "过湿影响播种",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "过湿·采收",
+      "risk_type": "wet_harvest_disruption",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 60,
+      "right_panel_title_cn": "过湿影响采收",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "过湿·田间",
+      "risk_type": "wet_fieldwork_delay",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 55,
+      "right_panel_title_cn": "田间过湿",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "过湿·开花",
+      "risk_type": "wet_flowering_env",
+      "direction": "adverse_mixed",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 55,
+      "right_panel_title_cn": "开花期过湿",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "过湿·授粉",
+      "risk_type": "wet_pollination_env",
+      "direction": "adverse_mixed",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 55,
+      "right_panel_title_cn": "授粉期过湿",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "过湿·品质",
+      "risk_type": "wet_quality_risk",
+      "direction": "adverse_mixed",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 55,
+      "right_panel_title_cn": "过湿影响品质",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·出苗",
+      "risk_type": "water_deficit_establishment",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": true,
+      "display_priority": 50,
+      "right_panel_title_cn": "缺水影响出苗",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·返青",
+      "risk_type": "water_deficit_recovery",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": false,
+      "display_priority": 45,
+      "right_panel_title_cn": "缺水影响返青",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "低温·返青",
+      "risk_type": "cold_recovery_stress",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": false,
+      "display_priority": 45,
+      "right_panel_title_cn": "低温影响返青",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "越冬压力",
+      "risk_type": "overwinter_stress",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": false,
+      "display_priority": 45,
+      "right_panel_title_cn": "越冬压力",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "缺水·生长",
+      "risk_type": "vegetative_water_stress",
+      "direction": "adverse",
+      "count_yield_affected": false,
+      "count_operation_affected": false,
+      "display_priority": 35,
+      "right_panel_title_cn": "缺水影响营养生长",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "偏干·收获",
+      "risk_type": "dry_harvest_support",
+      "direction": "supportive",
+      "count_yield_affected": false,
+      "count_operation_affected": false,
+      "display_priority": 10,
+      "right_panel_title_cn": "偏干利于收获",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "偏干·采收",
+      "risk_type": "dry_harvest_support",
+      "direction": "supportive",
+      "count_yield_affected": false,
+      "count_operation_affected": false,
+      "display_priority": 10,
+      "right_panel_title_cn": "偏干利于采收",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    },
+    {
+      "risk_label_cn": "水分改善",
+      "risk_type": "future_moisture_support",
+      "direction": "supportive",
+      "count_yield_affected": false,
+      "count_operation_affected": false,
+      "display_priority": 5,
+      "right_panel_title_cn": "水分条件改善",
+      "right_panel_template_cn": "{evidence_cn} {impact_text_cn}"
+    }
+  ]
+}
