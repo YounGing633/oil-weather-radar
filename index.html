@@ -90,8 +90,21 @@ header h1 {
   background: var(--panel);
   border-bottom: 1px solid var(--border);
 }
+.filter-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.filter-label {
+  color: var(--muted-2);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+}
 .crop-tabs,
-.layer-toggle {
+.layer-toggle,
+.risk-tabs {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -102,6 +115,7 @@ header h1 {
 }
 .crop-tab,
 .layer-btn,
+.risk-tab,
 .toolbar button,
 .toolbar select {
   border: 1px solid transparent;
@@ -114,7 +128,8 @@ header h1 {
   white-space: nowrap;
 }
 .crop-tab.active,
-.layer-btn.active {
+.layer-btn.active,
+.risk-tab.active {
   color: #fff;
   background: #222833;
 }
@@ -130,6 +145,93 @@ header h1 {
 .toolbar #btn-reset {
   border-color: var(--border);
   background: #fff;
+}
+.more-filters {
+  position: relative;
+  margin-left: auto;
+}
+.more-filters > summary {
+  list-style: none;
+  height: 28px;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.more-filters > summary::-webkit-details-marker { display: none; }
+.more-filters > summary::after { content: " +"; color: var(--muted-2); }
+.more-filters[open] > summary::after { content: " -"; }
+.more-filter-panel {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  z-index: 800;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 8px;
+  min-width: 430px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.more-filter-field label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted-2);
+  font-size: 10px;
+  font-weight: 700;
+}
+.more-filter-field select { width: 100%; }
+.today-summary {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: auto repeat(4, minmax(96px, auto)) minmax(260px, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  background: #f8fafc;
+}
+.summary-title {
+  font-size: 12px;
+  font-weight: 750;
+  color: #202733;
+  white-space: nowrap;
+}
+.summary-stat {
+  padding-left: 10px;
+  border-left: 1px solid #dfe3e8;
+}
+.summary-stat strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.summary-stat span {
+  color: var(--muted-2);
+  font-size: 9.5px;
+}
+.summary-focus {
+  min-width: 0;
+  color: #303846;
+  font-size: 11.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.summary-focus b { color: var(--muted-2); font-size: 10px; margin-right: 5px; }
+.summary-meta {
+  color: var(--muted);
+  font-size: 10.5px;
+  text-align: right;
+  white-space: nowrap;
 }
 #body {
   display: flex;
@@ -313,6 +415,9 @@ header h1 {
 .data-grid.cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.data-grid.cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .data-cell {
   min-width: 0;
   padding: 8px 10px;
@@ -357,6 +462,96 @@ header h1 {
   color: #3d4654;
   font-size: 11px;
 }
+.status-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 21px;
+  padding: 2px 7px;
+  border: 1px solid #d9dee5;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #46515f;
+  font-size: 10px;
+  font-weight: 650;
+}
+.status-badge.good { border-color: #bbdfc8; background: #f0fdf4; color: #166534; }
+.status-badge.warn { border-color: #f1d28f; background: #fffbeb; color: #92400e; }
+.status-badge.info { border-color: #bfdbfe; background: #eff6ff; color: #1e40af; }
+.status-notice {
+  margin-top: 8px;
+  padding: 7px 9px;
+  border-left: 3px solid #d4a017;
+  border-radius: 4px;
+  background: #fffbeb;
+  color: #72510b;
+  font-size: 11px;
+}
+.conclusion-line {
+  padding: 10px 11px;
+  border-left: 3px solid #334155;
+  border-radius: 4px;
+  background: #f8fafc;
+  color: #202733;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.tag-groups {
+  display: grid;
+  gap: 10px;
+}
+.tag-group {
+  padding: 9px;
+  border: 1px solid #e6e9ed;
+  border-radius: 7px;
+  background: #fafbfc;
+}
+.tag-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  color: #3d4654;
+  font-size: 11px;
+  font-weight: 750;
+}
+.tag-group-title span { color: var(--muted-2); font-size: 9.5px; }
+.risk-tag-card {
+  padding: 7px 8px;
+  border-left: 3px solid var(--tag-color, #94a3b8);
+  border-radius: 4px;
+  background: #fff;
+}
+.risk-tag-card + .risk-tag-card { margin-top: 6px; }
+.risk-tag-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+}
+.risk-tag-evidence { margin-top: 4px; color: var(--muted); font-size: 10.5px; line-height: 1.45; }
+.risk-tag-flags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+.risk-tag-flags span { padding: 1px 5px; border-radius: 3px; background: #eef1f5; color: #596474; font-size: 9.5px; }
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+.evidence-card {
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid #e9ebee;
+  border-radius: 6px;
+  background: var(--panel-soft);
+}
+.evidence-card b { display: block; margin-bottom: 3px; color: var(--muted-2); font-size: 10px; }
+.evidence-card strong { display: block; margin-bottom: 2px; color: #1e2530; font-size: 13px; }
+.evidence-card p { color: var(--muted); font-size: 10.5px; line-height: 1.4; }
 .oil-pill::before {
   content: "";
   width: 8px;
@@ -507,9 +702,25 @@ header h1 {
 #detail-panel::-webkit-scrollbar-thumb { background: #c9ced6; border-radius: 6px; }
 @media (max-width: 980px) {
   #detail-panel { flex-basis: 400px; width: 400px; }
+  .today-summary { grid-template-columns: auto repeat(4, minmax(82px, auto)) 1fr; }
+  .summary-meta { display: none; }
 }
 @media (max-width: 760px) {
+  html, body { overflow: auto; }
+  #app { min-height: 100dvh; height: auto; }
+  header { padding-inline: 10px; }
+  .header-meta { white-space: normal; text-align: right; line-height: 1.25; }
+  .toolbar { align-items: flex-start; padding: 8px 10px; gap: 7px; }
+  .filter-group { align-items: flex-start; flex-direction: column; gap: 3px; }
+  .crop-tabs, .risk-tabs { flex-wrap: wrap; }
+  .more-filters { margin-left: 0; }
+  .more-filter-panel { position: fixed; top: 124px; left: 10px; right: 10px; min-width: 0; grid-template-columns: 1fr; }
+  .today-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 8px 10px; }
+  .summary-title, .summary-focus { grid-column: 1 / -1; }
+  .summary-stat { padding-left: 7px; }
+  .summary-meta { display: block; grid-column: 1 / -1; text-align: left; }
   #body { flex-direction: column; }
+  #map-wrap { min-height: 54vh; }
   #detail-panel {
     flex: 0 0 46vh;
     width: 100%;
@@ -521,6 +732,9 @@ header h1 {
   .map-legend,
   .oil-legend { right: 10px; }
   .oil-legend { display: none; }
+  .evidence-grid { grid-template-columns: 1fr; }
+  .data-grid.cols-3,
+  .data-grid.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 </style>
 </head>
@@ -530,34 +744,57 @@ header h1 {
     <div class="header-left">
       <h1>油脂产区天气风险终端</h1>
     </div>
-    <div class="header-meta">更新 <span id="meta-date">-</span></div>
+    <div class="header-meta">版本 <span id="meta-version">v2.1-ui1</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
   </header>
 
   <div class="toolbar">
-    <div class="crop-tabs" id="crop-tabs">
-      <button class="crop-tab active" type="button" data-crop="all">全部</button>
-      <button class="crop-tab" type="button" data-crop="palm">棕榈油</button>
-      <button class="crop-tab" type="button" data-crop="soybean">豆油</button>
-      <button class="crop-tab" type="button" data-crop="rapeseed_canola">菜油</button>
-      <button class="crop-tab" type="button" data-crop="sunflower">葵油</button>
-      <button class="crop-tab" type="button" data-crop="coconut">椰子油</button>
+    <div class="filter-group">
+      <span class="filter-label">油种</span>
+      <div class="crop-tabs" id="crop-tabs">
+        <button class="crop-tab active" type="button" data-crop="all">全部</button>
+        <button class="crop-tab" type="button" data-crop="palm">棕榈</button>
+        <button class="crop-tab" type="button" data-crop="soybean">大豆</button>
+        <button class="crop-tab" type="button" data-crop="rapeseed_canola">菜籽</button>
+        <button class="crop-tab" type="button" data-crop="sunflower">葵花</button>
+        <button class="crop-tab" type="button" data-crop="coconut">椰子</button>
+      </div>
     </div>
-    <div class="layer-toggle">
-      <button class="layer-btn active" id="layer-country" type="button" data-layer="country">国家层</button>
-      <button class="layer-btn" id="layer-region" type="button" data-layer="region" disabled>地区层</button>
+    <div class="filter-group">
+      <span class="filter-label">视图</span>
+      <div class="layer-toggle">
+        <button class="layer-btn active" id="layer-country" type="button" data-layer="country">国家层</button>
+        <button class="layer-btn" id="layer-region" type="button" data-layer="region" disabled>地区层</button>
+      </div>
     </div>
-    <select id="f-country"><option value="all">全部国家</option></select>
-    <select id="f-level">
-      <option value="all">全部风险</option>
-      <option value="4">显著压力</option>
-      <option value="3">重点压力</option>
-      <option value="2">一般关注</option>
-      <option value="1">轻度异常</option>
-      <option value="0">正常监控</option>
-    </select>
-    <select id="f-label"><option value="all">全部异常</option></select>
-    <button id="btn-reset" type="button">重置</button>
+    <div class="filter-group">
+      <span class="filter-label">风险</span>
+      <div class="risk-tabs" id="risk-tabs">
+        <button class="risk-tab active" type="button" data-risk="all">全部</button>
+        <button class="risk-tab" type="button" data-risk="gte4">显著以上</button>
+        <button class="risk-tab" type="button" data-risk="gte3">重点以上</button>
+        <button class="risk-tab" type="button" data-risk="lte2">正常/关注</button>
+      </div>
+    </div>
+    <details class="more-filters" id="more-filters">
+      <summary>更多筛选</summary>
+      <div class="more-filter-panel">
+        <div class="more-filter-field"><label for="f-country">国家</label><select id="f-country"><option value="all">全部国家</option></select></div>
+        <div class="more-filter-field"><label for="f-label">异常类型</label><select id="f-label"><option value="all">全部异常</option></select></div>
+        <div class="more-filter-field"><label for="f-data-status">数据状态</label><select id="f-data-status"><option value="all">全部状态</option><option value="standard">正式数据</option><option value="proxy">代理/低样本</option><option value="sample">含样例进度</option></select></div>
+        <button id="btn-reset" type="button">重置全部</button>
+      </div>
+    </details>
   </div>
+
+  <section class="today-summary" id="today-summary" aria-live="polite">
+    <div class="summary-title">今日风险摘要</div>
+    <div class="summary-stat"><strong id="sum-countries">-</strong><span>覆盖国家</span></div>
+    <div class="summary-stat"><strong id="sum-regions">-</strong><span>覆盖产区</span></div>
+    <div class="summary-stat"><strong id="sum-risk-countries">-</strong><span>显著以上国家</span></div>
+    <div class="summary-stat"><strong id="sum-risk-regions">-</strong><span>显著以上产区</span></div>
+    <div class="summary-focus"><b>重点关注</b><span id="sum-focus">正在计算...</span></div>
+    <div class="summary-meta"><span id="sum-date">数据 -</span><br><span>risk_label_v4 · v2.1-ui1</span></div>
+  </section>
 
   <div id="body">
     <div id="map-wrap">
@@ -595,6 +832,6 @@ header h1 {
   </div>
 </div>
 
-<script src="app.js?v=20260614-e3b"></script>
+<script src="app.js?v=20260614-ui1"></script>
 </body>
 </html>
