@@ -851,7 +851,7 @@ header h1 {
         <div class="brand-cn">基于主产区产量权重、作物阶段与天气异常，识别潜在供应扰动。</div>
       </div>
     </div>
-    <div class="header-meta">版本 <span id="meta-version">v2.1-ui2</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
+    <div class="header-meta">版本 <span id="meta-version">v2.1-ui2p2</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
   </header>
 
   <div class="toolbar">
@@ -887,7 +887,6 @@ header h1 {
       <div class="more-filter-panel">
         <div class="more-filter-field"><label for="f-country">国家</label><select id="f-country"><option value="all">全部国家</option></select></div>
         <div class="more-filter-field"><label for="f-label">异常类型</label><select id="f-label"><option value="all">全部异常</option></select></div>
-        <div class="more-filter-field"><label for="f-data-status">数据状态</label><select id="f-data-status"><option value="all">全部状态</option><option value="standard">数据充足</option><option value="proxy">数据有限</option><option value="sample">建设中</option></select></div>
         <button id="btn-reset" type="button">重置全部</button>
       </div>
     </details>
@@ -901,12 +900,12 @@ header h1 {
       <button class="time-tab" type="button" data-range="30d">近30天</button>
       <button class="time-tab" type="button" data-range="future7d">未来7天</button>
     </div>
-    <span class="time-range-note" id="time-range-note">近14天数据待接入；地图继续使用现有综合风险口径。</span>
+    <span class="time-range-note" id="time-range-note"></span>
   </div>
 
   <section class="today-summary" id="today-summary" aria-live="polite">
     <div class="summary-grid">
-      <article class="summary-card"><div class="summary-card-label">今日重点风险</div><div class="summary-card-value" id="summary-risk-list">数据载入中</div><div class="summary-card-sub">默认排除数据有限和建设中口径</div></article>
+      <article class="summary-card"><div class="summary-card-label">今日重点风险</div><div class="summary-card-value" id="summary-risk-list">数据载入中</div><div class="summary-card-sub">默认聚焦真实主产区风险</div></article>
       <article class="summary-card"><div class="summary-card-label">显著以上产量占比</div><div class="summary-card-value metric" id="summary-production-share">—</div><div class="summary-card-sub" id="summary-production-note">等待产量权重数据</div></article>
       <article class="summary-card"><div class="summary-card-label">主要异常类型</div><div class="summary-card-value" id="summary-anomaly-types">数据载入中</div><div class="summary-card-sub">按当前风险产区汇总</div></article>
       <article class="summary-card"><div class="summary-card-label">未来7天变化</div><div class="summary-card-value metric" id="summary-forecast-change">—</div><div class="summary-card-sub" id="summary-forecast-note">等待预报信号</div></article>
@@ -914,7 +913,7 @@ header h1 {
     <div class="today-focus-panel">
       <div class="today-focus-title">今日关注</div>
       <div class="today-focus-list" id="today-focus-list"><div class="today-focus-item">数据载入中</div></div>
-      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span>risk_label_v4 · v2.1-ui2</span></div>
+      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span>risk_label_v4 · v2.1-ui2p2</span></div>
     </div>
   </section>
 
@@ -954,6 +953,6 @@ header h1 {
   </div>
 </div>
 
-  <script src="app.js?v=20260614-ui2p1"></script>
+  <script src="app.js?v=20260616-ui2p2"></script>
 </body>
 </html>
