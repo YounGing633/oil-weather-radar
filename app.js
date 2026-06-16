@@ -1,5 +1,5 @@
 const DATA_DIR = './data/';
-const UI_VERSION = 'v2.1-ui2p2';
+const UI_VERSION = 'v2.1-ui2p3';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -879,15 +879,7 @@ async function selectCountry(model) {
 }
 
 function soilTempSignal(row) {
-  const st = store.soilTempIndex && row ? store.soilTempIndex.get(row.weather_region_id) : null;
-  if (!st) return { record: null, hot: false, cold: false, text: '' };
-  const text = `${st.soil_temp_signal_cn || ''} ${st.soil_temp_signal || ''}`.toLowerCase();
-  return {
-    record: st,
-    hot: /偏热|高温|hot|warm/.test(text),
-    cold: /偏冷|低温|cold/.test(text),
-    text: st.soil_temp_signal_cn || ''
-  };
+  return getValidSoilTemp(row);
 }
 
 function moistureState(row) {
@@ -898,8 +890,8 @@ function moistureState(row) {
     surface,
     rootDry: isNum(root) && root < 30,
     surfaceDry: isNum(surface) && surface < 30,
-    rootWet: isNum(root) && root > 75,
-    surfaceWet: isNum(surface) && surface > 75,
+    rootWet: isNum(root) && root > 70,
+    surfaceWet: isNum(surface) && surface > 70,
     hasWater: isNum(root) || isNum(surface)
   };
 }
@@ -909,28 +901,40 @@ function buildCurrentRiskSentences(row) {
   const items = [];
   const moisture = moistureState(row);
   const temp = soilTempSignal(row);
-  const rainHigh = hasOperationRainEvidence(row);
-  const wet = moisture.rootWet || moisture.surfaceWet || rainHigh;
+  const rain = rainState(row);
+  const dryBoth = moisture.rootDry && moisture.surfaceDry;
+  const anyDry = moisture.rootDry || moisture.surfaceDry;
+  const anyWet = moisture.rootWet || moisture.surfaceWet;
 
-  if (moisture.rootDry && moisture.surfaceDry) {
-    items.push('表层和根区同步偏干，水分压力较明显。');
+  if (dryBoth) {
+    if (rain.status === 'dry') items.push(`${rain.label}，表层和根区水分偏低，水分压力较明显。`);
+    else if (rain.status === 'near') items.push(`${rain.label}，但表层和根区水分偏低，当前主要风险来自土壤水分压力。`);
+    else items.push('表层和根区同步偏干，水分压力较明显。');
   } else if (moisture.rootDry) {
-    items.push('根区水分偏低，存在持续水分压力。');
+    if (rain.status === 'dry') items.push(`${rain.label}，根区水分偏低，存在持续水分压力。`);
+    else if (rain.status === 'near') items.push(`${rain.label}，但根区水分偏低，当前主要风险来自土壤水分压力。`);
+    else items.push('根区水分偏低，存在持续水分压力。');
   } else if (moisture.surfaceDry) {
-    items.push('表层偏干，短期墒情不足。');
+    if (rain.status === 'dry') items.push(`${rain.label}，表层偏干，短期墒情不足。`);
+    else if (rain.status === 'near') items.push(`${rain.label}，但表层偏干，短期墒情不足。`);
+    else items.push('表层偏干，短期墒情不足。');
+  } else if (rain.status === 'near' && moisture.hasWater) {
+    items.push(`${rain.label}，土壤水分未见明显压力。`);
   }
 
-  if (rainHigh && (moisture.surfaceWet || moisture.rootWet)) {
-    items.push('田间湿度偏高，采收效率可能受影响。');
-  } else if (rainHigh) {
-    items.push('近期降雨偏多，可能影响采收和田间作业。');
+  if (rain.status === 'wet' && moisture.surfaceWet) {
+    items.push(`${rain.label}，表层土壤偏湿，田间作业和采收效率可能受影响。`);
+  } else if (rain.status === 'wet' && anyWet) {
+    items.push(`${rain.label}，土壤水分偏高，田间恢复可能偏慢。`);
+  } else if (rain.status === 'wet') {
+    items.push(`${rain.label}。`);
   }
 
-  if (temp.hot && (moisture.rootDry || moisture.surfaceDry)) {
+  if (temp.hot && anyDry) {
     items.push('高土温叠加偏干，水分消耗压力较大。');
   } else if (temp.hot && moisture.hasWater && !moisture.rootDry && !moisture.surfaceDry) {
     items.push('土壤温度偏高，但水分条件尚可，短期压力有限。');
-  } else if (temp.cold && wet) {
+  } else if (temp.cold && (anyWet || rain.status === 'wet')) {
     items.push('低土温叠加偏湿，田间恢复和作业条件可能偏慢。');
   }
 
@@ -1007,6 +1011,74 @@ function firstNumeric(row, keys) {
   return null;
 }
 
+function validSoilTempValue(value) {
+  if (!isNum(value)) return null;
+  const n = Number(value);
+  if (n === -999 || n === -9999 || n < -30 || n > 60) return null;
+  return n;
+}
+
+function getValidSoilTemp(row) {
+  const st = store.soilTempIndex && row ? store.soilTempIndex.get(row.weather_region_id) : null;
+  if (!st) return { record: null, hasValid: false, hot: false, cold: false, values: {} };
+  const t0 = validSoilTempValue(st.soil_temp_0_7cm_mean_c);
+  const t28 = validSoilTempValue(st.soil_temp_7_28cm_mean_c);
+  const hasValid = t0 !== null || t28 !== null;
+  if (!hasValid) return { record: st, hasValid: false, hot: false, cold: false, values: {} };
+  const text = `${st.soil_temp_signal_cn || ''} ${st.soil_temp_signal || ''}`.toLowerCase();
+  return {
+    record: st,
+    hasValid: true,
+    hot: /偏热|偏暖|高温|hot|warm/.test(text) || (t0 !== null && t0 > 30) || (t28 !== null && t28 > 30),
+    cold: /偏冷|低温|cold/.test(text) || (t0 !== null && t0 < 5) || (t28 !== null && t28 < 5),
+    text: st.soil_temp_signal_cn || '',
+    values: { t0, t28 }
+  };
+}
+
+function rainState(row, timeRange = state.timeRange) {
+  if (!row) return { status: 'unknown', label: '', window: '近30天', hasData: false };
+  const ranges = timeRange === '7d'
+    ? [{
+        window: '近7天',
+        actual: firstNumeric(row, ['rain_7d_sum_mm', 'rain_7d', 'rainfall_7d', 'precip_7d', 'precip_7d_actual']),
+        normal: firstNumeric(row, ['rain_7d_normal', 'rainfall_7d_normal', 'precip_7d_normal']),
+        anomaly: firstNumeric(row, ['rain_7d_anomaly_mm', 'rainfall_anomaly_7d', 'precip_7d_anomaly_mm', 'rainfall_7d_anomaly']),
+        pct: firstNumeric(row, ['rain_7d_pct_of_normal', 'rain_pct_of_normal_7d', 'precip_7d_ratio_pct']),
+        percentile: firstNumeric(row, ['rain_7d_percentile', 'rain_percentile_7d'])
+      }]
+    : timeRange === '14d'
+      ? [{
+          window: '近14天',
+          actual: firstNumeric(row, ['rain_14d_sum_mm', 'rain_14d', 'rainfall_14d', 'precip_14d', 'precip_14d_actual']),
+          normal: firstNumeric(row, ['rain_14d_normal', 'rainfall_14d_normal', 'precip_14d_normal']),
+          anomaly: firstNumeric(row, ['rain_14d_anomaly_mm', 'rainfall_anomaly_14d', 'precip_14d_anomaly_mm', 'rainfall_14d_anomaly']),
+          pct: firstNumeric(row, ['rain_14d_pct_of_normal', 'rain_pct_of_normal_14d', 'precip_14d_ratio_pct']),
+          percentile: firstNumeric(row, ['rain_14d_percentile', 'rain_percentile_14d'])
+        }]
+      : [];
+  ranges.push({
+    window: '近30天',
+    actual: firstNumeric(row, ['rain_30d_sum_mm', 'rain_30d', 'rainfall_30d', 'precip_30d', 'precip_30d_actual']),
+    normal: firstNumeric(row, ['rain_30d_normal', 'rainfall_30d_normal', 'precip_30d_normal']),
+    anomaly: firstNumeric(row, ['rain_30d_anomaly_mm', 'rainfall_anomaly_30d', 'precip_30d_anomaly_mm', 'rainfall_30d_anomaly']),
+    pct: firstNumeric(row, ['rain_30d_pct_of_normal', 'rain_pct_of_normal_30d', 'precip_30d_ratio_pct']),
+    percentile: firstNumeric(row, ['rain_30d_percentile', 'rain_percentile_30d'])
+  });
+  const metrics = ranges.find(item => [item.actual, item.normal, item.anomaly, item.pct, item.percentile].some(isNum));
+  if (!metrics) return { status: 'unknown', label: '', window: '近30天', hasData: false };
+  const anomalyNear = isNum(metrics.anomaly) && metrics.anomaly >= -20 && metrics.anomaly <= 20;
+  const pctNear = isNum(metrics.pct) && metrics.pct >= 80 && metrics.pct <= 120;
+  if (anomalyNear || pctNear) return { ...metrics, status: 'near', label: `${metrics.window}降雨接近常年`, hasData: true };
+  if ((isNum(metrics.pct) && metrics.pct <= 80) || (isNum(metrics.anomaly) && metrics.anomaly <= -20) || (isNum(metrics.percentile) && metrics.percentile <= 30)) {
+    return { ...metrics, status: 'dry', label: `${metrics.window}降雨偏少`, hasData: true };
+  }
+  if ((isNum(metrics.pct) && metrics.pct >= 120) || (isNum(metrics.anomaly) && metrics.anomaly >= 20) || (isNum(metrics.percentile) && metrics.percentile >= 70)) {
+    return { ...metrics, status: 'wet', label: `${metrics.window}降雨偏多`, hasData: true };
+  }
+  return { ...metrics, status: 'unknown', label: '', hasData: true };
+}
+
 function buildWeatherFactItems(row, timeRange = state.timeRange) {
   if (!row) return [];
   if (timeRange === '7d') {
@@ -1029,9 +1101,10 @@ function buildWeatherFactItems(row, timeRange = state.timeRange) {
   }
   if (timeRange === 'future7d') {
     const forecast7 = firstNumeric(row, ['forecast_rainfall', 'forecast_7d', 'rain_forecast_7d', 'forecast_7d_precip', 'forecast_rainfall_7d']);
+    const forecastDirection = forecastReliefText(row);
     return [
       isNum(forecast7) ? ['未来7天降雨', fmtNum(forecast7, 1, ' mm')] : null,
-      row.forecast_signal ? ['预报方向', forecastReliefText(row)] : null
+      forecastDirection ? ['预报方向', forecastDirection] : null
     ].filter(Boolean);
   }
   const rain30 = firstNumeric(row, ['rain_30d_sum_mm', 'rain_30d', 'rainfall_30d', 'precip_30d', 'precip_30d_actual']);
@@ -1067,15 +1140,12 @@ function isSoilDry(row) {
 }
 
 function isRainfallHigh(row) {
-  return (isNum(row.precip_30d_ratio_pct) && Number(row.precip_30d_ratio_pct) >= 120)
-    || (isNum(row.precip_30d_anomaly_mm) && Number(row.precip_30d_anomaly_mm) >= 30)
-    || /rain_excess|wet|偏多|过湿|降雨偏多/.test(String(row.rain_signal_30d || row.weather_condition_summary_cn || '').toLowerCase());
+  return rainState(row).status === 'wet';
 }
 
 function hasOperationRainEvidence(row) {
-  return isRainfallHigh(row)
-    || (isNum(row.heavy_rain_days_7d) && Number(row.heavy_rain_days_7d) > 0)
-    || /heavy|wet|operation|过湿|强降雨|作业/.test(String(row.operation_rain_signal || row.current_operation_impact_cn || row.risk_reason_cn || '').toLowerCase());
+  const moisture = moistureState(row);
+  return isRainfallHigh(row) && moisture.surfaceWet;
 }
 
 function cropDisplayName(record) {
@@ -1576,15 +1646,16 @@ function renderCropProgressBlock(row) {
 }
 
 function renderSoilTemperatureBlock(row) {
-  const st = store.soilTempIndex ? store.soilTempIndex.get(row.weather_region_id) : null;
-  if (!st) return '';
+  const temp = getValidSoilTemp(row);
+  const st = temp.record;
+  if (!st || !temp.hasValid) return '';
   const cells = [
-    isNum(st.soil_temp_0_7cm_mean_c) ? detailCell('0-7cm土温', Number(st.soil_temp_0_7cm_mean_c).toFixed(1) + '°C') : '',
-    isNum(st.soil_temp_7_28cm_mean_c) ? detailCell('7-28cm土温', Number(st.soil_temp_7_28cm_mean_c).toFixed(1) + '°C') : '',
+    temp.values.t0 !== null ? detailCell('0-7cm土温', temp.values.t0.toFixed(1) + '°C') : '',
+    temp.values.t28 !== null ? detailCell('7-28cm土温', temp.values.t28.toFixed(1) + '°C') : '',
     isNum(st.soil_temp_0_7cm_anomaly_c) ? detailCell('土温距平', (Number(st.soil_temp_0_7cm_anomaly_c) >= 0 ? '+' : '') + Number(st.soil_temp_0_7cm_anomaly_c).toFixed(1) + '°C') : '',
     isNum(st.hot_soil_days_7d) ? detailCell('偏热天数', `${Math.round(Number(st.hot_soil_days_7d))}天`) : '',
     isNum(st.cold_soil_days_7d) ? detailCell('偏冷天数', `${Math.round(Number(st.cold_soil_days_7d))}天`) : '',
-    st.soil_temp_signal_cn ? detailCell('土温信号', st.soil_temp_signal_cn) : ''
+    temp.text ? detailCell('土温信号', temp.text) : ''
   ].filter(Boolean);
   if (!cells.length) return '';
   const signalColor = (() => {
@@ -1637,7 +1708,8 @@ function renderImpactChannelsBlock(row) {
 }
 
 function renderEvidenceBlock(row) {
-  const st = store.soilTempIndex ? store.soilTempIndex.get(row.weather_region_id) : null;
+  const temp = getValidSoilTemp(row);
+  const st = temp.record;
   const cards = [];
   if (isNum(row.precip_30d_actual) || isNum(row.precip_30d_anomaly_mm)) {
     const rainValue = isNum(row.precip_30d_actual) && isNum(row.precip_30d_normal)
@@ -1652,9 +1724,11 @@ function renderEvidenceBlock(row) {
     ].filter(Boolean).join(' · ');
     cards.push(`<div class="evidence-card"><b>土壤湿度</b><strong>${esc(row.soil_status_cn || row.soil_status_90d_cn || soilParts)}</strong>${soilParts && (row.soil_status_cn || row.soil_status_90d_cn) ? `<p>${esc(soilParts)}</p>` : ''}</div>`);
   }
-  if (st && (isNum(st.soil_temp_0_7cm_mean_c) || st.soil_temp_signal_cn)) {
-    const soilTempValue = isNum(st.soil_temp_0_7cm_mean_c) ? `${Number(st.soil_temp_0_7cm_mean_c).toFixed(1)}°C` : st.soil_temp_signal_cn;
-    cards.push(`<div class="evidence-card"><b>土壤温度</b><strong>${esc(soilTempValue)}</strong>${st.soil_temp_signal_cn && soilTempValue !== st.soil_temp_signal_cn ? `<p>${esc(st.soil_temp_signal_cn)}</p>` : ''}</div>`);
+  if (st && temp.hasValid) {
+    const soilTempValue = temp.values.t0 !== null
+      ? `${temp.values.t0.toFixed(1)}°C`
+      : `${temp.values.t28.toFixed(1)}°C`;
+    cards.push(`<div class="evidence-card"><b>土壤温度</b><strong>${esc(soilTempValue)}</strong>${temp.text && soilTempValue !== temp.text ? `<p>${esc(temp.text)}</p>` : ''}</div>`);
   }
   if (isNum(row.forecast_7d_precip) || isNum(row.forecast_16d_precip)) {
     const forecastParts = [
@@ -1764,13 +1838,7 @@ function showRegionDetail(row) {
 }
 
 function forecastReliefText(row) {
-  if (row.forecast_summary_cn) return row.forecast_summary_cn;
-  if (isNum(row.precip_30d_anomaly_mm) && Number(row.precip_30d_anomaly_mm) < -20) {
-    if (isNum(row.forecast_16d_precip) && Number(row.forecast_16d_precip) >= 30) return '未来降雨可能缓解前期水分缺口。';
-    return '未来补水不足，水分压力可能维持或加重。';
-  }
-  if (isNum(row.precip_30d_anomaly_mm) && Number(row.precip_30d_anomaly_mm) > 30) return '前期降雨偏多，需关注后续偏湿延续。';
-  return '未来天气对当前风险的方向性影响不明确。';
+  return buildRecoverySentences(row)[0] || '';
 }
 
 function renderRegionCharts(row) {
@@ -2111,6 +2179,8 @@ function updateMetaDate() {
   document.getElementById('meta-date').textContent = date;
   document.getElementById('meta-version').textContent = UI_VERSION;
   document.getElementById('meta-rule').textContent = RULE_VERSION;
+  const summaryVersion = document.getElementById('sum-version');
+  if (summaryVersion) summaryVersion.textContent = `${RULE_VERSION} · ${UI_VERSION}`;
 }
 
 function summaryEligibleRecords(records) {
