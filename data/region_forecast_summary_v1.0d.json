@@ -55,17 +55,6 @@
     "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
-    "weather_region_id": "palm::Brazil::national::棕榈油",
-    "forecast_date": "2026-06-05",
-    "rain_7d_sum": 1.2,
-    "rain_16d_sum": 6.6,
-    "temp_max_7d_avg": 32.53,
-    "temp_max_16d_avg": 33.25,
-    "rain_trend_label_cn": "未来7天降雨偏少",
-    "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏少，未来7天高温维持"
-  },
-  {
     "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
     "forecast_date": "2026-06-04",
     "rain_7d_sum": 132.4,

@@ -40,24 +40,6 @@
   {
     "country": "Brazil",
     "country_cn": "巴西",
-    "crop_group": "palm",
-    "crop_group_cn": "棕榈/棕榈油",
-    "oil_type": "棕榈油",
-    "oil_type_color": "#16a34a",
-    "region_count": 1,
-    "high_count": 0,
-    "medium_count": 1,
-    "normal_count": 0,
-    "total_production_tonnes": 3222018.0,
-    "main_anomaly_labels_cn": [
-      "降雨显著偏少"
-    ],
-    "overall_risk_level": "medium",
-    "overall_status_cn": "该品种在本国存在一般天气压力"
-  },
-  {
-    "country": "Brazil",
-    "country_cn": "巴西",
     "crop_group": "soybean",
     "crop_group_cn": "大豆/豆油",
     "oil_type": "豆油",

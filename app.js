@@ -236,6 +236,16 @@ function canonicalCountry(country) {
   return COUNTRY_ALIAS[country] || country;
 }
 
+function normalizeFrontendKey(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function isExcludedFrontendRecord(row) {
+  const country = normalizeFrontendKey(row && (row.country_name_en || row.country || row.country_key));
+  const crop = normalizeFrontendKey(row && row.crop_group);
+  return country === 'brazil' && crop === 'palm';
+}
+
 function countryFromGeoName(name) {
   return GEO_NAME_TO_COUNTRY[name] || name;
 }
@@ -400,10 +410,12 @@ function destroyCharts() {
 function prepareData(raw) {
   store.countryRecords = (Array.isArray(raw.countryRecords) ? raw.countryRecords : [])
     .filter(row => row && row.source_valid_for_frontend !== false)
+    .filter(row => !isExcludedFrontendRecord(row))
     .map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
 
   store.adminRecords = (Array.isArray(raw.adminRecords) ? raw.adminRecords : [])
     .filter(row => row && row.source_valid_for_frontend !== false)
+    .filter(row => !isExcludedFrontendRecord(row))
     .map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
 
   store.coverage = (Array.isArray(raw.coverage) ? raw.coverage : []).map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
@@ -623,9 +635,7 @@ function buildMapLabel(record, zoom, layerType = 'country') {
     : (record.country_cn || record.country);
   const crop = CROP_META[record.crop_group] ? CROP_META[record.crop_group].tab : cropLabel(record);
   const riskLabel = formatRiskLabel(record);
-  const affectedShare = isNum(record.disturbed_share)
-    ? Number(record.disturbed_share)
-    : Math.max(Number(record.yield_risk_affected_share) || 0, Number(record.operation_affected_share) || 0);
+  const productionShare = firstNumeric(record, ['national_share', 'production_share', 'global_share']);
   let detail = riskLabel;
 
   if (isRegion && currentZoom >= 6) {
@@ -633,7 +643,7 @@ function buildMapLabel(record, zoom, layerType = 'country') {
   } else if (isRegion && currentZoom >= 5) {
     detail = isNum(record.national_share) ? `${crop}｜全国占比 ${fmtPct(record.national_share, 0)}` : `${crop}｜${riskLabel}`;
   } else if (!isRegion && currentZoom >= 4 && currentZoom < 6) {
-    detail = affectedShare > 0 ? `${crop}｜${fmtPct(affectedShare, 0)}产量关注` : `${crop}｜${riskLabel}`;
+    detail = isNum(productionShare) ? `${crop}｜${fmtPct(productionShare, 0)}产量占比` : `${crop}｜${riskLabel}`;
   } else if (!isRegion && currentZoom >= 6) {
     detail = `${crop}｜${riskLabel}`;
   }
@@ -938,8 +948,14 @@ function growthSensitivityText(record) {
 }
 
 function renderGrowthStageBlock(record) {
+  if (record && ['palm', 'coconut'].includes(String(record.crop_group || '').toLowerCase())) {
+    return '';
+  }
   const stage = record.resolved_growth_stage || record.current_growth_stage_cn || record.growth_stage_code;
   const impact = record.future_yield_impact_cn || record.current_operation_impact_cn || record.production_impact_cn;
+  if (String(stage || '').toLowerCase().includes('perennial')) {
+    return '';
+  }
   if (!stage && !impact) return '<div class="detail-block"><h3>生长阶段解释</h3><div class="status-notice">作物阶段解释待接入，当前仅展示天气事实与产量权重。</div></div>';
   const cells = [
     stage ? detailCell('当前阶段', stage) : '',
@@ -949,37 +965,109 @@ function renderGrowthStageBlock(record) {
   return `<div class="detail-block"><h3>生长阶段解释</h3><div class="data-grid">${cells.join('')}</div></div>`;
 }
 
+function isSoilDry(row) {
+  const soilText = `${row.soil_status_cn || ''} ${row.soil_status_90d_cn || ''} ${row.soil_condition_summary_cn || ''} ${row.soil_signal_recent || ''}`.toLowerCase();
+  return (isNum(row.rootzone_percentile) && Number(row.rootzone_percentile) < 25)
+    || (isNum(row.surface_percentile) && Number(row.surface_percentile) < 25)
+    || /dry|偏干|水分压力|缺水/.test(soilText);
+}
+
+function isRainfallHigh(row) {
+  return (isNum(row.precip_30d_ratio_pct) && Number(row.precip_30d_ratio_pct) >= 120)
+    || (isNum(row.precip_30d_anomaly_mm) && Number(row.precip_30d_anomaly_mm) >= 30)
+    || /rain_excess|wet|偏多|过湿|降雨偏多/.test(String(row.rain_signal_30d || row.weather_condition_summary_cn || '').toLowerCase());
+}
+
+function hasOperationRainEvidence(row) {
+  return isRainfallHigh(row)
+    || (isNum(row.heavy_rain_days_7d) && Number(row.heavy_rain_days_7d) > 0)
+    || /heavy|wet|operation|过湿|强降雨|作业/.test(String(row.operation_rain_signal || row.current_operation_impact_cn || row.risk_reason_cn || '').toLowerCase());
+}
+
+function cropDisplayName(record) {
+  return CROP_META[record && record.crop_group] ? CROP_META[record.crop_group].oil : cropLabel(record);
+}
+
+function buildDetailHeaderTitle(record, options = {}) {
+  const crop = cropDisplayName(record);
+  const place = options.isCountry
+    ? (options.countryName || record.country_cn || record.country)
+    : (options.regionName || shortRegionName(record));
+  const production = options.production ?? record.production_tonnes ?? record.total_production_tonnes;
+  const parts = [
+    crop,
+    place,
+    isNum(production) ? `产量 ${fmtProduction(production)}` : '',
+    !options.isCountry && isNum(record.national_share) ? `全国占比 ${fmtPct(record.national_share)}` : '',
+    options.isCountry && isNum(record.global_share) ? `全球占比 ${fmtPct(record.global_share)}` : ''
+  ].filter(Boolean);
+  return parts.join('｜');
+}
+
+function buildPressureItems(record, evidenceRecord = record) {
+  const row = evidenceRecord || record;
+  const items = [];
+  const st = store.soilTempIndex ? store.soilTempIndex.get(row.weather_region_id) : null;
+  const soilParts = [];
+  if (isNum(row.rootzone_percentile)) soilParts.push(`根区 P${Math.round(Number(row.rootzone_percentile))}`);
+  if (isNum(row.surface_percentile)) soilParts.push(`表层 P${Math.round(Number(row.surface_percentile))}`);
+  if (st && st.soil_temp_signal_cn && /偏热|高温|hot|warm/i.test(`${st.soil_temp_signal_cn} ${st.soil_temp_signal || ''}`)) soilParts.push(`土壤温度${st.soil_temp_signal_cn}`);
+  if (isSoilDry(row) || soilParts.length) {
+    items.push(`土壤水分压力：${soilParts.length ? soilParts.join('、') + '，' : ''}需观察后续水分修复。`);
+  }
+  if (hasOperationRainEvidence(row)) {
+    const rainText = isNum(row.precip_30d_actual) && isNum(row.precip_30d_normal)
+      ? `近30天降雨 ${fmtNum(row.precip_30d_actual, 0, ' mm')} / 常年 ${fmtNum(row.precip_30d_normal, 0, ' mm')}，`
+      : '';
+    items.push(`采收/运输扰动：${rainText}近期降雨偏多或短周期强降雨可能影响采收、运输或田间作业。`);
+  }
+  if (row.forecast_signal || isNum(row.forecast_7d_precip) || isNum(row.forecast_16d_precip)) {
+    items.push(`未来天气：${forecastReliefText(row)}`);
+  }
+  return items;
+}
+
+function renderRainSoilExplanationBlock(row) {
+  if (!row || !isSoilDry(row)) return '';
+  if (isRainfallHigh(row)) {
+    return `<div class="detail-block"><h3>降雨与土壤水分口径说明</h3><div class="status-notice">最近累计降雨偏多，说明近期总雨量高于常年；但土壤水分仍偏低，可能与前期持续偏干、降雨集中且下渗不足、蒸散偏强、土层深度差异有关。因此需要同时看“累计降雨”和“土壤湿度”。</div></div>`;
+  }
+  return `<div class="detail-block"><h3>降雨与土壤水分口径说明</h3><div class="status-notice">当前降雨并未显示明显偏多，土壤偏干与降雨不足方向一致。</div></div>`;
+}
+
 function renderRiskJudgementBlock(record, options = {}) {
   const riskValue = options.isCountry ? riskNumFromCountry(record) : record.risk_level_v3;
-  const score = options.isCountry ? record.weighted_risk_score : record.risk_score_v3;
+  const evidenceRecord = options.evidenceRecord || record;
+  const pressureItems = buildPressureItems(record, evidenceRecord);
   const cells = [
     detailCell('风险等级', formatRiskLabel(record)),
     detailCell('异常类型', formatAnomalyType(record)),
     detailCell('数据状态', formatDataStatus(record.data_status || '', record)),
-    detailCell('关注级别', riskText(riskValue)),
-    isNum(score) ? detailCell('风险评分', fmtNum(score, 2)) : '',
-    isNum(record.disturbed_share) ? detailCell('受扰产量占比', fmtPct(record.disturbed_share)) : '',
-    isNum(record.yield_risk_affected_share) ? detailCell('产量风险占比', fmtPct(record.yield_risk_affected_share)) : '',
-    isNum(record.operation_affected_share) ? detailCell('作业影响占比', fmtPct(record.operation_affected_share)) : ''
+    detailCell('关注级别', riskText(riskValue))
   ].filter(Boolean);
-  return `<div class="detail-block"><h3>风险判断</h3><div style="margin-bottom:8px;">${riskBadge(riskValue, formatRiskLabel(record))}</div><div class="data-grid cols-3">${cells.join('')}</div>${options.stackHtml ? `<div style="margin-top:10px;">${options.stackHtml}</div>` : ''}</div>`;
+  const pressureHtml = pressureItems.length
+    ? `<div class="pressure-list"><b>主要压力：</b><ol>${pressureItems.map(item => `<li>${esc(item)}</li>`).join('')}</ol></div>`
+    : '<div class="status-notice">当前维持常规监控。</div>';
+  return `<div class="detail-block"><h3>风险判断：${esc(formatRiskLabel(record))}</h3><div style="margin-bottom:8px;">${riskBadge(riskValue, formatRiskLabel(record))}</div><div class="data-grid cols-3">${cells.join('')}</div>${pressureHtml}</div>`;
 }
 
 function buildDetailPanel(record, options = {}) {
+  const stageRecord = options.stageRecord
+    ? { ...options.stageRecord, crop_group: options.stageRecord.crop_group || record.crop_group }
+    : record;
   return `
     <div class="detail-header">
-      <h2>${esc(options.title || shortRegionName(record))}</h2>
+      <h2>${esc(buildDetailHeaderTitle(record, options))}</h2>
       <div class="subtitle">
         ${riskBadge(options.isCountry ? riskNumFromCountry(record) : record.risk_level_v3, formatRiskLabel(record))}
-        <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropLabel(record))}</span>
-        ${isNum(options.production ?? record.production_tonnes ?? record.total_production_tonnes) ? `<span class="pill">${esc(fmtProduction(options.production ?? record.production_tonnes ?? record.total_production_tonnes))}</span>` : ''}
+        <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropDisplayName(record))}</span>
       </div>
     </div>
     <div class="detail-block"><h3>结论</h3><div class="conclusion-line">${esc(options.conclusion || regionConclusion(record))}</div></div>
     ${renderImpactScopeBlock(record, options)}
     ${renderWeatherFactsBlock(options.weatherRecord || record, options.weatherTitle || '天气事实')}
-    ${renderGrowthStageBlock(options.stageRecord || record)}
-    ${renderRiskJudgementBlock(record, { isCountry: options.isCountry, stackHtml: options.stackHtml })}
+    ${renderGrowthStageBlock(stageRecord)}
+    ${renderRiskJudgementBlock(record, { isCountry: options.isCountry, evidenceRecord: stageRecord || options.weatherRecord || record })}
     ${options.extraHtml || ''}
   `;
 }
@@ -1008,7 +1096,6 @@ function showCountryDetail(record) {
   const countryKey = record.country_key || canonicalCountry(record.country);
   const crop = state.selectedCountryCrop || record.crop_group;
   const regionRecords = countryKey === 'European Union' ? euDisplayRows() : getRegionRecords(countryKey, crop);
-  const stackHtml = renderRiskStack(regionRecords);
   const topRegions = regionRecords
     .filter(row => row.weather_region_id)
     .sort((a, b) => riskNum(b.risk_level_v3) - riskNum(a.risk_level_v3) || (Number(b.national_share) || 0) - (Number(a.national_share) || 0))
@@ -1016,10 +1103,6 @@ function showCountryDetail(record) {
   const conclusion = countryConclusion(record, topRegions);
   const representative = topRegions[0] || null;
   const extraHtml = `
-    <div class="detail-block">
-      <h3>风险结构</h3>
-      ${stackHtml || '<p style="color:var(--muted-2);">暂无可计算风险结构。</p>'}
-    </div>
     <div class="detail-block">
       <h3>重点地区</h3>
       <div class="region-list">
@@ -1441,6 +1524,9 @@ function findCropProgress(row) {
 }
 
 function renderCropProgressBlock(row) {
+  if (row && ['palm', 'coconut'].includes(String(row.crop_group || '').toLowerCase())) {
+    return '';
+  }
   const records = findCropProgress(row);
   if (!records || records.length === 0) {
     return `<div class="detail-block"><h3>作物进度</h3><p style="color:var(--muted-2);font-size:12px;">当前地区暂无作物进度数据</p></div>`;
@@ -1500,7 +1586,7 @@ function renderCropProgressBlock(row) {
 function renderSoilTemperatureBlock(row) {
   const st = store.soilTempIndex ? store.soilTempIndex.get(row.weather_region_id) : null;
   if (!st) {
-    return `<div class="detail-block"><h3>土壤温度</h3><p style="color:var(--muted-2);font-size:12px;">暂无土壤温度数据</p></div>`;
+    return `<div class="detail-block"><h3>土壤温度：表层与浅层土温</h3><p style="color:var(--muted-2);font-size:12px;">暂无土壤温度数据</p></div>`;
   }
 
   // e3a_patch2: check data_status / is_synthetic
@@ -1557,7 +1643,7 @@ function renderSoilTemperatureBlock(row) {
   }
 
   return `<div class="detail-block">
-    <h3>土壤温度</h3>
+    <h3>土壤温度：表层与浅层土温</h3>
     ${statusNotice}
     <div class="data-grid cols-3">
       <div class="data-cell"><span class="lbl">0-7cm</span><span class="val">${esc(t0)}</span></div>
@@ -1582,6 +1668,9 @@ function renderSoilTemperatureBlock(row) {
 
 function renderRiskTagsBlock(row) {
   const tags = Array.isArray(row.risk_tags) ? row.risk_tags : [];
+  if (!tags.length) {
+    return '<div class="detail-block"><h3>触发信号</h3><p style="color:var(--muted-2);font-size:12px;">当前暂无规则触发标签。</p></div>';
+  }
   const badge = row.dominant_map_badge_cn || '';
   const domLevel = row.dominant_risk_level || 0;
   const evidence = row.risk_evidence_cn || '';
@@ -1613,15 +1702,14 @@ function renderRiskTagsBlock(row) {
     const label = tag.risk_label_cn || tag.label_cn || '未命名标签';
     const tagEvidence = tag.impact_text_cn || tag.evidence_cn || tag.soil_temp_evidence_cn || '当前标签无额外证据说明。';
     const progressUsed = tag.progress_used === true || tag.stage_source === 'crop_progress' || !!tag.progress_stage_basis;
+    const flags = [
+      tag.soil_temp_used === true ? '土壤温度辅助' : '',
+      progressUsed ? '作物进度修正' : ''
+    ].filter(Boolean);
     return `<div class="risk-tag-card" style="--tag-color:${color}">
       <div class="risk-tag-head"><strong style="color:${color}">${esc(label)}</strong><span>${esc(lvlName(Number(tag.risk_level) || 0))} · ${esc(tag.confidence || '—')}</span></div>
       <div class="risk-tag-evidence">${esc(tagEvidence)}</div>
-      <div class="risk-tag-flags">
-        <span>计入产量影响：${tag.count_yield_affected === true ? '是' : '否'}</span>
-        <span>计入作业影响：${tag.count_operation_affected === true ? '是' : '否'}</span>
-        ${tag.soil_temp_used === true ? '<span>土壤温度辅助</span>' : ''}
-        ${progressUsed ? '<span>作物进度修正</span>' : ''}
-      </div>
+      ${flags.length ? `<div class="risk-tag-flags">${flags.map(flag => `<span>${esc(flag)}</span>`).join('')}</div>` : ''}
     </div>`;
   }
 
@@ -1632,10 +1720,10 @@ function renderRiskTagsBlock(row) {
     ['operation', '作业风险'],
     ['support', '支持性 / 背景信号']
   ];
-  const groupsHtml = groupMeta.map(([key, title]) => `
+  const groupsHtml = groupMeta.filter(([key]) => groups[key].length).map(([key, title]) => `
     <div class="tag-group">
       <div class="tag-group-title">${title}<span>${groups[key].length} 项</span></div>
-      ${groups[key].length ? groups[key].map(tagCard).join('') : '<p style="color:var(--muted-2);font-size:10.5px;">当前无此类标签</p>'}
+      ${groups[key].map(tagCard).join('')}
     </div>`).join('');
 
   const headerHtml = badge
@@ -1643,7 +1731,7 @@ function renderRiskTagsBlock(row) {
     : '';
   const evidenceHtml = evidence ? `<p style="font-size:11px;color:var(--muted);margin:0 0 9px 0;">${esc(evidence)}</p>` : '';
 
-  return `<div class="detail-block"><h3>风险标签分组</h3>${headerHtml}${evidenceHtml}<div class="tag-groups">${groupsHtml}</div></div>`;
+  return `<div class="detail-block"><h3>触发信号</h3>${headerHtml}${evidenceHtml}<div class="tag-groups">${groupsHtml}</div></div>`;
 }
 
 function regionConclusion(row) {
@@ -1651,8 +1739,11 @@ function regionConclusion(row) {
   const label = row.risk_label_v4_cn || row.dominant_map_badge_cn || row.risk_level_v3_cn || '常规监控';
   if (riskNum(row.risk_level_v3) <= 1) return `${name}${cropLabel(row)}当前维持常规监控。`;
   const stage = row.resolved_growth_stage || row.current_growth_stage_cn || row.growth_stage_code;
+  const stageText = ['palm', 'coconut'].includes(String(row.crop_group || '').toLowerCase())
+    ? ''
+    : (stage ? `，作物阶段为${stage}` : '');
   const impact = row.current_operation_impact_cn || row.future_yield_impact_cn || row.production_impact_cn || row.risk_reason_cn;
-  return `${name}${cropLabel(row)}当前标签为${label}${stage ? `，作物阶段为${stage}` : ''}${impact ? `；${impact}` : ''}。`;
+  return `${name}${cropLabel(row)}当前标签为${label}${stageText}${impact ? `；${impact}` : ''}。`;
 }
 
 function renderImpactChannelsBlock(row) {
@@ -1720,34 +1811,36 @@ function showRegionDetail(row) {
   const extraHtml = `
     ${renderRiskTagsBlock(row)}
     ${renderCropProgressBlock(row)}
+    ${renderRainSoilExplanationBlock(row)}
     ${renderSoilTemperatureBlock(row)}
     <div class="detail-block">
-      <h3>图表区域 · 土壤湿度</h3>
+      <h3>土壤湿度：表层与根区水分</h3>
+      <p class="chart-purpose">观察表层和根区水分分位变化，判断水分压力是否持续。</p>
       <div class="chart-box"><canvas id="chart-soil"></canvas></div>
     </div>
     <div class="detail-block">
-      <h3>图表区域 · 累积降雨</h3>
+      <h3>累积降雨：近30日总量与常年对比</h3>
+      <p class="chart-purpose">回答“最近一段时间总体雨量多不多”。</p>
       <div class="data-grid">
         <div class="data-cell"><span class="lbl">近30天实际</span><span class="val">${esc(fmtNum(row.precip_30d_actual, 0, ' mm'))}</span></div>
         <div class="data-cell"><span class="lbl">近30天常年</span><span class="val">${esc(fmtNum(row.precip_30d_normal, 0, ' mm'))}</span></div>
+        <div class="data-cell"><span class="lbl">累计距平</span><span class="val">${esc(fmtSigned(row.precip_30d_anomaly_mm, 0, ' mm'))}</span></div>
       </div>
       <div class="chart-box compact"><canvas id="chart-precip-cum"></canvas></div>
     </div>
     <div class="detail-block">
-      <h3>图表区域 · 降雨距平 + 温度距平</h3>
-      <div class="two-charts">
-        <div>
-          <div class="chart-title">30日降雨距平（近90天）</div>
-          <div class="chart-box compact"><canvas id="chart-rain-anomaly"></canvas></div>
-        </div>
-        <div>
-          <div class="chart-title">最高温距平（近90天）</div>
-          <div class="chart-box compact"><canvas id="chart-temp-anomaly"></canvas></div>
-        </div>
-      </div>
+      <h3>逐日降雨距平：每天比常年多/少多少</h3>
+      <p class="chart-purpose">观察降雨是持续偏多，还是集中在少数几天。</p>
+      <div class="chart-box compact"><canvas id="chart-rain-anomaly"></canvas></div>
     </div>
     <div class="detail-block">
-      <h3>图表区域 · 未来预报</h3>
+      <h3>逐日温度距平：气温偏高/偏低</h3>
+      <p class="chart-purpose">当前可用口径为最高温距平。</p>
+      <div class="chart-box compact"><canvas id="chart-temp-anomaly"></canvas></div>
+    </div>
+    <div class="detail-block">
+      <h3>未来天气：未来7-15天降雨与温度</h3>
+      <p class="chart-purpose">观察后续降雨和温度是否缓解或加剧当前压力。</p>
       <div class="data-grid">
         <div class="data-cell"><span class="lbl">7天降雨</span><span class="val">${esc(fmtNum(row.forecast_7d_precip, 0, ' mm'))}</span></div>
         <div class="data-cell"><span class="lbl">16天降雨</span><span class="val">${esc(fmtNum(row.forecast_16d_precip, 0, ' mm'))}</span></div>
@@ -2135,11 +2228,7 @@ function buildSummaryCards(records) {
 
   const totalProduction = eligible.reduce((sum, row) => sum + (Number(row.total_production_tonnes) || 0), 0);
   const highRisk = eligible.filter(row => riskNumFromCountry(row) >= 3);
-  const affectedProduction = highRisk.reduce((sum, row) => {
-    if (isNum(row.disturbed_production_tonnes)) return sum + Number(row.disturbed_production_tonnes);
-    if (isNum(row.disturbed_share) && isNum(row.total_production_tonnes)) return sum + Number(row.disturbed_share) * Number(row.total_production_tonnes);
-    return sum;
-  }, 0);
+  const affectedProduction = highRisk.reduce((sum, row) => sum + (Number(row.total_production_tonnes) || 0), 0);
 
   const eligibleKeys = new Set(eligible.map(row => `${canonicalCountry(row.country)}::${row.crop_group}`));
   const riskRegions = store.adminRecords.filter(row => eligibleKeys.has(`${row.country_key}::${row.crop_group}`) && riskNum(row.risk_level_v3) >= 3);
@@ -2172,7 +2261,7 @@ function buildSummaryCards(records) {
     topRisks,
     productionShare: totalProduction > 0 && affectedProduction > 0 ? affectedProduction / totalProduction : null,
     productionNote: totalProduction > 0 && affectedProduction > 0
-      ? `${fmtProduction(affectedProduction)} / 可量化口径 ${fmtProduction(totalProduction)}`
+      ? `重点/显著压力口径 ${fmtProduction(affectedProduction)} / 可量化口径 ${fmtProduction(totalProduction)}`
       : '暂无可量化产量占比',
     anomalyTypes,
     forecastChange,

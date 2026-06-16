@@ -352,28 +352,6 @@
     "usable_for_risk_label": false
   },
   {
-    "weather_region_id": "palm::Brazil::national::棕榈油",
-    "date": "2026-06-11",
-    "baseline_period": "2016-2025 temporary",
-    "soil_temp_0_7cm_mean_c": -247.75,
-    "soil_temp_7_28cm_mean_c": -247.45,
-    "soil_temp_0_7cm_anomaly_c": 0.48,
-    "soil_temp_7_28cm_anomaly_c": 0.59,
-    "soil_temp_0_7cm_percentile": 70.7,
-    "soil_temp_7_28cm_percentile": 73.3,
-    "soil_temp_signal": "warm_soil",
-    "soil_temp_signal_cn": "表层土壤偏暖",
-    "cold_soil_days_7d": 0,
-    "hot_soil_days_7d": 1,
-    "soil_temp_basis": "climatology_temporary",
-    "signal_confidence": "medium",
-    "evidence_cn": "0-7cm土温-247.7°C(P71)；距平+0.5°C；近7天偏冷0天/偏热1天",
-    "data_status": "real_active",
-    "is_synthetic": false,
-    "source_status": "active",
-    "usable_for_risk_label": false
-  },
-  {
     "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
     "date": "2026-06-11",
     "baseline_period": "2016-2025 temporary",

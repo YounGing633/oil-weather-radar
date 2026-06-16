@@ -705,21 +705,6 @@
     "baseline_method": "monthly_normal+doy_pentad"
   },
   {
-    "weather_region_id": "palm::Brazil::national::棕榈油",
-    "date": "2026-06-05",
-    "precipitation_percentile_15d": 36.666666666666664,
-    "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 36.666666666666664,
-    "dry_days_count": 12,
-    "wet_days_count": 0,
-    "hot_days_count": 0,
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "baseline_sample_size": 30,
-    "anomaly_calc_status": "ok",
-    "baseline_method": "monthly_normal+doy_pentad"
-  },
-  {
     "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
     "date": "2026-06-04",
     "precipitation_percentile_15d": 23.333333333333332,

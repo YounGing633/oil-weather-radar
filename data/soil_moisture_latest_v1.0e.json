@@ -1128,30 +1128,6 @@
     "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
-    "weather_region_id": "palm::Brazil::national::棕榈油",
-    "crop_group": "palm",
-    "country": "Brazil",
-    "admin1": null,
-    "latest_date": "2026-06-05",
-    "soil_moisture_status": "偏干",
-    "et0_30d_avg_mm": 4.44,
-    "vpd_30d_avg_kpa": 3.35,
-    "et0_7d_avg_mm": null,
-    "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
-    "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.172,
-      "soil_water_rootzone_m3m3": 0.3496,
-      "surface_percentile_90d": 2.6,
-      "rootzone_percentile_90d": 2.2,
-      "soil_status_cn": "偏干",
-      "baseline_method": "era5_land_90d_rolling_openmeteo",
-      "data_date": "2026-06-05"
-    },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
-  },
-  {
     "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
     "crop_group": "palm",
     "country": "Indonesia",

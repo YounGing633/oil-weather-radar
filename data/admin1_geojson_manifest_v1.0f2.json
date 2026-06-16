@@ -69,7 +69,7 @@
     "source_name": "geoBoundaries gbOpen ADM1 (display simplified)",
     "source_url": "https://www.geoboundaries.org/api/current/gbOpen/BRA/ADM1/",
     "status": "ok",
-    "note": "17 soybean admin1 regions matched. The Brazil palm row remains a national proxy and is intentionally rendered as a point fallback."
+    "note": "17 soybean admin1 regions matched."
   },
   {
     "country": "Argentina",

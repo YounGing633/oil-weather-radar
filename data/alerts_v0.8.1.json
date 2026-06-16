@@ -14,20 +14,6 @@
     "date": "2026-06-05"
   },
   {
-    "weather_region_id": "palm::Brazil::national::棕榈油",
-    "crop_group": "palm",
-    "country": "Brazil",
-    "admin1": null,
-    "display_region_name": "巴西 / Brazil",
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 36.666666666666664,
-    "dry_days_count": 12,
-    "hot_days_count": 0,
-    "date": "2026-06-05"
-  },
-  {
     "weather_region_id": "soybean::Brazil::Goiás::admin1::豆油",
     "crop_group": "soybean",
     "country": "Brazil",
