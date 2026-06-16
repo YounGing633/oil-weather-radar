@@ -1,6 +1,6 @@
 [
   {
-    "generated_at": "2026-06-13 21:20:08",
+    "generated_at": "2026-06-16 15:34:06",
     "version": "v1.0-i1",
     "baseline_period": "1991-2020",
     "baseline_method": "monthly_normal + doy_pentad (v1.0-i1)",
@@ -41,6 +41,6 @@
       "sunflower"
     ],
     "total_alerts": 125,
-    "run_id": "daily_export_20260613_212007"
+    "run_id": "daily_export_20260616_153406"
   }
 ]
