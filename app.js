@@ -1,5 +1,5 @@
 const DATA_DIR = './data/';
-const UI_VERSION = 'v2.1-ui2p3';
+const UI_VERSION = 'v2.1-ui2p4';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -155,6 +155,8 @@ let store = {
   euRecords: [],
   geojson: null,
   adminById: new Map(),
+  regionHistory: [],
+  regionHistoryIndex: new Map(),
   siteMeta: [],
   loadErrors: []
 };
@@ -455,6 +457,17 @@ function prepareData(raw) {
   store.geojson = raw.geojson && Array.isArray(raw.geojson.features) ? raw.geojson : { type: 'FeatureCollection', features: [] };
   store.siteMeta = Array.isArray(raw.siteMeta) ? raw.siteMeta : (raw.siteMeta ? [raw.siteMeta] : []);
   store.adminById = new Map(store.adminRecords.map(row => [row.weather_region_id, row]));
+  store.regionHistory = Array.isArray(raw.regionHistory) ? raw.regionHistory : [];
+  store.regionHistoryIndex = new Map();
+  for (const point of store.regionHistory) {
+    if (!point || !point.weather_region_id) continue;
+    const key = String(point.weather_region_id);
+    if (!store.regionHistoryIndex.has(key)) store.regionHistoryIndex.set(key, []);
+    store.regionHistoryIndex.get(key).push(point);
+  }
+  for (const series of store.regionHistoryIndex.values()) {
+    series.sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+  }
 
   // Crop progress index: keyed by (country_lower + '::' + crop_group + '::' + admin1_lower)
   store.cropProgress = raw.cropProgress || [];
@@ -896,42 +909,179 @@ function moistureState(row) {
   };
 }
 
+function isPerennialCrop(row) {
+  return ['palm', 'coconut'].includes(String(row && row.crop_group || '').toLowerCase());
+}
+
+function perennialCropName(row) {
+  return String(row && row.crop_group || '').toLowerCase() === 'coconut' ? '椰子' : '油棕';
+}
+
+function firstStageValue(row) {
+  const keys = [
+    'crop_stage_cn',
+    'stage_label_cn',
+    'current_growth_stage_cn',
+    'crop_stage',
+    'stage_label',
+    'phenology_stage',
+    'current_stage',
+    'crop_progress_stage',
+    'growth_stage',
+    'season_stage',
+    'progress_resolved_growth_stage',
+    'resolved_growth_stage',
+    'growth_stage_code',
+    'calendar_growth_stage_code'
+  ];
+  for (const key of keys) {
+    const value = row && row[key];
+    if (value !== null && value !== undefined && String(value).trim() !== '') return String(value).trim();
+  }
+  return '';
+}
+
+function stageLabelFromValue(value, row) {
+  const text = String(value || '').trim();
+  if (!text) return null;
+  const lower = text.toLowerCase();
+  const upper = text.toUpperCase();
+  const perennial = isPerennialCrop(row);
+
+  if (/全年|常年|perennial|^OS$/.test(text) || lower === 'perennial' || upper === 'OS') {
+    return perennial ? { label: '常年采收作物', phase: 'perennial', perennial: true } : null;
+  }
+  if (/播种|出苗|sowing|planting|emergence/.test(lower) || upper === 'PE/V') {
+    return { label: '播种/出苗期', phase: 'sowing', perennial: false };
+  }
+  if (/营养/.test(text) || lower.includes('vegetative') || upper === 'V') {
+    return { label: '营养生长期', phase: 'vegetative', perennial: false };
+  }
+  if (/花蕾|开花/.test(text) || lower.includes('flower') || upper === 'V/FP') {
+    return { label: text.includes('结荚') ? '开花/结荚期' : '开花期', phase: 'flowering', perennial: false };
+  }
+  if (/结荚|坐果|pod|fruit_set|fruit setting/.test(lower) || upper === 'PF') {
+    return { label: '结荚/坐果期', phase: 'pod_setting', perennial: false };
+  }
+  if (/灌浆|充实|grain_filling|seed_filling|filling/.test(lower) || upper === 'PF/MH') {
+    return { label: '灌浆期', phase: 'filling', perennial: false };
+  }
+  if (/成熟|maturation|maturity/.test(lower) || upper === 'MH') {
+    return { label: '成熟/收获期', phase: 'harvest', perennial: false };
+  }
+  if (/收获|采收|harvest/.test(lower)) {
+    return { label: '收获期', phase: 'harvest', perennial: false };
+  }
+  return null;
+}
+
+function cropStageInfo(row) {
+  if (!row) return null;
+  const raw = firstStageValue(row);
+  const mapped = stageLabelFromValue(raw, row);
+  if (mapped) {
+    if (isPerennialCrop(row)) return { ...mapped, perennial: true };
+    return mapped;
+  }
+  if (isPerennialCrop(row)) {
+    return { label: '常年采收作物', phase: 'perennial', perennial: true };
+  }
+  return null;
+}
+
+function stageIntro(row, stage) {
+  if (!stage) return '';
+  if (stage.perennial) {
+    if (stage.phase === 'perennial') return `${perennialCropName(row)}为常年采收作物，`;
+    return `${perennialCropName(row)}当前处于${stage.label}，`;
+  }
+  return `当前处于${stage.label}，`;
+}
+
+function dryStageImpact(row, stage) {
+  if (!stage) return '';
+  if (stage.perennial) {
+    return String(row && row.crop_group || '').toLowerCase() === 'coconut'
+      ? '可能影响后续椰果发育和恢复'
+      : '后续恢复存在滞后性';
+  }
+  if (stage.phase === 'sowing') return '偏干可能影响出苗和苗情建立';
+  if (stage.phase === 'vegetative') return '可能限制营养生长和根系恢复';
+  if (stage.phase === 'flowering') return '水分压力对开花和结实较敏感';
+  if (stage.phase === 'pod_setting') return '可能影响结荚/坐果和后续单产形成';
+  if (stage.phase === 'filling') return '可能影响籽粒充实和单产形成';
+  return '';
+}
+
+function wetStageImpact(row, stage) {
+  if (stage && stage.perennial) {
+    return String(row && row.crop_group || '').toLowerCase() === 'coconut'
+      ? '采收、晾晒和物流效率可能受影响'
+      : '采收和运输效率可能受影响';
+  }
+  if (stage && stage.phase === 'sowing') return '播种、出苗和田间作业可能受影响';
+  if (stage && stage.phase === 'harvest') return '收获和田间作业效率可能受影响';
+  return '田间作业条件偏差，病害压力可能上升';
+}
+
+function wetReliefTarget(row, stage) {
+  if (stage && stage.perennial) {
+    return String(row && row.crop_group || '').toLowerCase() === 'coconut'
+      ? '采收和晾晒压力'
+      : '采收和运输压力';
+  }
+  if (stage && stage.phase === 'harvest') return '收获和田间作业压力';
+  return '田间作业压力';
+}
+
+function hotDryStageImpact(stage) {
+  if (!stage) return '高土温叠加偏干，水分消耗压力较大。';
+  if (stage.phase === 'flowering') return '高土温叠加偏干，授粉/结实压力加大。';
+  if (stage.phase === 'filling') return '高土温叠加偏干，灌浆压力加大。';
+  return '高土温叠加偏干，水分消耗压力较大。';
+}
+
 function buildCurrentRiskSentences(row) {
   if (!row) return [];
   const items = [];
   const moisture = moistureState(row);
   const temp = soilTempSignal(row);
   const rain = rainState(row);
+  const stage = cropStageInfo(row);
+  const intro = stageIntro(row, stage);
   const dryBoth = moisture.rootDry && moisture.surfaceDry;
   const anyDry = moisture.rootDry || moisture.surfaceDry;
   const anyWet = moisture.rootWet || moisture.surfaceWet;
 
   if (dryBoth) {
-    if (rain.status === 'dry') items.push(`${rain.label}，表层和根区水分偏低，水分压力较明显。`);
-    else if (rain.status === 'near') items.push(`${rain.label}，但表层和根区水分偏低，当前主要风险来自土壤水分压力。`);
-    else items.push('表层和根区同步偏干，水分压力较明显。');
+    const impact = dryStageImpact(row, stage);
+    if (rain.status === 'dry') items.push(`${intro}${rain.label}，表层和根区水分偏低，水分压力较明显${impact ? `，${impact}` : ''}。`);
+    else if (rain.status === 'near') items.push(`${intro}${rain.label}，但表层和根区水分偏低，当前主要风险来自土壤水分压力${impact ? `，${impact}` : ''}。`);
+    else items.push(`${intro}表层和根区同步偏干，水分压力较明显${impact ? `，${impact}` : ''}。`);
   } else if (moisture.rootDry) {
-    if (rain.status === 'dry') items.push(`${rain.label}，根区水分偏低，存在持续水分压力。`);
-    else if (rain.status === 'near') items.push(`${rain.label}，但根区水分偏低，当前主要风险来自土壤水分压力。`);
-    else items.push('根区水分偏低，存在持续水分压力。');
+    const impact = dryStageImpact(row, stage);
+    if (rain.status === 'dry') items.push(`${intro}${rain.label}，根区水分偏低，存在持续水分压力${impact ? `，${impact}` : ''}。`);
+    else if (rain.status === 'near') items.push(`${intro}${rain.label}，但根区水分偏低，当前主要风险来自土壤水分压力${impact ? `，${impact}` : ''}。`);
+    else items.push(`${intro}根区水分偏低，存在持续水分压力${impact ? `，${impact}` : ''}。`);
   } else if (moisture.surfaceDry) {
-    if (rain.status === 'dry') items.push(`${rain.label}，表层偏干，短期墒情不足。`);
-    else if (rain.status === 'near') items.push(`${rain.label}，但表层偏干，短期墒情不足。`);
-    else items.push('表层偏干，短期墒情不足。');
+    const impact = dryStageImpact(row, stage);
+    if (rain.status === 'dry') items.push(`${intro}${rain.label}，表层偏干，短期墒情不足${impact ? `，${impact}` : ''}。`);
+    else if (rain.status === 'near') items.push(`${intro}${rain.label}，但表层偏干，短期墒情不足${impact ? `，${impact}` : ''}。`);
+    else items.push(`${intro}表层偏干，短期墒情不足${impact ? `，${impact}` : ''}。`);
   } else if (rain.status === 'near' && moisture.hasWater) {
-    items.push(`${rain.label}，土壤水分未见明显压力。`);
+    items.push(`${intro}${rain.label}，土壤水分未见明显压力。`);
   }
 
   if (rain.status === 'wet' && moisture.surfaceWet) {
-    items.push(`${rain.label}，表层土壤偏湿，田间作业和采收效率可能受影响。`);
+    items.push(`${intro}${rain.label}且表层土壤偏湿，${wetStageImpact(row, stage)}。`);
   } else if (rain.status === 'wet' && anyWet) {
-    items.push(`${rain.label}，土壤水分偏高，田间恢复可能偏慢。`);
+    items.push(`${intro}${rain.label}，土壤水分偏高，田间恢复可能偏慢。`);
   } else if (rain.status === 'wet') {
-    items.push(`${rain.label}。`);
+    items.push(`${intro}${rain.label}。`);
   }
 
   if (temp.hot && anyDry) {
-    items.push('高土温叠加偏干，水分消耗压力较大。');
+    items.push(hotDryStageImpact(stage));
   } else if (temp.hot && moisture.hasWater && !moisture.rootDry && !moisture.surfaceDry) {
     items.push('土壤温度偏高，但水分条件尚可，短期压力有限。');
   } else if (temp.cold && (anyWet || rain.status === 'wet')) {
@@ -945,6 +1095,7 @@ function buildRecoverySentences(row) {
   if (!row) return [];
   const items = [];
   const moisture = moistureState(row);
+  const stage = cropStageInfo(row);
   const rainHigh = hasOperationRainEvidence(row);
   const forecast7 = firstNumeric(row, ['forecast_rainfall', 'forecast_7d', 'rain_forecast_7d', 'forecast_7d_precip', 'forecast_rainfall_7d']);
   const forecast16 = firstNumeric(row, ['forecast_16d_precip', 'forecast_16d', 'rain_forecast_16d']);
@@ -954,9 +1105,15 @@ function buildRecoverySentences(row) {
   const futureRain = isNum(forecast16) ? forecast16 : forecast7;
   if (moisture.rootDry || moisture.surfaceDry) {
     if (isNum(futureRain) && futureRain >= 30) {
-      items.push('若未来7-14天降雨恢复，表层水分可能先修复，但根区水分修复仍需连续降雨配合。');
+      if (stage && stage.perennial) {
+        items.push('若后续降雨持续改善，表层水分可能先修复；根区水分修复仍需连续降雨配合。');
+      } else {
+        items.push('如果未来7-14天出现连续有效降雨，表层水分可能先修复；根区水分修复仍需要更多降雨配合。');
+      }
     } else if (isNum(futureRain)) {
-      items.push('未来7-14天补水偏少，水分压力可能延续。');
+      items.push(stage && !stage.perennial
+        ? `若未来7-14天降雨仍不足，${stage.label}水分压力可能延续。`
+        : '未来7-14天补水偏少，水分压力可能延续。');
     } else if (String(row.forecast_signal || '').includes('relief')) {
       items.push('预报降雨存在恢复信号，表层水分可能先改善。');
     } else if (String(row.forecast_signal || '').includes('no_relief')) {
@@ -964,7 +1121,7 @@ function buildRecoverySentences(row) {
     }
   } else if (rainHigh || moisture.rootWet || moisture.surfaceWet) {
     if (isNum(futureRain) && futureRain < 20) {
-      items.push('如果后续降雨减弱、土壤湿度回落，采收压力可能缓解。');
+      items.push(`如果后续降雨减弱，表层湿度回落后，${wetReliefTarget(row, stage)}可能缓解。`);
     } else if (isNum(futureRain)) {
       items.push('后续仍有降雨，田间湿度回落可能偏慢。');
     } else if (String(row.forecast_signal || '').includes('relief')) {
@@ -1762,24 +1919,18 @@ function renderSoilMoistureChartBlock(row) {
 }
 
 function renderPrecipSummaryBlock(row) {
-  const cells = [
-    isNum(row.precip_30d_actual) ? detailCell('近30天降雨', fmtNum(row.precip_30d_actual, 0, ' mm')) : '',
-    isNum(row.precip_30d_normal) ? detailCell('常年同期', fmtNum(row.precip_30d_normal, 0, ' mm')) : '',
-    isNum(row.precip_30d_anomaly_mm) ? detailCell('降雨距平', fmtSigned(row.precip_30d_anomaly_mm, 0, ' mm')) : ''
-  ].filter(Boolean);
   const series = row.precip_30d_anomaly_90d_series || [];
-  if (!cells.length && !seriesHasValue(series, ['precip_30d_actual', 'precip_30d_normal'])) return '';
+  if (!seriesHasValue(series, ['precip_30d_actual', 'precip_30d_normal'])) return '';
   return `<div class="detail-block">
     <h3>近30天降雨</h3>
-    ${cells.length ? `<div class="data-grid">${cells.join('')}</div>` : ''}
-    ${seriesHasValue(series, ['precip_30d_actual', 'precip_30d_normal']) ? '<div class="chart-box compact"><canvas id="chart-precip-cum"></canvas></div>' : ''}
+    <div class="chart-box compact"><canvas id="chart-precip-cum"></canvas></div>
   </div>`;
 }
 
 function renderRainAnomalyChartBlock(row) {
-  if (!seriesHasValue(row.precip_30d_anomaly_90d_series || [], ['precip_30d_anomaly_mm'])) return '';
+  if (!dailyRainAnomalySeries(row).length) return '';
   return `<div class="detail-block">
-    <h3>降雨距平</h3>
+    <h3>每日降雨距平</h3>
     <div class="chart-box compact"><canvas id="chart-rain-anomaly"></canvas></div>
   </div>`;
 }
@@ -1844,7 +1995,7 @@ function forecastReliefText(row) {
 function renderRegionCharts(row) {
   renderSoilChart(row.soil_rootzone_percentile_90d_series || []);
   renderPrecipCumChart(row.precip_30d_anomaly_90d_series || []);
-  renderRainAnomalyChart(row.precip_30d_anomaly_90d_series || []);
+  renderRainAnomalyChart(row);
   renderTempAnomalyChart(row.precip_30d_anomaly_90d_series || []);
   renderForecastChart(row.forecast_daily_16d_series || []);
 }
@@ -1882,6 +2033,55 @@ function chartValues(series, key) {
   return series.map(row => isNum(row[key]) ? Number(row[key]) : null);
 }
 
+function getRegionHistory(row) {
+  if (!row || !row.weather_region_id || !store.regionHistoryIndex) return [];
+  return store.regionHistoryIndex.get(String(row.weather_region_id)) || [];
+}
+
+function arrayField(row, keys) {
+  for (const key of keys) {
+    if (Array.isArray(row && row[key])) return row[key];
+  }
+  return [];
+}
+
+function pairedDailySeries(row) {
+  const actualSeries = arrayField(row, ['daily_rain_mm', 'daily_precip_mm', 'rain_series', 'precip_series', 'daily_rain_series', 'daily_precip_series']);
+  const normalSeries = arrayField(row, ['daily_rain_normal_mm', 'daily_precip_normal_mm', 'normal_series', 'climatology_series', 'daily_normal_series']);
+  if (!actualSeries.length || !normalSeries.length || actualSeries.length !== normalSeries.length) return [];
+  return actualSeries.map((actualPoint, index) => {
+    const normalPoint = normalSeries[index];
+    const date = (actualPoint && actualPoint.date) || (normalPoint && normalPoint.date) || (actualPoint && actualPoint.target_date) || (normalPoint && normalPoint.target_date);
+    const actual = typeof actualPoint === 'number'
+      ? actualPoint
+      : firstNumeric(actualPoint, ['daily_rain_mm', 'daily_precip_mm', 'rain_mm', 'precip_mm', 'precipitation_mm', 'value']);
+    const normal = typeof normalPoint === 'number'
+      ? normalPoint
+      : firstNumeric(normalPoint, ['daily_rain_normal_mm', 'daily_precip_normal_mm', 'rain_normal_mm', 'precip_normal_mm', 'precipitation_normal_daily_mm', 'value']);
+    return { date, actual, normal };
+  });
+}
+
+function dailyRainSourceSeries(row) {
+  const embedded = arrayField(row, ['daily_weather_series', 'daily_precipitation_series', 'precipitation_daily_series']);
+  if (embedded.length) return embedded;
+  const paired = pairedDailySeries(row);
+  if (paired.length) return paired;
+  return getRegionHistory(row);
+}
+
+function dailyRainAnomalySeries(row) {
+  return dailyRainSourceSeries(row)
+    .map(point => {
+      const date = point && (point.date || point.target_date || point.forecast_date);
+      const actual = firstNumeric(point, ['actual', 'daily_rain_mm', 'daily_precip_mm', 'rain_mm', 'precip_mm', 'precipitation_mm']);
+      const normal = firstNumeric(point, ['normal', 'daily_rain_normal_mm', 'daily_precip_normal_mm', 'rain_normal_mm', 'precip_normal_mm', 'precipitation_normal_daily_mm']);
+      if (!date || !isNum(actual) || !isNum(normal)) return null;
+      return { date, daily_anomaly_mm: actual - normal };
+    })
+    .filter(Boolean);
+}
+
 function renderSoilChart(series) {
   const canvas = document.getElementById('chart-soil');
   if (!canvas || !series.length) return;
@@ -1915,23 +2115,24 @@ function renderPrecipCumChart(series) {
   });
 }
 
-function renderRainAnomalyChart(series) {
+function renderRainAnomalyChart(row) {
   const canvas = document.getElementById('chart-rain-anomaly');
+  const series = dailyRainAnomalySeries(row);
   if (!canvas || !series.length) return;
-  const values = chartValues(series, 'precip_30d_anomaly_mm');
+  const values = chartValues(series, 'daily_anomaly_mm');
   charts.rainAnomaly = new Chart(canvas, {
     type: 'bar',
     data: {
       labels: chartLabels(series),
       datasets: [{
-        label: '降雨距平',
+        label: '每日降雨距平',
         data: values,
         backgroundColor: values.map(v => v === null ? 'rgba(148,163,184,0.15)' : v < 0 ? 'rgba(192,57,43,0.45)' : 'rgba(37,99,235,0.4)'),
         borderRadius: 1,
         barThickness: 2.5
       }]
     },
-    options: chartBaseOptions({ yTitle: 'mm', showXAxis: true })
+    options: chartBaseOptions({ yTitle: 'mm', showXAxis: true, yZeroLine: true })
   });
 }
 
@@ -1990,7 +2191,7 @@ function renderForecastChart(series) {
 
 function chartBaseOptions(opts = {}) {
   const yScale = {
-    grid: { color: 'rgba(0,0,0,0.04)', drawBorder: false },
+    grid: { color: opts.yZeroLine ? (ctx => Number(ctx.tick.value) === 0 ? 'rgba(17,24,39,0.34)' : 'rgba(0,0,0,0.04)') : 'rgba(0,0,0,0.04)', drawBorder: false },
     ticks: { font: { size: 9 }, maxTicksLimit: 5, color: '#8b95a3' }
   };
   if (opts.yTitle) yScale.title = { display: true, text: opts.yTitle, font: { size: 8 }, color: '#8b95a3' };
@@ -2287,7 +2488,7 @@ async function init() {
   initMap();
   bindEvents();
 
-  const [countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp, siteMeta] = await Promise.all([
+  const [countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp, regionHistory, siteMeta] = await Promise.all([
     loadJSON('country_crop_risk_latest.json', []),
     loadJSON('admin_region_risk_latest.json', []),
     loadJSON('geo_boundary_coverage.json', []),
@@ -2295,10 +2496,11 @@ async function init() {
     loadJSON('countries.geo.json', { type: 'FeatureCollection', features: [] }),
     loadJSON('crop_progress_latest.json', []),
     loadJSON('soil_temperature_latest.json', []),
+    loadJSON('region_history_90d_v1.0d.json', []),
     loadJSON('site_meta.json', [])
   ]);
 
-  prepareData({ countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp, siteMeta });
+  prepareData({ countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp, regionHistory, siteMeta });
   updateMetaDate();
   updateTimeRangeUI();
   renderTodaySummary();
