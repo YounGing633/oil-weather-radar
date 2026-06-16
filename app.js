@@ -1,5 +1,5 @@
 const DATA_DIR = './data/';
-const UI_VERSION = 'v2.1-ui1';
+const UI_VERSION = 'v2.1-ui2';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -140,10 +140,12 @@ let state = {
   risk: 'all',
   anomaly: 'all',
   dataStatus: 'all',
+  timeRange: '14d',
   layer: 'country',
   selectedCountry: null,
   selectedCountryCrop: null,
-  selectedCountryRecord: null
+  selectedCountryRecord: null,
+  selectedRegionRecord: null
 };
 
 let store = {
@@ -164,9 +166,14 @@ function isNum(value) {
   return value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
 }
 
+function safeValue(value, fallback = '—') {
+  if (value === null || value === undefined || value === '') return fallback;
+  if (typeof value === 'number' && !Number.isFinite(value)) return fallback;
+  return value;
+}
+
 function fmtDash(value) {
-  if (value === null || value === undefined || value === '') return '—';
-  return String(value);
+  return String(safeValue(value));
 }
 
 function fmtNum(value, digits = 1, suffix = '') {
@@ -272,6 +279,47 @@ function riskText(value) {
 
 function riskTypeText(value) {
   return RISK_TYPE_CN[value] || fmtDash(value);
+}
+
+function formatRiskLabel(record) {
+  if (!record) return RISK[0].cn;
+  return record.risk_label_v4_cn
+    || record.dominant_map_badge_cn
+    || record.weighted_risk_level_cn
+    || record.risk_level_v3_cn
+    || riskText(record.weighted_risk_level ?? record.risk_level_v3);
+}
+
+function formatDataStatus(dataStatus, record = null) {
+  const status = String(dataStatus || '').toLowerCase();
+  if (record && (isSummaryProxyRecord(record) || isCountryProxy(record))) return '数据有限';
+  if (/real_active|official|formal/.test(status)) return '数据充足';
+  if (/sample|demo|building|mock|synthetic|test|pending/.test(status)) return '建设中';
+  if (/proxy|fallback|low.?sample|limited|estimate/.test(status)) return '数据有限';
+  return '数据有限';
+}
+
+function formatPublicText(value) {
+  return String(safeValue(value, ''))
+    .replace(/national\s*proxy/gi, '国家代表口径')
+    .replace(/virtual\s*country/gi, '汇总单元')
+    .replace(/admin1\s*polygon/gi, '地区边界')
+    .replace(/fallback/gi, '代表点')
+    .replace(/low\s*sample/gi, '有限样本')
+    .replace(/real_active/gi, '数据充足')
+    .replace(/sample/gi, '建设中数据')
+    .replace(/proxy/gi, '代表口径');
+}
+
+function formatAnomalyType(record) {
+  if (!record) return '常规监控';
+  if (record.anomaly_label || record.anomaly_type) return record.anomaly_label || riskTypeText(record.anomaly_type);
+  if (record.risk_type === 'wetness_waterlogging') return '降雨过多 / 土壤偏湿';
+  if (record.risk_type === 'heat_drydown') return '高温水分压力';
+  if (record.risk_type === 'drought_water_deficit') return '降雨偏少 / 土壤偏干';
+  if (record.dominant_risk_type) return riskTypeText(record.dominant_risk_type);
+  if (record.risk_reason_cn || record.dominant_risk_reason_cn) return record.risk_reason_cn || record.dominant_risk_reason_cn;
+  return formatRiskLabel(record);
 }
 
 function firstDateShort(value) {
@@ -412,6 +460,23 @@ function isCountryProxy(record) {
   return !!(record && (record.low_sample_proxy === true || record.aggregation_confidence === 'low' || record.region_sample_count === 1));
 }
 
+function isSummaryProxyRecord(record) {
+  if (!record) return false;
+  if (record.low_sample_proxy === true) return true;
+  if (isNum(record.region_sample_count) && Number(record.region_sample_count) <= 1) return true;
+
+  const productionBasis = [
+    record.production_basis,
+    record.production_basis_cn,
+    record.production_basis_note_cn
+  ].filter(Boolean).join(' ').toLowerCase();
+  const proxyNotes = [record.source_note, record.proxy_warning_cn]
+    .filter(Boolean).join(' ').toLowerCase();
+
+  return /national\s*proxy|国家代理|代理点/.test(productionBasis)
+    || /proxy|代理|低样本/.test(proxyNotes);
+}
+
 function matchesDataStatus(model) {
   if (state.dataStatus === 'all') return true;
   const proxy = model.records.some(isCountryProxy);
@@ -550,18 +615,39 @@ function createCountryTooltip(model) {
   `;
 }
 
-function countryLabelHtml(record, zoom) {
-  const showDetail = (zoom || 3) >= 4;
-  const name = record.country_cn || record.country;
-  const sub = showDetail
-    ? `<span>${esc(cropLabel(record))} ${esc(fmtProduction(record.total_production_tonnes))}</span>`
-    : '';
+function buildMapLabel(record, zoom, layerType = 'country') {
+  const currentZoom = Number(zoom) || 3;
+  const isRegion = layerType === 'region';
+  const name = isRegion && currentZoom >= 5
+    ? shortRegionName(record)
+    : (record.country_cn || record.country);
+  const crop = CROP_META[record.crop_group] ? CROP_META[record.crop_group].tab : cropLabel(record);
+  const riskLabel = formatRiskLabel(record);
+  const affectedShare = isNum(record.disturbed_share)
+    ? Number(record.disturbed_share)
+    : Math.max(Number(record.yield_risk_affected_share) || 0, Number(record.operation_affected_share) || 0);
+  let detail = riskLabel;
+
+  if (isRegion && currentZoom >= 6) {
+    detail = `${crop}｜${formatAnomalyType(record)}`;
+  } else if (isRegion && currentZoom >= 5) {
+    detail = isNum(record.national_share) ? `${crop}｜全国占比 ${fmtPct(record.national_share, 0)}` : `${crop}｜${riskLabel}`;
+  } else if (!isRegion && currentZoom >= 4 && currentZoom < 6) {
+    detail = affectedShare > 0 ? `${crop}｜${fmtPct(affectedShare, 0)}产量关注` : `${crop}｜${riskLabel}`;
+  } else if (!isRegion && currentZoom >= 6) {
+    detail = `${crop}｜${riskLabel}`;
+  }
+
   return `
     <div class="map-label" style="--oil-color:${cropColor(record.crop_group)}">
       <span class="stripe"></span>
-      <div><strong>${esc(name)}</strong>${sub}</div>
+      <div><strong>${esc(name)}</strong><span>${esc(detail)}</span></div>
     </div>
   `;
+}
+
+function countryLabelHtml(record, zoom) {
+  return buildMapLabel(record, zoom, 'country');
 }
 
 function renderCountryLayer() {
@@ -657,7 +743,7 @@ function renderCountryLayer() {
     main: models.length,
     risk: highCount,
     fallback: fallbackCount,
-    note: '国家层按风险着色；圆点仅用于无边界或欧盟虚拟单元。'
+    note: '国家层按风险着色；部分市场在缺少区域边界时以代表点展示。'
   };
   updateOverlay();
   document.getElementById('detail-panel').innerHTML = '<div class="empty">点击地图上的国家边界查看详情。</div>';
@@ -707,7 +793,7 @@ function refreshCountryLabels() {
       opacity: 1
     })
       .setLatLng(item.center)
-      .setContent(countryLabelHtml(item.model.top, zoom))
+      .setContent(buildMapLabel(item.model.top, zoom, 'country'))
       .addTo(layers.countryLabels);
   });
 }
@@ -732,7 +818,7 @@ function renderEuCountryMarker(model) {
       offset: [0, -10],
       className: 'country-map-label',
       opacity: 1
-    }).setLatLng(center).setContent(countryLabelHtml(model.top, map.getZoom())).addTo(layers.countryLabels);
+    }).setLatLng(center).setContent(buildMapLabel(model.top, map.getZoom(), 'country')).addTo(layers.countryLabels);
   }
 }
 
@@ -740,6 +826,7 @@ async function selectCountry(model) {
   state.selectedCountry = model.key;
   state.selectedCountryCrop = model.isEu && state.crop === 'all' ? 'all' : (state.crop === 'all' ? model.top.crop_group : state.crop);
   state.selectedCountryRecord = model.top;
+  state.selectedRegionRecord = null;
   state.country = model.key;
   const select = document.getElementById('f-country');
   if ([...select.options].some(opt => opt.value === model.key)) select.value = model.key;
@@ -752,6 +839,7 @@ async function selectCountry(model) {
 function countryConclusion(record, topRegions) {
   const name = record.country_cn || record.country || '该国家';
   const crop = cropLabel(record);
+  if (riskNumFromCountry(record) <= 1) return `${name}${crop}当前维持常规监控。`;
   const signal = record.dominant_country_badge_cn || record.weighted_risk_level_cn || riskTypeText(record.dominant_risk_type);
   const regionNames = topRegions.slice(0, 3).map(shortRegionName).filter(Boolean);
   const stage = record.current_growth_stage_cn ? `，当前阶段为${record.current_growth_stage_cn}` : '';
@@ -759,26 +847,164 @@ function countryConclusion(record, topRegions) {
   return `${name}${crop}当前以${signal || '天气与土壤信号'}为主${stage}${focus}。`;
 }
 
+function formatConfidence(value) {
+  const confidence = String(value || '').toLowerCase();
+  if (confidence.includes('high')) return '高';
+  if (confidence.includes('low')) return '有限';
+  return '中';
+}
+
+function detailCell(label, value) {
+  const safe = safeValue(value, '');
+  if (safe === '') return '';
+  return `<div class="data-cell"><span class="lbl">${esc(label)}</span><span class="val">${esc(safe)}</span></div>`;
+}
+
+function renderImpactScopeBlock(record, options = {}) {
+  const cells = [
+    detailCell('国家', options.countryName || record.country_cn || record.country),
+    options.regionName ? detailCell('地区', options.regionName) : '',
+    detailCell('油种 / 作物', cropLabel(record)),
+    detailCell('涉及产量', isNum(options.production ?? record.production_tonnes ?? record.total_production_tonnes) ? fmtProduction(options.production ?? record.production_tonnes ?? record.total_production_tonnes) : ''),
+    isNum(record.national_share) ? detailCell('全国占比', fmtPct(record.national_share)) : '',
+    isNum(record.global_share) ? detailCell('全球占比', fmtPct(record.global_share)) : '',
+    detailCell('数据来源', record.source_name || record.data_source || ''),
+    detailCell('数据范围', formatPublicText(record.data_scope || record.production_basis_cn || options.productionBasis || '')),
+    detailCell('数据状态', formatDataStatus(record.data_status || '', record))
+  ].filter(Boolean);
+  return `<div class="detail-block"><h3>影响范围</h3><div class="data-grid cols-3">${cells.join('')}</div></div>`;
+}
+
+function firstNumeric(row, keys) {
+  for (const key of keys) {
+    if (isNum(row && row[key])) return Number(row[key]);
+  }
+  return null;
+}
+
+function buildWeatherFactItems(row, timeRange = state.timeRange) {
+  if (!row) return [];
+  if (timeRange === '7d') {
+    const rain7 = firstNumeric(row, ['rain_7d_sum_mm', 'rain_7d', 'rainfall_7d', 'precip_7d', 'precip_7d_actual']);
+    const anom7 = firstNumeric(row, ['rain_7d_anomaly_mm', 'rainfall_anomaly_7d', 'precip_7d_anomaly_mm', 'rainfall_7d_anomaly']);
+    return [
+      isNum(rain7) ? ['近7天降雨', fmtNum(rain7, 1, ' mm')] : null,
+      isNum(anom7) ? ['近7天降雨距平', fmtSigned(anom7, 1, ' mm')] : null,
+      isNum(row.heavy_rain_days_7d) ? ['近7天强降雨日数', fmtInt(row.heavy_rain_days_7d, ' 天')] : null,
+      isNum(row.rootzone_percentile) ? ['土壤湿度分位', `P${Math.round(Number(row.rootzone_percentile))}`] : null
+    ].filter(Boolean);
+  }
+  if (timeRange === '14d') {
+    const actual14d = firstNumeric(row, ['rain_14d_sum_mm', 'rain_14d', 'rainfall_14d', 'precip_14d', 'precip_14d_actual']);
+    const anomaly14d = firstNumeric(row, ['rain_14d_anomaly_mm', 'rainfall_anomaly_14d', 'precip_14d_anomaly_mm', 'rainfall_14d_anomaly']);
+    return [
+      isNum(actual14d) ? ['近14天降雨', fmtNum(actual14d, 1, ' mm')] : null,
+      isNum(anomaly14d) ? ['近14天降雨距平', fmtSigned(anomaly14d, 1, ' mm')] : null
+    ].filter(Boolean);
+  }
+  if (timeRange === 'future7d') {
+    const forecast7 = firstNumeric(row, ['forecast_rainfall', 'forecast_7d', 'rain_forecast_7d', 'forecast_7d_precip', 'forecast_rainfall_7d']);
+    return [
+      isNum(forecast7) ? ['未来7天降雨', fmtNum(forecast7, 1, ' mm')] : null,
+      row.forecast_signal ? ['预报方向', forecastReliefText(row)] : null
+    ].filter(Boolean);
+  }
+  const rain30 = firstNumeric(row, ['rain_30d_sum_mm', 'rain_30d', 'rainfall_30d', 'precip_30d', 'precip_30d_actual']);
+  const normal30 = firstNumeric(row, ['precip_30d_normal', 'rain_30d_normal', 'rainfall_30d_normal']);
+  const anom30 = firstNumeric(row, ['precip_30d_anomaly_mm', 'rainfall_anomaly_30d', 'rain_30d_anomaly_mm', 'rainfall_30d_anomaly']);
+  return [
+    isNum(rain30) ? ['近30天降雨', fmtNum(rain30, 1, ' mm')] : null,
+    isNum(normal30) ? ['近30天常年', fmtNum(normal30, 1, ' mm')] : null,
+    isNum(anom30) ? ['近30天降雨距平', fmtSigned(anom30, 1, ' mm')] : null,
+    isNum(row.rootzone_percentile) ? ['土壤湿度分位', `P${Math.round(Number(row.rootzone_percentile))}`] : null
+  ].filter(Boolean);
+}
+
+function renderWeatherFactsBlock(row, title = '天气事实') {
+  const facts = buildWeatherFactItems(row);
+  const pending = state.timeRange === '14d' ? '近14天独立口径待接入。' : '该时间维度数据待接入。';
+  if (!facts.length) return `<div class="detail-block"><h3>${esc(title)}</h3><div class="status-notice">${pending}地图继续使用现有综合风险口径。</div></div>`;
+  return `<div class="detail-block"><h3>${esc(title)}</h3><div class="data-grid cols-3">${facts.map(([label, value]) => detailCell(label, value)).join('')}</div></div>`;
+}
+
+function growthSensitivityText(record) {
+  const stage = String(record.resolved_growth_stage || record.current_growth_stage_cn || record.growth_stage_code || '').toLowerCase();
+  if (!stage) return '';
+  if (stage.includes('perennial')) return '多年生作物对持续水分异常更敏感，短期天气影响可能滞后反映在后续单产。';
+  if (stage.includes('os') || stage.includes('harvest') || stage.includes('mh')) return '收获和田间作业阶段更关注连续降雨、过湿或异常干燥对作业窗口的影响。';
+  if (stage.includes('pe') || stage === 'v' || stage.includes('emerg')) return '播种、出苗和营养生长阶段对表层水分与土壤温度变化较敏感。';
+  if (stage.includes('pf') || stage.includes('flower') || stage.includes('pod')) return '开花、结荚和灌浆阶段对水分与高温叠加压力更敏感。';
+  return '当前阶段需结合水分、温度和后续预报持续观察。';
+}
+
+function renderGrowthStageBlock(record) {
+  const stage = record.resolved_growth_stage || record.current_growth_stage_cn || record.growth_stage_code;
+  const impact = record.future_yield_impact_cn || record.current_operation_impact_cn || record.production_impact_cn;
+  if (!stage && !impact) return '<div class="detail-block"><h3>生长阶段解释</h3><div class="status-notice">作物阶段解释待接入，当前仅展示天气事实与产量权重。</div></div>';
+  const cells = [
+    stage ? detailCell('当前阶段', stage) : '',
+    growthSensitivityText(record) ? detailCell('天气敏感性', growthSensitivityText(record)) : '',
+    impact && impact !== '暂无明显影响' ? detailCell('可能影响', formatPublicText(impact)) : ''
+  ].filter(Boolean);
+  return `<div class="detail-block"><h3>生长阶段解释</h3><div class="data-grid">${cells.join('')}</div></div>`;
+}
+
+function renderRiskJudgementBlock(record, options = {}) {
+  const riskValue = options.isCountry ? riskNumFromCountry(record) : record.risk_level_v3;
+  const score = options.isCountry ? record.weighted_risk_score : record.risk_score_v3;
+  const cells = [
+    detailCell('风险等级', formatRiskLabel(record)),
+    detailCell('异常类型', formatAnomalyType(record)),
+    detailCell('数据状态', formatDataStatus(record.data_status || '', record)),
+    detailCell('关注级别', riskText(riskValue)),
+    isNum(score) ? detailCell('风险评分', fmtNum(score, 2)) : '',
+    isNum(record.disturbed_share) ? detailCell('受扰产量占比', fmtPct(record.disturbed_share)) : '',
+    isNum(record.yield_risk_affected_share) ? detailCell('产量风险占比', fmtPct(record.yield_risk_affected_share)) : '',
+    isNum(record.operation_affected_share) ? detailCell('作业影响占比', fmtPct(record.operation_affected_share)) : ''
+  ].filter(Boolean);
+  return `<div class="detail-block"><h3>风险判断</h3><div style="margin-bottom:8px;">${riskBadge(riskValue, formatRiskLabel(record))}</div><div class="data-grid cols-3">${cells.join('')}</div>${options.stackHtml ? `<div style="margin-top:10px;">${options.stackHtml}</div>` : ''}</div>`;
+}
+
+function buildDetailPanel(record, options = {}) {
+  return `
+    <div class="detail-header">
+      <h2>${esc(options.title || shortRegionName(record))}</h2>
+      <div class="subtitle">
+        ${riskBadge(options.isCountry ? riskNumFromCountry(record) : record.risk_level_v3, formatRiskLabel(record))}
+        <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropLabel(record))}</span>
+        ${isNum(options.production ?? record.production_tonnes ?? record.total_production_tonnes) ? `<span class="pill">${esc(fmtProduction(options.production ?? record.production_tonnes ?? record.total_production_tonnes))}</span>` : ''}
+      </div>
+    </div>
+    <div class="detail-block"><h3>结论</h3><div class="conclusion-line">${esc(options.conclusion || regionConclusion(record))}</div></div>
+    ${renderImpactScopeBlock(record, options)}
+    ${renderWeatherFactsBlock(options.weatherRecord || record, options.weatherTitle || '天气事实')}
+    ${renderGrowthStageBlock(options.stageRecord || record)}
+    ${renderRiskJudgementBlock(record, { isCountry: options.isCountry, stackHtml: options.stackHtml })}
+    ${options.extraHtml || ''}
+  `;
+}
+
 function renderCountryStatus(record, countryKey) {
   const proxy = isCountryProxy(record);
   const virtual = countryKey === 'European Union';
-  const boundary = virtual ? 'virtual country' : (record.boundary_level || (record.has_boundary ? 'country polygon' : '代表点'));
+  const boundary = virtual ? '成员国汇总' : (record.has_boundary ? '区域边界' : '代表点');
   const confidence = record.aggregation_confidence || 'medium';
   const badges = [
-    `<span class="status-badge good">数据状态：真实数据</span>`,
-    `<span class="status-badge ${proxy ? 'warn' : 'info'}">产区口径：${esc(proxy ? 'national proxy' : boundary)}</span>`,
-    `<span class="status-badge info">天气点：代表点聚合</span>`,
+    `<span class="status-badge ${proxy ? 'warn' : 'good'}">数据状态：${formatDataStatus('', record)}</span>`,
+    `<span class="status-badge ${proxy ? 'warn' : 'info'}">覆盖口径：${esc(proxy ? '国家代表' : boundary)}</span>`,
+    `<span class="status-badge info">空间表达：${esc(boundary)}</span>`,
     `<span class="status-badge good">参与风险判断：是</span>`,
-    `<span class="status-badge ${confidence === 'low' ? 'warn' : 'good'}">置信度：${esc(confidence)}</span>`
+    `<span class="status-badge ${confidence === 'low' ? 'warn' : 'good'}">置信度：${formatConfidence(confidence)}</span>`
   ].join('');
   const notice = proxy
-    ? `<div class="status-notice">${esc(record.proxy_warning_cn || '国家代理点：该结果基于国家级或低样本代表点，适合观察方向，不等同于完整产区分布。')}</div>`
+    ? '<div class="status-notice">数据有限：当前基于国家代表点或有限样本，仅用于方向观察，不代表完整产区分布。</div>'
     : '';
   return `<div class="status-badges">${badges}</div>${notice}`;
 }
 
 function showCountryDetail(record) {
   destroyCharts();
+  state.selectedRegionRecord = null;
   const countryKey = record.country_key || canonicalCountry(record.country);
   const crop = state.selectedCountryCrop || record.crop_group;
   const regionRecords = countryKey === 'European Union' ? euDisplayRows() : getRegionRecords(countryKey, crop);
@@ -787,78 +1013,41 @@ function showCountryDetail(record) {
     .filter(row => row.weather_region_id)
     .sort((a, b) => riskNum(b.risk_level_v3) - riskNum(a.risk_level_v3) || (Number(b.national_share) || 0) - (Number(a.national_share) || 0))
     .slice(0, 8);
-
-  const disturbed = Number(record.disturbed_production_tonnes) || 0;
-  const total = Number(record.total_production_tonnes) || 0;
-  const normal = Math.max(0, total - disturbed);
-  const disturbedPct = total > 0 ? (disturbed / total * 100).toFixed(1) : '0.0';
   const conclusion = countryConclusion(record, topRegions);
-
-  document.getElementById('detail-panel').innerHTML = `
-    <div class="detail-header">
-      <h2>${esc(record.country_cn || getCountryName(countryKey))}</h2>
-      <div class="subtitle">
-        ${riskBadge(riskNumFromCountry(record), record.weighted_risk_level_cn)}
-        <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropLabel(record))}</span>
-        <span class="pill">${esc(fmtProduction(record.total_production_tonnes))}</span>
-      </div>
-    </div>
+  const representative = topRegions[0] || null;
+  const extraHtml = `
     <div class="detail-block">
-      <h3>一句话结论</h3>
-      <div class="conclusion-line">${esc(conclusion)}</div>
-    </div>
-    <div class="detail-block">
-      <h3>产量口径 / 数据状态</h3>
-      <div class="data-grid cols-3">
-        <div class="data-cell"><span class="lbl">地区数</span><span class="val">${esc(fmtInt(record.region_count || regionRecords.length))}</span></div>
-        <div class="data-cell"><span class="lbl">口径</span><span class="val">${esc(record.production_basis_cn || '—')}</span></div>
-        <div class="data-cell"><span class="lbl">来源</span><span class="val">${esc(record.source_name || '—')}</span></div>
-      </div>
-      <div style="margin-top:9px;">${renderCountryStatus(record, countryKey)}</div>
-    </div>
-    <div class="detail-block">
-      <h3>风险概览</h3>
-      <div class="data-grid">
-        <div class="data-cell"><span class="lbl">加权风险</span><span class="val">${esc(fmtNum(record.weighted_risk_score, 2))}</span></div>
-        <div class="data-cell"><span class="lbl">主要风险</span><span class="val">${esc(riskTypeText(record.dominant_risk_type))}</span></div>
-      </div>
-    </div>
-    <div class="detail-block">
-      <h3>受扰产量 / 受扰占比</h3>
-      <div class="data-grid">
-        <div class="data-cell"><span class="lbl">产量风险占比</span><span class="val">${esc(fmtPct(record.yield_risk_affected_share))}</span></div>
-        <div class="data-cell"><span class="lbl">作业影响占比</span><span class="val">${esc(fmtPct(record.operation_affected_share))}</span></div>
-      </div>
-      <div class="disturbed-bar-wrap">
-        <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
-          <span style="font-size:10px;color:var(--muted-2);letter-spacing:0.2px;">受扰产量</span>
-          <span style="font-size:10px;font-weight:600;color:#1e2530;">${esc(fmtProduction(disturbed))} (${disturbedPct}%)</span>
-        </div>
-        <div class="disturbed-bar">
-          <div class="disturbed-bar-fill" style="width:${disturbedPct}%;background:${riskColor(riskNumFromCountry(record))};"></div>
-        </div>
-        <div class="disturbed-bar-labels">
-          <span>受扰 ${esc(fmtProduction(disturbed))}</span>
-          <span>正常 ${esc(fmtProduction(normal))}</span>
-        </div>
-      </div>
-    </div>
-    <div class="detail-block">
-      <h3>风险结构条</h3>
+      <h3>风险结构</h3>
       ${stackHtml || '<p style="color:var(--muted-2);">暂无可计算风险结构。</p>'}
     </div>
     <div class="detail-block">
-      <h3>重点地区 Top list</h3>
+      <h3>重点地区</h3>
       <div class="region-list">
         ${topRegions.map(row => regionRowButton(row)).join('') || '<p style="color:var(--muted-2);font-size:12px;">该国家当前无可展示地区记录。</p>'}
       </div>
     </div>
     <div class="detail-block">
-      <h3>数据口径说明</h3>
-      <p>${esc(record.production_basis_note_cn || record.aggregation_note_cn || '国家结果由现有地区记录按产量权重聚合，不改变原始风险口径。')}</p>
-      <p style="margin-top:5px;color:var(--muted);font-size:10.5px;">来源年份 ${esc(record.source_year_range || record.source_year || '—')} · 更新 ${esc(record.updated_at ? String(record.updated_at).slice(0, 10) : '—')} · 规则 ${RULE_VERSION}</p>
+      <h3>数据状态</h3>
+      ${renderCountryStatus(record, countryKey)}
     </div>
-  `;
+    <div class="detail-block">
+      <h3>数据说明</h3>
+      <p>${esc(formatPublicText(record.production_basis_note_cn || record.aggregation_note_cn || '国家结果由现有地区记录按产量权重聚合，不改变原始风险口径。'))}</p>
+      <p style="margin-top:5px;color:var(--muted);font-size:10.5px;">来源年份 ${esc(safeValue(record.source_year_range || record.source_year))} · 更新 ${esc(record.updated_at ? String(record.updated_at).slice(0, 10) : '—')} · 规则 ${RULE_VERSION}</p>
+    </div>`;
+
+  document.getElementById('detail-panel').innerHTML = buildDetailPanel(record, {
+    isCountry: true,
+    title: record.country_cn || getCountryName(countryKey),
+    conclusion,
+    countryName: record.country_cn || getCountryName(countryKey),
+    production: record.total_production_tonnes,
+    productionBasis: record.production_basis_cn,
+    weatherRecord: representative,
+    weatherTitle: representative ? `天气事实 · ${shortRegionName(representative)}` : '天气事实',
+    stageRecord: representative || record,
+    extraHtml
+  });
 }
 
 function renderRiskStack(records) {
@@ -967,7 +1156,7 @@ async function renderRegionLayer() {
       records.filter(row => !matchedIds.has(row.weather_region_id)).forEach(row => {
         if (renderRegionFallbackMarker(row)) fallbackCount += 1;
       });
-      if (fallbackCount) notice = `${getCountryName(countryKey)} 有 ${fallbackCount} 个地区未匹配到 admin1 边界，已使用质心 fallback。`;
+      if (fallbackCount) notice = `${getCountryName(countryKey)} 有 ${fallbackCount} 个地区暂以代表点展示。`;
     }
   }
 
@@ -975,7 +1164,7 @@ async function renderRegionLayer() {
     records.forEach(row => {
       if (renderRegionFallbackMarker(row)) fallbackCount += 1;
     });
-    notice = `${getCountryName(countryKey)} 暂无 admin1 polygon，地区层使用质心 fallback。`;
+    notice = `${getCountryName(countryKey)} 地区层暂以代表点展示。`;
   }
 
   refreshRegionLabels(records);
@@ -987,7 +1176,7 @@ async function renderRegionLayer() {
     main: records.length,
     risk: records.filter(row => riskNum(row.risk_level_v3) >= 3).length,
     fallback: fallbackCount,
-    note: notice || `${getCountryName(countryKey)} 地区层使用 admin1 polygon。`
+    note: notice || `${getCountryName(countryKey)} 地区层使用区域边界展示。`
   };
   updateOverlay();
 }
@@ -1066,7 +1255,7 @@ function refreshRegionLabels(recordsArg) {
       opacity: 1
     })
       .setLatLng([Number(row.lat), Number(row.lon)])
-      .setContent(regionLabelHtml(row))
+      .setContent(buildMapLabel(row, zoom, 'region'))
       .addTo(layers.regionLabels);
   });
 }
@@ -1087,17 +1276,7 @@ function shouldShowRegionLabel(row, zoom) {
 }
 
 function regionLabelHtml(row) {
-  const share = row.eu_share !== undefined ? row.eu_share : row.national_share;
-  const badge = row.dominant_map_badge_cn || '';
-  const badgeHtml = badge
-    ? '<span style="font-size:8.5px;padding:0 4px;border-radius:2px;background:rgba(0,0,0,0.06);color:var(--muted);margin-left:3px;">' + esc(badge) + '</span>'
-    : '';
-  return `
-    <div class="map-label" style="--oil-color:${cropColor(row.crop_group)}">
-      <span class="stripe"></span>
-      <div><strong>${esc(shortRegionName(row))}</strong>${badgeHtml}<span>${esc(cropLabel(row))}</span></div>
-    </div>
-  `;
+  return buildMapLabel(row, map ? map.getZoom() : 6, 'region');
 }
 
 function euDisplayRows() {
@@ -1171,7 +1350,7 @@ function renderEuRegionLayer() {
     main: rows.length,
     risk: rows.filter(row => riskNum(row.risk_level_v3) >= 3).length,
     fallback: fallbackCount + 1,
-    note: '欧盟为 virtual country；地区层展示成员国，不生成欧盟整体假边界。'
+    note: '欧盟按成员国汇总；地区层展示成员国边界。'
   };
   updateOverlay();
 }
@@ -1274,7 +1453,7 @@ function renderCropProgressBlock(row) {
   const progressUsed = row.progress_used_in_risk_label === true;
   const stageResolutionText = progressUsed
     ? `作物进度已用于生长期修正：作物历阶段 ${calendarStage}，进度修正为 ${resolvedStage}。依据：${stageEvidence || row.progress_stage_basis || '可用真实进度记录'}`
-    : `作物进度暂未用于生长期修正：${stageEvidence || '数据为样例/来源未激活/数据过期。'}`;
+    : `作物进度暂未用于生长期修正：${stageEvidence || '数据仍在建设中、来源未激活或数据已过期。'}`;
   const stageResolutionColor = progressUsed ? '#166534' : '#6b7280';
   const stageResolutionBg = progressUsed ? '#ecfdf3' : '#f8fafc';
   const rows = records.map(r => {
@@ -1286,7 +1465,7 @@ function renderCropProgressBlock(row) {
     const yoy = isNum(r.yoy_diff_pp) ? (Number(r.yoy_diff_pp) >= 0 ? '+' : '') + Number(r.yoy_diff_pp).toFixed(1) + 'pp' : '—';
     const avg5y = isNum(r.avg_5y_diff_pp) ? (Number(r.avg_5y_diff_pp) >= 0 ? '+' : '') + Number(r.avg_5y_diff_pp).toFixed(1) + 'pp' : '—';
     const seasonType = r.season_type === 'first_crop' ? '(一季)' : r.season_type === 'second_crop' ? '(二季)' : '';
-    const sampleBadge = r.is_sample ? ' <span style="background:#fef3c7;color:#92400e;padding:1px 5px;border-radius:3px;font-size:10px;">样例</span>' : '';
+    const sampleBadge = r.is_sample ? ' <span style="background:#fef3c7;color:#92400e;padding:1px 5px;border-radius:3px;font-size:10px;">建设中</span>' : '';
     return `<div class="data-grid cols-4" style="margin-bottom:6px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
       <div class="data-cell"><span class="lbl">${esc(metricCn)}${esc(seasonType)}${sampleBadge}</span><span class="val">${esc(pct)}</span></div>
       <div class="data-cell"><span class="lbl">节奏</span><span class="val" style="color:${delayColor};font-weight:600;">${esc(delayCn)}</span></div>
@@ -1301,9 +1480,9 @@ function renderCropProgressBlock(row) {
   const dataStatus = records[0].data_status || '';
   const notUsable = records.some(r => r.usable_for_stage_resolution === false);
   const sampleNotice = allSample
-    ? '<div style="color:#92400e;background:#fef3c7;padding:4px 8px;border-radius:4px;margin-top:4px;font-size:11px">以上为样例数据，未用于风险判断</div>'
+    ? '<div style="color:#92400e;background:#fef3c7;padding:4px 8px;border-radius:4px;margin-top:4px;font-size:11px">以上数据仍在建设中，仅用于页面展示，未用于风险判断。</div>'
     : (anyReal && records.some(r => r.is_sample)
-      ? '<div style="color:#92400e;background:#fef3c7;padding:4px 8px;border-radius:4px;margin-top:4px;font-size:11px">部分地区为样例数据</div>'
+      ? '<div style="color:#92400e;background:#fef3c7;padding:4px 8px;border-radius:4px;margin-top:4px;font-size:11px">部分地区数据仍在建设中。</div>'
       : '');
   return `<div class="detail-block">
     <h3>作物进度</h3>
@@ -1358,7 +1537,7 @@ function renderSoilTemperatureBlock(row) {
   let statusNotice = '';
   if (isSynthetic) {
     statusNotice = `<div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:4px;padding:6px 8px;margin-bottom:6px;font-size:11px;color:#92400e;">
-      ⚠ 合成测试数据，仅用于验证流程，未用于风险判断。</div>`;
+      建设中数据，仅用于验证展示，未用于风险判断。</div>`;
   } else if (isRecentOnly) {
     statusNotice = `<div style="background:#eff6ff;border:1px solid #93c5fd;border-radius:4px;padding:6px 8px;margin-bottom:6px;font-size:11px;color:#1e40af;">
       已有近期真实土壤温度，历史同期基线待补，暂不生成正式分位信号。</div>`;
@@ -1371,10 +1550,10 @@ function renderSoilTemperatureBlock(row) {
   let bottomNote = '';
   if (isRealActive) {
     bottomNote = usedForExplanation
-      ? `<p style="margin-top:4px;color:var(--muted);font-size:10px;font-style:italic;">土壤温度已作为当前标签解释的辅助 evidence，不单独决定标签等级。</p>`
+      ? `<p style="margin-top:4px;color:var(--muted);font-size:10px;font-style:italic;">土壤温度已作为当前标签解释的辅助证据，不单独决定标签等级。</p>`
       : `<p style="margin-top:4px;color:var(--muted);font-size:10px;font-style:italic;">土壤温度已展示，但当前未参与风险判断。</p>`;
   } else if (isSynthetic) {
-    bottomNote = `<p style="margin-top:4px;color:var(--muted);font-size:10px;font-style:italic;">以上数值为测试数据，不反映实际土壤状况。</p>`;
+    bottomNote = `<p style="margin-top:4px;color:var(--muted);font-size:10px;font-style:italic;">以上数值仍在建设中，不反映实际土壤状况。</p>`;
   }
 
   return `<div class="detail-block">
@@ -1470,6 +1649,7 @@ function renderRiskTagsBlock(row) {
 function regionConclusion(row) {
   const name = shortRegionName(row);
   const label = row.risk_label_v4_cn || row.dominant_map_badge_cn || row.risk_level_v3_cn || '常规监控';
+  if (riskNum(row.risk_level_v3) <= 1) return `${name}${cropLabel(row)}当前维持常规监控。`;
   const stage = row.resolved_growth_stage || row.current_growth_stage_cn || row.growth_stage_code;
   const impact = row.current_operation_impact_cn || row.future_yield_impact_cn || row.production_impact_cn || row.risk_reason_cn;
   return `${name}${cropLabel(row)}当前标签为${label}${stage ? `，作物阶段为${stage}` : ''}${impact ? `；${impact}` : ''}。`;
@@ -1517,46 +1697,29 @@ function renderRegionStatusBlock(row) {
   const confidence = row.rule_confidence || row.aggregation_confidence || row.signal_confidence || 'medium';
   const participates = !!(row.risk_label_v4_cn || row.dominant_map_badge_cn || isNum(row.risk_level_v3));
   const tagUsesSoilTemp = Array.isArray(row.risk_tags) && row.risk_tags.some(tag => tag && tag.soil_temp_used === true);
+  const displayedStatus = proxy ? '数据有限' : formatDataStatus(row.data_status || '', row);
   const badges = [
-    `<span class="status-badge good">数据状态：真实数据</span>`,
-    `<span class="status-badge ${proxy ? 'warn' : 'info'}">产区口径：${esc(proxy ? 'national proxy' : (row.admin_level_for_map || row.admin_level || 'admin1'))}</span>`,
-    `<span class="status-badge info">天气点：代表点${row.has_boundary ? ' / polygon 映射' : ''}</span>`,
+    `<span class="status-badge ${proxy ? 'warn' : 'good'}">数据状态：${displayedStatus}</span>`,
+    `<span class="status-badge ${proxy ? 'warn' : 'info'}">产区口径：${proxy ? '国家代表' : '一级产区'}</span>`,
+    `<span class="status-badge info">空间表达：${row.has_boundary ? '区域边界' : '代表点'}</span>`,
     `<span class="status-badge ${participates ? 'good' : 'warn'}">参与风险判断：${participates ? '是' : '否'}</span>`,
-    `<span class="status-badge ${confidence === 'low' ? 'warn' : 'good'}">置信度：${esc(confidence)}</span>`
+    `<span class="status-badge ${confidence === 'low' ? 'warn' : 'good'}">置信度：${formatConfidence(confidence)}</span>`
   ].join('');
   const notices = [];
-  if (proxy) notices.push(countryRecord && countryRecord.proxy_warning_cn ? countryRecord.proxy_warning_cn : '国家代理点：该结果基于国家级或低样本代表点，适合观察方向，不等同于完整产区分布。');
-  if (hasSampleProgress) notices.push('作物进度样例数据，仅用于页面展示测试，未用于风险判断。');
+  if (proxy) notices.push('国家代理点 / 低样本口径，仅用于观察，不代表完整产区分布。');
+  if (hasSampleProgress) notices.push('部分作物进度数据仍在建设中，仅用于页面展示，未用于风险判断。');
   if (st && st.usable_for_risk_label === false && !tagUsesSoilTemp && row.soil_temp_used_in_risk_label !== true) notices.push('土壤温度已展示，但当前未参与风险判断。');
-  if (st && st.usable_for_risk_label === false && (tagUsesSoilTemp || row.soil_temp_used_in_risk_label === true)) notices.push('土壤温度当前仅作为标签解释的辅助 evidence，不单独决定风险等级。');
+  if (st && st.usable_for_risk_label === false && (tagUsesSoilTemp || row.soil_temp_used_in_risk_label === true)) notices.push('土壤温度当前仅作为标签解释的辅助证据，不单独决定风险等级。');
   return `<div class="detail-block"><h3>数据状态与置信度</h3><div class="status-badges">${badges}</div>${notices.map(text => `<div class="status-notice">${esc(text)}</div>`).join('')}<p style="margin-top:7px;color:var(--muted);font-size:10.5px;">来源 ${esc(row.source_name || '—')} · 更新 ${esc(row.updated_at ? String(row.updated_at).slice(0, 10) : '—')} · 规则 ${RULE_VERSION}</p></div>`;
 }
 
 function showRegionDetail(row) {
   destroyCharts();
+  state.selectedRegionRecord = row;
   const conclusion = regionConclusion(row);
-
-  document.getElementById('detail-panel').innerHTML = `
-    <div class="detail-header">
-      <h2>${esc(shortRegionName(row))}</h2>
-      <div class="subtitle">
-        ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
-        <span class="pill oil-pill" style="--oil-color:${cropColor(row.crop_group)}">${esc(cropLabel(row))}</span>
-        <span class="pill">全国占比 ${esc(fmtPct(row.national_share))}</span>
-      </div>
-    </div>
-    <div class="detail-block">
-      <h3>一句话结论</h3>
-      <div class="conclusion-line">${esc(conclusion)}</div>
-      <div class="data-grid" style="margin-top:10px;">
-        <div class="data-cell"><span class="lbl">产量</span><span class="val">${esc(fmtProduction(row.production_tonnes))}</span></div>
-        <div class="data-cell"><span class="lbl">全国占比</span><span class="val">${esc(fmtPct(row.national_share))}</span></div>
-      </div>
-    </div>
+  const extraHtml = `
     ${renderRiskTagsBlock(row)}
     ${renderCropProgressBlock(row)}
-    ${renderImpactChannelsBlock(row)}
-    ${renderEvidenceBlock(row)}
     ${renderSoilTemperatureBlock(row)}
     <div class="detail-block">
       <h3>图表区域 · 土壤湿度</h3>
@@ -1594,6 +1757,17 @@ function showRegionDetail(row) {
     </div>
     ${renderRegionStatusBlock(row)}
   `;
+
+  document.getElementById('detail-panel').innerHTML = buildDetailPanel(row, {
+    title: shortRegionName(row),
+    conclusion,
+    countryName: row.country_cn || row.country,
+    regionName: shortRegionName(row),
+    production: row.production_tonnes,
+    weatherRecord: row,
+    stageRecord: row,
+    extraHtml
+  });
 
   requestAnimationFrame(() => renderRegionCharts(row));
 }
@@ -1814,6 +1988,7 @@ function bindEvents() {
     state.selectedCountry = null;
     state.selectedCountryCrop = null;
     state.selectedCountryRecord = null;
+    state.selectedRegionRecord = null;
     document.querySelectorAll('.crop-tab').forEach(item => item.classList.toggle('active', item.dataset.crop === state.crop));
     populateFilters();
     renderCountryLayer();
@@ -1842,11 +2017,21 @@ function bindEvents() {
     renderCountryLayer();
   });
 
+  document.getElementById('time-tabs').addEventListener('click', event => {
+    const tab = event.target.closest('.time-tab');
+    if (!tab) return;
+    state.timeRange = tab.dataset.range;
+    updateTimeRangeUI();
+    if (state.selectedRegionRecord) showRegionDetail(state.selectedRegionRecord);
+    else if (state.selectedCountryRecord) showCountryDetail(state.selectedCountryRecord);
+  });
+
   document.getElementById('f-country').addEventListener('change', event => {
     state.country = event.target.value;
     state.selectedCountry = null;
     state.selectedCountryCrop = null;
     state.selectedCountryRecord = null;
+    state.selectedRegionRecord = null;
     renderCountryLayer();
   });
 
@@ -1867,15 +2052,18 @@ function bindEvents() {
       risk: 'all',
       anomaly: 'all',
       dataStatus: 'all',
+      timeRange: '14d',
       layer: 'country',
       selectedCountry: null,
       selectedCountryCrop: null,
-      selectedCountryRecord: null
+      selectedCountryRecord: null,
+      selectedRegionRecord: null
     };
     document.querySelectorAll('.crop-tab').forEach(item => item.classList.toggle('active', item.dataset.crop === 'all'));
     document.querySelectorAll('.risk-tab').forEach(item => item.classList.toggle('active', item.dataset.risk === 'all'));
     document.getElementById('f-data-status').value = 'all';
     document.getElementById('more-filters').open = false;
+    updateTimeRangeUI();
     populateFilters();
     renderCountryLayer();
   });
@@ -1931,22 +2119,113 @@ function updateMetaDate() {
   document.getElementById('meta-rule').textContent = RULE_VERSION;
 }
 
-function renderTodaySummary() {
-  const countryKeys = new Set(store.countryRecords.map(row => row.country).filter(Boolean));
-  const riskCountryKeys = new Set(store.countryRecords.filter(row => riskNumFromCountry(row) >= 3).map(row => row.country).filter(Boolean));
-  const riskRegions = store.adminRecords.filter(row => riskNum(row.risk_level_v3) >= 3);
-  const top = store.countryRecords.slice().sort((a, b) => {
+function summaryEligibleRecords(records) {
+  return (Array.isArray(records) ? records : []).filter(row => row && row.source_valid_for_frontend !== false && !isSummaryProxyRecord(row));
+}
+
+function buildSummaryCards(records) {
+  const eligible = summaryEligibleRecords(records);
+  const topRisks = eligible.filter(row => riskNumFromCountry(row) >= 3).slice().sort((a, b) => {
     const score = (Number(b.weighted_risk_score) || 0) - (Number(a.weighted_risk_score) || 0);
     if (score) return score;
+    const disturbedShare = (Number(b.disturbed_share) || 0) - (Number(a.disturbed_share) || 0);
+    if (disturbedShare) return disturbedShare;
     return (Number(b.total_production_tonnes) || 0) - (Number(a.total_production_tonnes) || 0);
   }).slice(0, 3);
-  const focus = top.map(row => `${row.country_cn || row.country} ${CROP_META[row.crop_group] ? CROP_META[row.crop_group].tab : row.crop_group}`).join('、');
-  document.getElementById('sum-countries').textContent = countryKeys.size;
-  document.getElementById('sum-regions').textContent = store.adminRecords.length;
-  document.getElementById('sum-risk-countries').textContent = riskCountryKeys.size;
-  document.getElementById('sum-risk-regions').textContent = riskRegions.length;
-  document.getElementById('sum-focus').textContent = focus || '暂无可计算重点';
+
+  const totalProduction = eligible.reduce((sum, row) => sum + (Number(row.total_production_tonnes) || 0), 0);
+  const highRisk = eligible.filter(row => riskNumFromCountry(row) >= 3);
+  const affectedProduction = highRisk.reduce((sum, row) => {
+    if (isNum(row.disturbed_production_tonnes)) return sum + Number(row.disturbed_production_tonnes);
+    if (isNum(row.disturbed_share) && isNum(row.total_production_tonnes)) return sum + Number(row.disturbed_share) * Number(row.total_production_tonnes);
+    return sum;
+  }, 0);
+
+  const eligibleKeys = new Set(eligible.map(row => `${canonicalCountry(row.country)}::${row.crop_group}`));
+  const riskRegions = store.adminRecords.filter(row => eligibleKeys.has(`${row.country_key}::${row.crop_group}`) && riskNum(row.risk_level_v3) >= 3);
+  const anomalyWeights = new Map();
+  riskRegions.forEach(row => {
+    const label = row.anomaly_label || row.anomaly_type || row.risk_reason_cn || formatAnomalyType(row);
+    anomalyWeights.set(label, (anomalyWeights.get(label) || 0) + (Number(row.production_tonnes) || 1));
+  });
+  const anomalyTypes = [...anomalyWeights.entries()].sort((a, b) => b[1] - a[1]).slice(0, 2).map(([label]) => label);
+
+  const forecastRegions = riskRegions.filter(row => row.forecast_signal);
+  let reliefWeight = 0;
+  let worsenWeight = 0;
+  let steadyWeight = 0;
+  forecastRegions.forEach(row => {
+    const weight = Number(row.production_tonnes) || 1;
+    const signal = String(row.forecast_signal || 'unknown');
+    if (signal.includes('relief')) reliefWeight += weight;
+    else if (signal.includes('worsen') || signal.includes('no_relief')) worsenWeight += weight;
+    else steadyWeight += weight;
+  });
+  let forecastChange = '待接入';
+  if (forecastRegions.length) {
+    forecastChange = '维持';
+    if (reliefWeight > worsenWeight * 1.15) forecastChange = '缓和';
+    else if (worsenWeight > reliefWeight * 1.15) forecastChange = '升温';
+  }
+
+  return {
+    topRisks,
+    productionShare: totalProduction > 0 && affectedProduction > 0 ? affectedProduction / totalProduction : null,
+    productionNote: totalProduction > 0 && affectedProduction > 0
+      ? `${fmtProduction(affectedProduction)} / 可量化口径 ${fmtProduction(totalProduction)}`
+      : '暂无可量化产量占比',
+    anomalyTypes,
+    forecastChange,
+    forecastNote: forecastRegions.length
+      ? `缓和 ${fmtProduction(reliefWeight)} · 升温 ${fmtProduction(worsenWeight)} · 维持 ${fmtProduction(steadyWeight)}`
+      : '待接入预报变化'
+  };
+}
+
+function buildTodayFocus(records) {
+  const summary = buildSummaryCards(records);
+  return summary.topRisks.map(countryRow => {
+    const region = store.adminRecords
+      .filter(row => row.country_key === canonicalCountry(countryRow.country) && row.crop_group === countryRow.crop_group)
+      .sort((a, b) => riskNum(b.risk_level_v3) - riskNum(a.risk_level_v3) || (Number(b.production_tonnes) || 0) - (Number(a.production_tonnes) || 0))[0];
+    const subject = `${countryRow.country_cn || countryRow.country}${CROP_META[countryRow.crop_group] ? CROP_META[countryRow.crop_group].tab : cropLabel(countryRow)}`;
+    const regionName = region ? shortRegionName(region) : '';
+    const fact = region && (region.current_operation_impact_cn || region.future_yield_impact_cn || region.weather_condition_summary_cn || region.risk_reason_cn);
+    return {
+      subject,
+      text: `${regionName ? `${regionName}：` : ''}${formatPublicText(fact || countryRow.dominant_risk_reason_cn || formatRiskLabel(countryRow))}`
+    };
+  });
+}
+
+function renderTodaySummary() {
+  const summary = buildSummaryCards(store.countryRecords);
+  const riskList = document.getElementById('summary-risk-list');
+  riskList.innerHTML = summary.topRisks.length
+    ? summary.topRisks.map(row => `<div class="summary-risk-line"><b>${esc(row.country_cn || row.country)}｜${esc(CROP_META[row.crop_group] ? CROP_META[row.crop_group].tab : cropLabel(row))}</b><span style="color:${riskColor(riskNumFromCountry(row))}">${esc(formatRiskLabel(row))}</span></div>`).join('')
+    : '<span style="color:var(--muted);font-weight:500;">暂无显著风险</span>';
+  document.getElementById('summary-production-share').textContent = summary.productionShare === null ? '暂无' : fmtPct(summary.productionShare, 1);
+  document.getElementById('summary-production-note').textContent = summary.productionNote;
+  document.getElementById('summary-anomaly-types').textContent = summary.anomalyTypes.length ? summary.anomalyTypes.join('；') : '暂无显著异常';
+  document.getElementById('summary-forecast-change').textContent = summary.forecastChange;
+  document.getElementById('summary-forecast-note').textContent = summary.forecastNote;
+
+  const focusItems = buildTodayFocus(store.countryRecords);
+  document.getElementById('today-focus-list').innerHTML = focusItems.length
+    ? focusItems.map(item => `<div class="today-focus-item"><b>${esc(item.subject)}：</b>${esc(item.text)}</div>`).join('')
+    : '<div class="today-focus-item">当前暂无显著产区天气风险，维持常规监控。</div>';
   document.getElementById('sum-date').textContent = `数据 ${bestDataDate()}`;
+}
+
+function updateTimeRangeUI() {
+  const messages = {
+    '7d': '近7天使用现有短周期降雨字段；地图继续使用综合风险口径。',
+    '14d': '近14天数据待接入；地图继续使用现有综合风险口径。',
+    '30d': '近30天使用现有降雨距平字段；地图继续使用综合风险口径。',
+    'future7d': '未来7天使用现有降雨预报字段；地图继续使用综合风险口径。'
+  };
+  document.querySelectorAll('.time-tab').forEach(button => button.classList.toggle('active', button.dataset.range === state.timeRange));
+  document.getElementById('time-range-note').textContent = messages[state.timeRange] || messages['14d'];
 }
 
 async function init() {
@@ -1966,6 +2245,7 @@ async function init() {
 
   prepareData({ countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp, siteMeta });
   updateMetaDate();
+  updateTimeRangeUI();
   renderTodaySummary();
   populateFilters();
   renderCountryLayer();
