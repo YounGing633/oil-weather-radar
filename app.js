@@ -33,6 +33,9 @@ const RISK_TYPE_CN = {
   drought_water_deficit: '干旱/水分不足',
   heat_drydown: '高温干化',
   wetness_waterlogging: '偏湿/渍涝',
+  harvest_rain: '收获/采收降雨',
+  low_temperature: '低温压力',
+  heavy_rain_disruption: '强降雨作业受扰',
   no_clear_pressure: '无明确压力'
 };
 
@@ -325,13 +328,56 @@ function riskTypeText(value) {
   return RISK_TYPE_CN[value] || fmtDash(value);
 }
 
+function tagRiskNum(tag) {
+  return riskNum(tag && tag.risk_level);
+}
+
+function isSupportiveTag(tag) {
+  const text = `${tag && tag.direction || ''} ${tag && tag.impact_type || ''} ${tag && tag.impact_direction || ''}`.toLowerCase();
+  return text.includes('support');
+}
+
+function isAdverseTag(tag) {
+  if (!tag) return false;
+  if (isSupportiveTag(tag)) return false;
+  const text = `${tag.direction || ''} ${tag.impact_type || ''} ${tag.impact_direction || ''}`.toLowerCase();
+  return text.includes('adverse')
+    || text.includes('operation')
+    || text.includes('yield')
+    || tagRiskNum(tag) >= 2;
+}
+
+function sortedRiskTags(record, predicate = () => true) {
+  return (Array.isArray(record && record.risk_tags) ? record.risk_tags : [])
+    .filter(tag => tag && predicate(tag))
+    .slice()
+    .sort((a, b) => tagRiskNum(b) - tagRiskNum(a)
+      || (Number(b.display_priority) || 0) - (Number(a.display_priority) || 0));
+}
+
+function primaryAdverseTag(record) {
+  const level = riskNum(record && record.risk_level_v3);
+  return sortedRiskTags(record, tag => isAdverseTag(tag) && tagRiskNum(tag) >= Math.min(2, Math.max(1, level - 1)))[0]
+    || sortedRiskTags(record, isAdverseTag)[0]
+    || null;
+}
+
 function formatRiskLabel(record) {
   if (!record) return RISK[0].cn;
-  return record.risk_label_v4_cn
-    || record.dominant_map_badge_cn
-    || record.weighted_risk_level_cn
+  const levelText = record.weighted_risk_level_cn
     || record.risk_level_v3_cn
     || riskText(record.weighted_risk_level ?? record.risk_level_v3);
+  const adverseTag = primaryAdverseTag(record);
+  if (adverseTag && (adverseTag.risk_label_cn || adverseTag.label_cn)) return adverseTag.risk_label_cn || adverseTag.label_cn;
+  if (riskNum(record.risk_level_v3) <= 2 && (record.risk_label_v4_cn || record.dominant_map_badge_cn)) {
+    return record.risk_label_v4_cn || record.dominant_map_badge_cn;
+  }
+  const type = record.dominant_risk_type || record.risk_type;
+  if (type && type !== 'no_clear_pressure') return `${levelText}｜${riskTypeText(type)}`;
+  return record.dominant_country_badge_cn
+    || record.weighted_risk_level_cn
+    || record.risk_level_v3_cn
+    || levelText;
 }
 
 function formatDataStatus(dataStatus, record = null) {
@@ -1132,7 +1178,7 @@ function buildRecoverySentences(row) {
 }
 
 function renderConclusionBlock(row) {
-  const current = buildCurrentRiskSentences(row);
+  const current = buildPressureItems(row).slice(0, 2);
   const recovery = buildRecoverySentences(row);
   if (!current.length && !recovery.length) return '';
   const currentHtml = current.length ? `<p><b>目前风险：</b>${esc(current.join(''))}</p>` : '';
@@ -1325,13 +1371,130 @@ function buildDetailHeaderTitle(record, options = {}) {
   return parts.join('｜');
 }
 
+function signalText(value) {
+  const map = {
+    dry_day: '1日偏干',
+    normal_day: '1日正常',
+    wet_day: '1日有雨',
+    heavy_rain_day: '1日强降雨',
+    very_heavy_rain_day: '1日特强降雨',
+    dry_3d: '3日偏干',
+    normal_3d: '3日正常',
+    wet_3d: '3日偏湿',
+    heavy_3d: '3日强降雨',
+    very_heavy_3d: '3日特强降雨',
+    dry_7d: '7日偏干',
+    normal_7d: '7日正常',
+    wet_7d: '7日偏湿',
+    heavy_7d: '7日强降雨',
+    very_heavy_7d: '7日特强降雨',
+    heavy_rain_disruption: '强降雨扰动作业',
+    operation_disruption_wet: '偏湿扰动作业',
+    operation_friendly_dry_window: '偏干利于作业窗口',
+    normal_operation: '作业条件正常'
+  };
+  return map[value] || value || '';
+}
+
+function impactChannelText(tag) {
+  const channel = String(tag && (tag.impact_channel || tag.impact_type || '')).toLowerCase();
+  if (channel.includes('harvest')) return '收获/采收';
+  if (channel.includes('transport')) return '运输';
+  if (channel.includes('sowing') || channel.includes('establishment')) return '播种/出苗';
+  if (channel.includes('yield')) return '产量形成';
+  if (channel.includes('operation')) return '田间作业';
+  return '';
+}
+
+function tagRiskSentence(tag) {
+  const label = tag.risk_label_cn || tag.label_cn || '风险标签';
+  const channel = impactChannelText(tag);
+  const impact = tag.impact_text_cn || tag.evidence_cn || '';
+  const level = tagRiskNum(tag);
+  const prefix = channel ? `${label}（${channel}）` : label;
+  return `${prefix}：${impact || `标签等级 ${level}`}。`;
+}
+
+function evidenceSnapshot(row) {
+  const parts = [];
+  if (isNum(row.precip_30d_ratio_pct)) parts.push(`30日降雨为常年${fmtPct(row.precip_30d_ratio_pct, 0, false)}`);
+  else if (isNum(row.precip_30d_anomaly_mm)) parts.push(`30日降雨距平${fmtSigned(row.precip_30d_anomaly_mm, 1, ' mm')}`);
+  const shortSignals = [row.rain_signal_1d, row.rain_signal_3d, row.rain_signal_7d, row.operation_rain_signal]
+    .map(signalText)
+    .filter(Boolean);
+  if (shortSignals.length) parts.push(shortSignals.join('、'));
+  const soil = [];
+  if (isNum(row.rootzone_percentile)) soil.push(`根区P${Math.round(Number(row.rootzone_percentile))}`);
+  if (isNum(row.surface_percentile)) soil.push(`表层P${Math.round(Number(row.surface_percentile))}`);
+  if (soil.length) parts.push(`土壤${soil.join('、')}`);
+  if (isNum(row.forecast_7d_precip) || isNum(row.forecast_16d_precip)) {
+    const fc = [
+      isNum(row.forecast_7d_precip) ? `7天${fmtNum(row.forecast_7d_precip, 1, ' mm')}` : '',
+      isNum(row.forecast_16d_precip) ? `16天${fmtNum(row.forecast_16d_precip, 1, ' mm')}` : ''
+    ].filter(Boolean).join('、');
+    parts.push(`预报${fc}`);
+  }
+  return parts.join('；');
+}
+
+function buildRiskTagSentences(row) {
+  const adverse = sortedRiskTags(row, tag => isAdverseTag(tag) && tagRiskNum(tag) >= 2).slice(0, 3);
+  return adverse.map(tagRiskSentence);
+}
+
+function buildSignalConsistencySentences(row) {
+  const items = [];
+  const riskType = row && row.risk_type;
+  const moisture = moistureState(row);
+  const rain = rainState(row);
+  const stage = cropStageInfo(row);
+  const forecast7 = firstNumeric(row, ['forecast_7d_precip', 'forecast_rainfall', 'forecast_7d', 'rain_forecast_7d']);
+  const forecast16 = firstNumeric(row, ['forecast_16d_precip', 'forecast_16d', 'rain_forecast_16d']);
+  const rain30Pct = firstNumeric(row, ['precip_30d_ratio_pct', 'rain_30d_pct_of_normal']);
+  const rain30Wet = isNum(rain30Pct) && rain30Pct >= 120;
+  const rain30Dry = isNum(rain30Pct) && rain30Pct <= 80;
+  const hasWetShortSignal = /wet|heavy/.test(`${row && row.rain_signal_3d || ''} ${row && row.rain_signal_7d || ''} ${row && row.operation_rain_signal || ''}`);
+
+  if (riskType === 'drought_water_deficit' && rain30Wet && (moisture.rootDry || moisture.surfaceDry)) {
+    items.push('信号分化：30日累计降雨偏多，但土壤分位偏低，当前水分压力主要来自根区/表层墒情和后续补水不足。');
+  } else if (riskType === 'drought_water_deficit' && rain.status === 'dry') {
+    items.push('降雨偏少与土壤/预报信号方向一致，水分压力判断较一致。');
+  } else if (riskType === 'drought_water_deficit' && isNum(forecast16) && forecast16 >= 50) {
+    items.push('当前水分压力仍需关注，但16天预报有补水，后续可能缓和。');
+  }
+
+  if (riskType === 'wetness_waterlogging' && row && row.rain_signal_1d === 'dry_day' && hasWetShortSignal) {
+    items.push('单日已转干，但3日/7日累计或作业信号仍偏湿，风险主要指向田间作业窗口而不是当天降雨。');
+  } else if (riskType === 'wetness_waterlogging' && (moisture.surfaceWet || moisture.rootWet || hasWetShortSignal)) {
+    items.push(`${stage && stage.phase === 'harvest' ? '收获阶段' : '当前阶段'}偏湿信号仍在，重点关注作业效率、含水率和运输窗口。`);
+  }
+
+  if (riskType === 'heat_drydown' && (moisture.rootDry || moisture.surfaceDry)) {
+    items.push('高温/土温信号与偏干墒情叠加，水分消耗压力高于单一降雨指标。');
+  }
+  if (riskType === 'low_temperature') {
+    items.push('低温风险来自土温/气温信号，需结合当前作物阶段判断恢复速度。');
+  }
+  if (!items.length && row && row.risk_reason_cn && riskNum(row.risk_level_v3) >= 3) {
+    items.push(row.risk_reason_cn);
+  }
+  return items;
+}
+
 function buildPressureItems(record, evidenceRecord = record) {
   const row = evidenceRecord || record;
-  return buildCurrentRiskSentences(row);
+  const items = [
+    ...buildRiskTagSentences(row),
+    ...buildSignalConsistencySentences(row),
+    ...buildCurrentRiskSentences(row)
+  ].filter(Boolean);
+  return [...new Set(items)].slice(0, 5);
 }
 
 function renderRainSoilExplanationBlock(row) {
-  return '';
+  const snapshot = evidenceSnapshot(row);
+  if (!snapshot) return '';
+  return `<div class="detail-block"><h3>风险证据链</h3><p>${esc(snapshot)}</p></div>`;
 }
 
 function renderRiskJudgementBlock(record, options = {}) {
@@ -1364,6 +1527,7 @@ function buildDetailPanel(record, options = {}) {
     ${renderConclusionBlock(options.weatherRecord || record)}
     ${renderImpactScopeBlock(record, options)}
     ${renderWeatherFactsBlock(options.weatherRecord || record, options.weatherTitle || '天气事实')}
+    ${renderEvidenceBlock(options.weatherRecord || record)}
     ${renderGrowthStageBlock(stageRecord)}
     ${renderRiskJudgementBlock(record, { isCountry: options.isCountry, evidenceRecord: stageRecord || options.weatherRecord || record })}
     ${options.extraHtml || ''}
@@ -1588,11 +1752,12 @@ function renderRegionFallbackMarker(row) {
 }
 
 function regionTooltip(row) {
+  const reason = buildPressureItems(row)[0] || row.risk_reason_cn || riskTypeText(row.risk_type);
   return `
     <div style="min-width:180px;font-size:12px;">
       <b>${esc(shortRegionName(row))}</b> ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
       <div style="margin-top:4px;color:var(--muted);">${esc(cropLabel(row))} ${esc(fmtPct(row.national_share))}</div>
-      <div style="margin-top:2px;">${esc(row.risk_reason_cn || riskTypeText(row.risk_type))}</div>
+      <div style="margin-top:2px;">${esc(reason)}</div>
     </div>
   `;
 }
@@ -1831,12 +1996,31 @@ function renderSoilTemperatureBlock(row) {
 }
 
 function renderRiskTagsBlock(row) {
-  return '';
+  const tags = sortedRiskTags(row, () => true).slice(0, 6);
+  if (!tags.length) return '';
+  const cards = tags.map(tag => {
+    const supportive = isSupportiveTag(tag);
+    const color = supportive ? '#27ae60' : riskColor(tagRiskNum(tag));
+    const label = tag.risk_label_cn || tag.label_cn || '风险标签';
+    const flags = [
+      supportive ? '支持性' : '不利',
+      tag.impact_type || '',
+      tag.growth_stage_cn || tag.growth_stage_code || '',
+      tag.confidence ? `置信度${formatConfidence(tag.confidence)}` : ''
+    ].filter(Boolean);
+    const evidence = tag.impact_text_cn || tag.evidence_cn || tag.risk_reason_cn || '';
+    return `<div class="risk-tag-card" style="--tag-color:${color}">
+      <div class="risk-tag-head"><b>${esc(label)}</b>${riskBadge(tagRiskNum(tag), supportive ? '支持性' : riskText(tagRiskNum(tag)))}</div>
+      ${evidence ? `<div class="risk-tag-evidence">${esc(evidence)}</div>` : ''}
+      ${flags.length ? `<div class="risk-tag-flags">${flags.map(flag => `<span>${esc(flag)}</span>`).join('')}</div>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="detail-block"><h3>风险触发标签</h3>${cards}</div>`;
 }
 
 function regionConclusion(row) {
   const name = shortRegionName(row);
-  const label = row.risk_label_v4_cn || row.dominant_map_badge_cn || row.risk_level_v3_cn || '常规监控';
+  const label = formatRiskLabel(row);
   if (riskNum(row.risk_level_v3) <= 1) return `${name}${cropLabel(row)}当前维持常规监控。`;
   const stage = row.resolved_growth_stage || row.current_growth_stage_cn || row.growth_stage_code;
   const stageText = ['palm', 'coconut'].includes(String(row.crop_group || '').toLowerCase())
@@ -2451,7 +2635,7 @@ function buildTodayFocus(records) {
       .sort((a, b) => riskNum(b.risk_level_v3) - riskNum(a.risk_level_v3) || (Number(b.production_tonnes) || 0) - (Number(a.production_tonnes) || 0))[0];
     const subject = `${countryRow.country_cn || countryRow.country}${CROP_META[countryRow.crop_group] ? CROP_META[countryRow.crop_group].tab : cropLabel(countryRow)}`;
     const regionName = region ? shortRegionName(region) : '';
-    const fact = region && (region.current_operation_impact_cn || region.future_yield_impact_cn || region.weather_condition_summary_cn || region.risk_reason_cn);
+    const fact = region && (buildPressureItems(region)[0] || region.current_operation_impact_cn || region.future_yield_impact_cn || region.weather_condition_summary_cn || region.risk_reason_cn);
     return {
       subject,
       text: `${regionName ? `${regionName}：` : ''}${formatPublicText(fact || countryRow.dominant_risk_reason_cn || formatRiskLabel(countryRow))}`
