@@ -36,6 +36,7 @@ const RISK_TYPE_CN = {
   harvest_rain: '收获/采收降雨',
   low_temperature: '低温压力',
   heavy_rain_disruption: '强降雨作业受扰',
+  mixed_signal_monitor: '信号分化/观察',
   no_clear_pressure: '无明确压力'
 };
 
@@ -364,15 +365,16 @@ function primaryAdverseTag(record) {
 
 function formatRiskLabel(record) {
   if (!record) return RISK[0].cn;
+  const levelNum = riskNum(record.risk_level_v3);
   const levelText = record.weighted_risk_level_cn
     || record.risk_level_v3_cn
     || riskText(record.weighted_risk_level ?? record.risk_level_v3);
   const adverseTag = primaryAdverseTag(record);
-  if (adverseTag && (adverseTag.risk_label_cn || adverseTag.label_cn)) return adverseTag.risk_label_cn || adverseTag.label_cn;
-  if (riskNum(record.risk_level_v3) <= 2 && (record.risk_label_v4_cn || record.dominant_map_badge_cn)) {
+  if (adverseTag && levelNum >= 2 && (adverseTag.risk_label_cn || adverseTag.label_cn)) return adverseTag.risk_label_cn || adverseTag.label_cn;
+  if (levelNum >= 2 && (record.risk_label_v4_cn || record.dominant_map_badge_cn)) {
     return record.risk_label_v4_cn || record.dominant_map_badge_cn;
   }
-  const type = record.dominant_risk_type || record.risk_type;
+  const type = levelNum >= 2 ? (record.dominant_risk_type || record.risk_type) : record.risk_type;
   if (type && type !== 'no_clear_pressure') return `${levelText}｜${riskTypeText(type)}`;
   return record.dominant_country_badge_cn
     || record.weighted_risk_level_cn
@@ -404,10 +406,15 @@ function formatPublicText(value) {
 function formatAnomalyType(record) {
   if (!record) return '常规监控';
   if (record.anomaly_label || record.anomaly_type) return record.anomaly_label || riskTypeText(record.anomaly_type);
+  const moisture = moistureState(record);
+  if (record.risk_type === 'mixed_signal_monitor') return '降雨/土壤/预报信号分化';
   if (record.risk_type === 'wetness_waterlogging') return '降雨过多 / 土壤偏湿';
   if (record.risk_type === 'heat_drydown') return '高温水分压力';
-  if (record.risk_type === 'drought_water_deficit') return '降雨偏少 / 土壤偏干';
-  if (record.dominant_risk_type) return riskTypeText(record.dominant_risk_type);
+  if (record.risk_type === 'drought_water_deficit') {
+    if (moisture.rootWet || moisture.surfaceWet) return '降雨偏少 / 土壤未同步偏干';
+    return '降雨偏少 / 土壤偏干';
+  }
+  if (riskNum(record.risk_level_v3) >= 2 && record.dominant_risk_type) return riskTypeText(record.dominant_risk_type);
   if (record.risk_reason_cn || record.dominant_risk_reason_cn) return record.risk_reason_cn || record.dominant_risk_reason_cn;
   return formatRiskLabel(record);
 }
@@ -1149,7 +1156,9 @@ function buildRecoverySentences(row) {
   if (!hasForecast) return items;
 
   const futureRain = isNum(forecast16) ? forecast16 : forecast7;
-  if (moisture.rootDry || moisture.surfaceDry) {
+  if (row.risk_type === 'mixed_signal_monitor' || (row.risk_type === 'drought_water_deficit' && (moisture.rootWet || moisture.surfaceWet) && isNum(futureRain) && futureRain >= 30)) {
+    items.push('土壤水分和预报降雨对前期降雨缺口有缓冲，后续重点看偏湿是否消退，而不是简单延续干旱判断。');
+  } else if (moisture.rootDry || moisture.surfaceDry) {
     if (isNum(futureRain) && futureRain >= 30) {
       if (stage && stage.perennial) {
         items.push('若后续降雨持续改善，表层水分可能先修复；根区水分修复仍需连续降雨配合。');
@@ -1438,6 +1447,7 @@ function evidenceSnapshot(row) {
 }
 
 function buildRiskTagSentences(row) {
+  if (riskNum(row && row.risk_level_v3) < 2) return [];
   const adverse = sortedRiskTags(row, tag => isAdverseTag(tag) && tagRiskNum(tag) >= 2).slice(0, 3);
   return adverse.map(tagRiskSentence);
 }
@@ -1454,13 +1464,23 @@ function buildSignalConsistencySentences(row) {
   const rain30Wet = isNum(rain30Pct) && rain30Pct >= 120;
   const rain30Dry = isNum(rain30Pct) && rain30Pct <= 80;
   const hasWetShortSignal = /wet|heavy/.test(`${row && row.rain_signal_3d || ''} ${row && row.rain_signal_7d || ''} ${row && row.operation_rain_signal || ''}`);
+  const soilDry = moisture.rootDry || moisture.surfaceDry;
+  const soilWet = moisture.rootWet || moisture.surfaceWet;
+  const forecastRelief = (isNum(forecast7) && forecast7 >= 30) || (isNum(forecast16) && forecast16 >= 60);
+  const forecastDry = (isNum(forecast7) && forecast7 < 15) || (isNum(forecast16) && forecast16 < 30);
 
-  if (riskType === 'drought_water_deficit' && rain30Wet && (moisture.rootDry || moisture.surfaceDry)) {
+  if (riskType === 'mixed_signal_monitor') {
+    items.push('信号分化：近30日降雨偏少，但土壤水分或未来降雨并未支持持续干旱，当前更适合观察而非判定明确水分压力。');
+  } else if (riskType === 'drought_water_deficit' && rain30Dry && (soilWet || forecastRelief) && !soilDry) {
+    items.push('信号分化：近30日降雨偏少，但土壤仍偏湿或未来补水充足，短期干旱压力证据不足。');
+  } else if (riskType === 'drought_water_deficit' && rain30Wet && soilDry) {
     items.push('信号分化：30日累计降雨偏多，但土壤分位偏低，当前水分压力主要来自根区/表层墒情和后续补水不足。');
+  } else if (riskType === 'drought_water_deficit' && rain.status === 'dry' && soilDry && !forecastRelief) {
+    items.push(`降雨偏少、土壤偏干${forecastDry ? '且预报补水不足' : ''}，水分压力判断方向较一致。`);
   } else if (riskType === 'drought_water_deficit' && rain.status === 'dry') {
-    items.push('降雨偏少与土壤/预报信号方向一致，水分压力判断较一致。');
-  } else if (riskType === 'drought_water_deficit' && isNum(forecast16) && forecast16 >= 50) {
-    items.push('当前水分压力仍需关注，但16天预报有补水，后续可能缓和。');
+    items.push('降雨偏少是主要异常，但土壤或预报未完全同向，需按分化信号跟踪。');
+  } else if (riskType === 'drought_water_deficit' && forecastRelief) {
+    items.push('当前水分压力仍需关注，但未来预报有补水，后续可能缓和。');
   }
 
   if (riskType === 'wetness_waterlogging' && row && row.rain_signal_1d === 'dry_day' && hasWetShortSignal) {
@@ -1469,7 +1489,9 @@ function buildSignalConsistencySentences(row) {
     items.push(`${stage && stage.phase === 'harvest' ? '收获阶段' : '当前阶段'}偏湿信号仍在，重点关注作业效率、含水率和运输窗口。`);
   }
 
-  if (riskType === 'heat_drydown' && (moisture.rootDry || moisture.surfaceDry)) {
+  if (riskType === 'heat_drydown' && soilDry && forecastRelief) {
+    items.push('高温/土温信号与偏干墒情叠加，但未来预报有补水，干热压力需继续跟踪而非直接外推。');
+  } else if (riskType === 'heat_drydown' && soilDry) {
     items.push('高温/土温信号与偏干墒情叠加，水分消耗压力高于单一降雨指标。');
   }
   if (riskType === 'low_temperature') {
@@ -1483,6 +1505,7 @@ function buildSignalConsistencySentences(row) {
 
 function buildPressureItems(record, evidenceRecord = record) {
   const row = evidenceRecord || record;
+  if (riskNum(row && row.risk_level_v3) <= 0 && (!row || row.risk_type === 'no_clear_pressure')) return [];
   const items = [
     ...buildRiskTagSentences(row),
     ...buildSignalConsistencySentences(row),
@@ -1495,6 +1518,39 @@ function renderRainSoilExplanationBlock(row) {
   const snapshot = evidenceSnapshot(row);
   if (!snapshot) return '';
   return `<div class="detail-block"><h3>风险证据链</h3><p>${esc(snapshot)}</p></div>`;
+}
+
+function renderSignalContradictionBlock(row) {
+  const contradictions = row._signal_contradictions || [];
+  const baselineConflict = row._soil_baseline_conflict || false;
+  const seasonalCat = row._soil_seasonal_cat || '';
+  const recentCat = row._soil_recent_cat || '';
+
+  if (!contradictions.length && !baselineConflict) return '';
+
+  let html = '<div class="detail-block" style="border-left: 3px solid #f39c12; background: #fef9e7;">';
+  html += '<h3 style="color: #d68910;">&#9888; 信号一致性警告</h3>';
+  html += '<p style="font-size: 0.9em; color: #7d6608; margin-bottom: 8px;">以下信号之间存在矛盾，风险评估的不确定性较高：</p>';
+  html += '<ul style="font-size: 0.9em; color: #7d6608; margin: 0; padding-left: 20px;">';
+
+  const contradictionLabels = {
+    'rain_deficit_but_soil_wet': '降雨不足但土壤偏湿 — 可能原因：灌溉、数据时效差异',
+    'rain_excess_but_soil_dry': '降雨过多但土壤偏干 — 可能原因：排水良好、数据时效差异',
+    'heat_stress_but_soil_wet_no_rain_excess': '高温但土壤湿润（无降雨解释）— 可能原因：高湿度、近期降雨',
+    'cold_stress_with_dry_soil_non_winter': '非冬季冷胁迫+干旱 — 可能原因：异常天气事件',
+  };
+
+  for (const c of contradictions) {
+    const label = contradictionLabels[c] || c;
+    html += `<li>${esc(label)}</li>`;
+  }
+
+  if (baselineConflict) {
+    html += `<li>土壤基线冲突：季节性基线显示"${esc(seasonalCat)}"，90天滚动基线显示"${esc(recentCat)}" — 已采用季节性基线，置信度降低</li>`;
+  }
+
+  html += '</ul></div>';
+  return html;
 }
 
 function renderRiskJudgementBlock(record, options = {}) {
@@ -2147,6 +2203,7 @@ function showRegionDetail(row) {
   const conclusion = regionConclusion(row);
   const extraHtml = `
     ${renderRiskTagsBlock(row)}
+    ${renderSignalContradictionBlock(row)}
     ${renderCropProgressBlock(row)}
     ${renderRainSoilExplanationBlock(row)}
     ${renderSoilTemperatureBlock(row)}
