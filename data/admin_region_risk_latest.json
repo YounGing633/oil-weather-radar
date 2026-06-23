@@ -1557,9 +1557,9 @@
     "rain_signal_3d": "wet_3d",
     "rain_signal_7d": "dry_7d",
     "operation_rain_signal": "operation_friendly_dry_window",
-    "calendar_growth_stage_code": "MH/OS",
+    "calendar_growth_stage_code": "OS/MH",
     "progress_resolved_growth_stage": null,
-    "resolved_growth_stage": "MH/OS",
+    "resolved_growth_stage": "OS/MH",
     "resolved_stage_source": "crop_calendar",
     "progress_stage_basis": null,
     "progress_stage_confidence": null,
@@ -1571,7 +1571,7 @@
     "calendar_group_id": "SOY_AR_PAMPAS_FIRST/SOY_AR_PAMPAS_SECOND",
     "season_type": "first_crop/second_crop",
     "season_weight": 0.75,
-    "growth_stage_code": "MH/OS",
+    "growth_stage_code": "OS/MH",
     "stage_weight": 1.0,
     "calendar_confidence": "medium_high",
     "calendar_status": "first_second_weighted",
@@ -1597,8 +1597,8 @@
         "confidence": "low",
         "soil_basis": "recent_90d_fallback",
         "stage_source": "crop_calendar",
-        "calendar_stage": "MH/OS",
-        "resolved_stage": "MH/OS",
+        "calendar_stage": "OS/MH",
+        "resolved_stage": "OS/MH",
         "progress_stage_basis": null,
         "remaining_harvest_weight": null
       }
@@ -1618,7 +1618,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Argentina::Córdoba::admin1::豆油",
@@ -3178,9 +3179,9 @@
     "rain_signal_3d": "heavy_3d",
     "rain_signal_7d": "wet_7d",
     "operation_rain_signal": "heavy_rain_disruption",
-    "calendar_growth_stage_code": "MH/OS",
+    "calendar_growth_stage_code": "OS/MH",
     "progress_resolved_growth_stage": null,
-    "resolved_growth_stage": "MH/OS",
+    "resolved_growth_stage": "OS/MH",
     "resolved_stage_source": "crop_calendar",
     "progress_stage_basis": null,
     "progress_stage_confidence": null,
@@ -3192,7 +3193,7 @@
     "calendar_group_id": "SOY_AR_PAMPAS_FIRST/SOY_AR_PAMPAS_SECOND",
     "season_type": "first_crop/second_crop",
     "season_weight": 0.75,
-    "growth_stage_code": "MH/OS",
+    "growth_stage_code": "OS/MH",
     "stage_weight": 1.0,
     "calendar_confidence": "medium_high",
     "calendar_status": "first_second_weighted",
@@ -3239,7 +3240,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Argentina::Entre Ríos::admin1::豆油",
@@ -4799,9 +4801,9 @@
     "rain_signal_3d": "very_heavy_3d",
     "rain_signal_7d": "very_heavy_7d",
     "operation_rain_signal": "heavy_rain_disruption",
-    "calendar_growth_stage_code": "MH/OS",
+    "calendar_growth_stage_code": "OS/MH",
     "progress_resolved_growth_stage": null,
-    "resolved_growth_stage": "MH/OS",
+    "resolved_growth_stage": "OS/MH",
     "resolved_stage_source": "crop_calendar",
     "progress_stage_basis": null,
     "progress_stage_confidence": null,
@@ -4813,7 +4815,7 @@
     "calendar_group_id": "SOY_AR_PAMPAS_FIRST/SOY_AR_PAMPAS_SECOND",
     "season_type": "first_crop/second_crop",
     "season_weight": 0.75,
-    "growth_stage_code": "MH/OS",
+    "growth_stage_code": "OS/MH",
     "stage_weight": 1.0,
     "calendar_confidence": "medium_high",
     "calendar_status": "first_second_weighted",
@@ -4860,7 +4862,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Argentina::Santa Fe::admin1::豆油",
@@ -6420,9 +6423,9 @@
     "rain_signal_3d": "very_heavy_3d",
     "rain_signal_7d": "heavy_7d",
     "operation_rain_signal": "heavy_rain_disruption",
-    "calendar_growth_stage_code": "MH/OS",
+    "calendar_growth_stage_code": "OS/MH",
     "progress_resolved_growth_stage": null,
-    "resolved_growth_stage": "MH/OS",
+    "resolved_growth_stage": "OS/MH",
     "resolved_stage_source": "crop_calendar",
     "progress_stage_basis": null,
     "progress_stage_confidence": null,
@@ -6434,7 +6437,7 @@
     "calendar_group_id": "SOY_AR_PAMPAS_FIRST/SOY_AR_PAMPAS_SECOND",
     "season_type": "first_crop/second_crop",
     "season_weight": 0.75,
-    "growth_stage_code": "MH/OS",
+    "growth_stage_code": "OS/MH",
     "stage_weight": 1.0,
     "calendar_confidence": "medium_high",
     "calendar_status": "first_second_weighted",
@@ -6481,7 +6484,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Argentina::Formosa::admin1::豆油",
@@ -8102,7 +8106,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Argentina::Corrientes::admin1::豆油",
@@ -9698,7 +9703,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Argentina::Tucumán::admin1::豆油",
@@ -11319,7 +11325,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "soybean::Argentina::Chaco::admin1::豆油",
@@ -12940,7 +12947,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Argentina::Misiones::admin1::豆油",
@@ -14536,7 +14544,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Argentina::Jujuy::admin1::豆油",
@@ -16157,7 +16166,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Western_Australia::admin1::rapeseed_canola",
@@ -16184,7 +16194,7 @@
     "current_growth_stage_cn": "播种/出苗",
     "weather_condition_summary_cn": "近30天降雨为常年286%，降雨距平+29.4mm，最高温距平-3.5℃",
     "soil_condition_summary_cn": "土壤状态湿润，rootzone P92.8，surface P80.6",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨1.0mm，未来16天累计降雨1.0mm",
     "soil_status_cn": "湿润",
     "rootzone_percentile": 92.8,
@@ -17737,12 +17747,41 @@
     "calendar_status": "confirmed_derived",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -17753,7 +17792,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::New_South_Wales::admin1::rapeseed_canola",
@@ -19349,7 +19389,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Victoria::admin1::rapeseed_canola",
@@ -20945,7 +20986,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::South_Australia::admin1::rapeseed_canola",
@@ -22541,7 +22583,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Queensland::admin1::rapeseed_canola",
@@ -24137,7 +24180,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Tasmania::admin1::rapeseed_canola",
@@ -25733,7 +25777,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Brazil::national::棕榈油",
@@ -27354,7 +27399,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
@@ -28950,7 +28996,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Brazil::Paraná::admin1::豆油",
@@ -30546,7 +30593,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Rio Grande do Sul::admin1::豆油",
@@ -32142,7 +32190,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Goiás::admin1::豆油",
@@ -33738,7 +33787,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "soybean::Brazil::Mato Grosso do Sul::admin1::豆油",
@@ -35334,7 +35384,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Brazil::Minas Gerais::admin1::豆油",
@@ -36930,7 +36981,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Bahia::admin1::豆油",
@@ -38526,7 +38578,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::São Paulo::admin1::豆油",
@@ -40122,7 +40175,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Brazil::Tocantins::admin1::豆油",
@@ -41718,7 +41772,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "soybean::Brazil::Maranhão::admin1::豆油",
@@ -43314,7 +43369,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Piauí::admin1::豆油",
@@ -44910,7 +44966,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Santa Catarina::admin1::豆油",
@@ -46506,7 +46563,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
@@ -48102,7 +48160,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Brazil::Rondônia::admin1::豆油",
@@ -49698,7 +49757,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Distrito Federal::admin1::豆油",
@@ -51294,7 +51354,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Ceará::admin1::豆油",
@@ -52890,7 +52951,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Brazil::Rio de Janeiro::admin1::豆油",
@@ -54486,7 +54548,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Saskatchewan::admin1::rapeseed_canola",
@@ -56060,37 +56123,37 @@
     "soil_basis": "recent_90d_fallback",
     "risk_tags": [
       {
-        "rule_id": "E3B_SOIL_TEMP_V_COLD",
+        "rule_id": "RAPE_V_COLD_01",
         "risk_label_cn": "低温·返青",
-        "risk_level": 2,
-        "risk_type": "cold_greenup",
+        "risk_level": 3,
+        "risk_type": "cold_recovery_stress",
         "direction": "adverse",
         "impact_type": "yield_watch",
-        "impact_channel": "greenup",
+        "impact_channel": "recovery",
         "impact_direction": "adverse",
         "impact_horizon": "current_0_1m",
-        "impact_text_cn": "土壤温度偏冷，返青期生长可能拖慢",
+        "impact_text_cn": "返青、生长恢复压力。",
         "growth_stage_code": "V",
         "growth_stage_cn": "营养生长",
-        "display_priority": 5,
+        "display_priority": 45,
         "count_yield_affected": false,
         "count_operation_affected": false,
-        "confidence": "medium",
-        "soil_basis": "",
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
         "stage_source": "crop_calendar",
-        "calendar_stage": "",
+        "calendar_stage": "V",
         "resolved_stage": "V",
         "progress_stage_basis": null,
         "remaining_harvest_weight": null,
         "soil_temp_used": true,
         "soil_temp_signal": "cold_soil",
-        "soil_temp_adjustment": "new_tag",
-        "soil_temp_evidence_cn": "土壤温度偏冷，新增返青期观察标签"
+        "soil_temp_adjustment": "+1",
+        "soil_temp_evidence_cn": "表层土壤偏冷，返青期压力上升"
       }
     ],
     "dominant_map_badge_cn": "低温·返青",
-    "dominant_risk_level": 2,
-    "dominant_risk_type": "cold_greenup",
+    "dominant_risk_level": 3,
+    "dominant_risk_type": "cold_recovery_stress",
     "dominant_impact_type": "yield_watch",
     "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
@@ -56102,8 +56165,9 @@
     "soil_temp_used_in_risk_label": true,
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
-    "soil_temp_risk_adjustment": "new_tag",
-    "soil_temp_evidence_cn": "土壤温度偏冷，新增返青期观察标签"
+    "soil_temp_risk_adjustment": "level_boost",
+    "soil_temp_evidence_cn": "表层土壤偏冷，返青期压力上升",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Alberta::admin1::rapeseed_canola",
@@ -57677,37 +57741,37 @@
     "soil_basis": "recent_90d_fallback",
     "risk_tags": [
       {
-        "rule_id": "E3B_SOIL_TEMP_V_COLD",
+        "rule_id": "RAPE_V_COLD_01",
         "risk_label_cn": "低温·返青",
-        "risk_level": 2,
-        "risk_type": "cold_greenup",
+        "risk_level": 3,
+        "risk_type": "cold_recovery_stress",
         "direction": "adverse",
         "impact_type": "yield_watch",
-        "impact_channel": "greenup",
+        "impact_channel": "recovery",
         "impact_direction": "adverse",
         "impact_horizon": "current_0_1m",
-        "impact_text_cn": "土壤温度偏冷，返青期生长可能拖慢",
+        "impact_text_cn": "返青、生长恢复压力。",
         "growth_stage_code": "V",
         "growth_stage_cn": "营养生长",
-        "display_priority": 5,
+        "display_priority": 45,
         "count_yield_affected": false,
         "count_operation_affected": false,
-        "confidence": "medium",
-        "soil_basis": "",
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
         "stage_source": "crop_calendar",
-        "calendar_stage": "",
+        "calendar_stage": "V",
         "resolved_stage": "V",
         "progress_stage_basis": null,
         "remaining_harvest_weight": null,
         "soil_temp_used": true,
         "soil_temp_signal": "cold_soil",
-        "soil_temp_adjustment": "new_tag",
-        "soil_temp_evidence_cn": "土壤温度偏冷，新增返青期观察标签"
+        "soil_temp_adjustment": "+1",
+        "soil_temp_evidence_cn": "表层土壤偏冷，返青期压力上升"
       }
     ],
     "dominant_map_badge_cn": "低温·返青",
-    "dominant_risk_level": 2,
-    "dominant_risk_type": "cold_greenup",
+    "dominant_risk_level": 3,
+    "dominant_risk_type": "cold_recovery_stress",
     "dominant_impact_type": "yield_watch",
     "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
@@ -57719,8 +57783,9 @@
     "soil_temp_used_in_risk_label": true,
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
-    "soil_temp_risk_adjustment": "new_tag",
-    "soil_temp_evidence_cn": "土壤温度偏冷，新增返青期观察标签"
+    "soil_temp_risk_adjustment": "level_boost",
+    "soil_temp_evidence_cn": "表层土壤偏冷，返青期压力上升",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Manitoba::admin1::rapeseed_canola",
@@ -57747,7 +57812,7 @@
     "current_growth_stage_cn": "播种/出苗",
     "weather_condition_summary_cn": "近30天降雨为常年229%，降雨距平+116.8mm，最高温距平-9.4℃",
     "soil_condition_summary_cn": "土壤状态略偏干，rootzone P28.3，surface P20.6",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨53.9mm，未来16天累计降雨96.7mm，过湿或田间作业压力可能延续",
     "soil_status_cn": "略偏干",
     "rootzone_percentile": 28.3,
@@ -59292,12 +59357,41 @@
     "calendar_status": "confirmed_derived",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "normal_soil",
+        "soil_temp_adjustment": "no_change",
+        "soil_temp_evidence_cn": "土壤温度正常，无明显拖累"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -59308,7 +59402,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::British_Columbia::admin1::rapeseed_canola",
@@ -60896,7 +60991,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Ontario::admin1::rapeseed_canola",
@@ -60923,7 +61019,7 @@
     "current_growth_stage_cn": "播种/出苗",
     "weather_condition_summary_cn": "近30天降雨为常年47%，降雨距平-51.9mm，最高温距平-1.9℃",
     "soil_condition_summary_cn": "土壤状态略偏干，rootzone P27.2，surface P35.0",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨0.9mm，未来16天累计降雨4.5mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "略偏干",
     "rootzone_percentile": 27.2,
@@ -62476,12 +62572,41 @@
     "calendar_status": "low_weight_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -62492,7 +62617,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
@@ -64088,7 +64214,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::New_Brunswick::admin1::rapeseed_canola",
@@ -65684,7 +65811,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Canada::Ontario::admin1::soybean",
@@ -67280,7 +67408,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::Canada::Manitoba::admin1::soybean",
@@ -68868,7 +68997,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "soybean::Canada::Quebec::admin1::soybean",
@@ -70464,7 +70594,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "soybean::Canada::Saskatchewan::admin1::soybean",
@@ -72052,7 +72183,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考"
+    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "soybean::Canada::Prince_Edward_Island::admin1::soybean",
@@ -73648,7 +73780,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::Canada::Nova_Scotia::admin1::soybean",
@@ -75244,7 +75377,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Canada::New_Brunswick::admin1::soybean",
@@ -76869,7 +77003,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Canada::Alberta::admin1::soybean",
@@ -78457,7 +78592,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考"
+    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Canada::Manitoba::admin1::sunflower_seed",
@@ -80045,7 +80181,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "sunflower::Canada::Ontario::admin1::sunflower_seed",
@@ -81641,7 +81778,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Canada::Saskatchewan::admin1::sunflower_seed",
@@ -83229,7 +83367,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考"
+    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "sunflower::Canada::Alberta::admin1::sunflower_seed",
@@ -84817,7 +84956,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考"
+    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Czechia::national::菜油",
@@ -84844,7 +84984,7 @@
     "current_growth_stage_cn": null,
     "weather_condition_summary_cn": "近30天降雨为常年110%，降雨距平+8.2mm，最高温距平+5.2℃",
     "soil_condition_summary_cn": "土壤状态正常，rootzone P45.0，surface P62.8",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨1.8mm，未来16天累计降雨18.8mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "正常",
     "rootzone_percentile": 45.0,
@@ -86397,12 +86537,37 @@
     "calendar_status": "confirmed_derived",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_PF_HEAT_01",
+        "risk_label_cn": "高温·灌浆",
+        "risk_level": 2,
+        "risk_type": "heat_stress_yield",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "seed_filling_oil_content",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "高温可能压缩灌浆过程。",
+        "growth_stage_code": "PF",
+        "growth_stage_cn": "灌浆",
+        "display_priority": 70,
+        "count_yield_affected": "risk_level>=3",
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "PF/MH",
+        "resolved_stage": "PF/MH",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null
+      }
+    ],
+    "dominant_map_badge_cn": "高温·灌浆",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "heat_stress_yield",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "高温·灌浆",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -86413,7 +86578,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::Denmark::national::菜油",
@@ -88009,7 +88175,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::France::national::菜油",
@@ -89591,6 +89758,30 @@
     "soil_basis": "recent_90d_fallback",
     "risk_tags": [
       {
+        "rule_id": "RAPE_PF_HEAT_01",
+        "risk_label_cn": "高温·灌浆",
+        "risk_level": 2,
+        "risk_type": "heat_stress_yield",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "seed_filling_oil_content",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "高温可能压缩灌浆过程。",
+        "growth_stage_code": "PF",
+        "growth_stage_cn": "灌浆",
+        "display_priority": 70,
+        "count_yield_affected": "risk_level>=3",
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "PF/MH",
+        "resolved_stage": "PF/MH",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null
+      },
+      {
         "rule_id": "RAPE_MH_DRY_01",
         "risk_label_cn": "偏干·收获",
         "risk_level": 1,
@@ -89615,11 +89806,11 @@
         "remaining_harvest_weight": null
       }
     ],
-    "dominant_map_badge_cn": "偏干·收获",
-    "dominant_risk_level": 1,
-    "dominant_risk_type": "dry_harvest_support",
-    "dominant_impact_type": "supportive",
-    "risk_label_v4_cn": "偏干·收获",
+    "dominant_map_badge_cn": "高温·灌浆",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "heat_stress_yield",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "高温·灌浆",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -89630,7 +89821,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::Germany::national::菜油",
@@ -89657,7 +89849,7 @@
     "current_growth_stage_cn": null,
     "weather_condition_summary_cn": "近30天降雨为常年74%，降雨距平-16.6mm，最高温距平+5.1℃",
     "soil_condition_summary_cn": "土壤状态偏干，rootzone P5.0，surface P66.1",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨0.6mm，未来16天累计降雨1.4mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "偏干",
     "rootzone_percentile": 5.0,
@@ -91210,12 +91402,37 @@
     "calendar_status": "confirmed_derived",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_PF_HEAT_01",
+        "risk_label_cn": "高温·灌浆",
+        "risk_level": 2,
+        "risk_type": "heat_stress_yield",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "seed_filling_oil_content",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "高温可能压缩灌浆过程。",
+        "growth_stage_code": "PF",
+        "growth_stage_cn": "灌浆",
+        "display_priority": 70,
+        "count_yield_affected": "risk_level>=3",
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "PF/MH",
+        "resolved_stage": "PF/MH",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null
+      }
+    ],
+    "dominant_map_badge_cn": "高温·灌浆",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "heat_stress_yield",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "高温·灌浆",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -91226,7 +91443,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_extreme"
   },
   {
     "weather_region_id": "coconut::Indonesia::national::椰子油",
@@ -92822,7 +93040,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Riau::admin1::椰子油",
@@ -94418,7 +94637,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Maluku Utara::admin1::椰子油",
@@ -96039,7 +96259,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Tengah::admin1::椰子油",
@@ -97635,7 +97856,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Jambi::admin1::椰子油",
@@ -99256,7 +99478,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Maluku::admin1::椰子油",
@@ -100877,7 +101100,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sumatera Utara::admin1::椰子油",
@@ -102498,7 +102722,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Jawa Barat::admin1::椰子油",
@@ -104119,7 +104344,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Lampung::admin1::椰子油",
@@ -105715,7 +105941,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sumatera Barat::admin1::椰子油",
@@ -107336,7 +107563,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Barat::admin1::椰子油",
@@ -108957,7 +109185,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Selatan::admin1::椰子油",
@@ -110553,7 +110782,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Gorontalo::admin1::椰子油",
@@ -112149,7 +112379,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Aceh::admin1::椰子油",
@@ -113770,7 +114001,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sumatera Selatan::admin1::椰子油",
@@ -115366,7 +115598,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Banten::admin1::椰子油",
@@ -116987,7 +117220,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Tenggara::admin1::椰子油",
@@ -118583,7 +118817,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Barat::admin1::椰子油",
@@ -120204,7 +120439,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Selatan::admin1::椰子油",
@@ -121800,7 +122036,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Tengah::admin1::椰子油",
@@ -123396,7 +123633,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Barat Daya::admin1::椰子油",
@@ -124992,7 +125230,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kepulauan Riau::admin1::椰子油",
@@ -126588,7 +126827,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua::admin1::椰子油",
@@ -128209,7 +128449,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Timur::admin1::椰子油",
@@ -129830,7 +130071,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Bengkulu::admin1::椰子油",
@@ -131451,7 +131693,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Bangka Belitung::admin1::椰子油",
@@ -133047,7 +133290,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Selatan::admin1::椰子油",
@@ -134668,7 +134912,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Barat::admin1::椰子油",
@@ -136289,7 +136534,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Tengah::admin1::椰子油",
@@ -137910,7 +138156,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Utara::admin1::椰子油",
@@ -139506,7 +139753,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Riau::admin1::crude_palm_oil",
@@ -141102,7 +141350,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Tengah::admin1::crude_palm_oil",
@@ -142698,7 +142947,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Utara::admin1::crude_palm_oil",
@@ -144319,7 +144569,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Selatan::admin1::crude_palm_oil",
@@ -145915,7 +146166,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Timur::admin1::crude_palm_oil",
@@ -147536,7 +147788,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Barat::admin1::crude_palm_oil",
@@ -149157,7 +149410,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Jambi::admin1::crude_palm_oil",
@@ -150753,7 +151007,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Barat::admin1::crude_palm_oil",
@@ -152374,7 +152629,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Bengkulu::admin1::crude_palm_oil",
@@ -153995,7 +154251,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Selatan::admin1::crude_palm_oil",
@@ -155591,7 +155848,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
@@ -157212,7 +157470,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Bangka_Belitung::admin1::crude_palm_oil",
@@ -158808,7 +159067,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Utara::admin1::crude_palm_oil",
@@ -160404,7 +160664,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Selatan::admin1::crude_palm_oil",
@@ -162025,7 +162286,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Tengah::admin1::crude_palm_oil",
@@ -163621,7 +163883,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Lampung::admin1::crude_palm_oil",
@@ -165217,7 +165480,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Barat::admin1::crude_palm_oil",
@@ -166838,7 +167102,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Selatan::admin1::crude_palm_oil",
@@ -168434,7 +168699,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua::admin1::crude_palm_oil",
@@ -170055,7 +170321,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Barat::admin1::crude_palm_oil",
@@ -171676,7 +171943,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Tenggara::admin1::crude_palm_oil",
@@ -173272,7 +173540,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Tengah::admin1::crude_palm_oil",
@@ -174893,7 +175162,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Jawa_Barat::admin1::crude_palm_oil",
@@ -176514,7 +176784,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Barat_Daya::admin1::crude_palm_oil",
@@ -178110,7 +178381,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Banten::admin1::crude_palm_oil",
@@ -179731,7 +180003,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Kepulauan_Riau::admin1::crude_palm_oil",
@@ -181327,7 +181600,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Indonesia::Gorontalo::admin1::crude_palm_oil",
@@ -182923,7 +183197,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Maluku::admin1::crude_palm_oil",
@@ -184544,7 +184819,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Indonesia::Maluku_Utara::admin1::crude_palm_oil",
@@ -186165,7 +186441,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::Italy::national::豆油",
@@ -187761,7 +188038,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Lithuania::national::菜油",
@@ -189357,7 +189635,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Malaysia::Sarawak::admin1::oil_palm",
@@ -190953,7 +191232,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Malaysia::Sabah::admin1::oil_palm",
@@ -192574,7 +192854,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Malaysia::Pahang::admin1::oil_palm",
@@ -194195,7 +194476,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Malaysia::Johor::admin1::oil_palm",
@@ -195791,7 +196073,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Malaysia::Perak::admin1::oil_palm",
@@ -197412,7 +197695,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Malaysia::Negeri_Sembilan::admin1::oil_palm",
@@ -199033,7 +199317,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Malaysia::Selangor::admin1::oil_palm",
@@ -200629,7 +200914,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "palm::Malaysia::Terengganu::admin1::oil_palm",
@@ -202225,7 +202511,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "palm::Malaysia::Kelantan::admin1::oil_palm",
@@ -203846,7 +204133,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XI (DAVAO REGION)::admin1::椰子油",
@@ -205442,7 +205730,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION IX (ZAMBOANGA PENINSULA)::admin1::椰子油",
@@ -207063,7 +207352,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION X (NORTHERN MINDANAO)::admin1::椰子油",
@@ -208659,7 +208949,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XII (SOCCSKSARGEN)::admin1::椰子油",
@@ -210280,7 +210571,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION IV-A (CALABARZON)::admin1::椰子油",
@@ -211876,7 +212168,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO (BARMM)::admin1::椰子油",
@@ -213497,7 +213790,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VIII (EASTERN VISAYAS)::admin1::椰子油",
@@ -215093,7 +215387,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
@@ -216689,7 +216984,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XIII (CARAGA)::admin1::椰子油",
@@ -218285,7 +218581,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "coconut::Philippines::MIMAROPA REGION::admin1::椰子油",
@@ -219881,7 +220178,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VI (WESTERN VISAYAS)::admin1::椰子油",
@@ -221477,7 +221775,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::NEGROS ISLAND REGION::admin1::椰子油",
@@ -223073,7 +223372,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VII (CENTRAL VISAYAS)::admin1::椰子油",
@@ -224669,7 +224969,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION II (CAGAYAN VALLEY)::admin1::椰子油",
@@ -226290,7 +226591,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION I (ILOCOS REGION)::admin1::椰子油",
@@ -227886,7 +228188,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION III (CENTRAL LUZON)::admin1::椰子油",
@@ -229482,7 +229785,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "coconut::Philippines::CORDILLERA ADMINISTRATIVE REGION (CAR)::admin1::椰子油",
@@ -231103,7 +231407,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Poland::national::菜油",
@@ -231130,7 +231435,7 @@
     "current_growth_stage_cn": null,
     "weather_condition_summary_cn": "近30天降雨为常年74%，降雨距平-19.8mm，最高温距平+1.5℃",
     "soil_condition_summary_cn": "土壤状态正常，rootzone P55.0，surface P40.6",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨0.0mm，未来16天累计降雨3.3mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "正常",
     "rootzone_percentile": 55.0,
@@ -232683,12 +232988,37 @@
     "calendar_status": "confirmed_derived",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_PF_HEAT_01",
+        "risk_label_cn": "高温·灌浆",
+        "risk_level": 2,
+        "risk_type": "heat_stress_yield",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "seed_filling_oil_content",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "高温可能压缩灌浆过程。",
+        "growth_stage_code": "PF",
+        "growth_stage_cn": "灌浆",
+        "display_priority": 70,
+        "count_yield_affected": "risk_level>=3",
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "PF",
+        "resolved_stage": "PF",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null
+      }
+    ],
+    "dominant_map_badge_cn": "高温·灌浆",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "heat_stress_yield",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "高温·灌浆",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -232699,7 +233029,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Romania::national::菜油",
@@ -234320,7 +234651,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Romania::national::葵油",
@@ -235916,7 +236248,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Altai Krai::admin1::菜油",
@@ -237512,7 +237845,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Krasnoyarsk Krai::admin1::菜油",
@@ -237539,7 +237873,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年122%，降雨距平+14.9mm，最高温距平-3.4℃",
     "soil_condition_summary_cn": "土壤状态正常，rootzone P49.4，surface P11.7",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨24.3mm，未来16天累计降雨29.6mm",
     "soil_status_cn": "正常",
     "rootzone_percentile": 49.4,
@@ -239092,12 +239426,41 @@
     "calendar_status": "spring_siberia_ural_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "warm_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -239108,7 +239471,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Novosibirsk Oblast::admin1::菜油",
@@ -240704,7 +241068,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Omsk Oblast::admin1::菜油",
@@ -242300,7 +242665,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Oryol Oblast::admin1::菜油",
@@ -242327,7 +242693,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年64%，降雨距平-29.6mm，最高温距平-1.9℃",
     "soil_condition_summary_cn": "土壤状态偏干，rootzone P0.6，surface P20.6",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨0.4mm，未来16天累计降雨13.1mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "偏干",
     "rootzone_percentile": 0.6,
@@ -243880,12 +244246,41 @@
     "calendar_status": "spring_central_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -243896,7 +244291,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Tatarstan::admin1::菜油",
@@ -245492,7 +245888,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tula Oblast::admin1::菜油",
@@ -247088,7 +247485,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Bryansk Oblast::admin1::菜油",
@@ -248684,7 +249082,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Ryazan Oblast::admin1::菜油",
@@ -250280,7 +250679,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kaliningrad Oblast::admin1::菜油",
@@ -251901,7 +252301,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Krasnodar Krai::admin1::菜油",
@@ -253522,7 +253923,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Lipetsk Oblast::admin1::菜油",
@@ -253549,7 +253951,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年91%，降雨距平-6.0mm，最高温距平-2.2℃",
     "soil_condition_summary_cn": "土壤状态偏干，rootzone P0.6，surface P26.1",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨1.3mm，未来16天累计降雨15.7mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "偏干",
     "rootzone_percentile": 0.6,
@@ -255102,12 +255504,41 @@
     "calendar_status": "spring_central_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -255118,7 +255549,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Bashkortostan::admin1::菜油",
@@ -256714,7 +257146,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Irkutsk Oblast::admin1::菜油",
@@ -256741,7 +257174,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年44%，降雨距平-38.9mm，最高温距平-9.1℃",
     "soil_condition_summary_cn": "土壤状态略偏干，rootzone P15.0，surface P62.8",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨23.4mm，未来16天累计降雨32.9mm",
     "soil_status_cn": "略偏干",
     "rootzone_percentile": 15.0,
@@ -258294,12 +258727,41 @@
     "calendar_status": "spring_siberia_ural_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "normal_soil",
+        "soil_temp_adjustment": "no_change",
+        "soil_temp_evidence_cn": "土壤温度正常，无明显拖累"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -258310,7 +258772,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kurgan Oblast::admin1::菜油",
@@ -259906,7 +260369,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Stavropol Krai::admin1::菜油",
@@ -261502,7 +261966,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kursk Oblast::admin1::菜油",
@@ -261529,7 +261994,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年71%，降雨距平-20.6mm，最高温距平-1.6℃",
     "soil_condition_summary_cn": "土壤状态略偏干，rootzone P15.0，surface P21.7",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨0.0mm，未来16天累计降雨18.1mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "略偏干",
     "rootzone_percentile": 15.0,
@@ -263082,12 +263547,41 @@
     "calendar_status": "spring_central_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -263098,7 +263592,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Moscow Oblast::admin1::菜油",
@@ -264694,7 +265189,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Sverdlovsk Oblast::admin1::菜油",
@@ -266290,7 +266786,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Chechen Republic::admin1::菜油",
@@ -267886,7 +268383,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tyumen Oblast::admin1::菜油",
@@ -269482,7 +269980,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Smolensk Oblast::admin1::菜油",
@@ -271078,7 +271577,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Nizhny Novgorod Oblast::admin1::菜油",
@@ -272674,7 +273174,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kaluga Oblast::admin1::菜油",
@@ -274270,7 +274771,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tomsk Oblast::admin1::菜油",
@@ -275866,7 +276368,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tambov Oblast::admin1::菜油",
@@ -275893,7 +276396,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年106%，降雨距平+3.9mm，最高温距平-2.8℃",
     "soil_condition_summary_cn": "土壤状态略偏干，rootzone P26.1，surface P39.4",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨2.7mm，未来16天累计降雨23.5mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "略偏干",
     "rootzone_percentile": 26.1,
@@ -277446,12 +277949,41 @@
     "calendar_status": "spring_central_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -277462,7 +277994,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Penza Oblast::admin1::菜油",
@@ -277489,7 +278022,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年118%，降雨距平+11.6mm，最高温距平-2.9℃",
     "soil_condition_summary_cn": "土壤状态偏干，rootzone P1.7，surface P36.1",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨25.4mm，未来16天累计降雨52.9mm",
     "soil_status_cn": "偏干",
     "rootzone_percentile": 1.7,
@@ -279042,12 +279575,41 @@
     "calendar_status": "spring_volga_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -279058,7 +279620,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Adygea::admin1::菜油",
@@ -280679,7 +281242,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Ulyanovsk Oblast::admin1::菜油",
@@ -280706,7 +281270,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年112%，降雨距平+8.3mm，最高温距平-1.2℃",
     "soil_condition_summary_cn": "土壤状态略偏干，rootzone P21.7，surface P42.8",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨25.3mm，未来16天累计降雨50.5mm",
     "soil_status_cn": "略偏干",
     "rootzone_percentile": 21.7,
@@ -282259,12 +282823,41 @@
     "calendar_status": "spring_volga_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -282275,7 +282868,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Chelyabinsk Oblast::admin1::菜油",
@@ -283871,7 +284465,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Khakassia::admin1::菜油",
@@ -285467,7 +286062,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Mordovia::admin1::菜油",
@@ -287063,7 +287659,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of North Ossetia-Alania::admin1::菜油",
@@ -288659,7 +289256,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Chuvash Republic::admin1::菜油",
@@ -290255,7 +290853,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Pskov Oblast::admin1::菜油",
@@ -291851,7 +292450,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tver Oblast::admin1::菜油",
@@ -293447,7 +294047,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Ivanovo Oblast::admin1::菜油",
@@ -295043,7 +295644,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Orenburg Oblast::admin1::菜油",
@@ -296643,7 +297245,7 @@
         "confidence": "medium",
         "soil_basis": "",
         "stage_source": "crop_calendar",
-        "calendar_stage": "",
+        "calendar_stage": "V",
         "resolved_stage": "V",
         "progress_stage_basis": null,
         "remaining_harvest_weight": null,
@@ -296668,7 +297270,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "new_tag",
-    "soil_temp_evidence_cn": "土壤温度偏冷，新增返青期观察标签"
+    "soil_temp_evidence_cn": "土壤温度偏冷，新增返青期观察标签",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Crimea::admin1::菜油",
@@ -298264,7 +298867,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Udmurt Republic::admin1::菜油",
@@ -299860,7 +300464,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Rostov Oblast::admin1::菜油",
@@ -301481,7 +302086,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kabardino-Balkarian Republic::admin1::菜油",
@@ -303077,7 +303683,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Yaroslavl Oblast::admin1::菜油",
@@ -304673,7 +305280,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kirov Oblast::admin1::菜油",
@@ -306269,7 +306877,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Vladimir Oblast::admin1::菜油",
@@ -307865,7 +308474,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Vologda Oblast::admin1::菜油",
@@ -309461,7 +310071,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Mari El Republic::admin1::菜油",
@@ -311057,7 +311668,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Perm Krai::admin1::菜油",
@@ -312653,7 +313265,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Ingushetia::admin1::菜油",
@@ -314249,7 +314862,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Voronezh Oblast::admin1::菜油",
@@ -314276,7 +314890,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年86%，降雨距平-8.4mm，最高温距平-2.7℃",
     "soil_condition_summary_cn": "土壤状态略偏干，rootzone P28.3，surface P26.1",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨2.4mm，未来16天累计降雨14.1mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "略偏干",
     "rootzone_percentile": 28.3,
@@ -315829,12 +316443,41 @@
     "calendar_status": "spring_central_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -315845,7 +316488,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Buryatia::admin1::菜油",
@@ -317441,7 +318085,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Samara Oblast::admin1::菜油",
@@ -319037,7 +319682,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Volgograd Oblast::admin1::菜油",
@@ -320633,7 +321279,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Belgorod Oblast::admin1::菜油",
@@ -320660,7 +321307,7 @@
     "current_growth_stage_cn": "开花/结荚",
     "weather_condition_summary_cn": "近30天降雨为常年65%，降雨距平-23.1mm，最高温距平-1.4℃",
     "soil_condition_summary_cn": "土壤状态偏干，rootzone P0.6，surface P20.6",
-    "production_impact_cn": "",
+    "production_impact_cn": "暂无明显影响",
     "forecast_summary_cn": "未来7天累计降雨0.1mm，未来16天累计降雨11.1mm，短期补水不足，水分压力可能维持",
     "soil_status_cn": "偏干",
     "rootzone_percentile": 0.6,
@@ -322213,12 +322860,41 @@
     "calendar_status": "spring_central_proxy",
     "soil_signal_used": "unknown",
     "soil_basis": "recent_90d_fallback",
-    "risk_tags": [],
-    "dominant_map_badge_cn": "",
-    "dominant_risk_level": 0,
-    "dominant_risk_type": "",
-    "dominant_impact_type": "",
-    "risk_label_v4_cn": "",
+    "risk_tags": [
+      {
+        "rule_id": "RAPE_V_COLD_01",
+        "risk_label_cn": "低温·返青",
+        "risk_level": 2,
+        "risk_type": "cold_recovery_stress",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "recovery",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "返青、生长恢复压力。",
+        "growth_stage_code": "V",
+        "growth_stage_cn": "营养生长",
+        "display_priority": 45,
+        "count_yield_affected": false,
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "V",
+        "resolved_stage": "V",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null,
+        "soil_temp_used": true,
+        "soil_temp_signal": "hot_soil",
+        "soil_temp_adjustment": "evidence_only",
+        "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+      }
+    ],
+    "dominant_map_badge_cn": "低温·返青",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "cold_recovery_stress",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "低温·返青",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -322229,7 +322905,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Saratov Oblast::admin1::菜油",
@@ -323825,7 +324502,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Kalmykia::admin1::菜油",
@@ -325421,7 +326099,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kostroma Oblast::admin1::菜油",
@@ -327017,7 +327696,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tuva Republic::admin1::菜油",
@@ -328613,7 +329293,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "sunflower::Russia::Saratov Oblast::admin1::葵油",
@@ -330209,7 +330890,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Orenburg Oblast::admin1::葵油",
@@ -331805,7 +332487,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Altai Krai::admin1::葵油",
@@ -333401,7 +334084,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Volgograd Oblast::admin1::葵油",
@@ -334997,7 +335681,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Voronezh Oblast::admin1::葵油",
@@ -336593,7 +337278,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Samara Oblast::admin1::葵油",
@@ -338189,7 +338875,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Rostov Oblast::admin1::葵油",
@@ -339785,7 +340472,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Tambov Oblast::admin1::葵油",
@@ -341381,7 +342069,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Krasnodar Krai::admin1::葵油",
@@ -342977,7 +343666,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Bashkortostan::admin1::葵油",
@@ -344573,7 +345263,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Penza Oblast::admin1::葵油",
@@ -346169,7 +346860,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Tatarstan::admin1::葵油",
@@ -347765,7 +348457,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Ulyanovsk Oblast::admin1::葵油",
@@ -349361,7 +350054,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Belgorod Oblast::admin1::葵油",
@@ -350957,7 +351651,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Lipetsk Oblast::admin1::葵油",
@@ -352553,7 +353248,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Stavropol Krai::admin1::葵油",
@@ -354149,7 +354845,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Chelyabinsk Oblast::admin1::葵油",
@@ -355745,7 +356442,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "sunflower::Russia::Kursk Oblast::admin1::葵油",
@@ -357341,7 +358039,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Novosibirsk Oblast::admin1::葵油",
@@ -358937,7 +359636,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Ryazan Oblast::admin1::葵油",
@@ -360533,7 +361233,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Adygea::admin1::葵油",
@@ -362129,7 +362830,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Omsk Oblast::admin1::葵油",
@@ -363725,7 +364427,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "sunflower::Russia::Oryol Oblast::admin1::葵油",
@@ -365321,7 +366024,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Kurgan Oblast::admin1::葵油",
@@ -366917,7 +367621,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_extreme"
   },
   {
     "weather_region_id": "sunflower::Russia::Tula Oblast::admin1::葵油",
@@ -368513,7 +369218,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Chechen Republic::admin1::葵油",
@@ -370109,7 +370815,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Mordovia::admin1::葵油",
@@ -371705,7 +372412,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Kabardino-Balkarian Republic::admin1::葵油",
@@ -373301,7 +374009,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Bryansk Oblast::admin1::葵油",
@@ -374897,7 +375606,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "sunflower::Russia::Karachay-Cherkess Republic::admin1::葵油",
@@ -376493,7 +377203,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Crimea::admin1::葵油",
@@ -378089,7 +378800,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Nizhny Novgorod Oblast::admin1::葵油",
@@ -379685,7 +380397,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Dagestan::admin1::葵油",
@@ -381281,7 +381994,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Krasnoyarsk Krai::admin1::葵油",
@@ -382877,7 +383591,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "sunflower::Russia::Moscow Oblast::admin1::葵油",
@@ -384473,7 +385188,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of North Ossetia-Alania::admin1::葵油",
@@ -386069,7 +386785,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Kemerovo Oblast - Kuzbass::admin1::葵油",
@@ -387665,7 +388382,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Vladimir Oblast::admin1::葵油",
@@ -389261,7 +389979,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Ingushetia::admin1::葵油",
@@ -390857,7 +391576,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Zabaykalsky Krai::admin1::葵油",
@@ -392453,7 +393173,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "sunflower::Russia::Perm Krai::admin1::葵油",
@@ -394049,7 +394770,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Ivanovo Oblast::admin1::葵油",
@@ -395645,7 +396367,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::Russia::Primorsky Krai::admin1::葵油",
@@ -397241,7 +397964,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Amur Oblast::admin1::葵油",
@@ -398837,7 +399561,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Udmurt Republic::admin1::葵油",
@@ -400433,7 +401158,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Russia::Kaliningrad Oblast::admin1::葵油",
@@ -402029,7 +402755,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "sunflower::Türkiye::national::葵油",
@@ -403625,7 +404352,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "rapeseed_canola::United Kingdom::national::菜油",
@@ -405207,6 +405935,30 @@
     "soil_basis": "recent_90d_fallback",
     "risk_tags": [
       {
+        "rule_id": "RAPE_PF_HEAT_01",
+        "risk_label_cn": "高温·灌浆",
+        "risk_level": 2,
+        "risk_type": "heat_stress_yield",
+        "direction": "adverse",
+        "impact_type": "yield_watch",
+        "impact_channel": "seed_filling_oil_content",
+        "impact_direction": "adverse",
+        "impact_horizon": "current_0_1m",
+        "impact_text_cn": "高温可能压缩灌浆过程。",
+        "growth_stage_code": "PF",
+        "growth_stage_cn": "灌浆",
+        "display_priority": 70,
+        "count_yield_affected": "risk_level>=3",
+        "count_operation_affected": false,
+        "confidence": "low",
+        "soil_basis": "recent_90d_fallback",
+        "stage_source": "crop_calendar",
+        "calendar_stage": "PF/MH",
+        "resolved_stage": "PF/MH",
+        "progress_stage_basis": null,
+        "remaining_harvest_weight": null
+      },
+      {
         "rule_id": "RAPE_MH_DRY_01",
         "risk_label_cn": "偏干·收获",
         "risk_level": 1,
@@ -405231,11 +405983,11 @@
         "remaining_harvest_weight": null
       }
     ],
-    "dominant_map_badge_cn": "偏干·收获",
-    "dominant_risk_level": 1,
-    "dominant_risk_type": "dry_harvest_support",
-    "dominant_impact_type": "supportive",
-    "risk_label_v4_cn": "偏干·收获",
+    "dominant_map_badge_cn": "高温·灌浆",
+    "dominant_risk_level": 2,
+    "dominant_risk_type": "heat_stress_yield",
+    "dominant_impact_type": "yield_watch",
+    "risk_label_v4_cn": "高温·灌浆",
     "risk_evidence_cn": "基于90天滚动土壤分位(历史同期基线待补)",
     "current_operation_impact_cn": "",
     "future_yield_impact_cn": "",
@@ -405246,7 +405998,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "extreme_cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::NORTH_DAKOTA::admin1::canola",
@@ -406834,7 +407587,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::MINNESOTA::admin1::canola",
@@ -408422,7 +409176,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::WASHINGTON::admin1::canola",
@@ -410010,7 +410765,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::MONTANA::admin1::canola",
@@ -411598,7 +412354,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::IDAHO::admin1::canola",
@@ -413186,7 +413943,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::KANSAS::admin1::canola",
@@ -414774,7 +415532,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::OKLAHOMA::admin1::canola",
@@ -416362,7 +417121,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::OREGON::admin1::canola",
@@ -417950,7 +418710,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "soybean::United_States::ILLINOIS::admin1::soybean",
@@ -419538,7 +420299,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::IOWA::admin1::soybean",
@@ -421126,7 +421888,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::MINNESOTA::admin1::soybean",
@@ -422714,7 +423477,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "soybean::United_States::INDIANA::admin1::soybean",
@@ -424310,7 +425074,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "soybean::United_States::NEBRASKA::admin1::soybean",
@@ -425898,7 +426663,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::MISSOURI::admin1::soybean",
@@ -427486,7 +428252,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::United_States::OHIO::admin1::soybean",
@@ -429082,7 +429849,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::SOUTH_DAKOTA::admin1::soybean",
@@ -430670,7 +431438,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考"
+    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::NORTH_DAKOTA::admin1::soybean",
@@ -432258,7 +433027,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "cold_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考"
+    "soil_temp_evidence_cn": "表层土壤偏冷，V阶段仅作为解释性参考",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "soybean::United_States::KANSAS::admin1::soybean",
@@ -433846,7 +434616,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::ARKANSAS::admin1::soybean",
@@ -435434,7 +436205,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::United_States::WISCONSIN::admin1::soybean",
@@ -437022,7 +437794,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_extreme"
   },
   {
     "weather_region_id": "soybean::United_States::MICHIGAN::admin1::soybean",
@@ -438618,7 +439391,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "soybean::United_States::MISSISSIPPI::admin1::soybean",
@@ -440206,7 +440980,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "soybean::United_States::KENTUCKY::admin1::soybean",
@@ -441802,7 +442577,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::TENNESSEE::admin1::soybean",
@@ -443390,7 +444166,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::NORTH_CAROLINA::admin1::soybean",
@@ -444986,7 +445763,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::United_States::LOUISIANA::admin1::soybean",
@@ -446574,7 +447352,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::United_States::PENNSYLVANIA::admin1::soybean",
@@ -448170,7 +448949,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::VIRGINIA::admin1::soybean",
@@ -449766,7 +450546,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::United_States::MARYLAND::admin1::soybean",
@@ -451362,7 +452143,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::United_States::NEW_YORK::admin1::soybean",
@@ -452958,7 +453740,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::SOUTH_CAROLINA::admin1::soybean",
@@ -454554,7 +455337,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::United_States::ALABAMA::admin1::soybean",
@@ -456142,7 +456926,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "soybean::United_States::OKLAHOMA::admin1::soybean",
@@ -457730,7 +458515,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考"
+    "soil_temp_evidence_cn": "V阶段土壤偏热，仅作为解释性参考",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::GEORGIA::admin1::soybean",
@@ -459326,7 +460112,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "soybean::United_States::DELAWARE::admin1::soybean",
@@ -460922,7 +461709,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::United_States::NEW_JERSEY::admin1::soybean",
@@ -462518,7 +463306,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "warm_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "temp_normal"
   },
   {
     "weather_region_id": "soybean::United_States::TEXAS::admin1::soybean",
@@ -464106,7 +464895,8 @@
     "soil_temp_stage_applicable": true,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "evidence_only",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_mild"
   },
   {
     "weather_region_id": "soybean::United_States::WEST_VIRGINIA::admin1::soybean",
@@ -465702,7 +466492,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "hot_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_stress"
   },
   {
     "weather_region_id": "soybean::United_States::FLORIDA::admin1::soybean",
@@ -467298,7 +468089,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "heat_stress"
   },
   {
     "weather_region_id": "rapeseed_canola::United States of America::national::菜油",
@@ -468886,7 +469678,8 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   },
   {
     "weather_region_id": "sunflower::United States of America::national::葵油",
@@ -470474,6 +471267,7 @@
     "soil_temp_stage_applicable": false,
     "soil_temp_signal_for_risk": "normal_soil",
     "soil_temp_risk_adjustment": "stage_not_applicable",
-    "soil_temp_evidence_cn": ""
+    "soil_temp_evidence_cn": "",
+    "temp_signal": "cold_mild"
   }
 ]
