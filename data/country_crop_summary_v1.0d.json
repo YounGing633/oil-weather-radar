@@ -31,8 +31,8 @@
     "normal_count": 4,
     "total_production_tonnes": 6813289.0,
     "main_anomaly_labels_cn": [
-      "降雨显著偏少",
-      "rainfall_deficit|high_temperature"
+      "rainfall_deficit|high_temperature",
+      "降雨显著偏少"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -68,9 +68,9 @@
     "normal_count": 11,
     "total_production_tonnes": 156098200.0,
     "main_anomaly_labels_cn": [
-      "降雨偏少",
       "高温异常",
-      "降雨显著偏少"
+      "降雨显著偏少",
+      "降雨偏少"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -88,9 +88,9 @@
     "normal_count": 2,
     "total_production_tonnes": 21807821.0,
     "main_anomaly_labels_cn": [
+      "降雨显著偏少",
       "rainfall_low|high_temperature",
-      "rainfall_deficit|high_temperature",
-      "降雨显著偏少"
+      "rainfall_deficit|high_temperature"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -216,7 +216,7 @@
     "main_anomaly_labels_cn": [
       "降雨偏多/过湿",
       "excessive_rain|high_temperature",
-      "降雨偏少"
+      "高温异常"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -236,7 +236,7 @@
     "main_anomaly_labels_cn": [
       "降雨偏多/过湿",
       "高温异常",
-      "excessive_rain|high_temperature"
+      "降雨偏少"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -306,8 +306,8 @@
     "normal_count": 8,
     "total_production_tonnes": 3183585.33,
     "main_anomaly_labels_cn": [
-      "高温异常",
       "降雨偏少",
+      "高温异常",
       "降雨偏多/过湿"
     ],
     "overall_risk_level": "high",
@@ -375,8 +375,8 @@
     "total_production_tonnes": 5129943.270999999,
     "main_anomaly_labels_cn": [
       "降雨偏多/过湿",
-      "高温异常",
-      "降雨偏少"
+      "降雨偏少",
+      "高温异常"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -395,8 +395,8 @@
     "total_production_tonnes": 17487848.890000004,
     "main_anomaly_labels_cn": [
       "高温异常",
-      "rainfall_deficit|high_temperature",
-      "降雨显著偏少"
+      "降雨显著偏少",
+      "降雨偏多/过湿"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -447,8 +447,8 @@
     "total_production_tonnes": 2113085.54752,
     "main_anomaly_labels_cn": [
       "降雨显著偏少",
-      "降雨偏多/过湿",
-      "rainfall_deficit|high_temperature"
+      "rainfall_deficit|high_temperature",
+      "降雨偏多/过湿"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -466,9 +466,9 @@
     "normal_count": 12,
     "total_production_tonnes": 116039625.4615,
     "main_anomaly_labels_cn": [
-      "降雨偏少",
       "降雨显著偏少",
-      "降雨偏多/过湿"
+      "降雨偏少",
+      "rainfall_deficit|high_temperature"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
