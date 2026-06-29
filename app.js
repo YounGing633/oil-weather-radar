@@ -146,6 +146,7 @@ let state = {
   dataStatus: 'all',
   timeRange: '14d',
   layer: 'country',
+  hideSmallShare: false,
   selectedCountry: null,
   selectedCountryCrop: null,
   selectedCountryRecord: null,
@@ -1669,6 +1670,11 @@ function getRegionRecords(countryKey, crop) {
   let rows = store.adminRecords.filter(row => row.country_key === countryKey && (crop === 'all' || row.crop_group === crop));
   const admin1Rows = rows.filter(row => row.admin_level === 'admin1' || row.admin_level_for_map === 'admin1');
   if (admin1Rows.length) rows = admin1Rows;
+  if (state.hideSmallShare) {
+    const kept = rows.filter(row => Number(row.national_share) >= 0.01);
+    // If filtering would hide everything, keep all (avoid an empty map).
+    if (kept.length) rows = kept;
+  }
   return rows.sort((a, b) => (Number(b.national_share) || 0) - (Number(a.national_share) || 0));
 }
 
@@ -2549,6 +2555,20 @@ function bindEvents() {
     });
   }
 
+  const hideSmallShareCheckbox = document.getElementById('f-hide-small-share');
+  if (hideSmallShareCheckbox) {
+    hideSmallShareCheckbox.checked = !!state.hideSmallShare;
+    hideSmallShareCheckbox.addEventListener('change', event => {
+      state.hideSmallShare = event.target.checked;
+      // Re-render whichever layer is currently active.
+      if (state.layer === 'region') {
+        renderRegionLayer();
+      } else {
+        renderCountryLayer();
+      }
+    });
+  }
+
   document.getElementById('btn-reset').addEventListener('click', () => {
     state = {
       crop: 'all',
@@ -2558,6 +2578,7 @@ function bindEvents() {
       dataStatus: 'all',
       timeRange: '14d',
       layer: 'country',
+      hideSmallShare: false,
       selectedCountry: null,
       selectedCountryCrop: null,
       selectedCountryRecord: null,
@@ -2566,6 +2587,7 @@ function bindEvents() {
     document.querySelectorAll('.crop-tab').forEach(item => item.classList.toggle('active', item.dataset.crop === 'all'));
     document.querySelectorAll('.risk-tab').forEach(item => item.classList.toggle('active', item.dataset.risk === 'all'));
     if (dataStatusSelect) dataStatusSelect.value = 'all';
+    if (hideSmallShareCheckbox) hideSmallShareCheckbox.checked = false;
     document.getElementById('more-filters').open = false;
     updateTimeRangeUI();
     populateFilters();

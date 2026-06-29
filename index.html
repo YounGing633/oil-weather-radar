@@ -887,6 +887,10 @@ header h1 {
       <div class="more-filter-panel">
         <div class="more-filter-field"><label for="f-country">国家</label><select id="f-country"><option value="all">全部国家</option></select></div>
         <div class="more-filter-field"><label for="f-label">异常类型</label><select id="f-label"><option value="all">全部异常</option></select></div>
+        <div class="more-filter-field" style="display:flex;align-items:center;gap:6px;">
+          <input type="checkbox" id="f-hide-small-share" style="width:14px;height:14px;margin:0;accent-color:#2563eb;">
+          <label for="f-hide-small-share" style="margin:0;cursor:pointer;white-space:nowrap;">隐藏产量占比 &lt;1% 的地区</label>
+        </div>
         <button id="btn-reset" type="button">重置全部</button>
       </div>
     </details>
@@ -953,6 +957,6 @@ header h1 {
   </div>
 </div>
 
-  <script src="app.js?v=20260616-ui2p4"></script>
+  <script src="app.js?v=20260629-nsfix1"></script>
 </body>
 </html>
