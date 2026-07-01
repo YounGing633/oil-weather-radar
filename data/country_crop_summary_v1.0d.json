@@ -8,15 +8,14 @@
     "oil_type_color": "#ca8a04",
     "region_count": 10,
     "high_count": 0,
-    "medium_count": 1,
-    "normal_count": 8,
+    "medium_count": 0,
+    "normal_count": 9,
     "total_production_tonnes": 11007474.0,
     "main_anomaly_labels_cn": [
-      "降雨显著偏少",
       "降雨偏少"
     ],
-    "overall_risk_level": "medium",
-    "overall_status_cn": "该品种在本国存在一般天气压力"
+    "overall_risk_level": "normal",
+    "overall_status_cn": "该品种在本国整体天气正常"
   },
   {
     "country": "Australia",
@@ -26,12 +25,12 @@
     "oil_type": "菜油",
     "oil_type_color": "#2563eb",
     "region_count": 6,
-    "high_count": 2,
+    "high_count": 1,
     "medium_count": 0,
-    "normal_count": 4,
+    "normal_count": 5,
     "total_production_tonnes": 6813289.0,
     "main_anomaly_labels_cn": [
-      "高温异常"
+      "rainfall_deficit|high_temperature"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -60,14 +59,13 @@
     "oil_type": "豆油",
     "oil_type_color": "#ca8a04",
     "region_count": 17,
-    "high_count": 6,
+    "high_count": 5,
     "medium_count": 0,
-    "normal_count": 10,
+    "normal_count": 12,
     "total_production_tonnes": 156098200.0,
     "main_anomaly_labels_cn": [
-      "高温异常",
-      "降雨显著偏少",
-      "降雨偏少"
+      "降雨偏多/过湿",
+      "降雨显著偏少"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -85,8 +83,8 @@
     "normal_count": 3,
     "total_production_tonnes": 21807821.0,
     "main_anomaly_labels_cn": [
-      "降雨显著偏少",
       "降雨偏多/过湿",
+      "降雨显著偏少",
       "rainfall_deficit|high_temperature"
     ],
     "overall_risk_level": "high",
@@ -107,7 +105,7 @@
     "main_anomaly_labels_cn": [
       "rainfall_deficit|high_temperature",
       "降雨偏多/过湿",
-      "降雨显著偏少"
+      "降雨偏少"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -125,8 +123,8 @@
     "normal_count": 2,
     "total_production_tonnes": 80063.0,
     "main_anomaly_labels_cn": [
-      "降雨偏多/过湿",
-      "降雨显著偏少"
+      "rainfall_deficit|high_temperature",
+      "降雨偏多/过湿"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -211,14 +209,14 @@
     "oil_type": "椰子油",
     "oil_type_color": "#06b6d4",
     "region_count": 30,
-    "high_count": 16,
+    "high_count": 19,
     "medium_count": 0,
-    "normal_count": 13,
+    "normal_count": 10,
     "total_production_tonnes": 9301695.0,
     "main_anomaly_labels_cn": [
-      "降雨显著偏少",
-      "降雨偏多/过湿",
-      "excessive_rain|high_temperature"
+      "高温异常",
+      "rainfall_low|high_temperature",
+      "降雨偏多/过湿"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -231,14 +229,14 @@
     "oil_type": "棕榈油",
     "oil_type_color": "#16a34a",
     "region_count": 29,
-    "high_count": 16,
+    "high_count": 18,
     "medium_count": 0,
-    "normal_count": 12,
+    "normal_count": 10,
     "total_production_tonnes": 42736411.0,
     "main_anomaly_labels_cn": [
-      "降雨偏少",
-      "高温异常",
-      "rainfall_low|high_temperature"
+      "excessive_rain|high_temperature",
+      "rainfall_deficit|high_temperature",
+      "高温异常"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -256,7 +254,7 @@
     "normal_count": 0,
     "total_production_tonnes": 1104540.0,
     "main_anomaly_labels_cn": [
-      "降雨偏多/过湿"
+      "excessive_rain|high_temperature"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -269,15 +267,15 @@
     "oil_type": "菜油",
     "oil_type_color": "#2563eb",
     "region_count": 1,
-    "high_count": 0,
-    "medium_count": 1,
+    "high_count": 1,
+    "medium_count": 0,
     "normal_count": 0,
     "total_production_tonnes": 938370.0,
     "main_anomaly_labels_cn": [
-      "降雨显著偏少"
+      "rainfall_deficit|high_temperature"
     ],
-    "overall_risk_level": "medium",
-    "overall_status_cn": "该品种在本国存在一般天气压力"
+    "overall_risk_level": "high",
+    "overall_status_cn": "该品种在本国存在明显天气压力"
   },
   {
     "country": "Malaysia",
@@ -287,9 +285,9 @@
     "oil_type": "棕榈油",
     "oil_type_color": "#16a34a",
     "region_count": 9,
-    "high_count": 4,
+    "high_count": 6,
     "medium_count": 0,
-    "normal_count": 5,
+    "normal_count": 3,
     "total_production_tonnes": 19781370.0,
     "main_anomaly_labels_cn": [
       "excessive_rain|high_temperature",
@@ -307,14 +305,14 @@
     "oil_type": "椰子油",
     "oil_type_color": "#06b6d4",
     "region_count": 17,
-    "high_count": 6,
+    "high_count": 9,
     "medium_count": 0,
-    "normal_count": 11,
+    "normal_count": 8,
     "total_production_tonnes": 3183585.33,
     "main_anomaly_labels_cn": [
+      "降雨偏多/过湿",
       "高温异常",
-      "rainfall_deficit|high_temperature",
-      "降雨显著偏少"
+      "rainfall_deficit|high_temperature"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -377,14 +375,14 @@
     "oil_type": "菜油",
     "oil_type_color": "#2563eb",
     "region_count": 58,
-    "high_count": 9,
+    "high_count": 7,
     "medium_count": 8,
-    "normal_count": 32,
+    "normal_count": 35,
     "total_production_tonnes": 5129943.270999999,
     "main_anomaly_labels_cn": [
+      "降雨偏少",
       "降雨偏多/过湿",
-      "rainfall_deficit|high_temperature",
-      "降雨显著偏少"
+      "高温异常"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -398,13 +396,13 @@
     "oil_type_color": "#7c3aed",
     "region_count": 46,
     "high_count": 10,
-    "medium_count": 4,
-    "normal_count": 24,
+    "medium_count": 7,
+    "normal_count": 23,
     "total_production_tonnes": 17487848.890000004,
     "main_anomaly_labels_cn": [
-      "高温异常",
       "降雨偏少",
-      "降雨显著偏少"
+      "降雨偏多/过湿",
+      "高温异常"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"
@@ -453,7 +451,7 @@
     "region_count": 8,
     "high_count": 2,
     "medium_count": 0,
-    "normal_count": 6,
+    "normal_count": 5,
     "total_production_tonnes": 2113085.54752,
     "main_anomaly_labels_cn": [
       "降雨偏多/过湿"
@@ -469,13 +467,13 @@
     "oil_type": "豆油",
     "oil_type_color": "#ca8a04",
     "region_count": 31,
-    "high_count": 7,
+    "high_count": 6,
     "medium_count": 2,
-    "normal_count": 19,
+    "normal_count": 22,
     "total_production_tonnes": 116039625.4615,
     "main_anomaly_labels_cn": [
+      "降雨显著偏少",
       "降雨偏少",
-      "rainfall_deficit|high_temperature",
       "降雨偏多/过湿"
     ],
     "overall_risk_level": "high",
