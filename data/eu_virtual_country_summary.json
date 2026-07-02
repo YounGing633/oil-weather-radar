@@ -9,13 +9,13 @@
     "crop_oil_label_cn": "菜籽/菜油",
     "production_tonnes": 4631130.0,
     "eu_share": 0.2687,
-    "risk_level_v3": 4,
-    "risk_score_v3": 4.0,
-    "risk_level_v3_code": "severe",
-    "risk_level_v3_cn": "显著压力",
+    "risk_level_v3": 3,
+    "risk_score_v3": 3.0,
+    "risk_level_v3_code": "pressure",
+    "risk_level_v3_cn": "重点压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   },
   {
     "virtual_country": "European Union",
@@ -33,7 +33,7 @@
     "risk_level_v3_cn": "显著压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   },
   {
     "virtual_country": "European Union",
@@ -51,7 +51,7 @@
     "risk_level_v3_cn": "轻度异常",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   },
   {
     "virtual_country": "European Union",
@@ -69,7 +69,7 @@
     "risk_level_v3_cn": "一般关注",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   },
   {
     "virtual_country": "European Union",
@@ -87,7 +87,7 @@
     "risk_level_v3_cn": "一般关注",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   },
   {
     "virtual_country": "European Union",
@@ -105,7 +105,7 @@
     "risk_level_v3_cn": "重点压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   },
   {
     "virtual_country": "European Union",
@@ -123,7 +123,7 @@
     "risk_level_v3_cn": "一般关注",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   },
   {
     "virtual_country": "European Union",
@@ -141,7 +141,7 @@
     "risk_level_v3_cn": "重点压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   },
   {
     "virtual_country": "European Union",
@@ -159,6 +159,6 @@
     "risk_level_v3_cn": "一般关注",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-01 20:48:28"
+    "updated_at": "2026-07-02 09:36:25"
   }
 ]

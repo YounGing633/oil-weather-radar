@@ -1,59 +1,17 @@
 [
   {
-    "weather_region_id": "rapeseed_canola::Russia::Tomsk Oblast::admin1::菜油",
+    "weather_region_id": "rapeseed_canola::Australia::Tasmania::admin1::rapeseed_canola",
     "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Tomsk Oblast",
-    "display_region_name": "Russia - Tomsk Oblast",
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 16.666666666666664,
-    "temp_max_percentile": 86.66666666666667,
-    "dry_days_count": 6,
-    "hot_days_count": 1,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Irkutsk Oblast::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Irkutsk Oblast",
-    "display_region_name": "Russia - Irkutsk Oblast",
+    "country": "Australia",
+    "admin1": "Tasmania",
+    "display_region_name": "Tasmania / Australia",
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 63.33333333333333,
-    "dry_days_count": 4,
+    "temp_max_percentile": 23.333333333333332,
+    "dry_days_count": 8,
     "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Krasnodar Krai::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Krasnodar Krai",
-    "display_region_name": "Russia - Krasnodar Krai",
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 16.666666666666664,
-    "temp_max_percentile": 43.333333333333336,
-    "dry_days_count": 7,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Rostov Oblast::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Rostov Oblast",
-    "display_region_name": "Russia - Rostov Oblast",
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 40.0,
-    "dry_days_count": 12,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kurgan Oblast::admin1::菜油",
@@ -64,10 +22,24 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 16.666666666666664,
-    "temp_max_percentile": 83.33333333333334,
+    "temp_max_percentile": 86.66666666666667,
+    "dry_days_count": 6,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Omsk Oblast::admin1::菜油",
+    "crop_group": "rapeseed_canola",
+    "country": "Russia",
+    "admin1": "Omsk Oblast",
+    "display_region_name": "Russia - Omsk Oblast",
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "medium",
+    "precipitation_percentile_30d": 26.666666666666668,
+    "temp_max_percentile": 90.0,
     "dry_days_count": 7,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Oryol Oblast::admin1::菜油",
@@ -78,10 +50,10 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 13.333333333333334,
-    "temp_max_percentile": 30.0,
+    "temp_max_percentile": 40.0,
     "dry_days_count": 7,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Crimea::admin1::菜油",
@@ -91,11 +63,39 @@
     "display_region_name": "Russia - Republic of Crimea",
     "anomaly_label": "rainfall_low",
     "anomaly_level": "medium",
-    "precipitation_percentile_30d": 20.0,
-    "temp_max_percentile": 90.0,
-    "dry_days_count": 10,
+    "precipitation_percentile_30d": 23.333333333333332,
+    "temp_max_percentile": 83.33333333333334,
+    "dry_days_count": 9,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Rostov Oblast::admin1::菜油",
+    "crop_group": "rapeseed_canola",
+    "country": "Russia",
+    "admin1": "Rostov Oblast",
+    "display_region_name": "Russia - Rostov Oblast",
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "medium",
+    "precipitation_percentile_30d": 10.0,
+    "temp_max_percentile": 26.666666666666668,
+    "dry_days_count": 11,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Tomsk Oblast::admin1::菜油",
+    "crop_group": "rapeseed_canola",
+    "country": "Russia",
+    "admin1": "Tomsk Oblast",
+    "display_region_name": "Russia - Tomsk Oblast",
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "medium",
+    "precipitation_percentile_30d": 16.666666666666664,
+    "temp_max_percentile": 80.0,
+    "dry_days_count": 5,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tula Oblast::admin1::菜油",
@@ -112,6 +112,20 @@
     "date": "2026-07-01"
   },
   {
+    "weather_region_id": "rapeseed_canola::Russia::Yaroslavl Oblast::admin1::菜油",
+    "crop_group": "rapeseed_canola",
+    "country": "Russia",
+    "admin1": "Yaroslavl Oblast",
+    "display_region_name": "Russia - Yaroslavl Oblast",
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "medium",
+    "precipitation_percentile_30d": 16.666666666666664,
+    "temp_max_percentile": 30.0,
+    "dry_days_count": 4,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
     "weather_region_id": "sunflower::Russia::Tula Oblast::admin1::葵油",
     "crop_group": "sunflower",
     "country": "Russia",
@@ -120,10 +134,10 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 26.666666666666668,
+    "temp_max_percentile": 43.333333333333336,
     "dry_days_count": 5,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Russia::Rostov Oblast::admin1::葵油",
@@ -134,10 +148,10 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 40.0,
-    "dry_days_count": 12,
+    "temp_max_percentile": 26.666666666666668,
+    "dry_days_count": 11,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Crimea::admin1::葵油",
@@ -147,11 +161,11 @@
     "display_region_name": "Russia - Republic of Crimea",
     "anomaly_label": "rainfall_low",
     "anomaly_level": "medium",
-    "precipitation_percentile_30d": 20.0,
-    "temp_max_percentile": 90.0,
-    "dry_days_count": 10,
+    "precipitation_percentile_30d": 23.333333333333332,
+    "temp_max_percentile": 83.33333333333334,
+    "dry_days_count": 9,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Russia::Oryol Oblast::admin1::葵油",
@@ -162,10 +176,24 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 13.333333333333334,
-    "temp_max_percentile": 30.0,
+    "temp_max_percentile": 40.0,
     "dry_days_count": 7,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Omsk Oblast::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Omsk Oblast",
+    "display_region_name": "Russia - Omsk Oblast",
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "medium",
+    "precipitation_percentile_30d": 26.666666666666668,
+    "temp_max_percentile": 90.0,
+    "dry_days_count": 7,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Russia::Kurgan Oblast::admin1::葵油",
@@ -176,52 +204,10 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 16.666666666666664,
-    "temp_max_percentile": 83.33333333333334,
-    "dry_days_count": 7,
+    "temp_max_percentile": 86.66666666666667,
+    "dry_days_count": 6,
     "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Krasnodar Krai::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Krasnodar Krai",
-    "display_region_name": "Russia - Krasnodar Krai",
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 16.666666666666664,
-    "temp_max_percentile": 43.333333333333336,
-    "dry_days_count": 7,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Kemerovo Oblast - Kuzbass::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Kemerovo Oblast - Kuzbass",
-    "display_region_name": "Russia - Kemerovo Oblast - Kuzbass",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 63.33333333333333,
-    "temp_max_percentile": 83.33333333333334,
-    "dry_days_count": 5,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "soybean::United_States::VIRGINIA::admin1::soybean",
-    "crop_group": "soybean",
-    "country": "United States",
-    "admin1": "VIRGINIA",
-    "display_region_name": "VIRGINIA / United States",
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 16.666666666666664,
-    "temp_max_percentile": 30.0,
-    "dry_days_count": 5,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::United_States::WEST_VIRGINIA::admin1::soybean",
@@ -231,11 +217,25 @@
     "display_region_name": "WEST VIRGINIA / United States",
     "anomaly_label": "excessive_rain",
     "anomaly_level": "medium",
-    "precipitation_percentile_30d": 83.33333333333334,
-    "temp_max_percentile": 10.0,
+    "precipitation_percentile_30d": 86.66666666666667,
+    "temp_max_percentile": 6.666666666666667,
     "dry_days_count": 2,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Entre Ríos::admin1::豆油",
+    "crop_group": "soybean",
+    "country": "Argentina",
+    "admin1": "Entre Ríos",
+    "display_region_name": "Entre Ríos, 阿根廷 / Argentina",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 80.0,
+    "temp_max_percentile": 53.333333333333336,
+    "dry_days_count": 10,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Argentina::national::葵油",
@@ -261,9 +261,37 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 13.333333333333334,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 10,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "dry_days_count": 9,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Maranhão::admin1::豆油",
+    "crop_group": "soybean",
+    "country": "Brazil",
+    "admin1": "Maranhão",
+    "display_region_name": "Maranhão, 巴西 / Brazil",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 96.66666666666667,
+    "temp_max_percentile": 26.666666666666668,
+    "dry_days_count": 4,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
+    "crop_group": "soybean",
+    "country": "Brazil",
+    "admin1": "Mato Grosso",
+    "display_region_name": "Mato Grosso, 巴西 / Brazil",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 96.66666666666667,
+    "temp_max_percentile": 26.666666666666668,
+    "dry_days_count": 6,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::Brazil::Rondônia::admin1::豆油",
@@ -277,49 +305,21 @@
     "temp_max_percentile": 16.666666666666664,
     "dry_days_count": 3,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
+    "weather_region_id": "soybean::Brazil::São Paulo::admin1::豆油",
     "crop_group": "soybean",
     "country": "Brazil",
-    "admin1": "Pará",
-    "display_region_name": "Pará, 巴西 / Brazil",
-    "anomaly_label": "excessive_rain",
+    "admin1": "São Paulo",
+    "display_region_name": "São Paulo, 巴西 / Brazil",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 96.66666666666667,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 0,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
-    "crop_group": "soybean",
-    "country": "Brazil",
-    "admin1": "Mato Grosso",
-    "display_region_name": "Mato Grosso, 巴西 / Brazil",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 96.66666666666667,
-    "temp_max_percentile": 23.333333333333332,
-    "dry_days_count": 6,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "soybean::Brazil::Maranhão::admin1::豆油",
-    "crop_group": "soybean",
-    "country": "Brazil",
-    "admin1": "Maranhão",
-    "display_region_name": "Maranhão, 巴西 / Brazil",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 96.66666666666667,
-    "temp_max_percentile": 30.0,
-    "dry_days_count": 4,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
+    "precipitation_percentile_30d": 90.0,
+    "temp_max_percentile": 93.33333333333333,
+    "dry_days_count": 9,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::Brazil::Bahia::admin1::豆油",
@@ -330,38 +330,10 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 3.3333333333333335,
-    "temp_max_percentile": 6.666666666666667,
-    "dry_days_count": 9,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Canada::Ontario::admin1::rapeseed_canola",
-    "crop_group": "rapeseed_canola",
-    "country": "Canada",
-    "admin1": "Ontario",
-    "display_region_name": "Ontario / Canada",
-    "anomaly_label": "rainfall_deficit|high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 3.3333333333333335,
-    "temp_max_percentile": 93.33333333333333,
+    "temp_max_percentile": 3.3333333333333335,
     "dry_days_count": 8,
     "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
-    "crop_group": "rapeseed_canola",
-    "country": "Canada",
-    "admin1": "Quebec",
-    "display_region_name": "Quebec / Canada",
-    "anomaly_label": "rainfall_deficit|high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 4,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Alberta::admin1::rapeseed_canola",
@@ -372,10 +344,10 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 96.66666666666667,
-    "temp_max_percentile": 43.333333333333336,
+    "temp_max_percentile": 13.333333333333334,
     "dry_days_count": 1,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::British_Columbia::admin1::rapeseed_canola",
@@ -386,10 +358,38 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 26.666666666666668,
+    "temp_max_percentile": 33.33333333333333,
+    "dry_days_count": 7,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Canada::Ontario::admin1::rapeseed_canola",
+    "crop_group": "rapeseed_canola",
+    "country": "Canada",
+    "admin1": "Ontario",
+    "display_region_name": "Ontario / Canada",
+    "anomaly_label": "rainfall_deficit|high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 3.3333333333333335,
+    "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 8,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
+    "crop_group": "rapeseed_canola",
+    "country": "Canada",
+    "admin1": "Quebec",
+    "display_region_name": "Quebec / Canada",
+    "anomaly_label": "rainfall_deficit|high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 13.333333333333334,
+    "temp_max_percentile": 96.66666666666667,
+    "dry_days_count": 4,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::Canada::Alberta::admin1::soybean",
@@ -400,10 +400,10 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 96.66666666666667,
-    "temp_max_percentile": 43.333333333333336,
+    "temp_max_percentile": 13.333333333333334,
     "dry_days_count": 1,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::Canada::Ontario::admin1::soybean",
@@ -414,10 +414,10 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 3.3333333333333335,
-    "temp_max_percentile": 93.33333333333333,
+    "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 8,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::Canada::Quebec::admin1::soybean",
@@ -427,11 +427,11 @@
     "display_region_name": "Quebec / Canada",
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 100.0,
+    "precipitation_percentile_30d": 13.333333333333334,
+    "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 4,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Canada::Ontario::admin1::sunflower_seed",
@@ -442,10 +442,10 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 3.3333333333333335,
-    "temp_max_percentile": 93.33333333333333,
+    "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 8,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Canada::Alberta::admin1::sunflower_seed",
@@ -456,10 +456,10 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 96.66666666666667,
-    "temp_max_percentile": 43.333333333333336,
+    "temp_max_percentile": 13.333333333333334,
     "dry_days_count": 1,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Czechia::national::菜油",
@@ -469,11 +469,11 @@
     "display_region_name": "Czechia / Czechia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 40.0,
+    "precipitation_percentile_30d": 43.333333333333336,
     "temp_max_percentile": 100.0,
     "dry_days_count": 5,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Denmark::national::菜油",
@@ -483,11 +483,11 @@
     "display_region_name": "Denmark / Denmark",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 63.33333333333333,
+    "precipitation_percentile_30d": 66.66666666666666,
     "temp_max_percentile": 100.0,
     "dry_days_count": 7,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::France::national::菜油",
@@ -497,11 +497,11 @@
     "display_region_name": "法国 / France",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 83.33333333333334,
+    "precipitation_percentile_30d": 60.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 1,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "dry_days_count": 0,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::France::national::葵油",
@@ -525,11 +525,11 @@
     "display_region_name": "德国 / Germany",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 53.333333333333336,
+    "precipitation_percentile_30d": 50.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 6,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "dry_days_count": 5,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::India::national::菜油",
@@ -551,83 +551,41 @@
     "country": "Indonesia",
     "admin1": "Aceh",
     "display_region_name": "Aceh, 印度尼西亚 / Indonesia",
-    "anomaly_label": "excessive_rain|high_temperature",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
     "hot_days_count": 2,
-    "date": "2026-06-30"
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "coconut::Indonesia::Jawa Barat::admin1::椰子油",
+    "weather_region_id": "coconut::Indonesia::Bengkulu::admin1::椰子油",
     "crop_group": "coconut",
     "country": "Indonesia",
-    "admin1": "Jawa Barat",
-    "display_region_name": "Jawa Barat, 印度尼西亚 / Indonesia",
+    "admin1": "Bengkulu",
+    "display_region_name": "Bengkulu, 印度尼西亚 / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 6,
-    "hot_days_count": 3,
-    "date": "2026-06-30"
-  },
-  {
-    "weather_region_id": "coconut::Indonesia::Sulawesi Tengah::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Indonesia",
-    "admin1": "Sulawesi Tengah",
-    "display_region_name": "Sulawesi Tengah, 印度尼西亚 / Indonesia",
-    "anomaly_label": "rainfall_deficit|high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 13.333333333333334,
-    "temp_max_percentile": 96.66666666666667,
-    "dry_days_count": 2,
-    "hot_days_count": 2,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "coconut::Indonesia::Sulawesi Selatan::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Indonesia",
-    "admin1": "Sulawesi Selatan",
-    "display_region_name": "Sulawesi Selatan, 印度尼西亚 / Indonesia",
-    "anomaly_label": "rainfall_low|high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 26.666666666666668,
-    "temp_max_percentile": 100.0,
+    "precipitation_percentile_30d": 93.33333333333333,
+    "temp_max_percentile": 93.33333333333333,
     "dry_days_count": 0,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "hot_days_count": 0,
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "coconut::Indonesia::Bangka Belitung::admin1::椰子油",
+    "weather_region_id": "coconut::Indonesia::Riau::admin1::椰子油",
     "crop_group": "coconut",
     "country": "Indonesia",
-    "admin1": "Bangka Belitung",
-    "display_region_name": "Bangka Belitung, 印度尼西亚 / Indonesia",
+    "admin1": "Riau",
+    "display_region_name": "Riau, 印度尼西亚 / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 30.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 1,
     "hot_days_count": 3,
-    "date": "2026-06-30"
-  },
-  {
-    "weather_region_id": "coconut::Indonesia::Jambi::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Indonesia",
-    "admin1": "Jambi",
-    "display_region_name": "Jambi, 印度尼西亚 / Indonesia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 1,
-    "hot_days_count": 3,
-    "date": "2026-06-30"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Barat::admin1::椰子油",
@@ -641,21 +599,49 @@
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
     "hot_days_count": 3,
-    "date": "2026-06-30"
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "coconut::Indonesia::Riau::admin1::椰子油",
+    "weather_region_id": "coconut::Indonesia::Sulawesi Selatan::admin1::椰子油",
     "crop_group": "coconut",
     "country": "Indonesia",
-    "admin1": "Riau",
-    "display_region_name": "Riau, 印度尼西亚 / Indonesia",
+    "admin1": "Sulawesi Selatan",
+    "display_region_name": "Sulawesi Selatan, 印度尼西亚 / Indonesia",
+    "anomaly_label": "rainfall_low|high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 23.333333333333332,
+    "temp_max_percentile": 93.33333333333333,
+    "dry_days_count": 0,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sulawesi Tengah::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Indonesia",
+    "admin1": "Sulawesi Tengah",
+    "display_region_name": "Sulawesi Tengah, 印度尼西亚 / Indonesia",
+    "anomaly_label": "rainfall_deficit|high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 13.333333333333334,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 2,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Sumatera Barat::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Indonesia",
+    "admin1": "Sumatera Barat",
+    "display_region_name": "Sumatera Barat, 印度尼西亚 / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 33.33333333333333,
+    "precipitation_percentile_30d": 80.0,
     "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 1,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "hot_days_count": 1,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua::admin1::椰子油",
@@ -666,10 +652,10 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 13.333333333333334,
     "dry_days_count": 0,
-    "hot_days_count": 1,
-    "date": "2026-06-30"
+    "hot_days_count": 0,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Tengah::admin1::椰子油",
@@ -683,7 +669,7 @@
     "temp_max_percentile": 0.0,
     "dry_days_count": 0,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Maluku::admin1::椰子油",
@@ -694,10 +680,10 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 3.3333333333333335,
-    "temp_max_percentile": 60.0,
-    "dry_days_count": 4,
+    "temp_max_percentile": 70.0,
+    "dry_days_count": 5,
     "hot_days_count": 0,
-    "date": "2026-06-30"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Lampung::admin1::椰子油",
@@ -708,10 +694,10 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 46.666666666666664,
-    "temp_max_percentile": 93.33333333333333,
-    "dry_days_count": 2,
-    "hot_days_count": 1,
-    "date": "2026-06-30"
+    "temp_max_percentile": 96.66666666666667,
+    "dry_days_count": 3,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kepulauan Riau::admin1::椰子油",
@@ -723,9 +709,9 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 26.666666666666668,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 0,
+    "dry_days_count": 1,
     "hot_days_count": 3,
-    "date": "2026-06-30"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Timur::admin1::椰子油",
@@ -733,13 +719,13 @@
     "country": "Indonesia",
     "admin1": "Kalimantan Timur",
     "display_region_name": "Kalimantan Timur, 印度尼西亚 / Indonesia",
-    "anomaly_label": "excessive_rain|high_temperature",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
-    "hot_days_count": 2,
-    "date": "2026-06-30"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Tengah::admin1::椰子油",
@@ -749,11 +735,11 @@
     "display_region_name": "Kalimantan Tengah, 印度尼西亚 / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 63.33333333333333,
-    "temp_max_percentile": 96.66666666666667,
+    "precipitation_percentile_30d": 56.666666666666664,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 2,
     "hot_days_count": 3,
-    "date": "2026-06-30"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Barat::admin1::椰子油",
@@ -763,11 +749,67 @@
     "display_region_name": "Kalimantan Barat, 印度尼西亚 / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 93.33333333333333,
+    "precipitation_percentile_30d": 96.66666666666667,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 1,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Jawa Barat::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Indonesia",
+    "admin1": "Jawa Barat",
+    "display_region_name": "Jawa Barat, 印度尼西亚 / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 30.0,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 5,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Jambi::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Indonesia",
+    "admin1": "Jambi",
+    "display_region_name": "Jambi, 印度尼西亚 / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 63.33333333333333,
     "temp_max_percentile": 100.0,
     "dry_days_count": 1,
     "hot_days_count": 3,
-    "date": "2026-06-30"
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Gorontalo::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Indonesia",
+    "admin1": "Gorontalo",
+    "display_region_name": "Gorontalo, 印度尼西亚 / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 46.666666666666664,
+    "temp_max_percentile": 93.33333333333333,
+    "dry_days_count": 2,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Indonesia::Bangka Belitung::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Indonesia",
+    "admin1": "Bangka Belitung",
+    "display_region_name": "Bangka Belitung, 印度尼西亚 / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 33.33333333333333,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 1,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sumatera Utara::admin1::椰子油",
@@ -781,91 +823,21 @@
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "coconut::Indonesia::Gorontalo::admin1::椰子油",
+    "weather_region_id": "coconut::Indonesia::national::椰子油",
     "crop_group": "coconut",
     "country": "Indonesia",
-    "admin1": "Gorontalo",
-    "display_region_name": "Gorontalo, 印度尼西亚 / Indonesia",
+    "admin1": null,
+    "display_region_name": "印度尼西亚 / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 43.333333333333336,
-    "temp_max_percentile": 93.33333333333333,
-    "dry_days_count": 2,
-    "hot_days_count": 0,
-    "date": "2026-06-30"
-  },
-  {
-    "weather_region_id": "coconut::Indonesia::Sumatera Barat::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Indonesia",
-    "admin1": "Sumatera Barat",
-    "display_region_name": "Sumatera Barat, 印度尼西亚 / Indonesia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 86.66666666666667,
-    "temp_max_percentile": 93.33333333333333,
+    "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 1,
-    "hot_days_count": 1,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Indonesia::Kepulauan_Riau::admin1::crude_palm_oil",
-    "crop_group": "palm",
-    "country": "Indonesia",
-    "admin1": "Kepulauan Riau",
-    "display_region_name": "Kepulauan Riau / Indonesia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 30.0,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 1,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Indonesia::Kalimantan_Tengah::admin1::crude_palm_oil",
-    "crop_group": "palm",
-    "country": "Indonesia",
-    "admin1": "Kalimantan Tengah",
-    "display_region_name": "Kalimantan Tengah / Indonesia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 63.33333333333333,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 2,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Indonesia::Kalimantan_Timur::admin1::crude_palm_oil",
-    "crop_group": "palm",
-    "country": "Indonesia",
-    "admin1": "Kalimantan Timur",
-    "display_region_name": "Kalimantan Timur / Indonesia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 0,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Indonesia::Jawa_Barat::admin1::crude_palm_oil",
-    "crop_group": "palm",
-    "country": "Indonesia",
-    "admin1": "Jawa Barat",
-    "display_region_name": "Jawa Barat / Indonesia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 30.0,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 6,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 2,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Barat::admin1::crude_palm_oil",
@@ -875,11 +847,25 @@
     "display_region_name": "Kalimantan Barat / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 93.33333333333333,
+    "precipitation_percentile_30d": 96.66666666666667,
     "temp_max_percentile": 100.0,
     "dry_days_count": 1,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Kalimantan_Tengah::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Kalimantan Tengah",
+    "display_region_name": "Kalimantan Tengah / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 56.666666666666664,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 2,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Jambi::admin1::crude_palm_oil",
@@ -892,8 +878,106 @@
     "precipitation_percentile_30d": 63.33333333333333,
     "temp_max_percentile": 100.0,
     "dry_days_count": 1,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Gorontalo::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Gorontalo",
+    "display_region_name": "Gorontalo / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 46.666666666666664,
+    "temp_max_percentile": 93.33333333333333,
+    "dry_days_count": 2,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Kalimantan_Timur::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Kalimantan Timur",
+    "display_region_name": "Kalimantan Timur / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 0,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Bangka_Belitung::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Bangka Belitung",
+    "display_region_name": "Bangka Belitung / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 33.33333333333333,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 1,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Kepulauan_Riau::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Kepulauan Riau",
+    "display_region_name": "Kepulauan Riau / Indonesia",
+    "anomaly_label": "rainfall_low|high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 26.666666666666668,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 1,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Lampung::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Lampung",
+    "display_region_name": "Lampung / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 46.666666666666664,
+    "temp_max_percentile": 96.66666666666667,
+    "dry_days_count": 3,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Jawa_Barat::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Jawa Barat",
+    "display_region_name": "Jawa Barat / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 30.0,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 5,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Maluku::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Maluku",
+    "display_region_name": "Maluku / Indonesia",
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 3.3333333333333335,
+    "temp_max_percentile": 70.0,
+    "dry_days_count": 5,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Utara::admin1::crude_palm_oil",
@@ -907,7 +991,21 @@
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Aceh",
+    "display_region_name": "Aceh / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 0,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Barat::admin1::crude_palm_oil",
@@ -917,39 +1015,11 @@
     "display_region_name": "Sumatera Barat / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 86.66666666666667,
-    "temp_max_percentile": 93.33333333333333,
+    "precipitation_percentile_30d": 80.0,
+    "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 1,
     "hot_days_count": 1,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Indonesia::Bangka_Belitung::admin1::crude_palm_oil",
-    "crop_group": "palm",
-    "country": "Indonesia",
-    "admin1": "Bangka Belitung",
-    "display_region_name": "Bangka Belitung / Indonesia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 1,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
-    "crop_group": "palm",
-    "country": "Indonesia",
-    "admin1": "Aceh",
-    "display_region_name": "Aceh / Indonesia",
-    "anomaly_label": "excessive_rain|high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 0,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Tengah::admin1::crude_palm_oil",
@@ -960,10 +1030,24 @@
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 13.333333333333334,
-    "temp_max_percentile": 96.66666666666667,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 2,
     "hot_days_count": 2,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "palm::Indonesia::Bengkulu::admin1::crude_palm_oil",
+    "crop_group": "palm",
+    "country": "Indonesia",
+    "admin1": "Bengkulu",
+    "display_region_name": "Bengkulu / Indonesia",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 93.33333333333333,
+    "temp_max_percentile": 93.33333333333333,
+    "dry_days_count": 0,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Selatan::admin1::crude_palm_oil",
@@ -973,11 +1057,11 @@
     "display_region_name": "Sulawesi Selatan / Indonesia",
     "anomaly_label": "rainfall_low|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 26.666666666666668,
-    "temp_max_percentile": 100.0,
+    "precipitation_percentile_30d": 23.333333333333332,
+    "temp_max_percentile": 93.33333333333333,
     "dry_days_count": 0,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "hot_days_count": 2,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Barat::admin1::crude_palm_oil",
@@ -990,8 +1074,8 @@
     "precipitation_percentile_30d": 83.33333333333334,
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Riau::admin1::crude_palm_oil",
@@ -1001,11 +1085,11 @@
     "display_region_name": "Riau / Indonesia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 96.66666666666667,
+    "precipitation_percentile_30d": 30.0,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 1,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Tengah::admin1::crude_palm_oil",
@@ -1019,7 +1103,7 @@
     "temp_max_percentile": 0.0,
     "dry_days_count": 0,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua::admin1::crude_palm_oil",
@@ -1030,38 +1114,10 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 26.666666666666668,
+    "temp_max_percentile": 13.333333333333334,
     "dry_days_count": 0,
     "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Indonesia::Maluku::admin1::crude_palm_oil",
-    "crop_group": "palm",
-    "country": "Indonesia",
-    "admin1": "Maluku",
-    "display_region_name": "Maluku / Indonesia",
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 3.3333333333333335,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 5,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Indonesia::Lampung::admin1::crude_palm_oil",
-    "crop_group": "palm",
-    "country": "Indonesia",
-    "admin1": "Lampung",
-    "display_region_name": "Lampung / Indonesia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 50.0,
-    "temp_max_percentile": 96.66666666666667,
-    "dry_days_count": 3,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::Italy::national::豆油",
@@ -1072,10 +1128,10 @@
     "anomaly_label": "excessive_rain|high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 86.66666666666667,
-    "temp_max_percentile": 96.66666666666667,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 1,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Kazakhstan::national::葵油",
@@ -1103,7 +1159,7 @@
     "temp_max_percentile": 100.0,
     "dry_days_count": 7,
     "hot_days_count": 2,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Malaysia::Sarawak::admin1::oil_palm",
@@ -1113,25 +1169,11 @@
     "display_region_name": "Sarawak / Malaysia",
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 6.666666666666667,
+    "precipitation_percentile_30d": 3.3333333333333335,
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "palm::Malaysia::Pahang::admin1::oil_palm",
-    "crop_group": "palm",
-    "country": "Malaysia",
-    "admin1": "Pahang",
-    "display_region_name": "Pahang / Malaysia",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 60.0,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 0,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Malaysia::Johor::admin1::oil_palm",
@@ -1142,10 +1184,10 @@
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 96.66666666666667,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 0,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Malaysia::Kelantan::admin1::oil_palm",
@@ -1153,27 +1195,27 @@
     "country": "Malaysia",
     "admin1": "Kelantan",
     "display_region_name": "Kelantan / Malaysia",
-    "anomaly_label": "excessive_rain|high_temperature",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 93.33333333333333,
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "palm::Malaysia::Terengganu::admin1::oil_palm",
+    "weather_region_id": "palm::Malaysia::Pahang::admin1::oil_palm",
     "crop_group": "palm",
     "country": "Malaysia",
-    "admin1": "Terengganu",
-    "display_region_name": "Terengganu / Malaysia",
+    "admin1": "Pahang",
+    "display_region_name": "Pahang / Malaysia",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 43.333333333333336,
-    "temp_max_percentile": 100.0,
+    "precipitation_percentile_30d": 63.33333333333333,
+    "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 0,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "palm::Malaysia::Perak::admin1::oil_palm",
@@ -1187,35 +1229,35 @@
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
     "hot_days_count": 2,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Philippines",
-    "admin1": "REGION V (BICOL REGION)",
-    "display_region_name": "Philippines - REGION V (BICOL REGION)",
-    "anomaly_label": "rainfall_deficit|high_temperature",
+    "weather_region_id": "palm::Malaysia::Terengganu::admin1::oil_palm",
+    "crop_group": "palm",
+    "country": "Malaysia",
+    "admin1": "Terengganu",
+    "display_region_name": "Terengganu / Malaysia",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 10.0,
-    "temp_max_percentile": 96.66666666666667,
+    "precipitation_percentile_30d": 46.666666666666664,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 0,
-    "hot_days_count": 2,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "coconut::Philippines::MIMAROPA REGION::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Philippines",
-    "admin1": "MIMAROPA REGION",
-    "display_region_name": "Philippines - MIMAROPA REGION",
-    "anomaly_label": "excessive_rain",
+    "weather_region_id": "palm::Malaysia::Selangor::admin1::oil_palm",
+    "crop_group": "palm",
+    "country": "Malaysia",
+    "admin1": "Selangor",
+    "display_region_name": "Selangor / Malaysia",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 63.33333333333333,
-    "temp_max_percentile": 40.0,
+    "precipitation_percentile_30d": 46.666666666666664,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 0,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Philippines::NEGROS ISLAND REGION::admin1::椰子油",
@@ -1225,67 +1267,11 @@
     "display_region_name": "Philippines - NEGROS ISLAND REGION",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 80.0,
-    "temp_max_percentile": 96.66666666666667,
-    "dry_days_count": 0,
-    "hot_days_count": 1,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "coconut::Philippines::REGION IV-A (CALABARZON)::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Philippines",
-    "admin1": "REGION IV-A (CALABARZON)",
-    "display_region_name": "Philippines - REGION IV-A (CALABARZON)",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 16.666666666666664,
-    "dry_days_count": 0,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "coconut::Philippines::REGION IX (ZAMBOANGA PENINSULA)::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Philippines",
-    "admin1": "REGION IX (ZAMBOANGA PENINSULA)",
-    "display_region_name": "Philippines - REGION IX (ZAMBOANGA PENINSULA)",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
+    "precipitation_percentile_30d": 76.66666666666667,
     "temp_max_percentile": 93.33333333333333,
     "dry_days_count": 0,
-    "hot_days_count": 2,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "coconut::Philippines::REGION XI (DAVAO REGION)::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Philippines",
-    "admin1": "REGION XI (DAVAO REGION)",
-    "display_region_name": "Philippines - REGION XI (DAVAO REGION)",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 6.666666666666667,
-    "dry_days_count": 0,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "coconut::Philippines::REGION X (NORTHERN MINDANAO)::admin1::椰子油",
-    "crop_group": "coconut",
-    "country": "Philippines",
-    "admin1": "REGION X (NORTHERN MINDANAO)",
-    "display_region_name": "Philippines - REGION X (NORTHERN MINDANAO)",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 0,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "hot_days_count": 1,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VIII (EASTERN VISAYAS)::admin1::椰子油",
@@ -1298,8 +1284,78 @@
     "precipitation_percentile_30d": 16.666666666666664,
     "temp_max_percentile": 100.0,
     "dry_days_count": 0,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "hot_days_count": 2,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Philippines",
+    "admin1": "REGION V (BICOL REGION)",
+    "display_region_name": "Philippines - REGION V (BICOL REGION)",
+    "anomaly_label": "rainfall_deficit|high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 10.0,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 0,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION IX (ZAMBOANGA PENINSULA)::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Philippines",
+    "admin1": "REGION IX (ZAMBOANGA PENINSULA)",
+    "display_region_name": "Philippines - REGION IX (ZAMBOANGA PENINSULA)",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 96.66666666666667,
+    "dry_days_count": 0,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION IV-A (CALABARZON)::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Philippines",
+    "admin1": "REGION IV-A (CALABARZON)",
+    "display_region_name": "Philippines - REGION IV-A (CALABARZON)",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 6.666666666666667,
+    "dry_days_count": 0,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::MIMAROPA REGION::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Philippines",
+    "admin1": "MIMAROPA REGION",
+    "display_region_name": "Philippines - MIMAROPA REGION",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 53.333333333333336,
+    "temp_max_percentile": 43.333333333333336,
+    "dry_days_count": 0,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "coconut::Philippines::REGION X (NORTHERN MINDANAO)::admin1::椰子油",
+    "crop_group": "coconut",
+    "country": "Philippines",
+    "admin1": "REGION X (NORTHERN MINDANAO)",
+    "display_region_name": "Philippines - REGION X (NORTHERN MINDANAO)",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 90.0,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 0,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VII (CENTRAL VISAYAS)::admin1::椰子油",
@@ -1309,11 +1365,11 @@
     "display_region_name": "Philippines - REGION VII (CENTRAL VISAYAS)",
     "anomaly_label": "excessive_rain|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
+    "precipitation_percentile_30d": 96.66666666666667,
     "temp_max_percentile": 93.33333333333333,
     "dry_days_count": 0,
     "hot_days_count": 2,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Poland::national::菜油",
@@ -1325,93 +1381,9 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 30.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 10,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Tuva Republic::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Tuva Republic",
-    "display_region_name": "Russia - Tuva Republic",
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 3.3333333333333335,
-    "temp_max_percentile": 40.0,
-    "dry_days_count": 8,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Udmurt Republic::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Udmurt Republic",
-    "display_region_name": "Russia - Udmurt Republic",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 76.66666666666667,
-    "temp_max_percentile": 0.0,
-    "dry_days_count": 4,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Saratov Oblast::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Saratov Oblast",
-    "display_region_name": "Russia - Saratov Oblast",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 83.33333333333334,
-    "temp_max_percentile": 6.666666666666667,
-    "dry_days_count": 3,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Republic of North Ossetia-Alania::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Republic of North Ossetia-Alania",
-    "display_region_name": "Russia - Republic of North Ossetia-Alania",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 0.0,
-    "dry_days_count": 1,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Republic of Ingushetia::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Republic of Ingushetia",
-    "display_region_name": "Russia - Republic of Ingushetia",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 0.0,
-    "dry_days_count": 1,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "rapeseed_canola::Russia::Kaliningrad Oblast::admin1::菜油",
-    "crop_group": "rapeseed_canola",
-    "country": "Russia",
-    "admin1": "Kaliningrad Oblast",
-    "display_region_name": "Russia - Kaliningrad Oblast",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 60.0,
-    "temp_max_percentile": 100.0,
     "dry_days_count": 9,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kabardino-Balkarian Republic::admin1::菜油",
@@ -1425,81 +1397,11 @@
     "temp_max_percentile": 0.0,
     "dry_days_count": 1,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "sunflower::Russia::Republic of Ingushetia::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Republic of Ingushetia",
-    "display_region_name": "Russia - Republic of Ingushetia",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 0.0,
-    "dry_days_count": 1,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Republic of Dagestan::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Republic of Dagestan",
-    "display_region_name": "Russia - Republic of Dagestan",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 93.33333333333333,
-    "temp_max_percentile": 20.0,
-    "dry_days_count": 3,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Udmurt Republic::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Udmurt Republic",
-    "display_region_name": "Russia - Udmurt Republic",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 76.66666666666667,
-    "temp_max_percentile": 0.0,
-    "dry_days_count": 4,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Primorsky Krai::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Primorsky Krai",
-    "display_region_name": "Russia - Primorsky Krai",
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 93.33333333333333,
-    "dry_days_count": 5,
-    "hot_days_count": 1,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Kabardino-Balkarian Republic::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Kabardino-Balkarian Republic",
-    "display_region_name": "Russia - Kabardino-Balkarian Republic",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 0.0,
-    "dry_days_count": 1,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Kaliningrad Oblast::admin1::葵油",
-    "crop_group": "sunflower",
+    "weather_region_id": "rapeseed_canola::Russia::Kaliningrad Oblast::admin1::菜油",
+    "crop_group": "rapeseed_canola",
     "country": "Russia",
     "admin1": "Kaliningrad Oblast",
     "display_region_name": "Russia - Kaliningrad Oblast",
@@ -1509,49 +1411,77 @@
     "temp_max_percentile": 100.0,
     "dry_days_count": 9,
     "hot_days_count": 3,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "sunflower::Russia::Karachay-Cherkess Republic::admin1::葵油",
-    "crop_group": "sunflower",
+    "weather_region_id": "rapeseed_canola::Russia::Udmurt Republic::admin1::菜油",
+    "crop_group": "rapeseed_canola",
     "country": "Russia",
-    "admin1": "Karachay-Cherkess Republic",
-    "display_region_name": "Russia - Karachay-Cherkess Republic",
+    "admin1": "Udmurt Republic",
+    "display_region_name": "Russia - Udmurt Republic",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 73.33333333333333,
+    "temp_max_percentile": 0.0,
+    "dry_days_count": 3,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Irkutsk Oblast::admin1::菜油",
+    "crop_group": "rapeseed_canola",
+    "country": "Russia",
+    "admin1": "Irkutsk Oblast",
+    "display_region_name": "Russia - Irkutsk Oblast",
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 6.666666666666667,
+    "temp_max_percentile": 73.33333333333333,
+    "dry_days_count": 4,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Tuva Republic::admin1::菜油",
+    "crop_group": "rapeseed_canola",
+    "country": "Russia",
+    "admin1": "Tuva Republic",
+    "display_region_name": "Russia - Tuva Republic",
+    "anomaly_label": "rainfall_deficit",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 3.3333333333333335,
+    "temp_max_percentile": 63.33333333333333,
+    "dry_days_count": 7,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Russia::Republic of North Ossetia-Alania::admin1::菜油",
+    "crop_group": "rapeseed_canola",
+    "country": "Russia",
+    "admin1": "Republic of North Ossetia-Alania",
+    "display_region_name": "Russia - Republic of North Ossetia-Alania",
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 3.3333333333333335,
-    "dry_days_count": 2,
+    "temp_max_percentile": 0.0,
+    "dry_days_count": 1,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
-    "weather_region_id": "sunflower::Russia::Saratov Oblast::admin1::葵油",
-    "crop_group": "sunflower",
+    "weather_region_id": "rapeseed_canola::Russia::Republic of Ingushetia::admin1::菜油",
+    "crop_group": "rapeseed_canola",
     "country": "Russia",
-    "admin1": "Saratov Oblast",
-    "display_region_name": "Russia - Saratov Oblast",
+    "admin1": "Republic of Ingushetia",
+    "display_region_name": "Russia - Republic of Ingushetia",
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 83.33333333333334,
-    "temp_max_percentile": 6.666666666666667,
-    "dry_days_count": 3,
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 0.0,
+    "dry_days_count": 1,
     "hot_days_count": 0,
-    "date": "2026-07-01"
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Zabaykalsky Krai::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Zabaykalsky Krai",
-    "display_region_name": "Russia - Zabaykalsky Krai",
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 93.33333333333333,
-    "temp_max_percentile": 23.333333333333332,
-    "dry_days_count": 3,
-    "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of North Ossetia-Alania::admin1::葵油",
@@ -1565,7 +1495,119 @@
     "temp_max_percentile": 0.0,
     "dry_days_count": 1,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Ingushetia::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Republic of Ingushetia",
+    "display_region_name": "Russia - Republic of Ingushetia",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 0.0,
+    "dry_days_count": 1,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Republic of Dagestan::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Republic of Dagestan",
+    "display_region_name": "Russia - Republic of Dagestan",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 93.33333333333333,
+    "temp_max_percentile": 6.666666666666667,
+    "dry_days_count": 2,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Udmurt Republic::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Udmurt Republic",
+    "display_region_name": "Russia - Udmurt Republic",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 73.33333333333333,
+    "temp_max_percentile": 0.0,
+    "dry_days_count": 3,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Zabaykalsky Krai::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Zabaykalsky Krai",
+    "display_region_name": "Russia - Zabaykalsky Krai",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 83.33333333333334,
+    "temp_max_percentile": 6.666666666666667,
+    "dry_days_count": 3,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Kabardino-Balkarian Republic::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Kabardino-Balkarian Republic",
+    "display_region_name": "Russia - Kabardino-Balkarian Republic",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 0.0,
+    "dry_days_count": 1,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Kaliningrad Oblast::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Kaliningrad Oblast",
+    "display_region_name": "Russia - Kaliningrad Oblast",
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 60.0,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 9,
+    "hot_days_count": 3,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Karachay-Cherkess Republic::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Karachay-Cherkess Republic",
+    "display_region_name": "Russia - Karachay-Cherkess Republic",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 3.3333333333333335,
+    "dry_days_count": 2,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Primorsky Krai::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Primorsky Krai",
+    "display_region_name": "Russia - Primorsky Krai",
+    "anomaly_label": "rainfall_low|high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 26.666666666666668,
+    "temp_max_percentile": 96.66666666666667,
+    "dry_days_count": 5,
+    "hot_days_count": 1,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::United Kingdom::national::菜油",
@@ -1575,11 +1617,11 @@
     "display_region_name": "United Kingdom / United Kingdom",
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 80.0,
+    "precipitation_percentile_30d": 53.333333333333336,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 5,
-    "hot_days_count": 3,
-    "date": "2026-07-01"
+    "dry_days_count": 4,
+    "hot_days_count": 2,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::IDAHO::admin1::canola",
@@ -1589,11 +1631,11 @@
     "display_region_name": "IDAHO / United States",
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 93.33333333333333,
+    "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 8,
+    "dry_days_count": 7,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::KANSAS::admin1::canola",
@@ -1603,11 +1645,25 @@
     "display_region_name": "KANSAS / United States",
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 90.0,
-    "temp_max_percentile": 30.0,
+    "precipitation_percentile_30d": 73.33333333333333,
+    "temp_max_percentile": 56.666666666666664,
+    "dry_days_count": 3,
+    "hot_days_count": 0,
+    "date": "2026-07-02"
+  },
+  {
+    "weather_region_id": "soybean::United_States::NEBRASKA::admin1::soybean",
+    "crop_group": "soybean",
+    "country": "United States",
+    "admin1": "NEBRASKA",
+    "display_region_name": "NEBRASKA / United States",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 53.333333333333336,
+    "temp_max_percentile": 40.0,
     "dry_days_count": 4,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::United_States::MISSISSIPPI::admin1::soybean",
@@ -1618,10 +1674,10 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 13.333333333333334,
+    "temp_max_percentile": 16.666666666666664,
     "dry_days_count": 3,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::United_States::KENTUCKY::admin1::soybean",
@@ -1632,10 +1688,10 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 93.33333333333333,
-    "temp_max_percentile": 23.333333333333332,
-    "dry_days_count": 5,
+    "temp_max_percentile": 20.0,
+    "dry_days_count": 4,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::United_States::KANSAS::admin1::soybean",
@@ -1645,11 +1701,11 @@
     "display_region_name": "KANSAS / United States",
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 90.0,
-    "temp_max_percentile": 30.0,
-    "dry_days_count": 4,
+    "precipitation_percentile_30d": 73.33333333333333,
+    "temp_max_percentile": 56.666666666666664,
+    "dry_days_count": 3,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::United_States::FLORIDA::admin1::soybean",
@@ -1659,11 +1715,11 @@
     "display_region_name": "FLORIDA / United States",
     "anomaly_label": "rainfall_deficit|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 6.666666666666667,
+    "precipitation_percentile_30d": 3.3333333333333335,
     "temp_max_percentile": 96.66666666666667,
     "dry_days_count": 0,
-    "hot_days_count": 4,
-    "date": "2026-07-01"
+    "hot_days_count": 3,
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::United_States::ARKANSAS::admin1::soybean",
@@ -1673,11 +1729,11 @@
     "display_region_name": "ARKANSAS / United States",
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 86.66666666666667,
-    "temp_max_percentile": 50.0,
-    "dry_days_count": 5,
+    "precipitation_percentile_30d": 83.33333333333334,
+    "temp_max_percentile": 53.333333333333336,
+    "dry_days_count": 4,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "soybean::United_States::ALABAMA::admin1::soybean",
@@ -1691,7 +1747,7 @@
     "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 3,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "rapeseed_canola::United States of America::national::菜油",
@@ -1702,10 +1758,10 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 93.33333333333333,
-    "temp_max_percentile": 10.0,
-    "dry_days_count": 4,
+    "temp_max_percentile": 53.333333333333336,
+    "dry_days_count": 3,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   },
   {
     "weather_region_id": "sunflower::United States of America::national::葵油",
@@ -1716,9 +1772,9 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 93.33333333333333,
-    "temp_max_percentile": 10.0,
-    "dry_days_count": 4,
+    "temp_max_percentile": 53.333333333333336,
+    "dry_days_count": 3,
     "hot_days_count": 0,
-    "date": "2026-07-01"
+    "date": "2026-07-02"
   }
 ]
