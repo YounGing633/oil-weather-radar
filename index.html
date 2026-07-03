@@ -117,7 +117,10 @@ header h1 {
 }
 .crop-tabs,
 .layer-toggle,
-.risk-tabs {
+.risk-tabs,
+.view-tabs,
+.metric-tabs,
+.value-tabs {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -129,6 +132,9 @@ header h1 {
 .crop-tab,
 .layer-btn,
 .risk-tab,
+.view-tab,
+.metric-tab,
+.value-tab,
 .toolbar button,
 .toolbar select {
   border: 1px solid transparent;
@@ -142,7 +148,10 @@ header h1 {
 }
 .crop-tab.active,
 .layer-btn.active,
-.risk-tab.active {
+.risk-tab.active,
+.view-tab.active,
+.metric-tab.active,
+.value-tab.active {
   color: #fff;
   background: #222833;
 }
@@ -201,6 +210,17 @@ header h1 {
   font-weight: 700;
 }
 .more-filter-field select { width: 100%; }
+.weather-only { display: none; }
+.weather-mode .weather-only { display: inline-flex; }
+.weather-mode .risk-only,
+.weather-mode .today-summary,
+.weather-mode .time-range-bar,
+.weather-mode #detail-panel {
+  display: none;
+}
+.weather-mode #body {
+  flex: 1 1 auto;
+}
 .today-summary {
   flex: 0 0 auto;
   padding: 10px 14px 9px;
@@ -747,7 +767,8 @@ header h1 {
   color: var(--muted);
 }
 .leaflet-tooltip.country-map-label,
-.leaflet-tooltip.region-map-label {
+.leaflet-tooltip.region-map-label,
+.leaflet-tooltip.production-map-label {
   padding: 0;
   border: 0;
   background: transparent;
@@ -794,6 +815,37 @@ header h1 {
 .region-map-label .map-label span:last-child {
   font-size: 8px;
 }
+.production-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 96px;
+  padding: 3px 6px;
+  border: 1px solid rgba(32,39,51,0.2);
+  border-radius: 5px;
+  background: rgba(255,255,255,0.94);
+  box-shadow: 0 1px 4px rgba(15,23,42,0.16);
+  color: #202733;
+  line-height: 1;
+}
+.production-label .stripe {
+  width: 5px;
+  height: 18px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--metric-color, #64748b);
+}
+.production-label .value {
+  display: block;
+  min-width: 0;
+  color: #111827;
+  font-size: 10.5px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .leaflet-container {
   background: #dfe5eb;
 }
@@ -812,7 +864,7 @@ header h1 {
   .header-meta { white-space: normal; text-align: right; line-height: 1.25; }
   .toolbar { align-items: flex-start; padding: 8px 10px; gap: 7px; }
   .filter-group { align-items: flex-start; flex-direction: column; gap: 3px; }
-  .crop-tabs, .risk-tabs { flex-wrap: wrap; }
+  .crop-tabs, .risk-tabs, .view-tabs, .metric-tabs, .value-tabs { flex-wrap: wrap; }
   .more-filters { margin-left: 0; }
   .more-filter-panel { position: fixed; top: 124px; left: 10px; right: 10px; min-width: 0; grid-template-columns: 1fr; }
   .brand-cn { display: none; }
@@ -851,10 +903,17 @@ header h1 {
         <div class="brand-cn">基于主产区产量权重、作物阶段与天气异常，识别潜在供应扰动。</div>
       </div>
     </div>
-    <div class="header-meta">版本 <span id="meta-version">v2.1-ui2p4</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
+    <div class="header-meta">版本 <span id="meta-version">v2.4-prodweather3</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
   </header>
 
   <div class="toolbar">
+    <div class="filter-group">
+      <span class="filter-label">界面</span>
+      <div class="view-tabs" id="view-tabs">
+        <button class="view-tab active" type="button" data-view="risk">风险雷达</button>
+        <button class="view-tab" type="button" data-view="weather">产区气象</button>
+      </div>
+    </div>
     <div class="filter-group">
       <span class="filter-label">油种</span>
       <div class="crop-tabs" id="crop-tabs">
@@ -866,7 +925,27 @@ header h1 {
         <button class="crop-tab" type="button" data-crop="coconut">椰子</button>
       </div>
     </div>
-    <div class="filter-group">
+    <div class="filter-group weather-only">
+      <span class="filter-label">国家</span>
+      <select id="f-weather-country" aria-label="产区气象国家"></select>
+    </div>
+    <div class="filter-group weather-only">
+      <span class="filter-label">指标</span>
+      <div class="metric-tabs" id="weather-metric-tabs">
+        <button class="metric-tab active" type="button" data-metric="rain">降雨湿涝</button>
+        <button class="metric-tab" type="button" data-metric="temp">温度胁迫</button>
+        <button class="metric-tab" type="button" data-metric="soil">土壤墒情</button>
+        <button class="metric-tab" type="button" data-metric="forecast">7天降雨</button>
+      </div>
+    </div>
+    <div class="filter-group weather-only">
+      <span class="filter-label">标注</span>
+      <div class="value-tabs" id="map-value-tabs">
+        <button class="value-tab active" type="button" data-value="production">产量</button>
+        <button class="value-tab" type="button" data-value="share">全国占比</button>
+      </div>
+    </div>
+    <div class="filter-group risk-only">
       <span class="filter-label">风险等级</span>
       <div class="risk-tabs" id="risk-tabs">
         <button class="risk-tab active" type="button" data-risk="all">全部</button>
@@ -875,7 +954,7 @@ header h1 {
         <button class="risk-tab" type="button" data-risk="lte2">正常/关注</button>
       </div>
     </div>
-    <div class="filter-group">
+    <div class="filter-group risk-only">
       <span class="filter-label">视图</span>
       <div class="layer-toggle">
         <button class="layer-btn active" id="layer-country" type="button" data-layer="country">国家层</button>
@@ -917,7 +996,7 @@ header h1 {
     <div class="today-focus-panel">
       <div class="today-focus-title">今日关注</div>
       <div class="today-focus-list" id="today-focus-list"><div class="today-focus-item">数据载入中</div></div>
-      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span id="sum-version">risk_label_v4 · v2.1-ui2p4</span></div>
+      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span id="sum-version">risk_label_v4 · v2.4-prodweather3</span></div>
     </div>
   </section>
 
@@ -928,8 +1007,8 @@ header h1 {
         <h2 id="overlay-title">国家层</h2>
         <div class="ov-row">
           <div class="ov-item"><div class="num" id="ov-main">-</div><div class="lbl" id="ov-main-label">国家</div></div>
-          <div class="ov-item"><div class="num" id="ov-risk">-</div><div class="lbl">显著/重点</div></div>
-          <div class="ov-item"><div class="num" id="ov-fallback">-</div><div class="lbl">代表点展示</div></div>
+          <div class="ov-item"><div class="num" id="ov-risk">-</div><div class="lbl" id="ov-risk-label">显著/重点</div></div>
+          <div class="ov-item"><div class="num" id="ov-fallback">-</div><div class="lbl" id="ov-fallback-label">代表点展示</div></div>
         </div>
         <div class="map-status" id="map-status">数据载入中</div>
       </div>
@@ -941,7 +1020,7 @@ header h1 {
         <div class="legend-item"><span class="legend-swatch" style="background:var(--oil-sunflower)"></span>葵籽/葵油</div>
         <div class="legend-item"><span class="legend-swatch" style="background:var(--oil-coconut)"></span>椰子/椰子油</div>
       </div>
-      <div class="map-legend">
+      <div class="map-legend" id="map-legend">
         <div class="legend-title">风险 v3</div>
         <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-severe)"></span>显著压力</div>
         <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-pressure)"></span>重点压力</div>
@@ -957,6 +1036,6 @@ header h1 {
   </div>
 </div>
 
-  <script src="app.js?v=20260629-nsfix1"></script>
+  <script src="app.js?v=20260703-prodweather3"></script>
 </body>
 </html>
