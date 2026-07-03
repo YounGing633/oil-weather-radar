@@ -221,6 +221,39 @@ header h1 {
 .weather-mode #body {
   flex: 1 1 auto;
 }
+.weather-mode .map-overlay {
+  top: 12px;
+  left: 16px;
+  width: auto;
+  max-width: calc(100% - 180px);
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+.weather-mode .map-overlay h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: none;
+  text-shadow:
+    -1px -1px 0 rgba(255,255,255,0.96),
+    1px -1px 0 rgba(255,255,255,0.96),
+    -1px 1px 0 rgba(255,255,255,0.96),
+    1px 1px 0 rgba(255,255,255,0.96),
+    0 2px 4px rgba(15,23,42,0.18);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.weather-mode .map-overlay .ov-row,
+.weather-mode .map-overlay .map-status {
+  display: none;
+}
 .today-summary {
   flex: 0 0 auto;
   padding: 10px 14px 9px;
@@ -768,7 +801,8 @@ header h1 {
 }
 .leaflet-tooltip.country-map-label,
 .leaflet-tooltip.region-map-label,
-.leaflet-tooltip.production-map-label {
+.leaflet-tooltip.production-map-label,
+.leaflet-tooltip.production-country-label {
   padding: 0;
   border: 0;
   background: transparent;
@@ -816,35 +850,62 @@ header h1 {
   font-size: 8px;
 }
 .production-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  max-width: 96px;
-  padding: 3px 6px;
-  border: 1px solid rgba(32,39,51,0.2);
-  border-radius: 5px;
-  background: rgba(255,255,255,0.94);
-  box-shadow: 0 1px 4px rgba(15,23,42,0.16);
-  color: #202733;
+  display: block;
+  max-width: 94px;
+  color: #111827;
   line-height: 1;
+  text-align: center;
 }
 .production-label .stripe {
-  width: 5px;
-  height: 18px;
-  flex: 0 0 auto;
-  border-radius: 999px;
-  background: var(--metric-color, #64748b);
+  display: none;
 }
 .production-label .value {
   display: block;
   min-width: 0;
-  color: #111827;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-shadow:
+    -1px -1px 0 rgba(255,255,255,0.95),
+    1px -1px 0 rgba(255,255,255,0.95),
+    -1px 1px 0 rgba(255,255,255,0.95),
+    1px 1px 0 rgba(255,255,255,0.95),
+    0 1px 2px rgba(15,23,42,0.2);
+}
+.country-map-text {
+  color: rgba(17,24,39,0.78);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-shadow:
+    -1px -1px 0 rgba(255,255,255,0.94),
+    1px -1px 0 rgba(255,255,255,0.94),
+    -1px 1px 0 rgba(255,255,255,0.94),
+    1px 1px 0 rgba(255,255,255,0.94),
+    0 2px 5px rgba(15,23,42,0.24);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.gradient-legend {
+  width: 150px;
+}
+.gradient-bar {
+  height: 10px;
+  border: 1px solid rgba(32,39,51,0.16);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--grad-from), var(--grad-to));
+}
+.gradient-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.2;
 }
 .leaflet-container {
   background: #dfe5eb;
@@ -903,7 +964,7 @@ header h1 {
         <div class="brand-cn">基于主产区产量权重、作物阶段与天气异常，识别潜在供应扰动。</div>
       </div>
     </div>
-    <div class="header-meta">版本 <span id="meta-version">v2.4-prodweather3</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
+    <div class="header-meta">版本 <span id="meta-version">v2.6-prodweather5</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
   </header>
 
   <div class="toolbar">
@@ -996,7 +1057,7 @@ header h1 {
     <div class="today-focus-panel">
       <div class="today-focus-title">今日关注</div>
       <div class="today-focus-list" id="today-focus-list"><div class="today-focus-item">数据载入中</div></div>
-      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span id="sum-version">risk_label_v4 · v2.4-prodweather3</span></div>
+      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span id="sum-version">risk_label_v4 · v2.6-prodweather5</span></div>
     </div>
   </section>
 
@@ -1036,6 +1097,6 @@ header h1 {
   </div>
 </div>
 
-  <script src="app.js?v=20260703-prodweather3"></script>
+  <script src="app.js?v=20260703-prodweather5"></script>
 </body>
 </html>

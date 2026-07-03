@@ -1,5 +1,5 @@
 const DATA_DIR = './data/';
-const UI_VERSION = 'v2.4-prodweather3';
+const UI_VERSION = 'v2.6-prodweather5';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -30,12 +30,8 @@ const CROP_META = {
 };
 
 const WEATHER_PALETTE = {
-  severeDry: '#8f2f2a',
-  dry: '#b86b45',
-  watchDry: '#c9a15b',
-  normal: '#7f9a7a',
-  wet: '#638da0',
-  severeWet: '#345f78',
+  dryHot: '#9b5143',
+  wetCold: '#4f7484',
   noData: '#9aa3ad'
 };
 
@@ -43,47 +39,42 @@ const WEATHER_METRICS = {
   rain: {
     title: '降雨湿涝',
     note: '颜色按近30天降雨相对常年百分比，兼顾油籽缺雨和过湿作业风险。',
-    legend: [
-      ['<50% 严重缺雨', WEATHER_PALETTE.severeDry],
-      ['50-75% 偏干', WEATHER_PALETTE.dry],
-      ['75-125% 接近常年', WEATHER_PALETTE.normal],
-      ['125-175% 偏湿', WEATHER_PALETTE.wet],
-      ['>175% 过湿/作业扰动', WEATHER_PALETTE.severeWet]
-    ]
+    gradient: {
+      from: WEATHER_PALETTE.dryHot,
+      to: WEATHER_PALETTE.wetCold,
+      lowLabel: '缺雨',
+      highLabel: '过湿'
+    }
   },
   temp: {
     title: '温度胁迫',
     note: '颜色按近30天最高温距平，突出低温生长迟滞和高温干化压力。',
-    legend: [
-      ['≤-4℃ 明显偏冷', WEATHER_PALETTE.severeWet],
-      ['-4~-1.5℃ 偏冷', WEATHER_PALETTE.wet],
-      ['-1.5~+1.5℃ 接近常年', WEATHER_PALETTE.normal],
-      ['+1.5~+4℃ 偏热', WEATHER_PALETTE.dry],
-      ['>+4℃ 高温干化', WEATHER_PALETTE.severeDry]
-    ]
+    gradient: {
+      from: WEATHER_PALETTE.wetCold,
+      to: WEATHER_PALETTE.dryHot,
+      lowLabel: '偏冷',
+      highLabel: '偏热'
+    }
   },
   soil: {
     title: '土壤墒情',
     note: '颜色按根区土壤湿度百分位，干端参考干旱监测常用百分位口径，湿端用于识别过湿/田间作业压力。',
-    legend: [
-      ['P<5 极干', WEATHER_PALETTE.severeDry],
-      ['P5-20 偏干', WEATHER_PALETTE.dry],
-      ['P20-40 略偏干', WEATHER_PALETTE.watchDry],
-      ['P40-70 适宜', WEATHER_PALETTE.normal],
-      ['P70-90 偏湿', WEATHER_PALETTE.wet],
-      ['P>90 过湿/渍涝', WEATHER_PALETTE.severeWet]
-    ]
+    gradient: {
+      from: WEATHER_PALETTE.dryHot,
+      to: WEATHER_PALETTE.wetCold,
+      lowLabel: '偏干',
+      highLabel: '偏湿'
+    }
   },
   forecast: {
     title: '7天降雨',
     note: '颜色按未来7天累计降雨，主要判断补水修复和收获/运输作业扰动。',
-    legend: [
-      ['<10mm 补水不足', WEATHER_PALETTE.severeDry],
-      ['10-25mm 有限补水', WEATHER_PALETTE.dry],
-      ['25-50mm 有效补水', WEATHER_PALETTE.normal],
-      ['50-80mm 偏多', WEATHER_PALETTE.wet],
-      ['>80mm 强降雨/作业扰动', WEATHER_PALETTE.severeWet]
-    ]
+    gradient: {
+      from: WEATHER_PALETTE.dryHot,
+      to: WEATHER_PALETTE.wetCold,
+      lowLabel: '补水少',
+      highLabel: '雨偏多'
+    }
   }
 };
 
@@ -1976,37 +1967,53 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
   };
 }
 
+function clamp01(value) {
+  if (!isNum(value)) return 0;
+  return Math.max(0, Math.min(1, Number(value)));
+}
+
+function hexToRgb(hex) {
+  const clean = String(hex || '').replace('#', '');
+  if (clean.length !== 6) return { r: 148, g: 163, b: 184 };
+  return {
+    r: parseInt(clean.slice(0, 2), 16),
+    g: parseInt(clean.slice(2, 4), 16),
+    b: parseInt(clean.slice(4, 6), 16)
+  };
+}
+
+function rgbToHex({ r, g, b }) {
+  return '#' + [r, g, b]
+    .map(v => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0'))
+    .join('');
+}
+
+function mixHex(from, to, t) {
+  const a = hexToRgb(from);
+  const b = hexToRgb(to);
+  const x = clamp01(t);
+  return rgbToHex({
+    r: a.r + (b.r - a.r) * x,
+    g: a.g + (b.g - a.g) * x,
+    b: a.b + (b.b - a.b) * x
+  });
+}
+
+function weatherMetricPosition(row, metric = state.weatherMetric) {
+  const value = weatherMetricValue(row, metric).value;
+  if (!isNum(value)) return null;
+  const n = Number(value);
+  if (metric === 'rain') return clamp01((n - 40) / 160);
+  if (metric === 'temp') return clamp01((n + 5) / 10);
+  if (metric === 'forecast') return clamp01(n / 100);
+  return clamp01(n / 100);
+}
+
 function weatherMetricColor(row, metric = state.weatherMetric) {
   const value = weatherMetricValue(row, metric).value;
   if (!isNum(value)) return WEATHER_PALETTE.noData;
-  const n = Number(value);
-  if (metric === 'rain') {
-    if (n < 50) return WEATHER_PALETTE.severeDry;
-    if (n < 75) return WEATHER_PALETTE.dry;
-    if (n <= 125) return WEATHER_PALETTE.normal;
-    if (n <= 175) return WEATHER_PALETTE.wet;
-    return WEATHER_PALETTE.severeWet;
-  }
-  if (metric === 'temp') {
-    if (n <= -4) return WEATHER_PALETTE.severeWet;
-    if (n <= -1.5) return WEATHER_PALETTE.wet;
-    if (n < 1.5) return WEATHER_PALETTE.normal;
-    if (n < 4) return WEATHER_PALETTE.dry;
-    return WEATHER_PALETTE.severeDry;
-  }
-  if (metric === 'forecast') {
-    if (n < 10) return WEATHER_PALETTE.severeDry;
-    if (n < 25) return WEATHER_PALETTE.dry;
-    if (n <= 50) return WEATHER_PALETTE.normal;
-    if (n <= 80) return WEATHER_PALETTE.wet;
-    return WEATHER_PALETTE.severeWet;
-  }
-  if (n < 5) return WEATHER_PALETTE.severeDry;
-  if (n < 20) return WEATHER_PALETTE.dry;
-  if (n < 40) return WEATHER_PALETTE.watchDry;
-  if (n <= 70) return WEATHER_PALETTE.normal;
-  if (n <= 90) return WEATHER_PALETTE.wet;
-  return WEATHER_PALETTE.severeWet;
+  const gradient = weatherMetricMeta().gradient || { from: WEATHER_PALETTE.dryHot, to: WEATHER_PALETTE.wetCold };
+  return mixHex(gradient.from, gradient.to, weatherMetricPosition(row, metric));
 }
 
 function weatherMetricCategoryLabel(row, metric = state.weatherMetric) {
@@ -2106,8 +2113,7 @@ function productionWeatherValue(row) {
 function productionWeatherLabelHtml(row) {
   const value = productionWeatherValue(row);
   return `
-    <div class="production-label" style="--metric-color:${weatherMetricColor(row)}">
-      <span class="stripe"></span>
+    <div class="production-label">
       <span class="value">${esc(value)}</span>
     </div>
   `;
@@ -2149,9 +2155,19 @@ function refreshProductionWeatherLabels(rowsArg) {
   if (state.viewMode !== 'weather') return;
   const rows = rowsArg || currentProductionWeatherRows || [];
   const zoom = map.getZoom();
-  rows.forEach(row => {
+  const countryLabelLimit = state.country === 'all'
+    ? (zoom <= 3 ? 2 : (zoom <= 4 ? 3 : 5))
+    : Infinity;
+  const labelsByCountry = new Map();
+  [...rows]
+    .sort((a, b) => (Number(b.production_tonnes) || 0) - (Number(a.production_tonnes) || 0))
+    .forEach(row => {
     if (!isNum(row.lat) || !isNum(row.lon)) return;
     if (!shouldShowProductionWeatherLabel(row, zoom)) return;
+    const countryKey = row.country_key || canonicalCountry(row.country);
+    const shown = labelsByCountry.get(countryKey) || 0;
+    if (shown >= countryLabelLimit) return;
+    labelsByCountry.set(countryKey, shown + 1);
     L.tooltip({
       permanent: true,
       direction: 'top',
@@ -2246,6 +2262,60 @@ function weatherCountryTitle(countryKey = state.country) {
   return countryKey === 'all' ? '全部国家' : getCountryName(countryKey);
 }
 
+function productionCountryTotals(rows) {
+  const totals = new Map();
+  rows.forEach(row => {
+    const key = row.country_key || canonicalCountry(row.country);
+    totals.set(key, (totals.get(key) || 0) + (Number(row.production_tonnes) || 0));
+  });
+  return totals;
+}
+
+function shouldShowProductionCountryLabel(countryKey, totals, zoom) {
+  if (state.country !== 'all') return true;
+  const total = totals.get(countryKey) || 0;
+  if (zoom <= 2) return total >= 15000000;
+  if (zoom <= 3) return total >= 5000000;
+  return total >= 1000000;
+}
+
+function renderProductionCountryOutlines(rows) {
+  if (!store.geojson || !Array.isArray(store.geojson.features)) return;
+  const countryKeys = new Set(rows.map(row => row.country_key || canonicalCountry(row.country)));
+  if (!countryKeys.size) return;
+  const totals = productionCountryTotals(rows);
+  const labelCenters = [];
+
+  L.geoJSON(store.geojson, {
+    interactive: false,
+    filter: feature => countryKeys.has(getFeatureCountry(feature)),
+    style: {
+      color: '#0f172a',
+      weight: state.country === 'all' ? 1.9 : 2.2,
+      opacity: state.country === 'all' ? 0.82 : 0.9,
+      fillOpacity: 0
+    },
+    onEachFeature: (feature, layer) => {
+      const key = getFeatureCountry(feature);
+      labelCenters.push({ key, center: layer.getBounds().getCenter() });
+    }
+  }).addTo(layers.country);
+
+  const zoom = map ? map.getZoom() : 3;
+  labelCenters.forEach(item => {
+    if (!shouldShowProductionCountryLabel(item.key, totals, zoom)) return;
+    L.tooltip({
+      permanent: true,
+      direction: 'center',
+      className: 'production-country-label',
+      opacity: 1
+    })
+      .setLatLng(item.center)
+      .setContent(`<span class="country-map-text">${esc(getCountryName(item.key))}</span>`)
+      .addTo(layers.countryLabels);
+  });
+}
+
 async function renderProductionWeatherLayer() {
   state.layer = 'weather';
   clearMap();
@@ -2269,10 +2339,11 @@ async function renderProductionWeatherLayer() {
     else fallbackCountryCount += 1;
   }
 
-  refreshProductionWeatherLabels(rows);
   const bounds = boundsFor(['region', 'fallback', 'regionLabels']);
   if (bounds.isValid()) map.fitBounds(bounds.pad(0.18));
   else map.setView([16, 25], 3);
+  renderProductionCountryOutlines(rows);
+  refreshProductionWeatherLabels(rows);
 
   const hiddenCount = Math.max(0, candidates.length - rows.length);
   const majorCount = rows.filter(row => Number(row.national_share ?? row.eu_share ?? 0) >= 0.1).length;
@@ -2991,9 +3062,13 @@ function updateMapLegend() {
     return;
   }
   const metric = weatherMetricMeta();
+  const gradient = metric.gradient || { from: WEATHER_PALETTE.dryHot, to: WEATHER_PALETTE.wetCold, lowLabel: '低', highLabel: '高' };
   legend.innerHTML = `
     <div class="legend-title">${esc(metric.title)}</div>
-    ${metric.legend.map(([label, color]) => `<div class="legend-item"><span class="legend-swatch" style="background:${color}"></span>${esc(label)}</div>`).join('')}
+    <div class="gradient-legend" style="--grad-from:${escAttr(gradient.from)};--grad-to:${escAttr(gradient.to)}">
+      <div class="gradient-bar"></div>
+      <div class="gradient-labels"><span>${esc(gradient.lowLabel)}</span><span>${esc(gradient.highLabel)}</span></div>
+    </div>
   `;
 }
 
