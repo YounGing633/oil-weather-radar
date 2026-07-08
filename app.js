@@ -974,11 +974,11 @@ function renderCountryLayer() {
           L.tooltip({
             permanent: true,
             direction: 'center',
-            className: 'country-map-label',
+            className: 'production-map-label',
             opacity: 1
           })
             .setLatLng(center)
-            .setContent(countryLabelHtml(model.top, map.getZoom()))
+            .setContent(countryProductionLabelHtml(model))
             .addTo(layers.countryLabels);
         }
       }
@@ -1010,9 +1010,9 @@ function renderCountryLayer() {
         permanent: true,
         direction: 'top',
         offset: [0, -8],
-        className: 'country-map-label',
+        className: 'production-map-label',
         opacity: 1
-      }).setLatLng(center).setContent(countryLabelHtml(model.top, map.getZoom())).addTo(layers.countryLabels);
+      }).setLatLng(center).setContent(countryProductionLabelHtml(model)).addTo(layers.countryLabels);
     }
   });
 
@@ -1053,12 +1053,12 @@ function countryCentroid(countryKey) {
 }
 
 function shouldShowCountryLabel(model, zoom) {
-  const risk = riskNumFromCountry(model.top);
   const production = Number(model.top.total_production_tonnes) || 0;
-  if (zoom <= 2) return risk >= 4 || production > 20000000;
-  if (zoom <= 3) return risk >= 3 || production > 5000000;
-  if (zoom <= 4) return true;
-  return true;
+  if (zoom <= 2) return production > 10000000;
+  if (zoom <= 3) return production > 3000000;
+  if (zoom <= 4) return production > 800000;
+  if (zoom <= 5) return production > 150000;
+  return production > 50000;
 }
 
 function refreshCountryLabels() {
@@ -1999,16 +1999,16 @@ function refreshRegionLabels(recordsArg) {
   const zoom = map.getZoom();
   records.forEach(row => {
     if (!isNum(row.lat) || !isNum(row.lon)) return;
-    if (!shouldShowRegionLabel(row, zoom)) return;
+    if (!shouldShowProductionWeatherLabel(row, zoom)) return;
     L.tooltip({
       permanent: true,
       direction: 'top',
       offset: [0, -6],
-      className: 'region-map-label',
+      className: 'production-map-label',
       opacity: 1
     })
       .setLatLng([Number(row.lat), Number(row.lon)])
-      .setContent(buildMapLabel(row, zoom, 'region'))
+      .setContent(productionWeatherLabelHtml(row))
       .addTo(layers.regionLabels);
   });
 }
@@ -2274,6 +2274,17 @@ function productionWeatherLabelHtml(row) {
       <span class="value">${esc(value)}</span>
     </div>
   `;
+}
+
+function countryProductionLabelHtml(model) {
+  const name = model.top.country_cn || getCountryName(model.key);
+  if (state.mapValue === 'share') {
+    const share = firstNumeric(model.top, ['national_share', 'production_share', 'global_share']);
+    const text = isNum(share) ? fmtPct(share, 1) : '—';
+    return `<div class="production-label"><span class="value">${esc(name)}</span><span class="value" style="font-size:10px;font-weight:700;">${esc(text)}</span></div>`;
+  }
+  const text = fmtProduction(model.top.total_production_tonnes);
+  return `<div class="production-label"><span class="value">${esc(name)}</span><span class="value" style="font-size:10px;font-weight:700;">${esc(text)}</span></div>`;
 }
 
 function productionWeatherTooltip(row) {
