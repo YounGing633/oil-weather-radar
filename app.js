@@ -81,13 +81,13 @@ const WEATHER_METRICS = {
     }
   },
   forecast: {
-    title: '7天降雨',
-    note: '颜色按未来7天累计降雨，主要判断补水修复和收获/运输作业扰动。',
+    title: '7天距平',
+    note: '颜色按未来7天降雨距平（vs常年同期），偏干偏湿一目了然。',
     gradient: {
       from: WEATHER_PALETTE.dryHot,
       to: WEATHER_PALETTE.wetCold,
-      lowLabel: '补水少',
-      highLabel: '雨偏多'
+      lowLabel: '偏干',
+      highLabel: '偏湿'
     }
   }
 };
@@ -2064,9 +2064,18 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
   }
   if (metric === 'forecast') {
     const rain = firstNumeric(row, ['forecast_7d_precip', 'forecast_rainfall_7d', 'forecast_7d', 'rain_forecast_7d']);
+    const normal30 = Number(row.precip_30d_normal) || 0;
+    const normal7 = normal30 * 7 / 30;
+    if (isNum(rain) && normal7 > 0.5) {
+      const anomaly = ((Number(rain) - normal7) / normal7) * 100;
+      return {
+        value: anomaly,
+        label: `7天距平 ${anomaly >= 0 ? '+' : ''}${Math.round(anomaly)}%（${fmtNum(rain, 0, 'mm')} / 常年${fmtNum(normal7, 0, 'mm')}）`
+      };
+    }
     return {
-      value: rain,
-      label: isNum(rain) ? `未来7天降雨 ${fmtNum(rain, 0, 'mm')}` : '7天降雨待接入'
+      value: isNum(rain) ? Number(rain) : null,
+      label: isNum(rain) ? `未来7天降雨 ${fmtNum(rain, 0, 'mm')}（无常年基准）` : '7天降雨待接入'
     };
   }
   const root = firstNumeric(row, ['rootzone_percentile', 'rootzone_percentile_90d']);
@@ -2150,7 +2159,7 @@ function weatherMetricPosition(row, metric = state.weatherMetric) {
   const n = Number(value);
   if (metric === 'rain') return clamp01((n - 40) / 160);
   if (metric === 'temp') return clamp01((n + 5) / 10);
-  if (metric === 'forecast') return clamp01(n / 100);
+  if (metric === 'forecast') return clamp01((n + 100) / 200);
   return clamp01(n / 100);
 }
 
@@ -2179,11 +2188,11 @@ function weatherMetricCategoryLabel(row, metric = state.weatherMetric) {
     return '高温干化';
   }
   if (metric === 'forecast') {
-    if (n < 10) return '补水不足';
-    if (n < 25) return '有限补水';
-    if (n <= 50) return '有效补水';
-    if (n <= 80) return '降雨偏多';
-    return '强降雨/作业扰动';
+    if (n < -60) return '严重缺雨';
+    if (n < -30) return '偏干';
+    if (n <= 30) return '接近常年';
+    if (n <= 80) return '偏湿';
+    return '过湿/作业扰动';
   }
   if (n < 5) return '极干';
   if (n < 20) return '偏干';
