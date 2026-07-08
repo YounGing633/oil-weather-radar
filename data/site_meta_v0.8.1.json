@@ -1,6 +1,6 @@
 [
   {
-    "generated_at": "2026-07-03 10:27:38",
+    "generated_at": "2026-07-08 10:16:32",
     "version": "v1.0-i1",
     "baseline_period": "1991-2020",
     "baseline_method": "monthly_normal + doy_pentad (v1.0-i1)",
@@ -40,7 +40,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 131,
-    "run_id": "daily_export_20260703_102738"
+    "total_alerts": 152,
+    "run_id": "daily_export_20260708_101632"
   }
 ]
