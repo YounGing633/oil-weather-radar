@@ -3600,16 +3600,27 @@ function buildSummaryCards(records) {
   });
   const anomalyTypes = [...anomalyWeights.entries()].sort((a, b) => b[1] - a[1]).slice(0, 2).map(([label]) => label);
 
-  const forecastRegions = riskRegions.filter(row => row.forecast_signal);
+  const forecastRegions = riskRegions.filter(row => isNum(row.forecast_7d_precip) || isNum(row.forecast_16d_precip));
   let reliefWeight = 0;
   let worsenWeight = 0;
   let steadyWeight = 0;
   forecastRegions.forEach(row => {
     const weight = Number(row.production_tonnes) || 1;
-    const signal = String(row.forecast_signal || 'unknown');
-    if (signal.includes('relief')) reliefWeight += weight;
-    else if (signal.includes('worsen') || signal.includes('no_relief')) worsenWeight += weight;
-    else steadyWeight += weight;
+    const forecast7 = Number(row.forecast_7d_precip) || 0;
+    const forecast16 = Number(row.forecast_16d_precip) || 0;
+    const normal7 = (Number(row.precip_30d_normal) || 0) * 7 / 30;
+    const deficit = Number(row.precip_30d_anomaly_mm) || 0;
+    const dryRisk = row.risk_type === 'drought_water_deficit' || row.risk_type === 'heat_drydown';
+    const wetRisk = row.risk_type === 'excess_rain_waterlogging' || row.risk_type === 'wet_harvest_disruption';
+    if (dryRisk && deficit < -10 && forecast7 >= normal7 * 0.8) {
+      reliefWeight += weight;
+    } else if (wetRisk && forecast7 > normal7 * 1.5) {
+      worsenWeight += weight;
+    } else if (dryRisk && deficit < -10 && forecast7 < normal7 * 0.4) {
+      worsenWeight += weight;
+    } else {
+      steadyWeight += weight;
+    }
   });
   let forecastChange = '待接入';
   if (forecastRegions.length) {
