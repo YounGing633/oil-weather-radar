@@ -169,38 +169,17 @@ header h1 {
   background: #fff;
 }
 .more-filters {
-  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 8px;
   margin-left: auto;
 }
-.more-filters > summary {
-  list-style: none;
-  height: 28px;
-  padding: 5px 10px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: #fff;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 12px;
-  white-space: nowrap;
-}
-.more-filters > summary::-webkit-details-marker { display: none; }
-.more-filters > summary::after { content: " +"; color: var(--muted-2); }
-.more-filters[open] > summary::after { content: " -"; }
 .more-filter-panel {
-  position: absolute;
-  top: 34px;
-  right: 0;
-  z-index: 800;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  display: inline-flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
   gap: 8px;
-  min-width: 430px;
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #fff;
-  box-shadow: var(--shadow);
+  min-width: 0;
 }
 .more-filter-field label {
   display: block;
@@ -209,7 +188,7 @@ header h1 {
   font-size: 10px;
   font-weight: 700;
 }
-.more-filter-field select { width: 100%; }
+.more-filter-field select { width: 122px; }
 .weather-only { display: none; }
 .weather-mode .weather-only { display: inline-flex; }
 .weather-mode .risk-only,
@@ -895,6 +874,10 @@ header h1 {
   white-space: nowrap;
   pointer-events: none;
 }
+.eu-map-text {
+  color: #172033;
+  font-size: 16px;
+}
 .gradient-legend {
   width: 168px;
 }
@@ -902,7 +885,7 @@ header h1 {
   height: 12px;
   border: 1px solid rgba(32,39,51,0.24);
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--grad-from), var(--grad-to));
+  background: linear-gradient(90deg, var(--grad-stops, var(--grad-from), var(--grad-to)));
 }
 .gradient-labels {
   display: flex;
@@ -932,8 +915,9 @@ header h1 {
   .toolbar { align-items: flex-start; padding: 8px 10px; gap: 7px; }
   .filter-group { align-items: flex-start; flex-direction: column; gap: 3px; }
   .crop-tabs, .risk-tabs, .view-tabs, .metric-tabs, .value-tabs { flex-wrap: wrap; }
-  .more-filters { margin-left: 0; }
-  .more-filter-panel { position: fixed; top: 124px; left: 10px; right: 10px; min-width: 0; grid-template-columns: 1fr; }
+  .more-filters { margin-left: 0; align-items: flex-start; }
+  .more-filter-panel { align-items: flex-start; }
+  .more-filter-field select { width: 132px; }
   .brand-cn { display: none; }
   .summary-grid { grid-template-columns: 1fr; }
   .today-focus-panel { grid-template-columns: 1fr; gap: 5px; }
@@ -970,7 +954,7 @@ header h1 {
         <div class="brand-cn">基于主产区产量权重、作物阶段与天气异常，识别潜在供应扰动。</div>
       </div>
     </div>
-    <div class="header-meta">版本 <span id="meta-version">v2.9-prodweather8</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
+    <div class="header-meta">版本 <span id="meta-version">v2.10-prodweather9</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
   </header>
 
   <div class="toolbar">
@@ -1028,18 +1012,13 @@ header h1 {
         <button class="layer-btn" id="layer-region" type="button" data-layer="region" disabled>地区层</button>
       </div>
     </div>
-    <details class="more-filters" id="more-filters">
-      <summary>高级筛选</summary>
+    <div class="more-filters" id="more-filters">
       <div class="more-filter-panel">
-        <div class="more-filter-field"><label for="f-country">国家</label><select id="f-country"><option value="all">全部国家</option></select></div>
-        <div class="more-filter-field"><label for="f-label">异常类型</label><select id="f-label"><option value="all">全部异常</option></select></div>
-        <div class="more-filter-field" style="display:flex;align-items:center;gap:6px;">
-          <input type="checkbox" id="f-hide-small-share" style="width:14px;height:14px;margin:0;accent-color:#2563eb;">
-          <label for="f-hide-small-share" style="margin:0;cursor:pointer;white-space:nowrap;">隐藏产量占比 &lt;1% 的地区</label>
-        </div>
+        <div class="more-filter-field risk-only"><label for="f-country">国家</label><select id="f-country"><option value="all">全部国家</option></select></div>
+        <div class="more-filter-field risk-only"><label for="f-label">异常类型</label><select id="f-label"><option value="all">全部异常</option></select></div>
         <button id="btn-reset" type="button">重置全部</button>
       </div>
-    </details>
+    </div>
   </div>
 
   <div class="time-range-bar">
@@ -1063,7 +1042,7 @@ header h1 {
     <div class="today-focus-panel">
       <div class="today-focus-title">今日关注</div>
       <div class="today-focus-list" id="today-focus-list"><div class="today-focus-item">数据载入中</div></div>
-      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span id="sum-version">risk_label_v4 · v2.9-prodweather8</span></div>
+      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span id="sum-version">risk_label_v4 · v2.10-prodweather9</span></div>
     </div>
   </section>
 
@@ -1103,6 +1082,6 @@ header h1 {
   </div>
 </div>
 
-  <script src="app.js?v=20260708-prodweather8"></script>
+  <script src="app.js?v=20260708-prodweather9"></script>
 </body>
 </html>

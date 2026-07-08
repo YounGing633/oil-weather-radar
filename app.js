@@ -1,5 +1,5 @@
 const DATA_DIR = './data/';
-const UI_VERSION = 'v2.9-prodweather8';
+const UI_VERSION = 'v2.10-prodweather9';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -30,10 +30,23 @@ const CROP_META = {
 };
 
 const WEATHER_PALETTE = {
-  dryHot: '#b2182b',
-  wetCold: '#2166ac',
+  dryHot: '#d7191c',
+  dry: '#fdae61',
+  neutral: '#ffffbf',
+  wet: '#66c2a5',
+  wetCold: '#2c7bb6',
+  veryWetCold: '#313695',
   noData: '#bdbdbd'
 };
+
+const WEATHER_COLOR_STOPS = [
+  { pos: 0, color: WEATHER_PALETTE.dryHot },
+  { pos: 0.2, color: WEATHER_PALETTE.dry },
+  { pos: 0.42, color: WEATHER_PALETTE.neutral },
+  { pos: 0.6, color: WEATHER_PALETTE.wet },
+  { pos: 0.8, color: WEATHER_PALETTE.wetCold },
+  { pos: 1, color: WEATHER_PALETTE.veryWetCold }
+];
 
 const WEATHER_METRICS = {
   rain: {
@@ -52,6 +65,7 @@ const WEATHER_METRICS = {
     gradient: {
       from: WEATHER_PALETTE.wetCold,
       to: WEATHER_PALETTE.dryHot,
+      reverse: true,
       lowLabel: '偏冷',
       highLabel: '偏热'
     }
@@ -207,7 +221,6 @@ let state = {
   layer: 'country',
   weatherMetric: 'rain',
   mapValue: 'production',
-  hideSmallShare: true,
   selectedCountry: null,
   selectedCountryCrop: null,
   selectedCountryRecord: null,
@@ -230,7 +243,6 @@ function snapshotViewState() {
     layer: state.layer,
     weatherMetric: state.weatherMetric,
     mapValue: state.mapValue,
-    hideSmallShare: state.hideSmallShare,
     selectedCountry: state.selectedCountry,
     selectedCountryCrop: state.selectedCountryCrop,
     selectedCountryRecord: state.selectedCountryRecord,
@@ -249,7 +261,6 @@ function defaultViewState(viewMode) {
     layer: viewMode === 'weather' ? 'weather' : 'country',
     weatherMetric: 'rain',
     mapValue: 'production',
-    hideSmallShare: true,
     selectedCountry: null,
     selectedCountryCrop: null,
     selectedCountryRecord: null,
@@ -1832,11 +1843,6 @@ function getRegionRecords(countryKey, crop) {
   let rows = store.adminRecords.filter(row => row.country_key === countryKey && (crop === 'all' || row.crop_group === crop));
   const admin1Rows = rows.filter(row => row.admin_level === 'admin1' || row.admin_level_for_map === 'admin1');
   if (admin1Rows.length) rows = admin1Rows;
-  if (state.hideSmallShare) {
-    const kept = rows.filter(row => Number(row.national_share) >= 0.01);
-    // If filtering would hide everything, keep all (avoid an empty map).
-    if (kept.length) rows = kept;
-  }
   return rows.sort((a, b) => (Number(b.national_share) || 0) - (Number(a.national_share) || 0));
 }
 
@@ -2095,6 +2101,38 @@ function mixHex(from, to, t) {
   });
 }
 
+function interpolateColorStops(stops, t) {
+  const x = clamp01(t);
+  const palette = Array.isArray(stops) && stops.length ? stops : WEATHER_COLOR_STOPS;
+  if (x <= palette[0].pos) return palette[0].color;
+  for (let i = 1; i < palette.length; i += 1) {
+    const prev = palette[i - 1];
+    const next = palette[i];
+    if (x <= next.pos) {
+      const span = Math.max(0.0001, next.pos - prev.pos);
+      return mixHex(prev.color, next.color, (x - prev.pos) / span);
+    }
+  }
+  return palette[palette.length - 1].color;
+}
+
+function weatherColorStops(metric = state.weatherMetric) {
+  const meta = WEATHER_METRICS[metric] || WEATHER_METRICS.rain;
+  const stops = meta.gradient && meta.gradient.reverse
+    ? [...WEATHER_COLOR_STOPS].reverse().map((item, index, arr) => ({
+      pos: index / Math.max(1, arr.length - 1),
+      color: item.color
+    }))
+    : WEATHER_COLOR_STOPS;
+  return stops;
+}
+
+function weatherGradientCss(metric = state.weatherMetric) {
+  return weatherColorStops(metric)
+    .map(item => `${item.color} ${(item.pos * 100).toFixed(0)}%`)
+    .join(', ');
+}
+
 function weatherMetricPosition(row, metric = state.weatherMetric) {
   const value = weatherMetricValue(row, metric).value;
   if (!isNum(value)) return null;
@@ -2108,8 +2146,7 @@ function weatherMetricPosition(row, metric = state.weatherMetric) {
 function weatherMetricColor(row, metric = state.weatherMetric) {
   const value = weatherMetricValue(row, metric).value;
   if (!isNum(value)) return WEATHER_PALETTE.noData;
-  const gradient = weatherMetricMeta().gradient || { from: WEATHER_PALETTE.dryHot, to: WEATHER_PALETTE.wetCold };
-  return mixHex(gradient.from, gradient.to, weatherMetricPosition(row, metric));
+  return interpolateColorStops(weatherColorStops(metric), weatherMetricPosition(row, metric));
 }
 
 function weatherMetricCategoryLabel(row, metric = state.weatherMetric) {
@@ -2167,6 +2204,21 @@ function dedupeProductionWeatherRows(rows) {
   return [...byRegion.values()];
 }
 
+function preferDetailedProductionWeatherRows(rows) {
+  const groups = new Map();
+  rows.forEach(row => {
+    const country = row.country_key || canonicalCountry(row.country);
+    const crop = row.crop_group || 'all';
+    const key = `${country}::${crop}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(row);
+  });
+  return [...groups.values()].flatMap(groupRows => {
+    const admin1Rows = groupRows.filter(row => row.admin_level === 'admin1' || row.admin_level_for_map === 'admin1');
+    return admin1Rows.length ? admin1Rows : groupRows;
+  });
+}
+
 function productionWeatherCandidates() {
   let rows = [];
   if (state.country === 'European Union') {
@@ -2184,8 +2236,7 @@ function productionWeatherCandidates() {
     if (euRows.length) rows = rows.concat(euRows);
   }
 
-  const admin1Rows = rows.filter(row => row.admin_level === 'admin1' || row.admin_level_for_map === 'admin1');
-  if (admin1Rows.length) rows = admin1Rows;
+  rows = preferDetailedProductionWeatherRows(rows);
   return dedupeProductionWeatherRows(rows)
     .filter(row => isNum(row.lat) && isNum(row.lon))
     .sort((a, b) => {
@@ -2248,12 +2299,11 @@ function productionWeatherTooltip(row) {
 function shouldShowProductionWeatherLabel(row, zoom) {
   const share = Number(productionShareValue(row) ?? 0);
   const production = Number(row.production_tonnes) || 0;
-  if (state.hideSmallShare && share > 0 && share < 0.01 && zoom < 5) return false;
   if (zoom <= 2) return share >= 0.12 || production >= 10000000;
   if (zoom <= 3) return share >= 0.06 || production >= 3000000;
   if (zoom <= 4) return share >= 0.02 || production >= 800000;
   if (zoom <= 5) return share >= 0.006 || production >= 150000;
-  return share >= 0.001 || production >= 50000 || !state.hideSmallShare;
+  return share >= 0.001 || production >= 50000;
 }
 
 function refreshProductionWeatherLabels(rowsArg) {
@@ -2453,6 +2503,23 @@ function renderProductionCountryOutlines(rows) {
       .setContent(`<span class="country-map-text">${esc(getCountryName(item.key))}</span>`)
       .addTo(layers.countryLabels);
   });
+
+  const euRows = rows.filter(row => row.production_weather_context === 'eu' && isNum(row.lat) && isNum(row.lon));
+  if (state.country === 'all' && euRows.length) {
+    const total = euRows.reduce((sum, row) => sum + (Number(row.production_tonnes) || 0), 0);
+    const weightSum = total || euRows.length;
+    const lat = euRows.reduce((sum, row) => sum + Number(row.lat) * (total ? (Number(row.production_tonnes) || 0) : 1), 0) / weightSum;
+    const lon = euRows.reduce((sum, row) => sum + Number(row.lon) * (total ? (Number(row.production_tonnes) || 0) : 1), 0) / weightSum;
+    L.tooltip({
+      permanent: true,
+      direction: 'center',
+      className: 'production-country-label eu-country-label',
+      opacity: 1
+    })
+      .setLatLng([lat, lon])
+      .setContent('<span class="country-map-text eu-map-text">欧盟</span>')
+      .addTo(layers.countryLabels);
+  }
 }
 
 async function renderProductionWeatherLayer() {
@@ -3113,7 +3180,11 @@ function populateFilters() {
   if (state.crop === 'all' || state.crop === 'rapeseed_canola' || state.crop === 'sunflower') {
     countries.set('European Union', '欧盟');
   }
-  const options = [...countries.entries()].sort((a, b) => a[1].localeCompare(b[1], 'zh-CN'));
+  const options = [...countries.entries()].sort((a, b) => {
+    if (a[0] === 'European Union') return -1;
+    if (b[0] === 'European Union') return 1;
+    return a[1].localeCompare(b[1], 'zh-CN');
+  });
   countrySelect.innerHTML = '<option value="all">全部国家</option>' + options.map(([key, name]) => `<option value="${escAttr(key)}">${esc(name)}</option>`).join('');
   countrySelect.value = options.some(([key]) => key === current) ? current : 'all';
   if (state.viewMode !== 'weather') state.country = countrySelect.value;
@@ -3138,6 +3209,8 @@ function weatherCountryOptions() {
   });
   if (euWeatherRows(state.crop).length) countries.set('European Union', '欧盟');
   return [...countries.entries()].sort((a, b) => {
+    if (a[0] === 'European Union') return -1;
+    if (b[0] === 'European Union') return 1;
     const prodDiff = weatherCountryProduction(b[0]) - weatherCountryProduction(a[0]);
     if (prodDiff) return prodDiff;
     return a[1].localeCompare(b[1], 'zh-CN');
@@ -3244,7 +3317,7 @@ function updateMapLegend() {
   const gradient = metric.gradient || { from: WEATHER_PALETTE.dryHot, to: WEATHER_PALETTE.wetCold, lowLabel: '低', highLabel: '高' };
   legend.innerHTML = `
     <div class="legend-title">${esc(metric.title)}</div>
-    <div class="gradient-legend" style="--grad-from:${escAttr(gradient.from)};--grad-to:${escAttr(gradient.to)}">
+    <div class="gradient-legend" style="--grad-from:${escAttr(gradient.from)};--grad-to:${escAttr(gradient.to)};--grad-stops:${escAttr(weatherGradientCss())}">
       <div class="gradient-bar"></div>
       <div class="gradient-labels"><span>${esc(gradient.lowLabel)}</span><span>${esc(gradient.highLabel)}</span></div>
     </div>
@@ -3263,8 +3336,6 @@ function updateModeChrome() {
   if (dataStatusSelect) dataStatusSelect.value = state.dataStatus;
   const anomalySelect = document.getElementById('f-label');
   if (anomalySelect && [...anomalySelect.options].some(opt => opt.value === state.anomaly)) anomalySelect.value = state.anomaly;
-  const hideSmallShareCheckbox = document.getElementById('f-hide-small-share');
-  if (hideSmallShareCheckbox) hideSmallShareCheckbox.checked = !!state.hideSmallShare;
   syncCountrySelects();
   updateMapLegend();
   requestAnimationFrame(() => map && map.invalidateSize());
@@ -3392,15 +3463,6 @@ function bindEvents() {
     });
   }
 
-  const hideSmallShareCheckbox = document.getElementById('f-hide-small-share');
-  if (hideSmallShareCheckbox) {
-    hideSmallShareCheckbox.checked = !!state.hideSmallShare;
-    hideSmallShareCheckbox.addEventListener('change', event => {
-      state.hideSmallShare = event.target.checked;
-      renderActiveView();
-    });
-  }
-
   document.getElementById('btn-reset').addEventListener('click', () => {
     state = {
       viewMode: 'risk',
@@ -3413,7 +3475,6 @@ function bindEvents() {
       layer: 'country',
       weatherMetric: 'rain',
       mapValue: 'production',
-      hideSmallShare: true,
       selectedCountry: null,
       selectedCountryCrop: null,
       selectedCountryRecord: null,
@@ -3424,7 +3485,6 @@ function bindEvents() {
     document.querySelectorAll('.risk-tab').forEach(item => item.classList.toggle('active', item.dataset.risk === 'all'));
     if (dataStatusSelect) dataStatusSelect.value = 'all';
     updateModeChrome();
-    document.getElementById('more-filters').open = false;
     updateTimeRangeUI();
     populateFilters();
     renderActiveView();
