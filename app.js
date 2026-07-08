@@ -1,5 +1,5 @@
 const DATA_DIR = './data/';
-const UI_VERSION = 'v2.6-prodweather5';
+const UI_VERSION = 'v2.7-prodweather6';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -30,8 +30,8 @@ const CROP_META = {
 };
 
 const WEATHER_PALETTE = {
-  dryHot: '#9b5143',
-  wetCold: '#4f7484',
+  dryHot: '#b84a32',
+  wetCold: '#1f7893',
   noData: '#9aa3ad'
 };
 
@@ -2187,9 +2187,9 @@ function renderProductionWeatherFallbackMarker(row) {
   const marker = L.circleMarker([Number(row.lat), Number(row.lon)], {
     radius: productionMarkerRadius(row),
     color: '#ffffff',
-    weight: 1.25,
+    weight: 1.6,
     fillColor: color,
-    fillOpacity: 0.84
+    fillOpacity: 0.9
   }).addTo(layers.fallback);
   marker.bindTooltip(productionWeatherTooltip(row), { sticky: true, direction: 'auto' });
   return true;
@@ -2214,11 +2214,11 @@ async function renderProductionWeatherCountryGroup(countryKey, rows) {
           const key = normalizeAdminShapeName(feature.properties && feature.properties.shapeName, countryKey);
           const row = recordByBoundary.get(key);
           return {
-            color: '#334155',
-            weight: 0.9,
-            opacity: 0.76,
+            color: '#223043',
+            weight: 1.05,
+            opacity: 0.9,
             fillColor: weatherMetricColor(row),
-            fillOpacity: 0.6
+            fillOpacity: 0.72
           };
         },
         onEachFeature: (feature, layer) => {
@@ -2229,7 +2229,7 @@ async function renderProductionWeatherCountryGroup(countryKey, rows) {
           matchedCount += 1;
           layer.bindTooltip(productionWeatherTooltip(row), { sticky: true, direction: 'auto' });
           layer.on({
-            mouseover: () => layer.setStyle({ weight: 1.8, fillOpacity: 0.74 }),
+            mouseover: () => layer.setStyle({ weight: 2.05, fillOpacity: 0.82 }),
             mouseout: () => regionGeo.resetStyle(layer)
           });
         }
@@ -2291,8 +2291,8 @@ function renderProductionCountryOutlines(rows) {
     filter: feature => countryKeys.has(getFeatureCountry(feature)),
     style: {
       color: '#0f172a',
-      weight: state.country === 'all' ? 1.9 : 2.2,
-      opacity: state.country === 'all' ? 0.82 : 0.9,
+      weight: state.country === 'all' ? 2.15 : 2.45,
+      opacity: state.country === 'all' ? 0.88 : 0.94,
       fillOpacity: 0
     },
     onEachFeature: (feature, layer) => {

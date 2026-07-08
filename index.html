@@ -235,9 +235,9 @@ header h1 {
 }
 .weather-mode .map-overlay h2 {
   margin: 0;
-  color: #111827;
-  font-size: 13px;
-  font-weight: 850;
+  color: #0b1220;
+  font-size: 18px;
+  font-weight: 900;
   letter-spacing: 0;
   text-transform: none;
   text-shadow:
@@ -245,7 +245,7 @@ header h1 {
     1px -1px 0 rgba(255,255,255,0.96),
     -1px 1px 0 rgba(255,255,255,0.96),
     1px 1px 0 rgba(255,255,255,0.96),
-    0 2px 4px rgba(15,23,42,0.18);
+    0 2px 5px rgba(15,23,42,0.24);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -808,6 +808,12 @@ header h1 {
   background: transparent;
   box-shadow: none;
 }
+.leaflet-tooltip.production-map-label {
+  z-index: 760 !important;
+}
+.leaflet-tooltip.production-country-label {
+  z-index: 620 !important;
+}
 .map-label {
   display: grid;
   grid-template-columns: 3px auto;
@@ -851,7 +857,7 @@ header h1 {
 }
 .production-label {
   display: block;
-  max-width: 94px;
+  max-width: 108px;
   color: #111827;
   line-height: 1;
   text-align: center;
@@ -862,8 +868,8 @@ header h1 {
 .production-label .value {
   display: block;
   min-width: 0;
-  font-size: 11px;
-  font-weight: 800;
+  font-size: 11.8px;
+  font-weight: 850;
   font-variant-numeric: tabular-nums;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -873,28 +879,28 @@ header h1 {
     1px -1px 0 rgba(255,255,255,0.95),
     -1px 1px 0 rgba(255,255,255,0.95),
     1px 1px 0 rgba(255,255,255,0.95),
-    0 1px 2px rgba(15,23,42,0.2);
+    0 1px 3px rgba(15,23,42,0.28);
 }
 .country-map-text {
-  color: rgba(17,24,39,0.78);
-  font-size: 13px;
-  font-weight: 850;
+  color: rgba(15,23,42,0.66);
+  font-size: 14px;
+  font-weight: 900;
   letter-spacing: 0;
   text-shadow:
     -1px -1px 0 rgba(255,255,255,0.94),
     1px -1px 0 rgba(255,255,255,0.94),
     -1px 1px 0 rgba(255,255,255,0.94),
     1px 1px 0 rgba(255,255,255,0.94),
-    0 2px 5px rgba(15,23,42,0.24);
+    0 2px 6px rgba(15,23,42,0.28);
   white-space: nowrap;
   pointer-events: none;
 }
 .gradient-legend {
-  width: 150px;
+  width: 168px;
 }
 .gradient-bar {
-  height: 10px;
-  border: 1px solid rgba(32,39,51,0.16);
+  height: 12px;
+  border: 1px solid rgba(32,39,51,0.24);
   border-radius: 999px;
   background: linear-gradient(90deg, var(--grad-from), var(--grad-to));
 }
@@ -903,8 +909,8 @@ header h1 {
   justify-content: space-between;
   gap: 8px;
   margin-top: 4px;
-  color: var(--muted);
-  font-size: 9px;
+  color: #344052;
+  font-size: 9.5px;
   line-height: 1.2;
 }
 .leaflet-container {
@@ -964,7 +970,7 @@ header h1 {
         <div class="brand-cn">基于主产区产量权重、作物阶段与天气异常，识别潜在供应扰动。</div>
       </div>
     </div>
-    <div class="header-meta">版本 <span id="meta-version">v2.6-prodweather5</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
+    <div class="header-meta">版本 <span id="meta-version">v2.7-prodweather6</span>｜数据 <span id="meta-date">-</span>｜规则 <span id="meta-rule">risk_label_v4</span></div>
   </header>
 
   <div class="toolbar">
@@ -1057,7 +1063,7 @@ header h1 {
     <div class="today-focus-panel">
       <div class="today-focus-title">今日关注</div>
       <div class="today-focus-list" id="today-focus-list"><div class="today-focus-item">数据载入中</div></div>
-      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span id="sum-version">risk_label_v4 · v2.6-prodweather5</span></div>
+      <div class="summary-meta"><span id="sum-date">数据 -</span><br><span id="sum-version">risk_label_v4 · v2.7-prodweather6</span></div>
     </div>
   </section>
 
@@ -1097,6 +1103,6 @@ header h1 {
   </div>
 </div>
 
-  <script src="app.js?v=20260703-prodweather5"></script>
+  <script src="app.js?v=20260708-prodweather6"></script>
 </body>
 </html>
