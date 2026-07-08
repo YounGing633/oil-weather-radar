@@ -945,41 +945,52 @@ function renderCountryLayer() {
 
   if (store.geojson) {
     const countryGeo = L.geoJSON(store.geojson, {
-      filter: feature => byKey.has(getFeatureCountry(feature)),
       style: feature => {
-        const model = byKey.get(getFeatureCountry(feature));
-        const color = riskColor(riskNumFromCountry(model.top));
+        const key = getFeatureCountry(feature);
+        const model = byKey.get(key);
+        if (model) {
+          const color = riskColor(riskNumFromCountry(model.top));
+          return {
+            color: '#ffffff',
+            weight: 1.6,
+            opacity: 0.95,
+            fillColor: color,
+            fillOpacity: 0.64
+          };
+        }
         return {
-          color: '#223043',
-          weight: 1.25,
-          opacity: 0.92,
-          fillColor: color,
-          fillOpacity: 0.64
+          color: '#b0b8c4',
+          weight: 0.6,
+          opacity: 0.5,
+          fillColor: 'transparent',
+          fillOpacity: 0
         };
       },
       onEachFeature: (feature, layer) => {
         const key = getFeatureCountry(feature);
         const model = byKey.get(key);
-        polygonCount += 1;
-        layer.bindTooltip(createCountryTooltip(model), { sticky: true, direction: 'auto' });
-        layer.on({
-          click: () => selectCountry(model),
-          mouseover: () => layer.setStyle({ weight: 2.35, fillOpacity: 0.78 }),
-          mouseout: () => countryGeo.resetStyle(layer)
-        });
+        if (model) {
+          polygonCount += 1;
+          layer.bindTooltip(createCountryTooltip(model), { sticky: true, direction: 'auto' });
+          layer.on({
+            click: () => selectCountry(model),
+            mouseover: () => layer.setStyle({ weight: 2.35, fillOpacity: 0.78 }),
+            mouseout: () => countryGeo.resetStyle(layer)
+          });
 
-        const center = layer.getBounds().getCenter();
-        currentCountryLabelCenters.push({ center, model, direction: 'center', offset: [0, 0] });
-        if (shouldShowCountryLabel(model, map.getZoom())) {
-          L.tooltip({
-            permanent: true,
-            direction: 'center',
-            className: 'production-map-label',
-            opacity: 1
-          })
-            .setLatLng(center)
-            .setContent(countryProductionLabelHtml(model))
-            .addTo(layers.countryLabels);
+          const center = layer.getBounds().getCenter();
+          currentCountryLabelCenters.push({ center, model, direction: 'center', offset: [0, 0] });
+          if (shouldShowCountryLabel(model, map.getZoom())) {
+            L.tooltip({
+              permanent: true,
+              direction: 'center',
+              className: 'production-map-label',
+              opacity: 1
+            })
+              .setLatLng(center)
+              .setContent(countryProductionLabelHtml(model))
+              .addTo(layers.countryLabels);
+          }
         }
       }
     }).addTo(layers.country);
