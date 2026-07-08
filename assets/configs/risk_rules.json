@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-08",
+  "description": "分层风险判断规则配置 — 天气异常→土壤响应→作物暴露→风险结论",
+
+  "risk_levels": [
+    { "level": 0, "code": "normal",  "cn": "正常" },
+    { "level": 1, "code": "mild",    "cn": "轻度关注" },
+    { "level": 2, "code": "watch",   "cn": "一般关注" },
+    { "level": 3, "code": "pressure", "cn": "重点压力" },
+    { "level": 4, "code": "severe",  "cn": "显著压力" }
+  ],
+
+  "layer1_weather_anomaly": {
+    "description": "第一层：天气异常信号",
+    "signals": {
+      "rain_low":       { "field": "precip_30d_percentile", "op": "<", "threshold": 20, "severity": 1 },
+      "rain_very_low":  { "field": "precip_30d_percentile", "op": "<", "threshold": 10, "severity": 2 },
+      "rain_extreme_low": { "field": "precip_30d_percentile", "op": "<", "threshold": 5, "severity": 3 },
+      "rain_high":      { "field": "precip_30d_percentile", "op": ">", "threshold": 80, "severity": 1 },
+      "rain_very_high": { "field": "precip_30d_percentile", "op": ">", "threshold": 90, "severity": 2 },
+      "et0_high":       { "field": "et0_percentile_30d", "op": ">", "threshold": 80, "severity": 1 },
+      "vpd_high":       { "field": "vpd_percentile_30d", "op": ">", "threshold": 80, "severity": 1 },
+      "temp_hot_streak": { "field": "consecutive_hot_days", "op": ">=", "threshold": 3, "severity": 1 },
+      "temp_extreme":   { "field": "temp_max_anomaly_c", "op": ">=", "threshold": 4, "severity": 2 }
+    }
+  },
+
+  "layer2_soil_response": {
+    "description": "第二层：土壤响应信号",
+    "signals": {
+      "rootzone_low":       { "field": "rootzone_percentile", "op": "<", "threshold": 20, "severity": 1 },
+      "rootzone_very_low":  { "field": "rootzone_percentile", "op": "<", "threshold": 10, "severity": 2 },
+      "rootzone_declining": { "field": "rootzone_sm_change_7d", "op": "<", "threshold": 0, "severity": 0.5 },
+      "surface_high":       { "field": "surface_percentile", "op": ">", "threshold": 80, "severity": 1 },
+      "surface_very_high":  { "field": "surface_percentile", "op": ">", "threshold": 90, "severity": 2 },
+      "rootzone_persistent_low": { "field": "rootzone_sm_below_p20_days", "op": ">=", "threshold": 14, "severity": 1 }
+    }
+  },
+
+  "layer3_crop_exposure": {
+    "description": "第三层：作物暴露与敏感性",
+    "factors": {
+      "sensitive_stage": {
+        "description": "当前处于敏感生长阶段",
+        "stages": ["flowering", "pod_fill", "germination"],
+        "stage_codes": ["FP", "PF", "PE"],
+        "weight": 1.5
+      },
+      "persistent_anomaly": {
+        "description": "异常持续时间",
+        "field": "anomaly_duration_days",
+        "threshold": 14,
+        "weight": 1.2
+      },
+      "forecast_no_relief": {
+        "description": "预报无修复信号",
+        "field": "forecast_recovery_signal",
+        "value": "no_relief",
+        "weight": 1.3
+      },
+      "production_weight": {
+        "description": "产量占比权重",
+        "field": "national_share",
+        "high_threshold": 0.1,
+        "weight": 1.2
+      }
+    }
+  },
+
+  "layer4_risk_conclusion": {
+    "description": "第四层：风险结论规则",
+    "rules": {
+      "mild": {
+        "level": 1,
+        "cn": "轻度关注",
+        "condition": "单一天气指标略异常 + 土壤仍正常 + 预报可能修复",
+        "weather_severity_max": 1,
+        "soil_severity_max": 0
+      },
+      "watch": {
+        "level": 2,
+        "cn": "一般关注",
+        "condition": "天气指标明显异常或预报延续异常 + 土壤响应尚不明显",
+        "weather_severity_min": 1,
+        "soil_severity_max": 1
+      },
+      "pressure": {
+        "level": 3,
+        "cn": "重点压力",
+        "condition": "天气异常 + 土壤异常同时出现 + 异常已持续 + 敏感阶段",
+        "weather_severity_min": 1,
+        "soil_severity_min": 1,
+        "require_persistent": true
+      },
+      "severe": {
+        "level": 4,
+        "cn": "显著压力",
+        "condition": "极端/持续异常 + 根区<10百分位 + 关键阶段 + 短期缺乏修复",
+        "weather_severity_min": 2,
+        "soil_severity_min": 2,
+        "require_no_relief": true
+      }
+    }
+  },
+
+  "wetness_risk": {
+    "description": "湿涝风险独立判断",
+    "signals": [
+      { "condition": "降雨偏多(precip_30d_percentile > 80) + 表层/根区偏湿(surface > 80)", "level": 2 },
+      { "condition": "强降雨/连续降雨 + 敏感作业阶段(播种/收获)", "level": 3 },
+      { "condition": "极端偏湿(precip > 95) + 根区过湿(rootzone > 90)", "level": 4 }
+    ]
+  },
+
+  "risk_language_templates": {
+    "description": "风险语言模板 — 禁止使用'必然减产'等无数据支持的表述",
+    "templates": {
+      "rain_low_soil_ok": "近{window}天降雨{severity_cn}，但根区墒情仍处于正常范围，目前以天气关注为主。未来7天如有有效降雨，水分压力可能缓解。",
+      "rain_low_soil_low": "近{window}天降雨{severity_cn}，根区土壤湿度降至历史同期{rootzone_p}百分位以下，水分压力正在累积。未来7天降雨仍偏少，短期修复可能有限。",
+      "hot_soil_ok": "近期气温偏高，但根区墒情正常，暂未形成明显干热复合压力。",
+      "hot_vpd_soil_low": "近期气温和大气干燥度偏高，根区墒情继续下降，干热复合压力有所增强。",
+      "rain_high_soil_ok": "近期降雨偏多，但土壤湿度仍处于正常范围，目前未形成明显湿涝压力。",
+      "rain_high_harvest": "近期降雨频繁，表层土壤偏湿，可能影响收获和田间作业。未来7天如降雨减少，作业条件有望改善。"
+    },
+    "forbidden_phrases": [
+      "必然减产", "已经导致产量下降", "未来一定减产", "大幅影响产量"
+    ]
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "version": "1.0.0",
+  "baseline_period": "1991-2020",
+  "updated": "2026-07-08",
+
+  "default_color_scale": [
+    { "pos": 0.00, "color": "#d7191c", "label": "极端偏干/偏热" },
+    { "pos": 0.20, "color": "#fdae61", "label": "偏干/偏热" },
+    { "pos": 0.42, "color": "#ffffbf", "label": "接近常年" },
+    { "pos": 0.60, "color": "#66c2a5", "label": "偏湿/偏冷" },
+    { "pos": 0.80, "color": "#2c7bb6", "label": "明显偏湿" },
+    { "pos": 1.00, "color": "#313695", "label": "极端偏湿/过湿" }
+  ],
+  "no_data_color": "#bdbdbd",
+
+  "metrics": {
+    "rain": {
+      "title": "降雨湿涝",
+      "note": "降雨占常年百分比（%）",
+      "unit": "%",
+      "value_fields": ["precip_30d_ratio_pct", "rain_30d_ratio_pct"],
+      "label_template": "近30天降雨 {value}% 常年",
+      "gradient_from": "#d7191c",
+      "gradient_to": "#2c7bb6",
+      "gradient_low_label": "极端偏干",
+      "gradient_high_label": "极端偏湿",
+      "reverse": false,
+      "position": {
+        "method": "linear",
+        "min": 40,
+        "max": 200,
+        "description": "40%→pos 0, 200%→pos 1"
+      },
+      "categories": [
+        { "max": 50,  "label": "严重缺雨" },
+        { "max": 75,  "label": "偏干" },
+        { "max": 125, "label": "接近常年" },
+        { "max": 175, "label": "偏湿" },
+        { "max": null, "label": "过湿/作业扰动" }
+      ]
+    },
+
+    "temp": {
+      "title": "温度胁迫",
+      "note": "最高温距平（℃）",
+      "unit": "℃",
+      "value_fields": ["temp_max_anomaly_c", "tmax_anomaly_c"],
+      "label_template": "最高温距平 {value}℃",
+      "gradient_from": "#2c7bb6",
+      "gradient_to": "#d7191c",
+      "gradient_low_label": "偏冷",
+      "gradient_high_label": "高温干化",
+      "reverse": true,
+      "position": {
+        "method": "linear",
+        "min": -5,
+        "max": 5,
+        "description": "-5℃→pos 0, +5℃→pos 1 (reversed)"
+      },
+      "categories": [
+        { "max": -4,   "label": "明显偏冷" },
+        { "max": -1.5, "label": "偏冷" },
+        { "max": 1.5,  "label": "接近常年" },
+        { "max": 4,    "label": "偏热" },
+        { "max": null,  "label": "高温干化" }
+      ]
+    },
+
+    "soil": {
+      "title": "根区墒情",
+      "note": "根区土壤湿度历史同期百分位",
+      "unit": "P",
+      "value_fields": ["rootzone_percentile", "rootzone_percentile_90d"],
+      "secondary_fields": ["surface_percentile", "surface_percentile_90d"],
+      "secondary_label": "表层",
+      "label_template": "根区P{value} / 表层P{secondary}",
+      "gradient_from": "#d7191c",
+      "gradient_to": "#313695",
+      "gradient_low_label": "极干",
+      "gradient_high_label": "过湿",
+      "reverse": false,
+      "position": {
+        "method": "linear",
+        "min": 0,
+        "max": 100,
+        "description": "P0→pos 0, P100→pos 1"
+      },
+      "categories": [
+        { "max": 5,   "label": "极端偏干" },
+        { "max": 10,  "label": "严重偏干" },
+        { "max": 20,  "label": "明显偏干" },
+        { "max": 30,  "label": "略偏干" },
+        { "max": 70,  "label": "正常" },
+        { "max": 80,  "label": "略偏湿" },
+        { "max": 90,  "label": "明显偏湿" },
+        { "max": 95,  "label": "严重偏湿" },
+        { "max": null, "label": "极端偏湿" }
+      ]
+    },
+
+    "et0": {
+      "title": "蒸散需求",
+      "note": "ET0 30天均值距平百分位",
+      "unit": "P",
+      "value_fields": ["et0_percentile_30d", "et0_percentile_14d"],
+      "label_template": "ET0 P{value}",
+      "gradient_from": "#66c2a5",
+      "gradient_to": "#d7191c",
+      "gradient_low_label": "蒸散偏低",
+      "gradient_high_label": "蒸散偏高",
+      "reverse": true,
+      "position": {
+        "method": "linear",
+        "min": 0,
+        "max": 100,
+        "description": "P0→pos 0 (低蒸散), P100→pos 1 (高蒸散), reversed"
+      },
+      "categories": [
+        { "max": 20,  "label": "蒸散偏低" },
+        { "max": 40,  "label": "蒸散正常偏低" },
+        { "max": 60,  "label": "蒸散正常" },
+        { "max": 80,  "label": "蒸散偏高" },
+        { "max": null, "label": "蒸散显著偏高" }
+      ]
+    },
+
+    "vpd": {
+      "title": "大气干燥度",
+      "note": "VPD 30天均值距平百分位",
+      "unit": "P",
+      "value_fields": ["vpd_percentile_30d", "vpd_percentile_14d"],
+      "label_template": "VPD P{value}",
+      "gradient_from": "#66c2a5",
+      "gradient_to": "#d7191c",
+      "gradient_low_label": "大气湿润",
+      "gradient_high_label": "大气干燥",
+      "reverse": true,
+      "position": {
+        "method": "linear",
+        "min": 0,
+        "max": 100,
+        "description": "P0→pos 0 (湿润), P100→pos 1 (干燥), reversed"
+      },
+      "categories": [
+        { "max": 20,  "label": "大气湿润" },
+        { "max": 40,  "label": "正常偏湿" },
+        { "max": 60,  "label": "正常" },
+        { "max": 80,  "label": "偏干" },
+        { "max": null, "label": "显著干燥" }
+      ]
+    },
+
+    "forecast": {
+      "title": "7天距平",
+      "note": "未来7天降雨距平百分比",
+      "unit": "%",
+      "value_fields": ["forecast_7d_precip"],
+      "normal_fields": ["precip_30d_normal"],
+      "normal_scale": 0.2333,
+      "label_template": "7天距平 {value}%",
+      "gradient_from": "#d7191c",
+      "gradient_to": "#2c7bb6",
+      "gradient_low_label": "严重缺雨",
+      "gradient_high_label": "过湿",
+      "reverse": false,
+      "position": {
+        "method": "linear",
+        "min": -100,
+        "max": 100,
+        "description": "-100%→pos 0, +100%→pos 1"
+      },
+      "categories": [
+        { "max": -60, "label": "严重缺雨" },
+        { "max": -30, "label": "偏干" },
+        { "max": 30,  "label": "接近常年" },
+        { "max": 80,  "label": "偏湿" },
+        { "max": null, "label": "过湿/作业扰动" }
+      ]
+    },
+
+    "forecast14": {
+      "title": "14天距平",
+      "note": "未来8-14天降雨距平百分比",
+      "unit": "%",
+      "value_fields": ["forecast_16d_precip"],
+      "normal_fields": ["precip_30d_normal"],
+      "normal_scale": 0.4667,
+      "label_template": "14天距平 {value}%",
+      "gradient_from": "#d7191c",
+      "gradient_to": "#2c7bb6",
+      "gradient_low_label": "严重缺雨",
+      "gradient_high_label": "过湿",
+      "reverse": false,
+      "position": {
+        "method": "linear",
+        "min": -100,
+        "max": 100,
+        "description": "-100%→pos 0, +100%→pos 1"
+      },
+      "categories": [
+        { "max": -60, "label": "严重缺雨" },
+        { "max": -30, "label": "偏干" },
+        { "max": 30,  "label": "接近常年" },
+        { "max": 80,  "label": "偏湿" },
+        { "max": null, "label": "过湿/作业扰动" }
+      ]
+    }
+  },
+
+  "percentile_categories": {
+    "description": "统一百分位分级（适用于降雨/土壤/ET0/VPD百分位）",
+    "breakpoints": [
+      { "max": 5,   "label": "极端偏少/偏干" },
+      { "max": 10,  "label": "严重偏少/偏干" },
+      { "max": 20,  "label": "明显偏少/偏干" },
+      { "max": 30,  "label": "略偏少/偏干" },
+      { "max": 70,  "label": "正常" },
+      { "max": 80,  "label": "略偏多/偏湿" },
+      { "max": 90,  "label": "明显偏多/偏湿" },
+      { "max": 95,  "label": "严重偏多/偏湿" },
+      { "max": null, "label": "极端偏多/偏湿" }
+    ]
+  }
+}

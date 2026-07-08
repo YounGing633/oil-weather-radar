@@ -1,4 +1,5 @@
 const DATA_DIR = './data/';
+const CONFIG_DIR = './assets/configs/';
 const UI_VERSION = 'v2.10-prodweather9';
 const RULE_VERSION = 'risk_label_v4';
 
@@ -98,6 +99,28 @@ const WEATHER_METRICS = {
       to: WEATHER_PALETTE.wetCold,
       lowLabel: '偏干',
       highLabel: '偏湿'
+    }
+  },
+  et0: {
+    title: '蒸散需求',
+    note: '颜色按ET0距平百分位，高蒸散表示水分消耗加速。',
+    gradient: {
+      from: WEATHER_PALETTE.wetCold,
+      to: WEATHER_PALETTE.dryHot,
+      reverse: true,
+      lowLabel: '蒸散偏低',
+      highLabel: '蒸散偏高'
+    }
+  },
+  vpd: {
+    title: '大气干燥度',
+    note: '颜色按VPD距平百分位，高VPD表示大气蒸散压力上升。',
+    gradient: {
+      from: WEATHER_PALETTE.wetCold,
+      to: WEATHER_PALETTE.dryHot,
+      reverse: true,
+      lowLabel: '湿润',
+      highLabel: '干燥'
     }
   }
 };
@@ -305,6 +328,8 @@ let store = {
   regionHistory: [],
   regionHistoryIndex: new Map(),
   siteMeta: [],
+  weatherConfig: null,
+  riskRules: null,
   loadErrors: []
 };
 
@@ -567,6 +592,21 @@ function firstDateShort(value) {
   const s = fmtDash(value);
   if (s === '—') return '';
   return s.slice(5, 10);
+}
+
+async function loadConfig(name, fallback = null) {
+  const timer = `config:${name}`;
+  console.time(timer);
+  try {
+    const response = await fetch(CONFIG_DIR + name);
+    if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.warn(`Config load fallback: ${name}`, error.message);
+    return fallback;
+  } finally {
+    console.timeEnd(timer);
+  }
 }
 
 async function loadJSON(name, fallback = null) {
@@ -2074,8 +2114,7 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
   }
   if (metric === 'forecast') {
     const rain = firstNumeric(row, ['forecast_7d_precip', 'forecast_rainfall_7d', 'forecast_7d', 'rain_forecast_7d']);
-    const normal30 = Number(row.precip_30d_normal) || 0;
-    const normal7 = normal30 * 7 / 30;
+    const normal7 = firstNumeric(row, ['forecast_precip_7d_normal_mm']) || (Number(row.precip_30d_normal) || 0) * 7 / 30;
     if (isNum(rain) && normal7 > 0.5) {
       const anomaly = ((Number(rain) - normal7) / normal7) * 100;
       return {
@@ -2090,8 +2129,7 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
   }
   if (metric === 'forecast14') {
     const rain = firstNumeric(row, ['forecast_16d_precip', 'forecast_16d', 'rain_forecast_16d']);
-    const normal30 = Number(row.precip_30d_normal) || 0;
-    const normal14 = normal30 * 14 / 30;
+    const normal14 = firstNumeric(row, ['forecast_precip_8_14d_normal_mm']) || (Number(row.precip_30d_normal) || 0) * 14 / 30;
     if (isNum(rain) && normal14 > 0.5) {
       const anomaly = ((Number(rain) - normal14) / normal14) * 100;
       return {
@@ -2102,6 +2140,22 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
     return {
       value: isNum(rain) ? Number(rain) : null,
       label: isNum(rain) ? `未来16天降雨 ${fmtNum(rain, 0, 'mm')}（无常年基准）` : '14天降雨待接入'
+    };
+  }
+  if (metric === 'et0') {
+    const pct = firstNumeric(row, ['et0_percentile_30d', 'et0_percentile_14d']);
+    const val = firstNumeric(row, ['et0_30d_avg_mm', 'et0_7d_avg_mm']);
+    return {
+      value: pct,
+      label: isNum(pct) ? `ET0 P${Math.round(Number(pct))}${isNum(val) ? ' (' + fmtNum(val, 1, 'mm/d') + ')' : ''}` : '蒸散待接入'
+    };
+  }
+  if (metric === 'vpd') {
+    const pct = firstNumeric(row, ['vpd_percentile_30d', 'vpd_percentile_14d']);
+    const val = firstNumeric(row, ['vpd_30d_mean', 'vpd_14d_mean', 'vpd_7d_mean']);
+    return {
+      value: pct,
+      label: isNum(pct) ? `VPD P${Math.round(Number(pct))}${isNum(val) ? ' (' + fmtNum(val, 1, 'kPa') + ')' : ''}` : 'VPD待接入'
     };
   }
   const root = firstNumeric(row, ['rootzone_percentile', 'rootzone_percentile_90d']);
@@ -2183,9 +2237,14 @@ function weatherMetricPosition(row, metric = state.weatherMetric) {
   const value = weatherMetricValue(row, metric).value;
   if (!isNum(value)) return null;
   const n = Number(value);
+  const cfg = store.weatherConfig && store.weatherConfig.metrics && store.weatherConfig.metrics[metric];
+  if (cfg && cfg.position && cfg.position.method === 'linear') {
+    return clamp01((n - cfg.position.min) / (cfg.position.max - cfg.position.min));
+  }
   if (metric === 'rain') return clamp01((n - 40) / 160);
   if (metric === 'temp') return clamp01((n + 5) / 10);
   if (metric === 'forecast' || metric === 'forecast14') return clamp01((n + 100) / 200);
+  if (metric === 'et0' || metric === 'vpd') return clamp01(n / 100);
   return clamp01(n / 100);
 }
 
@@ -2199,6 +2258,13 @@ function weatherMetricCategoryLabel(row, metric = state.weatherMetric) {
   const value = weatherMetricValue(row, metric).value;
   if (!isNum(value)) return '待接入';
   const n = Number(value);
+  const cfg = store.weatherConfig && store.weatherConfig.metrics && store.weatherConfig.metrics[metric];
+  if (cfg && cfg.categories) {
+    for (const cat of cfg.categories) {
+      if (cat.max === null || n < cat.max) return cat.label;
+    }
+    return cfg.categories[cfg.categories.length - 1].label;
+  }
   if (metric === 'rain') {
     if (n < 50) return '严重缺雨';
     if (n < 75) return '偏干';
@@ -2220,12 +2286,22 @@ function weatherMetricCategoryLabel(row, metric = state.weatherMetric) {
     if (n <= 80) return '偏湿';
     return '过湿/作业扰动';
   }
-  if (n < 5) return '极干';
-  if (n < 20) return '偏干';
-  if (n < 40) return '略偏干';
-  if (n <= 70) return '适宜';
-  if (n <= 90) return '偏湿';
-  return '过湿/渍涝';
+  if (metric === 'et0' || metric === 'vpd') {
+    if (n < 20) return metric === 'et0' ? '蒸散偏低' : '大气湿润';
+    if (n < 40) return metric === 'et0' ? '蒸散正常偏低' : '正常偏湿';
+    if (n < 60) return '正常';
+    if (n < 80) return metric === 'et0' ? '蒸散偏高' : '偏干';
+    return metric === 'et0' ? '蒸散显著偏高' : '显著干燥';
+  }
+  if (n < 5) return '极端偏干';
+  if (n < 10) return '严重偏干';
+  if (n < 20) return '明显偏干';
+  if (n < 30) return '略偏干';
+  if (n <= 70) return '正常';
+  if (n <= 80) return '略偏湿';
+  if (n <= 90) return '明显偏湿';
+  if (n <= 95) return '严重偏湿';
+  return '极端偏湿';
 }
 
 function productionWeatherRowKey(row) {
@@ -3722,6 +3798,13 @@ function updateTimeRangeUI() {
 async function init() {
   initMap();
   bindEvents();
+
+  const [weatherConfig, riskRules] = await Promise.all([
+    loadConfig('weather_thresholds.json', null),
+    loadConfig('risk_rules.json', null)
+  ]);
+  store.weatherConfig = weatherConfig;
+  store.riskRules = riskRules;
 
   const [countryRecords, adminRecords, coverage, admin1Manifest, euRecords, geojson, cropProgress, soilTemp, regionHistory, siteMeta] = await Promise.all([
     loadJSON('country_crop_risk_latest.json', []),
