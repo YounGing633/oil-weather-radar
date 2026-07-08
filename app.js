@@ -1,13 +1,13 @@
 const DATA_DIR = './data/';
-const UI_VERSION = 'v2.8-prodweather7';
+const UI_VERSION = 'v2.9-prodweather8';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
-  4: { code: 'severe', cn: '显著压力', color: '#c0392b' },
-  3: { code: 'pressure', cn: '重点压力', color: '#e67e22' },
-  2: { code: 'watch', cn: '一般关注', color: '#d4a017' },
-  1: { code: 'mild', cn: '轻度异常', color: '#f0d264' },
-  0: { code: 'normal', cn: '正常监控', color: '#27ae60' }
+  4: { code: 'severe', cn: '显著压力', color: '#d73027' },
+  3: { code: 'pressure', cn: '重点压力', color: '#fc8d59' },
+  2: { code: 'watch', cn: '一般关注', color: '#fee08b' },
+  1: { code: 'mild', cn: '轻度异常', color: '#d9ef8b' },
+  0: { code: 'normal', cn: '正常监控', color: '#1a9850' }
 };
 
 const RISK_CODE_TO_NUM = {
@@ -30,9 +30,9 @@ const CROP_META = {
 };
 
 const WEATHER_PALETTE = {
-  dryHot: '#b84a32',
-  wetCold: '#1f7893',
-  noData: '#9aa3ad'
+  dryHot: '#b2182b',
+  wetCold: '#2166ac',
+  noData: '#bdbdbd'
 };
 
 const WEATHER_METRICS = {
@@ -213,6 +213,65 @@ let state = {
   selectedCountryRecord: null,
   selectedRegionRecord: null
 };
+
+let viewMemory = {
+  risk: null,
+  weather: null
+};
+
+function snapshotViewState() {
+  return {
+    crop: state.crop,
+    country: state.country,
+    risk: state.risk,
+    anomaly: state.anomaly,
+    dataStatus: state.dataStatus,
+    timeRange: state.timeRange,
+    layer: state.layer,
+    weatherMetric: state.weatherMetric,
+    mapValue: state.mapValue,
+    hideSmallShare: state.hideSmallShare,
+    selectedCountry: state.selectedCountry,
+    selectedCountryCrop: state.selectedCountryCrop,
+    selectedCountryRecord: state.selectedCountryRecord,
+    selectedRegionRecord: state.selectedRegionRecord
+  };
+}
+
+function defaultViewState(viewMode) {
+  return {
+    crop: state.crop || 'all',
+    country: 'all',
+    risk: 'all',
+    anomaly: 'all',
+    dataStatus: 'all',
+    timeRange: '14d',
+    layer: viewMode === 'weather' ? 'weather' : 'country',
+    weatherMetric: 'rain',
+    mapValue: 'production',
+    hideSmallShare: true,
+    selectedCountry: null,
+    selectedCountryCrop: null,
+    selectedCountryRecord: null,
+    selectedRegionRecord: null
+  };
+}
+
+function rememberCurrentViewState() {
+  viewMemory[state.viewMode] = snapshotViewState();
+}
+
+function restoreViewState(viewMode) {
+  const saved = viewMemory[viewMode] || defaultViewState(viewMode);
+  Object.assign(state, saved, { viewMode });
+}
+
+function resetViewMemory() {
+  viewMemory = {
+    risk: null,
+    weather: null
+  };
+}
 
 let store = {
   countryRecords: [],
@@ -2113,12 +2172,16 @@ function productionWeatherCandidates() {
   if (state.country === 'European Union') {
     rows = euWeatherRows(state.crop);
   } else {
+    const euRows = state.country === 'all' ? euWeatherRows(state.crop) : [];
+    const euKeys = new Set(euRows.map(row => `${row.country_key}::${row.crop_group}`));
     rows = store.adminRecords.filter(row => {
       if (!row || !isNum(row.lat) || !isNum(row.lon)) return false;
       if (state.crop !== 'all' && row.crop_group !== state.crop) return false;
       if (state.country !== 'all' && row.country_key !== state.country) return false;
+      if (state.country === 'all' && euKeys.has(`${row.country_key}::${row.crop_group}`)) return false;
       return true;
     });
+    if (euRows.length) rows = rows.concat(euRows);
   }
 
   const admin1Rows = rows.filter(row => row.admin_level === 'admin1' || row.admin_level_for_map === 'admin1');
@@ -3037,7 +3100,7 @@ function chartBaseOptions(opts = {}) {
 
 function populateFilters() {
   const countrySelect = document.getElementById('f-country');
-  const current = countrySelect.value || 'all';
+  const current = state.country || countrySelect.value || 'all';
   const countries = new Map();
   store.countryRecords.forEach(row => {
     if (state.crop !== 'all' && row.crop_group !== state.crop) return;
@@ -3053,7 +3116,7 @@ function populateFilters() {
   const options = [...countries.entries()].sort((a, b) => a[1].localeCompare(b[1], 'zh-CN'));
   countrySelect.innerHTML = '<option value="all">全部国家</option>' + options.map(([key, name]) => `<option value="${escAttr(key)}">${esc(name)}</option>`).join('');
   countrySelect.value = options.some(([key]) => key === current) ? current : 'all';
-  state.country = countrySelect.value;
+  if (state.viewMode !== 'weather') state.country = countrySelect.value;
 
   const anomalySelect = document.getElementById('f-label');
   const anomalyValues = new Set();
@@ -3192,8 +3255,14 @@ function updateModeChrome() {
   const app = document.getElementById('app');
   if (app) app.classList.toggle('weather-mode', state.viewMode === 'weather');
   document.querySelectorAll('.view-tab').forEach(item => item.classList.toggle('active', item.dataset.view === state.viewMode));
+  document.querySelectorAll('.crop-tab').forEach(item => item.classList.toggle('active', item.dataset.crop === state.crop));
+  document.querySelectorAll('.risk-tab').forEach(item => item.classList.toggle('active', item.dataset.risk === state.risk));
   document.querySelectorAll('.metric-tab').forEach(item => item.classList.toggle('active', item.dataset.metric === state.weatherMetric));
   document.querySelectorAll('.value-tab').forEach(item => item.classList.toggle('active', item.dataset.value === state.mapValue));
+  const dataStatusSelect = document.getElementById('f-data-status');
+  if (dataStatusSelect) dataStatusSelect.value = state.dataStatus;
+  const anomalySelect = document.getElementById('f-label');
+  if (anomalySelect && [...anomalySelect.options].some(opt => opt.value === state.anomaly)) anomalySelect.value = state.anomaly;
   const hideSmallShareCheckbox = document.getElementById('f-hide-small-share');
   if (hideSmallShareCheckbox) hideSmallShareCheckbox.checked = !!state.hideSmallShare;
   syncCountrySelects();
@@ -3219,13 +3288,11 @@ function bindEvents() {
   document.getElementById('view-tabs').addEventListener('click', event => {
     const tab = event.target.closest('.view-tab');
     if (!tab) return;
-    state.viewMode = tab.dataset.view;
-    state.selectedCountry = null;
-    state.selectedCountryCrop = null;
-    state.selectedCountryRecord = null;
-    state.selectedRegionRecord = null;
-    state.layer = state.viewMode === 'weather' ? 'weather' : 'country';
+    if (tab.dataset.view === state.viewMode) return;
+    rememberCurrentViewState();
+    restoreViewState(tab.dataset.view);
     populateFilters();
+    updateTimeRangeUI();
     renderActiveView();
   });
 
@@ -3352,6 +3419,7 @@ function bindEvents() {
       selectedCountryRecord: null,
       selectedRegionRecord: null
     };
+    resetViewMemory();
     document.querySelectorAll('.crop-tab').forEach(item => item.classList.toggle('active', item.dataset.crop === 'all'));
     document.querySelectorAll('.risk-tab').forEach(item => item.classList.toggle('active', item.dataset.risk === 'all'));
     if (dataStatusSelect) dataStatusSelect.value = 'all';
