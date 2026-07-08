@@ -89,6 +89,16 @@ const WEATHER_METRICS = {
       lowLabel: '偏干',
       highLabel: '偏湿'
     }
+  },
+  forecast14: {
+    title: '14天距平',
+    note: '颜色按未来16天降雨距平（vs常年同期），中期趋势判断。',
+    gradient: {
+      from: WEATHER_PALETTE.dryHot,
+      to: WEATHER_PALETTE.wetCold,
+      lowLabel: '偏干',
+      highLabel: '偏湿'
+    }
   }
 };
 
@@ -2078,6 +2088,22 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
       label: isNum(rain) ? `未来7天降雨 ${fmtNum(rain, 0, 'mm')}（无常年基准）` : '7天降雨待接入'
     };
   }
+  if (metric === 'forecast14') {
+    const rain = firstNumeric(row, ['forecast_16d_precip', 'forecast_16d', 'rain_forecast_16d']);
+    const normal30 = Number(row.precip_30d_normal) || 0;
+    const normal14 = normal30 * 14 / 30;
+    if (isNum(rain) && normal14 > 0.5) {
+      const anomaly = ((Number(rain) - normal14) / normal14) * 100;
+      return {
+        value: anomaly,
+        label: `14天距平 ${anomaly >= 0 ? '+' : ''}${Math.round(anomaly)}%（${fmtNum(rain, 0, 'mm')} / 常年${fmtNum(normal14, 0, 'mm')}）`
+      };
+    }
+    return {
+      value: isNum(rain) ? Number(rain) : null,
+      label: isNum(rain) ? `未来16天降雨 ${fmtNum(rain, 0, 'mm')}（无常年基准）` : '14天降雨待接入'
+    };
+  }
   const root = firstNumeric(row, ['rootzone_percentile', 'rootzone_percentile_90d']);
   const surface = firstNumeric(row, ['surface_percentile', 'surface_percentile_90d']);
   const parts = [];
@@ -2159,7 +2185,7 @@ function weatherMetricPosition(row, metric = state.weatherMetric) {
   const n = Number(value);
   if (metric === 'rain') return clamp01((n - 40) / 160);
   if (metric === 'temp') return clamp01((n + 5) / 10);
-  if (metric === 'forecast') return clamp01((n + 100) / 200);
+  if (metric === 'forecast' || metric === 'forecast14') return clamp01((n + 100) / 200);
   return clamp01(n / 100);
 }
 
@@ -2187,7 +2213,7 @@ function weatherMetricCategoryLabel(row, metric = state.weatherMetric) {
     if (n < 4) return '偏热';
     return '高温干化';
   }
-  if (metric === 'forecast') {
+  if (metric === 'forecast' || metric === 'forecast14') {
     if (n < -60) return '严重缺雨';
     if (n < -30) return '偏干';
     if (n <= 30) return '接近常年';
