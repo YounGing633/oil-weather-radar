@@ -1,5 +1,5 @@
 const DATA_DIR = './data/';
-const UI_VERSION = 'v2.7-prodweather6';
+const UI_VERSION = 'v2.8-prodweather7';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -218,6 +218,7 @@ let store = {
   countryRecords: [],
   adminRecords: [],
   coverage: [],
+  admin1Manifest: [],
   euRecords: [],
   geojson: null,
   adminById: new Map(),
@@ -572,7 +573,8 @@ function prepareData(raw) {
     .filter(row => !isExcludedFrontendRecord(row))
     .map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
 
-  store.coverage = (Array.isArray(raw.coverage) ? raw.coverage : []).map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
+  store.admin1Manifest = Array.isArray(raw.admin1Manifest) ? raw.admin1Manifest : [];
+  store.coverage = enhanceBoundaryCoverage(raw.coverage, store.admin1Manifest);
   store.euRecords = Array.isArray(raw.euRecords) ? raw.euRecords : [];
   store.geojson = raw.geojson && Array.isArray(raw.geojson.features) ? raw.geojson : { type: 'FeatureCollection', features: [] };
   store.siteMeta = Array.isArray(raw.siteMeta) ? raw.siteMeta : (raw.siteMeta ? [raw.siteMeta] : []);
@@ -615,6 +617,41 @@ function getCountryName(key) {
 
 function getCoverage(countryKey) {
   return store.coverage.find(row => row.country_key === countryKey) || null;
+}
+
+function enhanceBoundaryCoverage(coverageRows, manifestRows) {
+  const byCountry = new Map();
+  (Array.isArray(coverageRows) ? coverageRows : []).forEach(row => {
+    const key = canonicalCountry(row.country);
+    byCountry.set(key, { ...row, country_key: key });
+  });
+
+  (Array.isArray(manifestRows) ? manifestRows : []).forEach(row => {
+    if (!row || !row.country || !row.geojson_file) return;
+    const key = canonicalCountry(row.country);
+    const current = byCountry.get(key) || {
+      country: row.country,
+      country_cn: row.country_cn,
+      country_key: key,
+      has_country_boundary: true,
+      country_boundary_file: 'countries.geo.json'
+    };
+    byCountry.set(key, {
+      ...current,
+      country: current.country || row.country,
+      country_cn: current.country_cn || row.country_cn,
+      country_key: key,
+      has_country_boundary: current.has_country_boundary !== false,
+      has_admin1_boundary: true,
+      boundary_file: row.geojson_file,
+      admin1_boundary_file: row.geojson_file,
+      admin1_manifest_status: row.status || 'ok',
+      admin1_manifest_note: row.note || current.missing_reason || null,
+      missing_reason: row.status === 'partial' ? (row.note || current.missing_reason || null) : null
+    });
+  });
+
+  return [...byCountry.values()];
 }
 
 function matchesRiskFilter(value) {
@@ -843,11 +880,11 @@ function renderCountryLayer() {
         const model = byKey.get(getFeatureCountry(feature));
         const color = riskColor(riskNumFromCountry(model.top));
         return {
-          color: '#4b5563',
-          weight: 1.1,
-          opacity: 0.86,
+          color: '#223043',
+          weight: 1.25,
+          opacity: 0.92,
           fillColor: color,
-          fillOpacity: 0.52
+          fillOpacity: 0.64
         };
       },
       onEachFeature: (feature, layer) => {
@@ -857,7 +894,7 @@ function renderCountryLayer() {
         layer.bindTooltip(createCountryTooltip(model), { sticky: true, direction: 'auto' });
         layer.on({
           click: () => selectCountry(model),
-          mouseover: () => layer.setStyle({ weight: 2.2, fillOpacity: 0.68 }),
+          mouseover: () => layer.setStyle({ weight: 2.35, fillOpacity: 0.78 }),
           mouseout: () => countryGeo.resetStyle(layer)
         });
 
@@ -891,9 +928,9 @@ function renderCountryLayer() {
     const marker = L.circleMarker(center, {
       radius: 8,
       color: '#ffffff',
-      weight: 1.5,
+      weight: 1.7,
       fillColor: riskColor(riskNumFromCountry(model.top)),
-      fillOpacity: 0.86
+      fillOpacity: 0.9
     }).addTo(layers.fallback);
     marker.bindTooltip(createCountryTooltip(model), { sticky: true });
     marker.on('click', () => selectCountry(model));
@@ -1781,11 +1818,11 @@ async function renderRegionLayer() {
           const key = normalizeAdminShapeName(feature.properties && feature.properties.shapeName, countryKey);
           const row = recordByBoundary.get(key);
           return {
-            color: '#4b5563',
-            weight: 1,
-            opacity: 0.82,
+            color: '#223043',
+            weight: 1.12,
+            opacity: 0.92,
             fillColor: riskColor(row.risk_level_v3),
-            fillOpacity: 0.6
+            fillOpacity: 0.72
           };
         },
         onEachFeature: (feature, layer) => {
@@ -1797,7 +1834,7 @@ async function renderRegionLayer() {
           layer.bindTooltip(regionTooltip(row), { sticky: true });
           layer.on({
             click: () => showRegionDetail(row),
-            mouseover: () => layer.setStyle({ weight: 2.2, fillOpacity: 0.72 }),
+            mouseover: () => layer.setStyle({ weight: 2.35, fillOpacity: 0.82 }),
             mouseout: () => regionGeo.resetStyle(layer)
           });
         }
@@ -1870,9 +1907,9 @@ function renderRegionFallbackMarker(row) {
   const marker = L.circleMarker([Number(row.lat), Number(row.lon)], {
     radius,
     color: '#ffffff',
-    weight: 1.3,
+    weight: 1.6,
     fillColor: riskColor(row.risk_level_v3),
-    fillOpacity: 0.88
+    fillOpacity: 0.92
   }).addTo(layers.fallback);
   marker.bindTooltip(regionTooltip(row), { sticky: true });
   marker.on('click', () => showRegionDetail(row));
@@ -2073,40 +2110,46 @@ function dedupeProductionWeatherRows(rows) {
 
 function productionWeatherCandidates() {
   let rows = [];
-  rows = store.adminRecords.filter(row => {
-    if (!row || !isNum(row.lat) || !isNum(row.lon)) return false;
-    if (state.crop !== 'all' && row.crop_group !== state.crop) return false;
-    if (state.country !== 'all' && row.country_key !== state.country) return false;
-    return true;
-  });
+  if (state.country === 'European Union') {
+    rows = euWeatherRows(state.crop);
+  } else {
+    rows = store.adminRecords.filter(row => {
+      if (!row || !isNum(row.lat) || !isNum(row.lon)) return false;
+      if (state.crop !== 'all' && row.crop_group !== state.crop) return false;
+      if (state.country !== 'all' && row.country_key !== state.country) return false;
+      return true;
+    });
+  }
 
   const admin1Rows = rows.filter(row => row.admin_level === 'admin1' || row.admin_level_for_map === 'admin1');
   if (admin1Rows.length) rows = admin1Rows;
   return dedupeProductionWeatherRows(rows)
     .filter(row => isNum(row.lat) && isNum(row.lon))
     .sort((a, b) => {
-      const shareDiff = (Number(b.national_share) || Number(b.eu_share) || 0) - (Number(a.national_share) || Number(a.eu_share) || 0);
+      const shareDiff = (Number(productionShareValue(b)) || 0) - (Number(productionShareValue(a)) || 0);
       if (shareDiff) return shareDiff;
       return (Number(b.production_tonnes) || 0) - (Number(a.production_tonnes) || 0);
     });
 }
 
 function productionWeatherRows() {
-  const rows = productionWeatherCandidates();
-  if (!state.hideSmallShare) return rows;
-  const kept = rows.filter(row => Number(row.national_share ?? row.eu_share ?? 0) >= 0.01);
-  return kept.length ? kept : rows;
+  return productionWeatherCandidates();
+}
+
+function productionShareValue(row) {
+  if (row && row.production_weather_context === 'eu') return row.eu_share ?? row.national_share;
+  return row ? (row.national_share ?? row.eu_share) : null;
 }
 
 function productionMarkerRadius(row) {
-  const share = Number(row.national_share ?? row.eu_share ?? 0);
+  const share = Number(productionShareValue(row) ?? 0);
   if (share > 0) return Math.max(5, Math.min(18, 5 + Math.sqrt(share * 100) * 1.45));
   const production = Number(row.production_tonnes) || 0;
   return Math.max(5, Math.min(14, 4 + Math.log10(production + 1)));
 }
 
 function productionWeatherValue(row) {
-  if (state.mapValue === 'share') return fmtPct(row.national_share ?? row.eu_share, 1);
+  if (state.mapValue === 'share') return fmtPct(productionShareValue(row), 1);
   return fmtProduction(row.production_tonnes);
 }
 
@@ -2123,7 +2166,7 @@ function productionWeatherTooltip(row) {
   const metric = weatherMetricValue(row);
   const category = weatherMetricCategoryLabel(row);
   const country = row.country_cn || row.country || getCountryName(row.country_key);
-  const share = fmtPct(row.national_share ?? row.eu_share, 1);
+  const share = fmtPct(productionShareValue(row), 1);
   const production = fmtProduction(row.production_tonnes);
   const weatherSummary = row.weather_condition_summary_cn || '';
   const soilSummary = row.soil_condition_summary_cn || row.soil_status_cn || '';
@@ -2140,14 +2183,14 @@ function productionWeatherTooltip(row) {
 }
 
 function shouldShowProductionWeatherLabel(row, zoom) {
-  const share = Number(row.national_share ?? row.eu_share ?? 0);
+  const share = Number(productionShareValue(row) ?? 0);
   const production = Number(row.production_tonnes) || 0;
-  if (state.hideSmallShare && share > 0 && share < 0.01) return false;
-  if (zoom <= 2) return share >= 0.2 || production >= 20000000;
-  if (zoom <= 3) return share >= 0.1 || production >= 8000000;
-  if (zoom <= 4) return share >= 0.05 || production >= 3000000;
-  if (zoom <= 5) return share >= 0.02 || production >= 1000000;
-  return share >= 0.01 || production >= 250000 || !state.hideSmallShare;
+  if (state.hideSmallShare && share > 0 && share < 0.01 && zoom < 5) return false;
+  if (zoom <= 2) return share >= 0.12 || production >= 10000000;
+  if (zoom <= 3) return share >= 0.06 || production >= 3000000;
+  if (zoom <= 4) return share >= 0.02 || production >= 800000;
+  if (zoom <= 5) return share >= 0.006 || production >= 150000;
+  return share >= 0.001 || production >= 50000 || !state.hideSmallShare;
 }
 
 function refreshProductionWeatherLabels(rowsArg) {
@@ -2156,7 +2199,7 @@ function refreshProductionWeatherLabels(rowsArg) {
   const rows = rowsArg || currentProductionWeatherRows || [];
   const zoom = map.getZoom();
   const countryLabelLimit = state.country === 'all'
-    ? (zoom <= 3 ? 2 : (zoom <= 4 ? 3 : 5))
+    ? (zoom <= 2 ? 2 : (zoom <= 3 ? 3 : (zoom <= 4 ? 6 : (zoom <= 5 ? 10 : Infinity))))
     : Infinity;
   const labelsByCountry = new Map();
   [...rows]
@@ -2192,6 +2235,35 @@ function renderProductionWeatherFallbackMarker(row) {
     fillOpacity: 0.9
   }).addTo(layers.fallback);
   marker.bindTooltip(productionWeatherTooltip(row), { sticky: true, direction: 'auto' });
+  return true;
+}
+
+function renderProductionCountryBoundary(countryKey, rows) {
+  if (!store.geojson || !Array.isArray(store.geojson.features) || !rows.length) return false;
+  const topRow = [...rows].sort((a, b) => (Number(b.production_tonnes) || 0) - (Number(a.production_tonnes) || 0))[0];
+  let rendered = false;
+  const countryGeo = L.geoJSON(store.geojson, {
+    filter: feature => getFeatureCountry(feature) === countryKey,
+    style: {
+      color: '#223043',
+      weight: 1.15,
+      opacity: 0.9,
+      fillColor: weatherMetricColor(topRow),
+      fillOpacity: 0.68
+    },
+    onEachFeature: (feature, layer) => {
+      rendered = true;
+      layer.bindTooltip(productionWeatherTooltip(topRow), { sticky: true, direction: 'auto' });
+      layer.on({
+        mouseover: () => layer.setStyle({ weight: 2.25, fillOpacity: 0.8 }),
+        mouseout: () => countryGeo.resetStyle(layer)
+      });
+    }
+  }).addTo(layers.region);
+  if (!rendered) {
+    layers.region.removeLayer(countryGeo);
+    return false;
+  }
   return true;
 }
 
@@ -2240,6 +2312,10 @@ async function renderProductionWeatherCountryGroup(countryKey, rows) {
       });
       return { matchedCount, fallbackCount, hasBoundary: matchedCount > 0 };
     }
+  }
+
+  if (renderProductionCountryBoundary(countryKey, rows)) {
+    return { matchedCount: rows.length, fallbackCount: 0, hasBoundary: true, hasCountryBoundary: true };
   }
 
   rows.forEach(row => {
@@ -2997,6 +3073,7 @@ function weatherCountryOptions() {
     if (state.crop !== 'all' && row.crop_group !== state.crop) return;
     countries.set(row.country_key, row.country_cn || row.country_key);
   });
+  if (euWeatherRows(state.crop).length) countries.set('European Union', '欧盟');
   return [...countries.entries()].sort((a, b) => {
     const prodDiff = weatherCountryProduction(b[0]) - weatherCountryProduction(a[0]);
     if (prodDiff) return prodDiff;
@@ -3005,11 +3082,50 @@ function weatherCountryOptions() {
 }
 
 function weatherCountryProduction(countryKey) {
+  if (countryKey === 'European Union') {
+    return store.euRecords.reduce((sum, row) => {
+      if (!row || row.source_valid_for_frontend === false) return sum;
+      if (state.crop !== 'all' && row.crop_group !== state.crop) return sum;
+      return sum + (Number(row.production_tonnes) || 0);
+    }, 0);
+  }
   return store.adminRecords.reduce((sum, row) => {
     if (!row || row.country_key !== countryKey) return sum;
     if (state.crop !== 'all' && row.crop_group !== state.crop) return sum;
     return sum + (Number(row.production_tonnes) || 0);
   }, 0);
+}
+
+function euWeatherRows(crop = state.crop) {
+  const euRows = (store.euRecords || []).filter(row => {
+    if (!row || row.source_valid_for_frontend === false) return false;
+    if (crop !== 'all' && row.crop_group !== crop) return false;
+    return row.region;
+  });
+  if (!euRows.length) return [];
+
+  const shareByCountryCrop = new Map();
+  euRows.forEach(row => {
+    shareByCountryCrop.set(`${canonicalCountry(row.region)}::${row.crop_group}`, row);
+  });
+  const memberKeys = new Set(euRows.map(row => canonicalCountry(row.region)));
+
+  return store.adminRecords
+    .filter(row => {
+      if (!row || !isNum(row.lat) || !isNum(row.lon)) return false;
+      if (!memberKeys.has(row.country_key)) return false;
+      if (crop !== 'all' && row.crop_group !== crop) return false;
+      return shareByCountryCrop.has(`${row.country_key}::${row.crop_group}`);
+    })
+    .map(row => {
+      const euRow = shareByCountryCrop.get(`${row.country_key}::${row.crop_group}`);
+      return {
+        ...row,
+        eu_share: euRow ? euRow.eu_share : row.eu_share,
+        production_weather_context: 'eu',
+        production_weather_context_cn: '欧盟'
+      };
+    });
 }
 
 function defaultWeatherCountry() {
@@ -3411,10 +3527,11 @@ async function init() {
   initMap();
   bindEvents();
 
-  const [countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp, regionHistory, siteMeta] = await Promise.all([
+  const [countryRecords, adminRecords, coverage, admin1Manifest, euRecords, geojson, cropProgress, soilTemp, regionHistory, siteMeta] = await Promise.all([
     loadJSON('country_crop_risk_latest.json', []),
     loadJSON('admin_region_risk_latest.json', []),
     loadJSON('geo_boundary_coverage.json', []),
+    loadJSON('admin1_geojson_manifest_v1.0f2.json', []),
     loadJSON('eu_virtual_country_summary.json', []),
     loadJSON('countries.geo.json', { type: 'FeatureCollection', features: [] }),
     loadJSON('crop_progress_latest.json', []),
@@ -3423,7 +3540,7 @@ async function init() {
     loadJSON('site_meta.json', [])
   ]);
 
-  prepareData({ countryRecords, adminRecords, coverage, euRecords, geojson, cropProgress, soilTemp, regionHistory, siteMeta });
+  prepareData({ countryRecords, adminRecords, coverage, admin1Manifest, euRecords, geojson, cropProgress, soilTemp, regionHistory, siteMeta });
   updateMetaDate();
   updateTimeRangeUI();
   renderTodaySummary();
