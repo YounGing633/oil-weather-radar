@@ -29,11 +29,11 @@
   "layer2_soil_response": {
     "description": "第二层：土壤响应信号",
     "signals": {
-      "rootzone_low":       { "field": "rootzone_percentile", "op": "<", "threshold": 20, "severity": 1 },
-      "rootzone_very_low":  { "field": "rootzone_percentile", "op": "<", "threshold": 10, "severity": 2 },
+      "rootzone_low":       { "field": "rootzone_sm_percentile_doy_7d", "op": "<", "threshold": 20, "severity": 1, "requires": { "soil_percentile_confidence": "available" } },
+      "rootzone_very_low":  { "field": "rootzone_sm_percentile_doy_7d", "op": "<", "threshold": 10, "severity": 2, "requires": { "soil_percentile_confidence": "available" } },
       "rootzone_declining": { "field": "rootzone_sm_change_7d", "op": "<", "threshold": 0, "severity": 0.5 },
-      "surface_high":       { "field": "surface_percentile", "op": ">", "threshold": 80, "severity": 1 },
-      "surface_very_high":  { "field": "surface_percentile", "op": ">", "threshold": 90, "severity": 2 },
+      "surface_high":       { "field": "surface_sm_percentile_doy_7d", "op": ">", "threshold": 80, "severity": 1, "requires": { "soil_percentile_confidence": "available" } },
+      "surface_very_high":  { "field": "surface_sm_percentile_doy_7d", "op": ">", "threshold": 90, "severity": 2, "requires": { "soil_percentile_confidence": "available" } },
       "rootzone_persistent_low": { "field": "rootzone_sm_below_p20_days", "op": ">=", "threshold": 14, "severity": 1 }
     }
   },
