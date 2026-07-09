@@ -1183,9 +1183,27 @@ function soilTempSignal(row) {
   return getValidSoilTemp(row);
 }
 
+function soilPercentileAvailable(row) {
+  if (!row || row.soil_percentile_confidence === 'unavailable') return false;
+  return isNum(row.rootzone_sm_percentile_doy_7d)
+    || isNum(row.surface_sm_percentile_doy_7d)
+    || isNum(row.rootzone_percentile)
+    || isNum(row.surface_percentile);
+}
+
+function soilRootPercentile(row) {
+  if (!soilPercentileAvailable(row)) return null;
+  return firstNumeric(row, ['rootzone_sm_percentile_doy_7d', 'rootzone_percentile']);
+}
+
+function soilSurfacePercentile(row) {
+  if (!soilPercentileAvailable(row)) return null;
+  return firstNumeric(row, ['surface_sm_percentile_doy_7d', 'surface_percentile']);
+}
+
 function moistureState(row) {
-  const root = isNum(row && row.rootzone_percentile) ? Number(row.rootzone_percentile) : null;
-  const surface = isNum(row && row.surface_percentile) ? Number(row.surface_percentile) : null;
+  const root = soilRootPercentile(row);
+  const surface = soilSurfacePercentile(row);
   return {
     root,
     surface,
@@ -1528,6 +1546,7 @@ function rainState(row, timeRange = state.timeRange) {
 
 function buildWeatherFactItems(row, timeRange = state.timeRange) {
   if (!row) return [];
+  const rootPct = soilRootPercentile(row);
   if (timeRange === '7d') {
     const rain7 = firstNumeric(row, ['rain_7d_sum_mm', 'rain_7d', 'rainfall_7d', 'precip_7d', 'precip_7d_actual']);
     const anom7 = firstNumeric(row, ['rain_7d_anomaly_mm', 'rainfall_anomaly_7d', 'precip_7d_anomaly_mm', 'rainfall_7d_anomaly']);
@@ -1535,7 +1554,7 @@ function buildWeatherFactItems(row, timeRange = state.timeRange) {
       isNum(rain7) ? ['近7天降雨', fmtNum(rain7, 1, ' mm')] : null,
       isNum(anom7) ? ['近7天降雨距平', fmtSigned(anom7, 1, ' mm')] : null,
       isNum(row.heavy_rain_days_7d) ? ['近7天强降雨日数', fmtInt(row.heavy_rain_days_7d, ' 天')] : null,
-      isNum(row.rootzone_percentile) ? ['土壤湿度分位', `P${Math.round(Number(row.rootzone_percentile))}`] : null
+      isNum(rootPct) ? ['土壤湿度分位', `P${Math.round(Number(rootPct))}`] : null
     ].filter(Boolean);
   }
   if (timeRange === '14d') {
@@ -1561,7 +1580,7 @@ function buildWeatherFactItems(row, timeRange = state.timeRange) {
     isNum(rain30) ? ['近30天降雨', fmtNum(rain30, 1, ' mm')] : null,
     isNum(normal30) ? ['近30天常年', fmtNum(normal30, 1, ' mm')] : null,
     isNum(anom30) ? ['近30天降雨距平', fmtSigned(anom30, 1, ' mm')] : null,
-    isNum(row.rootzone_percentile) ? ['土壤湿度分位', `P${Math.round(Number(row.rootzone_percentile))}`] : null
+    isNum(rootPct) ? ['土壤湿度分位', `P${Math.round(Number(rootPct))}`] : null
   ].filter(Boolean);
 }
 
@@ -1580,9 +1599,12 @@ function renderGrowthStageBlock(record) {
 }
 
 function isSoilDry(row) {
+  if (!soilPercentileAvailable(row)) return false;
   const soilText = `${row.soil_status_cn || ''} ${row.soil_status_90d_cn || ''} ${row.soil_condition_summary_cn || ''} ${row.soil_signal_recent || ''}`.toLowerCase();
-  return (isNum(row.rootzone_percentile) && Number(row.rootzone_percentile) < 25)
-    || (isNum(row.surface_percentile) && Number(row.surface_percentile) < 25)
+  const rootPct = soilRootPercentile(row);
+  const surfacePct = soilSurfacePercentile(row);
+  return (isNum(rootPct) && Number(rootPct) < 25)
+    || (isNum(surfacePct) && Number(surfacePct) < 25)
     || /dry|偏干|水分压力|缺水/.test(soilText);
 }
 
@@ -1668,8 +1690,10 @@ function evidenceSnapshot(row) {
     .filter(Boolean);
   if (shortSignals.length) parts.push(shortSignals.join('、'));
   const soil = [];
-  if (isNum(row.rootzone_percentile)) soil.push(`根区P${Math.round(Number(row.rootzone_percentile))}`);
-  if (isNum(row.surface_percentile)) soil.push(`表层P${Math.round(Number(row.surface_percentile))}`);
+  const rootPct = soilRootPercentile(row);
+  const surfacePct = soilSurfacePercentile(row);
+  if (isNum(rootPct)) soil.push(`根区P${Math.round(Number(rootPct))}`);
+  if (isNum(surfacePct)) soil.push(`表层P${Math.round(Number(surfacePct))}`);
   if (soil.length) parts.push(`土壤${soil.join('、')}`);
   if (isNum(row.forecast_7d_precip) || isNum(row.forecast_16d_precip)) {
     const fc = [
@@ -2114,7 +2138,7 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
   }
   if (metric === 'forecast') {
     const rain = firstNumeric(row, ['forecast_7d_precip', 'forecast_rainfall_7d', 'forecast_7d', 'rain_forecast_7d']);
-    const normal7 = firstNumeric(row, ['forecast_precip_7d_normal_mm']) || (Number(row.precip_30d_normal) || 0) * 7 / 30;
+    const normal7 = firstNumeric(row, ['forecast_precip_7d_normal_mm']);
     if (isNum(rain) && normal7 > 0.5) {
       const anomaly = ((Number(rain) - normal7) / normal7) * 100;
       return {
@@ -2128,8 +2152,8 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
     };
   }
   if (metric === 'forecast14') {
-    const rain = firstNumeric(row, ['forecast_16d_precip', 'forecast_16d', 'rain_forecast_16d']);
-    const normal14 = firstNumeric(row, ['forecast_precip_8_14d_normal_mm']) || (Number(row.precip_30d_normal) || 0) * 14 / 30;
+    const rain = firstNumeric(row, ['forecast_8_14d_precip', 'forecast_16d_precip', 'forecast_16d', 'rain_forecast_16d']);
+    const normal14 = firstNumeric(row, ['forecast_precip_8_14d_normal_mm']);
     if (isNum(rain) && normal14 > 0.5) {
       const anomaly = ((Number(rain) - normal14) / normal14) * 100;
       return {
@@ -2152,20 +2176,20 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
   }
   if (metric === 'vpd') {
     const pct = firstNumeric(row, ['vpd_percentile_30d', 'vpd_percentile_14d']);
-    const val = firstNumeric(row, ['vpd_30d_mean', 'vpd_14d_mean', 'vpd_7d_mean']);
+    const val = firstNumeric(row, ['vpd_30d_avg_kpa', 'vpd_14d_avg_kpa', 'vpd_7d_avg_kpa', 'vpd_30d_mean', 'vpd_14d_mean', 'vpd_7d_mean']);
     return {
       value: pct,
       label: isNum(pct) ? `VPD P${Math.round(Number(pct))}${isNum(val) ? ' (' + fmtNum(val, 1, 'kPa') + ')' : ''}` : 'VPD待接入'
     };
   }
-  const root = firstNumeric(row, ['rootzone_percentile', 'rootzone_percentile_90d']);
-  const surface = firstNumeric(row, ['surface_percentile', 'surface_percentile_90d']);
+  const root = soilRootPercentile(row);
+  const surface = soilSurfacePercentile(row);
   const parts = [];
   if (isNum(root)) parts.push(`根区P${Math.round(Number(root))}`);
   if (isNum(surface)) parts.push(`表层P${Math.round(Number(surface))}`);
   return {
     value: root,
-    label: parts.length ? parts.join(' / ') : '墒情待接入'
+    label: parts.length ? parts.join(' / ') : '墒情仅实际值'
   };
 }
 
@@ -2956,12 +2980,20 @@ function renderEvidenceBlock(row) {
       : fmtSigned(row.precip_30d_anomaly_mm, 0, ' mm');
     cards.push(`<div class="evidence-card"><b>降雨</b><strong>${esc(rainValue)}</strong>${row.weather_condition_summary_cn ? `<p>${esc(row.weather_condition_summary_cn)}</p>` : ''}</div>`);
   }
-  if (isNum(row.rootzone_percentile) || isNum(row.surface_percentile) || row.soil_status_cn || row.soil_status_90d_cn) {
+  const rootPct = soilRootPercentile(row);
+  const surfacePct = soilSurfacePercentile(row);
+  if (soilPercentileAvailable(row) && (isNum(rootPct) || isNum(surfacePct) || row.soil_status_cn || row.soil_status_90d_cn)) {
     const soilParts = [
-      isNum(row.rootzone_percentile) ? `根区 P${Math.round(Number(row.rootzone_percentile))}` : '',
-      isNum(row.surface_percentile) ? `表层 P${Math.round(Number(row.surface_percentile))}` : ''
+      isNum(rootPct) ? `根区 P${Math.round(Number(rootPct))}` : '',
+      isNum(surfacePct) ? `表层 P${Math.round(Number(surfacePct))}` : ''
     ].filter(Boolean).join(' · ');
     cards.push(`<div class="evidence-card"><b>土壤湿度</b><strong>${esc(row.soil_status_cn || row.soil_status_90d_cn || soilParts)}</strong>${soilParts && (row.soil_status_cn || row.soil_status_90d_cn) ? `<p>${esc(soilParts)}</p>` : ''}</div>`);
+  } else if (isNum(row.soil_water_rootzone) || isNum(row.soil_water_surface)) {
+    const soilParts = [
+      isNum(row.soil_water_rootzone) ? `根区 ${fmtNum(row.soil_water_rootzone, 3, '')}` : '',
+      isNum(row.soil_water_surface) ? `表层 ${fmtNum(row.soil_water_surface, 3, '')}` : ''
+    ].filter(Boolean).join(' · ');
+    cards.push(`<div class="evidence-card"><b>土壤墒情</b><strong>${esc(soilParts)}</strong><p>历史百分位暂不可用，仅显示实际值</p></div>`);
   }
   if (st && temp.hasValid) {
     const soilTempValue = temp.values.t0 !== null
@@ -2992,6 +3024,7 @@ function seriesHasValue(series, keys) {
 }
 
 function renderSoilMoistureChartBlock(row) {
+  if (!soilPercentileAvailable(row)) return '';
   const series = row.soil_rootzone_percentile_90d_series || [];
   if (!seriesHasValue(series, ['rootzone_percentile', 'surface_percentile'])) return '';
   return `<div class="detail-block">
@@ -3719,7 +3752,7 @@ function buildSummaryCards(records) {
     const weight = Number(row.production_tonnes) || 1;
     const forecast7 = Number(row.forecast_7d_precip) || 0;
     const forecast16 = Number(row.forecast_16d_precip) || 0;
-    const normal7 = (Number(row.precip_30d_normal) || 0) * 7 / 30;
+    const normal7 = Number(row.forecast_precip_7d_normal_mm) || 0;
     const deficit = Number(row.precip_30d_anomaly_mm) || 0;
     const dryRisk = row.risk_type === 'drought_water_deficit' || row.risk_type === 'heat_drydown';
     const wetRisk = row.risk_type === 'excess_rain_waterlogging' || row.risk_type === 'wet_harvest_disruption';

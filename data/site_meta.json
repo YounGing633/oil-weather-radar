@@ -1,6 +1,6 @@
 [
   {
-    "generated_at": "2026-07-08 10:16:32",
+    "generated_at": "2026-07-09 09:48:03",
     "version": "v1.0-i1",
     "baseline_period": "1991-2020",
     "baseline_method": "monthly_normal + doy_pentad (v1.0-i1)",
@@ -41,6 +41,13 @@
       "sunflower"
     ],
     "total_alerts": 152,
-    "run_id": "daily_export_20260708_101632"
+    "run_id": "daily_export_20260709_094802",
+    "site_version": "20260708-baselinefix1",
+    "indicator_version": "2.2-baselinefix1",
+    "risk_rule_version": "2.2-baselinefix1",
+    "climate_baseline": "1991-2020",
+    "data_valid_date": "2026-07-04",
+    "updated_at": "2026-07-09T01:52:46Z",
+    "baselinefix_note": "rainfall/temp/forecast normals fixed; soil historical percentile disabled until i5f/i5e complete"
   }
 ]
