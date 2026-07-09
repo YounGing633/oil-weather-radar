@@ -47,7 +47,7 @@
     "risk_rule_version": "2.2-baselinefix1",
     "climate_baseline": "1991-2020",
     "data_valid_date": "2026-07-04",
-    "updated_at": "2026-07-09T01:52:46Z",
+    "updated_at": "2026-07-09T02:19:39Z",
     "baselinefix_note": "rainfall/temp/forecast normals fixed; soil historical percentile disabled until i5f/i5e complete"
   }
 ]

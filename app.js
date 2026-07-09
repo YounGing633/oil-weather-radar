@@ -2993,7 +2993,27 @@ function renderEvidenceBlock(row) {
       isNum(row.soil_water_rootzone) ? `根区 ${fmtNum(row.soil_water_rootzone, 3, '')}` : '',
       isNum(row.soil_water_surface) ? `表层 ${fmtNum(row.soil_water_surface, 3, '')}` : ''
     ].filter(Boolean).join(' · ');
-    cards.push(`<div class="evidence-card"><b>土壤墒情</b><strong>${esc(soilParts)}</strong><p>历史百分位暂不可用，仅显示实际值</p></div>`);
+    const recentParts = [
+      isNum(row.soil_water_rootzone_7d_avg) ? `根区7日均值 ${fmtNum(row.soil_water_rootzone_7d_avg, 3, '')}` : '',
+      isNum(row.soil_water_surface_7d_avg) ? `表层7日均值 ${fmtNum(row.soil_water_surface_7d_avg, 3, '')}` : '',
+      isNum(row.soil_water_rootzone_change_7d) ? `根区较前7日 ${fmtSigned(row.soil_water_rootzone_change_7d, 3, '')}` : '',
+      isNum(row.soil_water_rootzone_change_30d) ? `根区较前30日 ${fmtSigned(row.soil_water_rootzone_change_30d, 3, '')}` : ''
+    ].filter(Boolean);
+    const period = row.soil_recent_year_comparison_period || '2021-2025';
+    const years = Array.isArray(row.soil_recent_year_comparison_years)
+      ? row.soil_recent_year_comparison_years.join('/')
+      : '';
+    let comparisonText = `正式DOY百分位未启用；${period}近年同期对比暂无本地数据`;
+    if (row.soil_recent_year_comparison_status === 'available') {
+      const comparisonParts = [
+        isNum(row.soil_water_rootzone_recent_year_mean) ? `根区近年均值 ${fmtNum(row.soil_water_rootzone_recent_year_mean, 3, '')}` : '',
+        isNum(row.soil_water_surface_recent_year_mean) ? `表层近年均值 ${fmtNum(row.soil_water_surface_recent_year_mean, 3, '')}` : '',
+        isNum(row.soil_water_rootzone_vs_recent_year_mean) ? `根区差值 ${fmtSigned(row.soil_water_rootzone_vs_recent_year_mean, 3, '')}` : '',
+        isNum(row.soil_water_surface_vs_recent_year_mean) ? `表层差值 ${fmtSigned(row.soil_water_surface_vs_recent_year_mean, 3, '')}` : ''
+      ].filter(Boolean);
+      comparisonText = `${period}近年同期${years ? `（${years}）` : ''}：${comparisonParts.join(' · ') || '样本有限'}`;
+    }
+    cards.push(`<div class="evidence-card"><b>土壤墒情</b><strong>${esc(soilParts)}</strong><p>${esc([...recentParts, comparisonText].join('；'))}</p></div>`);
   }
   if (st && temp.hasValid) {
     const soilTempValue = temp.values.t0 !== null
