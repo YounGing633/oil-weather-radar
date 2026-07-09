@@ -2970,6 +2970,51 @@ function renderImpactChannelsBlock(row) {
   </div>`;
 }
 
+function recent5DisplayWindow() {
+  if (state.timeRange === '7d') return 7;
+  if (state.timeRange === '14d') return 14;
+  return 30;
+}
+
+function recent5Metric(row, prefix, window, unitKey, actualKey) {
+  return {
+    actual: row[actualKey],
+    mean: row[`${prefix}_${window}d_recent5_mean_${unitKey}`],
+    min: row[`${prefix}_${window}d_recent5_min_${unitKey}`],
+    max: row[`${prefix}_${window}d_recent5_max_${unitKey}`],
+    diff: row[`${prefix}_${window}d_vs_recent5_mean_${unitKey}`],
+    years: row[`${prefix}_${window}d_recent5_sample_years`],
+    status: row[`${prefix}_${window}d_recent5_status`]
+  };
+}
+
+function renderRecent5Chip(label, metric, unit, digits) {
+  if (!metric || metric.status !== 'available' || Number(metric.years) < 2) return '';
+  if (![metric.actual, metric.mean, metric.min, metric.max].every(isNum)) return '';
+  const diff = isNum(metric.diff) ? metric.diff : Number(metric.actual) - Number(metric.mean);
+  return `<div class="recent5-chip">
+    <b>${esc(label)}</b>
+    <strong>${esc(fmtNum(metric.actual, digits, unit))} / 近5年均 ${esc(fmtNum(metric.mean, digits, unit))}</strong>
+    <span>5年低-高 ${esc(fmtNum(metric.min, digits, unit))} - ${esc(fmtNum(metric.max, digits, unit))}；较均值 ${esc(fmtSigned(diff, digits, unit))}；样本 ${esc(metric.years)}年</span>
+  </div>`;
+}
+
+function renderRecent5BottomBar(row) {
+  if (!row) return '';
+  const window = recent5DisplayWindow();
+  const period = row.weather_recent5_period || '2021-2025';
+  const chips = [
+    renderRecent5Chip(`${window}天降雨`, recent5Metric(row, 'precip', window, 'mm', `precip_${window}d_actual`), ' mm', 1),
+    renderRecent5Chip(`${window}天均温`, recent5Metric(row, 'tmean', window, 'c', `tmean_${window}d_c`), '°C', 1),
+    renderRecent5Chip(`${window}天最高温`, recent5Metric(row, 'tmax', window, 'c', `tmax_${window}d_c`), '°C', 1)
+  ].filter(Boolean);
+  if (!chips.length) return '';
+  return `<div class="recent5-strip">
+    <span class="recent5-strip-title">${esc(period)}近5年可用同期参考 · ${window}天窗口 · 不参与正式风险</span>
+    <div class="recent5-strip-row">${chips.join('')}</div>
+  </div>`;
+}
+
 function renderEvidenceBlock(row) {
   const temp = getValidSoilTemp(row);
   const st = temp.record;
@@ -3029,9 +3074,11 @@ function renderEvidenceBlock(row) {
     cards.push(`<div class="evidence-card"><b>未来降雨</b><strong>${esc(forecastParts)}</strong></div>`);
   }
   if (!cards.length) return '';
+  const recent5Bar = renderRecent5BottomBar(row);
   return `<div class="detail-block">
     <h3>核心证据</h3>
     <div class="evidence-grid">${cards.join('')}</div>
+    ${recent5Bar}
   </div>`;
 }
 

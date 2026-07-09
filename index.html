@@ -678,6 +678,35 @@ header h1 {
 .evidence-card b { display: block; margin-bottom: 3px; color: var(--muted-2); font-size: 10px; }
 .evidence-card strong { display: block; margin-bottom: 2px; color: #1e2530; font-size: 13px; }
 .evidence-card p { color: var(--muted); font-size: 10.5px; line-height: 1.4; }
+.recent5-strip {
+  margin-top: 8px;
+  padding: 8px 9px;
+  border: 1px solid #e5e9ef;
+  border-radius: 6px;
+  background: #fbfcfe;
+}
+.recent5-strip-title {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted-2);
+  font-size: 10px;
+  font-weight: 700;
+}
+.recent5-strip-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+.recent5-chip {
+  min-width: 0;
+  padding: 6px 7px;
+  border-left: 3px solid #8aa3c1;
+  border-radius: 4px;
+  background: #fff;
+}
+.recent5-chip b { display: block; color: #314154; font-size: 10.5px; margin-bottom: 2px; }
+.recent5-chip strong { display: block; color: #1f2937; font-size: 12px; line-height: 1.25; }
+.recent5-chip span { display: block; color: var(--muted); font-size: 9.5px; margin-top: 2px; line-height: 1.35; }
 .oil-pill::before {
   content: "";
   width: 8px;
@@ -939,6 +968,7 @@ header h1 {
   .oil-legend { right: 10px; }
   .oil-legend { display: none; }
   .evidence-grid { grid-template-columns: 1fr; }
+  .recent5-strip-row { grid-template-columns: 1fr; }
   .data-grid.cols-3,
   .data-grid.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
