@@ -678,6 +678,41 @@ header h1 {
 .evidence-card b { display: block; margin-bottom: 3px; color: var(--muted-2); font-size: 10px; }
 .evidence-card strong { display: block; margin-bottom: 2px; color: #1e2530; font-size: 13px; }
 .evidence-card p { color: var(--muted); font-size: 10.5px; line-height: 1.4; }
+.weather-tag-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 8px;
+}
+.weather-tag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 3px 7px;
+  border: 1px solid #d8e0ea;
+  border-radius: 4px;
+  background: #fff;
+  color: #334155;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.weather-tag.primary {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+.weather-tag.recent5 {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+.leaflet-tooltip .weather-tag-strip {
+  margin: 5px 0 0;
+}
+.leaflet-tooltip .weather-tag {
+  padding: 2px 5px;
+  font-size: 10px;
+}
 .recent5-strip {
   margin-top: 8px;
   padding: 8px 9px;
@@ -888,6 +923,22 @@ header h1 {
     -1px 1px 0 rgba(255,255,255,0.95),
     1px 1px 0 rgba(255,255,255,0.95),
     0 1px 3px rgba(15,23,42,0.28);
+}
+.production-label .weather-mini-tag {
+  display: block;
+  max-width: 108px;
+  margin-top: 2px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.86);
+  color: #314154;
+  font-size: 8.5px;
+  font-weight: 800;
+  line-height: 1.15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(15,23,42,0.16);
 }
 .country-map-text {
   color: rgba(15,23,42,0.66);

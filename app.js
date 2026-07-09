@@ -1,6 +1,6 @@
 const DATA_DIR = './data/';
 const CONFIG_DIR = './assets/configs/';
-const UI_VERSION = 'v2.10-prodweather9';
+const UI_VERSION = 'v2.10-prodweather10';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -1587,7 +1587,71 @@ function buildWeatherFactItems(row, timeRange = state.timeRange) {
 function renderWeatherFactsBlock(row, title = '天气事实') {
   const facts = buildWeatherFactItems(row);
   if (!facts.length) return '';
-  return `<div class="detail-block"><h3>${esc(title)}</h3><div class="data-grid cols-3">${facts.map(([label, value]) => detailCell(label, value)).join('')}</div></div>`;
+  const tags = renderWeatherTagStrip(row);
+  return `<div class="detail-block"><h3>${esc(title)}</h3>${tags}<div class="data-grid cols-3">${facts.map(([label, value]) => detailCell(label, value)).join('')}</div></div>`;
+}
+
+function recent5RainTag(metric) {
+  if (!metric || metric.status !== 'available' || Number(metric.years) < 2 || !isNum(metric.diff) || !isNum(metric.mean)) return null;
+  const diff = Number(metric.diff);
+  const mean = Number(metric.mean);
+  const rel = mean > 1 ? diff / mean : null;
+  if (rel !== null) {
+    if (rel <= -0.3) return { label: '较近5年偏少', detail: fmtSigned(diff, 1, ' mm') };
+    if (rel >= 0.3) return { label: '较近5年偏多', detail: fmtSigned(diff, 1, ' mm') };
+    return { label: '接近近5年', detail: fmtSigned(diff, 1, ' mm') };
+  }
+  if (diff <= -10) return { label: '较近5年偏少', detail: fmtSigned(diff, 1, ' mm') };
+  if (diff >= 10) return { label: '较近5年偏多', detail: fmtSigned(diff, 1, ' mm') };
+  return { label: '接近近5年', detail: fmtSigned(diff, 1, ' mm') };
+}
+
+function recent5TempTag(metric) {
+  if (!metric || metric.status !== 'available' || Number(metric.years) < 2 || !isNum(metric.diff)) return null;
+  const diff = Number(metric.diff);
+  if (diff <= -2) return { label: '较近5年偏冷', detail: fmtSigned(diff, 1, '°C') };
+  if (diff <= -1) return { label: '较近5年略冷', detail: fmtSigned(diff, 1, '°C') };
+  if (diff >= 2) return { label: '较近5年偏热', detail: fmtSigned(diff, 1, '°C') };
+  if (diff >= 1) return { label: '较近5年略热', detail: fmtSigned(diff, 1, '°C') };
+  return { label: '接近近5年', detail: fmtSigned(diff, 1, '°C') };
+}
+
+function weatherRecent5Tag(row, metric = state.weatherMetric) {
+  if (!row) return null;
+  const window = recent5DisplayWindow();
+  if (metric === 'rain') {
+    const tag = recent5RainTag(recent5Metric(row, 'precip', window, 'mm', `precip_${window}d_actual`));
+    return tag ? { ...tag, kind: 'recent5' } : null;
+  }
+  if (metric === 'temp') {
+    const tag = recent5TempTag(recent5Metric(row, 'tmax', window, 'c', `tmax_${window}d_c`));
+    return tag ? { ...tag, kind: 'recent5' } : null;
+  }
+  return null;
+}
+
+function weatherTagItems(row, metric = state.weatherMetric) {
+  if (!row) return [];
+  const tags = [];
+  const metricValue = weatherMetricValue(row, metric);
+  const category = weatherMetricCategoryLabel(row, metric);
+  if (isNum(metricValue.value)) tags.push({ label: category, kind: 'primary' });
+  const recent = weatherRecent5Tag(row, metric);
+  if (recent) tags.push(recent);
+  return tags;
+}
+
+function renderWeatherTagStrip(row, metric = state.weatherMetric) {
+  const tags = weatherTagItems(row, metric);
+  if (!tags.length) return '';
+  return `<div class="weather-tag-strip">${tags.map(tag => `<span class="weather-tag ${escAttr(tag.kind || '')}" title="${escAttr(tag.detail || '')}">${esc(tag.label)}</span>`).join('')}</div>`;
+}
+
+function productionWeatherMiniTag(row) {
+  const recent = weatherRecent5Tag(row);
+  if (recent) return recent.label;
+  const metricValue = weatherMetricValue(row);
+  return isNum(metricValue.value) ? weatherMetricCategoryLabel(row) : '';
 }
 
 function growthSensitivityText(record) {
@@ -2415,9 +2479,11 @@ function productionWeatherValue(row) {
 
 function productionWeatherLabelHtml(row) {
   const value = productionWeatherValue(row);
+  const tag = productionWeatherMiniTag(row);
   return `
     <div class="production-label">
       <span class="value">${esc(value)}</span>
+      ${tag ? `<span class="weather-mini-tag">${esc(tag)}</span>` : ''}
     </div>
   `;
 }
@@ -2441,12 +2507,14 @@ function productionWeatherTooltip(row) {
   const production = fmtProduction(row.production_tonnes);
   const weatherSummary = row.weather_condition_summary_cn || '';
   const soilSummary = row.soil_condition_summary_cn || row.soil_status_cn || '';
+  const tags = renderWeatherTagStrip(row);
   return `
     <div style="min-width:230px;font-size:12px;line-height:1.45;">
       <b>${esc(country)}｜${esc(shortRegionName(row))}</b>
       <div style="margin-top:4px;color:var(--muted);">品种：${esc(cropLabel(row))}</div>
       <div>产量：${esc(production)}｜产量占比：${esc(share)}</div>
       <div>${esc(weatherMetricMeta().title)}：<b>${esc(category)}</b>（${esc(metric.label)}）</div>
+      ${tags}
       ${weatherSummary ? `<div style="margin-top:3px;color:var(--muted);">${esc(weatherSummary)}</div>` : ''}
       ${soilSummary && state.weatherMetric !== 'soil' ? `<div style="color:var(--muted);">${esc(soilSummary)}</div>` : ''}
     </div>
