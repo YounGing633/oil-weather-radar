@@ -1,6 +1,6 @@
 [
   {
-    "generated_at": "2026-07-09 09:48:03",
+    "generated_at": "2026-07-10 10:28:28",
     "version": "v1.0-i1",
     "baseline_period": "1991-2020",
     "baseline_method": "monthly_normal + doy_pentad (v1.0-i1)",
@@ -40,14 +40,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 152,
-    "run_id": "daily_export_20260709_094802",
-    "site_version": "20260708-baselinefix2",
-    "indicator_version": "2.2-baselinefix2",
-    "risk_rule_version": "2.2-baselinefix2",
-    "climate_baseline": "1991-2020",
-    "data_valid_date": "2026-07-04",
-    "updated_at": "2026-07-09T02:40:44Z",
-    "baselinefix_note": "rainfall/temp/forecast normals fixed; recent-5 available-year reference strip added; soil historical percentile disabled until i5f/i5e complete"
+    "total_alerts": 120,
+    "run_id": "daily_export_20260710_102827"
   }
 ]

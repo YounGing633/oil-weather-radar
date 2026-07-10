@@ -1,14 +1,14 @@
 const DATA_DIR = './data/';
 const CONFIG_DIR = './assets/configs/';
-const UI_VERSION = 'v2.10-prodweather10';
+const UI_VERSION = 'v2.10-prodweather9';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
   4: { code: 'severe', cn: '显著压力', color: '#d73027' },
-  3: { code: 'pressure', cn: '重点压力', color: '#fc8d59' },
+  3: { code: 'pressure', cn: '重点跟踪', color: '#fc8d59' },
   2: { code: 'watch', cn: '一般关注', color: '#fee08b' },
   1: { code: 'mild', cn: '轻度异常', color: '#d9ef8b' },
-  0: { code: 'normal', cn: '正常监控', color: '#1a9850' }
+  0: { code: 'normal', cn: '正常', color: '#1a9850' }
 };
 
 const RISK_CODE_TO_NUM = {
@@ -19,7 +19,30 @@ const RISK_CODE_TO_NUM = {
   watch: 2,
   mild: 1,
   normal: 0,
-  low: 0
+  low: 0,
+  normal_monitor: 0,
+  regular_monitor: 0,
+  insufficient_data: 0
+};
+
+const TRADE_VIEW_LABELS = {
+  all: '全部',
+  drought_pressure: '干旱压力',
+  wet_pressure: '湿涝压力',
+  hot_dry: '高温干燥',
+  cold_frost: '低温/霜冻',
+  recovery_rain: '恢复性降雨',
+  future_worsen: '未来转差',
+  future_repair: '未来修复'
+};
+
+const RISK_CHANGE_LABELS = {
+  up: '风险上升↑',
+  down: '风险下降↓',
+  steady: '维持→',
+  future_repair: '未来修复',
+  future_worsen: '未来转差',
+  new: '风险上升↑'
 };
 
 const CROP_META = {
@@ -51,7 +74,7 @@ const WEATHER_COLOR_STOPS = [
 
 const WEATHER_METRICS = {
   rain: {
-    title: '降雨湿涝',
+    title: '降雨',
     note: '颜色按近30天降雨相对常年百分比，兼顾油籽缺雨和过湿作业风险。',
     gradient: {
       from: WEATHER_PALETTE.dryHot,
@@ -61,7 +84,7 @@ const WEATHER_METRICS = {
     }
   },
   temp: {
-    title: '温度胁迫',
+    title: '温度',
     note: '颜色按近30天最高温距平，突出低温生长迟滞和高温干化压力。',
     gradient: {
       from: WEATHER_PALETTE.wetCold,
@@ -72,7 +95,7 @@ const WEATHER_METRICS = {
     }
   },
   soil: {
-    title: '土壤墒情',
+    title: '根区墒情',
     note: '颜色按根区土壤湿度百分位，干端参考干旱监测常用百分位口径，湿端用于识别过湿/田间作业压力。',
     gradient: {
       from: WEATHER_PALETTE.dryHot,
@@ -82,7 +105,7 @@ const WEATHER_METRICS = {
     }
   },
   forecast: {
-    title: '7天距平',
+    title: '7天',
     note: '颜色按未来7天降雨距平（vs常年同期），偏干偏湿一目了然。',
     gradient: {
       from: WEATHER_PALETTE.dryHot,
@@ -92,7 +115,7 @@ const WEATHER_METRICS = {
     }
   },
   forecast14: {
-    title: '14天距平',
+    title: '14天',
     note: '颜色按未来16天降雨距平（vs常年同期），中期趋势判断。',
     gradient: {
       from: WEATHER_PALETTE.dryHot,
@@ -122,16 +145,26 @@ const WEATHER_METRICS = {
       lowLabel: '湿润',
       highLabel: '干燥'
     }
+  },
+  recent30: {
+    title: '30天',
+    note: '颜色按近30天降雨相对常年百分比，用于判断近期水分压力背景。',
+    gradient: {
+      from: WEATHER_PALETTE.dryHot,
+      to: WEATHER_PALETTE.wetCold,
+      lowLabel: '偏干',
+      highLabel: '偏湿'
+    }
   }
 };
 
 const RISK_LEGEND_HTML = `
-  <div class="legend-title">风险 v3</div>
+  <div class="legend-title">risk_label_v4</div>
   <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-severe)"></span>显著压力</div>
-  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-pressure)"></span>重点压力</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-pressure)"></span>重点跟踪</div>
   <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-watch)"></span>一般关注</div>
   <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-mild)"></span>轻度异常</div>
-  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-normal)"></span>正常监控</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-normal)"></span>正常</div>
 `;
 
 const RISK_TYPE_CN = {
@@ -481,9 +514,17 @@ function riskInfo(value) {
   return RISK[n] || RISK[0];
 }
 
+function normalizeRiskText(value) {
+  return String(safeValue(value, ''))
+    .replace(/重点压力/g, '重点跟踪')
+    .replace(/正常监控/g, '正常')
+    .replace(/正常监测/g, '正常')
+    .replace(/常规监测/g, '正常');
+}
+
 function riskBadge(value, text) {
   const info = riskInfo(value);
-  return `<span class="badge" style="background:${info.color}">${esc(text || info.cn)}</span>`;
+  return `<span class="badge" style="background:${info.color}">${esc(normalizeRiskText(text || info.cn))}</span>`;
 }
 
 function riskColor(value) {
@@ -496,6 +537,164 @@ function riskText(value) {
 
 function riskTypeText(value) {
   return RISK_TYPE_CN[value] || fmtDash(value);
+}
+
+function getEntryParam() {
+  try {
+    const params = new URLSearchParams(window.location.search || '');
+    return params.get('v') || params.get('version') || '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function formatMetaDate(value) {
+  const text = fmtDash(value);
+  if (text === '—') return '—';
+  return text.includes('T') ? text.slice(0, 10) : text.slice(0, 10);
+}
+
+function formatMetaDateTime(value) {
+  const text = fmtDash(value);
+  if (text === '—') return '—';
+  return text.replace('T', ' ').replace(/Z$/, ' UTC').slice(0, 19);
+}
+
+function levelTextFromNum(value) {
+  return riskText(riskNum(value));
+}
+
+function riskLevelForRecord(record, options = {}) {
+  if (!record) return 0;
+  if (options.isCountry || record.weighted_risk_level !== undefined || record.weighted_risk_score !== undefined) {
+    return riskNumFromCountry(record);
+  }
+  return riskNum(record.risk_level_v3 ?? record.dominant_risk_level ?? record.risk_level);
+}
+
+function historyRiskNum(point) {
+  if (!point) return null;
+  const direct = point.risk_level_v3 ?? point.risk_level ?? point.weighted_risk_level ?? point.anomaly_level;
+  if (direct !== undefined && direct !== null && direct !== '') return riskNum(direct);
+  const label = String(point.anomaly_label || '').toLowerCase();
+  if (/severe|extreme|显著|严重/.test(label)) return 4;
+  if (/pressure|stress|重点/.test(label)) return 3;
+  if (/watch|mild|dry|wet|hot|cold|关注|异常/.test(label)) return 2;
+  return null;
+}
+
+function previousRiskLevel(record) {
+  if (!record) return null;
+  const directKeys = [
+    'previous_risk_level',
+    'previous_risk_level_v3',
+    'prev_risk_level',
+    'prev_risk_level_v3',
+    'last_risk_level',
+    'yesterday_risk_level'
+  ];
+  for (const key of directKeys) {
+    if (record[key] !== undefined && record[key] !== null && record[key] !== '') return riskNum(record[key]);
+  }
+  if (record.weather_region_id && store.regionHistoryIndex) {
+    const series = store.regionHistoryIndex.get(String(record.weather_region_id)) || [];
+    for (let i = series.length - 2; i >= 0; i -= 1) {
+      const level = historyRiskNum(series[i]);
+      if (level !== null) return level;
+    }
+  }
+  return null;
+}
+
+function isDryRisk(record) {
+  const text = [
+    record && record.risk_type,
+    record && record.dominant_risk_type,
+    record && record.risk_label_v4_cn,
+    record && record.dominant_map_badge_cn,
+    record && record.risk_reason_cn,
+    record && record.dominant_risk_reason_cn
+  ].filter(Boolean).join(' ').toLowerCase();
+  return /drought|dry|deficit|heat_dry|rain_deficit|少雨|偏少|缺雨|干旱|偏干|高温干/.test(text);
+}
+
+function isWetRisk(record) {
+  const text = [
+    record && record.risk_type,
+    record && record.dominant_risk_type,
+    record && record.risk_label_v4_cn,
+    record && record.dominant_map_badge_cn,
+    record && record.risk_reason_cn,
+    record && record.dominant_risk_reason_cn
+  ].filter(Boolean).join(' ').toLowerCase();
+  return /wet|waterlog|excess|heavy_rain|rain_disruption|偏湿|湿涝|偏多|强降雨|渍涝|作业/.test(text);
+}
+
+function forecastDirection(record) {
+  if (!record) return '';
+  const explicit = [
+    record.forecast_recovery_signal,
+    record.forecast_signal,
+    record.risk_change,
+    record.risk_change_cn,
+    record.forecast_summary_cn
+  ].filter(Boolean).join(' ').toLowerCase();
+  if (/repair|relief|easing|recovery|修复|缓和|改善/.test(explicit)) return 'future_repair';
+  if (/worsen|deterior|no_relief|turn_bad|转差|恶化|加重/.test(explicit)) return 'future_worsen';
+  const forecast7 = firstNumeric(record, ['forecast_7d_precip', 'forecast_rainfall_7d', 'forecast_7d', 'rain_forecast_7d']);
+  const normal7 = firstNumeric(record, ['forecast_precip_7d_normal_mm']);
+  if (!isNum(forecast7) || !isNum(normal7) || Number(normal7) <= 0.5) return '';
+  const ratio = Number(forecast7) / Number(normal7);
+  if (isDryRisk(record)) {
+    if (ratio >= 0.8) return 'future_repair';
+    if (ratio < 0.4) return 'future_worsen';
+  }
+  if (isWetRisk(record)) {
+    if (ratio < 0.7) return 'future_repair';
+    if (ratio > 1.5) return 'future_worsen';
+  }
+  return '';
+}
+
+function riskChangeInfo(record, options = {}) {
+  const current = riskLevelForRecord(record, options);
+  const explicit = String(record && (record.risk_change || record.risk_change_cn || record.risk_change_code || record.change_direction || '') || '').toLowerCase();
+  let code = '';
+  if (/future.*repair|repair|relief|recovery|修复|缓和/.test(explicit)) code = 'future_repair';
+  else if (/future.*worsen|worsen|up|increase|rise|转差|上升|恶化/.test(explicit)) code = explicit.includes('future') || /转差|恶化/.test(explicit) ? 'future_worsen' : 'up';
+  else if (/down|decrease|fall|下降/.test(explicit)) code = 'down';
+  else if (/steady|maintain|flat|维持/.test(explicit)) code = 'steady';
+
+  const previous = previousRiskLevel(record);
+  if (!code && previous !== null) {
+    if (current > previous) code = previous <= 1 && current >= 2 ? 'new' : 'up';
+    else if (current < previous) code = 'down';
+    else code = 'steady';
+  }
+  if (!code) code = forecastDirection(record) || 'steady';
+  return {
+    code,
+    label: RISK_CHANGE_LABELS[code] || RISK_CHANGE_LABELS.steady,
+    previous,
+    current,
+    previousText: previous === null ? '上期缺少可比等级' : levelTextFromNum(previous),
+    currentText: levelTextFromNum(current)
+  };
+}
+
+function riskChangeBadge(record, options = {}) {
+  const info = riskChangeInfo(record, options);
+  return `<span class="change-badge change-${escAttr(info.code)}">${esc(info.label)}</span>`;
+}
+
+function tradeImplication(record, options = {}) {
+  const level = riskLevelForRecord(record, options);
+  const change = riskChangeInfo(record, options).code;
+  if (change === 'future_repair' || change === 'down') return '短期修复';
+  if (level >= 4) return '预期扰动 / 需跟踪产量数据验证';
+  if (level >= 3) return '需跟踪产量数据验证';
+  if (change === 'future_worsen' || change === 'up' || change === 'new') return '预期扰动';
+  return '暂无明显供应影响';
 }
 
 function tagRiskNum(tag) {
@@ -535,20 +734,20 @@ function primaryAdverseTag(record) {
 function formatRiskLabel(record) {
   if (!record) return RISK[0].cn;
   const levelNum = riskNum(record.risk_level_v3);
-  const levelText = record.weighted_risk_level_cn
+  const levelText = normalizeRiskText(record.weighted_risk_level_cn
     || record.risk_level_v3_cn
-    || riskText(record.weighted_risk_level ?? record.risk_level_v3);
+    || riskText(record.weighted_risk_level ?? record.risk_level_v3));
   const adverseTag = primaryAdverseTag(record);
-  if (adverseTag && levelNum >= 2 && (adverseTag.risk_label_cn || adverseTag.label_cn)) return adverseTag.risk_label_cn || adverseTag.label_cn;
+  if (adverseTag && levelNum >= 2 && (adverseTag.risk_label_cn || adverseTag.label_cn)) return normalizeRiskText(adverseTag.risk_label_cn || adverseTag.label_cn);
   if (levelNum >= 2 && (record.risk_label_v4_cn || record.dominant_map_badge_cn)) {
-    return record.risk_label_v4_cn || record.dominant_map_badge_cn;
+    return normalizeRiskText(record.risk_label_v4_cn || record.dominant_map_badge_cn);
   }
   const type = levelNum >= 2 ? (record.dominant_risk_type || record.risk_type) : record.risk_type;
   if (type && type !== 'no_clear_pressure') return `${levelText}｜${riskTypeText(type)}`;
-  return record.dominant_country_badge_cn
+  return normalizeRiskText(record.dominant_country_badge_cn
     || record.weighted_risk_level_cn
     || record.risk_level_v3_cn
-    || levelText;
+    || levelText);
 }
 
 function formatDataStatus(dataStatus, record = null) {
@@ -561,7 +760,7 @@ function formatDataStatus(dataStatus, record = null) {
 }
 
 function formatPublicText(value) {
-  return String(safeValue(value, ''))
+  return normalizeRiskText(String(safeValue(value, ''))
     .replace(/national\s*proxy/gi, '国家代表口径')
     .replace(/virtual\s*country/gi, '汇总单元')
     .replace(/admin1\s*polygon/gi, '地区边界')
@@ -569,11 +768,11 @@ function formatPublicText(value) {
     .replace(/low\s*sample/gi, '有限样本')
     .replace(/real_active/gi, '数据充足')
     .replace(/sample/gi, '建设中数据')
-    .replace(/proxy/gi, '代表口径');
+    .replace(/proxy/gi, '代表口径'));
 }
 
 function formatAnomalyType(record) {
-  if (!record) return '常规监控';
+  if (!record) return '正常';
   if (record.anomaly_label || record.anomaly_type) return record.anomaly_label || riskTypeText(record.anomaly_type);
   const moisture = moistureState(record);
   if (record.risk_type === 'mixed_signal_monitor') return '降雨/土壤/预报信号分化';
@@ -620,13 +819,44 @@ async function loadJSON(name, fallback = null) {
   } catch (error) {
     console.error(`Data load failed: ${name}`, error);
     if (fallback !== null) {
-      store.loadErrors.push(`${name}: ${error.message}`);
+      store.loadErrors.push(`${name} 未读取成功`);
       return fallback;
     }
     throw error;
   } finally {
     console.timeEnd(timer);
   }
+}
+
+function loadErrorMessage() {
+  if (!store.loadErrors.length) return '';
+  return `数据加载失败：${store.loadErrors.join('；')}｜点击重试｜查看控制台`;
+}
+
+function loadErrorCardHtml() {
+  const message = loadErrorMessage();
+  if (!message) return '';
+  return `<button type="button" class="data-error-card" data-retry-load="1">${esc(message)}</button>`;
+}
+
+function renderLoadErrorState() {
+  const html = loadErrorCardHtml();
+  if (!html) return false;
+  const riskList = document.getElementById('summary-risk-list');
+  const focusList = document.getElementById('today-focus-list');
+  const productionShare = document.getElementById('summary-production-share');
+  const productionNote = document.getElementById('summary-production-note');
+  const anomalyTypes = document.getElementById('summary-anomaly-types');
+  const forecastChange = document.getElementById('summary-forecast-change');
+  const forecastNote = document.getElementById('summary-forecast-note');
+  if (riskList) riskList.innerHTML = html;
+  if (focusList) focusList.innerHTML = `<div class="today-focus-item">${html}</div>`;
+  if (productionShare) productionShare.textContent = '暂无';
+  if (productionNote) productionNote.textContent = '数据加载失败';
+  if (anomalyTypes) anomalyTypes.textContent = '暂无显著风险';
+  if (forecastChange) forecastChange.textContent = '暂无预报信号';
+  if (forecastNote) forecastNote.textContent = '数据加载失败';
+  return true;
 }
 
 function initMap() {
@@ -774,12 +1004,45 @@ function enhanceBoundaryCoverage(coverageRows, manifestRows) {
   return [...byCountry.values()];
 }
 
-function matchesRiskFilter(value) {
-  const level = riskNum(value);
-  if (state.risk === 'gte3') return level >= 3;
-  if (state.risk === 'gte4') return level >= 4;
-  if (state.risk === 'lte2') return level <= 2;
+function tradeFilterText(record) {
+  return [
+    record && record.risk_type,
+    record && record.dominant_risk_type,
+    record && record.risk_label_v4_cn,
+    record && record.dominant_map_badge_cn,
+    record && record.risk_reason_cn,
+    record && record.dominant_risk_reason_cn,
+    record && record.weather_condition_summary_cn,
+    record && record.forecast_summary_cn,
+    formatAnomalyType(record)
+  ].filter(Boolean).join(' ').toLowerCase();
+}
+
+function matchesTradeViewRecord(record) {
+  if (!record || state.risk === 'all') return true;
+  const text = tradeFilterText(record);
+  const change = riskChangeInfo(record).code;
+  if (state.risk === 'drought_pressure') return isDryRisk(record) || /干旱|缺雨|少雨|偏干|水分压力|rain_deficit|drought|dry/.test(text);
+  if (state.risk === 'wet_pressure') return isWetRisk(record) || /湿涝|偏湿|偏多|强降雨|渍涝|wet|waterlog|heavy_rain/.test(text);
+  if (state.risk === 'hot_dry') return /高温|干热|干化|heat|hot|drydown|vpd|et0/.test(text)
+    || (isNum(record.temp_max_anomaly_c) && Number(record.temp_max_anomaly_c) >= 2);
+  if (state.risk === 'cold_frost') return /低温|霜冻|偏冷|cold|frost/.test(text)
+    || (isNum(record.temp_max_anomaly_c) && Number(record.temp_max_anomaly_c) <= -2);
+  if (state.risk === 'recovery_rain') return change === 'future_repair' || /恢复性降雨|补水|修复|缓和|relief|recovery|easing/.test(text);
+  if (state.risk === 'future_worsen') return change === 'future_worsen';
+  if (state.risk === 'future_repair') return change === 'future_repair';
   return true;
+}
+
+function matchesRiskFilter(record, records = null) {
+  if (['gte3', 'gte4', 'lte2'].includes(state.risk)) {
+    const level = riskNum(record);
+    if (state.risk === 'gte3') return level >= 3;
+    if (state.risk === 'gte4') return level >= 4;
+    if (state.risk === 'lte2') return level <= 2;
+  }
+  const rows = Array.isArray(records) && records.length ? records : [record];
+  return rows.some(matchesTradeViewRecord);
 }
 
 function countryHasSampleProgress(countryKey, crop) {
@@ -903,7 +1166,7 @@ function getCountryModels() {
   byCountry.forEach((records, key) => {
     const top = chooseCountryRecord(records);
     if (!top) return;
-    if (!matchesRiskFilter(riskNumFromCountry(top))) return;
+    if (!matchesRiskFilter(top, records)) return;
     if (state.anomaly !== 'all' && !records.some(row => row.dominant_risk_type === state.anomaly)) return;
     const model = { key, top, records, isEu: false };
     if (!matchesDataStatus(model)) return;
@@ -914,7 +1177,7 @@ function getCountryModels() {
   if (euAggregates.length && (state.country === 'all' || state.country === 'European Union')) {
     const top = chooseCountryRecord(euAggregates);
     if (top) {
-      const riskOk = matchesRiskFilter(riskNumFromCountry(top));
+      const riskOk = matchesRiskFilter(top, euAggregates);
       const anomalyOk = state.anomaly === 'all' || euAggregates.some(row => row.dominant_risk_type === state.anomaly);
       const model = { key: 'European Union', top, records: euAggregates, isEu: true };
       if (riskOk && anomalyOk && matchesDataStatus(model)) models.push(model);
@@ -937,8 +1200,9 @@ function createCountryTooltip(model) {
     .sort((a, b) => riskNumFromCountry(b) - riskNumFromCountry(a))
     .map(row => `
       <div style="margin:3px 0;">
-        <b>${esc(cropLabel(row))}</b> ${riskBadge(riskNumFromCountry(row), row.weighted_risk_level_cn)}
+        <b>${esc(cropLabel(row))}</b> ${riskBadge(riskNumFromCountry(row), formatRiskLabel(row))} ${riskChangeBadge(row, { isCountry: true })}
         <span style="color:#8b95a3;margin-left:4px;">${esc(fmtProduction(row.total_production_tonnes))}</span>
+        <div style="color:#8b95a3;">上期 ${esc(riskChangeInfo(row, { isCountry: true }).previousText)} → 当前 ${esc(riskChangeInfo(row, { isCountry: true }).currentText)}</div>
       </div>
     `).join('');
   return `
@@ -952,23 +1216,12 @@ function createCountryTooltip(model) {
 function buildMapLabel(record, zoom, layerType = 'country') {
   const currentZoom = Number(zoom) || 3;
   const isRegion = layerType === 'region';
-  const name = isRegion && currentZoom >= 5
-    ? shortRegionName(record)
-    : (record.country_cn || record.country);
+  const name = isRegion ? shortRegionName(record) : (record.country_cn || record.country);
   const crop = CROP_META[record.crop_group] ? CROP_META[record.crop_group].tab : cropLabel(record);
-  const riskLabel = formatRiskLabel(record);
-  const productionShare = firstNumeric(record, ['national_share', 'production_share', 'global_share']);
-  let detail = riskLabel;
-
-  if (isRegion && currentZoom >= 6) {
-    detail = `${crop}｜${formatAnomalyType(record)}`;
-  } else if (isRegion && currentZoom >= 5) {
-    detail = isNum(record.national_share) ? `${crop}｜全国占比 ${fmtPct(record.national_share, 0)}` : `${crop}｜${riskLabel}`;
-  } else if (!isRegion && currentZoom >= 4 && currentZoom < 6) {
-    detail = isNum(productionShare) ? `${crop}｜${fmtPct(productionShare, 0)}产量占比` : `${crop}｜${riskLabel}`;
-  } else if (!isRegion && currentZoom >= 6) {
-    detail = `${crop}｜${riskLabel}`;
-  }
+  const riskLabel = normalizeRiskText(formatRiskLabel(record));
+  const detail = isRegion
+    ? `${isNum(record.national_share) ? `国内占比 ${fmtPct(record.national_share, currentZoom >= 6 ? 1 : 0)}` : crop}｜${formatAnomalyType(record)}`
+    : `${crop}｜全球占比 ${fmtPct(globalProductionShare(record), currentZoom >= 5 ? 1 : 0)}｜${riskLabel}`;
 
   return `
     <div class="map-label" style="--oil-color:${cropColor(record.crop_group)}">
@@ -1115,11 +1368,12 @@ function countryCentroid(countryKey) {
 
 function shouldShowCountryLabel(model, zoom) {
   const production = Number(model.top.total_production_tonnes) || 0;
-  if (zoom <= 2) return production > 10000000;
-  if (zoom <= 3) return production > 3000000;
-  if (zoom <= 4) return production > 800000;
-  if (zoom <= 5) return production > 150000;
-  return production > 50000;
+  const share = globalProductionShare(model.top);
+  if (zoom <= 2) return share >= 0.08 || production > 10000000;
+  if (zoom <= 3) return share >= 0.035 || production > 3000000;
+  if (zoom <= 4) return share >= 0.015 || production > 1200000;
+  if (zoom <= 5) return share >= 0.006 || production > 500000;
+  return share >= 0.003 || production > 250000;
 }
 
 function refreshCountryLabels() {
@@ -1891,6 +2145,112 @@ function renderRiskJudgementBlock(record, options = {}) {
   return `<div class="detail-block"><h3>风险判断：${esc(formatRiskLabel(record))}</h3><div style="margin-bottom:8px;">${riskBadge(riskValue, formatRiskLabel(record))}</div><div class="data-grid cols-3">${cells.join('')}</div>${pressureHtml}</div>`;
 }
 
+function detailHtmlCell(label, html) {
+  if (!html) return '';
+  return `<div class="data-cell"><span class="lbl">${esc(label)}</span><span class="val">${html}</span></div>`;
+}
+
+function detailPlaceName(record, options = {}) {
+  return options.isCountry
+    ? (options.countryName || record.country_cn || record.country)
+    : (options.regionName || shortRegionName(record));
+}
+
+function currentConclusionText(record, options = {}) {
+  const place = detailPlaceName(record, options);
+  const crop = cropDisplayName(record);
+  const label = formatRiskLabel(record);
+  const level = riskLevelForRecord(record, options);
+  const change = riskChangeInfo(record, options);
+  if (options.conclusion) return options.conclusion;
+  if (level >= 4) return `${place}${crop}处于${label}，属于显著压力暴露；结论仅指向预期扰动，仍需跟踪产量数据验证。`;
+  if (level >= 3) return `${place}${crop}处于${label}，建议重点跟踪水分、温度和作业窗口变化。`;
+  if (change.code === 'future_repair') return `${place}${crop}当前压力有短期修复信号，仍需观察后续降雨是否兑现。`;
+  if (level >= 2) return `${place}${crop}处于一般关注，暂不外推为明确供应影响。`;
+  return `${place}${crop}当前为正常状态，暂无明显供应影响。`;
+}
+
+function renderCurrentConclusionSection(record, options = {}) {
+  const level = riskLevelForRecord(record, options);
+  return `<div class="detail-block">
+    <h3>当前结论</h3>
+    <div class="conclusion-line">
+      <p>${esc(currentConclusionText(record, options))}</p>
+      <div class="status-badges">${riskBadge(level, formatRiskLabel(record))}${riskChangeBadge(record, options)}</div>
+    </div>
+  </div>`;
+}
+
+function renderEvidenceSection(record, options = {}) {
+  const row = options.weatherRecord || record;
+  const facts = [
+    isNum(row && row.precip_30d_actual) ? detailCell('30天降雨', isNum(row.precip_30d_normal) ? `${fmtNum(row.precip_30d_actual, 0, ' mm')} / 常年 ${fmtNum(row.precip_30d_normal, 0, ' mm')}` : fmtNum(row.precip_30d_actual, 0, ' mm')) : '',
+    isNum(row && row.precip_30d_anomaly_mm) ? detailCell('降雨距平', fmtSigned(row.precip_30d_anomaly_mm, 0, ' mm')) : '',
+    isNum(row && row.temp_max_anomaly_c) ? detailCell('最高温距平', fmtSigned(row.temp_max_anomaly_c, 1, '℃')) : '',
+    soilRootPercentile(row) !== null ? detailCell('根区墒情', `P${Math.round(soilRootPercentile(row))}`) : '',
+    row && row.soil_condition_summary_cn ? detailCell('土壤说明', formatPublicText(row.soil_condition_summary_cn)) : '',
+    detailCell('异常类型', formatAnomalyType(record))
+  ].filter(Boolean);
+  const pressure = buildPressureItems(record, row).slice(0, 2);
+  const evidenceText = row && (row.risk_evidence_cn || row.risk_reason_cn || row.weather_condition_summary_cn || evidenceSnapshot(row));
+  const regionList = options.topRegions && options.topRegions.length
+    ? `<div class="region-list compact">${options.topRegions.slice(0, 6).map(regionRowButton).join('')}</div>`
+    : '';
+  return `<div class="detail-block">
+    <h3>证据</h3>
+    ${facts.length ? `<div class="data-grid cols-3">${facts.join('')}</div>` : '<p>暂无可展示证据。</p>'}
+    ${pressure.length ? `<div class="pressure-list"><b>关键判断：</b><ol>${pressure.map(item => `<li>${esc(item)}</li>`).join('')}</ol></div>` : ''}
+    ${evidenceText ? `<p>${esc(formatPublicText(evidenceText))}</p>` : ''}
+    ${regionList}
+    ${row ? renderRecent5BottomBar(row) : ''}
+  </div>`;
+}
+
+function renderProductionWeightSection(record, options = {}) {
+  const isCountry = !!options.isCountry;
+  const production = options.production ?? record.production_tonnes ?? record.total_production_tonnes;
+  const cells = [
+    isNum(production) ? detailCell(isCountry ? '产量权重口径' : '地区产量', fmtProduction(production)) : '',
+    isCountry ? detailCell('全球产量占比', fmtPct(globalProductionShare(record), 1)) : '',
+    !isCountry && isNum(record.national_share) ? detailCell('国内产量占比', fmtPct(record.national_share, 1)) : '',
+    isNum(record.region_count) ? detailCell('覆盖地区数', `${Math.round(Number(record.region_count))}`) : '',
+    detailCell('产量口径', formatPublicText(options.productionBasis || record.production_basis_cn || record.production_basis_note_cn || '当前口径未说明')),
+    detailCell('数据置信度', formatConfidence(record.aggregation_confidence || record.confidence_summary || record.rule_confidence))
+  ].filter(Boolean);
+  return `<div class="detail-block">
+    <h3>产量权重</h3>
+    <div class="data-grid cols-3">${cells.join('')}</div>
+  </div>`;
+}
+
+function renderFuture7dSection(record, options = {}) {
+  const row = options.weatherRecord || record;
+  const change = riskChangeInfo(record, options);
+  const forecast7 = firstNumeric(row, ['forecast_7d_precip', 'forecast_rainfall_7d', 'forecast_7d', 'rain_forecast_7d']);
+  const normal7 = firstNumeric(row, ['forecast_precip_7d_normal_mm']);
+  const anomaly = isNum(forecast7) && isNum(normal7) ? Number(forecast7) - Number(normal7) : null;
+  const cells = [
+    detailHtmlCell('变化方向', riskChangeBadge(record, options)),
+    detailCell('上期/当前', `${change.previousText} → ${change.currentText}`),
+    isNum(forecast7) ? detailCell('未来7天降雨', fmtNum(forecast7, 0, ' mm')) : '',
+    isNum(normal7) ? detailCell('常年同期', fmtNum(normal7, 0, ' mm')) : '',
+    isNum(anomaly) ? detailCell('7天偏离', fmtSigned(anomaly, 0, ' mm')) : ''
+  ].filter(Boolean);
+  return `<div class="detail-block">
+    <h3>未来7天变化</h3>
+    ${cells.length ? `<div class="data-grid cols-3">${cells.join('')}</div>` : '<p>暂无预报信号。</p>'}
+    ${row && row.forecast_summary_cn ? `<p>${esc(formatPublicText(row.forecast_summary_cn))}</p>` : ''}
+  </div>`;
+}
+
+function renderTradeImplicationSection(record, options = {}) {
+  return `<div class="detail-block">
+    <h3>交易含义</h3>
+    <p>${esc(tradeImplication(record, options))}。</p>
+    <p style="color:var(--muted);">该表述仅用于预期扰动跟踪，不等同于产量损失确认。</p>
+  </div>`;
+}
+
 function buildDetailPanel(record, options = {}) {
   const stageRecord = options.stageRecord
     ? { ...options.stageRecord, crop_group: options.stageRecord.crop_group || record.crop_group }
@@ -1903,13 +2263,11 @@ function buildDetailPanel(record, options = {}) {
         <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropDisplayName(record))}</span>
       </div>
     </div>
-    ${renderConclusionBlock(options.weatherRecord || record)}
-    ${renderImpactScopeBlock(record, options)}
-    ${renderWeatherFactsBlock(options.weatherRecord || record, options.weatherTitle || '天气事实')}
-    ${renderEvidenceBlock(options.weatherRecord || record)}
-    ${renderGrowthStageBlock(stageRecord)}
-    ${renderRiskJudgementBlock(record, { isCountry: options.isCountry, evidenceRecord: stageRecord || options.weatherRecord || record })}
-    ${options.extraHtml || ''}
+    ${renderCurrentConclusionSection(record, options)}
+    ${renderEvidenceSection(stageRecord || record, options)}
+    ${renderProductionWeightSection(record, options)}
+    ${renderFuture7dSection(record, options)}
+    ${renderTradeImplicationSection(record, options)}
   `;
 }
 
@@ -1929,13 +2287,6 @@ function showCountryDetail(record) {
     .slice(0, 8);
   const conclusion = countryConclusion(record, topRegions);
   const representative = topRegions[0] || null;
-  const extraHtml = `
-    <div class="detail-block">
-      <h3>重点地区</h3>
-      <div class="region-list">
-        ${topRegions.map(row => regionRowButton(row)).join('') || '<p style="color:var(--muted-2);font-size:12px;">该国家当前无可展示地区记录。</p>'}
-      </div>
-    </div>`;
 
   document.getElementById('detail-panel').innerHTML = buildDetailPanel(record, {
     isCountry: true,
@@ -1947,7 +2298,7 @@ function showCountryDetail(record) {
     weatherRecord: representative,
     weatherTitle: representative ? `天气事实 · ${shortRegionName(representative)}` : '天气事实',
     stageRecord: representative || record,
-    extraHtml
+    topRegions
   });
 }
 
@@ -1976,9 +2327,9 @@ function regionRowButton(row) {
     <button type="button" class="region-row" data-region-id="${escAttr(row.weather_region_id)}">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
         <b style="font-size:12.5px;">${esc(shortRegionName(row))}</b>
-        ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
+        ${riskBadge(row.risk_level_v3, formatRiskLabel(row))}
       </div>
-      <div class="subtitle">${esc(cropLabel(row))} ${esc(fmtPct(row.national_share))}</div>
+      <div class="subtitle">${esc(cropLabel(row))} ${esc(fmtPct(row.national_share))} ${riskChangeBadge(row)}</div>
     </button>
   `;
 }
@@ -1992,6 +2343,7 @@ function getRegionRecords(countryKey, crop) {
   let rows = store.adminRecords.filter(row => row.country_key === countryKey && (crop === 'all' || row.crop_group === crop));
   const admin1Rows = rows.filter(row => row.admin_level === 'admin1' || row.admin_level_for_map === 'admin1');
   if (admin1Rows.length) rows = admin1Rows;
+  rows = rows.filter(row => matchesRiskFilter(row));
   return rows.sort((a, b) => (Number(b.national_share) || 0) - (Number(a.national_share) || 0));
 }
 
@@ -2132,10 +2484,18 @@ function renderRegionFallbackMarker(row) {
 
 function regionTooltip(row) {
   const reason = buildPressureItems(row)[0] || row.risk_reason_cn || riskTypeText(row.risk_type);
+  const change = riskChangeInfo(row);
+  const facts = [
+    isNum(row.precip_30d_ratio_pct) ? `30天降雨 ${fmtPct(row.precip_30d_ratio_pct, 0, false)}常年` : '',
+    isNum(soilRootPercentile(row)) ? `根区P${Math.round(soilRootPercentile(row))}` : '',
+    isNum(row.forecast_7d_precip) ? `未来7天 ${fmtNum(row.forecast_7d_precip, 0, ' mm')}` : ''
+  ].filter(Boolean).join('｜');
   return `
-    <div style="min-width:180px;font-size:12px;">
-      <b>${esc(shortRegionName(row))}</b> ${riskBadge(row.risk_level_v3, row.risk_level_v3_cn)}
+    <div style="min-width:220px;font-size:12px;line-height:1.45;">
+      <b>${esc(shortRegionName(row))}</b> ${riskBadge(row.risk_level_v3, formatRiskLabel(row))} ${riskChangeBadge(row)}
       <div style="margin-top:4px;color:var(--muted);">${esc(cropLabel(row))} ${esc(fmtPct(row.national_share))}</div>
+      <div style="color:var(--muted);">上期 ${esc(change.previousText)} → 当前 ${esc(change.currentText)}</div>
+      ${facts ? `<div style="color:var(--muted);">${esc(facts)}</div>` : ''}
       <div style="margin-top:2px;">${esc(reason)}</div>
     </div>
   `;
@@ -2148,16 +2508,16 @@ function refreshRegionLabels(recordsArg) {
   const zoom = map.getZoom();
   records.forEach(row => {
     if (!isNum(row.lat) || !isNum(row.lon)) return;
-    if (!shouldShowProductionWeatherLabel(row, zoom)) return;
+    if (!shouldShowRegionLabel(row, zoom)) return;
     L.tooltip({
       permanent: true,
       direction: 'top',
       offset: [0, -6],
-      className: 'production-map-label',
+      className: 'region-map-label',
       opacity: 1
     })
       .setLatLng([Number(row.lat), Number(row.lon)])
-      .setContent(productionWeatherLabelHtml(row))
+      .setContent(regionLabelHtml(row))
       .addTo(layers.regionLabels);
   });
 }
@@ -2186,7 +2546,7 @@ function weatherMetricMeta() {
 }
 
 function weatherMetricValue(row, metric = state.weatherMetric) {
-  if (metric === 'rain') {
+  if (metric === 'rain' || metric === 'recent30') {
     const ratio = firstNumeric(row, ['precip_30d_ratio_pct', 'rain_30d_ratio_pct']);
     return {
       value: ratio,
@@ -2207,7 +2567,7 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
       const anomaly = ((Number(rain) - normal7) / normal7) * 100;
       return {
         value: anomaly,
-        label: `7天距平 ${anomaly >= 0 ? '+' : ''}${Math.round(anomaly)}%（${fmtNum(rain, 0, 'mm')} / 常年${fmtNum(normal7, 0, 'mm')}）`
+        label: `7天预报 ${anomaly >= 0 ? '+' : ''}${Math.round(anomaly)}%（${fmtNum(rain, 0, 'mm')} / 常年${fmtNum(normal7, 0, 'mm')}）`
       };
     }
     return {
@@ -2222,7 +2582,7 @@ function weatherMetricValue(row, metric = state.weatherMetric) {
       const anomaly = ((Number(rain) - normal14) / normal14) * 100;
       return {
         value: anomaly,
-        label: `14天距平 ${anomaly >= 0 ? '+' : ''}${Math.round(anomaly)}%（${fmtNum(rain, 0, 'mm')} / 常年${fmtNum(normal14, 0, 'mm')}）`
+        label: `14天预报 ${anomaly >= 0 ? '+' : ''}${Math.round(anomaly)}%（${fmtNum(rain, 0, 'mm')} / 常年${fmtNum(normal14, 0, 'mm')}）`
       };
     }
     return {
@@ -2329,7 +2689,7 @@ function weatherMetricPosition(row, metric = state.weatherMetric) {
   if (cfg && cfg.position && cfg.position.method === 'linear') {
     return clamp01((n - cfg.position.min) / (cfg.position.max - cfg.position.min));
   }
-  if (metric === 'rain') return clamp01((n - 40) / 160);
+  if (metric === 'rain' || metric === 'recent30') return clamp01((n - 40) / 160);
   if (metric === 'temp') return clamp01((n + 5) / 10);
   if (metric === 'forecast' || metric === 'forecast14') return clamp01((n + 100) / 200);
   if (metric === 'et0' || metric === 'vpd') return clamp01(n / 100);
@@ -2353,7 +2713,7 @@ function weatherMetricCategoryLabel(row, metric = state.weatherMetric) {
     }
     return cfg.categories[cfg.categories.length - 1].label;
   }
-  if (metric === 'rain') {
+  if (metric === 'rain' || metric === 'recent30') {
     if (n < 50) return '严重缺雨';
     if (n < 75) return '偏干';
     if (n <= 125) return '接近常年';
@@ -2477,6 +2837,17 @@ function productionWeatherValue(row) {
   return fmtProduction(row.production_tonnes);
 }
 
+function globalProductionShare(row) {
+  if (!row) return null;
+  const direct = firstNumeric(row, ['global_share', 'production_share_global']);
+  if (isNum(direct)) return direct;
+  const crop = row.crop_group;
+  const rows = summaryEligibleRecords(store.countryRecords).filter(item => !crop || item.crop_group === crop);
+  const total = rows.reduce((sum, item) => sum + (Number(item.total_production_tonnes) || 0), 0);
+  const value = Number(row.total_production_tonnes ?? row.production_tonnes ?? 0);
+  return total > 0 && value > 0 ? value / total : null;
+}
+
 function productionWeatherLabelHtml(row) {
   const value = productionWeatherValue(row);
   const tag = productionWeatherMiniTag(row);
@@ -2489,14 +2860,7 @@ function productionWeatherLabelHtml(row) {
 }
 
 function countryProductionLabelHtml(model) {
-  const name = model.top.country_cn || getCountryName(model.key);
-  if (state.mapValue === 'share') {
-    const share = firstNumeric(model.top, ['national_share', 'production_share', 'global_share']);
-    const text = isNum(share) ? fmtPct(share, 1) : '—';
-    return `<div class="production-label"><span class="value">${esc(name)}</span><span class="value" style="font-size:10px;font-weight:700;">${esc(text)}</span></div>`;
-  }
-  const text = fmtProduction(model.top.total_production_tonnes);
-  return `<div class="production-label"><span class="value">${esc(name)}</span><span class="value" style="font-size:10px;font-weight:700;">${esc(text)}</span></div>`;
+  return buildMapLabel(model.top, map ? map.getZoom() : 4, 'country');
 }
 
 function productionWeatherTooltip(row) {
@@ -3011,7 +3375,7 @@ function renderRiskTagsBlock(row) {
 function regionConclusion(row) {
   const name = shortRegionName(row);
   const label = formatRiskLabel(row);
-  if (riskNum(row.risk_level_v3) <= 1) return `${name}${cropLabel(row)}当前维持常规监控。`;
+  if (riskNum(row.risk_level_v3) <= 1) return `${name}${cropLabel(row)}当前为正常，暂无明显供应影响。`;
   const stage = row.resolved_growth_stage || row.current_growth_stage_cn || row.growth_stage_code;
   const stageText = ['palm', 'coconut'].includes(String(row.crop_group || '').toLowerCase())
     ? ''
@@ -3797,6 +4161,12 @@ function bindEvents() {
     const record = store.adminById.get(row.dataset.regionId);
     if (record) showRegionDetail(record);
   });
+
+  document.addEventListener('click', event => {
+    const retry = event.target.closest('[data-retry-load]');
+    if (!retry) return;
+    window.location.reload();
+  });
 }
 
 function setLayerButtons() {
@@ -3821,33 +4191,97 @@ function updateOverlay() {
   document.getElementById('ov-fallback').textContent = mapStats.fallback;
   const riskLabel = document.getElementById('ov-risk-label');
   const fallbackLabel = document.getElementById('ov-fallback-label');
-  if (riskLabel) riskLabel.textContent = weatherMode ? '≥10%主产区' : '显著/重点';
+  if (riskLabel) riskLabel.textContent = weatherMode ? '≥10%主产区' : '显著/重点跟踪';
   if (fallbackLabel) fallbackLabel.textContent = weatherMode ? '隐藏小区' : '代表点展示';
   const baseStatus = mapStats.fallback
     ? `<div class="map-notice">${esc(mapStats.note)}</div>`
     : esc(mapStats.note);
   const loadWarning = store.loadErrors.length
-    ? `<div class="map-notice">部分数据暂不可用：${esc(store.loadErrors.join('；'))}</div>`
+    ? `<div class="map-notice error">${loadErrorCardHtml()}</div>`
     : '';
   document.getElementById('map-status').innerHTML = baseStatus + loadWarning;
 }
 
 function bestDataDate() {
-  const metaDates = store.siteMeta.map(row => row && (row.generated_at || row.updated_at || row.date)).filter(Boolean);
+  return latestObservationDate();
+}
+
+function primarySiteMeta() {
+  return store.siteMeta && store.siteMeta.length ? store.siteMeta[0] : {};
+}
+
+function latestObservationDate() {
+  const metaDates = store.siteMeta.map(row => row && (row.data_valid_date || row.weather_baseline_ref_date || row.observation_date || row.latest_observation_date)).filter(Boolean);
   const dates = [
     ...metaDates,
-    ...store.countryRecords.map(row => row.updated_at),
-    ...store.adminRecords.map(row => row.updated_at),
-    ...(store.soilTempIndex ? [...store.soilTempIndex.values()].map(row => row.date || row.created_at) : [])
+    ...store.countryRecords.map(row => row.data_valid_date || row.weather_baseline_ref_date),
+    ...store.adminRecords.map(row => row.data_valid_date || row.weather_baseline_ref_date)
   ].filter(Boolean).sort();
   return dates.length ? String(dates[dates.length - 1]).slice(0, 10) : '-';
 }
 
+function buildUpdatedAt() {
+  const meta = primarySiteMeta();
+  const dates = [
+    meta.generated_at,
+    meta.updated_at,
+    ...store.countryRecords.map(row => row.generated_at || row.updated_at),
+    ...store.adminRecords.map(row => row.generated_at || row.updated_at)
+  ].filter(Boolean).sort();
+  return dates.length ? formatMetaDateTime(dates[dates.length - 1]) : '—';
+}
+
+function forecastDateRange() {
+  const dates = [];
+  store.adminRecords.forEach(row => {
+    (Array.isArray(row.forecast_daily_16d_series) ? row.forecast_daily_16d_series : []).forEach(point => {
+      const date = point && (point.target_date || point.date || point.forecast_date);
+      if (date) dates.push(String(date).slice(0, 10));
+    });
+    if (row.forecast_date) dates.push(String(row.forecast_date).slice(0, 10));
+  });
+  const sorted = [...new Set(dates)].filter(Boolean).sort();
+  if (!sorted.length) return '—';
+  return sorted.length === 1 ? sorted[0] : `${sorted[0]} 至 ${sorted[sorted.length - 1]}`;
+}
+
+function dataCoverageText() {
+  const meta = primarySiteMeta();
+  const active = Number(meta.active_points);
+  const excluded = Number(meta.excluded_faostat_points);
+  if (Number.isFinite(active) && Number.isFinite(excluded)) {
+    return {
+      coverage: `${active.toLocaleString('zh-CN')} / ${(active + excluded).toLocaleString('zh-CN')}`,
+      missing: excluded.toLocaleString('zh-CN')
+    };
+  }
+  const total = store.adminRecords.length;
+  const covered = store.adminRecords.filter(row => isNum(row.lat) && isNum(row.lon) && (isNum(row.precip_30d_actual) || isNum(row.precip_30d_mm))).length;
+  const missing = Math.max(0, total - covered);
+  return {
+    coverage: total ? `${covered.toLocaleString('zh-CN')} / ${total.toLocaleString('zh-CN')}` : '—',
+    missing: total ? missing.toLocaleString('zh-CN') : '—'
+  };
+}
+
 function updateMetaDate() {
   const date = bestDataDate();
-  document.getElementById('meta-date').textContent = date;
-  document.getElementById('meta-version').textContent = UI_VERSION;
-  document.getElementById('meta-rule').textContent = RULE_VERSION;
+  const coverage = dataCoverageText();
+  const entryParam = getEntryParam();
+  const setText = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
+  setText('meta-version', UI_VERSION);
+  setText('meta-entry', entryParam || '—');
+  setText('meta-rule', RULE_VERSION);
+  setText('meta-observation-date', formatMetaDate(date));
+  setText('meta-forecast-range', forecastDateRange());
+  setText('meta-build-time', buildUpdatedAt());
+  setText('meta-coverage', coverage.coverage);
+  setText('meta-missing', coverage.missing);
+  const entryWrap = document.getElementById('meta-entry-wrap');
+  if (entryWrap) entryWrap.style.display = entryParam ? 'inline' : 'none';
   const summaryVersion = document.getElementById('sum-version');
   if (summaryVersion) summaryVersion.textContent = `${RULE_VERSION} · ${UI_VERSION}`;
 }
@@ -3867,7 +4301,7 @@ function buildSummaryCards(records) {
   }).slice(0, 3);
 
   const totalProduction = eligible.reduce((sum, row) => sum + (Number(row.total_production_tonnes) || 0), 0);
-  const highRisk = eligible.filter(row => riskNumFromCountry(row) >= 3);
+  const highRisk = eligible.filter(row => riskNumFromCountry(row) >= 4);
   const affectedProduction = highRisk.reduce((sum, row) => sum + (Number(row.total_production_tonnes) || 0), 0);
 
   const eligibleKeys = new Set(eligible.map(row => `${canonicalCountry(row.country)}::${row.crop_group}`));
@@ -3901,25 +4335,48 @@ function buildSummaryCards(records) {
       steadyWeight += weight;
     }
   });
-  let forecastChange = '待接入';
+  let forecastChange = '暂无预报信号';
   if (forecastRegions.length) {
     forecastChange = '维持';
-    if (reliefWeight > worsenWeight * 1.15) forecastChange = '缓和';
-    else if (worsenWeight > reliefWeight * 1.15) forecastChange = '升温';
+    if (reliefWeight > worsenWeight * 1.15) forecastChange = '未来修复';
+    else if (worsenWeight > reliefWeight * 1.15) forecastChange = '未来转差';
   }
+  const changeRows = eligible.filter(row => riskNumFromCountry(row) >= 2 || riskChangeInfo(row, { isCountry: true }).code !== 'steady');
+  const changeCounts = changeRows.reduce((acc, row) => {
+    const change = riskChangeInfo(row, { isCountry: true }).code;
+    if (change === 'new' || change === 'up' || (riskNumFromCountry(row) >= 2 && previousRiskLevel(row) !== null && previousRiskLevel(row) <= 1)) acc.new += 1;
+    else if (change === 'down' || change === 'future_repair') acc.relief += 1;
+    else acc.steady += 1;
+    return acc;
+  }, { new: 0, relief: 0, steady: 0 });
 
   return {
     topRisks,
     productionShare: totalProduction > 0 && affectedProduction > 0 ? affectedProduction / totalProduction : null,
     productionNote: totalProduction > 0 && affectedProduction > 0
-      ? `重点/显著压力产量 ${fmtProduction(affectedProduction)} / 可量化产量 ${fmtProduction(totalProduction)}`
-      : '暂无可量化产量占比',
+      ? `显著压力覆盖 ${fmtProduction(affectedProduction)} / 可量化产量 ${fmtProduction(totalProduction)}`
+      : '暂无显著风险',
     anomalyTypes,
+    changeCounts,
     forecastChange,
     forecastNote: forecastRegions.length
-      ? `缓和 ${fmtProduction(reliefWeight)} · 升温 ${fmtProduction(worsenWeight)} · 维持 ${fmtProduction(steadyWeight)}`
-      : '待接入预报变化'
+      ? `修复 ${fmtProduction(reliefWeight)} · 转差 ${fmtProduction(worsenWeight)} · 维持 ${fmtProduction(steadyWeight)}`
+      : '暂无预报信号'
   };
+}
+
+function summarySubject(row) {
+  return `${row.country_cn || row.country}${CROP_META[row.crop_group] ? CROP_META[row.crop_group].tab : cropLabel(row)}`;
+}
+
+function buildSummaryHeadline(summary) {
+  if (!summary.topRisks.length) return '今日重点：主产区暂无显著风险，维持常规跟踪。';
+  const parts = summary.topRisks.slice(0, 3).map(row => `${summarySubject(row)}${formatRiskLabel(row).replace(/.*｜/, '')}`);
+  return `今日重点：${parts.join('；')}。`;
+}
+
+function changeCountsText(counts) {
+  return `新增 ${counts.new}｜缓和 ${counts.relief}｜维持 ${counts.steady}`;
 }
 
 function buildTodayFocus(records) {
@@ -3931,22 +4388,27 @@ function buildTodayFocus(records) {
     const subject = `${countryRow.country_cn || countryRow.country}${CROP_META[countryRow.crop_group] ? CROP_META[countryRow.crop_group].tab : cropLabel(countryRow)}`;
     const regionName = region ? shortRegionName(region) : '';
     const fact = region && (buildPressureItems(region)[0] || region.current_operation_impact_cn || region.future_yield_impact_cn || region.weather_condition_summary_cn || region.risk_reason_cn);
+    const implication = tradeImplication(region || countryRow);
     return {
       subject,
-      text: `${regionName ? `${regionName}：` : ''}${formatPublicText(fact || countryRow.dominant_risk_reason_cn || formatRiskLabel(countryRow))}`
+      text: `${regionName ? `${regionName}：` : ''}${formatPublicText(fact || countryRow.dominant_risk_reason_cn || formatRiskLabel(countryRow))} 投研含义：${implication}。`
     };
   });
 }
 
 function renderTodaySummary() {
   const summary = buildSummaryCards(store.countryRecords);
+  if (renderLoadErrorState()) return;
   const riskList = document.getElementById('summary-risk-list');
   riskList.innerHTML = summary.topRisks.length
-    ? summary.topRisks.map(row => `<div class="summary-risk-line"><b>${esc(row.country_cn || row.country)}｜${esc(CROP_META[row.crop_group] ? CROP_META[row.crop_group].tab : cropLabel(row))}</b><span style="color:${riskColor(riskNumFromCountry(row))}">${esc(formatRiskLabel(row))}</span></div>`).join('')
+    ? `<div class="summary-headline">${esc(buildSummaryHeadline(summary))}</div>`
+      + summary.topRisks.map(row => `<div class="summary-risk-line"><b>${esc(row.country_cn || row.country)}｜${esc(CROP_META[row.crop_group] ? CROP_META[row.crop_group].tab : cropLabel(row))}</b><span style="color:${riskColor(riskNumFromCountry(row))}">${esc(formatRiskLabel(row))}</span>${riskChangeBadge(row, { isCountry: true })}</div>`).join('')
     : '<span style="color:var(--muted);font-weight:500;">暂无显著风险</span>';
   document.getElementById('summary-production-share').textContent = summary.productionShare === null ? '暂无' : fmtPct(summary.productionShare, 1);
   document.getElementById('summary-production-note').textContent = summary.productionNote;
-  document.getElementById('summary-anomaly-types').textContent = summary.anomalyTypes.length ? summary.anomalyTypes.join('；') : '暂无显著异常';
+  document.getElementById('summary-anomaly-types').textContent = changeCountsText(summary.changeCounts);
+  const changeNote = document.getElementById('summary-change-note');
+  if (changeNote) changeNote.textContent = summary.anomalyTypes.length ? `主要异常：${summary.anomalyTypes.join('；')}` : '主要异常：暂无显著风险';
   document.getElementById('summary-forecast-change').textContent = summary.forecastChange;
   document.getElementById('summary-forecast-note').textContent = summary.forecastNote;
 
@@ -3954,7 +4416,7 @@ function renderTodaySummary() {
   document.getElementById('today-focus-list').innerHTML = focusItems.length
     ? focusItems.map(item => `<div class="today-focus-item"><b>${esc(item.subject)}：</b>${esc(item.text)}</div>`).join('')
     : '<div class="today-focus-item">当前暂无显著产区天气风险，维持常规监控。</div>';
-  document.getElementById('sum-date').textContent = `数据 ${bestDataDate()}`;
+  document.getElementById('sum-date').textContent = `最新观测日期 ${bestDataDate()}`;
 }
 
 function updateTimeRangeUI() {
@@ -3999,5 +4461,8 @@ async function init() {
 
 init().catch(error => {
   console.error('Init failed:', error);
-  document.getElementById('map-status').innerHTML = `<span style="color:#b91c1c;">数据加载失败：${esc(error.message)}</span>`;
+  const message = String(error && error.message || '初始化失败');
+  if (!store.loadErrors.length) store.loadErrors.push(message.includes('.json') ? `${message} 未读取成功` : `初始化失败：${message}`);
+  renderLoadErrorState();
+  document.getElementById('map-status').innerHTML = loadErrorCardHtml() || `<span style="color:#b91c1c;">${esc(message)}</span>`;
 });
