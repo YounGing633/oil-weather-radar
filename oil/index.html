@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>油脂产区气象与供应风险</title>
+  <link rel="preconnect" href="https://unpkg.com"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./oil.css?v=oil-v1">
+</head>
+<body>
+  <header>
+    <div><a href="../" class="back-link">← 总界面</a><h1 id="pageTitle">油脂产区气象与供应风险</h1><p id="pageSubtitle">Oil Weather &amp; Supply Risk Monitor</p></div>
+    <nav class="system-nav" aria-label="系统导航">
+      <a href="../">总览</a><a href="../?view=climate">海气背景</a><a href="../palm/">棕榈油</a><a data-crop-link="soybean" href="?crop=soybean">豆油</a><a data-crop-link="rapeseed_canola" href="?crop=rapeseed_canola">菜油</a><a data-crop-link="sunflower" href="?crop=sunflower">葵油</a><a data-crop-link="coconut" href="?crop=coconut">椰子油</a>
+    </nav>
+  </header>
+  <section id="status">正在读取专题数据…</section>
+  <main>
+    <section class="summary-strip panel"><div class="summary-heading"><div><h2 id="summaryTitle">供应风险概览</h2><small id="summaryNote">按产量权重统计</small></div><span id="scopeSwitch"></span></div><div class="cards" id="metrics"></div></section>
+    <section class="map-panel">
+      <div class="layer-toolbar"><div><b>专题</b><span id="layerGroups"></span></div><div class="label-controls"><b>地图数字</b><span id="labelControls"><button class="active" data-label="production">产量</button><button data-label="share">产量占比</button><button data-label="off">隐藏</button></span></div></div>
+      <div class="control-row"><span id="viewHint">颜色按国家产量加权的综合天气风险显示；点击国家查看证据。</span></div>
+      <div class="map-layout"><div class="map-wrap"><div id="map"></div><div class="legend" id="legend"></div></div><aside id="detail"><p>正在选择重点国家…</p></aside></div>
+    </section>
+    <section class="method panel"><h2>口径说明</h2><div id="method"></div></section>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="./oil.js?v=oil-v1"></script>
+</body></html>
+
