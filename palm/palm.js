@@ -1,25 +1,113 @@
 (() => {
-const D='../data/',cn={Indonesia:'印度尼西亚',Malaysia:'马来西亚'},groups={risk:['production','share'],rain:['rain','anom','extreme','dry','f7','f8'],heat:[],water:[]},names={production:'产量',share:'产量占比',rain:'30日累计降雨',anom:'30日降雨距平',extreme:'极端降雨',dry:'连续无雨',f7:'未来1—7日',f8:'未来8—15日'};
-const S={group:'rain',layer:'rain',scope:'seasia',labelMode:'major',labelMetric:'production',detailView:'accum',detailBaseline:'1991',rows:[],countries:[],history:{},forecast:{},meta:{},map:null,groups:[],labels:[],selected:null,selectedLayer:null,charts:[]};
-const $=x=>document.getElementById(x),get=async x=>{const r=await fetch(D+x);if(!r.ok)throw Error(x);return r.json()},pct=x=>x==null?'缺测':`${Number(x).toFixed(1)}%`,mm=x=>x==null?'缺测':`${Number(x).toFixed(1)} mm`,esc=x=>String(x??'—').replace(/[&<>]/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[x])),norm=x=>String(x||'').toLowerCase().replace(/[^a-z0-9]/g,'');
-function svgFallback(canvas,cfg){const ds=cfg.data.datasets||[],labels=cfg.data.labels||[],vals=ds.flatMap(d=>d.data||[]).filter(v=>typeof v==='number'&&isFinite(v)),max=Math.max(...vals,1),w=420,h=180,p=22,plot=(d,i)=>{const pts=(d.data||[]).map((v,j)=>v==null?'':`${p+j*(w-p*2)/Math.max(labels.length-1,1)},${h-p-(v/max)*(h-p*2)}`).filter(Boolean).join(' '),c=d.borderColor||d.backgroundColor||['#0e6a26','#bd6b00','#607985'][i%3];return `<polyline points="${pts}" fill="none" stroke="${c}" stroke-width="2"/>`};const dots=(ds[0]?.data||[]).map((v,i)=>typeof v==='number'?`<circle cx="${p+i*(w-p*2)/Math.max(labels.length-1,1)}" cy="${h-p-(v/max)*(h-p*2)}" r="3" fill="#0e6a26"><title>${labels[i]}：${v.toFixed(1)}</title></circle>`:'').join('');canvas.style.display='none';canvas.parentElement.innerHTML=`<svg viewBox="0 0 ${w} ${h}" width="100%" height="100%" role="img" aria-label="降雨走势"><line x1="${p}" y1="${h-p}" x2="${w-p}" y2="${h-p}" stroke="#b8c8c3"/>${ds.map(plot).join('')}${dots}<text x="${p}" y="${h-4}" font-size="10" fill="#647a78">${labels[0]||''}</text><text x="${w-65}" y="${h-4}" font-size="10" fill="#647a78">${labels.at(-1)||''}</text></svg>`;return{destroy(){}}}
-const NativeChart=globalThis.Chart;const Chart=function(canvas,cfg){try{return NativeChart?new NativeChart(canvas,cfg):svgFallback(canvas,cfg)}catch(e){return svgFallback(canvas,cfg)}};
-const value=r=>S.layer==='production'?r.production_tonnes:S.layer==='share'?(S.scope==='seasia'?r.production_share_se_asia:r.production_share_country):S.layer==='rain'?r.rain_30d_mm:S.layer==='anom'?r.rain_30d_ratio_1991_2020:S.layer==='extreme'?r.extreme_rain_days_30d:S.layer==='dry'?r.current_dry_spell_days:S.layer==='f7'?r.forecast_rain_1_7d_mm:r.forecast_rain_8_15d_mm;
-const fname=f=>f.properties.shapeName||f.properties.NAME_1||f.properties.name||f.properties.Name||'';
-function row(c,f){const n=norm(fname(f));return S.rows.find(r=>r.country===c&&(norm(r.weather_region_id).includes(n)||n.includes(norm(r.weather_region_id))||norm(r.region).includes(n)||n.includes(norm(r.region))))}
-function color(r){const x=value(r);if(x==null)return'#cbd5d2';if(S.layer==='rain')return x<=20?'#4c1205':x<=50?'#843500':x<=100?'#e66a00':x<=150?'#f9ba14':x<=200?'#ffeb00':x<=300?'#d5f56a':x<=400?'#a7d88a':x<=500?'#63b64d':'#0e6a26';if(S.layer==='anom')return x<=30?'#5b1803':x<=50?'#bd6b00':x<=84?'#f3bd0f':x<=115?'#fff200':x<=150?'#98cd18':x<=200?'#2c9b34':'#075722';if(S.layer==='production'||S.layer==='share'){const max=Math.max(...S.rows.map(r=>value(r)||0)),q=x/max;return q<.2?'#f1f5f3':q<.4?'#c9e3d5':q<.6?'#85c7ac':q<.8?'#3b9a7b':'#126451'}if(S.layer==='extreme')return x===0?'#eef3e9':x===1?'#f3c786':x===2?'#d6604d':'#8c2d24';if(S.layer==='dry')return x===0?'#edf2df':x<=5?'#d7e58d':x<=10?'#f2cc68':x<=20?'#df9650':x<=30?'#c94736':'#7e210f';return x<=10?'#f3e7ba':x<=30?'#b6d9b8':x<=60?'#75c5ae':x<=100?'#37a48d':'#087d73'}
-function style(r,c){return{color:c==='Indonesia'?'#0b655c':'#455c78',weight:c==='Indonesia'?2.8:2.6,dashArray:c==='Malaysia'?'7 3':null,fillColor:r?color(r):'#dce7e5',fillOpacity:r?.7:.18}}
-function labelText(r){return S.labelMetric==='production'?`${Math.round((r.production_tonnes||0)/10000)}`:`${Math.round((S.scope==='seasia'?r.production_share_se_asia:r.production_share_country)*100)}%`}
-function refreshLabels(){S.labels.forEach(x=>S.map.removeLayer(x));S.labels=[];if(S.labelMode==='off')return;S.groups.forEach(g=>g.eachLayer(l=>{const r=l._row;if(!r)return;const p=S.scope==='seasia'?r.production_share_se_asia:r.production_share_country;if(p==null||p<.01)return;const m=L.marker(l.getBounds().getCenter(),{interactive:false,icon:L.divIcon({className:'metric-label',html:labelText(r),iconSize:[50,20],iconAnchor:[25,10]})}).addTo(S.map);S.labels.push(m)}))}
-function legend(){const title=names[S.layer],items=S.layer==='rain'?[['#4c1205','0–20'],['#843500','20–50'],['#e66a00','50–100'],['#f9ba14','100–150'],['#ffeb00','150–200'],['#d5f56a','200–300'],['#a7d88a','300–400'],['#63b64d','400–500'],['#0e6a26','>500']]:S.layer==='anom'?[['#5b1803','0–30%'],['#bd6b00','31–50%'],['#f3bd0f','51–84%'],['#fff200','85–115%'],['#98cd18','116–150%'],['#2c9b34','151–200%'],['#075722','>200%']]:[['#c9e3d5','较低'],['#3b9a7b','中等'],['#126451','较高']];$('legend').innerHTML=`<b>${title}${S.layer==='rain'?'（mm）':S.layer==='anom'?'（相对1991—2020）':''}</b><br>${items.map(i=>`<i style="background:${i[0]}"></i>${i[1]}`).join('<br>')}<br><small>灰色：缺测</small>`}
-function updateMap(){S.groups.forEach(g=>g.eachLayer(l=>l.setStyle(style(l._row,l._country))));if(S.selectedLayer)S.map.removeLayer(S.selectedLayer);if(S.selected?.weather_region_id){const l=S.groups.flatMap(g=>g.getLayers()).find(x=>x._row?.weather_region_id===S.selected.weather_region_id);if(l){S.selectedLayer=L.geoJSON(l.feature,{style:{color:'#142b3b',weight:6,fillOpacity:0},interactive:false}).addTo(S.map);L.geoJSON(l.feature,{style:{color:'#fff',weight:2.5,fillOpacity:0},interactive:false}).addTo(S.selectedLayer)}}refreshLabels();legend()}
-function scoped(){return S.scope==='seasia'?S.rows:S.rows.filter(r=>r.country===S.scope)}
-function metrics(){const r=scoped(),t=r.reduce((a,x)=>a+(x.production_tonnes||0),0),s=f=>t?r.reduce((a,x)=>a+(f(x)?x.production_tonnes||0:0),0)/t*100:null,data=[['低降雨',s(x=>x.rain_30d_mm<=100)],['低于正常',s(x=>x.rain_30d_ratio_1991_2020<=84)],['连续无雨偏长',s(x=>x.current_dry_spell_days>=11)],['极端降雨',s(x=>x.extreme_rain_days_30d>0)],['未来或改善',s(x=>x.forecast_change_class==='可能改善')],['未来或转差',s(x=>x.forecast_change_class==='继续转差')]];$('metrics').innerHTML=data.map(x=>`<article class="card"><span>${x[0]}</span><strong>${pct(x[1])}</strong><small>占${S.scope==='seasia'?'东南亚':'本国'}产量</small></article>`).join('')}
-function clearCharts(){S.charts.forEach(x=>x.destroy());S.charts=[]}
-function countryDetail(c){S.selected=null;updateMap();const h=S.rows.filter(r=>r.country===c.country),title=`${cn[c.country]}｜`;$('detail').innerHTML=`<h2>${cn[c.country]}产区概览</h2><p class="detail-note">点击地图中的省份可切换至省级事实与趋势。</p><h3>${title}产量加权降雨与异常暴露</h3><div class="detail-chart"><canvas id="countryChart"></canvas></div><h3>${title}纳入监测地区的产量结构</h3><div class="detail-chart"><canvas id="shareChart"></canvas></div>`;clearCharts();const common={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}};S.charts.push(new Chart($('countryChart'),{type:'bar',data:{labels:['30日累计降雨','低降雨产量占比','低于正常产量占比','连续无雨偏长'],datasets:[{data:[c.rain_30d_weighted_mm,c.low_rain_share_country,c.below_normal_share_country,c.dry_spell_watch_share_country],backgroundColor:['#0e6a26','#e66a00','#f3bd0f','#bd6b00']}]},options:common}));S.charts.push(new Chart($('shareChart'),{type:'doughnut',data:{labels:h.map(x=>x.region),datasets:[{data:h.map(x=>x.production_share_country||0),backgroundColor:['#0e6a26','#63b64d','#a7d88a','#d5f56a','#f9ba14','#e66a00','#843500']}]},options:{...common,plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:8,font:{size:9}}}}}}))}
-function regionDetail(r){S.selected=r;updateMap();const h=S.history[r.weather_region_id]||[],baseField=S.detailBaseline==='1991'?'rain_30d_baseline_1991_2020':'rain_30d_baseline_recent5y',baseName=S.detailBaseline==='1991'?'1991—2020历史同期':'近五个完整自然年',ratio=h.map(x=>x.rain_30d_mm!=null&&x[baseField]?x.rain_30d_mm/x[baseField]*100:null);$('detail').innerHTML=`<h2>${esc(r.region)}</h2><p class="detail-note">${cn[r.country]} · 以下图表均为当前省份数据；悬停图表可查看每日具体值。</p><h3>30日滚动降雨走势｜近90日</h3><div class="detail-controls"><button class="${S.detailView==='accum'?'active':''}" data-dview="accum">累计降雨</button><button class="${S.detailView==='anom'?'active':''}" data-dview="anom">降雨距平</button><span>距平基准</span><button class="${S.detailBaseline==='1991'?'active':''}" data-dbase="1991">1991—2020</button><button class="${S.detailBaseline==='recent'?'active':''}" data-dbase="recent">近五年</button></div><div class="detail-chart"><canvas id="rollingChart"></canvas></div><h3>逐日降雨、连续无雨与极端降雨事件｜近90日</h3><div class="detail-chart"><canvas id="dailyChart"></canvas></div><h3>未来降雨预报｜未来1—15日</h3><div class="forecast-brief">未来降雨判断：${esc(r.forecast_change_class||'暂未接入')}。<br>预报模型：${esc(r.forecast_model||'暂未接入')}；预报仅用于观察降雨条件变化。</div><h3>热干和极端天气｜后续接入</h3><div class="forecast-brief">将接入温度、湿度、VPD、风速及高VPD持续时间图表；当前不展示模拟数值。</div><h3>水分｜后续接入</h3><div class="forecast-brief">将接入有效降雨、ET0/PET、P−ET0、根区土壤水分与植物可利用水图表；当前不展示模拟数值。</div><p><button id="prev">上一个省份</button> <button id="next">下一个省份</button></p>`;document.querySelectorAll('[data-dview]').forEach(b=>b.onclick=()=>{S.detailView=b.dataset.dview;regionDetail(r)});document.querySelectorAll('[data-dbase]').forEach(b=>b.onclick=()=>{S.detailBaseline=b.dataset.dbase;regionDetail(r)});$('#prev').onclick=()=>move(-1);$('#next').onclick=()=>move(1);clearCharts();const common={responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},scales:{x:{ticks:{maxTicksLimit:5}}}};const rollSets=S.detailView==='accum'?[{label:'30日累计降雨',data:h.map(x=>x.rain_30d_mm),borderColor:'#0e6a26',pointRadius:0},{label:baseName,data:h.map(x=>x[baseField]),borderColor:'#bd6b00',borderDash:[5,3],pointRadius:0}]:[{label:`相对${baseName}（%）`,data:ratio,borderColor:'#bd6b00',pointRadius:0},{label:'正常线（100%）',data:h.map(()=>100),borderColor:'#607985',borderDash:[4,3],pointRadius:0}];S.charts.push(new Chart($('rollingChart'),{type:'line',data:{labels:h.map(x=>x.date.slice(5)),datasets:rollSets},options:{...common,plugins:{legend:{display:true,labels:{boxWidth:8}},tooltip:{enabled:true}}}}));let run=0;S.charts.push(new Chart($('dailyChart'),{type:'bar',data:{labels:h.map(x=>x.date.slice(5)),datasets:[{label:'逐日降雨',data:h.map(x=>x.precipitation_mm),backgroundColor:'#63b64d'},{type:'line',label:'连续无雨天数',data:h.map(x=>{run=x.precipitation_mm<1?run+1:0;return run}),borderColor:'#bd6b00',pointRadius:0},{type:'scatter',label:'极端降雨事件',data:h.map(x=>x.precipitation_mm>150?x.precipitation_mm:null),backgroundColor:'#5b1803'}]},options:{...common,plugins:{legend:{display:true,labels:{boxWidth:8}},tooltip:{enabled:true}}}}))}
-function move(n){const x=[...S.rows].sort((a,b)=>(b.production_tonnes||0)-(a.production_tonnes||0)),i=x.findIndex(r=>r.weather_region_id===S.selected.weather_region_id);regionDetail(x[(i+n+x.length)%x.length])}
-async function map(){S.map=L.map('map',{minZoom:3,maxZoom:9}).setView([1.5,108],4);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(S.map);for(const [c,file] of [['Indonesia','indonesia_admin1.geojson'],['Malaysia','malaysia_admin1.geojson']]){const geo=await get('admin1_geojson/'+file),g=L.geoJSON(geo,{style:f=>style(row(c,f),c),onEachFeature:(f,l)=>{l._row=row(c,f);l._country=c;l.bindTooltip(`${esc(l._row?.region||fname(f))}<br>${cn[c]}`,{sticky:true});l.on('click',()=>l._row&&regionDetail(l._row))}}).addTo(S.map);g._country=c;S.groups.push(g)}for(const [c,label] of [['Indonesia','印度尼西亚'],['Malaysia','马来西亚']]){const g=S.groups.find(x=>x._country===c);const m=L.marker(g.getBounds().getCenter(),{icon:L.divIcon({className:'country-label',html:label,iconSize:[140,28]})}).addTo(S.map);m.on('click',()=>countryDetail(S.countries.find(x=>x.country===c)))}S.map.fitBounds(L.featureGroup(S.groups).getBounds().pad(.04))}
-function controls(){const gn={risk:'综合风险',rain:'降雨',heat:'热干和极端天气',water:'水分'},render=()=>{$('layerMetrics').innerHTML=(groups[S.group].length?groups[S.group]:['暂未接入']).map((x,i)=>`<button ${i===0?'class="active"':''} ${x==='暂未接入'?'disabled':''} data-layer="${x}">${names[x]||x}</button>`).join('');document.querySelectorAll('[data-layer]').forEach(b=>b.onclick=()=>{S.layer=b.dataset.layer;document.querySelectorAll('[data-layer]').forEach(x=>x.classList.toggle('active',x===b));updateMap()})};$('layerGroups').innerHTML=Object.keys(groups).map(x=>`<button class="${x==='rain'?'active':''}" data-group="${x}">${gn[x]}</button>`).join('');render();document.querySelectorAll('[data-group]').forEach(b=>b.onclick=()=>{S.group=b.dataset.group;document.querySelectorAll('[data-group]').forEach(x=>x.classList.toggle('active',x===b));if(groups[S.group].length){S.layer=groups[S.group][0];render();updateMap()}else $('layerMetrics').innerHTML='<span class="muted">该专题指标正在建设中</span>'});document.querySelectorAll('[data-scope]').forEach(b=>b.onclick=()=>{S.scope=b.dataset.scope;document.querySelectorAll('[data-scope]').forEach(x=>x.classList.toggle('active',x===b));metrics();updateMap()});document.querySelectorAll('[data-label]').forEach(b=>b.onclick=()=>{S.labelMetric=b.dataset.label;S.labelMode=b.dataset.label==='off'?'off':'major';document.querySelectorAll('[data-label]').forEach(x=>x.classList.toggle('active',x===b));refreshLabels()})}
-async function init(){try{const [rows,countries,history,forecast,meta]=await Promise.all(['palm_rain_region_latest.json','palm_rain_country_latest.json','palm_rain_history_90d.json','palm_rain_forecast_15d.json','palm_rain_meta.json'].map(get));Object.assign(S,{rows,countries,history,forecast,meta});$('status').textContent=`观测截止：${rows[0]?.date_end||'缺测'} ｜ 预报：${meta.forecast_start||'缺测'} 至 ${meta.forecast_end||'缺测'} ｜ 模式：${meta.forecast_model||meta.forecast_source} ｜ 构建：${meta.generated_at} ｜ 页面：${meta.version}`;$('method').textContent=`日降雨：${meta.daily_source}；预报：${meta.forecast_source}；30日窗口：${meta.window}；无雨日：${meta.dry_day_definition}；极端降雨：${meta.extreme_rain_definition}；比较基准：1991—2020与近五个完整自然年（${meta.recent5_years.join('—')}）；缺测保持 null，不以0代替；${meta.forecast_note}`;controls();metrics();await map();regionDetail([...rows].sort((a,b)=>(b.production_tonnes||0)-(a.production_tonnes||0))[0])}catch(e){console.error(e);$('status').textContent='数据加载失败：请检查专题数据文件。'}}init();
+  'use strict';
+
+  const DATA = '../data/';
+  const COUNTRY_CN = { Indonesia: '印度尼西亚', Malaysia: '马来西亚' };
+  const GROUPS = {
+    risk: ['production', 'share'],
+    rain: ['rain', 'anom', 'extreme', 'dry', 'f7', 'f8'],
+    heat: ['tempAnomaly', 'forecastTemp', 'hotDry'],
+    water: ['rootSoil', 'surfaceSoil', 'waterStress']
+  };
+  const LABELS = {
+    production: '产量', share: '产量占比', rain: '近30日降雨', anom: '降雨相对常年',
+    extreme: '极端降雨日数', dry: '连续无雨天数', f7: '未来1—7日降雨', f8: '未来8—15日降雨',
+    tempAnomaly: '最高温距平', forecastTemp: '未来16日最高温', hotDry: '热干风险',
+    rootSoil: '根区土壤水分百分位', surfaceSoil: '表层土壤水分百分位', waterStress: '水分压力'
+  };
+  const state = { group: 'rain', layer: 'rain', scope: 'seasia', label: 'production', rows: [], countries: [], history: {}, meta: {}, map: null, geo: [], labels: [], selected: null, selectedLayer: null };
+  const $ = id => document.getElementById(id);
+  const fetchJSON = async path => { const r = await fetch(DATA + path, { cache: 'no-store' }); if (!r.ok) throw new Error(path); return r.json(); };
+  const n = value => Number.isFinite(Number(value)) ? Number(value) : null;
+  const pct = value => n(value) === null ? '缺测' : `${n(value).toFixed(1)}%`;
+  const mm = value => n(value) === null ? '缺测' : `${n(value).toFixed(1)} mm`;
+  const esc = value => String(value ?? '—').replace(/[&<>]/g, x => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[x]));
+  const norm = value => String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const field = (r, key) => ({
+    production: r.production_tonnes, share: state.scope === 'seasia' ? r.production_share_se_asia : r.production_share_country,
+    rain: r.rain_30d_mm, anom: r.rain_30d_ratio_1991_2020, extreme: r.extreme_rain_days_30d,
+    dry: r.current_dry_spell_days, f7: r.forecast_rain_1_7d_mm, f8: r.forecast_rain_8_15d_mm,
+    tempAnomaly: r.temp_max_anomaly_c, forecastTemp: r.forecast_16d_temp_max,
+    hotDry: hotDryScore(r), rootSoil: r.rootzone_percentile, surfaceSoil: r.surface_percentile, waterStress: waterScore(r)
+  }[key]);
+  const hotDryScore = r => {
+    const t = n(r.temp_max_anomaly_c), soil = n(r.rootzone_percentile), rain = n(r.rain_30d_ratio_1991_2020);
+    if (t === null) return null;
+    return Math.max(0, Math.min(100, (t >= 3 ? 70 : t >= 2 ? 45 : t >= 1 ? 20 : 0) + (soil !== null && soil < 30 ? 30 : 0) + (rain !== null && rain < 85 ? 20 : 0)));
+  };
+  const waterScore = r => {
+    const root = n(r.rootzone_percentile), surface = n(r.surface_percentile);
+    if (root === null && surface === null) return null;
+    const v = Math.min(...[root, surface].filter(x => x !== null));
+    return v < 10 ? 3 : v < 30 ? 2 : v > 90 ? 2 : v > 70 ? 1 : 0;
+  };
+  const colour = r => {
+    const x = field(r, state.layer); if (x === null) return '#cbd5d2';
+    if (['production', 'share'].includes(state.layer)) { const max = Math.max(...state.rows.map(q => field(q, state.layer) || 0), 1); const p = x / max; return p < .2 ? '#f1f5f3' : p < .4 ? '#c9e3d5' : p < .6 ? '#85c7ac' : p < .8 ? '#3b9a7b' : '#126451'; }
+    if (state.layer === 'rain') return x <= 50 ? '#843500' : x <= 100 ? '#e66a00' : x <= 200 ? '#f9ba14' : x <= 300 ? '#a7d88a' : '#0e6a26';
+    if (state.layer === 'anom') return x < 50 ? '#843500' : x < 85 ? '#f3bd0f' : x <= 115 ? '#fff200' : x <= 150 ? '#98cd18' : '#075722';
+    if (['extreme', 'dry', 'hotDry', 'waterStress'].includes(state.layer)) return x === 0 ? '#edf2df' : x <= 1 ? '#f3c786' : x <= 2 ? '#d6604d' : '#8c2d24';
+    if (state.layer === 'tempAnomaly') return x < 1 ? '#edf2df' : x < 2 ? '#f3c786' : x < 3 ? '#d6604d' : '#8c2d24';
+    if (state.layer === 'forecastTemp') return x < 30 ? '#edf2df' : x < 33 ? '#f3c786' : x < 35 ? '#d6604d' : '#8c2d24';
+    return x < 10 ? '#8c2d24' : x < 30 ? '#d6604d' : x < 70 ? '#f3c786' : x <= 90 ? '#a7d88a' : '#075722';
+  };
+  const featureName = f => f.properties.shapeName || f.properties.NAME_1 || f.properties.name || f.properties.Name || '';
+  const rowFor = (country, feature) => { const name = norm(featureName(feature)); return state.rows.find(r => r.country === country && (norm(r.weather_region_id).includes(name) || name.includes(norm(r.weather_region_id)) || norm(r.region).includes(name) || name.includes(norm(r.region)))); };
+  const style = (r, country) => ({ color: country === 'Indonesia' ? '#0b655c' : '#455c78', weight: country === 'Indonesia' ? 2.8 : 2.6, dashArray: country === 'Malaysia' ? '7 3' : null, fillColor: r ? colour(r) : '#dce7e5', fillOpacity: r ? .7 : .18 });
+  const scoped = () => state.scope === 'seasia' ? state.rows : state.rows.filter(r => r.country === state.scope);
+
+  function renderMetrics() {
+    const rows = scoped(), total = rows.reduce((a, r) => a + (n(r.production_tonnes) || 0), 0);
+    const share = test => total ? rows.reduce((a, r) => a + (test(r) ? n(r.production_tonnes) || 0 : 0), 0) / total * 100 : null;
+    let cards;
+    if (state.group === 'heat') cards = [['高温距平≥2℃', share(r => n(r.temp_max_anomaly_c) >= 2)], ['热干风险', share(r => hotDryScore(r) >= 2)], ['未来最高温≥35℃', share(r => n(r.forecast_16d_temp_max) >= 35)]];
+    else if (state.group === 'water') cards = [['根区偏干（P<30）', share(r => n(r.rootzone_percentile) < 30)], ['表层偏干（P<30）', share(r => n(r.surface_percentile) < 30)], ['水分压力重点', share(r => waterScore(r) >= 2)]];
+    else cards = [['低降雨', share(r => n(r.rain_30d_mm) <= 100)], ['低于常年', share(r => n(r.rain_30d_ratio_1991_2020) <= 84)], ['连续无雨偏长', share(r => n(r.current_dry_spell_days) >= 11)], ['极端降雨', share(r => n(r.extreme_rain_days_30d) > 0)]];
+    $('metrics').innerHTML = cards.map(c => `<article class="card"><span>${c[0]}</span><strong>${pct(c[1])}</strong><small>占${state.scope === 'seasia' ? '东南亚' : '本国'}产量</small></article>`).join('');
+  }
+  function legend() {
+    const unit = state.layer.includes('Soil') ? '（百分位）' : state.layer === 'tempAnomaly' ? '（℃）' : state.layer === 'forecastTemp' ? '（℃）' : state.layer === 'waterStress' || state.layer === 'hotDry' ? '（等级）' : '';
+    $('legend').innerHTML = `<b>${LABELS[state.layer]}${unit}</b><br><i style="background:#8c2d24"></i>压力高 / 偏干<br><i style="background:#d6604d"></i>重点关注<br><i style="background:#f3c786"></i>轻度异常<br><i style="background:#a7d88a"></i>正常或偏湿<br><small>灰色：缺测</small>`;
+  }
+  function refreshMap() {
+    state.geo.forEach(g => g.eachLayer(l => l.setStyle(style(l._row, l._country))));
+    if (state.selectedLayer) state.map.removeLayer(state.selectedLayer);
+    if (state.selected) { const layer = state.geo.flatMap(g => g.getLayers()).find(l => l._row?.weather_region_id === state.selected.weather_region_id); if (layer) state.selectedLayer = L.geoJSON(layer.feature, { style: { color: '#142b3b', weight: 6, fillOpacity: 0 }, interactive: false }).addTo(state.map); }
+    state.labels.forEach(l => state.map.removeLayer(l)); state.labels = [];
+    if (state.label !== 'off') state.geo.forEach(g => g.eachLayer(l => { const r = l._row, share = state.scope === 'seasia' ? r?.production_share_se_asia : r?.production_share_country; if (r && share >= .01) state.labels.push(L.marker(l.getBounds().getCenter(), { interactive: false, icon: L.divIcon({ className: 'metric-label', html: state.label === 'production' ? Math.round((r.production_tonnes || 0) / 10000) : `${Math.round(share * 100)}%`, iconSize: [50, 20], iconAnchor: [25, 10] }) }).addTo(state.map)); }));
+    legend();
+  }
+  function updateControls() {
+    $('layerMetrics').innerHTML = GROUPS[state.group].map((key, i) => `<button class="${i === 0 ? 'active' : ''}" data-layer="${key}">${LABELS[key]}</button>`).join('');
+    document.querySelectorAll('[data-layer]').forEach(b => b.onclick = () => { state.layer = b.dataset.layer; document.querySelectorAll('[data-layer]').forEach(x => x.classList.toggle('active', x === b)); refreshMap(); });
+  }
+  function controls() {
+    const names = { risk: '综合风险', rain: '降雨', heat: '热干和极端天气', water: '水分' };
+    $('layerGroups').innerHTML = Object.keys(GROUPS).map(key => `<button class="${key === state.group ? 'active' : ''}" data-group="${key}">${names[key]}</button>`).join(''); updateControls();
+    document.querySelectorAll('[data-group]').forEach(b => b.onclick = () => { state.group = b.dataset.group; state.layer = GROUPS[state.group][0]; document.querySelectorAll('[data-group]').forEach(x => x.classList.toggle('active', x === b)); updateControls(); renderMetrics(); refreshMap(); });
+    document.querySelectorAll('[data-scope]').forEach(b => b.onclick = () => { state.scope = b.dataset.scope; document.querySelectorAll('[data-scope]').forEach(x => x.classList.toggle('active', x === b)); renderMetrics(); refreshMap(); });
+    document.querySelectorAll('[data-label]').forEach(b => b.onclick = () => { state.label = b.dataset.label; document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x === b)); refreshMap(); });
+  }
+  function regionDetail(r) {
+    state.selected = r; refreshMap(); const h = state.history[r.weather_region_id] || [];
+    const heat = `最高温距平 ${n(r.temp_max_anomaly_c) === null ? '缺测' : `${n(r.temp_max_anomaly_c).toFixed(1)}℃`}；未来16日最高温 ${n(r.forecast_16d_temp_max) === null ? '缺测' : `${n(r.forecast_16d_temp_max).toFixed(1)}℃`}；热干风险 ${hotDryScore(r) === null ? '缺测' : ['低', '轻度', '重点', '高'][Math.min(3, Math.round(hotDryScore(r) / 35))]}`;
+    const water = `根区 P${n(r.rootzone_percentile) === null ? '—' : n(r.rootzone_percentile).toFixed(1)}；表层 P${n(r.surface_percentile) === null ? '—' : n(r.surface_percentile).toFixed(1)}；${esc(r.water_stress_label_cn || r.soil_status_cn || '暂无综合标签')}`;
+    $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${COUNTRY_CN[r.country]} · 所有百分位均相对同地区历史同期；P<30 表示偏干，P>70 表示偏湿。</p><h3>当前风险</h3><div class="forecast-brief">${esc(r.risk_reason_cn || '暂无风险说明')}<br>近30日降雨：${mm(r.rain_30d_mm)}（常年${pct(r.rain_30d_ratio_1991_2020)}）</div><h3>热干和极端天气</h3><div class="forecast-brief">${heat}<br>近30日极端降雨日数 ${n(r.extreme_rain_days_30d) ?? '缺测'}；连续无雨 ${n(r.current_dry_spell_days) ?? '缺测'} 天。</div><h3>水分</h3><div class="forecast-brief">${water}<br>${esc(r.water_stress_explanation_cn || r.soil_condition_summary_cn || '土壤水分数据暂未提供说明。')}</div><h3>近90日降雨变化</h3><div class="detail-chart"><canvas id="historyChart"></canvas></div>`;
+    if (globalThis.Chart && h.length) new Chart($('historyChart'), { type: 'line', data: { labels: h.map(x => x.date?.slice(5)), datasets: [{ label: '30日累计降雨', data: h.map(x => x.rain_30d_mm), borderColor: '#0e6a26', pointRadius: 0 }, { label: '历史同期', data: h.map(x => x.rain_30d_baseline_1991_2020), borderColor: '#bd6b00', borderDash: [5, 3], pointRadius: 0 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { ticks: { maxTicksLimit: 5 } } } } });
+  }
+  async function buildMap() {
+    state.map = L.map('map', { minZoom: 3, maxZoom: 9 }).setView([1.5, 108], 4); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(state.map);
+    for (const [country, file] of [['Indonesia', 'indonesia_admin1.geojson'], ['Malaysia', 'malaysia_admin1.geojson']]) { const geo = await fetchJSON(`admin1_geojson/${file}`); const group = L.geoJSON(geo, { style: f => style(rowFor(country, f), country), onEachFeature: (f, l) => { l._row = rowFor(country, f); l._country = country; l.bindTooltip(`${esc(l._row?.region || featureName(f))}<br>${COUNTRY_CN[country]}`, { sticky: true }); l.on('click', () => l._row && regionDetail(l._row)); } }).addTo(state.map); state.geo.push(group); }
+    state.map.fitBounds(L.featureGroup(state.geo).getBounds().pad(.04));
+  }
+  async function init() {
+    try {
+      const [rainRows, countries, history, meta, palmRows] = await Promise.all(['palm_rain_region_latest.json', 'palm_rain_country_latest.json', 'palm_rain_history_90d.json', 'palm_rain_meta.json', 'palm_region_risk_latest.json'].map(fetchJSON));
+      const extras = new Map(palmRows.map(r => [r.weather_region_id, r])); state.rows = rainRows.map(r => ({ ...r, ...(extras.get(r.weather_region_id) || {}) })); Object.assign(state, { countries, history, meta });
+      $('status').textContent = `观测截止：${state.rows[0]?.date_end || '缺测'} ｜ 构建：${meta.generated_at || '缺测'} ｜ 热干、极端天气与土壤水分均已接入`;
+      $('method').textContent = `降雨与预报：${meta.daily_source || '详见数据元信息'}。热干使用最高温距平、未来最高温，并结合降雨和根区墒情；水分使用 ERA5-Land 根区与表层土壤水分历史百分位。缺测保持为空，不以零替代。`;
+      controls(); renderMetrics(); await buildMap(); regionDetail([...state.rows].sort((a, b) => (b.production_tonnes || 0) - (a.production_tonnes || 0))[0]);
+    } catch (error) { console.error(error); $('status').textContent = '数据加载失败：请检查专题数据文件。'; }
+  }
+  init();
 })();
