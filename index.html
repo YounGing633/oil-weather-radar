@@ -95,6 +95,38 @@ header h1 {
   color: #8f99a7;
   font-size: 10.5px;
 }
+.primary-nav {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow-x: auto;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border);
+  background: #222833;
+  scrollbar-width: thin;
+}
+.primary-nav a {
+  flex: 0 0 auto;
+  min-height: 30px;
+  padding: 5px 12px;
+  border: 1px solid #414958;
+  border-radius: 6px;
+  color: #c8ced7;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 650;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.primary-nav a:hover {
+  border-color: #768195;
+  color: #fff;
+}
+.primary-nav a.active {
+  border-color: #fff;
+  background: #fff;
+  color: #202733;
+}
 .toolbar {
   flex: 0 0 auto;
   display: flex;
@@ -1085,12 +1117,22 @@ header h1 {
     </div>
   </header>
 
+  <nav class="primary-nav" aria-label="专题导览">
+    <a class="active" data-main-nav="overview" href="./">总览</a>
+    <a data-main-nav="climate" href="?view=climate">海气背景</a>
+    <a href="./palm/">棕榈油</a>
+    <a href="./oil/?crop=soybean">豆油</a>
+    <a href="./oil/?crop=rapeseed_canola">菜油</a>
+    <a href="./oil/?crop=sunflower">葵油</a>
+    <a href="./oil/?crop=coconut">椰子油</a>
+  </nav>
+
   <div class="toolbar">
     <div class="filter-group">
       <span class="filter-label">界面</span>
       <div class="view-tabs" id="view-tabs">
         <button class="view-tab active" type="button" data-view="risk">风险雷达</button>
-        <button class="view-tab" type="button" data-view="weather">产区气象</button>
+        <button class="view-tab" type="button" data-view="weather">海气背景 / 产区气象</button>
       </div>
     </div>
     <div class="filter-group">
@@ -1220,3 +1262,4 @@ header h1 {
   <script src="app.js?v=20260709-invest-ui1"></script>
 </body>
 </html>
+
