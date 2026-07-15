@@ -107,7 +107,10 @@
       $('status').textContent = `观测截止：${state.rows[0]?.date_end || '缺测'} ｜ 构建：${meta.generated_at || '缺测'} ｜ 热干、极端天气与土壤水分均已接入`;
       $('method').textContent = `降雨与预报：${meta.daily_source || '详见数据元信息'}。热干使用最高温距平、未来最高温，并结合降雨和根区墒情；水分使用 ERA5-Land 根区与表层土壤水分历史百分位。缺测保持为空，不以零替代。`;
       controls(); renderMetrics(); await buildMap(); regionDetail([...state.rows].sort((a, b) => (b.production_tonnes || 0) - (a.production_tonnes || 0))[0]);
-    } catch (error) { console.error(error); $('status').textContent = '数据加载失败：请检查专题数据文件。'; }
+    } catch (error) {
+      console.error(error);
+      $('status').textContent = `数据加载失败：${error?.message || '未知错误'}。`;
+    }
   }
   init();
 })();
