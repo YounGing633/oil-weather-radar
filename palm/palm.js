@@ -9,7 +9,7 @@
   const esc = x => String(x ?? '—').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
   const norm = x => String(x || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const getJSON = async file => { const r = await fetch(`${DATA}${file}`, { cache: 'no-store' }); if (!r.ok) throw new Error(file); return r.json(); };
-  const state = { section: 'rain', metric: 'rain30', basis: 'base91', horizon: 'f7', unit: 'absolute', depth: 'root', scope: 'seasia', label: 'production', rows: [], history: {}, map: null, geo: [], labels: [], events: [], selected: null, selectedLayer: null };
+  const state = { section: 'rain', metric: 'rain30', basis: 'base91', horizon: 'f7', unit: 'absolute', depth: 'root', scope: 'seasia', label: 'production', rows: [], history: {}, dailyHistory: new Map(), map: null, geo: [], labels: [], events: [], selected: null, selectedLayer: null };
   const sectionNames = { risk: '综合风险', rain: '降雨', heat: '热干和极端天气', water: '水分' };
   const metricSets = {
     risk: [['production', '产量'], ['share', '产量占比']],
@@ -132,6 +132,16 @@
     document.querySelectorAll('[data-control]').forEach(b => b.onclick = () => { if (b.disabled) return; state[b.dataset.control] = b.dataset.value; updateControlRow(); refreshMap(); updateSummary(); });
   }
   function regionDetail(r) {
+    state.selected = r; refreshMap();
+    const chartPanel = window.OilDetailCharts?.panel(r, {
+      cropName: '棕榈油', regionName: r.region, countryName: COUNTRY[r.country] || r.country,
+      riskLabel: r.risk_label_v4_cn || r.risk_level_v3_cn || '持续跟踪'
+    });
+    if (chartPanel) {
+      $('detail').innerHTML = chartPanel.html;
+      requestAnimationFrame(() => window.OilDetailCharts.render(r, state.dailyHistory.get(r.weather_region_id) || [], chartPanel.key));
+      return;
+    }
     state.selected = r; refreshMap(); const root = num(r.rootzone_percentile), surf = num(r.surface_percentile), heat = heatScore(r), dry = dryScore(r, 'root');
     const rainEvents = `极端降雨日 ${num(r.extreme_rain_days_30d) ?? '—'}；连续无雨 ${num(r.current_dry_spell_days) ?? '—'} 天`;
     const heatText = heat ? ['','轻度热干：高温与一项偏干信号并存','重点热干：高温、根区偏干及降雨偏少并存','严重热干：高温≥3℃、根区P<20且降雨偏少'][heat] : '未触发热干：需要高温（距平≥2℃）与偏干条件同时成立。';
@@ -145,10 +155,10 @@
   }
   async function init() {
     try {
-      const [rain, risk, history, meta, weather, anomaly, forecast] = await Promise.all(['palm_rain_region_latest.json','palm_region_risk_latest.json','palm_rain_history_90d.json','palm_rain_meta.json','weather_latest.json','weather_anomaly.json','weather_forecast.json'].map(getJSON));
+      const [rain, risk, history, meta, weather, anomaly, forecast, daily] = await Promise.all(['palm_rain_region_latest.json','palm_region_risk_latest.json','palm_rain_history_90d.json','palm_rain_meta.json','weather_latest.json','weather_anomaly.json','weather_forecast.json','region_history_90d_v1.0d.json'].map(getJSON));
       const extra = new Map(risk.map(r => [r.weather_region_id, r])), weatherBy = new Map(weather.map(r => [r.weather_region_id, r])), anomalyBy = new Map(anomaly.map(r => [r.weather_region_id, r])), forecastBy = new Map();
       forecast.forEach(x => { if (!forecastBy.has(x.weather_region_id)) forecastBy.set(x.weather_region_id, []); forecastBy.get(x.weather_region_id).push(x); });
-      state.rows = rain.map(r => ({ ...r, ...(extra.get(r.weather_region_id) || {}), _weather: weatherBy.get(r.weather_region_id), _anomaly: anomalyBy.get(r.weather_region_id), _forecast: forecastBy.get(r.weather_region_id) || [] })); state.history = history;
+      state.rows = rain.map(r => ({ ...r, ...(extra.get(r.weather_region_id) || {}), _weather: weatherBy.get(r.weather_region_id), _anomaly: anomalyBy.get(r.weather_region_id), _forecast: forecastBy.get(r.weather_region_id) || [] })); state.history = history; state.dailyHistory = new Map(); daily.forEach(row => { if (!state.dailyHistory.has(row.weather_region_id)) state.dailyHistory.set(row.weather_region_id, []); state.dailyHistory.get(row.weather_region_id).push(row); });
       $('status').textContent = `最新实况（ECMWF IFS）：${state.rows[0]?.date_end || '缺测'} ｜ 数据更新时间：${meta.generated_at || '缺测'} ｜ 当前地图：绝对值、距平和事件提示可分别切换`;
       $('method').textContent = '降雨和温度统一采用 Open-Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；仅在2017–2025同源历史完整时显示历史基准，缺失时不再用第二来源补齐。未来降雨绝对值转为30日等效累计，便于与近30日图层比较。';
       updateControlRow(); controls(); updateSummary(); await buildMap(); regionDetail([...state.rows].sort((a,b) => (b.production_tonnes || 0) - (a.production_tonnes || 0))[0]);

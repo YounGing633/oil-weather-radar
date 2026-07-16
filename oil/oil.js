@@ -15,7 +15,7 @@
   const ALIAS = { 'United States of America': 'United States', USA: 'United States', Turkey: 'Türkiye', 'Russian Federation': 'Russia' };
   const key = new URLSearchParams(location.search).get('crop') || 'soybean';
   const crop = CONFIG[key] || CONFIG.soybean;
-  let countries = [], regions = [], worldGeo, map, mapLayers = [], labels = [], selectedLayer;
+  let countries = [], regions = [], worldGeo, map, mapLayers = [], labels = [], selectedLayer, historyById = new Map();
   let scope = 'all', metric = 'risk', labelMode = 'production';
   const geoCache = new Map();
   const num = x => Number.isFinite(Number(x)) ? Number(x) : null;
@@ -161,6 +161,18 @@
     return `<h3>风险标签</h3><div class="risk-tags">${tags.slice(0, 5).map(t => `<div class="risk-tag"><b>${esc(t.risk_label_cn || t.label_cn || t.risk_type || '风险信号')}</b><span>${esc(t.evidence_cn || t.risk_evidence_cn || '')}</span></div>`).join('')}</div>`;
   }
   function detailRegion(r) {
+    const chartPanel = window.OilDetailCharts?.panel(r, {
+      cropName: crop.name,
+      regionName: r.region_name_cn || r.region_name,
+      countryName: r.country_cn || r.country,
+      riskLabel: r.risk_label_v4_cn || riskText(r)
+    });
+    if (chartPanel) {
+      $('detail').innerHTML = `<button class="detail-back" id="detailBack">← 返回国家摘要</button>${chartPanel.html}`;
+      $('detailBack').onclick = () => { const c = countries.find(x => x.country === canonical(r.country)); if (c) detailCountry(c); };
+      requestAnimationFrame(() => window.OilDetailCharts.render(r, historyById.get(r.weather_region_id) || [], chartPanel.key));
+      return;
+    }
     const progress = r.progress_evidence_cn || (r.resolved_stage_source === 'crop_progress' ? '已使用作物进度数据校正当前生育期。' : '当前生育期主要依据作物历。');
     $('detail').innerHTML = `<button class="detail-back" id="detailBack">← 返回国家摘要</button><h2>${esc(r.region_name_cn || r.region_name)}</h2><p class="detail-note">${esc(r.country_cn || r.country)} · ${crop.name}产区证据</p>${badges(r)}<h3>当前判断</h3><div class="forecast-brief"><b>${esc(r.risk_label_v4_cn || riskText(r))}</b><br>${esc(r.risk_reason_cn || r.risk_evidence_cn || '暂无风险说明')}<br>${esc(r.production_impact_cn || r.current_operation_impact_cn || '')}</div><h3>关键数值</h3><div class="data-grid"><div class="data-cell"><small>产量 / 全国占比</small><b>${fmt(r.production_tonnes)} / ${pc(r.national_share)}</b></div><div class="data-cell"><small>根区 / 表层百分位</small><b>P${val(r.rootzone_percentile)} / P${val(r.surface_percentile)}</b></div><div class="data-cell"><small>近30日降雨</small><b>${val(r.precip_30d_actual, 1, 'mm')} / ${val(r.precip_30d_ratio_pct, 0, '%')}</b></div><div class="data-cell"><small>最高温距平</small><b>${val(r.temp_max_anomaly_c, 1, '℃')}</b></div><div class="data-cell"><small>未来7日降雨</small><b>${val(r.forecast_7d_precip, 1, 'mm')}</b></div><div class="data-cell"><small>未来16日降雨</small><b>${val(r.forecast_16d_precip, 1, 'mm')}</b></div></div><h3>生育期与进度</h3><div class="forecast-brief">${esc(r.current_growth_stage_cn || r.resolved_growth_stage || '生育期暂缺')}<br>${esc(progress)}</div>${riskTags(r)}<h3>未来变化</h3><div class="forecast-brief">${esc(r.forecast_summary_cn || '暂无预报摘要')}<br>${esc(r.future_yield_impact_cn || '')}</div><h3>数据口径</h3><p class="detail-note">来源：${esc(r.source_name)} ${esc(r.source_year || '')} · 聚合可信度：${esc(r.aggregation_confidence || r.rule_confidence || '暂缺')}</p>`;
     $('detailBack').onclick = () => { const c = countries.find(x => x.country === canonical(r.country)); if (c) detailCountry(c); };
@@ -170,11 +182,12 @@
   async function init() {
     setTitle(); metricButtons();
     try {
-      const [cd, rd, world, weather] = await Promise.all(['../data/country_crop_risk_latest.json', '../data/admin_region_risk_latest.json', '../data/countries.geo.json', '../data/weather_latest.json'].map(x => fetch(x).then(r => { if (!r.ok) throw Error(`无法读取 ${x}`); return r.json(); })));
+      const [cd, rd, world, weather, history] = await Promise.all(['../data/country_crop_risk_latest.json', '../data/admin_region_risk_latest.json', '../data/countries.geo.json', '../data/weather_latest.json', '../data/region_history_90d_v1.0d.json'].map(x => fetch(x).then(r => { if (!r.ok) throw Error(`无法读取 ${x}`); return r.json(); })));
       countries = dedupe(cd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend)); const allowed = new Set(countries.map(r => r.country));
       const candidates = rd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend && allowed.has(canonical(r.country))).map(r => ({ ...r, country: canonical(r.country) }));
       const countriesWithAdmin1 = new Set(candidates.filter(r => r.admin_level === 'admin1').map(r => r.country));
       regions = candidates.filter(r => !(r.admin_level === 'national' && countriesWithAdmin1.has(r.country)));
+      historyById = new Map(); history.forEach(row => { if (!historyById.has(row.weather_region_id)) historyById.set(row.weather_region_id, []); historyById.get(row.weather_region_id).push(row); });
       worldGeo = world;
       map = L.map('map', { minZoom: 2, maxZoom: 8 }).setView([23, 15], 2); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
       scopeButtons(); summary(); await renderMap(true); selectDefault();
