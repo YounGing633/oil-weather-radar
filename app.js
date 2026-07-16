@@ -2267,9 +2267,12 @@ function buildDetailPanel(record, options = {}) {
   const stageRecord = options.stageRecord
     ? { ...options.stageRecord, crop_group: options.stageRecord.crop_group || record.crop_group }
     : record;
+  const detailTitle = options.regionCharts
+    ? `${cropDisplayName(record)}｜${shortRegionName(record)}｜${record.country_cn || record.country || ''}`
+    : buildDetailHeaderTitle(record, options);
   const header = `
     <div class="detail-header">
-      <h2>${esc(buildDetailHeaderTitle(record, options))}</h2>
+      <h2>${esc(detailTitle)}</h2>
       <div class="subtitle">
         ${riskBadge(options.isCountry ? riskNumFromCountry(record) : record.risk_level_v3, formatRiskLabel(record))}
         <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropDisplayName(record))}</span>
