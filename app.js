@@ -3640,7 +3640,29 @@ function forecastReliefText(row) {
   return buildRecoverySentences(row)[0] || '';
 }
 
-function renderRegionCharts(row) {
+let chartLibraryFallbackPromise = null;
+function ensureChartLibrary() {
+  if (typeof Chart !== 'undefined') return Promise.resolve(true);
+  if (chartLibraryFallbackPromise) return chartLibraryFallbackPromise;
+  chartLibraryFallbackPromise = new Promise(resolve => {
+    const existing = document.querySelector('script[data-chart-library-fallback]');
+    if (existing) {
+      existing.addEventListener('load', () => resolve(typeof Chart !== 'undefined'), { once: true });
+      existing.addEventListener('error', () => resolve(false), { once: true });
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'assets/vendor/chart.umd.min.js';
+    script.dataset.chartLibraryFallback = 'true';
+    script.onload = () => resolve(typeof Chart !== 'undefined');
+    script.onerror = () => resolve(false);
+    document.head.appendChild(script);
+  });
+  return chartLibraryFallbackPromise;
+}
+
+async function renderRegionCharts(row) {
+  if (!(await ensureChartLibrary())) return;
   renderSoilActualChart(row.soil_rootzone_percentile_90d_series || []);
   renderSoilAnomalyChart(row.soil_rootzone_percentile_90d_series || []);
   renderSoilPercentileChart(row.soil_rootzone_percentile_90d_series || []);
