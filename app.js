@@ -2267,7 +2267,7 @@ function buildDetailPanel(record, options = {}) {
   const stageRecord = options.stageRecord
     ? { ...options.stageRecord, crop_group: options.stageRecord.crop_group || record.crop_group }
     : record;
-  return `
+  const header = `
     <div class="detail-header">
       <h2>${esc(buildDetailHeaderTitle(record, options))}</h2>
       <div class="subtitle">
@@ -2275,6 +2275,13 @@ function buildDetailPanel(record, options = {}) {
         <span class="pill oil-pill" style="--oil-color:${cropColor(record.crop_group)}">${esc(cropDisplayName(record))}</span>
       </div>
     </div>
+  `;
+  if (options.regionCharts) {
+    return `${header}
+      <div class="detail-block"><p class="detail-chart-note">实况均截至最新观测日；预报从下一日开始。图中不使用数字摘要卡，预报累计仅在图前按你的要求保留。</p></div>
+      ${options.extraHtml || ''}`;
+  }
+  return `${header}
     ${renderCurrentConclusionSection(record, options)}
     ${renderEvidenceSection(stageRecord || record, options)}
     ${renderProductionWeightSection(record, options)}
@@ -3535,12 +3542,15 @@ function seriesHasValue(series, keys) {
 }
 
 function renderSoilMoistureChartBlock(row) {
-  if (!soilPercentileAvailable(row)) return '';
   const series = row.soil_rootzone_percentile_90d_series || [];
-  if (!seriesHasValue(series, ['rootzone_percentile', 'surface_percentile'])) return '';
+  if (!seriesHasValue(series, ['rootzone_percentile', 'surface_percentile', 'soil_water_rootzone', 'soil_water_surface'])) return '';
   return `<div class="detail-block">
-    <h3>土壤湿度</h3>
-    <div class="chart-box"><canvas id="chart-soil"></canvas></div>
+    <h3>⑥ 根区 / 表层土壤水分 · 90天走势</h3>
+    <div class="detail-chart-grid">
+      <div><div class="chart-title">实际值</div><div class="chart-box compact"><canvas id="chart-soil-actual"></canvas></div></div>
+      <div><div class="chart-title">距平（基准期）</div><div class="chart-box compact"><canvas id="chart-soil-anomaly"></canvas></div></div>
+      <div><div class="chart-title">百分位</div><div class="chart-box compact"><canvas id="chart-soil-percentile"></canvas></div></div>
+    </div>
   </div>`;
 }
 
@@ -3548,62 +3558,70 @@ function renderPrecipSummaryBlock(row) {
   const series = row.precip_30d_anomaly_90d_series || [];
   if (!seriesHasValue(series, ['precip_30d_actual', 'precip_30d_normal'])) return '';
   return `<div class="detail-block">
-    <h3>近30天降雨</h3>
-    <div class="chart-box compact"><canvas id="chart-precip-cum"></canvas></div>
+    <h3>① 30日累计降雨 / 降雨距平 · 90天走势</h3>
+    <div class="detail-chart-grid">
+      <div><div class="chart-title">30日累计降雨</div><div class="chart-box compact"><canvas id="chart-precip-cum"></canvas></div></div>
+      <div><div class="chart-title">30日降雨距平</div><div class="chart-box compact"><canvas id="chart-rain30-anomaly"></canvas></div></div>
+    </div>
   </div>`;
 }
 
 function renderRainAnomalyChartBlock(row) {
-  if (!dailyRainAnomalySeries(row).length) return '';
+  if (!dailyRainSourceSeries(row).length) return '';
   return `<div class="detail-block">
-    <h3>每日降雨距平</h3>
-    <div class="chart-box compact"><canvas id="chart-rain-anomaly"></canvas></div>
+    <h3>② 日降雨 · 90天走势</h3>
+    <div class="chart-box detail-tall"><canvas id="chart-daily-rain"></canvas></div>
+    <p class="detail-chart-note">棕色柱表示连续无雨日（&lt;1 mm），红色柱表示极端降雨日（≥50 mm）。</p>
   </div>`;
 }
 
 function renderTempAnomalyChartBlock(row) {
-  if (!seriesHasValue(row.precip_30d_anomaly_90d_series || [], ['temp_max_anomaly_c', 'temperature_anomaly_c'])) return '';
+  if (!seriesHasValue(getRegionHistory(row), ['temp_max_c', 'temp_min_c', 'temp_mean_c'])) return '';
   return `<div class="detail-block">
-    <h3>气温距平</h3>
-    <div class="chart-box compact"><canvas id="chart-temp-anomaly"></canvas></div>
+    <h3>③ 每日最高 / 最低 / 平均温与正常范围 · 90天走势</h3>
+    <div class="chart-box detail-tall"><canvas id="chart-temperature"></canvas></div>
+    <p class="detail-chart-note">阴影为同源历史基准的 P10–P90 正常范围；无完整同源基准的地区仅显示实况曲线。</p>
   </div>`;
 }
 
+function forecastPeriodMarkup(series) {
+  const periods = [[1, 7, '1–7天'], [8, 15, '8–15天'], [1, 15, '1–15天']];
+  return `<div class="forecast-periods">${periods.map(([from, to, label]) => {
+    const rows = series.filter(x => Number(x.horizon_day) >= from && Number(x.horizon_day) <= to);
+    const rain = rows.length === (to - from + 1) ? rows.reduce((sum, x) => sum + (Number(x.precipitation_mm) || 0), 0) : null;
+    const normals = rows.map(x => x.precipitation_normal_mm).filter(isNum);
+    const normal = normals.length === rows.length ? normals.reduce((sum, x) => sum + Number(x), 0) : null;
+    const delta = isNum(rain) && isNum(normal) ? rain - normal : null;
+    return `<div class="forecast-period"><b>${label}</b><span>${isNum(rain) ? fmtNum(rain, 1, ' mm') : '数据不足'}</span><small>${isNum(delta) ? `距平 ${fmtSigned(delta, 1, ' mm')}` : '距平待基准完整后显示'}</small></div>`;
+  }).join('')}</div>`;
+}
+
 function renderForecastDetailBlock(row) {
-  const cells = [
-    isNum(row.forecast_7d_precip) ? detailCell('未来7天降雨', fmtNum(row.forecast_7d_precip, 0, ' mm')) : '',
-    isNum(row.forecast_16d_precip) ? detailCell('未来16天降雨', fmtNum(row.forecast_16d_precip, 0, ' mm')) : ''
-  ].filter(Boolean);
   const series = row.forecast_daily_16d_series || [];
-  if (!cells.length && !seriesHasValue(series, ['precip_mm', 'temp_max_c', 'temperature_c'])) return '';
+  if (!seriesHasValue(series, ['precipitation_mm', 'temp_max_c', 'temp_min_c'])) return '';
   return `<div class="detail-block">
-    <h3>未来降雨与温度</h3>
-    ${cells.length ? `<div class="data-grid">${cells.join('')}</div>` : ''}
-    ${series.length ? '<div class="chart-box"><canvas id="chart-forecast"></canvas></div>' : ''}
+    <h3>④ 未来降雨预报 · 逐日</h3>
+    ${forecastPeriodMarkup(series)}
+    <div class="chart-box detail-tall"><canvas id="chart-forecast-rain"></canvas></div>
+    <h3 style="margin-top:18px;">⑤ 未来温度预报 · 逐日</h3>
+    <div class="chart-box detail-tall"><canvas id="chart-forecast-temp"></canvas></div>
   </div>`;
 }
 
 function showRegionDetail(row) {
   destroyCharts();
   state.selectedRegionRecord = row;
-  const conclusion = regionConclusion(row);
   const extraHtml = `
-    ${renderRiskTagsBlock(row)}
-    ${renderSignalContradictionBlock(row)}
-    ${renderCropProgressBlock(row)}
-    ${renderRainSoilExplanationBlock(row)}
-    ${renderSoilTemperatureBlock(row)}
-    ${renderSoilMoistureChartBlock(row)}
     ${renderPrecipSummaryBlock(row)}
     ${renderRainAnomalyChartBlock(row)}
     ${renderTempAnomalyChartBlock(row)}
     ${renderForecastDetailBlock(row)}
-    ${renderRegionStatusBlock(row)}
+    ${renderSoilMoistureChartBlock(row)}
   `;
 
   document.getElementById('detail-panel').innerHTML = buildDetailPanel(row, {
     title: shortRegionName(row),
-    conclusion,
+    regionCharts: true,
     countryName: row.country_cn || row.country,
     regionName: shortRegionName(row),
     production: row.production_tonnes,
@@ -3620,11 +3638,15 @@ function forecastReliefText(row) {
 }
 
 function renderRegionCharts(row) {
-  renderSoilChart(row.soil_rootzone_percentile_90d_series || []);
+  renderSoilActualChart(row.soil_rootzone_percentile_90d_series || []);
+  renderSoilAnomalyChart(row.soil_rootzone_percentile_90d_series || []);
+  renderSoilPercentileChart(row.soil_rootzone_percentile_90d_series || []);
   renderPrecipCumChart(row.precip_30d_anomaly_90d_series || []);
-  renderRainAnomalyChart(row);
-  renderTempAnomalyChart(row.precip_30d_anomaly_90d_series || []);
-  renderForecastChart(row.forecast_daily_16d_series || []);
+  renderRain30dAnomalyChart(row.precip_30d_anomaly_90d_series || []);
+  renderDailyRainChart(row);
+  renderTemperatureChart(getRegionHistory(row));
+  renderForecastRainChart(row.forecast_daily_16d_series || []);
+  renderForecastTempChart(row.forecast_daily_16d_series || []);
 }
 
 const soilBandPlugin = {
@@ -3814,6 +3836,93 @@ function renderForecastChart(series) {
       }
     }
   });
+}
+
+function renderSoilActualChart(series) {
+  const canvas = document.getElementById('chart-soil-actual');
+  if (!canvas || !series.length) return;
+  charts.soilActual = new Chart(canvas, { type: 'line', data: { labels: chartLabels(series), datasets: [
+    { label: '根区实际值', data: chartValues(series, 'soil_water_rootzone'), borderColor: '#1e293b', borderWidth: 1.8, pointRadius: 0, tension: 0.3 },
+    { label: '表层实际值', data: chartValues(series, 'soil_water_surface'), borderColor: '#3b82f6', borderWidth: 1.5, pointRadius: 0, tension: 0.3 },
+    { label: '根区基准', data: chartValues(series, 'rootzone_normal'), borderColor: '#94a3b8', borderWidth: 1, pointRadius: 0, borderDash: [4, 3], tension: 0.3 },
+    { label: '表层基准', data: chartValues(series, 'surface_normal'), borderColor: '#93c5fd', borderWidth: 1, pointRadius: 0, borderDash: [4, 3], tension: 0.3 }
+  ] }, options: chartBaseOptions({ yTitle: 'm³/m³', showXAxis: true }) });
+}
+
+function renderSoilAnomalyChart(series) {
+  const canvas = document.getElementById('chart-soil-anomaly');
+  if (!canvas || !series.length) return;
+  charts.soilAnomaly = new Chart(canvas, { type: 'line', data: { labels: chartLabels(series), datasets: [
+    { label: '根区距平', data: chartValues(series, 'rootzone_anomaly'), borderColor: '#0f766e', borderWidth: 1.6, pointRadius: 0, tension: 0.3 },
+    { label: '表层距平', data: chartValues(series, 'surface_anomaly'), borderColor: '#7c3aed', borderWidth: 1.4, pointRadius: 0, tension: 0.3 }
+  ] }, options: chartBaseOptions({ yTitle: 'm³/m³', showXAxis: true, yZeroLine: true }) });
+}
+
+function renderSoilPercentileChart(series) {
+  const canvas = document.getElementById('chart-soil-percentile');
+  if (!canvas || !series.length) return;
+  charts.soilPercentile = new Chart(canvas, { type: 'line', data: { labels: chartLabels(series), datasets: [
+    { label: '根区百分位', data: chartValues(series, 'rootzone_percentile'), borderColor: '#1e293b', borderWidth: 1.8, pointRadius: 0, tension: 0.3 },
+    { label: '表层百分位', data: chartValues(series, 'surface_percentile'), borderColor: '#3b82f6', borderWidth: 1.3, pointRadius: 0, tension: 0.3, borderDash: [3, 2] }
+  ] }, options: chartBaseOptions({ yMin: 0, yMax: 100, yTitle: 'percentile', showXAxis: true }), plugins: [soilBandPlugin] });
+}
+
+function renderRain30dAnomalyChart(series) {
+  const canvas = document.getElementById('chart-rain30-anomaly');
+  if (!canvas || !series.length) return;
+  const values = chartValues(series, 'precip_30d_anomaly_mm');
+  charts.rain30Anomaly = new Chart(canvas, { type: 'bar', data: { labels: chartLabels(series), datasets: [{ label: '30日降雨距平', data: values, backgroundColor: values.map(v => v === null ? 'rgba(148,163,184,0.15)' : v < 0 ? 'rgba(192,57,43,0.45)' : 'rgba(37,99,235,0.4)'), borderRadius: 1, barThickness: 3 }] }, options: chartBaseOptions({ yTitle: 'mm', showXAxis: true, yZeroLine: true }) });
+}
+
+function renderDailyRainChart(row) {
+  const canvas = document.getElementById('chart-daily-rain');
+  const series = dailyRainSourceSeries(row);
+  if (!canvas || !series.length) return;
+  const values = series.map(point => firstNumeric(point, ['precipitation_mm', 'daily_rain_mm', 'daily_precip_mm', 'rain_mm', 'precip_mm']));
+  let dryRun = 0;
+  const colors = values.map(value => {
+    if (!isNum(value)) return 'rgba(148,163,184,0.15)';
+    if (Number(value) >= 50) { dryRun = 0; return 'rgba(220,38,38,0.75)'; }
+    if (Number(value) < 1) { dryRun += 1; return dryRun >= 2 ? 'rgba(180,83,9,0.75)' : 'rgba(37,99,235,0.45)'; }
+    dryRun = 0; return 'rgba(37,99,235,0.5)';
+  });
+  charts.dailyRain = new Chart(canvas, { type: 'bar', data: { labels: chartLabels(series), datasets: [{ label: '日降雨', data: values, backgroundColor: colors, borderWidth: 0, borderRadius: 1 }] }, options: chartBaseOptions({ yMin: 0, yTitle: 'mm', showXAxis: true }) });
+}
+
+function renderTemperatureChart(series) {
+  const canvas = document.getElementById('chart-temperature');
+  if (!canvas || !series.length) return;
+  const band = (low, high, color) => [
+    { label: '_', data: chartValues(series, high), borderColor: 'transparent', pointRadius: 0 },
+    { label: '正常范围', data: chartValues(series, low), borderColor: 'transparent', pointRadius: 0, fill: '-1', backgroundColor: color }
+  ];
+  charts.temperature = new Chart(canvas, { type: 'line', data: { labels: chartLabels(series), datasets: [
+    ...band('temp_max_normal_low_c', 'temp_max_normal_high_c', 'rgba(217,119,6,0.10)'),
+    ...band('temp_min_normal_low_c', 'temp_min_normal_high_c', 'rgba(59,130,246,0.08)'),
+    { label: '最高温', data: chartValues(series, 'temp_max_c'), borderColor: '#b45309', borderWidth: 1.5, pointRadius: 0, tension: 0.25 },
+    { label: '最低温', data: chartValues(series, 'temp_min_c'), borderColor: '#2563eb', borderWidth: 1.4, pointRadius: 0, tension: 0.25 },
+    { label: '平均温', data: chartValues(series, 'temp_mean_c'), borderColor: '#0f766e', borderWidth: 1.4, pointRadius: 0, tension: 0.25 }
+  ] }, options: chartBaseOptions({ yTitle: '°C', showXAxis: true }) });
+}
+
+function renderForecastRainChart(series) {
+  const canvas = document.getElementById('chart-forecast-rain');
+  if (!canvas || !series.length) return;
+  charts.forecastRain = new Chart(canvas, { type: 'bar', data: { labels: chartLabels(series, 'target_date'), datasets: [
+    { label: '预报降雨', data: chartValues(series, 'precipitation_mm'), backgroundColor: 'rgba(37,99,235,0.42)', borderRadius: 2 },
+    { type: 'line', label: '历史同期', data: chartValues(series, 'precipitation_normal_mm'), borderColor: '#94a3b8', borderDash: [4, 3], borderWidth: 1.2, pointRadius: 0, tension: 0.25 }
+  ] }, options: chartBaseOptions({ yMin: 0, yTitle: 'mm', showXAxis: true }) });
+}
+
+function renderForecastTempChart(series) {
+  const canvas = document.getElementById('chart-forecast-temp');
+  if (!canvas || !series.length) return;
+  charts.forecastTemp = new Chart(canvas, { type: 'line', data: { labels: chartLabels(series, 'target_date'), datasets: [
+    { label: '最高温预报', data: chartValues(series, 'temp_max_c'), borderColor: '#b45309', borderWidth: 1.6, pointRadius: 1.5, tension: 0.25 },
+    { label: '最低温预报', data: chartValues(series, 'temp_min_c'), borderColor: '#2563eb', borderWidth: 1.6, pointRadius: 1.5, tension: 0.25 },
+    { label: '最高温同期', data: chartValues(series, 'temp_max_normal_c'), borderColor: '#f0b66a', borderDash: [4, 3], borderWidth: 1.1, pointRadius: 0, tension: 0.25 },
+    { label: '最低温同期', data: chartValues(series, 'temp_min_normal_c'), borderColor: '#93c5fd', borderDash: [4, 3], borderWidth: 1.1, pointRadius: 0, tension: 0.25 }
+  ] }, options: chartBaseOptions({ yTitle: '°C', showXAxis: true }) });
 }
 
 function chartBaseOptions(opts = {}) {
