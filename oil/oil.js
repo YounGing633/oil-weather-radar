@@ -23,6 +23,10 @@
   const fmt = x => n(x) >= 1e6 ? `${(n(x) / 1e6).toFixed(1)} Mt` : `${Math.round(n(x) / 1e3)} kt`;
   const pc = x => num(x) === null ? '—' : `${Math.round(num(x) * 100)}%`;
   const val = (x, d = 1, suffix = '') => num(x) === null ? '—' : `${num(x).toFixed(d)}${suffix}`;
+  const latestObservationDate = rows => {
+    const dates = rows.map(r => r?.latest_raw_weather_date).filter(Boolean).sort();
+    return dates.length ? String(dates[dates.length - 1]).slice(0, 10) : '暂缺';
+  };
   const esc = x => String(x ?? '—').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const canonical = x => ALIAS[x] || x;
   const norm = x => String(x || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/russia|oblast|krai|republic|autonomous|province|region|state|district|of|the/g, '').replace(/[^a-z0-9]/g, '');
@@ -166,7 +170,7 @@
   async function init() {
     setTitle(); metricButtons();
     try {
-      const [cd, rd, world] = await Promise.all(['../data/country_crop_risk_latest.json', '../data/admin_region_risk_latest.json', '../data/countries.geo.json'].map(x => fetch(x).then(r => { if (!r.ok) throw Error(`无法读取 ${x}`); return r.json(); })));
+      const [cd, rd, world, weather] = await Promise.all(['../data/country_crop_risk_latest.json', '../data/admin_region_risk_latest.json', '../data/countries.geo.json', '../data/weather_latest.json'].map(x => fetch(x).then(r => { if (!r.ok) throw Error(`无法读取 ${x}`); return r.json(); })));
       countries = dedupe(cd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend)); const allowed = new Set(countries.map(r => r.country));
       const candidates = rd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend && allowed.has(canonical(r.country))).map(r => ({ ...r, country: canonical(r.country) }));
       const countriesWithAdmin1 = new Set(candidates.filter(r => r.admin_level === 'admin1').map(r => r.country));
@@ -174,7 +178,7 @@
       worldGeo = world;
       map = L.map('map', { minZoom: 2, maxZoom: 8 }).setView([23, 15], 2); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
       scopeButtons(); summary(); await renderMap(true); selectDefault();
-      $('status').textContent = `数据更新时间：${countries[0]?.updated_at || '暂缺'} · ${countries.length} 个国家 / 地区 · ${regions.length} 个产区 · 已启用品种专属口径`;
+      $('status').textContent = `数据更新时间：${countries[0]?.updated_at || '暂缺'} · 最新实况：${latestObservationDate(weather)} · ${countries.length} 个国家 / 地区 · ${regions.length} 个产区 · 已启用品种专属口径`;
       $('method').innerHTML = `${esc(crop.special)}<br>${esc(crop.focus)}<br>已接入国家和产区风险、近30日天气、土壤水分、未来7/16日预报及可用作物进度；灰色区域表示当前口径无可用数据。`;
     } catch (e) { console.error(e); $('status').textContent = `数据加载失败：${e.message}`; }
   }

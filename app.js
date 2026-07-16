@@ -4231,7 +4231,8 @@ function latestObservationDate() {
   const dates = [
     ...metaDates,
     ...store.countryRecords.map(row => row.data_valid_date || row.weather_baseline_ref_date),
-    ...store.adminRecords.map(row => row.data_valid_date || row.weather_baseline_ref_date)
+    ...store.adminRecords.map(row => row.data_valid_date || row.weather_baseline_ref_date),
+    ...store.regionHistory.map(row => row && row.date)
   ].filter(Boolean).sort();
   return dates.length ? String(dates[dates.length - 1]).slice(0, 10) : '-';
 }
