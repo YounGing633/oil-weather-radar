@@ -181,4 +181,3 @@
   document.querySelectorAll('[data-label]').forEach(b => b.onclick = async () => { labelMode = b.dataset.label; document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x === b)); await renderMap(false); });
   init();
 })();
-
