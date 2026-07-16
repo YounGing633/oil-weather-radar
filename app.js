@@ -3562,10 +3562,8 @@ function renderPrecipSummaryBlock(row) {
   if (!seriesHasValue(series, ['precip_30d_actual', 'precip_30d_normal'])) return '';
   return `<div class="detail-block">
     <h3>① 30日累计降雨 / 降雨距平 · 90天走势</h3>
-    <div class="detail-chart-grid">
-      <div><div class="chart-title">30日累计降雨</div><div class="chart-box compact"><canvas id="chart-precip-cum"></canvas></div></div>
-      <div><div class="chart-title">30日降雨距平</div><div class="chart-box compact"><canvas id="chart-rain30-anomaly"></canvas></div></div>
-    </div>
+    <div class="chart-box detail-tall"><canvas id="chart-precip-cum"></canvas></div>
+    <p class="detail-chart-note">折线为30日累计实际值与历史常态（左轴），柱形为降雨距平（右轴）。</p>
   </div>`;
 }
 
@@ -3667,7 +3665,6 @@ async function renderRegionCharts(row) {
   renderSoilAnomalyChart(row.soil_rootzone_percentile_90d_series || []);
   renderSoilPercentileChart(row.soil_rootzone_percentile_90d_series || []);
   renderPrecipCumChart(getPrecip30dSeries(row));
-  renderRain30dAnomalyChart(getPrecip30dSeries(row));
   renderDailyRainChart(row);
   renderTemperatureChart(getRegionHistory(row));
   renderForecastRainChart(row.forecast_daily_16d_series || []);
@@ -3716,14 +3713,15 @@ function getPrecip30dSeries(row) {
   const embedded = Array.isArray(row && row.precip_30d_anomaly_90d_series)
     ? row.precip_30d_anomaly_90d_series
     : [];
-  if (seriesHasValue(embedded, ['precip_30d_actual', 'precip_30d_normal'])) return embedded;
-  return getRegionHistory(row).map(point => ({
+  const history = getRegionHistory(row).map(point => ({
     date: point.date,
     precip_30d_actual: firstNumeric(point, ['precipitation_30d_actual_mm', 'precip_30d_actual']),
     precip_30d_normal: firstNumeric(point, ['precipitation_30d_normal_mm', 'precip_30d_normal']),
     precip_30d_anomaly_mm: firstNumeric(point, ['precipitation_30d_anomaly_mm']),
     precip_30d_ratio_pct: firstNumeric(point, ['precipitation_30d_ratio_pct'])
   }));
+  if (seriesHasValue(history, ['precip_30d_actual', 'precip_30d_normal'])) return history;
+  return embedded;
 }
 
 function arrayField(row, keys) {
@@ -3790,16 +3788,25 @@ function renderSoilChart(series) {
 function renderPrecipCumChart(series) {
   const canvas = document.getElementById('chart-precip-cum');
   if (!canvas || !series.length) return;
+  const anomalyValues = chartValues(series, 'precip_30d_anomaly_mm');
+  const options = chartBaseOptions({ yMin: 0, yTitle: '累计降雨（mm）', showXAxis: true });
+  options.scales.yAnomaly = {
+    position: 'right',
+    grid: { drawOnChartArea: false },
+    ticks: { font: { size: 9 }, maxTicksLimit: 5, color: '#8b95a3' },
+    title: { display: true, text: '距平（mm）', font: { size: 8 }, color: '#8b95a3' }
+  };
   charts.precipCum = new Chart(canvas, {
-    type: 'line',
+    type: 'bar',
     data: {
       labels: chartLabels(series),
       datasets: [
-        { label: '实际', data: chartValues(series, 'precip_30d_actual'), borderColor: '#2563eb', borderWidth: 1.6, pointRadius: 0, tension: 0.3, fill: { target: 'origin', above: 'rgba(37,99,235,0.06)' } },
-        { label: '常年', data: chartValues(series, 'precip_30d_normal'), borderColor: '#94a3b8', borderWidth: 1, pointRadius: 0, borderDash: [4, 3], tension: 0.3 }
+        { type: 'line', label: '30日累计实际', data: chartValues(series, 'precip_30d_actual'), yAxisID: 'y', borderColor: '#2563eb', borderWidth: 1.8, pointRadius: 0, tension: 0.25, order: 1 },
+        { type: 'line', label: '30日累计常态', data: chartValues(series, 'precip_30d_normal'), yAxisID: 'y', borderColor: '#94a3b8', borderWidth: 1.2, pointRadius: 0, borderDash: [4, 3], tension: 0.25, order: 2 },
+        { label: '30日降雨距平', data: anomalyValues, yAxisID: 'yAnomaly', backgroundColor: anomalyValues.map(v => v === null ? 'rgba(148,163,184,0.12)' : v >= 0 ? 'rgba(22,163,74,0.28)' : 'rgba(220,38,38,0.28)'), borderWidth: 0, barPercentage: 0.85, categoryPercentage: 1, order: 3 }
       ]
     },
-    options: chartBaseOptions({ yMin: 0, yTitle: 'mm', showXAxis: true })
+    options
   });
 }
 
@@ -3925,7 +3932,11 @@ function renderDailyRainChart(row) {
     if (Number(value) < 1) { dryRun += 1; return dryRun >= 2 ? 'rgba(180,83,9,0.75)' : 'rgba(37,99,235,0.45)'; }
     dryRun = 0; return 'rgba(37,99,235,0.5)';
   });
-  charts.dailyRain = new Chart(canvas, { type: 'bar', data: { labels: chartLabels(series), datasets: [{ label: '日降雨', data: values, backgroundColor: colors, borderWidth: 0, borderRadius: 1 }] }, options: chartBaseOptions({ yMin: 0, yTitle: 'mm', showXAxis: true }) });
+  const normals = series.map(point => firstNumeric(point, ['precipitation_normal_daily_mm', 'daily_rain_normal_mm', 'daily_precip_normal_mm']));
+  charts.dailyRain = new Chart(canvas, { type: 'bar', data: { labels: chartLabels(series), datasets: [
+    { label: '日降雨', data: values, backgroundColor: colors, borderWidth: 0, borderRadius: 1 },
+    { type: 'line', label: '历史同期常态', data: normals, borderColor: '#7c8794', borderDash: [4, 3], borderWidth: 1.4, pointRadius: 0, tension: 0.25 }
+  ] }, options: chartBaseOptions({ yMin: 0, yTitle: 'mm', showXAxis: true }) });
 }
 
 function renderTemperatureChart(series) {

@@ -32,8 +32,8 @@
     return { key, html: `
       <div class="detail-chart-header"><h2>${title}</h2><div class="detail-chart-badges"><span>${options.riskLabel || row.risk_label_v4_cn || row.risk_level_v3_cn || '持续跟踪'}</span></div></div>
       <p class="detail-note">实况均截至最新观测日；预报从下一日开始。除降雨预报累计外，不展示数字摘要卡。</p>
-      ${section('① 30日累计降雨 / 降雨距平 · 90天走势', `<div class="detail-chart-grid">${canvas(`${key}-rain30`, '30日累计降雨')}${canvas(`${key}-rain30a`, '30日降雨距平')}</div>`)}
-      ${section('② 日降雨 · 90天走势', `${canvas(`${key}-daily-rain`, '日降雨', true)}<p class="detail-note">棕色柱表示连续无雨日（&lt;1 mm），红色柱表示极端降雨日（≥50 mm）。</p>`)}
+      ${section('① 30日累计降雨 / 降雨距平 · 90天走势', `${canvas(`${key}-rain30`, '累计实际/常态与距平', true)}<p class="detail-note">折线为30日累计实际值与历史常态（左轴），柱形为降雨距平（右轴）。</p>`)}
+      ${section('② 日降雨 · 90天走势', `${canvas(`${key}-daily-rain`, '日降雨与历史常态', true)}<p class="detail-note">虚线为历史同期日降雨常态；棕色柱表示连续无雨日（&lt;1 mm），红色柱表示极端降雨日（≥50 mm）。</p>`)}
       ${section('③ 每日最高 / 最低 / 平均温与正常范围 · 90天走势', `${canvas(`${key}-temp`, '温度与正常范围', true)}<p class="detail-note">阴影为同源历史基准的 P10–P90 正常范围；基准不足时仅显示实况曲线。</p>`)}
       ${section('④ 未来降雨预报 · 逐日', `<div class="forecast-periods">${forecastPeriods(forecast)}</div>${canvas(`${key}-forecast-rain`, '逐日降雨预报', true)}`)}
       ${section('⑤ 未来温度预报 · 逐日', canvas(`${key}-forecast-temp`, '逐日温度预报', true))}
@@ -60,10 +60,16 @@
       : (row.precip_30d_anomaly_90d_series || []);
     const soil = row.soil_rootzone_percentile_90d_series || [];
     const forecast = row.forecast_daily_16d_series || [];
-    chart(`${key}-rain30`, { labels: labels(rain30), datasets: [line('实际30日累计', rain30.map(x => n(x.precip_30d_actual)), '#2677b8'), line('同期常态', rain30.map(x => n(x.precip_30d_normal)), '#8797a1', { borderDash: [4, 3] })] });
-    chart(`${key}-rain30a`, { labels: labels(rain30), datasets: [{ type: 'bar', label: '距平', data: rain30.map(x => n(x.precip_30d_anomaly_mm)), backgroundColor: rain30.map(x => (n(x.precip_30d_anomaly_mm) || 0) >= 0 ? '#4d9b86' : '#c8794b'), borderWidth: 0 }] });
+    chart(`${key}-rain30`, { labels: labels(rain30), datasets: [
+      line('30日累计实际', rain30.map(x => n(x.precip_30d_actual)), '#2677b8', { yAxisID: 'y', order: 1 }),
+      line('30日累计常态', rain30.map(x => n(x.precip_30d_normal)), '#8797a1', { yAxisID: 'y', borderDash: [4, 3], order: 2 }),
+      { type: 'bar', label: '30日降雨距平', data: rain30.map(x => n(x.precip_30d_anomaly_mm)), yAxisID: 'yAnomaly', backgroundColor: rain30.map(x => (n(x.precip_30d_anomaly_mm) || 0) >= 0 ? 'rgba(77,155,134,.28)' : 'rgba(200,121,75,.28)'), borderWidth: 0, order: 3 }
+    ], options: { scales: { x: { ticks: { maxTicksLimit: 9, font: { size: 9 } }, grid: { display: false } }, y: { position: 'left', beginAtZero: true, title: { display: true, text: '累计降雨（mm）' }, ticks: { font: { size: 9 } } }, yAnomaly: { position: 'right', title: { display: true, text: '距平（mm）' }, grid: { drawOnChartArea: false }, ticks: { font: { size: 9 } } } } } });
     const dry = dryDays(daily);
-    chart(`${key}-daily-rain`, { labels: labels(daily), datasets: [{ type: 'bar', label: '日降雨', data: daily.map(x => n(x.precipitation_mm)), backgroundColor: daily.map((x, i) => (n(x.precipitation_mm) || 0) >= 50 ? '#c23b22' : dry.has(i) ? '#a97948' : '#4c93c6'), borderWidth: 0 }], options: { scales: { x: { ticks: { maxTicksLimit: 9, font: { size: 9 } }, grid: { display: false } }, y: { ticks: { font: { size: 9 } }, beginAtZero: true } } } });
+    chart(`${key}-daily-rain`, { labels: labels(daily), datasets: [
+      { type: 'bar', label: '日降雨', data: daily.map(x => n(x.precipitation_mm)), backgroundColor: daily.map((x, i) => (n(x.precipitation_mm) || 0) >= 50 ? '#c23b22' : dry.has(i) ? '#a97948' : '#4c93c6'), borderWidth: 0 },
+      line('历史同期常态', daily.map(x => n(x.precipitation_normal_daily_mm)), '#7c8794', { borderDash: [4, 3] })
+    ], options: { scales: { x: { ticks: { maxTicksLimit: 9, font: { size: 9 } }, grid: { display: false } }, y: { ticks: { font: { size: 9 } }, beginAtZero: true } } } });
     chart(`${key}-temp`, { labels: labels(daily), datasets: [
       line('最高温P10', daily.map(x => n(x.temp_max_normal_low_c)), 'rgba(225,116,67,0)', { fill: false }),
       line('最高温P90', daily.map(x => n(x.temp_max_normal_high_c)), 'rgba(225,116,67,.16)', { fill: '-1' }),
