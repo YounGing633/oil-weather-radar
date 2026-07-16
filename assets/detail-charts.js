@@ -1,6 +1,6 @@
 (() => {
   let serial = 0;
-  const n = value => Number.isFinite(Number(value)) ? Number(value) : null;
+  const n = value => value === null || value === undefined || value === '' ? null : (Number.isFinite(Number(value)) ? Number(value) : null);
   const dateLabel = value => String(value || '').slice(5, 10).replace('-', '/');
   const labels = rows => rows.map(x => dateLabel(x.date || x.target_date));
   const chart = (id, config) => {
