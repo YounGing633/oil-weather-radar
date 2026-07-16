@@ -178,7 +178,7 @@
       worldGeo = world;
       map = L.map('map', { minZoom: 2, maxZoom: 8 }).setView([23, 15], 2); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
       scopeButtons(); summary(); await renderMap(true); selectDefault();
-      $('status').textContent = `数据更新时间：${countries[0]?.updated_at || '暂缺'} · 最新实况：${latestObservationDate(weather)} · ${countries.length} 个国家 / 地区 · ${regions.length} 个产区 · 已启用品种专属口径`;
+      $('status').textContent = `数据更新时间：${countries[0]?.updated_at || '暂缺'} · 最新实况（近实时融合）：${latestObservationDate(weather)} · ${countries.length} 个国家 / 地区 · ${regions.length} 个产区 · 已启用品种专属口径`;
       $('method').innerHTML = `${esc(crop.special)}<br>${esc(crop.focus)}<br>已接入国家和产区风险、近30日天气、土壤水分、未来7/16日预报及可用作物进度；灰色区域表示当前口径无可用数据。`;
     } catch (e) { console.error(e); $('status').textContent = `数据加载失败：${e.message}`; }
   }

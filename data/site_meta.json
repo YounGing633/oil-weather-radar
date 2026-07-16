@@ -1,12 +1,14 @@
 [
   {
-    "generated_at": "2026-07-16 11:40:10",
+    "generated_at": "2026-07-16 12:35:11",
     "version": "v1.0-i1",
     "baseline_period": "1991-2020",
     "baseline_method": "monthly_normal + doy_pentad (v1.0-i1)",
+    "latest_observation_date": "2026-07-15",
+    "observation_data_note": "NASA POWER historical + Open-Meteo near-real-time model blend for the latest completed day",
     "data_sources": [
-      "NASA POWER (historical)",
-      "Open-Meteo (forecast + ET0/VPD)",
+      "NASA POWER (historical + delayed backfill)",
+      "Open-Meteo (near-real-time latest day + forecast + ET0/VPD)",
       "DOY pentad baseline (i1)"
     ],
     "active_points": 294,
@@ -40,7 +42,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 130,
-    "run_id": "daily_export_20260716_114010"
+    "total_alerts": 135,
+    "run_id": "daily_export_20260716_123510"
   }
 ]
