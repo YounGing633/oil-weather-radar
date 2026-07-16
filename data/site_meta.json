@@ -1,16 +1,16 @@
 [
   {
-    "generated_at": "2026-07-16 12:35:11",
+    "generated_at": "2026-07-16 14:05:37",
     "version": "v1.0-i1",
-    "baseline_period": "1991-2020",
-    "baseline_method": "monthly_normal + doy_pentad (v1.0-i1)",
+    "baseline_period": "2017-2025",
+    "baseline_method": "ECMWF IFS exact trailing calendar windows",
     "latest_observation_date": "2026-07-15",
-    "observation_data_note": "NASA POWER historical + Open-Meteo near-real-time model blend for the latest completed day",
+    "observation_data_note": "Single-source Open-Meteo ECMWF IFS; incomplete climate baselines are shown as unavailable, never filled from another source",
     "data_sources": [
-      "NASA POWER (historical + delayed backfill)",
-      "Open-Meteo (near-real-time latest day + forecast + ET0/VPD)",
-      "DOY pentad baseline (i1)"
+      "Open-Meteo ECMWF IFS (2017-2025 baseline + recent 92 days + forecast)"
     ],
+    "baseline_ready_points": 60,
+    "baseline_pending_points": 234,
     "active_points": 294,
     "excluded_faostat_points": 38,
     "countries": [
@@ -42,7 +42,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 135,
-    "run_id": "daily_export_20260716_123510"
+    "total_alerts": 51,
+    "run_id": "daily_export_20260716_140537"
   }
 ]

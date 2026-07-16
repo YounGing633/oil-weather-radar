@@ -122,7 +122,7 @@
   }
   function updateControlRow() {
     let html = '';
-    if (state.metric === 'rainAnomaly' || state.metric === 'rainForecast' || state.metric === 'tempAnomaly' || state.metric === 'waterAnomaly') html += `<b>比较基准</b>${controlButton('1991–2020', 'basis', 'base91', state.basis === 'base91')}${controlButton('近五年', 'basis', 'base5', state.basis === 'base5', ['tempAnomaly','waterAnomaly'].includes(state.metric))}`;
+    if (state.metric === 'rainAnomaly' || state.metric === 'rainForecast' || state.metric === 'tempAnomaly' || state.metric === 'waterAnomaly') html += `<b>比较基准</b>${controlButton('2017–2025', 'basis', 'base91', state.basis === 'base91')}${controlButton('近五年', 'basis', 'base5', state.basis === 'base5', ['tempAnomaly','waterAnomaly'].includes(state.metric))}`;
     if (state.metric === 'rainForecast' || state.metric === 'tempForecast') html += `<b>期限</b>${controlButton('1–7日', 'horizon', 'f7', state.horizon === 'f7')}${controlButton('8–15日', 'horizon', 'f8', state.horizon === 'f8')}${controlButton('1–15日', 'horizon', 'f15', state.horizon === 'f15')}`;
     if (state.metric === 'rainForecast') html += `<b>显示</b>${controlButton('绝对值（30日等效）', 'unit', 'absolute', state.unit === 'absolute')}${controlButton('距平', 'unit', 'anomaly', state.unit === 'anomaly')}`;
     if (state.section === 'water') html += `<b>土层</b>${controlButton('根区（约0–100cm）', 'depth', 'root', state.depth === 'root')}${controlButton('表层（约0–7cm）', 'depth', 'surface', state.depth === 'surface')}`;
@@ -136,7 +136,7 @@
     const rainEvents = `极端降雨日 ${num(r.extreme_rain_days_30d) ?? '—'}；连续无雨 ${num(r.current_dry_spell_days) ?? '—'} 天`;
     const heatText = heat ? ['','轻度热干：高温与一项偏干信号并存','重点热干：高温、根区偏干及降雨偏少并存','严重热干：高温≥3℃、根区P<20且降雨偏少'][heat] : '未触发热干：需要高温（距平≥2℃）与偏干条件同时成立。';
     const waterText = `根区：${num(r.soil_water_rootzone) === null ? '缺测' : `${num(r.soil_water_rootzone).toFixed(3)} m³/m³`}（P${root ?? '—'}）；表层：${num(r.soil_water_surface) === null ? '缺测' : `${num(r.soil_water_surface).toFixed(3)} m³/m³`}（P${surf ?? '—'}）。`;
-    $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${COUNTRY[r.country]} · 点击地图图层可切换指标；雨/旱/热/涝圆点是事件提示，不是另一套底图。</p><h3>当前风险</h3><div class="forecast-brief">${esc(r.risk_reason_cn || '暂无风险说明')}<br>近30日降雨：${mm(r.rain_30d_mm)}（1991–2020同期 ${pc(r.rain_30d_ratio_1991_2020)}；近五年 ${pc(r.rain_30d_ratio_recent5y)}）<br>${rainEvents}</div><h3>热干和极端天气</h3><div class="forecast-brief">最高温：${num(r._weather?.temp_max_c) === null ? '缺测' : `${num(r._weather.temp_max_c).toFixed(1)}℃`}；最高温距平：${num(r.temp_max_anomaly_c) === null ? '缺测' : `${num(r.temp_max_anomaly_c).toFixed(1)}℃`}。<br>${heatText}</div><h3>水分</h3><div class="forecast-brief">${waterText}<br>根区干旱压力：${dry ? ['','轻度','重点','严重'][dry] : '未触发'}。P 是相对历史同期的排序；P<30偏干、P>70偏湿，绝对含水量请看 m³/m³。</div><h3>数据限制</h3><div class="forecast-brief">降雨已提供1991–2020和近五年两种基准。温度距平与土壤水分目前只有可追溯的历史同期基准；“近五年”被保留为禁用项，待数据管道补齐后才开放，避免用不一致口径替代。</div>`;
+    $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${COUNTRY[r.country]} · 点击地图图层可切换指标；雨/旱/热/涝圆点是事件提示，不是另一套底图。</p><h3>当前风险</h3><div class="forecast-brief">${esc(r.risk_reason_cn || '暂无风险说明')}<br>近30日降雨：${mm(r.rain_30d_mm)}（2017–2025同源同期 ${pc(r.rain_30d_ratio_1991_2020)}；近五年 ${pc(r.rain_30d_ratio_recent5y)}）<br>${rainEvents}</div><h3>热干和极端天气</h3><div class="forecast-brief">最高温：${num(r._weather?.temp_max_c) === null ? '缺测' : `${num(r._weather.temp_max_c).toFixed(1)}℃`}；最高温距平：${num(r.temp_max_anomaly_c) === null ? '缺测' : `${num(r.temp_max_anomaly_c).toFixed(1)}℃`}。<br>${heatText}</div><h3>水分</h3><div class="forecast-brief">${waterText}<br>根区干旱压力：${dry ? ['','轻度','重点','严重'][dry] : '未触发'}。P 是相对历史同期的排序；P<30偏干、P>70偏湿，绝对含水量请看 m³/m³。</div><h3>数据口径</h3><div class="forecast-brief">降雨、温度、近30日窗口、历史基准和预报统一使用 Open‑Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；历史同期基准为2017–2025。</div>`;
   }
   async function buildMap() {
     state.map = L.map('map', { minZoom: 3, maxZoom: 9 }).setView([1.5, 108], 4); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(state.map);
@@ -149,8 +149,8 @@
       const extra = new Map(risk.map(r => [r.weather_region_id, r])), weatherBy = new Map(weather.map(r => [r.weather_region_id, r])), anomalyBy = new Map(anomaly.map(r => [r.weather_region_id, r])), forecastBy = new Map();
       forecast.forEach(x => { if (!forecastBy.has(x.weather_region_id)) forecastBy.set(x.weather_region_id, []); forecastBy.get(x.weather_region_id).push(x); });
       state.rows = rain.map(r => ({ ...r, ...(extra.get(r.weather_region_id) || {}), _weather: weatherBy.get(r.weather_region_id), _anomaly: anomalyBy.get(r.weather_region_id), _forecast: forecastBy.get(r.weather_region_id) || [] })); state.history = history;
-      $('status').textContent = `最新实况（近实时融合）：${state.rows[0]?.date_end || '缺测'} ｜ 数据更新时间：${meta.generated_at || '缺测'} ｜ 当前地图：绝对值、距平和事件提示可分别切换`;
-      $('method').textContent = '降雨颜色分级采用用户提供的月降雨与相对常年分级。未来降雨绝对值转为30日等效累计，便于与近30日图层比较。热干必须同时满足高温（距平≥2℃）和偏干条件，不再把单独高温标为热干。水分压力仅指偏干压力；过湿以“涝”事件提示显示。';
+      $('status').textContent = `最新实况（ECMWF IFS）：${state.rows[0]?.date_end || '缺测'} ｜ 数据更新时间：${meta.generated_at || '缺测'} ｜ 当前地图：绝对值、距平和事件提示可分别切换`;
+      $('method').textContent = '降雨和温度统一采用 Open-Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；仅在2017–2025同源历史完整时显示历史基准，缺失时不再用第二来源补齐。未来降雨绝对值转为30日等效累计，便于与近30日图层比较。';
       updateControlRow(); controls(); updateSummary(); await buildMap(); regionDetail([...state.rows].sort((a,b) => (b.production_tonnes || 0) - (a.production_tonnes || 0))[0]);
     } catch (e) { console.error(e); $('status').textContent = `数据加载失败：${e?.message || '未知错误'}。`; }
   }

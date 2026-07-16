@@ -9,13 +9,13 @@
     "crop_oil_label_cn": "菜籽/菜油",
     "production_tonnes": 4631130.0,
     "eu_share": 0.2687,
-    "risk_level_v3": 4,
-    "risk_score_v3": 4.0,
-    "risk_level_v3_code": "severe",
-    "risk_level_v3_cn": "显著压力",
+    "risk_level_v3": 3,
+    "risk_score_v3": 3.0,
+    "risk_level_v3_code": "pressure",
+    "risk_level_v3_cn": "重点压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   },
   {
     "virtual_country": "European Union",
@@ -33,7 +33,7 @@
     "risk_level_v3_cn": "重点压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   },
   {
     "virtual_country": "European Union",
@@ -45,13 +45,13 @@
     "crop_oil_label_cn": "菜籽/菜油",
     "production_tonnes": 3473300.0,
     "eu_share": 0.2015,
-    "risk_level_v3": 1,
-    "risk_score_v3": 1.0,
-    "risk_level_v3_code": "mild",
-    "risk_level_v3_cn": "轻度异常",
+    "risk_level_v3": 3,
+    "risk_score_v3": 3.0,
+    "risk_level_v3_code": "pressure",
+    "risk_level_v3_cn": "重点压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   },
   {
     "virtual_country": "European Union",
@@ -69,7 +69,7 @@
     "risk_level_v3_cn": "重点压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   },
   {
     "virtual_country": "European Union",
@@ -81,13 +81,13 @@
     "crop_oil_label_cn": "菜籽/菜油",
     "production_tonnes": 1021720.0,
     "eu_share": 0.0593,
-    "risk_level_v3": 1,
-    "risk_score_v3": 1.0,
-    "risk_level_v3_code": "mild",
-    "risk_level_v3_cn": "轻度异常",
+    "risk_level_v3": 0,
+    "risk_score_v3": 0.0,
+    "risk_level_v3_code": "normal",
+    "risk_level_v3_cn": "正常监控",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   },
   {
     "virtual_country": "European Union",
@@ -99,13 +99,13 @@
     "crop_oil_label_cn": "菜籽/菜油",
     "production_tonnes": 938370.0,
     "eu_share": 0.0544,
-    "risk_level_v3": 1,
-    "risk_score_v3": 1.0,
-    "risk_level_v3_code": "mild",
-    "risk_level_v3_cn": "轻度异常",
+    "risk_level_v3": 0,
+    "risk_score_v3": 0.0,
+    "risk_level_v3_code": "normal",
+    "risk_level_v3_cn": "正常监控",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   },
   {
     "virtual_country": "European Union",
@@ -117,13 +117,13 @@
     "crop_oil_label_cn": "菜籽/菜油",
     "production_tonnes": 698210.0,
     "eu_share": 0.0405,
-    "risk_level_v3": 1,
-    "risk_score_v3": 1.0,
-    "risk_level_v3_code": "mild",
-    "risk_level_v3_cn": "轻度异常",
+    "risk_level_v3": 0,
+    "risk_score_v3": 0.0,
+    "risk_level_v3_code": "normal",
+    "risk_level_v3_cn": "正常监控",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   },
   {
     "virtual_country": "European Union",
@@ -135,13 +135,13 @@
     "crop_oil_label_cn": "大豆/豆油",
     "production_tonnes": 1104540.0,
     "eu_share": 1.0,
-    "risk_level_v3": 3,
-    "risk_score_v3": 3.0,
-    "risk_level_v3_code": "pressure",
-    "risk_level_v3_cn": "重点压力",
+    "risk_level_v3": 0,
+    "risk_score_v3": 0.0,
+    "risk_level_v3_code": "normal",
+    "risk_level_v3_cn": "正常监控",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   },
   {
     "virtual_country": "European Union",
@@ -159,6 +159,6 @@
     "risk_level_v3_cn": "重点压力",
     "source_name": "eurostat",
     "source_valid_for_frontend": true,
-    "updated_at": "2026-07-16 12:35:14"
+    "updated_at": "2026-07-16 14:05:41"
   }
 ]

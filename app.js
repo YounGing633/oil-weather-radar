@@ -4433,7 +4433,7 @@ function renderTodaySummary() {
   document.getElementById('today-focus-list').innerHTML = focusItems.length
     ? focusItems.map(item => `<div class="today-focus-item"><b>${esc(item.subject)}：</b>${esc(item.text)}</div>`).join('')
     : '<div class="today-focus-item">当前暂无显著产区天气风险，维持常规监控。</div>';
-  document.getElementById('sum-date').textContent = `最新实况日期 ${bestDataDate()}（近实时融合）`;
+  document.getElementById('sum-date').textContent = `最新实况日期 ${bestDataDate()}（ECMWF IFS）`;
 }
 
 function updateTimeRangeUI() {

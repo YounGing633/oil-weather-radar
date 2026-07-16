@@ -11,7 +11,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2585,
       "soil_water_rootzone_m3m3": 0.3531,
@@ -21,8 +21,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "coconut::Indonesia::Bangka Belitung::admin1::椰子油",
@@ -36,7 +36,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1554,
       "soil_water_rootzone_m3m3": 0.2173,
@@ -61,7 +61,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2261,
       "soil_water_rootzone_m3m3": 0.2835,
@@ -72,7 +72,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Bengkulu::admin1::椰子油",
@@ -86,7 +86,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2763,
       "soil_water_rootzone_m3m3": 0.3231,
@@ -96,8 +96,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Gorontalo::admin1::椰子油",
@@ -111,7 +111,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1287,
       "soil_water_rootzone_m3m3": 0.2818,
@@ -122,7 +122,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Jambi::admin1::椰子油",
@@ -136,7 +136,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3319,
       "soil_water_rootzone_m3m3": 0.3766,
@@ -161,7 +161,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0872,
       "soil_water_rootzone_m3m3": 0.2134,
@@ -172,7 +172,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Barat::admin1::椰子油",
@@ -186,7 +186,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3024,
       "soil_water_rootzone_m3m3": 0.3577,
@@ -196,8 +196,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Selatan::admin1::椰子油",
@@ -211,7 +211,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3338,
       "soil_water_rootzone_m3m3": 0.3673,
@@ -222,7 +222,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Tengah::admin1::椰子油",
@@ -236,7 +236,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.182,
       "soil_water_rootzone_m3m3": 0.2263,
@@ -246,8 +246,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Timur::admin1::椰子油",
@@ -261,7 +261,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3882,
       "soil_water_rootzone_m3m3": 0.3949,
@@ -271,8 +271,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Utara::admin1::椰子油",
@@ -286,7 +286,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.479,
       "soil_water_rootzone_m3m3": 0.4712,
@@ -296,8 +296,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kepulauan Riau::admin1::椰子油",
@@ -311,7 +311,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2264,
       "soil_water_rootzone_m3m3": 0.2334,
@@ -321,8 +321,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Lampung::admin1::椰子油",
@@ -336,7 +336,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1136,
       "soil_water_rootzone_m3m3": 0.2307,
@@ -346,8 +346,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P2），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Maluku Utara::admin1::椰子油",
@@ -361,7 +361,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3622,
       "soil_water_rootzone_m3m3": 0.3289,
@@ -386,7 +386,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3624,
       "soil_water_rootzone_m3m3": 0.3719,
@@ -397,7 +397,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Barat Daya::admin1::椰子油",
@@ -411,7 +411,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3702,
       "soil_water_rootzone_m3m3": 0.3898,
@@ -421,8 +421,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Barat::admin1::椰子油",
@@ -436,7 +436,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4651,
       "soil_water_rootzone_m3m3": 0.4516,
@@ -446,8 +446,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Selatan::admin1::椰子油",
@@ -461,7 +461,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3934,
       "soil_water_rootzone_m3m3": 0.4112,
@@ -471,8 +471,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P17），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Tengah::admin1::椰子油",
@@ -486,7 +486,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3782,
       "soil_water_rootzone_m3m3": 0.3993,
@@ -496,8 +496,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua::admin1::椰子油",
@@ -511,7 +511,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3826,
       "soil_water_rootzone_m3m3": 0.3988,
@@ -521,8 +521,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Riau::admin1::椰子油",
@@ -536,7 +536,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2864,
       "soil_water_rootzone_m3m3": 0.2373,
@@ -546,8 +546,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Barat::admin1::椰子油",
@@ -561,7 +561,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3351,
       "soil_water_rootzone_m3m3": 0.3779,
@@ -571,8 +571,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P11），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Selatan::admin1::椰子油",
@@ -586,7 +586,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0,
       "soil_water_rootzone_m3m3": 0.0,
@@ -597,7 +597,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Tengah::admin1::椰子油",
@@ -611,7 +611,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3983,
       "soil_water_rootzone_m3m3": 0.3988,
@@ -636,7 +636,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3392,
       "soil_water_rootzone_m3m3": 0.3473,
@@ -647,7 +647,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sumatera Barat::admin1::椰子油",
@@ -661,7 +661,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3989,
       "soil_water_rootzone_m3m3": 0.3733,
@@ -671,8 +671,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sumatera Selatan::admin1::椰子油",
@@ -686,7 +686,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3592,
       "soil_water_rootzone_m3m3": 0.3633,
@@ -696,8 +696,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P2），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sumatera Utara::admin1::椰子油",
@@ -711,7 +711,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3695,
       "soil_water_rootzone_m3m3": 0.3955,
@@ -721,8 +721,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "coconut::Indonesia::national::椰子油",
@@ -736,7 +736,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4009,
       "soil_water_rootzone_m3m3": 0.4231,
@@ -747,7 +747,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Philippines::BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO (BARMM)::admin1::椰子油",
@@ -761,7 +761,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4039,
       "soil_water_rootzone_m3m3": 0.4004,
@@ -771,8 +771,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "coconut::Philippines::CORDILLERA ADMINISTRATIVE REGION (CAR)::admin1::椰子油",
@@ -786,7 +786,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4042,
       "soil_water_rootzone_m3m3": 0.3507,
@@ -797,7 +797,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Philippines::MIMAROPA REGION::admin1::椰子油",
@@ -811,7 +811,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4083,
       "soil_water_rootzone_m3m3": 0.4191,
@@ -821,8 +821,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "coconut::Philippines::NEGROS ISLAND REGION::admin1::椰子油",
@@ -836,7 +836,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4072,
       "soil_water_rootzone_m3m3": 0.3979,
@@ -846,8 +846,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P93）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION I (ILOCOS REGION)::admin1::椰子油",
@@ -861,7 +861,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3959,
       "soil_water_rootzone_m3m3": 0.2336,
@@ -872,7 +872,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P98），排水不畅风险"
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION II (CAGAYAN VALLEY)::admin1::椰子油",
@@ -886,7 +886,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2656,
       "soil_water_rootzone_m3m3": 0.1448,
@@ -911,7 +911,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3505,
       "soil_water_rootzone_m3m3": 0.1874,
@@ -936,7 +936,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3511,
       "soil_water_rootzone_m3m3": 0.2472,
@@ -946,8 +946,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION IX (ZAMBOANGA PENINSULA)::admin1::椰子油",
@@ -961,7 +961,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4579,
       "soil_water_rootzone_m3m3": 0.4884,
@@ -971,8 +971,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
@@ -986,7 +986,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3603,
       "soil_water_rootzone_m3m3": 0.2201,
@@ -997,7 +997,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P96），排水不畅风险"
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VI (WESTERN VISAYAS)::admin1::椰子油",
@@ -1011,7 +1011,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4646,
       "soil_water_rootzone_m3m3": 0.3176,
@@ -1021,8 +1021,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P97）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VII (CENTRAL VISAYAS)::admin1::椰子油",
@@ -1036,7 +1036,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3337,
       "soil_water_rootzone_m3m3": 0.2837,
@@ -1046,8 +1046,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VIII (EASTERN VISAYAS)::admin1::椰子油",
@@ -1061,7 +1061,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3147,
       "soil_water_rootzone_m3m3": 0.184,
@@ -1071,8 +1071,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION X (NORTHERN MINDANAO)::admin1::椰子油",
@@ -1086,7 +1086,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4967,
       "soil_water_rootzone_m3m3": 0.4701,
@@ -1096,8 +1096,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XI (DAVAO REGION)::admin1::椰子油",
@@ -1111,7 +1111,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4857,
       "soil_water_rootzone_m3m3": 0.4922,
@@ -1121,8 +1121,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XII (SOCCSKSARGEN)::admin1::椰子油",
@@ -1136,7 +1136,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4025,
       "soil_water_rootzone_m3m3": 0.4013,
@@ -1161,7 +1161,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3942,
       "soil_water_rootzone_m3m3": 0.3549,
@@ -1171,8 +1171,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "palm::Brazil::national::棕榈油",
@@ -1186,7 +1186,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1725,
       "soil_water_rootzone_m3m3": 0.3611,
@@ -1196,8 +1196,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
@@ -1211,7 +1211,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2585,
       "soil_water_rootzone_m3m3": 0.3531,
@@ -1221,8 +1221,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "palm::Indonesia::Bangka_Belitung::admin1::crude_palm_oil",
@@ -1236,7 +1236,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1554,
       "soil_water_rootzone_m3m3": 0.2173,
@@ -1261,7 +1261,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2261,
       "soil_water_rootzone_m3m3": 0.2835,
@@ -1272,7 +1272,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "palm::Indonesia::Bengkulu::admin1::crude_palm_oil",
@@ -1286,7 +1286,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2763,
       "soil_water_rootzone_m3m3": 0.3231,
@@ -1296,8 +1296,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "palm::Indonesia::Gorontalo::admin1::crude_palm_oil",
@@ -1311,7 +1311,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1287,
       "soil_water_rootzone_m3m3": 0.2818,
@@ -1322,7 +1322,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "palm::Indonesia::Jambi::admin1::crude_palm_oil",
@@ -1336,7 +1336,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3319,
       "soil_water_rootzone_m3m3": 0.3766,
@@ -1361,7 +1361,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0872,
       "soil_water_rootzone_m3m3": 0.2134,
@@ -1372,7 +1372,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Barat::admin1::crude_palm_oil",
@@ -1386,7 +1386,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3024,
       "soil_water_rootzone_m3m3": 0.3577,
@@ -1396,8 +1396,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Selatan::admin1::crude_palm_oil",
@@ -1411,7 +1411,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3338,
       "soil_water_rootzone_m3m3": 0.3673,
@@ -1422,7 +1422,7 @@
       "data_date": "2026-07-14"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Tengah::admin1::crude_palm_oil",
@@ -1436,7 +1436,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.182,
       "soil_water_rootzone_m3m3": 0.2263,
@@ -1446,8 +1446,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Timur::admin1::crude_palm_oil",
@@ -1461,7 +1461,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3882,
       "soil_water_rootzone_m3m3": 0.3949,
@@ -1471,8 +1471,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Utara::admin1::crude_palm_oil",
@@ -1486,7 +1486,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.479,
       "soil_water_rootzone_m3m3": 0.4712,
@@ -1496,8 +1496,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "palm::Indonesia::Kepulauan_Riau::admin1::crude_palm_oil",
@@ -1511,7 +1511,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2264,
       "soil_water_rootzone_m3m3": 0.2334,
@@ -1521,8 +1521,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Indonesia::Lampung::admin1::crude_palm_oil",
@@ -1536,7 +1536,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1136,
       "soil_water_rootzone_m3m3": 0.2307,
@@ -1561,7 +1561,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3624,
       "soil_water_rootzone_m3m3": 0.3719,
@@ -1571,8 +1571,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P2），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Maluku_Utara::admin1::crude_palm_oil",
@@ -1586,7 +1586,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3622,
       "soil_water_rootzone_m3m3": 0.3289,
@@ -1596,8 +1596,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P18），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua::admin1::crude_palm_oil",
@@ -1611,7 +1611,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3826,
       "soil_water_rootzone_m3m3": 0.3988,
@@ -1621,8 +1621,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P14），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Barat::admin1::crude_palm_oil",
@@ -1636,7 +1636,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4651,
       "soil_water_rootzone_m3m3": 0.4516,
@@ -1646,8 +1646,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Barat_Daya::admin1::crude_palm_oil",
@@ -1661,7 +1661,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3702,
       "soil_water_rootzone_m3m3": 0.3898,
@@ -1671,8 +1671,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Selatan::admin1::crude_palm_oil",
@@ -1686,7 +1686,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3934,
       "soil_water_rootzone_m3m3": 0.4112,
@@ -1711,7 +1711,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3782,
       "soil_water_rootzone_m3m3": 0.3993,
@@ -1721,8 +1721,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P5），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Riau::admin1::crude_palm_oil",
@@ -1736,7 +1736,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2864,
       "soil_water_rootzone_m3m3": 0.2373,
@@ -1746,8 +1746,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Barat::admin1::crude_palm_oil",
@@ -1761,7 +1761,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3351,
       "soil_water_rootzone_m3m3": 0.3779,
@@ -1786,7 +1786,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0,
       "soil_water_rootzone_m3m3": 0.0,
@@ -1796,8 +1796,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Tengah::admin1::crude_palm_oil",
@@ -1811,7 +1811,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3983,
       "soil_water_rootzone_m3m3": 0.3988,
@@ -1821,8 +1821,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P5），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Tenggara::admin1::crude_palm_oil",
@@ -1836,7 +1836,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3392,
       "soil_water_rootzone_m3m3": 0.3473,
@@ -1846,8 +1846,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Barat::admin1::crude_palm_oil",
@@ -1861,7 +1861,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3989,
       "soil_water_rootzone_m3m3": 0.3733,
@@ -1871,8 +1871,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Selatan::admin1::crude_palm_oil",
@@ -1886,7 +1886,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3592,
       "soil_water_rootzone_m3m3": 0.3633,
@@ -1911,7 +1911,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3695,
       "soil_water_rootzone_m3m3": 0.3955,
@@ -1921,8 +1921,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Malaysia::Johor::admin1::oil_palm",
@@ -1936,7 +1936,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3948,
       "soil_water_rootzone_m3m3": 0.4307,
@@ -1946,8 +1946,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Malaysia::Kelantan::admin1::oil_palm",
@@ -1961,7 +1961,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4808,
       "soil_water_rootzone_m3m3": 0.4692,
@@ -1971,8 +1971,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Malaysia::Negeri_Sembilan::admin1::oil_palm",
@@ -1986,7 +1986,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3425,
       "soil_water_rootzone_m3m3": 0.3029,
@@ -1996,8 +1996,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Malaysia::Pahang::admin1::oil_palm",
@@ -2011,7 +2011,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.221,
       "soil_water_rootzone_m3m3": 0.2751,
@@ -2021,8 +2021,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P14），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Malaysia::Perak::admin1::oil_palm",
@@ -2036,7 +2036,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1709,
       "soil_water_rootzone_m3m3": 0.2632,
@@ -2046,8 +2046,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P4），需关注降水补充"
   },
   {
     "weather_region_id": "palm::Malaysia::Sabah::admin1::oil_palm",
@@ -2061,7 +2061,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3489,
       "soil_water_rootzone_m3m3": 0.3658,
@@ -2071,8 +2071,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Malaysia::Sarawak::admin1::oil_palm",
@@ -2086,7 +2086,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3122,
       "soil_water_rootzone_m3m3": 0.3654,
@@ -2096,8 +2096,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Malaysia::Selangor::admin1::oil_palm",
@@ -2111,7 +2111,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1623,
       "soil_water_rootzone_m3m3": 0.3199,
@@ -2121,8 +2121,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Malaysia::Terengganu::admin1::oil_palm",
@@ -2136,7 +2136,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4486,
       "soil_water_rootzone_m3m3": 0.3526,
@@ -2146,8 +2146,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::New_South_Wales::admin1::rapeseed_canola",
@@ -2161,7 +2161,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4457,
       "soil_water_rootzone_m3m3": 0.4344,
@@ -2186,7 +2186,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.041,
       "soil_water_rootzone_m3m3": 0.1363,
@@ -2211,7 +2211,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0225,
       "soil_water_rootzone_m3m3": 0.1624,
@@ -2221,8 +2221,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Tasmania::admin1::rapeseed_canola",
@@ -2236,7 +2236,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3451,
       "soil_water_rootzone_m3m3": 0.3172,
@@ -2246,8 +2246,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Victoria::admin1::rapeseed_canola",
@@ -2261,7 +2261,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.406,
       "soil_water_rootzone_m3m3": 0.3963,
@@ -2271,8 +2271,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Western_Australia::admin1::rapeseed_canola",
@@ -2286,7 +2286,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1343,
       "soil_water_rootzone_m3m3": 0.1511,
@@ -2296,8 +2296,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Alberta::admin1::rapeseed_canola",
@@ -2311,7 +2311,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3512,
       "soil_water_rootzone_m3m3": 0.3682,
@@ -2321,8 +2321,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::British_Columbia::admin1::rapeseed_canola",
@@ -2336,7 +2336,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3601,
       "soil_water_rootzone_m3m3": 0.3589,
@@ -2346,8 +2346,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P13），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Manitoba::admin1::rapeseed_canola",
@@ -2361,7 +2361,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.5961,
       "soil_water_rootzone_m3m3": 0.6042,
@@ -2371,8 +2371,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::New_Brunswick::admin1::rapeseed_canola",
@@ -2386,7 +2386,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.202,
       "soil_water_rootzone_m3m3": 0.2675,
@@ -2411,7 +2411,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.5366,
       "soil_water_rootzone_m3m3": 0.6002,
@@ -2421,8 +2421,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P12），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
@@ -2436,7 +2436,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2698,
       "soil_water_rootzone_m3m3": 0.2219,
@@ -2446,8 +2446,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P19），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Saskatchewan::admin1::rapeseed_canola",
@@ -2461,7 +2461,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1987,
       "soil_water_rootzone_m3m3": 0.2088,
@@ -2471,8 +2471,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P13），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Czechia::national::菜油",
@@ -2486,7 +2486,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1148,
       "soil_water_rootzone_m3m3": 0.1641,
@@ -2496,8 +2496,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Denmark::national::菜油",
@@ -2511,7 +2511,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1245,
       "soil_water_rootzone_m3m3": 0.1719,
@@ -2521,8 +2521,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::France::national::菜油",
@@ -2536,7 +2536,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0791,
       "soil_water_rootzone_m3m3": 0.2123,
@@ -2561,7 +2561,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1201,
       "soil_water_rootzone_m3m3": 0.149,
@@ -2586,7 +2586,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3179,
       "soil_water_rootzone_m3m3": 0.2919,
@@ -2596,8 +2596,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Poland::national::菜油",
@@ -2611,7 +2611,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3545,
       "soil_water_rootzone_m3m3": 0.3564,
@@ -2621,8 +2621,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Romania::national::菜油",
@@ -2636,7 +2636,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1027,
       "soil_water_rootzone_m3m3": 0.2525,
@@ -2646,8 +2646,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P15），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Altai Krai::admin1::菜油",
@@ -2661,7 +2661,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.141,
       "soil_water_rootzone_m3m3": 0.1907,
@@ -2686,7 +2686,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3775,
       "soil_water_rootzone_m3m3": 0.3437,
@@ -2711,7 +2711,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3634,
       "soil_water_rootzone_m3m3": 0.3141,
@@ -2736,7 +2736,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1167,
       "soil_water_rootzone_m3m3": 0.224,
@@ -2746,8 +2746,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P11），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Chelyabinsk Oblast::admin1::菜油",
@@ -2761,7 +2761,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4451,
       "soil_water_rootzone_m3m3": 0.3621,
@@ -2786,7 +2786,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1854,
       "soil_water_rootzone_m3m3": 0.2693,
@@ -2811,7 +2811,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2053,
       "soil_water_rootzone_m3m3": 0.1846,
@@ -2821,8 +2821,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Ivanovo Oblast::admin1::菜油",
@@ -2836,7 +2836,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1731,
       "soil_water_rootzone_m3m3": 0.2762,
@@ -2861,7 +2861,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1525,
       "soil_water_rootzone_m3m3": 0.1726,
@@ -2871,8 +2871,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P2），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kaliningrad Oblast::admin1::菜油",
@@ -2886,7 +2886,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2996,
       "soil_water_rootzone_m3m3": 0.2505,
@@ -2896,8 +2896,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kaluga Oblast::admin1::菜油",
@@ -2911,7 +2911,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.379,
       "soil_water_rootzone_m3m3": 0.3365,
@@ -2936,7 +2936,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4654,
       "soil_water_rootzone_m3m3": 0.4444,
@@ -2961,7 +2961,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1343,
       "soil_water_rootzone_m3m3": 0.0988,
@@ -2971,8 +2971,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Krasnodar Krai::admin1::菜油",
@@ -2986,7 +2986,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.168,
       "soil_water_rootzone_m3m3": 0.3239,
@@ -2996,8 +2996,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Krasnoyarsk Krai::admin1::菜油",
@@ -3011,7 +3011,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1811,
       "soil_water_rootzone_m3m3": 0.3007,
@@ -3021,8 +3021,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P18），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kurgan Oblast::admin1::菜油",
@@ -3036,7 +3036,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1324,
       "soil_water_rootzone_m3m3": 0.2279,
@@ -3061,7 +3061,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.445,
       "soil_water_rootzone_m3m3": 0.4289,
@@ -3086,7 +3086,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.349,
       "soil_water_rootzone_m3m3": 0.2932,
@@ -3111,7 +3111,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1508,
       "soil_water_rootzone_m3m3": 0.2615,
@@ -3136,7 +3136,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2999,
       "soil_water_rootzone_m3m3": 0.2779,
@@ -3161,7 +3161,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1712,
       "soil_water_rootzone_m3m3": 0.2626,
@@ -3171,8 +3171,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Novosibirsk Oblast::admin1::菜油",
@@ -3186,7 +3186,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0983,
       "soil_water_rootzone_m3m3": 0.1425,
@@ -3211,7 +3211,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.121,
       "soil_water_rootzone_m3m3": 0.2585,
@@ -3236,7 +3236,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3403,
       "soil_water_rootzone_m3m3": 0.3515,
@@ -3246,8 +3246,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P4），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Oryol Oblast::admin1::菜油",
@@ -3261,7 +3261,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3206,
       "soil_water_rootzone_m3m3": 0.3223,
@@ -3286,7 +3286,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2725,
       "soil_water_rootzone_m3m3": 0.2613,
@@ -3311,7 +3311,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3978,
       "soil_water_rootzone_m3m3": 0.3588,
@@ -3321,8 +3321,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P92）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "表层土壤过湿（P92），排水不畅风险"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Pskov Oblast::admin1::菜油",
@@ -3336,7 +3336,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3541,
       "soil_water_rootzone_m3m3": 0.2707,
@@ -3346,8 +3346,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Adygea::admin1::菜油",
@@ -3361,7 +3361,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.116,
       "soil_water_rootzone_m3m3": 0.2232,
@@ -3386,7 +3386,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3125,
       "soil_water_rootzone_m3m3": 0.3552,
@@ -3411,7 +3411,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1539,
       "soil_water_rootzone_m3m3": 0.1819,
@@ -3436,7 +3436,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1708,
       "soil_water_rootzone_m3m3": 0.2531,
@@ -3461,7 +3461,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3422,
       "soil_water_rootzone_m3m3": 0.3176,
@@ -3471,8 +3471,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P13），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Kalmykia::admin1::菜油",
@@ -3486,7 +3486,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1104,
       "soil_water_rootzone_m3m3": 0.2114,
@@ -3496,8 +3496,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Khakassia::admin1::菜油",
@@ -3511,7 +3511,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.148,
       "soil_water_rootzone_m3m3": 0.1582,
@@ -3536,7 +3536,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3346,
       "soil_water_rootzone_m3m3": 0.2556,
@@ -3561,7 +3561,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3715,
       "soil_water_rootzone_m3m3": 0.3772,
@@ -3571,8 +3571,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Tatarstan::admin1::菜油",
@@ -3586,7 +3586,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1099,
       "soil_water_rootzone_m3m3": 0.08,
@@ -3596,8 +3596,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Rostov Oblast::admin1::菜油",
@@ -3611,7 +3611,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1476,
       "soil_water_rootzone_m3m3": 0.3315,
@@ -3636,7 +3636,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4801,
       "soil_water_rootzone_m3m3": 0.3615,
@@ -3661,7 +3661,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.112,
       "soil_water_rootzone_m3m3": 0.2919,
@@ -3671,8 +3671,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Saratov Oblast::admin1::菜油",
@@ -3686,7 +3686,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1382,
       "soil_water_rootzone_m3m3": 0.21,
@@ -3711,7 +3711,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3075,
       "soil_water_rootzone_m3m3": 0.2365,
@@ -3736,7 +3736,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2504,
       "soil_water_rootzone_m3m3": 0.2299,
@@ -3761,7 +3761,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3947,
       "soil_water_rootzone_m3m3": 0.3775,
@@ -3771,8 +3771,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tambov Oblast::admin1::菜油",
@@ -3786,7 +3786,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3368,
       "soil_water_rootzone_m3m3": 0.299,
@@ -3811,7 +3811,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2029,
       "soil_water_rootzone_m3m3": 0.3067,
@@ -3821,8 +3821,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tula Oblast::admin1::菜油",
@@ -3836,7 +3836,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3548,
       "soil_water_rootzone_m3m3": 0.297,
@@ -3861,7 +3861,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0944,
       "soil_water_rootzone_m3m3": 0.2339,
@@ -3871,8 +3871,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tver Oblast::admin1::菜油",
@@ -3886,7 +3886,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3659,
       "soil_water_rootzone_m3m3": 0.2554,
@@ -3896,8 +3896,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P11），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Tyumen Oblast::admin1::菜油",
@@ -3911,7 +3911,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1755,
       "soil_water_rootzone_m3m3": 0.2345,
@@ -3921,8 +3921,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Udmurt Republic::admin1::菜油",
@@ -3936,7 +3936,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4921,
       "soil_water_rootzone_m3m3": 0.4079,
@@ -3946,8 +3946,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P98）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "表层土壤过湿（P98），排水不畅风险"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Ulyanovsk Oblast::admin1::菜油",
@@ -3961,7 +3961,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2122,
       "soil_water_rootzone_m3m3": 0.2682,
@@ -3971,8 +3971,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Vladimir Oblast::admin1::菜油",
@@ -3986,7 +3986,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2997,
       "soil_water_rootzone_m3m3": 0.2662,
@@ -4011,7 +4011,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1783,
       "soil_water_rootzone_m3m3": 0.3247,
@@ -4036,7 +4036,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2323,
       "soil_water_rootzone_m3m3": 0.2552,
@@ -4061,7 +4061,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.359,
       "soil_water_rootzone_m3m3": 0.3344,
@@ -4086,7 +4086,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2249,
       "soil_water_rootzone_m3m3": 0.2399,
@@ -4096,8 +4096,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::United Kingdom::national::菜油",
@@ -4111,7 +4111,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0795,
       "soil_water_rootzone_m3m3": 0.2127,
@@ -4121,8 +4121,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::United States of America::national::菜油",
@@ -4136,7 +4136,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1353,
       "soil_water_rootzone_m3m3": 0.1937,
@@ -4146,8 +4146,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::IDAHO::admin1::canola",
@@ -4161,7 +4161,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2224,
       "soil_water_rootzone_m3m3": 0.3183,
@@ -4171,8 +4171,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P16），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::KANSAS::admin1::canola",
@@ -4186,7 +4186,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1542,
       "soil_water_rootzone_m3m3": 0.1836,
@@ -4211,7 +4211,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1344,
       "soil_water_rootzone_m3m3": 0.155,
@@ -4221,8 +4221,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::MONTANA::admin1::canola",
@@ -4236,7 +4236,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2114,
       "soil_water_rootzone_m3m3": 0.2274,
@@ -4246,8 +4246,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::NORTH_DAKOTA::admin1::canola",
@@ -4261,7 +4261,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1432,
       "soil_water_rootzone_m3m3": 0.1648,
@@ -4271,8 +4271,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::OKLAHOMA::admin1::canola",
@@ -4286,7 +4286,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1853,
       "soil_water_rootzone_m3m3": 0.1946,
@@ -4296,8 +4296,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::OREGON::admin1::canola",
@@ -4311,7 +4311,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0488,
       "soil_water_rootzone_m3m3": 0.1764,
@@ -4336,7 +4336,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1213,
       "soil_water_rootzone_m3m3": 0.2025,
@@ -4346,8 +4346,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Argentina::Buenos Aires::admin1::豆油",
@@ -4361,7 +4361,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4292,
       "soil_water_rootzone_m3m3": 0.4305,
@@ -4371,8 +4371,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P12），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Argentina::Chaco::admin1::豆油",
@@ -4386,7 +4386,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2521,
       "soil_water_rootzone_m3m3": 0.302,
@@ -4411,7 +4411,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3365,
       "soil_water_rootzone_m3m3": 0.432,
@@ -4436,7 +4436,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1936,
       "soil_water_rootzone_m3m3": 0.2262,
@@ -4461,7 +4461,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3693,
       "soil_water_rootzone_m3m3": 0.4062,
@@ -4486,7 +4486,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3973,
       "soil_water_rootzone_m3m3": 0.4491,
@@ -4496,8 +4496,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Argentina::Jujuy::admin1::豆油",
@@ -4511,7 +4511,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2848,
       "soil_water_rootzone_m3m3": 0.3549,
@@ -4521,8 +4521,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P5），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Argentina::Misiones::admin1::豆油",
@@ -4536,7 +4536,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4886,
       "soil_water_rootzone_m3m3": 0.4926,
@@ -4561,7 +4561,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3806,
       "soil_water_rootzone_m3m3": 0.4237,
@@ -4586,7 +4586,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2589,
       "soil_water_rootzone_m3m3": 0.2619,
@@ -4596,8 +4596,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P3），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Brazil::Bahia::admin1::豆油",
@@ -4611,7 +4611,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1705,
       "soil_water_rootzone_m3m3": 0.2401,
@@ -4621,8 +4621,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Brazil::Ceará::admin1::豆油",
@@ -4636,7 +4636,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.147,
       "soil_water_rootzone_m3m3": 0.3075,
@@ -4661,7 +4661,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1519,
       "soil_water_rootzone_m3m3": 0.3971,
@@ -4686,7 +4686,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2059,
       "soil_water_rootzone_m3m3": 0.3579,
@@ -4696,8 +4696,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Brazil::Maranhão::admin1::豆油",
@@ -4711,7 +4711,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2134,
       "soil_water_rootzone_m3m3": 0.2926,
@@ -4721,8 +4721,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P4），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Brazil::Mato Grosso do Sul::admin1::豆油",
@@ -4736,7 +4736,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3327,
       "soil_water_rootzone_m3m3": 0.4263,
@@ -4746,8 +4746,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
@@ -4761,7 +4761,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3019,
       "soil_water_rootzone_m3m3": 0.3946,
@@ -4771,8 +4771,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P6），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Brazil::Minas Gerais::admin1::豆油",
@@ -4786,7 +4786,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.212,
       "soil_water_rootzone_m3m3": 0.362,
@@ -4796,8 +4796,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P3），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Brazil::Paraná::admin1::豆油",
@@ -4811,7 +4811,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.458,
       "soil_water_rootzone_m3m3": 0.4572,
@@ -4821,8 +4821,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
@@ -4836,7 +4836,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3603,
       "soil_water_rootzone_m3m3": 0.3768,
@@ -4846,8 +4846,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Brazil::Piauí::admin1::豆油",
@@ -4861,7 +4861,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1676,
       "soil_water_rootzone_m3m3": 0.2726,
@@ -4871,8 +4871,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Brazil::Rio Grande do Sul::admin1::豆油",
@@ -4886,7 +4886,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4653,
       "soil_water_rootzone_m3m3": 0.4898,
@@ -4911,7 +4911,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3084,
       "soil_water_rootzone_m3m3": 0.3892,
@@ -4936,7 +4936,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3458,
       "soil_water_rootzone_m3m3": 0.3596,
@@ -4946,8 +4946,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Brazil::Santa Catarina::admin1::豆油",
@@ -4961,7 +4961,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.485,
       "soil_water_rootzone_m3m3": 0.4788,
@@ -4971,8 +4971,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Brazil::São Paulo::admin1::豆油",
@@ -4986,7 +4986,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0607,
       "soil_water_rootzone_m3m3": 0.0908,
@@ -5011,7 +5011,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1096,
       "soil_water_rootzone_m3m3": 0.3423,
@@ -5021,8 +5021,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Canada::Alberta::admin1::soybean",
@@ -5036,7 +5036,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3512,
       "soil_water_rootzone_m3m3": 0.3682,
@@ -5046,8 +5046,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Canada::Manitoba::admin1::soybean",
@@ -5061,7 +5061,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.5961,
       "soil_water_rootzone_m3m3": 0.6042,
@@ -5071,8 +5071,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::Canada::New_Brunswick::admin1::soybean",
@@ -5086,7 +5086,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.202,
       "soil_water_rootzone_m3m3": 0.2675,
@@ -5111,7 +5111,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2693,
       "soil_water_rootzone_m3m3": 0.3078,
@@ -5136,7 +5136,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.5366,
       "soil_water_rootzone_m3m3": 0.6002,
@@ -5146,8 +5146,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P12），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Canada::Prince_Edward_Island::admin1::soybean",
@@ -5161,7 +5161,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1621,
       "soil_water_rootzone_m3m3": 0.227,
@@ -5186,7 +5186,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2698,
       "soil_water_rootzone_m3m3": 0.2219,
@@ -5196,8 +5196,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P19），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Canada::Saskatchewan::admin1::soybean",
@@ -5211,7 +5211,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1987,
       "soil_water_rootzone_m3m3": 0.2088,
@@ -5221,8 +5221,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P13），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::Italy::national::豆油",
@@ -5236,7 +5236,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0873,
       "soil_water_rootzone_m3m3": 0.2178,
@@ -5246,8 +5246,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::ALABAMA::admin1::soybean",
@@ -5261,7 +5261,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4257,
       "soil_water_rootzone_m3m3": 0.421,
@@ -5271,8 +5271,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::ARKANSAS::admin1::soybean",
@@ -5286,7 +5286,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2887,
       "soil_water_rootzone_m3m3": 0.3058,
@@ -5296,8 +5296,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::DELAWARE::admin1::soybean",
@@ -5311,7 +5311,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1297,
       "soil_water_rootzone_m3m3": 0.1352,
@@ -5321,8 +5321,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::FLORIDA::admin1::soybean",
@@ -5336,7 +5336,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1676,
       "soil_water_rootzone_m3m3": 0.1065,
@@ -5361,7 +5361,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3095,
       "soil_water_rootzone_m3m3": 0.3051,
@@ -5371,8 +5371,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::ILLINOIS::admin1::soybean",
@@ -5386,7 +5386,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1443,
       "soil_water_rootzone_m3m3": 0.2238,
@@ -5411,7 +5411,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.128,
       "soil_water_rootzone_m3m3": 0.2134,
@@ -5436,7 +5436,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1543,
       "soil_water_rootzone_m3m3": 0.1899,
@@ -5461,7 +5461,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1542,
       "soil_water_rootzone_m3m3": 0.1836,
@@ -5486,7 +5486,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3086,
       "soil_water_rootzone_m3m3": 0.2018,
@@ -5496,8 +5496,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::LOUISIANA::admin1::soybean",
@@ -5511,7 +5511,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.359,
       "soil_water_rootzone_m3m3": 0.2769,
@@ -5521,8 +5521,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::MARYLAND::admin1::soybean",
@@ -5536,7 +5536,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.144,
       "soil_water_rootzone_m3m3": 0.1798,
@@ -5561,7 +5561,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0607,
       "soil_water_rootzone_m3m3": 0.0613,
@@ -5571,8 +5571,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P19），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::United_States::MINNESOTA::admin1::soybean",
@@ -5586,7 +5586,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1344,
       "soil_water_rootzone_m3m3": 0.155,
@@ -5596,8 +5596,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::MISSISSIPPI::admin1::soybean",
@@ -5611,7 +5611,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4646,
       "soil_water_rootzone_m3m3": 0.3774,
@@ -5621,8 +5621,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::MISSOURI::admin1::soybean",
@@ -5636,7 +5636,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3182,
       "soil_water_rootzone_m3m3": 0.3025,
@@ -5661,7 +5661,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1427,
       "soil_water_rootzone_m3m3": 0.2281,
@@ -5686,7 +5686,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0852,
       "soil_water_rootzone_m3m3": 0.1431,
@@ -5696,8 +5696,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::United_States::NEW_YORK::admin1::soybean",
@@ -5711,7 +5711,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.064,
       "soil_water_rootzone_m3m3": 0.0668,
@@ -5736,7 +5736,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4233,
       "soil_water_rootzone_m3m3": 0.3974,
@@ -5746,8 +5746,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::NORTH_DAKOTA::admin1::soybean",
@@ -5761,7 +5761,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1432,
       "soil_water_rootzone_m3m3": 0.1648,
@@ -5771,8 +5771,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::United_States::OHIO::admin1::soybean",
@@ -5786,7 +5786,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1725,
       "soil_water_rootzone_m3m3": 0.1703,
@@ -5811,7 +5811,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1853,
       "soil_water_rootzone_m3m3": 0.1946,
@@ -5821,8 +5821,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::PENNSYLVANIA::admin1::soybean",
@@ -5836,7 +5836,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1752,
       "soil_water_rootzone_m3m3": 0.1841,
@@ -5861,7 +5861,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2376,
       "soil_water_rootzone_m3m3": 0.1154,
@@ -5886,7 +5886,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.206,
       "soil_water_rootzone_m3m3": 0.2964,
@@ -5911,7 +5911,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2905,
       "soil_water_rootzone_m3m3": 0.1569,
@@ -5921,8 +5921,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::TEXAS::admin1::soybean",
@@ -5936,7 +5936,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2324,
       "soil_water_rootzone_m3m3": 0.1581,
@@ -5946,8 +5946,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "soybean::United_States::VIRGINIA::admin1::soybean",
@@ -5961,7 +5961,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3561,
       "soil_water_rootzone_m3m3": 0.3011,
@@ -5986,7 +5986,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2949,
       "soil_water_rootzone_m3m3": 0.2662,
@@ -5996,8 +5996,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P4），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::United_States::WISCONSIN::admin1::soybean",
@@ -6011,7 +6011,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1441,
       "soil_water_rootzone_m3m3": 0.185,
@@ -6036,7 +6036,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3512,
       "soil_water_rootzone_m3m3": 0.3682,
@@ -6046,8 +6046,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Canada::Manitoba::admin1::sunflower_seed",
@@ -6061,7 +6061,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.5961,
       "soil_water_rootzone_m3m3": 0.6042,
@@ -6071,8 +6071,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Canada::Ontario::admin1::sunflower_seed",
@@ -6086,7 +6086,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.5366,
       "soil_water_rootzone_m3m3": 0.6002,
@@ -6096,8 +6096,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P12），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Canada::Saskatchewan::admin1::sunflower_seed",
@@ -6111,7 +6111,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1987,
       "soil_water_rootzone_m3m3": 0.2088,
@@ -6121,8 +6121,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P13），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Romania::national::葵油",
@@ -6136,7 +6136,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1027,
       "soil_water_rootzone_m3m3": 0.2525,
@@ -6146,8 +6146,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P15），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Altai Krai::admin1::葵油",
@@ -6161,7 +6161,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.141,
       "soil_water_rootzone_m3m3": 0.1907,
@@ -6186,7 +6186,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2618,
       "soil_water_rootzone_m3m3": 0.1994,
@@ -6196,8 +6196,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Russia::Belgorod Oblast::admin1::葵油",
@@ -6211,7 +6211,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3775,
       "soil_water_rootzone_m3m3": 0.3437,
@@ -6236,7 +6236,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3634,
       "soil_water_rootzone_m3m3": 0.3141,
@@ -6261,7 +6261,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1167,
       "soil_water_rootzone_m3m3": 0.224,
@@ -6271,8 +6271,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P11），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Chelyabinsk Oblast::admin1::葵油",
@@ -6286,7 +6286,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4451,
       "soil_water_rootzone_m3m3": 0.3621,
@@ -6311,7 +6311,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1731,
       "soil_water_rootzone_m3m3": 0.2762,
@@ -6336,7 +6336,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1525,
       "soil_water_rootzone_m3m3": 0.1726,
@@ -6346,8 +6346,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P2），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Kaliningrad Oblast::admin1::葵油",
@@ -6361,7 +6361,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2996,
       "soil_water_rootzone_m3m3": 0.2505,
@@ -6371,8 +6371,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Russia::Karachay-Cherkess Republic::admin1::葵油",
@@ -6386,7 +6386,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2276,
       "soil_water_rootzone_m3m3": 0.205,
@@ -6396,8 +6396,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Kemerovo Oblast - Kuzbass::admin1::葵油",
@@ -6411,7 +6411,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1733,
       "soil_water_rootzone_m3m3": 0.2079,
@@ -6436,7 +6436,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.168,
       "soil_water_rootzone_m3m3": 0.3239,
@@ -6446,8 +6446,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Krasnoyarsk Krai::admin1::葵油",
@@ -6461,7 +6461,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1811,
       "soil_water_rootzone_m3m3": 0.3007,
@@ -6471,8 +6471,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P18），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Kurgan Oblast::admin1::葵油",
@@ -6486,7 +6486,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1324,
       "soil_water_rootzone_m3m3": 0.2279,
@@ -6511,7 +6511,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.445,
       "soil_water_rootzone_m3m3": 0.4289,
@@ -6536,7 +6536,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.349,
       "soil_water_rootzone_m3m3": 0.2932,
@@ -6561,7 +6561,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2999,
       "soil_water_rootzone_m3m3": 0.2779,
@@ -6586,7 +6586,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1712,
       "soil_water_rootzone_m3m3": 0.2626,
@@ -6596,8 +6596,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Russia::Novosibirsk Oblast::admin1::葵油",
@@ -6611,7 +6611,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.0983,
       "soil_water_rootzone_m3m3": 0.1425,
@@ -6636,7 +6636,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.121,
       "soil_water_rootzone_m3m3": 0.2585,
@@ -6661,7 +6661,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3403,
       "soil_water_rootzone_m3m3": 0.3515,
@@ -6671,8 +6671,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P4），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Oryol Oblast::admin1::葵油",
@@ -6686,7 +6686,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3206,
       "soil_water_rootzone_m3m3": 0.3223,
@@ -6711,7 +6711,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2725,
       "soil_water_rootzone_m3m3": 0.2613,
@@ -6736,7 +6736,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3978,
       "soil_water_rootzone_m3m3": 0.3588,
@@ -6746,8 +6746,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P92）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "表层土壤过湿（P92），排水不畅风险"
   },
   {
     "weather_region_id": "sunflower::Russia::Primorsky Krai::admin1::葵油",
@@ -6761,7 +6761,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3248,
       "soil_water_rootzone_m3m3": 0.2219,
@@ -6786,7 +6786,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.116,
       "soil_water_rootzone_m3m3": 0.2232,
@@ -6811,7 +6811,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3125,
       "soil_water_rootzone_m3m3": 0.3552,
@@ -6836,7 +6836,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1708,
       "soil_water_rootzone_m3m3": 0.2531,
@@ -6861,7 +6861,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1574,
       "soil_water_rootzone_m3m3": 0.4532,
@@ -6871,8 +6871,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P1），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Ingushetia::admin1::葵油",
@@ -6886,7 +6886,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3422,
       "soil_water_rootzone_m3m3": 0.3176,
@@ -6896,8 +6896,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P13），需关注降水补充"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Mordovia::admin1::葵油",
@@ -6911,7 +6911,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3346,
       "soil_water_rootzone_m3m3": 0.2556,
@@ -6936,7 +6936,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3715,
       "soil_water_rootzone_m3m3": 0.3772,
@@ -6946,8 +6946,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Tatarstan::admin1::葵油",
@@ -6961,7 +6961,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1099,
       "soil_water_rootzone_m3m3": 0.08,
@@ -6971,8 +6971,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Russia::Rostov Oblast::admin1::葵油",
@@ -6986,7 +6986,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1476,
       "soil_water_rootzone_m3m3": 0.3315,
@@ -7011,7 +7011,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4801,
       "soil_water_rootzone_m3m3": 0.3615,
@@ -7036,7 +7036,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.112,
       "soil_water_rootzone_m3m3": 0.2919,
@@ -7046,8 +7046,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Russia::Saratov Oblast::admin1::葵油",
@@ -7061,7 +7061,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1382,
       "soil_water_rootzone_m3m3": 0.21,
@@ -7086,7 +7086,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2504,
       "soil_water_rootzone_m3m3": 0.2299,
@@ -7111,7 +7111,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3368,
       "soil_water_rootzone_m3m3": 0.299,
@@ -7136,7 +7136,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3548,
       "soil_water_rootzone_m3m3": 0.297,
@@ -7161,7 +7161,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.4921,
       "soil_water_rootzone_m3m3": 0.4079,
@@ -7171,8 +7171,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P98）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "表层土壤过湿（P98），排水不畅风险"
   },
   {
     "weather_region_id": "sunflower::Russia::Ulyanovsk Oblast::admin1::葵油",
@@ -7186,7 +7186,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2122,
       "soil_water_rootzone_m3m3": 0.2682,
@@ -7196,8 +7196,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "sunflower::Russia::Vladimir Oblast::admin1::葵油",
@@ -7211,7 +7211,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2997,
       "soil_water_rootzone_m3m3": 0.2662,
@@ -7236,7 +7236,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1783,
       "soil_water_rootzone_m3m3": 0.3247,
@@ -7261,7 +7261,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.359,
       "soil_water_rootzone_m3m3": 0.3344,
@@ -7286,7 +7286,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.3058,
       "soil_water_rootzone_m3m3": 0.2827,
@@ -7296,8 +7296,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P95）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "表层土壤过湿（P95），排水不畅风险"
   },
   {
     "weather_region_id": "sunflower::Türkiye::national::葵油",
@@ -7311,7 +7311,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.068,
       "soil_water_rootzone_m3m3": 0.1268,
@@ -7336,7 +7336,7 @@
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
-    "data_completeness_note": "基于 NASA POWER 降雨温度 + Open-Meteo ET0/VPD + ERA5-Land 土壤湿度 1991-2020 基线 综合判断",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.1353,
       "soil_water_rootzone_m3m3": 0.1937,
@@ -7346,7 +7346,7 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   }
 ]
