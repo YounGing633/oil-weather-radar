@@ -46,9 +46,19 @@
     rows.forEach((row, i) => { if ((n(row.precipitation_mm) || 0) < 1) run.push(i); else flush(); }); flush(); return marked;
   }
   function render(row, history, key) {
-    const rain30 = row.precip_30d_anomaly_90d_series || [];
-    const soil = row.soil_rootzone_percentile_90d_series || [];
     const daily = history || [];
+    // The shared history feed has complete coverage for all active regions.
+    // Prefer it over the embedded risk snapshot, which can lag baseline refreshes.
+    const historyRain30 = daily.map(x => ({
+      date: x.date,
+      precip_30d_actual: n(x.precipitation_30d_actual_mm ?? x.precip_30d_actual),
+      precip_30d_normal: n(x.precipitation_30d_normal_mm ?? x.precip_30d_normal),
+      precip_30d_anomaly_mm: n(x.precipitation_30d_anomaly_mm)
+    }));
+    const rain30 = historyRain30.some(x => x.precip_30d_actual !== null || x.precip_30d_normal !== null)
+      ? historyRain30
+      : (row.precip_30d_anomaly_90d_series || []);
+    const soil = row.soil_rootzone_percentile_90d_series || [];
     const forecast = row.forecast_daily_16d_series || [];
     chart(`${key}-rain30`, { labels: labels(rain30), datasets: [line('实际30日累计', rain30.map(x => n(x.precip_30d_actual)), '#2677b8'), line('同期常态', rain30.map(x => n(x.precip_30d_normal)), '#8797a1', { borderDash: [4, 3] })] });
     chart(`${key}-rain30a`, { labels: labels(rain30), datasets: [{ type: 'bar', label: '距平', data: rain30.map(x => n(x.precip_30d_anomaly_mm)), backgroundColor: rain30.map(x => (n(x.precip_30d_anomaly_mm) || 0) >= 0 ? '#4d9b86' : '#c8794b'), borderWidth: 0 }] });

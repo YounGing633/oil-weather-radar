@@ -3558,7 +3558,7 @@ function renderSoilMoistureChartBlock(row) {
 }
 
 function renderPrecipSummaryBlock(row) {
-  const series = row.precip_30d_anomaly_90d_series || [];
+  const series = getPrecip30dSeries(row);
   if (!seriesHasValue(series, ['precip_30d_actual', 'precip_30d_normal'])) return '';
   return `<div class="detail-block">
     <h3>① 30日累计降雨 / 降雨距平 · 90天走势</h3>
@@ -3666,8 +3666,8 @@ async function renderRegionCharts(row) {
   renderSoilActualChart(row.soil_rootzone_percentile_90d_series || []);
   renderSoilAnomalyChart(row.soil_rootzone_percentile_90d_series || []);
   renderSoilPercentileChart(row.soil_rootzone_percentile_90d_series || []);
-  renderPrecipCumChart(row.precip_30d_anomaly_90d_series || []);
-  renderRain30dAnomalyChart(row.precip_30d_anomaly_90d_series || []);
+  renderPrecipCumChart(getPrecip30dSeries(row));
+  renderRain30dAnomalyChart(getPrecip30dSeries(row));
   renderDailyRainChart(row);
   renderTemperatureChart(getRegionHistory(row));
   renderForecastRainChart(row.forecast_daily_16d_series || []);
@@ -3710,6 +3710,20 @@ function chartValues(series, key) {
 function getRegionHistory(row) {
   if (!row || !row.weather_region_id || !store.regionHistoryIndex) return [];
   return store.regionHistoryIndex.get(String(row.weather_region_id)) || [];
+}
+
+function getPrecip30dSeries(row) {
+  const embedded = Array.isArray(row && row.precip_30d_anomaly_90d_series)
+    ? row.precip_30d_anomaly_90d_series
+    : [];
+  if (seriesHasValue(embedded, ['precip_30d_actual', 'precip_30d_normal'])) return embedded;
+  return getRegionHistory(row).map(point => ({
+    date: point.date,
+    precip_30d_actual: firstNumeric(point, ['precipitation_30d_actual_mm', 'precip_30d_actual']),
+    precip_30d_normal: firstNumeric(point, ['precipitation_30d_normal_mm', 'precip_30d_normal']),
+    precip_30d_anomaly_mm: firstNumeric(point, ['precipitation_30d_anomaly_mm']),
+    precip_30d_ratio_pct: firstNumeric(point, ['precipitation_30d_ratio_pct'])
+  }));
 }
 
 function arrayField(row, keys) {
