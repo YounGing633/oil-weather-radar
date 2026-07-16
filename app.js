@@ -284,6 +284,7 @@ let state = {
   anomaly: 'all',
   dataStatus: 'all',
   timeRange: '14d',
+  baselinePeriod: '2017_2025',
   layer: 'country',
   weatherMetric: 'rain',
   mapValue: 'production',
@@ -318,6 +319,7 @@ function snapshotViewState() {
     anomaly: state.anomaly,
     dataStatus: state.dataStatus,
     timeRange: state.timeRange,
+    baselinePeriod: state.baselinePeriod,
     layer: state.layer,
     weatherMetric: state.weatherMetric,
     mapValue: state.mapValue,
@@ -336,6 +338,7 @@ function defaultViewState(viewMode) {
     anomaly: 'all',
     dataStatus: 'all',
     timeRange: '14d',
+    baselinePeriod: state.baselinePeriod || '2017_2025',
     layer: viewMode === 'weather' ? 'weather' : 'country',
     weatherMetric: 'rain',
     mapValue: 'production',
@@ -3551,7 +3554,7 @@ function renderSoilMoistureChartBlock(row) {
     <h3>⑥ 根区 / 表层土壤水分 · 90天走势</h3>
     <div class="detail-chart-grid">
       <div><div class="chart-title">实际值</div><div class="chart-box compact"><canvas id="chart-soil-actual"></canvas></div></div>
-      <div><div class="chart-title">距平（基准期）</div><div class="chart-box compact"><canvas id="chart-soil-anomaly"></canvas></div></div>
+      <div><div class="chart-title">距平（数据源固定基准）</div><div class="chart-box compact"><canvas id="chart-soil-anomaly"></canvas></div></div>
       <div><div class="chart-title">百分位</div><div class="chart-box compact"><canvas id="chart-soil-percentile"></canvas></div></div>
     </div>
   </div>`;
@@ -3577,7 +3580,7 @@ function renderRainAnomalyChartBlock(row) {
 }
 
 function renderTempAnomalyChartBlock(row) {
-  if (!seriesHasValue(getRegionHistory(row), ['temp_max_c', 'temp_min_c', 'temp_mean_c'])) return '';
+  if (!seriesHasValue(weatherHistoryForBaseline(row), ['temp_max_c', 'temp_min_c', 'temp_mean_c'])) return '';
   return `<div class="detail-block">
     <h3>③ 每日最高 / 最低 / 平均温与正常范围 · 90天走势</h3>
     <div class="chart-box detail-tall"><canvas id="chart-temperature"></canvas></div>
@@ -3598,7 +3601,7 @@ function forecastPeriodMarkup(series) {
 }
 
 function renderForecastDetailBlock(row) {
-  const series = row.forecast_daily_16d_series || [];
+  const series = forecastSeriesForBaseline(row);
   if (!seriesHasValue(series, ['precipitation_mm', 'temp_max_c', 'temp_min_c'])) return '';
   return `<div class="detail-block">
     <h3>④ 未来降雨预报 · 逐日</h3>
@@ -3613,6 +3616,7 @@ function showRegionDetail(row) {
   destroyCharts();
   state.selectedRegionRecord = row;
   const extraHtml = `
+    ${renderWeatherBaselineControl()}
     ${renderPrecipSummaryBlock(row)}
     ${renderRainAnomalyChartBlock(row)}
     ${renderTempAnomalyChartBlock(row)}
@@ -3666,9 +3670,9 @@ async function renderRegionCharts(row) {
   renderSoilPercentileChart(row.soil_rootzone_percentile_90d_series || []);
   renderPrecipCumChart(getPrecip30dSeries(row));
   renderDailyRainChart(row);
-  renderTemperatureChart(getRegionHistory(row));
-  renderForecastRainChart(row.forecast_daily_16d_series || []);
-  renderForecastTempChart(row.forecast_daily_16d_series || []);
+  renderTemperatureChart(weatherHistoryForBaseline(row));
+  renderForecastRainChart(forecastSeriesForBaseline(row));
+  renderForecastTempChart(forecastSeriesForBaseline(row));
 }
 
 const soilBandPlugin = {
@@ -3709,11 +3713,54 @@ function getRegionHistory(row) {
   return store.regionHistoryIndex.get(String(row.weather_region_id)) || [];
 }
 
+function baselineField(point, baseKey) {
+  return firstNumeric(point, [`${baseKey}_${state.baselinePeriod}`, baseKey]);
+}
+
+function weatherHistoryForBaseline(row) {
+  return getRegionHistory(row).map(point => ({
+    ...point,
+    precipitation_normal_daily_mm: baselineField(point, 'precipitation_normal_daily_mm'),
+    precipitation_30d_normal_mm: baselineField(point, 'precipitation_30d_normal_mm'),
+    precipitation_30d_anomaly_mm: baselineField(point, 'precipitation_30d_anomaly_mm'),
+    temp_max_normal_c: baselineField(point, 'temp_max_normal_c'),
+    temp_max_normal_low_c: baselineField(point, 'temp_max_normal_low_c'),
+    temp_max_normal_high_c: baselineField(point, 'temp_max_normal_high_c'),
+    temp_min_normal_c: baselineField(point, 'temp_min_normal_c'),
+    temp_min_normal_low_c: baselineField(point, 'temp_min_normal_low_c'),
+    temp_min_normal_high_c: baselineField(point, 'temp_min_normal_high_c'),
+    temp_mean_normal_c: baselineField(point, 'temp_mean_normal_c'),
+    temp_mean_normal_low_c: baselineField(point, 'temp_mean_normal_low_c'),
+    temp_mean_normal_high_c: baselineField(point, 'temp_mean_normal_high_c')
+  }));
+}
+
+function forecastSeriesForBaseline(row) {
+  return (Array.isArray(row && row.forecast_daily_16d_series) ? row.forecast_daily_16d_series : []).map(point => ({
+    ...point,
+    precipitation_normal_mm: baselineField(point, 'precipitation_normal_mm'),
+    temp_max_normal_c: baselineField(point, 'temp_max_normal_c'),
+    temp_min_normal_c: baselineField(point, 'temp_min_normal_c')
+  }));
+}
+
+function renderWeatherBaselineControl() {
+  const label = state.baselinePeriod === '1991_2020' ? '1991–2020 气候标准' : '2017–2025 近年基准';
+  return `<div class="detail-block"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <strong>天气距平基准期</strong>
+    <select data-weather-baseline style="padding:6px 10px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;">
+      <option value="1991_2020" ${state.baselinePeriod === '1991_2020' ? 'selected' : ''}>1991–2020（气候标准）</option>
+      <option value="2017_2025" ${state.baselinePeriod === '2017_2025' ? 'selected' : ''}>2017–2025（近年基准）</option>
+    </select>
+    <span class="detail-chart-note">当前：${label}；同步作用于降雨、温度和预报距平。土壤距平使用数据源固定基准。</span>
+  </div></div>`;
+}
+
 function getPrecip30dSeries(row) {
   const embedded = Array.isArray(row && row.precip_30d_anomaly_90d_series)
     ? row.precip_30d_anomaly_90d_series
     : [];
-  const history = getRegionHistory(row).map(point => ({
+  const history = weatherHistoryForBaseline(row).map(point => ({
     date: point.date,
     precip_30d_actual: firstNumeric(point, ['precipitation_30d_actual_mm', 'precip_30d_actual']),
     precip_30d_normal: firstNumeric(point, ['precipitation_30d_normal_mm', 'precip_30d_normal']),
@@ -3922,7 +3969,7 @@ function renderRain30dAnomalyChart(series) {
 
 function renderDailyRainChart(row) {
   const canvas = document.getElementById('chart-daily-rain');
-  const series = dailyRainSourceSeries(row);
+  const series = weatherHistoryForBaseline(row);
   if (!canvas || !series.length) return;
   const values = series.map(point => firstNumeric(point, ['precipitation_mm', 'daily_rain_mm', 'daily_precip_mm', 'rain_mm', 'precip_mm']));
   let dryRun = 0;
@@ -4312,6 +4359,7 @@ function bindEvents() {
       anomaly: 'all',
       dataStatus: 'all',
       timeRange: '14d',
+      baselinePeriod: '2017_2025',
       layer: 'country',
       weatherMetric: 'rain',
       mapValue: 'production',
@@ -4335,6 +4383,13 @@ function bindEvents() {
     if (!row) return;
     const record = store.adminById.get(row.dataset.regionId);
     if (record) showRegionDetail(record);
+  });
+
+  document.getElementById('detail-panel').addEventListener('change', event => {
+    const select = event.target.closest('[data-weather-baseline]');
+    if (!select) return;
+    state.baselinePeriod = select.value === '1991_2020' ? '1991_2020' : '2017_2025';
+    if (state.selectedRegionRecord) showRegionDetail(state.selectedRegionRecord);
   });
 
   document.addEventListener('click', event => {

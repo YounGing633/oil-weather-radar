@@ -10,7 +10,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": "admin1_geojson/argentina_admin1.geojson",
     "missing_reason": null,
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Australia",
@@ -23,7 +23,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": "admin1_geojson/australia_admin1.geojson",
     "missing_reason": null,
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Brazil",
@@ -36,7 +36,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": "admin1_geojson/brazil_admin1.geojson",
     "missing_reason": null,
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Canada",
@@ -49,7 +49,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": "admin1_geojson/canada_admin1.geojson",
     "missing_reason": null,
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Czechia",
@@ -62,7 +62,7 @@
     "country_boundary_file": null,
     "admin1_boundary_file": null,
     "missing_reason": "country boundary missing; centroid fallback only",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Denmark",
@@ -75,7 +75,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "France",
@@ -88,7 +88,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Germany",
@@ -101,7 +101,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Indonesia",
@@ -114,7 +114,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": "admin1_geojson/indonesia_admin1.geojson",
     "missing_reason": null,
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Italy",
@@ -127,7 +127,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Lithuania",
@@ -140,7 +140,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Malaysia",
@@ -153,7 +153,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": "admin1_geojson/malaysia_admin1.geojson",
     "missing_reason": null,
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Philippines",
@@ -166,7 +166,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Poland",
@@ -179,7 +179,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Romania",
@@ -192,7 +192,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Russia",
@@ -205,7 +205,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "Türkiye",
@@ -218,7 +218,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "United Kingdom",
@@ -231,7 +231,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": null,
     "missing_reason": "admin1 boundary missing; use centroid fallback until polygon is added",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "United States",
@@ -244,7 +244,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": "admin1_geojson/united_states_admin1.geojson",
     "missing_reason": null,
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "United States of America",
@@ -257,7 +257,7 @@
     "country_boundary_file": "countries.geo.json",
     "admin1_boundary_file": "admin1_geojson/united_states_admin1.geojson",
     "missing_reason": null,
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   },
   {
     "country": "European Union",
@@ -270,6 +270,6 @@
     "country_boundary_file": null,
     "admin1_boundary_file": null,
     "missing_reason": "v2.0-a 仅准备 EU virtual country 数据接口，暂未准备欧盟整体边界。",
-    "updated_at": "2026-07-16 16:27:00"
+    "updated_at": "2026-07-16 17:04:40"
   }
 ]

@@ -296,8 +296,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "coconut::Indonesia::Kepulauan Riau::admin1::椰子油",
@@ -546,8 +546,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Barat::admin1::椰子油",
@@ -571,8 +571,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Selatan::admin1::椰子油",
@@ -721,8 +721,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Indonesia::national::椰子油",
@@ -771,8 +771,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
   },
   {
     "weather_region_id": "coconut::Philippines::CORDILLERA ADMINISTRATIVE REGION (CAR)::admin1::椰子油",
@@ -971,8 +971,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
@@ -1096,8 +1096,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XI (DAVAO REGION)::admin1::椰子油",
@@ -1496,8 +1496,8 @@
       "baseline_method": "era5_land_90d_rolling_openmeteo",
       "data_date": "2026-07-14"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "palm::Indonesia::Kepulauan_Riau::admin1::crude_palm_oil",
