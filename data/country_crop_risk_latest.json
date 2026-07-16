@@ -32,37 +32,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 10,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "Buenos Aires, 阿根廷 / Argentina"
-      },
-      {
-        "region_name": "Córdoba, 阿根廷 / Argentina"
-      },
-      {
-        "region_name": "Entre Ríos, 阿根廷 / Argentina"
-      },
-      {
-        "region_name": "Santa Fe, 阿根廷 / Argentina"
-      }
-    ],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Australia",
@@ -97,26 +67,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 6,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 4,
-    "soil_temp_used_share": 0.6667,
-    "soil_temp_stage_summary": {
-      "V/FP": 4
-    }
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Brazil",
@@ -151,32 +102,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "强雨·运输",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 1.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "巴西 / Brazil",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "medium",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Brazil",
@@ -211,24 +137,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 17,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Canada",
@@ -263,24 +172,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 7,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Canada",
@@ -315,26 +207,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 8,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 5,
-    "soil_temp_used_share": 0.625,
-    "soil_temp_stage_summary": {
-      "V/FP": 5
-    }
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Canada",
@@ -369,24 +242,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 4,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "low",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Czechia",
@@ -421,28 +277,7 @@
     "boundary_file": null,
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "Czechia / Czechia"
-      }
-    ],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Denmark",
@@ -477,24 +312,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "low",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "France",
@@ -529,28 +347,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "法国 / France"
-      }
-    ],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Germany",
@@ -585,28 +382,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "德国 / Germany"
-      }
-    ],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Indonesia",
@@ -641,84 +417,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "过湿·采收",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0897,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 30,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "Riau, 印度尼西亚 / Indonesia",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Papua, 印度尼西亚 / Indonesia",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Papua Tengah, 印度尼西亚 / Indonesia",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Kalimantan Utara, 印度尼西亚 / Indonesia",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
-    "supportive_regions": [
-      {
-        "region_name": "Sulawesi Tengah, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Jambi, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Jawa Barat, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Lampung, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Kalimantan Barat, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Sulawesi Selatan, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Gorontalo, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Aceh, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Banten, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Kalimantan Selatan, 印度尼西亚 / Indonesia"
-      }
-    ],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Indonesia",
@@ -753,84 +452,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "过湿·采收",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.2323,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 29,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "Riau / Indonesia",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Kalimantan Utara / Indonesia",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Papua / Indonesia",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Papua Tengah / Indonesia",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
-    "supportive_regions": [
-      {
-        "region_name": "Kalimantan Tengah / Indonesia"
-      },
-      {
-        "region_name": "Kalimantan Barat / Indonesia"
-      },
-      {
-        "region_name": "Jambi / Indonesia"
-      },
-      {
-        "region_name": "Kalimantan Selatan / Indonesia"
-      },
-      {
-        "region_name": "Aceh / Indonesia"
-      },
-      {
-        "region_name": "Bangka Belitung / Indonesia"
-      },
-      {
-        "region_name": "Sulawesi Tengah / Indonesia"
-      },
-      {
-        "region_name": "Lampung / Indonesia"
-      },
-      {
-        "region_name": "Sulawesi Selatan / Indonesia"
-      },
-      {
-        "region_name": "Jawa Barat / Indonesia"
-      }
-    ],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Italy",
@@ -865,24 +487,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Lithuania",
@@ -917,32 +522,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "降雨·收获",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 1.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "Lithuania / Lithuania",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Malaysia",
@@ -977,24 +557,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 9,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Philippines",
@@ -1029,95 +592,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "强雨·运输",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.8572,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 17,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "Philippines - REGION XI (DAVAO REGION)",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - REGION IV-A (CALABARZON)",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "medium",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - REGION V (BICOL REGION)",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - MIMAROPA REGION",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "medium",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - REGION VI (WESTERN VISAYAS)",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "medium",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - NEGROS ISLAND REGION",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "medium",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - REGION I (ILOCOS REGION)",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "medium",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - REGION III (CENTRAL LUZON)",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - CORDILLERA ADMINISTRATIVE REGION (CAR)",
-        "risk_label_cn": "强雨·运输",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Philippines - REGION IX (ZAMBOANGA PENINSULA)",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Poland",
@@ -1152,32 +627,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "降雨·收获",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 1.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "波兰 / Poland",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Romania",
@@ -1212,28 +662,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "罗马尼亚 / Romania"
-      }
-    ],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Romania",
@@ -1268,24 +697,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Russia",
@@ -1320,42 +732,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "降雨·收获",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.035,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 58,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "Russia - Kaliningrad Oblast",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
-    "supportive_regions": [
-      {
-        "region_name": "Russia - Krasnodar Krai"
-      },
-      {
-        "region_name": "Russia - Stavropol Krai"
-      },
-      {
-        "region_name": "Russia - Rostov Oblast"
-      }
-    ],
-    "confidence_summary": "low",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Russia",
@@ -1390,24 +767,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 46,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "low",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "Türkiye",
@@ -1442,24 +802,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "low",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "United Kingdom",
@@ -1494,28 +837,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "United Kingdom / United Kingdom"
-      }
-    ],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "United States",
@@ -1550,24 +872,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 9,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "low",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "United States",
@@ -1602,24 +907,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 31,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "United States of America",
@@ -1654,24 +942,7 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 9,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "low",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   },
   {
     "country": "United States of America",
@@ -1706,23 +977,6 @@
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-07-16 10:31:12",
-    "dominant_country_badge_cn": "",
-    "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
-    "progress_used_region_count": 0,
-    "progress_used_share": 0.0,
-    "progress_stage_source_summary": {
-      "crop_progress": 0,
-      "crop_calendar": 1,
-      "mixed_calendar_progress": 0
-    },
-    "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
-    "confidence_summary": "low",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "updated_at": "2026-07-16 11:40:14"
   }
 ]
