@@ -1,22 +1,22 @@
 (() => {
   const $ = id => document.getElementById(id);
   const CONFIG = {
-    soybean: { name: '豆油', crop: 'soybean', color: '#a16207', en: 'Soybean Oil Weather & Supply Risk Monitor', focus: '重点关注播种、开花、结荚与鼓粒阶段的干旱、高温和作业延误。', layers: ['risk', 'production', 'moisture', 'heat', 'operation'], special: '以大豆产量作为豆油天气暴露代理，并优先展示美国、巴西、阿根廷等产区的生育进度证据。' },
-    rapeseed_canola: { name: '菜油', crop: 'rapeseed_canola', color: '#2563eb', en: 'Rapeseed Oil Weather & Supply Risk Monitor', focus: '区分冬菜籽与春菜籽，重点关注越冬返青、开花结荚及收获期的水分和作业风险。', layers: ['risk', 'production', 'moisture', 'rain', 'operation'], special: '以菜籽/油菜籽产量作为菜油天气暴露代理；同一国家存在多套口径时，优先采用有省州明细的官方数据。' },
-    sunflower: { name: '葵油', crop: 'sunflower', color: '#7c3aed', en: 'Sunflower Oil Weather & Supply Risk Monitor', focus: '重点关注现蕾、开花、授粉和灌浆阶段的高温与根区水分压力。', layers: ['risk', 'production', 'moisture', 'heat', 'rain'], special: '以葵花籽产量作为葵油天气暴露代理，俄罗斯等主产区按可用地区数据聚合。' },
-    coconut: { name: '椰子油', crop: 'coconut', color: '#0891b2', en: 'Coconut Oil Weather & Supply Risk Monitor', focus: '多年生作物不使用年度播种进度，重点关注持续少雨、根区水分和未来补水。', layers: ['risk', 'production', 'rain', 'moisture', 'forecast'], special: '按印尼、菲律宾可用椰子产区数据汇总，强调连续水分条件而非单一生育周。' }
+    soybean: { name: '豆油', crop: 'soybean', color: '#a16207', en: 'Soybean Oil Weather & Supply Risk Monitor', focus: '重点关注播种、开花、结荚与鼓粒阶段的干旱、高温和作业延误。', layers: ['risk', 'production', 'rain', 'heat', 'moisture', 'operation', 'forecast'], special: '以大豆产量作为豆油天气暴露代理，并优先展示美国、巴西、阿根廷等产区的生育进度证据。' },
+    rapeseed_canola: { name: '菜油', crop: 'rapeseed_canola', color: '#2563eb', en: 'Rapeseed Oil Weather & Supply Risk Monitor', focus: '区分冬菜籽与春菜籽，重点关注越冬返青、开花结荚及收获期的水分和作业风险。', layers: ['risk', 'production', 'rain', 'heat', 'moisture', 'operation', 'forecast'], special: '以菜籽/油菜籽产量作为菜油天气暴露代理；同一国家存在多套口径时，优先采用有省州明细的官方数据。' },
+    sunflower: { name: '葵油', crop: 'sunflower', color: '#7c3aed', en: 'Sunflower Oil Weather & Supply Risk Monitor', focus: '重点关注现蕾、开花、授粉和灌浆阶段的高温与根区水分压力。', layers: ['risk', 'production', 'rain', 'heat', 'moisture', 'operation', 'forecast'], special: '以葵花籽产量作为葵油天气暴露代理，俄罗斯等主产区按可用地区数据聚合。' },
+    coconut: { name: '椰子油', crop: 'coconut', color: '#0891b2', en: 'Coconut Oil Weather & Supply Risk Monitor', focus: '多年生作物不使用年度播种进度，重点关注持续少雨、根区水分和未来补水。', layers: ['risk', 'production', 'rain', 'heat', 'moisture', 'operation', 'forecast'], special: '按印尼、菲律宾可用椰子产区数据汇总，强调连续水分条件而非单一生育周。' }
   };
   const LAYERS = {
     risk: ['综合风险', '颜色表示产量加权后的综合天气风险。'], production: ['产量权重', '颜色深浅表示当前数据覆盖的产量规模。'],
     moisture: ['根区墒情', '优先采用历史同期百分位（2016–2025、同日±7天）；历史基线未补齐时才显示最近90日排序，并明确标注。'], rain: ['近30日降雨', '相对1991—2020同期的降雨比例。'],
-    heat: ['最高温距平', '最高温相对历史同期的偏离程度。'], operation: ['作业风险', '强降雨、收获或田间作业受影响的产量占比。'], forecast: ['未来7日降雨', '未来7日累计降雨，辅助判断水分压力能否缓解。']
+    heat: ['热干风险', '高温距平与降雨偏少或根区偏干同时出现时，才判为热干风险。'], operation: ['作业风险', '强降雨、收获或田间作业受影响的产量占比。'], forecast: ['未来7日降雨', '未来7日累计降雨，辅助判断水分压力能否缓解。']
   };
   const METRIC_GROUPS = {
     risk: [['risk', '综合风险'], ['production', '产量权重']],
     production: [['production', '产量权重']],
     moisture: [['moisture', '根区百分位'], ['moistureSurface', '表层百分位'], ['moistureActual', '根区绝对值'], ['moistureSurfaceActual', '表层绝对值']],
     rain: [['rain', '30日相对常年'], ['rainActual', '30日累计'], ['forecast', '未来7日'], ['forecast16', '未来16日']],
-    heat: [['heat', '最高温距平']],
+    heat: [['heatDry', '热干风险等级'], ['heat', '最高温距平']],
     operation: [['operation', '作业影响']],
     forecast: [['forecast', '未来7日'], ['forecast16', '未来16日']]
   };
@@ -93,6 +93,18 @@
     return total ? rows.reduce((s, r) => s + (test(r) ? n(r.production_tonnes) : 0), 0) / total : null;
   }
 
+  // A heat-only anomaly is not automatically a heat-dry event.  The score is
+  // deliberately based on the same rainfall and root-zone moisture fields
+  // shown elsewhere in this page, so the map and the supporting evidence agree.
+  function heatDryScore(r) {
+    const heat = num(r.temp_max_anomaly_c), root = num(r.rootzone_percentile), rain = num(r.precip_30d_ratio_pct);
+    if (heat === null) return null;
+    const dryRoot = root !== null && root < 30, dryRain = rain !== null && rain < 85;
+    if (heat < 2 || (!dryRoot && !dryRain)) return 0;
+    if (heat >= 3 && dryRoot && (root < 20 || (dryRain && rain < 70))) return 3;
+    return dryRoot && dryRain ? 2 : 1;
+  }
+
   function summary() {
     const cr = scope === 'all' ? countries : countries.filter(r => r.country === scope), rr = currentRegions();
     const total = cr.reduce((s, r) => s + n(r.total_production_tonnes), 0), disturbed = cr.reduce((s, r) => s + n(r.disturbed_production_tonnes), 0);
@@ -125,6 +137,7 @@
 
   function metricValue(r) {
     if (metric === 'production') return n(r.total_production_tonnes ?? r.production_tonnes);
+    if (metric === 'heatDry') return heatDryScore(r);
     if (metric === 'operation' && num(r.operation_affected_share) !== null) return num(r.operation_affected_share);
     const field = { moisture: 'rootzone_percentile', moistureSurface: 'surface_percentile', moistureActual: 'soil_water_rootzone', moistureSurfaceActual: 'soil_water_surface', rain: 'precip_30d_ratio_pct', rainActual: 'precip_30d_actual', heat: 'temp_max_anomaly_c', operation: 'operation_affected_share', forecast: 'forecast_7d_precip', forecast16: 'forecast_16d_precip' }[metric];
     if (!field) return null;
@@ -143,6 +156,7 @@
     if (metric === 'moisture' || metric === 'moistureSurface') return x < 10 ? '#8c2d24' : x < 30 ? '#d6604d' : x <= 70 ? '#e8d98b' : x <= 90 ? '#78a85b' : '#2474a6';
     if (metric === 'moistureActual' || metric === 'moistureSurfaceActual') return x < .12 ? '#8c2d24' : x < .2 ? '#d6604d' : x < .3 ? '#e8d98b' : x < .4 ? '#78a85b' : '#2474a6';
     if (metric === 'rain') return x < 50 ? '#8c2d24' : x < 85 ? '#e28a25' : x <= 115 ? '#e8d98b' : x <= 150 ? '#78a85b' : '#2474a6';
+    if (metric === 'heatDry') return x < .5 ? '#e8eef0' : x < 1.5 ? '#e8d98b' : x < 2.5 ? '#e28a25' : '#c23b22';
     if (metric === 'heat') return x < 0 ? '#8ec6d8' : x < 1 ? '#e8d98b' : x < 2 ? '#e9a35b' : x < 3 ? '#d6604d' : '#8c2d24';
     if (metric === 'operation') return x <= 0 ? '#e8eef0' : x < .15 ? '#e8d98b' : x < .4 ? '#e28a25' : '#c23b22';
     return x < 10 ? '#8c2d24' : x < 25 ? '#e28a25' : x < 50 ? '#e8d98b' : x < 100 ? '#78a85b' : '#2474a6';
@@ -152,7 +166,7 @@
     const sets = {
       risk: [['#c23b22', '显著压力'], ['#e28a25', '重点压力'], ['#eabf36', '关注'], ['#2f8a62', '正常/偏支持']], production: [['#e8eef0', '较低'], [crop.color + 'aa', '中等'], [crop.color, '较高']],
       moisture: [['#8c2d24', 'P<10 极干'], ['#d6604d', 'P10—29 偏干'], ['#e8d98b', 'P30—70 正常'], ['#2474a6', 'P>90 偏湿']], moistureSurface: [['#8c2d24', 'P<10 极干'], ['#d6604d', 'P10—29 偏干'], ['#e8d98b', 'P30—70 正常'], ['#2474a6', 'P>90 偏湿']], moistureActual: [['#8c2d24', '<0.12'], ['#d6604d', '0.12—0.20'], ['#e8d98b', '0.20—0.30'], ['#2474a6', '>0.40']], moistureSurfaceActual: [['#8c2d24', '<0.12'], ['#d6604d', '0.12—0.20'], ['#e8d98b', '0.20—0.30'], ['#2474a6', '>0.40']], rain: [['#8c2d24', '<50%'], ['#e28a25', '50—84%'], ['#e8d98b', '85—115%'], ['#2474a6', '>150%']], rainActual: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']], forecast16: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']],
-      heat: [['#8ec6d8', '<0℃'], ['#e8d98b', '0—1℃'], ['#e9a35b', '1—2℃'], ['#8c2d24', '≥3℃']], operation: [['#e8eef0', '无信号'], ['#e8d98b', '<15%'], ['#e28a25', '15—40%'], ['#c23b22', '>40%']], forecast: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']]
+      heatDry: [['#e8eef0', '未触发'], ['#e8d98b', '轻度：高温+一项偏干'], ['#e28a25', '重点：高温+双偏干'], ['#c23b22', '严重：高温≥3℃且显著偏干']], heat: [['#8ec6d8', '<0℃'], ['#e8d98b', '0—1℃'], ['#e9a35b', '1—2℃'], ['#8c2d24', '≥3℃']], operation: [['#e8eef0', '无信号'], ['#e8d98b', '<15%'], ['#e28a25', '15—40%'], ['#c23b22', '>40%']], forecast: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']]
     };
     const label = (METRIC_GROUPS[section] || []).find(([id]) => id === metric)?.[1] || LAYERS[section][0];
     $('legend').innerHTML = `<b>${label}</b><br>${sets[metric].map(x => `<i style="background:${x[0]}"></i>${x[1]}`).join('<br>')}<br><small>灰色：暂无该口径数据</small>`;
