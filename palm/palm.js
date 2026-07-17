@@ -4,6 +4,22 @@
   const COUNTRY = { Indonesia: '印度尼西亚', Malaysia: '马来西亚' };
   const $ = id => document.getElementById(id);
   const num = x => Number.isFinite(Number(x)) ? Number(x) : null;
+  const hydrateLatestRain = (rows, daily) => {
+    const latest = new Map();
+    daily.forEach(point => {
+      const id = point?.weather_region_id, date = String(point?.date || '');
+      if (!id || !date || (latest.get(id)?.date || '') > date) return;
+      latest.set(id, point);
+    });
+    return rows.map(row => {
+      const point = latest.get(row.weather_region_id);
+      if (!point) return row;
+      const actual = num(point.precipitation_30d_actual_mm ?? point.precip_30d_actual);
+      const normal = num(point.precipitation_30d_normal_mm_2017_2025 ?? point.precipitation_30d_normal_mm ?? point.precip_30d_normal);
+      const ratio = num(point.precipitation_30d_ratio_pct_2017_2025 ?? point.precipitation_30d_ratio_pct);
+      return actual === null && ratio === null ? row : { ...row, rain_30d_mm: actual, rain_30d_ratio_1991_2020: ratio ?? (normal && actual !== null ? actual / normal * 100 : null), weather_snapshot_date: point.date };
+    });
+  };
   const mm = x => num(x) === null ? '缺测' : `${num(x).toFixed(1)} mm`;
   const pc = x => num(x) === null ? '缺测' : `${num(x).toFixed(1)}%`;
   const esc = x => String(x ?? '—').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
@@ -158,7 +174,7 @@
       const [rain, risk, history, meta, weather, anomaly, forecast, daily] = await Promise.all(['palm_rain_region_latest.json','palm_region_risk_latest.json','palm_rain_history_90d.json','palm_rain_meta.json','weather_latest.json','weather_anomaly.json','weather_forecast.json','region_history_90d_v1.0d.json'].map(getJSON));
       const extra = new Map(risk.map(r => [r.weather_region_id, r])), weatherBy = new Map(weather.map(r => [r.weather_region_id, r])), anomalyBy = new Map(anomaly.map(r => [r.weather_region_id, r])), forecastBy = new Map();
       forecast.forEach(x => { if (!forecastBy.has(x.weather_region_id)) forecastBy.set(x.weather_region_id, []); forecastBy.get(x.weather_region_id).push(x); });
-      state.rows = rain.map(r => ({ ...r, ...(extra.get(r.weather_region_id) || {}), _weather: weatherBy.get(r.weather_region_id), _anomaly: anomalyBy.get(r.weather_region_id), _forecast: forecastBy.get(r.weather_region_id) || [] })); state.history = history; state.dailyHistory = new Map(); daily.forEach(row => { if (!state.dailyHistory.has(row.weather_region_id)) state.dailyHistory.set(row.weather_region_id, []); state.dailyHistory.get(row.weather_region_id).push(row); });
+      state.rows = hydrateLatestRain(rain.map(r => ({ ...r, ...(extra.get(r.weather_region_id) || {}), _weather: weatherBy.get(r.weather_region_id), _anomaly: anomalyBy.get(r.weather_region_id), _forecast: forecastBy.get(r.weather_region_id) || [] })), daily); state.history = history; state.dailyHistory = new Map(); daily.forEach(row => { if (!state.dailyHistory.has(row.weather_region_id)) state.dailyHistory.set(row.weather_region_id, []); state.dailyHistory.get(row.weather_region_id).push(row); });
       $('status').textContent = `最新实况（ECMWF IFS）：${state.rows[0]?.date_end || '缺测'} ｜ 数据更新时间：${meta.generated_at || '缺测'} ｜ 当前地图：绝对值、距平和事件提示可分别切换`;
       $('method').textContent = '降雨和温度统一采用 Open-Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；仅在2017–2025同源历史完整时显示历史基准，缺失时不再用第二来源补齐。未来降雨绝对值转为30日等效累计，便于与近30日图层比较。';
       updateControlRow(); controls(); updateSummary(); await buildMap(); regionDetail([...state.rows].sort((a,b) => (b.production_tonnes || 0) - (a.production_tonnes || 0))[0]);

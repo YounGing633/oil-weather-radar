@@ -1,6 +1,6 @@
 [
   {
-    "generated_at": "2026-07-17 10:11:32",
+    "generated_at": "2026-07-17 11:08:18",
     "version": "v1.0-i1",
     "baseline_period": "1991-2020 / 2017-2025 selectable",
     "baseline_method": "NASA POWER same-calendar-day selectable weather baselines",
@@ -10,8 +10,8 @@
       "Open-Meteo ECMWF IFS (observations + forecast)",
       "NASA POWER (1991-2020 / 2017-2025 selectable weather baselines)"
     ],
-    "baseline_ready_points": 80,
-    "baseline_pending_points": 214,
+    "baseline_ready_points": 100,
+    "baseline_pending_points": 194,
     "active_points": 294,
     "excluded_faostat_points": 38,
     "countries": [
@@ -44,6 +44,6 @@
       "sunflower"
     ],
     "total_alerts": 71,
-    "run_id": "daily_export_20260717_101132"
+    "run_id": "daily_export_20260717_110817"
   }
 ]

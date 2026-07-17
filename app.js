@@ -927,13 +927,36 @@ function destroyCharts() {
   charts = {};
 }
 
+function synchronizeWeatherSnapshot(records, historyIndex) {
+  return records.map(record => {
+    const history = historyIndex.get(String(record.weather_region_id)) || [];
+    const point = history[history.length - 1];
+    if (!point) return record;
+    const actual = firstNumeric(point, ['precipitation_30d_actual_mm', 'precip_30d_actual']);
+    const normal = firstNumeric(point, ['precipitation_30d_normal_mm_2017_2025', 'precipitation_30d_normal_mm', 'precip_30d_normal']);
+    const ratio = firstNumeric(point, ['precipitation_30d_ratio_pct_2017_2025', 'precipitation_30d_ratio_pct']);
+    const anomaly = isNum(actual) && isNum(normal)
+      ? Number(actual) - Number(normal)
+      : firstNumeric(point, ['precipitation_30d_anomaly_mm_2017_2025', 'precipitation_30d_anomaly_mm']);
+    if (![actual, normal, ratio, anomaly].some(isNum)) return record;
+    return {
+      ...record,
+      precip_30d_actual: actual,
+      precip_30d_normal: normal,
+      precip_30d_anomaly_mm: anomaly,
+      precip_30d_ratio_pct: isNum(ratio) ? ratio : (isNum(actual) && Number(normal) > 0 ? Number(actual) / Number(normal) * 100 : null),
+      weather_snapshot_date: point.date
+    };
+  });
+}
+
 function prepareData(raw) {
   store.countryRecords = (Array.isArray(raw.countryRecords) ? raw.countryRecords : [])
     .filter(row => row && row.source_valid_for_frontend !== false)
     .filter(row => !isExcludedFrontendRecord(row))
     .map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
 
-  store.adminRecords = (Array.isArray(raw.adminRecords) ? raw.adminRecords : [])
+  const adminRecords = (Array.isArray(raw.adminRecords) ? raw.adminRecords : [])
     .filter(row => row && row.source_valid_for_frontend !== false)
     .filter(row => !isExcludedFrontendRecord(row))
     .map(row => ({ ...row, country_key: canonicalCountry(row.country) }));
@@ -943,7 +966,6 @@ function prepareData(raw) {
   store.euRecords = Array.isArray(raw.euRecords) ? raw.euRecords : [];
   store.geojson = raw.geojson && Array.isArray(raw.geojson.features) ? raw.geojson : { type: 'FeatureCollection', features: [] };
   store.siteMeta = Array.isArray(raw.siteMeta) ? raw.siteMeta : (raw.siteMeta ? [raw.siteMeta] : []);
-  store.adminById = new Map(store.adminRecords.map(row => [row.weather_region_id, row]));
   store.regionHistory = Array.isArray(raw.regionHistory) ? raw.regionHistory : [];
   store.regionHistoryIndex = new Map();
   for (const point of store.regionHistory) {
@@ -955,6 +977,8 @@ function prepareData(raw) {
   for (const series of store.regionHistoryIndex.values()) {
     series.sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
   }
+  store.adminRecords = synchronizeWeatherSnapshot(adminRecords, store.regionHistoryIndex);
+  store.adminById = new Map(store.adminRecords.map(row => [row.weather_region_id, row]));
 
   // Crop progress index: keyed by (country_lower + '::' + crop_group + '::' + admin1_lower)
   store.cropProgress = raw.cropProgress || [];

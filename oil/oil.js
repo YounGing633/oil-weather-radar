@@ -35,6 +35,34 @@
   const riskText = r => r.weighted_risk_level_cn || r.risk_level_v3_cn || '暂缺';
   const currentRegions = () => scope === 'all' ? regions : regions.filter(r => canonical(r.country) === scope);
 
+  // The map must use the same latest observation as the detail charts.  The
+  // risk snapshot is produced by a separate pipeline and can otherwise be
+  // older (or have an empty weather field) while the chart is current.
+  function applyLatestWeatherSnapshot(rows, history) {
+    const latest = new Map();
+    history.forEach(point => {
+      const id = point?.weather_region_id, date = String(point?.date || '');
+      if (!id || !date || (latest.get(id)?.date || '') > date) return;
+      latest.set(id, point);
+    });
+    return rows.map(row => {
+      const point = latest.get(row.weather_region_id);
+      if (!point) return row;
+      const actual = num(point.precipitation_30d_actual_mm ?? point.precip_30d_actual);
+      const normal = num(point.precipitation_30d_normal_mm_2017_2025 ?? point.precipitation_30d_normal_mm ?? point.precip_30d_normal);
+      const ratio = num(point.precipitation_30d_ratio_pct_2017_2025 ?? point.precipitation_30d_ratio_pct);
+      const anomaly = actual !== null && normal !== null ? actual - normal : num(point.precipitation_30d_anomaly_mm_2017_2025 ?? point.precipitation_30d_anomaly_mm);
+      return actual === null && normal === null && ratio === null && anomaly === null ? row : {
+        ...row,
+        precip_30d_actual: actual,
+        precip_30d_normal: normal,
+        precip_30d_anomaly_mm: anomaly,
+        precip_30d_ratio_pct: ratio ?? (actual !== null && normal > 0 ? actual / normal * 100 : null),
+        weather_snapshot_date: point.date
+      };
+    });
+  }
+
   function dedupe(rows) {
     const chosen = new Map();
     rows.forEach(r => {
@@ -184,7 +212,10 @@
     try {
       const [cd, rd, world, weather, history] = await Promise.all(['../data/country_crop_risk_latest.json', '../data/admin_region_risk_latest.json', '../data/countries.geo.json', '../data/weather_latest.json', '../data/region_history_90d_v1.0d.json'].map(x => fetch(x).then(r => { if (!r.ok) throw Error(`无法读取 ${x}`); return r.json(); })));
       countries = dedupe(cd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend)); const allowed = new Set(countries.map(r => r.country));
-      const candidates = rd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend && allowed.has(canonical(r.country))).map(r => ({ ...r, country: canonical(r.country) }));
+      const candidates = applyLatestWeatherSnapshot(
+        rd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend && allowed.has(canonical(r.country))).map(r => ({ ...r, country: canonical(r.country) })),
+        history
+      );
       const countriesWithAdmin1 = new Set(candidates.filter(r => r.admin_level === 'admin1').map(r => r.country));
       regions = candidates.filter(r => !(r.admin_level === 'national' && countriesWithAdmin1.has(r.country)));
       historyById = new Map(); history.forEach(row => { if (!historyById.has(row.weather_region_id)) historyById.set(row.weather_region_id, []); historyById.get(row.weather_region_id).push(row); });
