@@ -205,13 +205,13 @@
     "oil_type": "椰子油",
     "oil_type_color": "#06b6d4",
     "region_count": 30,
-    "high_count": 24,
+    "high_count": 25,
     "medium_count": 2,
-    "normal_count": 4,
+    "normal_count": 3,
     "total_production_tonnes": 9301695.0,
     "main_anomaly_labels_cn": [
-      "rainfall_deficit|high_temperature",
       "降雨显著偏少",
+      "rainfall_deficit|high_temperature",
       "高温异常"
     ],
     "overall_risk_level": "high",
@@ -225,9 +225,9 @@
     "oil_type": "棕榈油",
     "oil_type_color": "#16a34a",
     "region_count": 29,
-    "high_count": 8,
+    "high_count": 24,
     "medium_count": 2,
-    "normal_count": 19,
+    "normal_count": 3,
     "total_production_tonnes": 42736411.0,
     "main_anomaly_labels_cn": [
       "高温异常",
@@ -281,15 +281,17 @@
     "oil_type": "棕榈油",
     "oil_type_color": "#16a34a",
     "region_count": 9,
-    "high_count": 0,
-    "medium_count": 0,
-    "normal_count": 9,
+    "high_count": 1,
+    "medium_count": 1,
+    "normal_count": 7,
     "total_production_tonnes": 19781370.0,
     "main_anomaly_labels_cn": [
-      "insufficient_data"
+      "insufficient_data",
+      "高温异常",
+      "降雨显著偏少"
     ],
-    "overall_risk_level": "normal",
-    "overall_status_cn": "该品种在本国整体天气正常"
+    "overall_risk_level": "high",
+    "overall_status_cn": "该品种在本国存在明显天气压力"
   },
   {
     "country": "Philippines",
@@ -299,14 +301,14 @@
     "oil_type": "椰子油",
     "oil_type_color": "#06b6d4",
     "region_count": 17,
-    "high_count": 6,
+    "high_count": 7,
     "medium_count": 4,
     "normal_count": 5,
     "total_production_tonnes": 3183585.33,
     "main_anomaly_labels_cn": [
-      "降雨显著偏少",
+      "降雨偏少",
       "rainfall_deficit|high_temperature",
-      "降雨偏多/过湿"
+      "excessive_rain|high_temperature"
     ],
     "overall_risk_level": "high",
     "overall_status_cn": "该品种在本国存在明显天气压力"

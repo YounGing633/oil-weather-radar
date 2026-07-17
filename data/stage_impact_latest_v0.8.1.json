@@ -1569,9 +1569,9 @@
     "weather_region_id": "coconut::Philippines::REGION IX (ZAMBOANGA PENINSULA)::admin1::椰子油",
     "current_month": 7,
     "matched_growth_stage": "全年生长/干旱敏感期",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
-    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
     "rule_id": "PH_COCO_01"
   },
   {
@@ -1659,9 +1659,9 @@
     "weather_region_id": "coconut::Philippines::NEGROS ISLAND REGION::admin1::椰子油",
     "current_month": 7,
     "matched_growth_stage": "全年生长/干旱敏感期",
-    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
-    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
-    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
     "rule_id": "PH_COCO_01"
   },
   {
