@@ -1,0 +1,37 @@
+{
+  "version": "2026-07-20.1",
+  "no_data": { "color": "#bdbdbd", "label": "暂无数据" },
+  "risk": [
+    { "min": 4, "color": "#d73027", "label": "显著压力" },
+    { "min": 3, "color": "#fc8d59", "label": "重点跟踪" },
+    { "min": 2, "color": "#fee08b", "label": "一般关注" },
+    { "min": 1, "color": "#d9ef8b", "label": "轻度异常" },
+    { "min": 0, "color": "#1a9850", "label": "正常" }
+  ],
+  "metrics": {
+    "rain_ratio": {
+      "title": "近30日降雨相对常态（%）", "unit": "%", "baseline": "1991–2020 或 2017–2025 同期", "note": "降雨偏多不直接代表有利，是否形成湿涝或作业风险由综合风险单独判断。",
+      "bins": [{ "max": 50, "color": "#5b1803", "label": "<50% 严重偏少" }, { "max": 70, "color": "#b84a22", "label": "50–69% 明显偏少" }, { "max": 85, "color": "#e58b25", "label": "70–84% 偏少" }, { "max": 100, "color": "#f3d36a", "label": "85–99% 略偏少" }, { "max": 116, "color": "#78b878", "label": "100–115% 正常至略偏多" }, { "max": 151, "color": "#55b5a9", "label": "116–150% 偏多" }, { "max": null, "color": "#2166ac", "label": ">150% 显著偏多" }] },
+    "rain30_tropical": { "title": "近30日累计降雨（mm）", "unit": "mm", "note": "热带多年生作物降雨量分级，仅描述降雨量，不单独代表供应风险。", "bins": [{ "max": 50, "color": "#8c2d24", "label": "<50 mm 严重低降雨" }, { "max": 100, "color": "#d6604d", "label": "50–100 mm 低降雨" }, { "max": 150, "color": "#f3d36a", "label": "100–150 mm 偏低" }, { "max": 250, "color": "#78b878", "label": "150–250 mm 常见适宜范围" }, { "max": 350, "color": "#55b5a9", "label": "250–350 mm 偏多" }, { "max": 500, "color": "#3999b8", "label": "350–500 mm 显著偏多" }, { "max": null, "color": "#2166ac", "label": "≥500 mm 极端偏多" }] },
+    "rain30_oilseed": { "title": "近30日累计降雨（mm）", "unit": "mm", "note": "绝对降雨量不直接代表作物风险，需结合当地常态、生育阶段和土壤水分判断。", "bins": [{ "max": 25, "color": "#8c2d24", "label": "<25 mm 极低" }, { "max": 50, "color": "#d6604d", "label": "25–50 mm 偏低" }, { "max": 100, "color": "#f3d36a", "label": "50–100 mm 中等" }, { "max": 150, "color": "#78b878", "label": "100–150 mm 偏高" }, { "max": 250, "color": "#55b5a9", "label": "150–250 mm 很高" }, { "max": null, "color": "#2166ac", "label": "≥250 mm 极高" }] },
+    "soil_relative": {
+      "title": "土壤水分相对常态（%）", "unit": "%", "baseline": "2017–2025 同期", "note": "相对常态 = 实际土壤水分 ÷ 同期常态 × 100%；100% 为常态。",
+      "bins": [{ "max": 70, "color": "#8c2d24", "label": "<70% 严重偏干" }, { "max": 85, "color": "#d6604d", "label": "70–84% 明显偏干" }, { "max": 100, "color": "#f3d36a", "label": "85–99% 略偏干" }, { "max": 116, "color": "#78b878", "label": "100–115% 正常" }, { "max": 131, "color": "#55b5a9", "label": "116–130% 偏湿" }, { "max": null, "color": "#2166ac", "label": ">130% 显著偏湿" }] },
+    "soil_absolute": {
+      "title": "土壤水分绝对值（m³/m³）", "unit": "m³/m³", "note": "绝对含水量受土壤质地、田间持水量和土层深度影响，仅展示数值；供应风险以相对常态或历史百分位为准。",
+      "bins": [{ "max": 0.12, "color": "#8c2d24", "label": "<0.12 很低" }, { "max": 0.20, "color": "#d6604d", "label": "0.12–0.20 偏低" }, { "max": 0.30, "color": "#f3d36a", "label": "0.20–0.30 中等" }, { "max": 0.40, "color": "#55b5a9", "label": "0.30–0.40 偏高" }, { "max": null, "color": "#2166ac", "label": "≥0.40 很高" }] },
+    "soil_percentile": {
+      "title": "土壤水分历史百分位", "unit": "P", "baseline": "历史同期", "bins": [{ "max": 5, "color": "#8c2d24", "label": "P0–P4 极端偏干" }, { "max": 10, "color": "#b84a22", "label": "P5–P9 严重偏干" }, { "max": 20, "color": "#d6604d", "label": "P10–P19 明显偏干" }, { "max": 30, "color": "#f3d36a", "label": "P20–P29 略偏干" }, { "max": 71, "color": "#78b878", "label": "P30–P70 正常" }, { "max": 81, "color": "#55b5a9", "label": "P71–P80 略偏湿" }, { "max": 91, "color": "#3999b8", "label": "P81–P90 明显偏湿" }, { "max": 96, "color": "#2166ac", "label": "P91–P95 严重偏湿" }, { "max": null, "color": "#163d7a", "label": ">P95 极端偏湿" }] },
+    "temp_anomaly": {
+      "title": "最高温距平（℃）", "unit": "℃", "baseline": "同期常态", "bins": [{ "max": -3, "color": "#2166ac", "label": "<-3℃ 显著偏冷" }, { "max": -1.5, "color": "#55b5a9", "label": "-3℃至<-1.5℃ 偏冷" }, { "max": 1.5, "color": "#78b878", "label": "-1.5℃至<1.5℃ 接近常态" }, { "max": 3, "color": "#e58b25", "label": "1.5℃至<3℃ 偏热" }, { "max": null, "color": "#d73027", "label": "≥3℃ 显著偏热" }] },
+    "temp_tropical_absolute": {
+      "title": "最高温绝对值（℃）", "unit": "℃", "bins": [{ "max": 29, "color": "#55b5a9", "label": "<29℃ 偏低" }, { "max": 33, "color": "#78b878", "label": "29–33℃ 适宜区间" }, { "max": 35, "color": "#f3d36a", "label": ">33–35℃ 偏高" }, { "max": 37, "color": "#e58b25", "label": ">35–37℃ 高温" }, { "max": null, "color": "#d73027", "label": ">37℃ 极端高温" }] },
+    "hot_dry": { "title": "热干复合风险等级", "unit": "级", "bins": [{ "max": 0.5, "color": "#1a9850", "label": "0级 未触发" }, { "max": 1.5, "color": "#d9ef8b", "label": "1级 高温+一项偏干" }, { "max": 2.5, "color": "#fee08b", "label": "2级 高温+双偏干" }, { "max": null, "color": "#fc8d59", "label": "3级 高温≥3℃且显著偏干" }] },
+    "operation_share": { "title": "作业影响产量占比（%）", "unit": "%", "bins": [{ "max": 0.001, "color": "#1a9850", "label": "0% 无明确信号" }, { "max": 0.15, "color": "#d9ef8b", "label": ">0–15% 轻度影响" }, { "max": 0.40, "color": "#fee08b", "label": "15–40% 一般影响" }, { "max": null, "color": "#fc8d59", "label": "≥40% 明显影响" }] },
+    "forecast_anomaly": { "title": "未来降雨距平（%）", "unit": "%", "baseline": "同期常态", "bins": [{ "max": -60, "color": "#8c2d24", "label": "<-60% 严重偏少" }, { "max": -30, "color": "#d6604d", "label": "-60%至<-30% 明显偏少" }, { "max": -10, "color": "#f3d36a", "label": "-30%至<-10% 略偏少" }, { "max": 10, "color": "#78b878", "label": "-10%至10% 接近常态" }, { "max": 30, "color": "#55b5a9", "label": ">10%至30% 略偏多" }, { "max": 80, "color": "#3999b8", "label": ">30%至80% 偏多" }, { "max": null, "color": "#2166ac", "label": ">80% 显著偏多" }] },
+    "et0_percentile": { "title": "ET0 历史百分位", "unit": "P", "bins": [{ "max": 20, "color": "#2166ac", "label": "<P20 蒸散偏低" }, { "max": 40, "color": "#55b5a9", "label": "P20–P39 正常偏低" }, { "max": 61, "color": "#78b878", "label": "P40–P60 正常" }, { "max": 80, "color": "#e58b25", "label": "P61–P79 蒸散偏高" }, { "max": null, "color": "#d73027", "label": "≥P80 蒸散显著偏高" }] },
+    "vpd_percentile": { "title": "VPD 历史百分位", "unit": "P", "bins": [{ "max": 20, "color": "#2166ac", "label": "<P20 大气湿润" }, { "max": 40, "color": "#55b5a9", "label": "P20–P39 正常偏湿" }, { "max": 61, "color": "#78b878", "label": "P40–P60 正常" }, { "max": 80, "color": "#e58b25", "label": "P61–P79 偏干" }, { "max": null, "color": "#d73027", "label": "≥P80 显著干燥" }] },
+    "forecast_7d_absolute": { "title": "未来7日累计降雨（mm）", "unit": "mm", "bins": [{ "max": 5, "color": "#8c2d24", "label": "<5 mm 极低" }, { "max": 15, "color": "#d6604d", "label": "5–15 mm 偏低" }, { "max": 30, "color": "#f3d36a", "label": "15–30 mm 中等" }, { "max": 60, "color": "#55b5a9", "label": "30–60 mm 偏高" }, { "max": null, "color": "#2166ac", "label": "≥60 mm 很高" }] },
+    "forecast_16d_absolute": { "title": "未来16日累计降雨（mm）", "unit": "mm", "bins": [{ "max": 10, "color": "#8c2d24", "label": "<10 mm 极低" }, { "max": 30, "color": "#d6604d", "label": "10–30 mm 偏低" }, { "max": 60, "color": "#f3d36a", "label": "30–60 mm 中等" }, { "max": 120, "color": "#55b5a9", "label": "60–120 mm 偏高" }, { "max": null, "color": "#2166ac", "label": "≥120 mm 很高" }] }
+  }
+}

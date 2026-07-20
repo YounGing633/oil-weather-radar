@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "baseline_period": "1991-2020",
-  "updated": "2026-07-08",
+  "updated": "2026-07-20",
 
   "default_color_scale": [
     { "pos": 0.00, "color": "#d7191c", "label": "极端偏干/偏热" },

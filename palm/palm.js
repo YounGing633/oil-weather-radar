@@ -27,10 +27,10 @@
   const esc = x => String(x ?? '—').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
   const norm = x => String(x || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const getJSON = async file => { const r = await fetch(`${DATA}${file}`, { cache: 'no-store' }); if (!r.ok) throw new Error(file); return r.json(); };
-  const state = { section: 'rain', metric: 'rain30', basis: 'base1725', horizon: 'f7', unit: 'absolute', depth: 'root', scope: 'seasia', label: 'production', rows: [], history: {}, dailyHistory: new Map(), map: null, geo: [], labels: [], events: [], selected: null, selectedLayer: null };
+  const state = { section: 'risk', metric: 'risk', basis: 'base1725', horizon: 'f7', unit: 'absolute', depth: 'root', scope: 'seasia', label: 'production', rows: [], history: {}, dailyHistory: new Map(), map: null, geo: [], labels: [], events: [], selected: null, selectedLayer: null };
   const sectionNames = { risk: '综合风险', rain: '降雨', heat: '热干和极端天气', water: '水分' };
   const metricSets = {
-    risk: [['production', '产量'], ['share', '产量占比']],
+    risk: [['risk', '综合供应风险'], ['production', '产量'], ['share', '产量占比']],
     rain: [['rain30', '近30日降雨'], ['rainAnomaly', '降雨距平'], ['rainForecast', '未来预报']],
     heat: [['tempNow', '最高温绝对值'], ['tempAnomaly', '最高温距平'], ['tempForecast', '未来预报'], ['hotDry', '热干风险']],
     water: [['waterAbsolute', '水分绝对值'], ['waterAnomaly', '水分相对常态']]
@@ -65,6 +65,17 @@
       : (r.soil_water_surface_normal ?? r.surface_normal));
     return actual !== null && normal !== null && normal > 0 ? actual / normal * 100 : null;
   };
+  const legendKey = () => {
+    if (state.metric === 'risk') return 'risk';
+    if (state.metric === 'rain30' || (state.metric === 'rainForecast' && state.unit === 'absolute')) return 'rain30_tropical';
+    if (state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly')) return 'rain_ratio';
+    if (state.metric === 'waterAbsolute') return 'soil_absolute';
+    if (state.metric === 'waterAnomaly') return 'soil_relative';
+    if (state.metric === 'tempAnomaly') return 'temp_anomaly';
+    if (state.metric === 'tempNow' || state.metric === 'tempForecast') return 'temp_tropical_absolute';
+    if (state.metric === 'hotDry') return 'hot_dry';
+    return null;
+  };
   const dryScore = (r, depth) => {
     const soil = num(depth === 'root' ? r.rootzone_percentile : r.surface_percentile), rain = num(r.rain_30d_ratio_1991_2020);
     if (soil === null || soil >= 30) return 0;
@@ -74,6 +85,7 @@
   };
   const value = r => {
     const f = future(r, state.horizon);
+    if (state.metric === 'risk') return num(r.risk_level_v3);
     if (state.metric === 'production') return num(r.production_tonnes);
     if (state.metric === 'share') return state.scope === 'seasia' ? num(r.production_share_se_asia) : num(r.production_share_country);
     if (state.metric === 'rain30') return num(r.rain_30d_mm);
@@ -90,12 +102,9 @@
   const colour = r => {
     const x = value(r); if (x === null) return '#cbd5d2';
     if (['production', 'share'].includes(state.metric)) { const max = Math.max(...state.rows.map(q => value(q) || 0), 1), p = x / max; return p < .2 ? '#f1f5f3' : p < .4 ? '#c9e3d5' : p < .6 ? '#85c7ac' : p < .8 ? '#3b9a7b' : '#126451'; }
-    if (state.metric === 'rain30' || (state.metric === 'rainForecast' && state.unit === 'absolute')) return x <= 20 ? '#4c1205' : x <= 50 ? '#843500' : x <= 100 ? '#e66a00' : x <= 150 ? '#f9ba14' : x <= 200 ? '#ffeb00' : x <= 300 ? '#d5f56a' : x <= 400 ? '#a7d88a' : x <= 500 ? '#63b64d' : '#0e6a26';
-    if (state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly')) return x < 50 ? '#5b1803' : x < 70 ? '#b84a22' : x < 85 ? '#e58b25' : x < 100 ? '#f3d36a' : x <= 115 ? '#78b878' : x <= 150 ? '#55b5a9' : '#2166ac';
-    if (state.metric === 'tempNow' || state.metric === 'tempForecast') return x < 30 ? '#e7f0ee' : x < 33 ? '#f3c786' : x < 35 ? '#d6604d' : '#8c2d24';
-    if (state.metric === 'tempAnomaly') return x < 0 ? '#a7d8e8' : x < 1 ? '#f5f1d5' : x < 2 ? '#f3c786' : x < 3 ? '#d6604d' : '#8c2d24';
-    if (state.metric === 'waterAbsolute') return x < .12 ? '#8c2d24' : x < .2 ? '#d6604d' : x < .3 ? '#f3c786' : x < .4 ? '#a7d88a' : '#075722';
-    if (state.metric === 'waterAnomaly') return x < 70 ? '#8c2d24' : x < 85 ? '#d6604d' : x < 100 ? '#f3d36a' : x <= 115 ? '#78b878' : x <= 130 ? '#55b5a9' : '#2166ac';
+    if (state.metric === 'risk' && window.LegendUtils) return window.LegendUtils.getRiskLevel(x).color;
+    const key = legendKey();
+    if (key && window.LegendUtils) return window.LegendUtils.classifyMetric(key, x).color;
     return x === 0 ? '#eaf1e8' : x === 1 ? '#f3c786' : x === 2 ? '#d6604d' : '#8c2d24';
   };
   const style = (r, country) => ({ color: country === 'Indonesia' ? '#0b655c' : '#455c78', weight: country === 'Indonesia' ? 2.8 : 2.6, dashArray: country === 'Malaysia' ? '7 3' : null, fillColor: r ? colour(r) : '#dce7e5', fillOpacity: r ? .72 : .18 });
@@ -112,12 +121,14 @@
     $('summaryTitle').textContent = `${sectionNames[state.section]}暴露概览`; $('metrics').innerHTML = cards.map(c => `<article class="card"><span>${c[0]}</span><strong>${pc(c[1])}</strong><small>占${state.scope === 'seasia' ? '东南亚' : '本国'}产量</small></article>`).join('');
   }
   function legend() {
-    const labels = state.metric === 'rain30' || (state.metric === 'rainForecast' && state.unit === 'absolute') ? [['#4c1205','0–20'],['#843500','20–50'],['#e66a00','50–100'],['#f9ba14','100–150'],['#ffeb00','150–200'],['#d5f56a','200–300'],['#a7d88a','300–400'],['#63b64d','400–500'],['#0e6a26','>500']]
-      : state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly') ? [['#5b1803','<50% 严重偏少'],['#b84a22','50–69% 明显偏少'],['#e58b25','70–84% 偏少'],['#f3d36a','85–99% 略偏少'],['#78b878','100–115% 正常至略偏多'],['#55b5a9','116–150% 偏多'],['#2166ac','>150% 显著偏多']]
-      : state.metric === 'waterAnomaly' ? [['#8c2d24','<70% 严重偏干'],['#d6604d','70–84% 明显偏干'],['#f3d36a','85–99% 略偏干'],['#78b878','100–115% 正常'],['#55b5a9','116–130% 偏湿'],['#2166ac','>130% 显著偏湿']]
-      : [['#8c2d24','高 / 偏干'],['#d6604d','重点关注'],['#f3c786','轻度异常'],['#a7d88a','正常或偏湿']];
-    const extra = state.metric === 'rainForecast' && state.unit === 'absolute' ? '（30日等效累计，mm）' : state.metric === 'waterAbsolute' ? '（m³/m³）' : state.metric === 'waterAnomaly' ? '（相对2017–2025同期常态，100%=常态）' : state.metric.includes('Anomaly') || (state.metric === 'rainForecast' && state.unit === 'anomaly') ? '（相对基准）' : '';
-    $('legend').innerHTML = `<b>${title()}${extra}</b><br>${labels.map(x => `<i style="background:${x[0]}"></i>${x[1]}`).join('<br>')}<br><small>灰色：暂无该口径数据</small>`;
+    if (state.metric === 'risk' && window.LegendUtils) {
+      const r = window.LegendUtils.getRiskLegend();
+      $('legend').innerHTML = `<b>综合供应风险</b><br>${r.bins.map(x => `<i style="background:${x.color}"></i>${x.label}`).join('<br>')}<br><i style="background:${r.noData.color}"></i>${r.noData.label}`;
+      return;
+    }
+    const cfg = window.LegendUtils?.getMetricLegend(legendKey());
+    if (!cfg) return;
+    $('legend').innerHTML = `<b>${cfg.title}${cfg.baseline ? `（${cfg.baseline}）` : ''}</b><br>${cfg.bins.map(x => `<i style="background:${x.color}"></i>${x.label}`).join('<br>')}<br><i style="background:${cfg.noData.color}"></i>${cfg.noData.label}${cfg.note ? `<br><small>${cfg.note}</small>` : ''}`;
   }
   function renderEvents() {
     state.events.forEach(m => state.map.removeLayer(m)); state.events = [];
@@ -189,6 +200,7 @@
   }
   async function init() {
     try {
+      await window.LegendUtils?.load();
       const [rain, risk, history, meta, weather, anomaly, forecast, daily] = await Promise.all(['palm_rain_region_latest.json','palm_region_risk_latest.json','palm_rain_history_90d.json','palm_rain_meta.json','weather_latest.json','weather_anomaly.json','weather_forecast.json','region_history_90d_v1.0d.json'].map(getJSON));
       const extra = new Map(risk.map(r => [r.weather_region_id, r])), weatherBy = new Map(weather.map(r => [r.weather_region_id, r])), anomalyBy = new Map(anomaly.map(r => [r.weather_region_id, r])), forecastBy = new Map();
       forecast.forEach(x => { if (!forecastBy.has(x.weather_region_id)) forecastBy.set(x.weather_region_id, []); forecastBy.get(x.weather_region_id).push(x); });

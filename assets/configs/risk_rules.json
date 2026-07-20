@@ -1,13 +1,13 @@
 {
-  "version": "1.0.0",
-  "updated": "2026-07-08",
+  "version": "2.0.0",
+  "updated": "2026-07-20",
   "description": "分层风险判断规则配置 — 天气异常→土壤响应→作物暴露→风险结论",
 
   "risk_levels": [
     { "level": 0, "code": "normal",  "cn": "正常" },
-    { "level": 1, "code": "mild",    "cn": "轻度关注" },
+    { "level": 1, "code": "mild",    "cn": "轻度异常" },
     { "level": 2, "code": "watch",   "cn": "一般关注" },
-    { "level": 3, "code": "pressure", "cn": "重点压力" },
+    { "level": 3, "code": "pressure", "cn": "重点跟踪" },
     { "level": 4, "code": "severe",  "cn": "显著压力" }
   ],
 

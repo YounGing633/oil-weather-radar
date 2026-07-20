@@ -1,0 +1,10 @@
+{
+  "version": "2026-07-20.1",
+  "profiles": {
+    "palm": { "name": "棕榈油", "priority": ["持续少雨", "连续无雨", "根区偏干", "高温干燥复合", "极端降雨和过湿"], "requires_soil_for_high_risk": true, "perennial": true },
+    "coconut": { "name": "椰子油", "priority": ["持续水分不足", "根区偏干", "未来补水不足", "台风和极端降雨"], "requires_soil_for_high_risk": true, "perennial": true },
+    "soybean": { "name": "豆油", "priority": ["敏感期少雨", "根区偏干", "高温", "VPD偏高", "收获期过湿"], "stage_weights": true },
+    "rapeseed_canola": { "name": "菜油", "priority": ["越冬低温", "播种过湿", "开花结荚期热旱", "收获期降雨"], "stage_weights": true },
+    "sunflower": { "name": "葵油", "priority": ["现蕾", "开花授粉", "灌浆", "收获作业"], "stage_weights": true }
+  }
+}

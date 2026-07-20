@@ -40,7 +40,8 @@
   const canonical = x => ALIAS[x] || x;
   const norm = x => String(x || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/russia|oblast|krai|republic|autonomous|province|region|state|district|of|the/g, '').replace(/[^a-z0-9]/g, '');
   const riskCode = r => r.weighted_risk_level || r.risk_level_v3_code || ({ 4: 'severe', 3: 'pressure', 2: 'watch', 1: 'mild', 0: 'normal' }[r.risk_level_v3] || 'none');
-  const riskColor = r => ({ severe: '#c23b22', pressure: '#e28a25', watch: '#eabf36', mild: '#78a85b', normal: '#2f8a62' }[riskCode(r)] || '#a8b1b7');
+  const riskNumber = r => num(r.risk_level_v3 ?? r.weighted_risk_level) ?? ({ severe: 4, pressure: 3, watch: 2, mild: 1, normal: 0 }[riskCode(r)] ?? null);
+  const riskColor = r => window.LegendUtils?.getRiskLevel(riskNumber(r), crop.riskProfile).color || '#bdbdbd';
   const riskText = r => r.weighted_risk_level_cn || r.risk_level_v3_cn || '暂缺';
   const currentRegions = () => scope === 'all' ? regions : regions.filter(r => canonical(r.country) === scope);
 
@@ -176,9 +177,8 @@
   function metricColor(r, rows) {
     if (metric === 'risk') return riskColor(r); const x = metricValue(r); if (x === null) return '#cbd3d6';
     if (metric === 'production') { const max = Math.max(...rows.map(q => metricValue(q) || 0), 1), p = x / max; return p < .15 ? '#e8eef0' : p < .4 ? '#aacbd0' : p < .7 ? crop.color + 'aa' : crop.color; }
-    if (metric === 'moisture' || metric === 'moistureSurface') return x < 70 ? '#8c2d24' : x < 85 ? '#d6604d' : x < 100 ? '#f3d36a' : x <= 115 ? '#78b878' : x <= 130 ? '#55b5a9' : '#2166ac';
-    if (metric === 'moistureActual' || metric === 'moistureSurfaceActual') return x < .12 ? '#8c2d24' : x < .2 ? '#d6604d' : x < .3 ? '#e8d98b' : x < .4 ? '#78a85b' : '#2474a6';
-    if (metric === 'rain') return x < 50 ? '#5b1803' : x < 70 ? '#b84a22' : x < 85 ? '#e58b25' : x < 100 ? '#f3d36a' : x <= 115 ? '#78b878' : x <= 150 ? '#55b5a9' : '#2166ac';
+    const sharedKey = metric === 'moisture' || metric === 'moistureSurface' ? 'soil_relative' : metric === 'moistureActual' || metric === 'moistureSurfaceActual' ? 'soil_absolute' : metric === 'rain' ? 'rain_ratio' : metric === 'rainActual' ? (crop.crop === 'coconut' ? 'rain30_tropical' : 'rain30_oilseed') : metric === 'heat' ? 'temp_anomaly' : metric === 'heatDry' ? 'hot_dry' : metric === 'operation' ? 'operation_share' : metric === 'forecast' ? 'forecast_7d_absolute' : metric === 'forecast16' ? 'forecast_16d_absolute' : null;
+    if (sharedKey && window.LegendUtils) return window.LegendUtils.classifyMetric(sharedKey, x).color;
     if (metric === 'heatDry') return x < .5 ? '#e8eef0' : x < 1.5 ? '#e8d98b' : x < 2.5 ? '#e28a25' : '#c23b22';
     if (metric === 'heat') return x < 0 ? '#8ec6d8' : x < 1 ? '#e8d98b' : x < 2 ? '#e9a35b' : x < 3 ? '#d6604d' : '#8c2d24';
     if (metric === 'operation') return x <= 0 ? '#e8eef0' : x < .15 ? '#e8d98b' : x < .4 ? '#e28a25' : '#c23b22';
@@ -186,6 +186,10 @@
   }
 
   function legend() {
+    const sharedKey = metric === 'risk' ? 'risk' : metric === 'moisture' || metric === 'moistureSurface' ? 'soil_relative' : metric === 'moistureActual' || metric === 'moistureSurfaceActual' ? 'soil_absolute' : metric === 'rain' ? 'rain_ratio' : metric === 'rainActual' ? (crop.crop === 'coconut' ? 'rain30_tropical' : 'rain30_oilseed') : metric === 'heat' ? 'temp_anomaly' : metric === 'heatDry' ? 'hot_dry' : metric === 'operation' ? 'operation_share' : metric === 'forecast' ? 'forecast_7d_absolute' : metric === 'forecast16' ? 'forecast_16d_absolute' : null;
+    if (sharedKey === 'risk' && window.LegendUtils) { const r = window.LegendUtils.getRiskLegend(); $('legend').innerHTML = `<b>综合供应风险</b><br>${r.bins.map(x => `<i style="background:${x.color}"></i>${x.label}`).join('<br>')}<br><i style="background:${r.noData.color}"></i>${r.noData.label}`; return; }
+    const shared = window.LegendUtils?.getMetricLegend(sharedKey);
+    if (shared) { $('legend').innerHTML = `<b>${shared.title}${shared.baseline ? `（${shared.baseline}）` : ''}</b><br>${shared.bins.map(x => `<i style="background:${x.color}"></i>${x.label}`).join('<br>')}<br><i style="background:${shared.noData.color}"></i>${shared.noData.label}${shared.note ? `<br><small>${shared.note}</small>` : ''}`; return; }
     const sets = {
       risk: [['#c23b22', '显著压力'], ['#e28a25', '重点压力'], ['#eabf36', '关注'], ['#2f8a62', '正常/偏支持']], production: [['#e8eef0', '较低'], [crop.color + 'aa', '中等'], [crop.color, '较高']],
       moisture: [['#8c2d24', '<70% 严重偏干'], ['#d6604d', '70—84% 明显偏干'], ['#f3d36a', '85—99% 略偏干'], ['#78b878', '100—115% 正常'], ['#55b5a9', '116—130% 偏湿'], ['#2166ac', '>130% 显著偏湿']], moistureSurface: [['#8c2d24', '<70% 严重偏干'], ['#d6604d', '70—84% 明显偏干'], ['#f3d36a', '85—99% 略偏干'], ['#78b878', '100—115% 正常'], ['#55b5a9', '116—130% 偏湿'], ['#2166ac', '>130% 显著偏湿']], moistureActual: [['#8c2d24', '<0.12'], ['#d6604d', '0.12—0.20'], ['#e8d98b', '0.20—0.30'], ['#2474a6', '>0.40']], moistureSurfaceActual: [['#8c2d24', '<0.12'], ['#d6604d', '0.12—0.20'], ['#e8d98b', '0.20—0.30'], ['#2474a6', '>0.40']], rain: [['#5b1803', '<50% 严重偏少'], ['#b84a22', '50—69% 明显偏少'], ['#e58b25', '70—84% 偏少'], ['#f3d36a', '85—99% 略偏少'], ['#78b878', '100—115% 正常至略偏多'], ['#55b5a9', '116—150% 偏多'], ['#2166ac', '>150% 显著偏多']], rainActual: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']], forecast16: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']],
@@ -261,9 +265,10 @@
   function selectDefault() { const c = scope === 'all' ? countries[0] : countries.find(r => r.country === scope); if (c) detailCountry(c); }
 
   async function init() {
-    setTitle(); metricButtons();
+    await window.LegendUtils?.load(); setTitle(); metricButtons();
     try {
-      const [cd, rd, world, weather, history] = await Promise.all(['../data/country_crop_risk_latest.json', '../data/admin_region_risk_latest.json', '../data/countries.geo.json', '../data/weather_latest.json', '../data/region_history_90d_v1.0d.json'].map(x => fetch(x).then(r => { if (!r.ok) throw Error(`无法读取 ${x}`); return r.json(); })));
+      const [cd, rd, world, weather, history, profileConfig] = await Promise.all(['../data/country_crop_risk_latest.json', '../data/admin_region_risk_latest.json', '../data/countries.geo.json', '../data/weather_latest.json', '../data/region_history_90d_v1.0d.json', '../assets/configs/crop_risk_profiles.json'].map(x => fetch(x).then(r => { if (!r.ok) throw Error(`无法读取 ${x}`); return r.json(); })));
+      crop.riskProfile = profileConfig?.profiles?.[crop.crop] || null;
       countries = dedupe(cd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend)); const allowed = new Set(countries.map(r => r.country));
       const candidates = applyLatestWeatherSnapshot(
         rd.filter(r => r.crop_group === crop.crop && r.source_valid_for_frontend && allowed.has(canonical(r.country))).map(r => ({ ...r, country: canonical(r.country) })),
@@ -276,7 +281,7 @@
       map = L.map('map', { minZoom: 2, maxZoom: 8 }).setView([23, 15], 2); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
       scopeButtons(); summary(); await renderMap(true); selectDefault();
       $('status').textContent = `数据更新时间：${countries[0]?.updated_at || '暂缺'} · 最新实况（ECMWF IFS）：${latestObservationDate(weather)} · ${countries.length} 个国家 / 地区 · ${regions.length} 个产区 · 已启用品种专属口径`;
-      $('method').innerHTML = `${esc(crop.special)}<br>${esc(crop.focus)}<br>已接入国家和产区风险、近30日天气、土壤水分、未来7/16日预报及可用作物进度；灰色区域表示当前口径无可用数据。`;
+      $('method').innerHTML = `${esc(crop.special)}<br>${esc(crop.focus)}<br>综合风险按${esc(crop.riskProfile?.name || crop.name)}专属风险配置解读；产量仅影响暴露规模和排序，不直接提高地区风险等级。灰色区域表示当前口径无可用数据。`;
     } catch (e) { console.error(e); $('status').textContent = `数据加载失败：${e.message}`; }
   }
   document.querySelectorAll('[data-label]').forEach(b => b.onclick = async () => { labelMode = b.dataset.label; document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x === b)); await renderMap(false); });

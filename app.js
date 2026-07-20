@@ -1,6 +1,6 @@
 const DATA_DIR = './data/';
 const CONFIG_DIR = './assets/configs/';
-const UI_VERSION = 'v2.10-prodweather9';
+const UI_VERSION = 'v2.11-unified-legends';
 const RULE_VERSION = 'risk_label_v4';
 
 const RISK = {
@@ -158,14 +158,11 @@ const WEATHER_METRICS = {
   }
 };
 
-const RISK_LEGEND_HTML = `
-  <div class="legend-title">risk_label_v4</div>
-  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-severe)"></span>显著压力</div>
-  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-pressure)"></span>重点跟踪</div>
-  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-watch)"></span>一般关注</div>
-  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-mild)"></span>轻度异常</div>
-  <div class="legend-item"><span class="legend-swatch" style="background:var(--risk-normal)"></span>正常</div>
-`;
+function riskLegendHtml() {
+  const r = window.LegendUtils?.getRiskLegend();
+  if (!r) return '';
+  return `<div class="legend-title">综合供应风险</div>${r.bins.map(item => `<div class="legend-item"><span class="legend-swatch" style="background:${item.color}"></span>${item.label}</div>`).join('')}<div class="legend-item"><span class="legend-swatch" style="background:${r.noData.color}"></span>${r.noData.label}</div>`;
+}
 
 const RISK_TYPE_CN = {
   drought_water_deficit: '干旱/水分不足',
@@ -2594,6 +2591,10 @@ function weatherMetricMeta() {
   return WEATHER_METRICS[state.weatherMetric] || WEATHER_METRICS.rain;
 }
 
+function overviewLegendKey(metric = state.weatherMetric) {
+  return ({ rain: 'rain_ratio', recent30: 'rain_ratio', temp: 'temp_anomaly', soil: 'soil_percentile', forecast: 'forecast_anomaly', forecast14: 'forecast_anomaly', et0: 'et0_percentile', vpd: 'vpd_percentile' })[metric] || null;
+}
+
 function weatherMetricValue(row, metric = state.weatherMetric) {
   if (metric === 'rain' || metric === 'recent30') {
     const ratio = firstNumeric(row, ['precip_30d_ratio_pct', 'rain_30d_ratio_pct']);
@@ -2747,13 +2748,17 @@ function weatherMetricPosition(row, metric = state.weatherMetric) {
 
 function weatherMetricColor(row, metric = state.weatherMetric) {
   const value = weatherMetricValue(row, metric).value;
+  const key = overviewLegendKey(metric);
+  if (key && window.LegendUtils) return window.LegendUtils.classifyMetric(key, value).color;
   if (!isNum(value)) return WEATHER_PALETTE.noData;
   return interpolateColorStops(weatherColorStops(metric), weatherMetricPosition(row, metric));
 }
 
 function weatherMetricCategoryLabel(row, metric = state.weatherMetric) {
   const value = weatherMetricValue(row, metric).value;
-  if (!isNum(value)) return '待接入';
+  const key = overviewLegendKey(metric);
+  if (key && window.LegendUtils) return window.LegendUtils.classifyMetric(key, value).label;
+  if (!isNum(value)) return '暂无数据';
   const n = Number(value);
   const cfg = store.weatherConfig && store.weatherConfig.metrics && store.weatherConfig.metrics[metric];
   if (cfg && cfg.categories) {
@@ -4217,18 +4222,12 @@ function updateMapLegend() {
   const legend = document.getElementById('map-legend');
   if (!legend) return;
   if (state.viewMode !== 'weather') {
-    legend.innerHTML = RISK_LEGEND_HTML;
+    legend.innerHTML = riskLegendHtml();
     return;
   }
-  const metric = weatherMetricMeta();
-  const gradient = metric.gradient || { from: WEATHER_PALETTE.dryHot, to: WEATHER_PALETTE.wetCold, lowLabel: '低', highLabel: '高' };
-  legend.innerHTML = `
-    <div class="legend-title">${esc(metric.title)}</div>
-    <div class="gradient-legend" style="--grad-from:${escAttr(gradient.from)};--grad-to:${escAttr(gradient.to)};--grad-stops:${escAttr(weatherGradientCss())}">
-      <div class="gradient-bar"></div>
-      <div class="gradient-labels"><span>${esc(gradient.lowLabel)}</span><span>${esc(gradient.highLabel)}</span></div>
-    </div>
-  `;
+  const cfg = window.LegendUtils?.getMetricLegend(overviewLegendKey());
+  if (!cfg) return;
+  legend.innerHTML = `<div class="legend-title">${esc(cfg.title)}${cfg.baseline ? `（${esc(cfg.baseline)}）` : ''}</div>${cfg.bins.map(item => `<div class="legend-item"><span class="legend-swatch" style="background:${item.color}"></span>${esc(item.label)}</div>`).join('')}<div class="legend-item"><span class="legend-swatch" style="background:${cfg.noData.color}"></span>${esc(cfg.noData.label)}</div>${cfg.note ? `<div class="legend-note">${esc(cfg.note)}</div>` : ''}`;
 }
 
 function updateModeChrome() {
@@ -4681,6 +4680,7 @@ function updateTimeRangeUI() {
 }
 
 async function init() {
+  await window.LegendUtils?.load();
   initMap();
   bindEvents();
   applyNavigationParams();
