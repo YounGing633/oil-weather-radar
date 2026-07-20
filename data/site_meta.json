@@ -1,17 +1,17 @@
 [
   {
-    "generated_at": "2026-07-17 11:08:18",
+    "generated_at": "2026-07-20 09:43:05",
     "version": "v1.0-i1",
     "baseline_period": "1991-2020 / 2017-2025 selectable",
     "baseline_method": "NASA POWER same-calendar-day selectable weather baselines",
-    "latest_observation_date": "2026-07-16",
+    "latest_observation_date": "2026-07-19",
     "observation_data_note": "Observations prioritize Open-Meteo ECMWF IFS; weather normals are selectable NASA POWER 1991-2020 or 2017-2025 same-calendar-day references",
     "data_sources": [
       "Open-Meteo ECMWF IFS (observations + forecast)",
       "NASA POWER (1991-2020 / 2017-2025 selectable weather baselines)"
     ],
-    "baseline_ready_points": 100,
-    "baseline_pending_points": 194,
+    "baseline_ready_points": 120,
+    "baseline_pending_points": 174,
     "active_points": 294,
     "excluded_faostat_points": 38,
     "countries": [
@@ -43,7 +43,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 71,
-    "run_id": "daily_export_20260717_110817"
+    "total_alerts": 77,
+    "run_id": "daily_export_20260720_094304"
   }
 ]
