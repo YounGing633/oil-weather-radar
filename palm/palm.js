@@ -32,8 +32,8 @@
   const metricSets = {
     risk: [['risk', '综合供应风险'], ['production', '产量'], ['share', '产量占比']],
     rain: [['rain30', '近30日降雨'], ['rainAnomaly', '降雨距平'], ['rainForecast', '未来预报']],
-    heat: [['tempNow', '最高温绝对值'], ['tempAnomaly', '最高温距平'], ['tempForecast', '未来预报'], ['hotDry', '热干风险']],
-    water: [['waterAbsolute', '水分绝对值'], ['waterAnomaly', '水分相对常态']]
+    heat: [['hotDry', '热干综合状态'], ['vpd', '大气干燥度（VPD）']],
+    water: [['waterPercentile', '根区历史百分位'], ['waterAnomaly', '根区相对常态'], ['surfacePercentile', '表层历史百分位'], ['surfaceAnomaly', '表层相对常态']]
   };
   const featureName = f => f.properties.shapeName || f.properties.NAME_1 || f.properties.name || f.properties.Name || '';
   const future = (r, horizon) => {
@@ -68,12 +68,11 @@
   const legendKey = () => {
     if (state.metric === 'risk') return 'risk';
     if (state.metric === 'rain30' || (state.metric === 'rainForecast' && state.unit === 'absolute')) return 'rain30_tropical';
-    if (state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly')) return 'rain_ratio';
-    if (state.metric === 'waterAbsolute') return 'soil_absolute';
-    if (state.metric === 'waterAnomaly') return 'soil_relative';
-    if (state.metric === 'tempAnomaly') return 'temp_anomaly';
-    if (state.metric === 'tempNow' || state.metric === 'tempForecast') return 'temp_tropical_absolute';
-    if (state.metric === 'hotDry') return 'hot_dry';
+    if (state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly')) return 'palm_rain_ratio';
+    if (state.metric === 'waterPercentile' || state.metric === 'surfacePercentile') return 'soil_percentile';
+    if (state.metric === 'waterAnomaly' || state.metric === 'surfaceAnomaly') return 'palm_soil_relative';
+    if (state.metric === 'hotDry') return 'palm_hot_dry';
+    if (state.metric === 'vpd') return 'vpd_percentile';
     return null;
   };
   const dryScore = (r, depth) => {
@@ -85,18 +84,18 @@
   };
   const value = r => {
     const f = future(r, state.horizon);
-    if (state.metric === 'risk') return num(r.risk_level_v3);
+    if (state.metric === 'risk') return window.PalmRisk?.classifyPalmSupplyRisk(r, { basis: state.basis }).level;
     if (state.metric === 'production') return num(r.production_tonnes);
     if (state.metric === 'share') return state.scope === 'seasia' ? num(r.production_share_se_asia) : num(r.production_share_country);
     if (state.metric === 'rain30') return num(r.rain_30d_mm);
     if (state.metric === 'rainAnomaly') return state.basis === 'base9120' ? num(r.rain_30d_ratio_1991_2020) : num(r.rain_30d_ratio_2017_2025 ?? r.rain_30d_ratio_recent5y);
     if (state.metric === 'rainForecast') { const x = state.unit === 'absolute' ? f.rain / f.days * 30 : rainRatio(r, state.horizon, state.basis); return num(x); }
-    if (state.metric === 'tempNow') return num(r._weather?.temp_max_c);
-    if (state.metric === 'tempAnomaly') return num(r.temp_max_anomaly_c);
-    if (state.metric === 'tempForecast') return num(f.temp);
-    if (state.metric === 'hotDry') return heatScore(r);
-    if (state.metric === 'waterAbsolute') return num(state.depth === 'root' ? r.soil_water_rootzone : r.soil_water_surface);
-    if (state.metric === 'waterAnomaly') return waterRelative(r, state.depth);
+    if (state.metric === 'hotDry') return window.PalmRisk?.classifyPalmHeatDryState(r, { basis: state.basis }).level;
+    if (state.metric === 'vpd') return num(r.vpd_percentile_30d ?? r.vpd_percentile_14d);
+    if (state.metric === 'waterPercentile') return window.PalmRisk?.percentile(r, 'root');
+    if (state.metric === 'surfacePercentile') return window.PalmRisk?.percentile(r, 'surface');
+    if (state.metric === 'waterAnomaly') return window.PalmRisk?.relative(r, 'root');
+    if (state.metric === 'surfaceAnomaly') return window.PalmRisk?.relative(r, 'surface');
     return null;
   };
   const colour = r => {
@@ -115,9 +114,9 @@
     const rows = scoped(), total = rows.reduce((s, r) => s + (num(r.production_tonnes) || 0), 0), share = fn => total ? rows.reduce((s, r) => s + (fn(r) ? num(r.production_tonnes) || 0 : 0), 0) / total * 100 : null;
     let cards;
     if (state.section === 'rain') cards = [['近30日低降雨（<100mm）', share(r => num(r.rain_30d_mm) < 100)], ['低于常年（<85%）', share(r => num(r.rain_30d_ratio_1991_2020) < 85)], ['极端降雨事件', share(r => num(r.extreme_rain_days_30d) > 0)], ['连续无雨≥11天', share(r => num(r.current_dry_spell_days) >= 11)]];
-    else if (state.section === 'heat') cards = [['高温距平≥2℃', share(r => num(r.temp_max_anomaly_c) >= 2)], ['严格热干风险', share(r => heatScore(r) > 0)], ['严重热干风险', share(r => heatScore(r) >= 2)], ['未来7日均温≥35℃', share(r => future(r, 'f7').temp >= 35)]];
-    else if (state.section === 'water') cards = [['根区偏干（<85%常态）', share(r => waterRelative(r, 'root') < 85)], ['表层偏干（<85%常态）', share(r => waterRelative(r, 'surface') < 85)], ['根区偏湿（>115%常态）', share(r => waterRelative(r, 'root') > 115)], ['表层偏湿（>115%常态）', share(r => waterRelative(r, 'surface') > 115)]];
-    else cards = [['重点压力产量', share(r => num(r.risk_level_v3) >= 3)], ['降雨偏少', share(r => num(r.rain_30d_ratio_1991_2020) < 85)], ['热干风险', share(r => heatScore(r) > 0)], ['根区干旱压力', share(r => dryScore(r, 'root') > 0)]];
+    else if (state.section === 'heat') { const hs = r => window.PalmRisk.classifyPalmHeatDryState(r, { basis: state.basis }), hasVpd = rows.some(r => num(r.vpd_percentile_30d ?? r.vpd_percentile_14d) !== null); cards = [[hasVpd ? 'VPD≥P80' : 'VPD数据暂未接入', hasVpd ? share(r => num(r.vpd_percentile_30d ?? r.vpd_percentile_14d) >= 80) : null], ['热干状态≥1级', share(r => hs(r).level >= 1)], ['热干状态≥2级', share(r => hs(r).level >= 2)], ['热干状态≥3级', share(r => hs(r).level >= 3)]]; }
+    else if (state.section === 'water') { const ws = (r, d) => window.PalmRisk.classifyPalmWaterState(r, d); cards = [['根区百分位<P30', share(r => ws(r, 'root').percentile < 30)], ['根区相对常态<95%', share(r => ws(r, 'root').relative < 95)], ['水分状态≥2级', share(r => ws(r, 'root').level >= 2)], ['水分状态≥3级', share(r => ws(r, 'root').level >= 3)]]; }
+    else { const rs = r => window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rain = r => rs(r).moduleStates.rain, heat = r => rs(r).moduleStates.heatDry, water = r => rs(r).moduleStates.water; cards = [['综合风险≥2级', share(r => rs(r).level >= 2)], ['综合风险≥3级', share(r => rs(r).level >= 3)], ['降雨—水分干旱共振', share(r => rain(r).direction === 'dry' && water(r).direction === 'dry' && rain(r).level >= 2 && water(r).level >= 2)], ['热干—水分共振', share(r => heat(r).level >= 2 && water(r).direction === 'dry' && water(r).level >= 2)]]; }
     $('summaryTitle').textContent = `${sectionNames[state.section]}暴露概览`; $('metrics').innerHTML = cards.map(c => `<article class="card"><span>${c[0]}</span><strong>${pc(c[1])}</strong><small>占${state.scope === 'seasia' ? '东南亚' : '本国'}产量</small></article>`).join('');
   }
   function legend() {
@@ -135,9 +134,13 @@
     if (!['rain','heat'].includes(state.section)) return;
     state.geo.forEach(g => g.eachLayer(l => { const r = l._row; if (!r) return; let badge = null, cls = '';
       if (state.section === 'rain') { const e = num(r.extreme_rain_days_30d), d = num(r.current_dry_spell_days); if (e > 0) badge = `雨${e}`; else if (d >= 11) badge = `旱${d}`; }
-      if (state.section === 'heat' && heatScore(r) > 0) { badge = `热${heatScore(r)}`; cls = 'hot'; }
+      if (state.section === 'heat') { const heat = window.PalmRisk.classifyPalmHeatDryState(r, { basis: state.basis }); if (heat.level !== null && heat.level > 0) { badge = `热${heat.level}`; cls = 'hot'; } }
       if (badge) state.events.push(L.marker(l.getBounds().getCenter(), { interactive: false, icon: L.divIcon({ className: `event-badge ${cls}`, html: badge, iconSize: [26, 22], iconAnchor: [13, 11] }) }).addTo(state.map));
     }));
+  }
+  function buildPalmTooltip(r) {
+    const supply = window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rain = supply.moduleStates.rain, heat = supply.moduleStates.heatDry, water = supply.moduleStates.water;
+    return `<b>${esc(r.region)}</b><br>综合供应风险：${supply.level === null ? '暂无足够数据' : `${supply.level}级 ${supply.label}`}<br>降雨状态：${rain.level === null ? '证据不足' : `${rain.level}级 ${rain.direction === 'dry' ? '偏少' : rain.direction === 'wet' ? '偏多' : '正常'}`}<br>热干状态：${heat.level === null ? '证据不足' : `${heat.level}级 ${heat.label}`}<br>水分状态：${water.level === null ? '证据不足' : `${water.level}级 ${water.direction === 'dry' ? '根区偏干' : water.direction === 'wet' ? '根区偏湿' : '正常'}`}<br><small>${esc(supply.adjustments[0] || supply.evidence[0] || '暂无额外共振信号')}</small>`;
   }
   function refreshMap() {
     state.geo.forEach(g => g.eachLayer(l => l.setStyle(style(l._row, l._country))));
@@ -150,7 +153,7 @@
       const x = value(r);
       const label = state.label === 'production' ? Math.round((r.production_tonnes || 0) / 10000)
         : state.label === 'share' ? `${Math.round(sh * 100)}%`
-        : x === null ? '—' : state.metric === 'waterAbsolute' ? x.toFixed(3) : `${Math.round(x)}%`;
+        : x === null ? '—' : ['risk', 'hotDry'].includes(state.metric) ? `${Math.round(x)}级` : ['waterPercentile', 'surfacePercentile', 'vpd'].includes(state.metric) ? `P${Math.round(x)}` : state.metric === 'rain30' ? `${Math.round(x)}mm` : `${Math.round(x)}%`;
       state.labels.push(L.marker(l.getBounds().getCenter(), { interactive: false, icon: L.divIcon({ className: 'metric-label', html: label, iconSize: [50, 20], iconAnchor: [25, 10] }) }).addTo(state.map));
     }));
     renderEvents(); legend();
@@ -158,7 +161,7 @@
   function controlButton(text, key, val, active, disabled = false) { return `<button ${active ? 'class="active"' : ''} ${disabled ? 'disabled title="当前数据未提供该口径"' : ''} data-control="${key}" data-value="${val}">${text}</button>`; }
   function controls() {
     $('layerGroups').innerHTML = Object.entries(sectionNames).map(([k, v]) => `<button class="${state.section === k ? 'active' : ''}" data-section="${k}">${v}</button>`).join('');
-    $('layerMetrics').innerHTML = metricSets[state.section].map(([k, v]) => `<button class="${state.metric === k ? 'active' : ''}" data-metric="${k}">${v}</button>`).join('');
+    $('layerMetrics').innerHTML = metricSets[state.section].map(([k, v]) => { const disabled = k === 'vpd' && state.rows.length && !state.rows.some(r => num(r.vpd_percentile_30d ?? r.vpd_percentile_14d) !== null); return `<button ${disabled ? 'disabled title="当前数据未接入VPD"' : ''} class="${state.metric === k ? 'active' : ''}" data-metric="${k}">${v}</button>`; }).join('');
     document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x.dataset.label === state.label));
     document.querySelectorAll('[data-section]').forEach(b => b.onclick = () => { state.section = b.dataset.section; state.metric = metricSets[state.section][0][0]; state.label = state.section === 'water' ? 'metric' : 'production'; state.basis = 'base1725'; state.unit = 'absolute'; updateControlRow(); controls(); updateSummary(); refreshMap(); });
     document.querySelectorAll('[data-metric]').forEach(b => b.onclick = () => { state.metric = b.dataset.metric; if (state.section === 'water') state.label = 'metric'; updateControlRow(); controls(); refreshMap(); });
@@ -170,7 +173,6 @@
     if (state.metric === 'rainAnomaly' || state.metric === 'rainForecast') html += `<b>比较基准</b>${controlButton('1991–2020', 'basis', 'base9120', state.basis === 'base9120')}${controlButton('2017–2025', 'basis', 'base1725', state.basis === 'base1725')}`;
     if (state.metric === 'rainForecast' || state.metric === 'tempForecast') html += `<b>期限</b>${controlButton('1–7日', 'horizon', 'f7', state.horizon === 'f7')}${controlButton('8–15日', 'horizon', 'f8', state.horizon === 'f8')}${controlButton('1–15日', 'horizon', 'f15', state.horizon === 'f15')}`;
     if (state.metric === 'rainForecast') html += `<b>显示</b>${controlButton('绝对值（30日等效）', 'unit', 'absolute', state.unit === 'absolute')}${controlButton('距平', 'unit', 'anomaly', state.unit === 'anomaly')}`;
-    if (state.section === 'water') html += `<b>土层</b>${controlButton('根区（约0–100cm）', 'depth', 'root', state.depth === 'root')}${controlButton('表层（约0–7cm）', 'depth', 'surface', state.depth === 'surface')}`;
     const hints = { hotDry: '仅当“高温距平≥2℃”且“根区偏干或降雨偏少”同时出现时才标记。', waterAnomaly: '相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。' };
     if (hints[state.metric]) html += `<span class="control-hint">${hints[state.metric]}</span>`;
     $('controlRow').innerHTML = html;
@@ -178,12 +180,14 @@
   }
   function regionDetail(r) {
     state.selected = r; refreshMap();
+    const supply = window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rainState = supply.moduleStates.rain, heatState = supply.moduleStates.heatDry, waterState = supply.moduleStates.water;
+    const conclusion = `<section class="detail-chart-section"><h3>当前供应风险</h3><div class="forecast-brief"><b>综合供应风险：${supply.level === null ? '暂无足够数据' : `${supply.level}级 ${supply.label}`}</b><br>降雨：${rainState.level === null ? '证据不足' : `${rainState.level}级 ${rainState.direction}`}；热干：${heatState.level === null ? '证据不足' : `${heatState.level}级 ${heatState.label}`}；水分：${waterState.level === null ? '证据不足' : `${waterState.level}级 ${waterState.direction}`}。<br>${esc(supply.adjustments.join('；') || supply.evidence.slice(0, 2).join('；') || '当前未发现明确共振信号。')}<br><small>未来修复可能：${rainState.repairSignal === 'repair' ? '未来降雨存在一定修复信号。' : rainState.repairSignal === 'no_relief' ? '未来降雨仍偏少，短期修复有限。' : '预报或常态基准不足，暂不判断。'}</small></div></section>`;
     const chartPanel = window.OilDetailCharts?.panel(r, {
       cropName: '棕榈油', regionName: r.region, countryName: COUNTRY[r.country] || r.country,
       riskLabel: r.risk_label_v4_cn || r.risk_level_v3_cn || '持续跟踪'
     });
     if (chartPanel) {
-      $('detail').innerHTML = chartPanel.html;
+      $('detail').innerHTML = conclusion + chartPanel.html;
       requestAnimationFrame(() => window.OilDetailCharts.render(r, state.dailyHistory.get(r.weather_region_id) || [], chartPanel.key));
       return;
     }
@@ -195,7 +199,7 @@
   }
   async function buildMap() {
     state.map = L.map('map', { minZoom: 3, maxZoom: 9 }).setView([1.5, 108], 4); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(state.map);
-    for (const [country, file] of [['Indonesia','indonesia_admin1.geojson'], ['Malaysia','malaysia_admin1.geojson']]) { const json = await getJSON(`admin1_geojson/${file}`); const group = L.geoJSON(json, { style: f => style(rowFor(country, f), country), onEachFeature: (f, l) => { l._row = rowFor(country, f); l._country = country; l.bindTooltip(`${esc(l._row?.region || featureName(f))}<br>${COUNTRY[country]}`, { sticky: true }); l.on('click', () => l._row && regionDetail(l._row)); } }).addTo(state.map); state.geo.push(group); }
+    for (const [country, file] of [['Indonesia','indonesia_admin1.geojson'], ['Malaysia','malaysia_admin1.geojson']]) { const json = await getJSON(`admin1_geojson/${file}`); const group = L.geoJSON(json, { style: f => style(rowFor(country, f), country), onEachFeature: (f, l) => { l._row = rowFor(country, f); l._country = country; l.bindTooltip(l._row ? buildPalmTooltip(l._row) : `${esc(featureName(f))}<br>${COUNTRY[country]}`, { sticky: true }); l.on('click', () => l._row && regionDetail(l._row)); } }).addTo(state.map); state.geo.push(group); }
     state.map.fitBounds(L.featureGroup(state.geo).getBounds().pad(.04));
   }
   async function init() {
