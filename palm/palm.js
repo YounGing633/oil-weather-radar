@@ -33,7 +33,7 @@
     risk: [['production', '产量'], ['share', '产量占比']],
     rain: [['rain30', '近30日降雨'], ['rainAnomaly', '降雨距平'], ['rainForecast', '未来预报']],
     heat: [['tempNow', '最高温绝对值'], ['tempAnomaly', '最高温距平'], ['tempForecast', '未来预报'], ['hotDry', '热干风险']],
-    water: [['waterAbsolute', '水分绝对值'], ['waterAnomaly', '水分距平'], ['dryPressure', '水分压力（偏干）']]
+    water: [['waterAbsolute', '水分绝对值'], ['waterAnomaly', '水分相对常态'], ['dryPressure', '水分压力（偏干）']]
   };
   const featureName = f => f.properties.shapeName || f.properties.NAME_1 || f.properties.name || f.properties.Name || '';
   const future = (r, horizon) => {
@@ -75,7 +75,7 @@
     if (state.metric === 'tempForecast') return num(f.temp);
     if (state.metric === 'hotDry') return heatScore(r);
     if (state.metric === 'waterAbsolute') return num(state.depth === 'root' ? r.soil_water_rootzone : r.soil_water_surface);
-    if (state.metric === 'waterAnomaly') return num(state.depth === 'root' ? r.rootzone_percentile : r.surface_percentile);
+    if (state.metric === 'waterAnomaly') { const actual = num(state.depth === 'root' ? r.soil_water_rootzone : r.soil_water_surface), normal = num(state.depth === 'root' ? r.soil_water_rootzone_normal : r.soil_water_surface_normal); return actual !== null && normal ? actual / normal * 100 : null; }
     if (state.metric === 'dryPressure') return dryScore(r, state.depth);
     return null;
   };
@@ -87,7 +87,7 @@
     if (state.metric === 'tempNow' || state.metric === 'tempForecast') return x < 30 ? '#e7f0ee' : x < 33 ? '#f3c786' : x < 35 ? '#d6604d' : '#8c2d24';
     if (state.metric === 'tempAnomaly') return x < 0 ? '#a7d8e8' : x < 1 ? '#f5f1d5' : x < 2 ? '#f3c786' : x < 3 ? '#d6604d' : '#8c2d24';
     if (state.metric === 'waterAbsolute') return x < .12 ? '#8c2d24' : x < .2 ? '#d6604d' : x < .3 ? '#f3c786' : x < .4 ? '#a7d88a' : '#075722';
-    if (state.metric === 'waterAnomaly') return x < 10 ? '#8c2d24' : x < 30 ? '#d6604d' : x <= 70 ? '#f3c786' : x <= 90 ? '#a7d88a' : '#075722';
+    if (state.metric === 'waterAnomaly') return x < 70 ? '#8c2d24' : x < 85 ? '#d6604d' : x <= 115 ? '#f3c786' : x <= 130 ? '#a7d88a' : '#075722';
     return x === 0 ? '#eaf1e8' : x === 1 ? '#f3c786' : x === 2 ? '#d6604d' : '#8c2d24';
   };
   const style = (r, country) => ({ color: country === 'Indonesia' ? '#0b655c' : '#455c78', weight: country === 'Indonesia' ? 2.8 : 2.6, dashArray: country === 'Malaysia' ? '7 3' : null, fillColor: r ? colour(r) : '#dce7e5', fillOpacity: r ? .72 : .18 });
@@ -106,9 +106,9 @@
   function legend() {
     const labels = state.metric === 'rain30' || (state.metric === 'rainForecast' && state.unit === 'absolute') ? [['#4c1205','0–20'],['#843500','20–50'],['#e66a00','50–100'],['#f9ba14','100–150'],['#ffeb00','150–200'],['#d5f56a','200–300'],['#a7d88a','300–400'],['#63b64d','400–500'],['#0e6a26','>500']]
       : state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly') ? [['#5b1803','0–30%'],['#bd6b00','31–50%'],['#f3bd0f','51–84%'],['#fff200','85–115%'],['#98cd18','116–150%'],['#2c9b34','151–200%'],['#075722','>200%']]
-      : state.metric === 'waterAnomaly' ? [['#8c2d24','P<10'],['#d6604d','P10–29'],['#f3c786','P30–70'],['#a7d88a','P71–90'],['#075722','P>90']]
+      : state.metric === 'waterAnomaly' ? [['#8c2d24','<70%'],['#d6604d','70–84%'],['#f3c786','85–115%'],['#a7d88a','116–130%'],['#075722','>130%']]
       : [['#8c2d24','高 / 偏干'],['#d6604d','重点关注'],['#f3c786','轻度异常'],['#a7d88a','正常或偏湿']];
-    const extra = state.metric === 'rainForecast' && state.unit === 'absolute' ? '（30日等效累计，mm）' : state.metric === 'waterAbsolute' ? '（m³/m³）' : state.metric === 'waterAnomaly' ? '（历史同期百分位）' : state.metric.includes('Anomaly') || (state.metric === 'rainForecast' && state.unit === 'anomaly') ? '（相对基准）' : '';
+    const extra = state.metric === 'rainForecast' && state.unit === 'absolute' ? '（30日等效累计，mm）' : state.metric === 'waterAbsolute' ? '（m³/m³）' : state.metric === 'waterAnomaly' ? '（相对2017–2025同期常态，100%=常态）' : state.metric.includes('Anomaly') || (state.metric === 'rainForecast' && state.unit === 'anomaly') ? '（相对基准）' : '';
     $('legend').innerHTML = `<b>${title()}${extra}</b><br>${labels.map(x => `<i style="background:${x[0]}"></i>${x[1]}`).join('<br>')}<br><small>灰色：暂无该口径数据</small>`;
   }
   function renderEvents() {
@@ -144,7 +144,7 @@
     if (state.metric === 'rainForecast' || state.metric === 'tempForecast') html += `<b>期限</b>${controlButton('1–7日', 'horizon', 'f7', state.horizon === 'f7')}${controlButton('8–15日', 'horizon', 'f8', state.horizon === 'f8')}${controlButton('1–15日', 'horizon', 'f15', state.horizon === 'f15')}`;
     if (state.metric === 'rainForecast') html += `<b>显示</b>${controlButton('绝对值（30日等效）', 'unit', 'absolute', state.unit === 'absolute')}${controlButton('距平', 'unit', 'anomaly', state.unit === 'anomaly')}`;
     if (state.section === 'water') html += `<b>土层</b>${controlButton('根区（约0–100cm）', 'depth', 'root', state.depth === 'root')}${controlButton('表层（约0–7cm）', 'depth', 'surface', state.depth === 'surface')}`;
-    const hints = { hotDry: '仅当“高温距平≥2℃”且“根区偏干或降雨偏少”同时出现时才标记。', dryPressure: '仅标记偏干压力；过湿/渍涝以“涝”提示，不混入干旱压力。', waterAnomaly: '百分位是历史同期排序：P10表示比约90%的历史同期更干；不是百分比含水量。' };
+    const hints = { hotDry: '仅当“高温距平≥2℃”且“根区偏干或降雨偏少”同时出现时才标记。', dryPressure: '仅标记偏干压力；过湿/渍涝以“涝”提示，不混入干旱压力。', waterAnomaly: '相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。' };
     if (hints[state.metric]) html += `<span class="control-hint">${hints[state.metric]}</span>`;
     $('controlRow').innerHTML = html;
     document.querySelectorAll('[data-control]').forEach(b => b.onclick = () => { if (b.disabled) return; state[b.dataset.control] = b.dataset.value; updateControlRow(); refreshMap(); updateSummary(); });

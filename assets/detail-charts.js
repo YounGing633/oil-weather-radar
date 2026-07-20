@@ -41,7 +41,7 @@
       ${section('③ 每日最高 / 最低 / 平均温与正常范围 · 90天走势', `${canvas(`${key}-temp`, '温度与正常范围', true)}<p class="detail-note">阴影为同源历史基准的 P10–P90 正常范围；基准不足时仅显示实况曲线。</p>`)}
       ${section('④ 未来降雨预报 · 逐日', `<div class="forecast-periods">${forecastPeriods(forecast)}</div>${canvas(`${key}-forecast-rain`, '逐日降雨预报', true)}`)}
       ${section('⑤ 未来温度预报 · 逐日', canvas(`${key}-forecast-temp`, '逐日温度预报', true))}
-      ${section('⑥ 根区 / 表层土壤水分 · 90天走势', `<p class="detail-note">数据源：GEE ERA5-Land DAILY_AGGR。距平基准：2016–2025 年同一日历日历史均值；相对常态 = 实际值 ÷ 同期均值 × 100%，100% 为常态。</p><div class="detail-chart-grid">${canvas(`${key}-soil`, '实际值（m³/m³）')}${canvas(`${key}-soila`, '距平（相对2016–2025同期，m³/m³）')}${canvas(`${key}-soilp`, '相对常态（%）')}</div>`)}
+      ${section('⑥ 根区 / 表层土壤水分 · 90天走势', `<p class="detail-note">数据源：GEE ERA5-Land DAILY_AGGR。常态基准：2017–2025 年同一日历日历史均值；相对常态 = 实际值 ÷ 同期均值 × 100%，100% 为常态。</p><div class="detail-chart-grid">${canvas(`${key}-soil`, '实际值（m³/m³）')}${canvas(`${key}-soilp`, '相对常态（%）')}</div>`)}
     ` };
   }
   function dryDays(rows) {
@@ -88,7 +88,6 @@
     chart(`${key}-forecast-rain`, { labels: labels(forecast), datasets: [{ type: 'bar', label: '预报降雨', data: forecast.map(x => n(x.precipitation_mm)), backgroundColor: '#4c93c6', borderWidth: 0 }, line('同期常态', forecast.map(x => bv(x, 'precipitation_normal_mm')), '#8797a1', { borderDash: [4, 3] })], options: { scales: { x: { ticks: { maxTicksLimit: 15, font: { size: 9 } }, grid: { display: false } }, y: { ticks: { font: { size: 9 } }, beginAtZero: true } } } });
     chart(`${key}-forecast-temp`, { labels: labels(forecast), datasets: [line('最高温', forecast.map(x => n(x.temp_max_c)), '#d9653b'), line('最低温', forecast.map(x => n(x.temp_min_c)), '#347dbc'), line('最高温常态', forecast.map(x => bv(x, 'temp_max_normal_c')), '#d9653b', { borderDash: [4, 3] }), line('最低温常态', forecast.map(x => bv(x, 'temp_min_normal_c')), '#347dbc', { borderDash: [4, 3] })], options: { scales: { x: { ticks: { maxTicksLimit: 15, font: { size: 9 } }, grid: { display: false } }, y: { ticks: { font: { size: 9 } } } } } });
     chart(`${key}-soil`, { labels: labels(soil), datasets: [line('根区', soil.map(x => n(x.soil_water_rootzone)), '#8c6a3d'), line('表层', soil.map(x => n(x.soil_water_surface)), '#4c93c6')] });
-    chart(`${key}-soila`, { labels: labels(soil), datasets: [line('根区距平', soil.map(x => n(x.rootzone_anomaly)), '#8c6a3d'), line('表层距平', soil.map(x => n(x.surface_anomaly)), '#4c93c6')] });
     const relativeNormal = (actual, normal) => n(actual) !== null && n(normal) !== null && n(normal) !== 0 ? n(actual) / n(normal) * 100 : null;
     chart(`${key}-soilp`, { labels: labels(soil), datasets: [line('根区相对常态', soil.map(x => relativeNormal(x.soil_water_rootzone, x.rootzone_normal)), '#8c6a3d'), line('表层相对常态', soil.map(x => relativeNormal(x.soil_water_surface, x.surface_normal)), '#4c93c6')], options: { scales: { x: { ticks: { maxTicksLimit: 7, font: { size: 9 } }, grid: { display: false } }, y: { title: { display: true, text: '%（100%=常态）' }, ticks: { font: { size: 9 } } } } } });
   }
