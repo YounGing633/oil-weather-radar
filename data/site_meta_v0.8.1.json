@@ -1,6 +1,6 @@
 [
   {
-    "generated_at": "2026-07-20 09:43:05",
+    "generated_at": "2026-07-20 14:54:30",
     "version": "v1.0-i1",
     "baseline_period": "1991-2020 / 2017-2025 selectable",
     "baseline_method": "NASA POWER same-calendar-day selectable weather baselines",
@@ -44,6 +44,6 @@
       "sunflower"
     ],
     "total_alerts": 77,
-    "run_id": "daily_export_20260720_094304"
+    "run_id": "daily_export_20260720_145430"
   }
 ]
