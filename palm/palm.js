@@ -133,15 +133,24 @@
     if (state.selectedLayer) state.map.removeLayer(state.selectedLayer);
     if (state.selected) { const layer = state.geo.flatMap(g => g.getLayers()).find(l => l._row?.weather_region_id === state.selected.weather_region_id); if (layer) state.selectedLayer = L.geoJSON(layer.feature, { style: { color: '#142b3b', weight: 6, fillOpacity: 0 }, interactive: false }).addTo(state.map); }
     state.labels.forEach(m => state.map.removeLayer(m)); state.labels = [];
-    if (state.label !== 'off') state.geo.forEach(g => g.eachLayer(l => { const r = l._row, sh = state.scope === 'seasia' ? r?.production_share_se_asia : r?.production_share_country; if (r && sh >= .01) state.labels.push(L.marker(l.getBounds().getCenter(), { interactive: false, icon: L.divIcon({ className: 'metric-label', html: state.label === 'production' ? Math.round((r.production_tonnes || 0) / 10000) : `${Math.round(sh * 100)}%`, iconSize: [50, 20], iconAnchor: [25, 10] }) }).addTo(state.map)); }));
+    if (state.label !== 'off') state.geo.forEach(g => g.eachLayer(l => {
+      const r = l._row, sh = state.scope === 'seasia' ? r?.production_share_se_asia : r?.production_share_country;
+      if (!r || sh < .01) return;
+      const x = value(r);
+      const label = state.label === 'production' ? Math.round((r.production_tonnes || 0) / 10000)
+        : state.label === 'share' ? `${Math.round(sh * 100)}%`
+        : x === null ? '—' : state.metric === 'waterAbsolute' ? x.toFixed(3) : `${Math.round(x)}%`;
+      state.labels.push(L.marker(l.getBounds().getCenter(), { interactive: false, icon: L.divIcon({ className: 'metric-label', html: label, iconSize: [50, 20], iconAnchor: [25, 10] }) }).addTo(state.map));
+    }));
     renderEvents(); legend();
   }
   function controlButton(text, key, val, active, disabled = false) { return `<button ${active ? 'class="active"' : ''} ${disabled ? 'disabled title="当前数据未提供该口径"' : ''} data-control="${key}" data-value="${val}">${text}</button>`; }
   function controls() {
     $('layerGroups').innerHTML = Object.entries(sectionNames).map(([k, v]) => `<button class="${state.section === k ? 'active' : ''}" data-section="${k}">${v}</button>`).join('');
     $('layerMetrics').innerHTML = metricSets[state.section].map(([k, v]) => `<button class="${state.metric === k ? 'active' : ''}" data-metric="${k}">${v}</button>`).join('');
-    document.querySelectorAll('[data-section]').forEach(b => b.onclick = () => { state.section = b.dataset.section; state.metric = metricSets[state.section][0][0]; state.basis = 'base1725'; state.unit = 'absolute'; updateControlRow(); controls(); updateSummary(); refreshMap(); });
-    document.querySelectorAll('[data-metric]').forEach(b => b.onclick = () => { state.metric = b.dataset.metric; updateControlRow(); controls(); refreshMap(); });
+    document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x.dataset.label === state.label));
+    document.querySelectorAll('[data-section]').forEach(b => b.onclick = () => { state.section = b.dataset.section; state.metric = metricSets[state.section][0][0]; state.label = state.section === 'water' ? 'metric' : 'production'; state.basis = 'base1725'; state.unit = 'absolute'; updateControlRow(); controls(); updateSummary(); refreshMap(); });
+    document.querySelectorAll('[data-metric]').forEach(b => b.onclick = () => { state.metric = b.dataset.metric; if (state.section === 'water') state.label = 'metric'; updateControlRow(); controls(); refreshMap(); });
     document.querySelectorAll('[data-scope]').forEach(b => b.onclick = () => { state.scope = b.dataset.scope; document.querySelectorAll('[data-scope]').forEach(x => x.classList.toggle('active', x === b)); updateSummary(); refreshMap(); });
     document.querySelectorAll('[data-label]').forEach(b => b.onclick = () => { state.label = b.dataset.label; document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x === b)); refreshMap(); });
   }
