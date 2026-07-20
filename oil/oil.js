@@ -8,13 +8,13 @@
   };
   const LAYERS = {
     risk: ['综合风险', '颜色表示产量加权后的综合天气风险。'], production: ['产量权重', '颜色深浅表示当前数据覆盖的产量规模。'],
-    moisture: ['根区墒情', '优先采用历史同期百分位（2016–2025、同日±7天）；历史基线未补齐时才显示最近90日排序，并明确标注。'], rain: ['近30日降雨', '相对1991—2020同期的降雨比例。'],
+    moisture: ['土壤水分', '相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。'], rain: ['近30日降雨', '相对1991—2020同期的降雨比例。'],
     heat: ['热干风险', '高温距平与降雨偏少或根区偏干同时出现时，才判为热干风险。'], operation: ['作业风险', '强降雨、收获或田间作业受影响的产量占比。'], forecast: ['未来7日降雨', '未来7日累计降雨，辅助判断水分压力能否缓解。']
   };
   const METRIC_GROUPS = {
     risk: [['risk', '综合风险'], ['production', '产量权重']],
     production: [['production', '产量权重']],
-    moisture: [['moisture', '根区百分位'], ['moistureSurface', '表层百分位'], ['moistureActual', '根区绝对值'], ['moistureSurfaceActual', '表层绝对值']],
+    moisture: [['moisture', '根区相对常态'], ['moistureSurface', '表层相对常态'], ['moistureActual', '根区绝对值'], ['moistureSurfaceActual', '表层绝对值']],
     rain: [['rain', '30日相对常年'], ['rainActual', '30日累计'], ['forecast', '未来7日'], ['forecast16', '未来16日']],
     heat: [['heatDry', '热干风险等级'], ['heat', '最高温距平']],
     operation: [['operation', '作业影响']],
@@ -139,7 +139,30 @@
     if (metric === 'production') return n(r.total_production_tonnes ?? r.production_tonnes);
     if (metric === 'heatDry') return heatDryScore(r);
     if (metric === 'operation' && num(r.operation_affected_share) !== null) return num(r.operation_affected_share);
-    const field = { moisture: 'rootzone_percentile', moistureSurface: 'surface_percentile', moistureActual: 'soil_water_rootzone', moistureSurfaceActual: 'soil_water_surface', rain: 'precip_30d_ratio_pct', rainActual: 'precip_30d_actual', heat: 'temp_max_anomaly_c', operation: 'operation_affected_share', forecast: 'forecast_7d_precip', forecast16: 'forecast_16d_precip' }[metric];
+    if (metric === 'moisture' || metric === 'moistureSurface') {
+      const root = metric === 'moisture';
+      const actual = num(root ? r.soil_water_rootzone : r.soil_water_surface);
+      const normal = num(root ? (r.soil_water_rootzone_normal ?? r.rootzone_normal) : (r.soil_water_surface_normal ?? r.surface_normal));
+      if (actual !== null && normal !== null && normal > 0) return actual / normal * 100;
+      // Country cards are production-weighted summaries and do not persist
+      // raw soil fields.  Derive the same ratio from their constituent regions.
+      if (r.total_production_tonnes !== undefined) {
+        const rr = regions.filter(x => canonical(x.country) === canonical(r.country));
+        const valid = rr.filter(x => {
+          const a = num(root ? x.soil_water_rootzone : x.soil_water_surface);
+          const b = num(root ? (x.soil_water_rootzone_normal ?? x.rootzone_normal) : (x.soil_water_surface_normal ?? x.surface_normal));
+          return a !== null && b !== null && b > 0;
+        });
+        const weight = valid.reduce((s, x) => s + n(x.production_tonnes), 0);
+        if (weight) {
+          const weightedActual = valid.reduce((s, x) => s + num(root ? x.soil_water_rootzone : x.soil_water_surface) * n(x.production_tonnes), 0) / weight;
+          const weightedNormal = valid.reduce((s, x) => s + num(root ? (x.soil_water_rootzone_normal ?? x.rootzone_normal) : (x.soil_water_surface_normal ?? x.surface_normal)) * n(x.production_tonnes), 0) / weight;
+          return weightedNormal > 0 ? weightedActual / weightedNormal * 100 : null;
+        }
+      }
+      return null;
+    }
+    const field = { moistureActual: 'soil_water_rootzone', moistureSurfaceActual: 'soil_water_surface', rain: 'precip_30d_ratio_pct', rainActual: 'precip_30d_actual', heat: 'temp_max_anomaly_c', operation: 'operation_affected_share', forecast: 'forecast_7d_precip', forecast16: 'forecast_16d_precip' }[metric];
     if (!field) return null;
     if (num(r[field]) !== null) return num(r[field]);
     if (r.total_production_tonnes !== undefined) {
@@ -153,7 +176,7 @@
   function metricColor(r, rows) {
     if (metric === 'risk') return riskColor(r); const x = metricValue(r); if (x === null) return '#cbd3d6';
     if (metric === 'production') { const max = Math.max(...rows.map(q => metricValue(q) || 0), 1), p = x / max; return p < .15 ? '#e8eef0' : p < .4 ? '#aacbd0' : p < .7 ? crop.color + 'aa' : crop.color; }
-    if (metric === 'moisture' || metric === 'moistureSurface') return x < 10 ? '#8c2d24' : x < 30 ? '#d6604d' : x <= 70 ? '#e8d98b' : x <= 90 ? '#78a85b' : '#2474a6';
+    if (metric === 'moisture' || metric === 'moistureSurface') return x < 70 ? '#8c2d24' : x < 85 ? '#d6604d' : x <= 115 ? '#e8d98b' : x <= 130 ? '#78a85b' : '#2474a6';
     if (metric === 'moistureActual' || metric === 'moistureSurfaceActual') return x < .12 ? '#8c2d24' : x < .2 ? '#d6604d' : x < .3 ? '#e8d98b' : x < .4 ? '#78a85b' : '#2474a6';
     if (metric === 'rain') return x < 50 ? '#8c2d24' : x < 85 ? '#e28a25' : x <= 115 ? '#e8d98b' : x <= 150 ? '#78a85b' : '#2474a6';
     if (metric === 'heatDry') return x < .5 ? '#e8eef0' : x < 1.5 ? '#e8d98b' : x < 2.5 ? '#e28a25' : '#c23b22';
@@ -165,7 +188,7 @@
   function legend() {
     const sets = {
       risk: [['#c23b22', '显著压力'], ['#e28a25', '重点压力'], ['#eabf36', '关注'], ['#2f8a62', '正常/偏支持']], production: [['#e8eef0', '较低'], [crop.color + 'aa', '中等'], [crop.color, '较高']],
-      moisture: [['#8c2d24', 'P<10 极干'], ['#d6604d', 'P10—29 偏干'], ['#e8d98b', 'P30—70 正常'], ['#2474a6', 'P>90 偏湿']], moistureSurface: [['#8c2d24', 'P<10 极干'], ['#d6604d', 'P10—29 偏干'], ['#e8d98b', 'P30—70 正常'], ['#2474a6', 'P>90 偏湿']], moistureActual: [['#8c2d24', '<0.12'], ['#d6604d', '0.12—0.20'], ['#e8d98b', '0.20—0.30'], ['#2474a6', '>0.40']], moistureSurfaceActual: [['#8c2d24', '<0.12'], ['#d6604d', '0.12—0.20'], ['#e8d98b', '0.20—0.30'], ['#2474a6', '>0.40']], rain: [['#8c2d24', '<50%'], ['#e28a25', '50—84%'], ['#e8d98b', '85—115%'], ['#2474a6', '>150%']], rainActual: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']], forecast16: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']],
+      moisture: [['#8c2d24', '<70% 显著偏干'], ['#d6604d', '70—84% 偏干'], ['#e8d98b', '85—115% 常态范围'], ['#78a85b', '116—130% 偏湿'], ['#2474a6', '>130% 显著偏湿']], moistureSurface: [['#8c2d24', '<70% 显著偏干'], ['#d6604d', '70—84% 偏干'], ['#e8d98b', '85—115% 常态范围'], ['#78a85b', '116—130% 偏湿'], ['#2474a6', '>130% 显著偏湿']], moistureActual: [['#8c2d24', '<0.12'], ['#d6604d', '0.12—0.20'], ['#e8d98b', '0.20—0.30'], ['#2474a6', '>0.40']], moistureSurfaceActual: [['#8c2d24', '<0.12'], ['#d6604d', '0.12—0.20'], ['#e8d98b', '0.20—0.30'], ['#2474a6', '>0.40']], rain: [['#8c2d24', '<50%'], ['#e28a25', '50—84%'], ['#e8d98b', '85—115%'], ['#2474a6', '>150%']], rainActual: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']], forecast16: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']],
       heatDry: [['#e8eef0', '未触发'], ['#e8d98b', '轻度：高温+一项偏干'], ['#e28a25', '重点：高温+双偏干'], ['#c23b22', '严重：高温≥3℃且显著偏干']], heat: [['#8ec6d8', '<0℃'], ['#e8d98b', '0—1℃'], ['#e9a35b', '1—2℃'], ['#8c2d24', '≥3℃']], operation: [['#e8eef0', '无信号'], ['#e8d98b', '<15%'], ['#e28a25', '15—40%'], ['#c23b22', '>40%']], forecast: [['#8c2d24', '<10mm'], ['#e28a25', '10—25mm'], ['#e8d98b', '25—50mm'], ['#2474a6', '>100mm']]
     };
     const label = (METRIC_GROUPS[section] || []).find(([id]) => id === metric)?.[1] || LAYERS[section][0];

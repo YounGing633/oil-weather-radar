@@ -33,7 +33,7 @@
     risk: [['production', '产量'], ['share', '产量占比']],
     rain: [['rain30', '近30日降雨'], ['rainAnomaly', '降雨距平'], ['rainForecast', '未来预报']],
     heat: [['tempNow', '最高温绝对值'], ['tempAnomaly', '最高温距平'], ['tempForecast', '未来预报'], ['hotDry', '热干风险']],
-    water: [['waterAbsolute', '水分绝对值'], ['waterAnomaly', '水分相对常态'], ['dryPressure', '水分压力（偏干）']]
+    water: [['waterAbsolute', '水分绝对值'], ['waterAnomaly', '水分相对常态']]
   };
   const featureName = f => f.properties.shapeName || f.properties.NAME_1 || f.properties.name || f.properties.Name || '';
   const future = (r, horizon) => {
@@ -56,6 +56,15 @@
     if (drySoil && dryRain) return 2;
     return 1;
   };
+  const waterRelative = (r, depth) => {
+    const actual = num(depth === 'root' ? r.soil_water_rootzone : r.soil_water_surface);
+    // Latest snapshots use the long field names; the 90-day history uses the
+    // short names.  Accept both so a valid GEE observation never renders blank.
+    const normal = num(depth === 'root'
+      ? (r.soil_water_rootzone_normal ?? r.rootzone_normal)
+      : (r.soil_water_surface_normal ?? r.surface_normal));
+    return actual !== null && normal !== null && normal > 0 ? actual / normal * 100 : null;
+  };
   const dryScore = (r, depth) => {
     const soil = num(depth === 'root' ? r.rootzone_percentile : r.surface_percentile), rain = num(r.rain_30d_ratio_1991_2020);
     if (soil === null || soil >= 30) return 0;
@@ -75,8 +84,7 @@
     if (state.metric === 'tempForecast') return num(f.temp);
     if (state.metric === 'hotDry') return heatScore(r);
     if (state.metric === 'waterAbsolute') return num(state.depth === 'root' ? r.soil_water_rootzone : r.soil_water_surface);
-    if (state.metric === 'waterAnomaly') { const actual = num(state.depth === 'root' ? r.soil_water_rootzone : r.soil_water_surface), normal = num(state.depth === 'root' ? r.soil_water_rootzone_normal : r.soil_water_surface_normal); return actual !== null && normal ? actual / normal * 100 : null; }
-    if (state.metric === 'dryPressure') return dryScore(r, state.depth);
+    if (state.metric === 'waterAnomaly') return waterRelative(r, state.depth);
     return null;
   };
   const colour = r => {
@@ -99,7 +107,7 @@
     let cards;
     if (state.section === 'rain') cards = [['近30日低降雨（<100mm）', share(r => num(r.rain_30d_mm) < 100)], ['低于常年（<85%）', share(r => num(r.rain_30d_ratio_1991_2020) < 85)], ['极端降雨事件', share(r => num(r.extreme_rain_days_30d) > 0)], ['连续无雨≥11天', share(r => num(r.current_dry_spell_days) >= 11)]];
     else if (state.section === 'heat') cards = [['高温距平≥2℃', share(r => num(r.temp_max_anomaly_c) >= 2)], ['严格热干风险', share(r => heatScore(r) > 0)], ['严重热干风险', share(r => heatScore(r) >= 2)], ['未来7日均温≥35℃', share(r => future(r, 'f7').temp >= 35)]];
-    else if (state.section === 'water') cards = [['根区偏干（P<30）', share(r => num(r.rootzone_percentile) < 30)], ['表层偏干（P<30）', share(r => num(r.surface_percentile) < 30)], ['根区干旱压力', share(r => dryScore(r, 'root') > 0)], ['过湿/渍涝另见详情', share(r => num(r.rootzone_percentile) > 70)]];
+    else if (state.section === 'water') cards = [['根区偏干（<85%常态）', share(r => waterRelative(r, 'root') < 85)], ['表层偏干（<85%常态）', share(r => waterRelative(r, 'surface') < 85)], ['根区偏湿（>115%常态）', share(r => waterRelative(r, 'root') > 115)], ['表层偏湿（>115%常态）', share(r => waterRelative(r, 'surface') > 115)]];
     else cards = [['重点压力产量', share(r => num(r.risk_level_v3) >= 3)], ['降雨偏少', share(r => num(r.rain_30d_ratio_1991_2020) < 85)], ['热干风险', share(r => heatScore(r) > 0)], ['根区干旱压力', share(r => dryScore(r, 'root') > 0)]];
     $('summaryTitle').textContent = `${sectionNames[state.section]}暴露概览`; $('metrics').innerHTML = cards.map(c => `<article class="card"><span>${c[0]}</span><strong>${pc(c[1])}</strong><small>占${state.scope === 'seasia' ? '东南亚' : '本国'}产量</small></article>`).join('');
   }
@@ -113,11 +121,10 @@
   }
   function renderEvents() {
     state.events.forEach(m => state.map.removeLayer(m)); state.events = [];
-    if (!['rain','heat','water'].includes(state.section)) return;
+    if (!['rain','heat'].includes(state.section)) return;
     state.geo.forEach(g => g.eachLayer(l => { const r = l._row; if (!r) return; let badge = null, cls = '';
       if (state.section === 'rain') { const e = num(r.extreme_rain_days_30d), d = num(r.current_dry_spell_days); if (e > 0) badge = `雨${e}`; else if (d >= 11) badge = `旱${d}`; }
       if (state.section === 'heat' && heatScore(r) > 0) { badge = `热${heatScore(r)}`; cls = 'hot'; }
-      if (state.section === 'water') { const s = dryScore(r, state.depth); if (s > 0) { badge = `干${s}`; cls = 'hot'; } else if (num(state.depth === 'root' ? r.rootzone_percentile : r.surface_percentile) > 90) { badge = '涝'; cls = 'wet'; } }
       if (badge) state.events.push(L.marker(l.getBounds().getCenter(), { interactive: false, icon: L.divIcon({ className: `event-badge ${cls}`, html: badge, iconSize: [26, 22], iconAnchor: [13, 11] }) }).addTo(state.map));
     }));
   }
@@ -144,7 +151,7 @@
     if (state.metric === 'rainForecast' || state.metric === 'tempForecast') html += `<b>期限</b>${controlButton('1–7日', 'horizon', 'f7', state.horizon === 'f7')}${controlButton('8–15日', 'horizon', 'f8', state.horizon === 'f8')}${controlButton('1–15日', 'horizon', 'f15', state.horizon === 'f15')}`;
     if (state.metric === 'rainForecast') html += `<b>显示</b>${controlButton('绝对值（30日等效）', 'unit', 'absolute', state.unit === 'absolute')}${controlButton('距平', 'unit', 'anomaly', state.unit === 'anomaly')}`;
     if (state.section === 'water') html += `<b>土层</b>${controlButton('根区（约0–100cm）', 'depth', 'root', state.depth === 'root')}${controlButton('表层（约0–7cm）', 'depth', 'surface', state.depth === 'surface')}`;
-    const hints = { hotDry: '仅当“高温距平≥2℃”且“根区偏干或降雨偏少”同时出现时才标记。', dryPressure: '仅标记偏干压力；过湿/渍涝以“涝”提示，不混入干旱压力。', waterAnomaly: '相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。' };
+    const hints = { hotDry: '仅当“高温距平≥2℃”且“根区偏干或降雨偏少”同时出现时才标记。', waterAnomaly: '相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。' };
     if (hints[state.metric]) html += `<span class="control-hint">${hints[state.metric]}</span>`;
     $('controlRow').innerHTML = html;
     document.querySelectorAll('[data-control]').forEach(b => b.onclick = () => { if (b.disabled) return; state[b.dataset.control] = b.dataset.value; updateControlRow(); refreshMap(); updateSummary(); });
@@ -163,8 +170,8 @@
     state.selected = r; refreshMap(); const root = num(r.rootzone_percentile), surf = num(r.surface_percentile), heat = heatScore(r), dry = dryScore(r, 'root');
     const rainEvents = `极端降雨日 ${num(r.extreme_rain_days_30d) ?? '—'}；连续无雨 ${num(r.current_dry_spell_days) ?? '—'} 天`;
     const heatText = heat ? ['','轻度热干：高温与一项偏干信号并存','重点热干：高温、根区偏干及降雨偏少并存','严重热干：高温≥3℃、根区P<20且降雨偏少'][heat] : '未触发热干：需要高温（距平≥2℃）与偏干条件同时成立。';
-    const waterText = `根区：${num(r.soil_water_rootzone) === null ? '缺测' : `${num(r.soil_water_rootzone).toFixed(3)} m³/m³`}（P${root ?? '—'}）；表层：${num(r.soil_water_surface) === null ? '缺测' : `${num(r.soil_water_surface).toFixed(3)} m³/m³`}（P${surf ?? '—'}）。`;
-    $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${COUNTRY[r.country]} · 点击地图图层可切换指标；雨/旱/热/涝圆点是事件提示，不是另一套底图。</p><h3>当前风险</h3><div class="forecast-brief">${esc(r.risk_reason_cn || '暂无风险说明')}<br>近30日降雨：${mm(r.rain_30d_mm)}（2017–2025同源同期 ${pc(r.rain_30d_ratio_1991_2020)}；近五年 ${pc(r.rain_30d_ratio_recent5y)}）<br>${rainEvents}</div><h3>热干和极端天气</h3><div class="forecast-brief">最高温：${num(r._weather?.temp_max_c) === null ? '缺测' : `${num(r._weather.temp_max_c).toFixed(1)}℃`}；最高温距平：${num(r.temp_max_anomaly_c) === null ? '缺测' : `${num(r.temp_max_anomaly_c).toFixed(1)}℃`}。<br>${heatText}</div><h3>水分</h3><div class="forecast-brief">${waterText}<br>根区干旱压力：${dry ? ['','轻度','重点','严重'][dry] : '未触发'}。P 是相对历史同期的排序；P<30偏干、P>70偏湿，绝对含水量请看 m³/m³。</div><h3>数据口径</h3><div class="forecast-brief">降雨、温度、近30日窗口、历史基准和预报统一使用 Open‑Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；历史同期基准为2017–2025。</div>`;
+    const waterText = `根区：${num(r.soil_water_rootzone) === null ? '缺测' : `${num(r.soil_water_rootzone).toFixed(3)} m³/m³`}（相对常态 ${pc(waterRelative(r, 'root'))}）；表层：${num(r.soil_water_surface) === null ? '缺测' : `${num(r.soil_water_surface).toFixed(3)} m³/m³`}（相对常态 ${pc(waterRelative(r, 'surface'))}）。`;
+    $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${COUNTRY[r.country]} · 点击地图图层可切换指标；雨/旱/热圆点是事件提示，不是另一套底图。</p><h3>当前风险</h3><div class="forecast-brief">${esc(r.risk_reason_cn || '暂无风险说明')}<br>近30日降雨：${mm(r.rain_30d_mm)}（2017–2025同源同期 ${pc(r.rain_30d_ratio_1991_2020)}；近五年 ${pc(r.rain_30d_ratio_recent5y)}）<br>${rainEvents}</div><h3>热干和极端天气</h3><div class="forecast-brief">最高温：${num(r._weather?.temp_max_c) === null ? '缺测' : `${num(r._weather.temp_max_c).toFixed(1)}℃`}；最高温距平：${num(r.temp_max_anomaly_c) === null ? '缺测' : `${num(r.temp_max_anomaly_c).toFixed(1)}℃`}。<br>${heatText}</div><h3>水分</h3><div class="forecast-brief">${waterText}<br>相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。</div><h3>数据口径</h3><div class="forecast-brief">降雨、温度、近30日窗口、历史基准和预报统一使用 Open‑Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；历史同期基准为2017–2025。</div>`;
   }
   async function buildMap() {
     state.map = L.map('map', { minZoom: 3, maxZoom: 9 }).setView([1.5, 108], 4); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(state.map);
