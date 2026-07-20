@@ -91,11 +91,11 @@
     const x = value(r); if (x === null) return '#cbd5d2';
     if (['production', 'share'].includes(state.metric)) { const max = Math.max(...state.rows.map(q => value(q) || 0), 1), p = x / max; return p < .2 ? '#f1f5f3' : p < .4 ? '#c9e3d5' : p < .6 ? '#85c7ac' : p < .8 ? '#3b9a7b' : '#126451'; }
     if (state.metric === 'rain30' || (state.metric === 'rainForecast' && state.unit === 'absolute')) return x <= 20 ? '#4c1205' : x <= 50 ? '#843500' : x <= 100 ? '#e66a00' : x <= 150 ? '#f9ba14' : x <= 200 ? '#ffeb00' : x <= 300 ? '#d5f56a' : x <= 400 ? '#a7d88a' : x <= 500 ? '#63b64d' : '#0e6a26';
-    if (state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly')) return x <= 30 ? '#5b1803' : x <= 50 ? '#bd6b00' : x <= 84 ? '#f3bd0f' : x <= 115 ? '#fff200' : x <= 150 ? '#98cd18' : x <= 200 ? '#2c9b34' : '#075722';
+    if (state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly')) return x < 50 ? '#5b1803' : x < 70 ? '#b84a22' : x < 85 ? '#e58b25' : x < 100 ? '#f3d36a' : x <= 115 ? '#78b878' : x <= 150 ? '#55b5a9' : '#2166ac';
     if (state.metric === 'tempNow' || state.metric === 'tempForecast') return x < 30 ? '#e7f0ee' : x < 33 ? '#f3c786' : x < 35 ? '#d6604d' : '#8c2d24';
     if (state.metric === 'tempAnomaly') return x < 0 ? '#a7d8e8' : x < 1 ? '#f5f1d5' : x < 2 ? '#f3c786' : x < 3 ? '#d6604d' : '#8c2d24';
     if (state.metric === 'waterAbsolute') return x < .12 ? '#8c2d24' : x < .2 ? '#d6604d' : x < .3 ? '#f3c786' : x < .4 ? '#a7d88a' : '#075722';
-    if (state.metric === 'waterAnomaly') return x < 70 ? '#8c2d24' : x < 85 ? '#d6604d' : x <= 115 ? '#f3c786' : x <= 130 ? '#a7d88a' : '#075722';
+    if (state.metric === 'waterAnomaly') return x < 70 ? '#8c2d24' : x < 85 ? '#d6604d' : x < 100 ? '#f3d36a' : x <= 115 ? '#78b878' : x <= 130 ? '#55b5a9' : '#2166ac';
     return x === 0 ? '#eaf1e8' : x === 1 ? '#f3c786' : x === 2 ? '#d6604d' : '#8c2d24';
   };
   const style = (r, country) => ({ color: country === 'Indonesia' ? '#0b655c' : '#455c78', weight: country === 'Indonesia' ? 2.8 : 2.6, dashArray: country === 'Malaysia' ? '7 3' : null, fillColor: r ? colour(r) : '#dce7e5', fillOpacity: r ? .72 : .18 });
@@ -113,8 +113,8 @@
   }
   function legend() {
     const labels = state.metric === 'rain30' || (state.metric === 'rainForecast' && state.unit === 'absolute') ? [['#4c1205','0–20'],['#843500','20–50'],['#e66a00','50–100'],['#f9ba14','100–150'],['#ffeb00','150–200'],['#d5f56a','200–300'],['#a7d88a','300–400'],['#63b64d','400–500'],['#0e6a26','>500']]
-      : state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly') ? [['#5b1803','0–30%'],['#bd6b00','31–50%'],['#f3bd0f','51–84%'],['#fff200','85–115%'],['#98cd18','116–150%'],['#2c9b34','151–200%'],['#075722','>200%']]
-      : state.metric === 'waterAnomaly' ? [['#8c2d24','<70%'],['#d6604d','70–84%'],['#f3c786','85–115%'],['#a7d88a','116–130%'],['#075722','>130%']]
+      : state.metric === 'rainAnomaly' || (state.metric === 'rainForecast' && state.unit === 'anomaly') ? [['#5b1803','<50% 严重偏少'],['#b84a22','50–69% 明显偏少'],['#e58b25','70–84% 偏少'],['#f3d36a','85–99% 略偏少'],['#78b878','100–115% 正常至略偏多'],['#55b5a9','116–150% 偏多'],['#2166ac','>150% 显著偏多']]
+      : state.metric === 'waterAnomaly' ? [['#8c2d24','<70% 严重偏干'],['#d6604d','70–84% 明显偏干'],['#f3d36a','85–99% 略偏干'],['#78b878','100–115% 正常'],['#55b5a9','116–130% 偏湿'],['#2166ac','>130% 显著偏湿']]
       : [['#8c2d24','高 / 偏干'],['#d6604d','重点关注'],['#f3c786','轻度异常'],['#a7d88a','正常或偏湿']];
     const extra = state.metric === 'rainForecast' && state.unit === 'absolute' ? '（30日等效累计，mm）' : state.metric === 'waterAbsolute' ? '（m³/m³）' : state.metric === 'waterAnomaly' ? '（相对2017–2025同期常态，100%=常态）' : state.metric.includes('Anomaly') || (state.metric === 'rainForecast' && state.unit === 'anomaly') ? '（相对基准）' : '';
     $('legend').innerHTML = `<b>${title()}${extra}</b><br>${labels.map(x => `<i style="background:${x[0]}"></i>${x[1]}`).join('<br>')}<br><small>灰色：暂无该口径数据</small>`;
