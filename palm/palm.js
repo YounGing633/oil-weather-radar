@@ -15,9 +15,11 @@
       const point = latest.get(row.weather_region_id);
       if (!point) return row;
       const actual = num(point.precipitation_30d_actual_mm ?? point.precip_30d_actual);
-      const normal = num(point.precipitation_30d_normal_mm_2017_2025 ?? point.precipitation_30d_normal_mm ?? point.precip_30d_normal);
-      const ratio = num(point.precipitation_30d_ratio_pct_2017_2025 ?? point.precipitation_30d_ratio_pct);
-      return actual === null && ratio === null ? row : { ...row, rain_30d_mm: actual, rain_30d_ratio_1991_2020: ratio ?? (normal && actual !== null ? actual / normal * 100 : null), weather_snapshot_date: point.date };
+      const normal9120 = num(point.precipitation_30d_normal_mm_1991_2020);
+      const normal1725 = num(point.precipitation_30d_normal_mm_2017_2025 ?? point.precipitation_30d_normal_mm ?? point.precip_30d_normal);
+      const ratio9120 = normal9120 && actual !== null ? actual / normal9120 * 100 : null;
+      const ratio1725 = num(point.precipitation_30d_ratio_pct_2017_2025 ?? point.precipitation_30d_ratio_pct) ?? (normal1725 && actual !== null ? actual / normal1725 * 100 : null);
+      return actual === null && ratio9120 === null && ratio1725 === null ? row : { ...row, rain_30d_mm: actual, rain_30d_ratio_1991_2020: ratio9120 ?? row.rain_30d_ratio_1991_2020, rain_30d_ratio_2017_2025: ratio1725 ?? row.rain_30d_ratio_2017_2025 ?? row.rain_30d_ratio_recent5y, rain_30d_ratio_recent5y: ratio1725 ?? row.rain_30d_ratio_recent5y, weather_snapshot_date: point.date };
     });
   };
   const mm = x => num(x) === null ? '缺测' : `${num(x).toFixed(1)} mm`;
@@ -25,7 +27,7 @@
   const esc = x => String(x ?? '—').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
   const norm = x => String(x || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const getJSON = async file => { const r = await fetch(`${DATA}${file}`, { cache: 'no-store' }); if (!r.ok) throw new Error(file); return r.json(); };
-  const state = { section: 'rain', metric: 'rain30', basis: 'base91', horizon: 'f7', unit: 'absolute', depth: 'root', scope: 'seasia', label: 'production', rows: [], history: {}, dailyHistory: new Map(), map: null, geo: [], labels: [], events: [], selected: null, selectedLayer: null };
+  const state = { section: 'rain', metric: 'rain30', basis: 'base1725', horizon: 'f7', unit: 'absolute', depth: 'root', scope: 'seasia', label: 'production', rows: [], history: {}, dailyHistory: new Map(), map: null, geo: [], labels: [], events: [], selected: null, selectedLayer: null };
   const sectionNames = { risk: '综合风险', rain: '降雨', heat: '热干和极端天气', water: '水分' };
   const metricSets = {
     risk: [['production', '产量'], ['share', '产量占比']],
@@ -41,8 +43,8 @@
     return { days, rain: selected.reduce((s, x) => s + (num(x.precipitation_mm) || 0), 0), temp: selected.length ? selected.reduce((s, x) => s + (num(x.temp_max_c) || 0), 0) / selected.length : null };
   };
   const rainRatio = (r, horizon, basis) => {
-    if (horizon === 'f7') return basis === 'base91' ? num(r.forecast_ratio_1_7d_1991_2020) : num(r.forecast_ratio_1_7d_recent5y);
-    if (horizon === 'f8') return basis === 'base91' ? num(r.forecast_ratio_8_15d_1991_2020) : num(r.forecast_ratio_8_15d_recent5y);
+    if (horizon === 'f7') return basis === 'base9120' ? num(r.forecast_ratio_1_7d_1991_2020) : num(r.forecast_ratio_1_7d_2017_2025 ?? r.forecast_ratio_1_7d_recent5y);
+    if (horizon === 'f8') return basis === 'base9120' ? num(r.forecast_ratio_8_15d_1991_2020) : num(r.forecast_ratio_8_15d_2017_2025 ?? r.forecast_ratio_8_15d_recent5y);
     const a = rainRatio(r, 'f7', basis), b = rainRatio(r, 'f8', basis); return a === null || b === null ? null : (a * 7 + b * 8) / 15;
   };
   const heatScore = r => {
@@ -66,14 +68,14 @@
     if (state.metric === 'production') return num(r.production_tonnes);
     if (state.metric === 'share') return state.scope === 'seasia' ? num(r.production_share_se_asia) : num(r.production_share_country);
     if (state.metric === 'rain30') return num(r.rain_30d_mm);
-    if (state.metric === 'rainAnomaly') return state.basis === 'base91' ? num(r.rain_30d_ratio_1991_2020) : num(r.rain_30d_ratio_recent5y);
+    if (state.metric === 'rainAnomaly') return state.basis === 'base9120' ? num(r.rain_30d_ratio_1991_2020) : num(r.rain_30d_ratio_2017_2025 ?? r.rain_30d_ratio_recent5y);
     if (state.metric === 'rainForecast') { const x = state.unit === 'absolute' ? f.rain / f.days * 30 : rainRatio(r, state.horizon, state.basis); return num(x); }
     if (state.metric === 'tempNow') return num(r._weather?.temp_max_c);
-    if (state.metric === 'tempAnomaly') return state.basis === 'base91' ? num(r.temp_max_anomaly_c) : null;
+    if (state.metric === 'tempAnomaly') return num(r.temp_max_anomaly_c);
     if (state.metric === 'tempForecast') return num(f.temp);
     if (state.metric === 'hotDry') return heatScore(r);
     if (state.metric === 'waterAbsolute') return num(state.depth === 'root' ? r.soil_water_rootzone : r.soil_water_surface);
-    if (state.metric === 'waterAnomaly') return state.basis === 'base91' ? num(state.depth === 'root' ? r.rootzone_percentile : r.surface_percentile) : null;
+    if (state.metric === 'waterAnomaly') return num(state.depth === 'root' ? r.rootzone_percentile : r.surface_percentile);
     if (state.metric === 'dryPressure') return dryScore(r, state.depth);
     return null;
   };
@@ -131,14 +133,14 @@
   function controls() {
     $('layerGroups').innerHTML = Object.entries(sectionNames).map(([k, v]) => `<button class="${state.section === k ? 'active' : ''}" data-section="${k}">${v}</button>`).join('');
     $('layerMetrics').innerHTML = metricSets[state.section].map(([k, v]) => `<button class="${state.metric === k ? 'active' : ''}" data-metric="${k}">${v}</button>`).join('');
-    document.querySelectorAll('[data-section]').forEach(b => b.onclick = () => { state.section = b.dataset.section; state.metric = metricSets[state.section][0][0]; state.basis = 'base91'; state.unit = 'absolute'; updateControlRow(); controls(); updateSummary(); refreshMap(); });
+    document.querySelectorAll('[data-section]').forEach(b => b.onclick = () => { state.section = b.dataset.section; state.metric = metricSets[state.section][0][0]; state.basis = 'base1725'; state.unit = 'absolute'; updateControlRow(); controls(); updateSummary(); refreshMap(); });
     document.querySelectorAll('[data-metric]').forEach(b => b.onclick = () => { state.metric = b.dataset.metric; updateControlRow(); controls(); refreshMap(); });
     document.querySelectorAll('[data-scope]').forEach(b => b.onclick = () => { state.scope = b.dataset.scope; document.querySelectorAll('[data-scope]').forEach(x => x.classList.toggle('active', x === b)); updateSummary(); refreshMap(); });
     document.querySelectorAll('[data-label]').forEach(b => b.onclick = () => { state.label = b.dataset.label; document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x === b)); refreshMap(); });
   }
   function updateControlRow() {
     let html = '';
-    if (state.metric === 'rainAnomaly' || state.metric === 'rainForecast' || state.metric === 'tempAnomaly' || state.metric === 'waterAnomaly') html += `<b>比较基准</b>${controlButton('2017–2025', 'basis', 'base91', state.basis === 'base91')}${controlButton('近五年', 'basis', 'base5', state.basis === 'base5', ['tempAnomaly','waterAnomaly'].includes(state.metric))}`;
+    if (state.metric === 'rainAnomaly' || state.metric === 'rainForecast') html += `<b>比较基准</b>${controlButton('1991–2020', 'basis', 'base9120', state.basis === 'base9120')}${controlButton('2017–2025', 'basis', 'base1725', state.basis === 'base1725')}`;
     if (state.metric === 'rainForecast' || state.metric === 'tempForecast') html += `<b>期限</b>${controlButton('1–7日', 'horizon', 'f7', state.horizon === 'f7')}${controlButton('8–15日', 'horizon', 'f8', state.horizon === 'f8')}${controlButton('1–15日', 'horizon', 'f15', state.horizon === 'f15')}`;
     if (state.metric === 'rainForecast') html += `<b>显示</b>${controlButton('绝对值（30日等效）', 'unit', 'absolute', state.unit === 'absolute')}${controlButton('距平', 'unit', 'anomaly', state.unit === 'anomaly')}`;
     if (state.section === 'water') html += `<b>土层</b>${controlButton('根区（约0–100cm）', 'depth', 'root', state.depth === 'root')}${controlButton('表层（约0–7cm）', 'depth', 'surface', state.depth === 'surface')}`;
