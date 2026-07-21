@@ -1,0 +1,13 @@
+{
+  "display_name": "豆油 (soybean oil)",
+  "crop": "大豆 (soybean)",
+  "map_crop": "soybean",
+  "countries": [
+    "United States",
+    "Brazil",
+    "Argentina"
+  ],
+  "default_country": "United States",
+  "stage_type": "annual",
+  "production_label": "大豆产量，天气暴露代理，非成品豆油 (weather exposure proxy)"
+}

@@ -87,6 +87,15 @@
     document.documentElement.style.setProperty('--accent', crop.color);
     $('pageTitle').textContent = `${crop.name}产区气象与供应风险`; $('pageSubtitle').textContent = crop.en; document.title = `${crop.name}产区气象与供应风险`;
     document.querySelector(`[data-crop-link="${key}"]`)?.classList.add('active');
+    const routeKey = ({ rapeseed_canola: 'rapeseed' }[key] || key);
+    const forward = new URLSearchParams(location.search);
+    forward.set('commodity', routeKey); forward.set('view', 'monitoring');
+    const country = forward.get('country');
+    const nav = document.createElement('nav');
+    nav.className = 'system-nav dual-view-nav';
+    nav.setAttribute('aria-label', '油种二级导航');
+    nav.innerHTML = `<a href="../${routeKey}/monitoring/?${forward}">综合监测</a><a class="active" href="../${routeKey}/map/?${forward}">产区地图</a>`;
+    document.querySelector('header')?.appendChild(nav);
   }
 
   function weightedShare(rows, test) {

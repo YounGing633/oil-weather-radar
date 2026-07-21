@@ -1,0 +1,12 @@
+{
+  "display_name": "棕榈油 (palm oil)",
+  "crop": "油棕 (oil palm)",
+  "map_crop": "palm",
+  "countries": [
+    "Indonesia",
+    "Malaysia"
+  ],
+  "default_country": "Indonesia",
+  "stage_type": "perennial",
+  "production_label": "油棕鲜果串/棕榈油生产代理 (weather exposure proxy)"
+}

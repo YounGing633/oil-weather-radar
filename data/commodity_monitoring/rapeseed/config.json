@@ -1,0 +1,13 @@
+{
+  "display_name": "菜油 (rapeseed oil)",
+  "crop": "菜籽 (rapeseed)",
+  "map_crop": "rapeseed_canola",
+  "countries": [
+    "Canada",
+    "EU",
+    "Australia"
+  ],
+  "default_country": "Canada",
+  "stage_type": "annual",
+  "production_label": "菜籽/油菜籽产量，天气暴露代理，非成品菜油 (weather exposure proxy)"
+}

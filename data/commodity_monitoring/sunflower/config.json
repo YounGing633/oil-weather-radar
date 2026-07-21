@@ -1,0 +1,13 @@
+{
+  "display_name": "葵花油 (sunflower oil)",
+  "crop": "葵花籽 (sunflower seed)",
+  "map_crop": "sunflower",
+  "countries": [
+    "Ukraine",
+    "Russia",
+    "EU"
+  ],
+  "default_country": "Russia",
+  "stage_type": "annual",
+  "production_label": "葵花籽产量，天气暴露代理，非成品葵花油 (weather exposure proxy)"
+}

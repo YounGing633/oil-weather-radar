@@ -1,0 +1,8 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Commodity monitoring static payload",
+  "type":"object",
+  "required":["meta","countries","default_country","country_data"],
+  "properties":{"meta":{"type":"object","required":["commodity","display_name","report_date","observation_end_date","data_version"]},"countries":{"type":"array","items":{"type":"string"}},"default_country":{"type":"string"},"country_data":{"type":"object","additionalProperties":{"type":"object","properties":{"summary":{"type":"object"},"impact_assessment":{"type":"object"},"crop_stage":{"type":"object"},"weather_charts":{"type":"array"},"official_metrics":{"type":"array"},"institution_forecasts":{"type":"array"},"regions":{"type":"array"},"map_targets":{"type":"array"},"sources":{"type":"array"},"quality_flags":{"type":"array"}}}}},
+  "definitions":{"metric":{"type":"object","properties":{"value":{},"unit":{"type":"string"},"commodity":{"type":"string"},"crop":{"type":"string"},"country":{"type":"string"},"region":{"type":"string"},"metric":{"type":"string"},"period_start":{"type":["string","null"]},"period_end":{"type":["string","null"]},"observation_date":{"type":["string","null"]},"issue_date":{"type":["string","null"]},"source":{"type":"string"},"source_scope":{"type":"string"},"source_url_or_document":{"type":["string","null"]},"data_type":{"enum":["observation","official_actual","official_forecast","weather_model_forecast","third_party_estimate","derived_indicator","internal_risk_assessment"]},"is_forecast":{"type":"boolean"},"is_official":{"type":"boolean"},"calculation_method":{"type":"string"},"confidence":{"type":["string","null"]},"status":{"type":"string"}}}}
+}

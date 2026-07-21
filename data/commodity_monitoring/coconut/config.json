@@ -1,0 +1,12 @@
+{
+  "display_name": "椰子油 (coconut oil)",
+  "crop": "椰子 (coconut)",
+  "map_crop": "coconut",
+  "countries": [
+    "Philippines",
+    "Indonesia"
+  ],
+  "default_country": "Philippines",
+  "stage_type": "perennial",
+  "production_label": "椰子产量，天气暴露代理，非成品椰子油 (weather exposure proxy)"
+}
