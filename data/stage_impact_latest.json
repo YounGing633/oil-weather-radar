@@ -435,9 +435,9 @@
     "weather_region_id": "rapeseed_canola::Canada::Ontario::admin1::rapeseed_canola",
     "current_month": 7,
     "matched_growth_stage": "开花/结荚/灌浆",
-    "matched_weather_condition": "高温干旱",
-    "impact_cn": "授粉受损、结籽率下降、粒重和含油率受压",
-    "web_message_cn": "当前处于加拿大菜籽开花/结荚/灌浆敏感窗口，高温或干旱可能影响授粉和结籽。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温和、土壤水分良好，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚/灌浆阶段，天气条件基本正常。",
     "rule_id": "CA_RC_02"
   },
   {
@@ -1659,18 +1659,18 @@
     "weather_region_id": "coconut::Philippines::NEGROS ISLAND REGION::admin1::椰子油",
     "current_month": 7,
     "matched_growth_stage": "全年生长/干旱敏感期",
-    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
-    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
-    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
     "rule_id": "PH_COCO_01"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VII (CENTRAL VISAYAS)::admin1::椰子油",
     "current_month": 7,
     "matched_growth_stage": "全年生长/干旱敏感期",
-    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
-    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
-    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
     "rule_id": "PH_COCO_01"
   },
   {
@@ -1803,9 +1803,9 @@
     "weather_region_id": "rapeseed_canola::Russia::Kaluga Oblast::admin1::菜油",
     "current_month": 7,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "高温干旱或连续降雨",
-    "impact_cn": "粒重和含油率下降；收获延误",
-    "web_message_cn": "油菜灌浆期高温干旱可能影响籽粒充实和含油率；收获期连续降雨可能延误收获。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前适度干燥、温度适中，暂无异常天气影响。",
+    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
     "rule_id": "RU_RP_03"
   },
   {
@@ -1839,9 +1839,9 @@
     "weather_region_id": "rapeseed_canola::Russia::Krasnoyarsk Krai::admin1::菜油",
     "current_month": 7,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前适度干燥、温度适中，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱或连续降雨",
+    "impact_cn": "粒重和含油率下降；收获延误",
+    "web_message_cn": "油菜灌浆期高温干旱可能影响籽粒充实和含油率；收获期连续降雨可能延误收获。",
     "rule_id": "RU_RP_03"
   },
   {
@@ -1902,9 +1902,9 @@
     "weather_region_id": "rapeseed_canola::Russia::Novosibirsk Oblast::admin1::菜油",
     "current_month": 7,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前适度干燥、温度适中，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱或连续降雨",
+    "impact_cn": "粒重和含油率下降；收获延误",
+    "web_message_cn": "油菜灌浆期高温干旱可能影响籽粒充实和含油率；收获期连续降雨可能延误收获。",
     "rule_id": "RU_RP_03"
   },
   {
@@ -1920,9 +1920,9 @@
     "weather_region_id": "rapeseed_canola::Russia::Orenburg Oblast::admin1::菜油",
     "current_month": 7,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前适度干燥、温度适中，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱或连续降雨",
+    "impact_cn": "粒重和含油率下降；收获延误",
+    "web_message_cn": "油菜灌浆期高温干旱可能影响籽粒充实和含油率；收获期连续降雨可能延误收获。",
     "rule_id": "RU_RP_03"
   },
   {
@@ -1947,9 +1947,9 @@
     "weather_region_id": "rapeseed_canola::Russia::Perm Krai::admin1::菜油",
     "current_month": 7,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前适度干燥、温度适中，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱或连续降雨",
+    "impact_cn": "粒重和含油率下降；收获延误",
+    "web_message_cn": "油菜灌浆期高温干旱可能影响籽粒充实和含油率；收获期连续降雨可能延误收获。",
     "rule_id": "RU_RP_03"
   },
   {
@@ -1974,9 +1974,9 @@
     "weather_region_id": "rapeseed_canola::Russia::Republic of Bashkortostan::admin1::菜油",
     "current_month": 7,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前适度干燥、温度适中，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱或连续降雨",
+    "impact_cn": "粒重和含油率下降；收获延误",
+    "web_message_cn": "油菜灌浆期高温干旱可能影响籽粒充实和含油率；收获期连续降雨可能延误收获。",
     "rule_id": "RU_RP_03"
   },
   {
