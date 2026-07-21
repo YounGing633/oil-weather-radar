@@ -127,6 +127,14 @@ header h1 {
   background: #fff;
   color: #202733;
 }
+.primary-nav .nav-directory {
+  flex: 0 0 auto;
+  padding: 5px 4px 5px 0;
+  color: #8f99a7;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
 .toolbar {
   flex: 0 0 auto;
   display: flex;
@@ -1126,14 +1134,14 @@ header h1 {
   </header>
 
   <nav class="primary-nav" aria-label="专题导览">
-    <a class="active" data-main-nav="overview" href="./">总览</a>
+    <span class="nav-directory">目录</span>
     <a data-main-nav="climate" href="?view=climate">海气背景</a>
-    <a href="./palm/">棕榈油</a>
-    <a href="./oil/?crop=soybean">豆油</a>
-    <a href="./oil/?crop=rapeseed_canola">菜油</a>
-    <a href="./oil/?crop=sunflower">葵油</a>
-    <a href="./oil/?crop=coconut">椰子油</a>
-    <a href="./procurement/">采购风险雷达</a>
+    <a class="active" data-main-nav="overview" href="./">总览</a>
+    <a href="./palm/monitoring/">棕榈油</a>
+    <a href="./soybean/monitoring/">豆油</a>
+    <a href="./rapeseed/monitoring/">菜油</a>
+    <a href="./sunflower/monitoring/">葵油</a>
+    <a href="./coconut/monitoring/">椰子油</a>
   </nav>
 
   <div class="toolbar">
