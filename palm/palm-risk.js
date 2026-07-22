@@ -9,7 +9,7 @@
     return actual !== null && normal !== null && normal > 0 ? actual / normal * 100 : null;
   };
   const percentile = (row, depth = 'root') => first(depth === 'root' ? row.rootzone_percentile : row.surface_percentile, depth === 'root' ? row.rootzone_sm_percentile_doy_7d : row.surface_sm_percentile_doy_7d);
-  const rainRatio = (r, basis = 'base1725') => first(basis === 'base9120' ? r.rain_30d_ratio_1991_2020 : r.rain_30d_ratio_2017_2025, r.rain_30d_ratio_recent5y);
+  const rainRatio = (r) => first(r.rain_30d_ratio_2017_2025, r.rain_30d_ratio_recent5y);
   function classifyPalmRainState(r, context = {}) {
     const ratio = rainRatio(r, context.basis), amount = first(r.rain_30d_mm), dryDays = first(r.current_dry_spell_days), extreme = first(r.extreme_rain_days_30d), future = first(r.forecast_ratio_1_7d_2017_2025, r.forecast_ratio_1_7d_recent5y);
     if (ratio === null && amount === null && dryDays === null && extreme === null) return { level: null, label: '证据不足', direction: 'mixed', evidence: [], confidence: 'insufficient' };

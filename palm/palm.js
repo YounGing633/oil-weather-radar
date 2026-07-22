@@ -15,11 +15,9 @@
       const point = latest.get(row.weather_region_id);
       if (!point) return row;
       const actual = num(point.precipitation_30d_actual_mm ?? point.precip_30d_actual);
-      const normal9120 = num(point.precipitation_30d_normal_mm_1991_2020);
-      const normal1725 = num(point.precipitation_30d_normal_mm_2017_2025 ?? point.precipitation_30d_normal_mm ?? point.precip_30d_normal);
-      const ratio9120 = normal9120 && actual !== null ? actual / normal9120 * 100 : null;
-      const ratio1725 = num(point.precipitation_30d_ratio_pct_2017_2025 ?? point.precipitation_30d_ratio_pct) ?? (normal1725 && actual !== null ? actual / normal1725 * 100 : null);
-      return actual === null && ratio9120 === null && ratio1725 === null ? row : { ...row, rain_30d_mm: actual, rain_30d_ratio_1991_2020: ratio9120 ?? row.rain_30d_ratio_1991_2020, rain_30d_ratio_2017_2025: ratio1725 ?? row.rain_30d_ratio_2017_2025 ?? row.rain_30d_ratio_recent5y, rain_30d_ratio_recent5y: ratio1725 ?? row.rain_30d_ratio_recent5y, weather_snapshot_date: point.date };
+    const normal1725 = num(point.precipitation_30d_normal_mm_2017_2025 ?? point.precipitation_30d_normal_mm ?? point.precip_30d_normal);
+    const ratio1725 = num(point.precipitation_30d_ratio_pct_2017_2025 ?? point.precipitation_30d_ratio_pct) ?? (normal1725 && actual !== null ? actual / normal1725 * 100 : null);
+    return actual === null && ratio1725 === null ? row : { ...row, rain_30d_mm: actual, rain_30d_ratio_2017_2025: ratio1725 ?? row.rain_30d_ratio_2017_2025 ?? row.rain_30d_ratio_recent5y, rain_30d_ratio_recent5y: ratio1725 ?? row.rain_30d_ratio_recent5y, weather_snapshot_date: point.date };
     });
   };
   const mm = x => num(x) === null ? '缺测' : `${num(x).toFixed(1)} mm`;
@@ -43,12 +41,12 @@
     return { days, rain: selected.reduce((s, x) => s + (num(x.precipitation_mm) || 0), 0), temp: selected.length ? selected.reduce((s, x) => s + (num(x.temp_max_c) || 0), 0) / selected.length : null };
   };
   const rainRatio = (r, horizon, basis) => {
-    if (horizon === 'f7') return basis === 'base9120' ? num(r.forecast_ratio_1_7d_1991_2020) : num(r.forecast_ratio_1_7d_2017_2025 ?? r.forecast_ratio_1_7d_recent5y);
-    if (horizon === 'f8') return basis === 'base9120' ? num(r.forecast_ratio_8_15d_1991_2020) : num(r.forecast_ratio_8_15d_2017_2025 ?? r.forecast_ratio_8_15d_recent5y);
+    if (horizon === 'f7') return num(r.forecast_ratio_1_7d_2017_2025 ?? r.forecast_ratio_1_7d_recent5y);
+    if (horizon === 'f8') return num(r.forecast_ratio_8_15d_2017_2025 ?? r.forecast_ratio_8_15d_recent5y);
     const a = rainRatio(r, 'f7', basis), b = rainRatio(r, 'f8', basis); return a === null || b === null ? null : (a * 7 + b * 8) / 15;
   };
   const heatScore = r => {
-    const heat = num(r.temp_max_anomaly_c), soil = num(r.rootzone_percentile), rain = num(r.rain_30d_ratio_1991_2020);
+    const heat = num(r.temp_max_anomaly_c), soil = num(r.rootzone_percentile), rain = num(r.rain_30d_ratio_2017_2025);
     if (heat === null || heat < 2 || (soil === null && rain === null)) return 0;
     const drySoil = soil !== null && soil < 30, dryRain = rain !== null && rain < 85;
     if (!drySoil && !dryRain) return 0;
@@ -76,7 +74,7 @@
     return null;
   };
   const dryScore = (r, depth) => {
-    const soil = num(depth === 'root' ? r.rootzone_percentile : r.surface_percentile), rain = num(r.rain_30d_ratio_1991_2020);
+    const soil = num(depth === 'root' ? r.rootzone_percentile : r.surface_percentile), rain = num(r.rain_30d_ratio_2017_2025);
     if (soil === null || soil >= 30) return 0;
     if (soil < 10 && rain !== null && rain < 70) return 3;
     if (soil < 20 && rain !== null && rain < 85) return 2;
@@ -88,7 +86,7 @@
     if (state.metric === 'production') return num(r.production_tonnes);
     if (state.metric === 'share') return state.scope === 'seasia' ? num(r.production_share_se_asia) : num(r.production_share_country);
     if (state.metric === 'rain30') return num(r.rain_30d_mm);
-    if (state.metric === 'rainAnomaly') return state.basis === 'base9120' ? num(r.rain_30d_ratio_1991_2020) : num(r.rain_30d_ratio_2017_2025 ?? r.rain_30d_ratio_recent5y);
+    if (state.metric === 'rainAnomaly') return num(r.rain_30d_ratio_2017_2025 ?? r.rain_30d_ratio_recent5y);
     if (state.metric === 'rainForecast') { const x = state.unit === 'absolute' ? f.rain / f.days * 30 : rainRatio(r, state.horizon, state.basis); return num(x); }
     if (state.metric === 'hotDry') return window.PalmRisk?.classifyPalmHeatDryState(r, { basis: state.basis }).level;
     if (state.metric === 'vpd') return num(r.vpd_percentile_30d ?? r.vpd_percentile_14d);
@@ -113,7 +111,7 @@
   function updateSummary() {
     const rows = scoped(), total = rows.reduce((s, r) => s + (num(r.production_tonnes) || 0), 0), share = fn => total ? rows.reduce((s, r) => s + (fn(r) ? num(r.production_tonnes) || 0 : 0), 0) / total * 100 : null;
     let cards;
-    if (state.section === 'rain') cards = [['近30日低降雨（<100mm）', share(r => num(r.rain_30d_mm) < 100)], ['低于常年（<85%）', share(r => num(r.rain_30d_ratio_1991_2020) < 85)], ['极端降雨事件', share(r => num(r.extreme_rain_days_30d) > 0)], ['连续无雨≥11天', share(r => num(r.current_dry_spell_days) >= 11)]];
+    if (state.section === 'rain') cards = [['近30日低降雨（<100mm）', share(r => num(r.rain_30d_mm) < 100)], ['低于2017–2025同期（<85%）', share(r => num(r.rain_30d_ratio_2017_2025) < 85)], ['极端降雨事件', share(r => num(r.extreme_rain_days_30d) > 0)], ['连续无雨≥11天', share(r => num(r.current_dry_spell_days) >= 11)]];
     else if (state.section === 'heat') { const hs = r => window.PalmRisk.classifyPalmHeatDryState(r, { basis: state.basis }), hasVpd = rows.some(r => num(r.vpd_percentile_30d ?? r.vpd_percentile_14d) !== null); cards = [[hasVpd ? 'VPD≥P80' : 'VPD数据暂未接入', hasVpd ? share(r => num(r.vpd_percentile_30d ?? r.vpd_percentile_14d) >= 80) : null], ['热干状态≥1级', share(r => hs(r).level >= 1)], ['热干状态≥2级', share(r => hs(r).level >= 2)], ['热干状态≥3级', share(r => hs(r).level >= 3)]]; }
     else if (state.section === 'water') { const ws = (r, d) => window.PalmRisk.classifyPalmWaterState(r, d); cards = [['根区百分位<P30', share(r => ws(r, 'root').percentile < 30)], ['根区相对常态<95%', share(r => ws(r, 'root').relative < 95)], ['水分状态≥2级', share(r => ws(r, 'root').level >= 2)], ['水分状态≥3级', share(r => ws(r, 'root').level >= 3)]]; }
     else { const rs = r => window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rain = r => rs(r).moduleStates.rain, heat = r => rs(r).moduleStates.heatDry, water = r => rs(r).moduleStates.water; cards = [['综合风险≥2级', share(r => rs(r).level >= 2)], ['综合风险≥3级', share(r => rs(r).level >= 3)], ['降雨—水分干旱共振', share(r => rain(r).direction === 'dry' && water(r).direction === 'dry' && rain(r).level >= 2 && water(r).level >= 2)], ['热干—水分共振', share(r => heat(r).level >= 2 && water(r).direction === 'dry' && water(r).level >= 2)]]; }
@@ -170,7 +168,7 @@
   }
   function updateControlRow() {
     let html = '';
-    if (state.metric === 'rainAnomaly' || state.metric === 'rainForecast') html += `<b>比较基准</b>${controlButton('1991–2020', 'basis', 'base9120', state.basis === 'base9120')}${controlButton('2017–2025', 'basis', 'base1725', state.basis === 'base1725')}`;
+    if (state.metric === 'rainAnomaly' || state.metric === 'rainForecast') html += `<b>比较基准</b><span class="control-hint">2017–2025（Open‑Meteo ECMWF IFS 同源）</span>`;
     if (state.metric === 'rainForecast' || state.metric === 'tempForecast') html += `<b>期限</b>${controlButton('1–7日', 'horizon', 'f7', state.horizon === 'f7')}${controlButton('8–15日', 'horizon', 'f8', state.horizon === 'f8')}${controlButton('1–15日', 'horizon', 'f15', state.horizon === 'f15')}`;
     if (state.metric === 'rainForecast') html += `<b>显示</b>${controlButton('绝对值（30日等效）', 'unit', 'absolute', state.unit === 'absolute')}${controlButton('距平', 'unit', 'anomaly', state.unit === 'anomaly')}`;
     const hints = { hotDry: '仅当“高温距平≥2℃”且“根区偏干或降雨偏少”同时出现时才标记。', waterAnomaly: '相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。' };
@@ -195,7 +193,7 @@
     const rainEvents = `极端降雨日 ${num(r.extreme_rain_days_30d) ?? '—'}；连续无雨 ${num(r.current_dry_spell_days) ?? '—'} 天`;
     const heatText = heat ? ['','轻度热干：高温与一项偏干信号并存','重点热干：高温、根区偏干及降雨偏少并存','严重热干：高温≥3℃、根区P<20且降雨偏少'][heat] : '未触发热干：需要高温（距平≥2℃）与偏干条件同时成立。';
     const waterText = `根区：${num(r.soil_water_rootzone) === null ? '缺测' : `${num(r.soil_water_rootzone).toFixed(3)} m³/m³`}（相对常态 ${pc(waterRelative(r, 'root'))}）；表层：${num(r.soil_water_surface) === null ? '缺测' : `${num(r.soil_water_surface).toFixed(3)} m³/m³`}（相对常态 ${pc(waterRelative(r, 'surface'))}）。`;
-    $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${COUNTRY[r.country]} · 点击地图图层可切换指标；雨/旱/热圆点是事件提示，不是另一套底图。</p><h3>当前风险</h3><div class="forecast-brief">${esc(r.risk_reason_cn || '暂无风险说明')}<br>近30日降雨：${mm(r.rain_30d_mm)}（2017–2025同源同期 ${pc(r.rain_30d_ratio_1991_2020)}；近五年 ${pc(r.rain_30d_ratio_recent5y)}）<br>${rainEvents}</div><h3>热干和极端天气</h3><div class="forecast-brief">最高温：${num(r._weather?.temp_max_c) === null ? '缺测' : `${num(r._weather.temp_max_c).toFixed(1)}℃`}；最高温距平：${num(r.temp_max_anomaly_c) === null ? '缺测' : `${num(r.temp_max_anomaly_c).toFixed(1)}℃`}。<br>${heatText}</div><h3>水分</h3><div class="forecast-brief">${waterText}<br>相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。</div><h3>数据口径</h3><div class="forecast-brief">降雨、温度、近30日窗口、历史基准和预报统一使用 Open‑Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；历史同期基准为2017–2025。</div>`;
+    $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${COUNTRY[r.country]} · 点击地图图层可切换指标；雨/旱/热圆点是事件提示，不是另一套底图。</p><h3>当前风险</h3><div class="forecast-brief">${esc(r.risk_reason_cn || '暂无风险说明')}<br>近30日降雨：${mm(r.rain_30d_mm)}（2017–2025同源同期 ${pc(r.rain_30d_ratio_2017_2025)}）<br>${rainEvents}</div><h3>热干和极端天气</h3><div class="forecast-brief">最高温：${num(r._weather?.temp_max_c) === null ? '缺测' : `${num(r._weather.temp_max_c).toFixed(1)}℃`}；最高温距平：${num(r.temp_max_anomaly_c) === null ? '缺测' : `${num(r.temp_max_anomaly_c).toFixed(1)}℃`}。<br>${heatText}</div><h3>水分</h3><div class="forecast-brief">${waterText}<br>相对常态 = 实际土壤水分 ÷ 2017–2025同期均值 × 100%；100%为常态。</div><h3>数据口径</h3><div class="forecast-brief">降雨、温度、近30日窗口、历史基准和预报统一使用 Open‑Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；历史同期基准为2017–2025。</div>`;
   }
   async function buildMap() {
     state.map = L.map('map', { minZoom: 3, maxZoom: 9 }).setView([1.5, 108], 4); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(state.map);

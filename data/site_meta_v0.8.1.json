@@ -1,14 +1,13 @@
 [
   {
-    "generated_at": "2026-07-22 14:36:14",
+    "generated_at": "2026-07-22 17:33:26",
     "version": "v1.0-i1",
-    "baseline_period": "1991-2020 / 2017-2025 selectable",
-    "baseline_method": "NASA POWER same-calendar-day selectable weather baselines",
+    "baseline_period": "2017-2025",
+    "baseline_method": "Open-Meteo ECMWF IFS same-calendar-day weather baseline",
     "latest_observation_date": "2026-07-21",
-    "observation_data_note": "Observations prioritize Open-Meteo ECMWF IFS; weather normals are selectable NASA POWER 1991-2020 or 2017-2025 same-calendar-day references",
+    "observation_data_note": "Observations and weather normals use Open-Meteo ECMWF IFS; 2017-2025 is the same-calendar-day reference period",
     "data_sources": [
-      "Open-Meteo ECMWF IFS (observations + forecast)",
-      "NASA POWER (1991-2020 / 2017-2025 selectable weather baselines)"
+      "Open-Meteo ECMWF IFS (observations + forecast + 2017-2025 baseline)"
     ],
     "baseline_ready_points": 200,
     "baseline_pending_points": 94,
@@ -43,7 +42,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 89,
-    "run_id": "daily_export_20260722_143613"
+    "total_alerts": 85,
+    "run_id": "daily_export_20260722_173325"
   }
 ]
