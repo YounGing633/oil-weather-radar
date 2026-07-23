@@ -63,7 +63,7 @@
     "temp_max_16d_avg": 30.31,
     "rain_trend_label_cn": "降雨持平",
     "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "降雨偏少状态有望缓解，未来7天高温维持"
+    "forecast_summary_cn": "降雨持平，未来7天高温维持"
   },
   {
     "weather_region_id": "coconut::Indonesia::Jawa Barat::admin1::椰子油",
@@ -492,7 +492,7 @@
     "temp_max_16d_avg": 27.83,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XII (SOCCSKSARGEN)::admin1::椰子油",
@@ -503,7 +503,7 @@
     "temp_max_16d_avg": 28.36,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XIII (CARAGA)::admin1::椰子油",
@@ -591,7 +591,7 @@
     "temp_max_16d_avg": 30.31,
     "rain_trend_label_cn": "降雨持平",
     "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "降雨偏少状态有望缓解，未来7天高温维持"
+    "forecast_summary_cn": "降雨持平，未来7天高温维持"
   },
   {
     "weather_region_id": "palm::Indonesia::Jawa_Barat::admin1::crude_palm_oil",
@@ -1075,7 +1075,7 @@
     "temp_max_16d_avg": 20.2,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "降雨偏少状态有望缓解，气温持平"
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Saskatchewan::admin1::rapeseed_canola",
@@ -1647,7 +1647,7 @@
     "temp_max_16d_avg": 28.27,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Sverdlovsk Oblast::admin1::菜油",
@@ -2351,7 +2351,7 @@
     "temp_max_16d_avg": 30.46,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
+    "forecast_summary_cn": "降雨偏少状态有望缓解，未来7天高温维持"
   },
   {
     "weather_region_id": "soybean::United_States::GEORGIA::admin1::soybean",
@@ -2494,7 +2494,7 @@
     "temp_max_16d_avg": 29.29,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
   },
   {
     "weather_region_id": "soybean::United_States::NEW_JERSEY::admin1::soybean",
@@ -2516,7 +2516,7 @@
     "temp_max_16d_avg": 25.37,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+    "forecast_summary_cn": "降雨偏少状态有望缓解，气温持平"
   },
   {
     "weather_region_id": "soybean::United_States::NORTH_CAROLINA::admin1::soybean",
