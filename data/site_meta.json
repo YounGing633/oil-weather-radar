@@ -1,6 +1,6 @@
 [
   {
-    "generated_at": "2026-07-23 14:29:00",
+    "generated_at": "2026-07-23 15:29:30",
     "version": "v1.0-i1",
     "baseline_period": "2017-2025",
     "baseline_method": "Open-Meteo ECMWF IFS same-calendar-day weather baseline",
@@ -43,6 +43,6 @@
       "sunflower"
     ],
     "total_alerts": 120,
-    "run_id": "daily_export_20260723_142859"
+    "run_id": "daily_export_20260723_152930"
   }
 ]

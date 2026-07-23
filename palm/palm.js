@@ -113,7 +113,12 @@
     let cards;
     if (state.section === 'rain') cards = [['近30日低降雨（<100mm）', share(r => num(r.rain_30d_mm) < 100)], ['低于2017–2025同期（<85%）', share(r => num(r.rain_30d_ratio_2017_2025) < 85)], ['极端降雨事件', share(r => num(r.extreme_rain_days_30d) > 0)], ['连续无雨≥11天', share(r => num(r.current_dry_spell_days) >= 11)]];
     else if (state.section === 'heat') { const hs = r => window.PalmRisk.classifyPalmHeatDryState(r, { basis: state.basis }), hasVpd = rows.some(r => num(r.vpd_percentile_30d ?? r.vpd_percentile_14d) !== null); cards = [[hasVpd ? 'VPD≥P80' : 'VPD数据暂未接入', hasVpd ? share(r => num(r.vpd_percentile_30d ?? r.vpd_percentile_14d) >= 80) : null], ['热干状态≥1级', share(r => hs(r).level >= 1)], ['热干状态≥2级', share(r => hs(r).level >= 2)], ['热干状态≥3级', share(r => hs(r).level >= 3)]]; }
-    else if (state.section === 'water') { const ws = (r, d) => window.PalmRisk.classifyPalmWaterState(r, d); cards = [['根区百分位<P30', share(r => ws(r, 'root').percentile < 30)], ['根区相对常态<95%', share(r => ws(r, 'root').relative < 95)], ['水分状态≥2级', share(r => ws(r, 'root').level >= 2)], ['水分状态≥3级', share(r => ws(r, 'root').level >= 3)]]; }
+    else if (state.section === 'water') {
+      const ws = (r, d) => window.PalmRisk.classifyPalmWaterState(r, d);
+      const rootPercentileBelow30 = r => { const p = ws(r, 'root').percentile; return p !== null && p < 30; };
+      const rootRelativeBelow95 = r => { const p = ws(r, 'root').relative; return p !== null && p < 95; };
+      cards = [['根区百分位<P30', share(rootPercentileBelow30)], ['根区相对常态<95%', share(rootRelativeBelow95)], ['水分状态≥2级', share(r => ws(r, 'root').level >= 2)], ['水分状态≥3级', share(r => ws(r, 'root').level >= 3)]];
+    }
     else { const rs = r => window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rain = r => rs(r).moduleStates.rain, heat = r => rs(r).moduleStates.heatDry, water = r => rs(r).moduleStates.water; cards = [['综合风险≥2级', share(r => rs(r).level >= 2)], ['综合风险≥3级', share(r => rs(r).level >= 3)], ['降雨—水分干旱共振', share(r => rain(r).direction === 'dry' && water(r).direction === 'dry' && rain(r).level >= 2 && water(r).level >= 2)], ['热干—水分共振', share(r => heat(r).level >= 2 && water(r).direction === 'dry' && water(r).level >= 2)]]; }
     $('summaryTitle').textContent = `${sectionNames[state.section]}暴露概览`; $('metrics').innerHTML = cards.map(c => `<article class="card"><span>${c[0]}</span><strong>${pc(c[1])}</strong><small>占${state.scope === 'seasia' ? '东南亚' : '本国'}产量</small></article>`).join('');
   }
