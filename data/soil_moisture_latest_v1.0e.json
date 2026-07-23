@@ -721,8 +721,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "coconut::Indonesia::national::椰子油",
@@ -1921,8 +1921,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "palm::Malaysia::Johor::admin1::oil_palm",
@@ -2646,8 +2646,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Altai Krai::admin1::菜油",
@@ -3246,8 +3246,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P99）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Oryol Oblast::admin1::菜油",
@@ -4221,8 +4221,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::MONTANA::admin1::canola",
@@ -4246,8 +4246,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "rapeseed_canola::United_States::NORTH_DAKOTA::admin1::canola",
@@ -4821,8 +4821,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
@@ -5046,8 +5046,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "soybean::Canada::Manitoba::admin1::soybean",
@@ -5221,8 +5221,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "soybean::Italy::national::豆油",
@@ -5346,8 +5346,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P19），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "soybean::United_States::GEORGIA::admin1::soybean",
