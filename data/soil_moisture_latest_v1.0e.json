@@ -5371,8 +5371,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "soybean::United_States::ILLINOIS::admin1::soybean",
@@ -5396,8 +5396,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "soybean::United_States::INDIANA::admin1::soybean",
@@ -5596,8 +5596,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "soybean::United_States::MISSISSIPPI::admin1::soybean",
@@ -5621,8 +5621,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "soybean::United_States::MISSOURI::admin1::soybean",
@@ -5671,8 +5671,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P20），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "soybean::United_States::NEW_JERSEY::admin1::soybean",
@@ -5721,8 +5721,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P12），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "soybean::United_States::NORTH_CAROLINA::admin1::soybean",
@@ -5796,8 +5796,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-13"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "soybean::United_States::OKLAHOMA::admin1::soybean",
