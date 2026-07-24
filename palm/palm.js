@@ -184,13 +184,14 @@
   function regionDetail(r) {
     state.selected = r; refreshMap();
     const supply = window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rainState = supply.moduleStates.rain, heatState = supply.moduleStates.heatDry, waterState = supply.moduleStates.water;
-    const conclusion = `<section class="detail-chart-section"><h3>当前供应风险</h3><div class="forecast-brief"><b>综合供应风险：${supply.level === null ? '暂无足够数据' : `${supply.level}级 ${supply.label}`}</b><br>降雨：${rainState.level === null ? '证据不足' : `${rainState.level}级 ${rainState.direction}`}；热干：${heatState.level === null ? '证据不足' : `${heatState.level}级 ${heatState.label}`}；水分：${waterState.level === null ? '证据不足' : `${waterState.level}级 ${waterState.direction}`}。<br>${esc(supply.adjustments.join('；') || supply.evidence.slice(0, 2).join('；') || '当前未发现明确共振信号。')}<br><small>未来修复可能：${rainState.repairSignal === 'repair' ? '未来降雨存在一定修复信号。' : rainState.repairSignal === 'no_relief' ? '未来降雨仍偏少，短期修复有限。' : '预报或常态基准不足，暂不判断。'}</small></div></section>`;
+    const spatialText = r.spatial_note_cn || '当前天气值为空间代表值；作物种植区加权聚合完成前，不代表全行政区平均状况。';
+    const conclusion = `<section class="detail-chart-section"><h3>代表点监测提示（非区域风险）</h3><div class="forecast-brief"><b>代表点综合信号：${supply.level === null ? '暂无足够数据' : `${supply.level}级 ${supply.label}`}</b><br>降雨：${rainState.level === null ? '证据不足' : `${rainState.level}级 ${rainState.direction}`}；热干：${heatState.level === null ? '证据不足' : `${heatState.level}级 ${heatState.label}`}；水分：${waterState.level === null ? '证据不足' : `${waterState.level}级 ${waterState.direction}`}。<br>${esc(supply.adjustments.join('；') || supply.evidence.slice(0, 2).join('；') || '当前未发现明确共振信号。')}<br><small>未来修复可能：${rainState.repairSignal === 'repair' ? '未来降雨存在一定修复信号。' : rainState.repairSignal === 'no_relief' ? '未来降雨仍偏少，短期修复有限。' : '预报或常态基准不足，暂不判断。'}</small></div></section>`;
     const chartPanel = window.OilDetailCharts?.panel(r, {
       cropName: '棕榈油', regionName: r.region, countryName: COUNTRY[r.country] || r.country,
       riskLabel: r.risk_label_v4_cn || r.risk_level_v3_cn || '持续跟踪'
     });
     if (chartPanel) {
-      $('detail').innerHTML = conclusion + chartPanel.html;
+      $('detail').innerHTML = conclusion + `<p class="detail-note">${esc(spatialText)}</p>` + chartPanel.html;
       requestAnimationFrame(() => window.OilDetailCharts.render(r, state.dailyHistory.get(r.weather_region_id) || [], chartPanel.key));
       return;
     }

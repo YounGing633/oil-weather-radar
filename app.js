@@ -161,7 +161,7 @@ const WEATHER_METRICS = {
 function riskLegendHtml() {
   const r = window.LegendUtils?.getRiskLegend();
   if (!r) return '';
-  return `<div class="legend-title">综合供应风险</div>${r.bins.map(item => `<div class="legend-item"><span class="legend-swatch" style="background:${item.color}"></span>${item.label}</div>`).join('')}<div class="legend-item"><span class="legend-swatch" style="background:${r.noData.color}"></span>${r.noData.label}</div>`;
+  return `<div class="legend-title">代表点供应监测信号（非区域平均）</div>${r.bins.map(item => `<div class="legend-item"><span class="legend-swatch" style="background:${item.color}"></span>${item.label}</div>`).join('')}<div class="legend-item"><span class="legend-swatch" style="background:${r.noData.color}"></span>${r.noData.label}</div>`;
 }
 
 const RISK_TYPE_CN = {
@@ -2178,7 +2178,7 @@ function renderRiskJudgementBlock(record, options = {}) {
   const pressureItems = buildPressureItems(record, evidenceRecord);
   if (!pressureItems.length && riskNum(riskValue) <= 1) return '';
   const cells = [
-    detailCell('风险等级', formatRiskLabel(record)),
+    detailCell('监测信号', formatRiskLabel(record)),
     detailCell('异常类型', formatAnomalyType(record))
   ].filter(Boolean);
   const pressureHtml = pressureItems.length
@@ -2231,6 +2231,7 @@ function renderEvidenceSection(record, options = {}) {
     isNum(row && row.temp_max_anomaly_c) ? detailCell('最高温距平', fmtSigned(row.temp_max_anomaly_c, 1, '℃')) : '',
     soilRootPercentile(row) !== null ? detailCell('根区墒情', `P${Math.round(soilRootPercentile(row))}`) : '',
     row && row.soil_condition_summary_cn ? detailCell('土壤说明', formatPublicText(row.soil_condition_summary_cn)) : '',
+    row && row.spatial_method_cn ? detailCell('空间口径', formatPublicText(row.spatial_method_cn)) : '',
     detailCell('异常类型', formatAnomalyType(record))
   ].filter(Boolean);
   const pressure = buildPressureItems(record, row).slice(0, 2);
@@ -2243,6 +2244,7 @@ function renderEvidenceSection(record, options = {}) {
     ${facts.length ? `<div class="data-grid cols-3">${facts.join('')}</div>` : '<p>暂无可展示证据。</p>'}
     ${pressure.length ? `<div class="pressure-list"><b>关键判断：</b><ol>${pressure.map(item => `<li>${esc(item)}</li>`).join('')}</ol></div>` : ''}
     ${evidenceText ? `<p>${esc(formatPublicText(evidenceText))}</p>` : ''}
+    ${row && row.spatial_note_cn ? `<p class="detail-note">${esc(formatPublicText(row.spatial_note_cn))}</p>` : ''}
     ${regionList}
     ${row ? renderRecent5BottomBar(row) : ''}
   </div>`;
