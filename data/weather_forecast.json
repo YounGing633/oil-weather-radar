@@ -8628,6 +8628,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "palm::Brazil::national::棕榈油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "palm::Indonesia::Aceh::admin1::crude_palm_oil",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -17052,6 +17064,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::Canada::Manitoba::admin1::rapeseed_canola",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::Canada::New_Brunswick::admin1::rapeseed_canola",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -17216,6 +17240,18 @@
     "temp_max_c": 28.3,
     "temp_min_c": 19.4,
     "temp_mean_c": 23.5,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Canada::New_Brunswick::admin1::rapeseed_canola",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -17388,6 +17424,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::Canada::Ontario::admin1::rapeseed_canola",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -17552,6 +17600,18 @@
     "temp_max_c": 22.1,
     "temp_min_c": 13.6,
     "temp_mean_c": 17.9,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -29772,6 +29832,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::United States of America::national::菜油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::United_States::IDAHO::admin1::canola",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -30108,6 +30180,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::United_States::KANSAS::admin1::canola",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::United_States::MINNESOTA::admin1::canola",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -30272,6 +30356,18 @@
     "temp_max_c": 35.3,
     "temp_min_c": 26.3,
     "temp_mean_c": 31.3,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::United_States::MINNESOTA::admin1::canola",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -30612,6 +30708,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::United_States::NORTH_DAKOTA::admin1::canola",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::United_States::OKLAHOMA::admin1::canola",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -30776,6 +30884,18 @@
     "temp_max_c": 32.3,
     "temp_min_c": 24.4,
     "temp_mean_c": 27.9,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::United_States::OKLAHOMA::admin1::canola",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -31284,6 +31404,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Argentina::Buenos Aires::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Argentina::Chaco::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -31448,6 +31580,18 @@
     "temp_max_c": 21.2,
     "temp_min_c": 18.6,
     "temp_mean_c": 19.9,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Chaco::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -31620,6 +31764,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Argentina::Corrientes::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Argentina::Córdoba::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -31784,6 +31940,18 @@
     "temp_max_c": 17.6,
     "temp_min_c": 8.6,
     "temp_mean_c": 11.9,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Córdoba::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -31956,6 +32124,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Argentina::Entre Ríos::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Argentina::Formosa::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -32120,6 +32300,18 @@
     "temp_max_c": 23.1,
     "temp_min_c": 18.9,
     "temp_mean_c": 20.8,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Formosa::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -32292,6 +32484,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Argentina::Jujuy::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Argentina::Misiones::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -32456,6 +32660,18 @@
     "temp_max_c": 19.3,
     "temp_min_c": 18.1,
     "temp_mean_c": 18.8,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Misiones::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -32628,6 +32844,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Argentina::Santa Fe::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Argentina::Tucumán::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -32792,6 +33020,18 @@
     "temp_max_c": 21.5,
     "temp_min_c": 13.8,
     "temp_mean_c": 16.6,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Argentina::Tucumán::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -32964,6 +33204,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::Bahia::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::Ceará::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -33128,6 +33380,18 @@
     "temp_max_c": 33.1,
     "temp_min_c": 23.2,
     "temp_mean_c": 27.5,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Ceará::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -33300,6 +33564,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::Distrito Federal::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::Goiás::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -33464,6 +33740,18 @@
     "temp_max_c": 34.5,
     "temp_min_c": 21.6,
     "temp_mean_c": 27.6,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Goiás::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -33636,6 +33924,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::Maranhão::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::Mato Grosso do Sul::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -33800,6 +34100,18 @@
     "temp_max_c": 29.3,
     "temp_min_c": 19.0,
     "temp_mean_c": 24.6,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Mato Grosso do Sul::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -33972,6 +34284,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::Minas Gerais::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -34136,6 +34460,18 @@
     "temp_max_c": 33.2,
     "temp_min_c": 22.0,
     "temp_mean_c": 26.8,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Minas Gerais::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -34308,6 +34644,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::Paraná::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -34472,6 +34820,18 @@
     "temp_max_c": 32.8,
     "temp_min_c": 24.2,
     "temp_mean_c": 27.7,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -34644,6 +35004,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::Piauí::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::Rio Grande do Sul::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -34808,6 +35180,18 @@
     "temp_max_c": 19.5,
     "temp_min_c": 15.0,
     "temp_mean_c": 17.5,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Rio Grande do Sul::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -34980,6 +35364,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::Rio de Janeiro::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::Rondônia::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -35144,6 +35540,18 @@
     "temp_max_c": 34.1,
     "temp_min_c": 23.6,
     "temp_mean_c": 27.7,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Rondônia::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -35316,6 +35724,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::Santa Catarina::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::São Paulo::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -35484,6 +35904,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Brazil::São Paulo::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Brazil::Tocantins::admin1::豆油",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -35648,6 +36080,18 @@
     "temp_max_c": 37.2,
     "temp_min_c": 25.8,
     "temp_mean_c": 31.5,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Brazil::Tocantins::admin1::豆油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -35988,6 +36432,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Canada::Manitoba::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Canada::New_Brunswick::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -36152,6 +36608,18 @@
     "temp_max_c": 28.3,
     "temp_min_c": 19.4,
     "temp_mean_c": 23.5,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Canada::New_Brunswick::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -36324,6 +36792,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Canada::Nova_Scotia::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Canada::Ontario::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -36488,6 +36968,18 @@
     "temp_max_c": 29.0,
     "temp_min_c": 17.7,
     "temp_mean_c": 22.4,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Canada::Ontario::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -36660,6 +37152,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::Canada::Prince_Edward_Island::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::Canada::Quebec::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -36824,6 +37328,18 @@
     "temp_max_c": 22.1,
     "temp_min_c": 13.6,
     "temp_mean_c": 17.9,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::Canada::Quebec::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -37344,6 +37860,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::ALABAMA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::ARKANSAS::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -37508,6 +38036,18 @@
     "temp_max_c": 33.1,
     "temp_min_c": 23.7,
     "temp_mean_c": 28.1,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::ARKANSAS::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -37680,6 +38220,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::DELAWARE::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::FLORIDA::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -37844,6 +38396,18 @@
     "temp_max_c": 29.0,
     "temp_min_c": 25.0,
     "temp_mean_c": 26.8,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::FLORIDA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -38016,6 +38580,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::GEORGIA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::ILLINOIS::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -38180,6 +38756,18 @@
     "temp_max_c": 31.5,
     "temp_min_c": 21.0,
     "temp_mean_c": 26.1,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::ILLINOIS::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -38352,6 +38940,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::INDIANA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::IOWA::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -38516,6 +39116,18 @@
     "temp_max_c": 32.2,
     "temp_min_c": 23.2,
     "temp_mean_c": 28.1,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::IOWA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -38688,6 +39300,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::KANSAS::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::KENTUCKY::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -38852,6 +39476,18 @@
     "temp_max_c": 36.0,
     "temp_min_c": 24.9,
     "temp_mean_c": 29.6,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::KENTUCKY::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -39024,6 +39660,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::LOUISIANA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::MARYLAND::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -39188,6 +39836,18 @@
     "temp_max_c": 34.6,
     "temp_min_c": 22.1,
     "temp_mean_c": 27.4,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::MARYLAND::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -39360,6 +40020,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::MICHIGAN::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::MINNESOTA::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -39524,6 +40196,18 @@
     "temp_max_c": 35.3,
     "temp_min_c": 26.3,
     "temp_mean_c": 31.3,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::MINNESOTA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -39696,6 +40380,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::MISSISSIPPI::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::MISSOURI::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -39860,6 +40556,18 @@
     "temp_max_c": 35.5,
     "temp_min_c": 23.3,
     "temp_mean_c": 29.7,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::MISSOURI::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -40032,6 +40740,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::NEBRASKA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::NEW_JERSEY::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -40196,6 +40916,18 @@
     "temp_max_c": 33.4,
     "temp_min_c": 22.1,
     "temp_mean_c": 27.0,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::NEW_JERSEY::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -40368,6 +41100,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::NEW_YORK::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::NORTH_CAROLINA::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -40532,6 +41276,18 @@
     "temp_max_c": 31.9,
     "temp_min_c": 24.5,
     "temp_mean_c": 27.1,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::NORTH_CAROLINA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -40704,6 +41460,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::NORTH_DAKOTA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::OHIO::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -40868,6 +41636,18 @@
     "temp_max_c": 35.1,
     "temp_min_c": 21.2,
     "temp_mean_c": 27.6,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::OHIO::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -41040,6 +41820,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::OKLAHOMA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::PENNSYLVANIA::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -41204,6 +41996,18 @@
     "temp_max_c": 33.0,
     "temp_min_c": 20.6,
     "temp_mean_c": 26.0,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::PENNSYLVANIA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -41376,6 +42180,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::SOUTH_CAROLINA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::SOUTH_DAKOTA::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -41540,6 +42356,18 @@
     "temp_max_c": 40.3,
     "temp_min_c": 29.2,
     "temp_mean_c": 35.2,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::SOUTH_DAKOTA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -41712,6 +42540,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::TENNESSEE::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::TEXAS::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -41876,6 +42716,18 @@
     "temp_max_c": 34.7,
     "temp_min_c": 22.2,
     "temp_mean_c": 28.7,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::TEXAS::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -42048,6 +42900,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::VIRGINIA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::WEST_VIRGINIA::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -42216,6 +43080,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "soybean::United_States::WEST_VIRGINIA::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "soybean::United_States::WISCONSIN::admin1::soybean",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -42380,6 +43256,18 @@
     "temp_max_c": 33.7,
     "temp_min_c": 23.3,
     "temp_mean_c": 28.5,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "soybean::United_States::WISCONSIN::admin1::soybean",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -42720,6 +43608,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "sunflower::Canada::Manitoba::admin1::sunflower_seed",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "sunflower::Canada::Ontario::admin1::sunflower_seed",
     "forecast_date": "2026-07-24",
     "target_date": "2026-07-24",
@@ -42884,6 +43784,18 @@
     "temp_max_c": 29.0,
     "temp_min_c": 17.7,
     "temp_mean_c": 22.4,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "sunflower::Canada::Ontario::admin1::sunflower_seed",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -51860,6 +52772,18 @@
     "temp_max_c": 36.6,
     "temp_min_c": 25.5,
     "temp_mean_c": 31.5,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "sunflower::United States of America::national::葵油",
+    "forecast_date": "2026-07-24",
+    "target_date": "2026-08-07",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   }
