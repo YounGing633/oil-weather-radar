@@ -25,7 +25,7 @@
   const esc = x => String(x ?? '—').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
   const norm = x => String(x || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const getJSON = async file => { const r = await fetch(`${DATA}${file}`, { cache: 'no-store' }); if (!r.ok) throw new Error(file); return r.json(); };
-  const state = { section: 'risk', metric: 'risk', basis: 'base1725', horizon: 'f7', unit: 'absolute', depth: 'root', scope: 'seasia', label: 'production', rows: [], history: {}, dailyHistory: new Map(), map: null, geo: [], labels: [], events: [], selected: null, selectedLayer: null };
+  const state = { section: 'rain', metric: 'rain30', basis: 'base1725', horizon: 'f7', unit: 'absolute', depth: 'root', scope: 'seasia', label: 'production', rows: [], history: {}, dailyHistory: new Map(), map: null, geo: [], labels: [], events: [], selected: null, selectedLayer: null };
   const sectionNames = { risk: '综合风险', rain: '降雨', heat: '热干和极端天气', water: '水分' };
   const metricSets = {
     risk: [['risk', '综合供应风险'], ['production', '产量'], ['share', '产量占比']],
@@ -82,7 +82,7 @@
   };
   const value = r => {
     const f = future(r, state.horizon);
-    if (state.metric === 'risk') return window.PalmRisk?.classifyPalmSupplyRisk(r, { basis: state.basis }).level;
+    if (state.metric === 'risk') return r.region_risk_publish_allowed === false ? null : window.PalmRisk?.classifyPalmSupplyRisk(r, { basis: state.basis }).level;
     if (state.metric === 'production') return num(r.production_tonnes);
     if (state.metric === 'share') return state.scope === 'seasia' ? num(r.production_share_se_asia) : num(r.production_share_country);
     if (state.metric === 'rain30') return num(r.rain_30d_mm);
@@ -142,6 +142,9 @@
     }));
   }
   function buildPalmTooltip(r) {
+    if (r.region_risk_publish_allowed === false) {
+      return `<b>${esc(r.region)}</b><br>油棕掩膜加权近30日降雨：${mm(r.rain_30d_mm)}<br>样点范围：P10 ${mm(r.rain_30d_p10_mm)} / P50 ${mm(r.rain_30d_p50_mm)} / P90 ${mm(r.rain_30d_p90_mm)}<br><small>综合供应风险待土壤、温度与预报完成区域聚合后再发布。</small>`;
+    }
     const supply = window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rain = supply.moduleStates.rain, heat = supply.moduleStates.heatDry, water = supply.moduleStates.water;
     return `<b>${esc(r.region)}</b><br>综合供应风险：${supply.level === null ? '暂无足够数据' : `${supply.level}级 ${supply.label}`}<br>降雨状态：${rain.level === null ? '证据不足' : `${rain.level}级 ${rain.direction === 'dry' ? '偏少' : rain.direction === 'wet' ? '偏多' : '正常'}`}<br>热干状态：${heat.level === null ? '证据不足' : `${heat.level}级 ${heat.label}`}<br>水分状态：${water.level === null ? '证据不足' : `${water.level}级 ${water.direction === 'dry' ? '根区偏干' : water.direction === 'wet' ? '根区偏湿' : '正常'}`}<br><small>${esc(supply.adjustments[0] || supply.evidence[0] || '暂无额外共振信号')}</small>`;
   }
@@ -163,7 +166,7 @@
   }
   function controlButton(text, key, val, active, disabled = false) { return `<button ${active ? 'class="active"' : ''} ${disabled ? 'disabled title="当前数据未提供该口径"' : ''} data-control="${key}" data-value="${val}">${text}</button>`; }
   function controls() {
-    $('layerGroups').innerHTML = Object.entries(sectionNames).map(([k, v]) => `<button class="${state.section === k ? 'active' : ''}" data-section="${k}">${v}</button>`).join('');
+    $('layerGroups').innerHTML = Object.entries(sectionNames).filter(([k]) => k === 'rain').map(([k, v]) => `<button class="${state.section === k ? 'active' : ''}" data-section="${k}">${v}</button>`).join('');
     $('layerMetrics').innerHTML = metricSets[state.section].map(([k, v]) => { const disabled = k === 'vpd' && state.rows.length && !state.rows.some(r => num(r.vpd_percentile_30d ?? r.vpd_percentile_14d) !== null); return `<button ${disabled ? 'disabled title="当前数据未接入VPD"' : ''} class="${state.metric === k ? 'active' : ''}" data-metric="${k}">${v}</button>`; }).join('');
     document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x.dataset.label === state.label));
     document.querySelectorAll('[data-section]').forEach(b => b.onclick = () => { state.section = b.dataset.section; state.metric = metricSets[state.section][0][0]; state.label = state.section === 'water' ? 'metric' : 'production'; state.basis = 'base1725'; state.unit = 'absolute'; updateControlRow(); controls(); updateSummary(); refreshMap(); });
@@ -183,6 +186,10 @@
   }
   function regionDetail(r) {
     state.selected = r; refreshMap();
+    if (r.region_risk_publish_allowed === false) {
+      $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${esc(r.spatial_note_cn || '油棕掩膜加权区域估计。')}</p><h3>油棕掩膜加权降雨</h3><div class="forecast-brief">近30日区域加权降雨：${mm(r.rain_30d_mm)}<br>区域内部样点累计降雨：P10 ${mm(r.rain_30d_p10_mm)}；P50 ${mm(r.rain_30d_p50_mm)}；P90 ${mm(r.rain_30d_p90_mm)}。<br>有效覆盖率：${pc(r.observation_coverage)}；参与格点：${num(r.grid_point_count) ?? '缺测'}。<br><small>土壤、温度距平、预报和综合供应风险尚未完成同口径区域聚合，当前不展示。</small></div>`;
+      return;
+    }
     const supply = window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rainState = supply.moduleStates.rain, heatState = supply.moduleStates.heatDry, waterState = supply.moduleStates.water;
     const spatialText = r.spatial_note_cn || '当前天气值为空间代表值；作物种植区加权聚合完成前，不代表全行政区平均状况。';
     const conclusion = `<section class="detail-chart-section"><h3>代表点监测提示（非区域风险）</h3><div class="forecast-brief"><b>代表点综合信号：${supply.level === null ? '暂无足够数据' : `${supply.level}级 ${supply.label}`}</b><br>降雨：${rainState.level === null ? '证据不足' : `${rainState.level}级 ${rainState.direction}`}；热干：${heatState.level === null ? '证据不足' : `${heatState.level}级 ${heatState.label}`}；水分：${waterState.level === null ? '证据不足' : `${waterState.level}级 ${waterState.direction}`}。<br>${esc(supply.adjustments.join('；') || supply.evidence.slice(0, 2).join('；') || '当前未发现明确共振信号。')}<br><small>未来修复可能：${rainState.repairSignal === 'repair' ? '未来降雨存在一定修复信号。' : rainState.repairSignal === 'no_relief' ? '未来降雨仍偏少，短期修复有限。' : '预报或常态基准不足，暂不判断。'}</small></div></section>`;
@@ -209,12 +216,13 @@
   async function init() {
     try {
       await window.LegendUtils?.load();
-      const [rain, risk, history, meta, weather, anomaly, forecast, daily] = await Promise.all(['palm_rain_region_latest.json','palm_region_risk_latest.json','palm_rain_history_90d.json','palm_rain_meta.json','weather_latest.json','weather_anomaly.json','weather_forecast.json','region_history_90d_v1.0d.json'].map(getJSON));
+      const [rain, risk, history, meta] = await Promise.all(['palm_rain_region_latest.json','palm_region_risk_latest.json','palm_rain_history_90d.json','palm_rain_meta.json'].map(getJSON));
+      const weather = [], anomaly = [], forecast = [];
       const extra = new Map(risk.map(r => [r.weather_region_id, r])), weatherBy = new Map(weather.map(r => [r.weather_region_id, r])), anomalyBy = new Map(anomaly.map(r => [r.weather_region_id, r])), forecastBy = new Map();
       forecast.forEach(x => { if (!forecastBy.has(x.weather_region_id)) forecastBy.set(x.weather_region_id, []); forecastBy.get(x.weather_region_id).push(x); });
-      state.rows = hydrateLatestRain(rain.map(r => ({ ...r, ...(extra.get(r.weather_region_id) || {}), _weather: weatherBy.get(r.weather_region_id), _anomaly: anomalyBy.get(r.weather_region_id), _forecast: forecastBy.get(r.weather_region_id) || [] })), daily); state.history = history; state.dailyHistory = new Map(); daily.forEach(row => { if (!state.dailyHistory.has(row.weather_region_id)) state.dailyHistory.set(row.weather_region_id, []); state.dailyHistory.get(row.weather_region_id).push(row); });
-      $('status').textContent = `最新实况（ECMWF IFS）：${state.rows[0]?.date_end || '缺测'} ｜ 数据更新时间：${meta.generated_at || '缺测'} ｜ 当前地图：绝对值、距平和事件提示可分别切换`;
-      $('method').textContent = '降雨和温度统一采用 Open-Meteo ECMWF IFS。近30日严格取截止日及此前29个日历日；仅在2017–2025同源历史完整时显示历史基准，缺失时不再用第二来源补齐。未来降雨绝对值转为30日等效累计，便于与近30日图层比较。';
+      state.rows = rain.map(r => ({ ...(extra.get(r.weather_region_id) || {}), ...r, _weather: weatherBy.get(r.weather_region_id), _anomaly: anomalyBy.get(r.weather_region_id), _forecast: forecastBy.get(r.weather_region_id) || [] })); state.history = history; state.dailyHistory = new Map(Object.entries(history));
+      $('status').textContent = `最新油棕掩膜加权降雨：${state.rows[0]?.date_end || '缺测'} ｜ 数据更新时间：${meta.generated_at || '缺测'} ｜ 当前地图：近30日区域加权降雨`;
+      $('method').textContent = '降雨使用 Open-Meteo ECMWF IFS 格点，并按2019年GlobalOilPalm油棕种植掩膜加权聚合。近30日严格取截止日及此前29个日历日；P10/P50/P90展示区域内部样点差异。土壤、温度距平、预报和综合供应风险尚未完成同口径区域聚合，当前不展示。';
       updateControlRow(); controls(); updateSummary(); await buildMap(); regionDetail([...state.rows].sort((a,b) => (b.production_tonnes || 0) - (a.production_tonnes || 0))[0]);
     } catch (e) { console.error(e); $('status').textContent = `数据加载失败：${e?.message || '未知错误'}。`; }
   }
