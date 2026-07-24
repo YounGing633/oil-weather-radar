@@ -820,11 +820,17 @@ async function loadConfig(name, fallback = null) {
   }
 }
 
-async function loadJSON(name, fallback = null) {
+async function loadJSON(name, fallback = null, { dailyCacheBust = false } = {}) {
   const timer = `load:${name}`;
   console.time(timer);
   try {
-    const response = await fetch(DATA_DIR + name);
+    // The 90-day feed is regenerated every day. Give it a date-scoped URL so a
+    // stale CDN/browser entry cannot make a newly published daily snapshot look
+    // incomplete, while still allowing normal caching within the same day.
+    const url = dailyCacheBust
+      ? `${DATA_DIR + name}?v=${new Date().toISOString().slice(0, 10).replaceAll('-', '')}`
+      : DATA_DIR + name;
+    const response = await fetch(url);
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
     const data = await response.json();
     return data;
@@ -4701,7 +4707,7 @@ async function init() {
     loadJSON('countries.geo.json', { type: 'FeatureCollection', features: [] }),
     loadJSON('crop_progress_latest.json', []),
     loadJSON('soil_temperature_latest.json', []),
-    loadJSON('region_history_90d_v1.0d.json', []),
+    loadJSON('region_history_90d_v1.0d.json', [], { dailyCacheBust: true }),
     loadJSON('site_meta.json', [])
   ]);
 
