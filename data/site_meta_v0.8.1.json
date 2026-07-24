@@ -1,16 +1,16 @@
 [
   {
-    "generated_at": "2026-07-23 15:29:30",
+    "generated_at": "2026-07-24 10:13:59",
     "version": "v1.0-i1",
     "baseline_period": "2017-2025",
     "baseline_method": "Open-Meteo ECMWF IFS same-calendar-day weather baseline",
-    "latest_observation_date": "2026-07-22",
+    "latest_observation_date": "2026-07-23",
     "observation_data_note": "Observations and weather normals use Open-Meteo ECMWF IFS; 2017-2025 is the same-calendar-day reference period",
     "data_sources": [
       "Open-Meteo ECMWF IFS (observations + forecast + 2017-2025 baseline)"
     ],
-    "baseline_ready_points": 234,
-    "baseline_pending_points": 60,
+    "baseline_ready_points": 247,
+    "baseline_pending_points": 47,
     "active_points": 294,
     "excluded_faostat_points": 38,
     "countries": [
@@ -42,7 +42,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 120,
-    "run_id": "daily_export_20260723_152930"
+    "total_alerts": 122,
+    "run_id": "daily_export_20260724_101359"
   }
 ]
