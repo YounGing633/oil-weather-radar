@@ -146,8 +146,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "coconut::Indonesia::Jawa Barat::admin1::椰子油",
@@ -671,8 +671,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "coconut::Indonesia::Sumatera Selatan::admin1::椰子油",
@@ -971,8 +971,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
@@ -1046,8 +1046,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P11），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VIII (EASTERN VISAYAS)::admin1::椰子油",
@@ -1346,8 +1346,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "palm::Indonesia::Jawa_Barat::admin1::crude_palm_oil",
@@ -1871,8 +1871,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "palm::Indonesia::Sumatera_Selatan::admin1::crude_palm_oil",
@@ -1971,8 +1971,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
   },
   {
     "weather_region_id": "palm::Malaysia::Negeri_Sembilan::admin1::oil_palm",
@@ -2271,8 +2271,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::Western_Australia::admin1::rapeseed_canola",
@@ -3321,8 +3321,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Pskov Oblast::admin1::菜油",
@@ -3396,8 +3396,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P96）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Buryatia::admin1::菜油",
@@ -3471,8 +3471,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Kalmykia::admin1::菜油",
@@ -3521,8 +3521,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Mordovia::admin1::菜油",
@@ -3646,8 +3646,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P90）"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Samara Oblast::admin1::菜油",
@@ -3946,8 +3946,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Ulyanovsk Oblast::admin1::菜油",
@@ -3996,8 +3996,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Volgograd Oblast::admin1::菜油",
@@ -4746,8 +4746,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "watch",
-    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
   },
   {
     "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
@@ -5171,8 +5171,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "soybean::Canada::Quebec::admin1::soybean",
@@ -5521,8 +5521,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏少，需关注土壤墒情变化"
   },
   {
     "weather_region_id": "soybean::United_States::MARYLAND::admin1::soybean",
@@ -5721,8 +5721,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "根区土壤偏干（P0），需关注降水补充"
   },
   {
     "weather_region_id": "soybean::United_States::NORTH_CAROLINA::admin1::soybean",
@@ -6746,8 +6746,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "sunflower::Russia::Primorsky Krai::admin1::葵油",
@@ -6821,8 +6821,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P96）"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Crimea::admin1::葵油",
@@ -6896,8 +6896,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏少叠加高温，水分压力上升"
+    "water_stress_risk_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解"
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Mordovia::admin1::葵油",
@@ -7021,8 +7021,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
+    "water_stress_risk_v2": "stress",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P90）"
   },
   {
     "weather_region_id": "sunflower::Russia::Samara Oblast::admin1::葵油",
@@ -7171,8 +7171,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "sunflower::Russia::Ulyanovsk Oblast::admin1::葵油",
@@ -7221,8 +7221,8 @@
       "baseline_method": "era5_land_doy_climatology",
       "data_date": "2026-07-22"
     },
-    "water_stress_risk_v2": "normal",
-    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力"
+    "water_stress_risk_v2": "attention",
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "sunflower::Russia::Volgograd Oblast::admin1::葵油",
@@ -7297,7 +7297,7 @@
       "data_date": "2026-07-22"
     },
     "water_stress_risk_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P92），排水不畅风险"
+    "risk_reason_cn": "降雨偏多，土壤含水量可能偏高"
   },
   {
     "weather_region_id": "sunflower::Türkiye::national::葵油",
