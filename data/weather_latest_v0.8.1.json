@@ -19,10 +19,10 @@
     "temp_mean_c": 20.5,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 4,
-    "hot_days_count": 3
+    "precipitation_percentile_30d": 55.55555555555556,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 3,
+    "hot_days_count": 2
   },
   {
     "weather_region_id": "coconut::Indonesia::Bangka Belitung::admin1::椰子油",
@@ -47,7 +47,7 @@
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 10,
-    "hot_days_count": 3
+    "hot_days_count": 4
   },
   {
     "weather_region_id": "coconut::Indonesia::Banten::admin1::椰子油",
@@ -71,7 +71,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 13,
+    "dry_days_count": 12,
     "hot_days_count": 0
   },
   {
@@ -122,7 +122,7 @@
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 8,
-    "hot_days_count": 5
+    "hot_days_count": 6
   },
   {
     "weather_region_id": "coconut::Indonesia::Jambi::admin1::椰子油",
@@ -142,11 +142,11 @@
     "temp_max_c": 31.0,
     "temp_min_c": 24.9,
     "temp_mean_c": 27.6,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "low",
+    "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -170,9 +170,9 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 13,
-    "hot_days_count": 0
+    "temp_max_percentile": 77.77777777777779,
+    "dry_days_count": 12,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Barat::admin1::椰子油",
@@ -195,7 +195,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 10,
     "hot_days_count": 0
   },
@@ -218,11 +218,11 @@
     "temp_min_c": 22.9,
     "temp_mean_c": 25.4,
     "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 44.44444444444444,
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 0.0,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 8,
-    "hot_days_count": 0
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Tengah::admin1::椰子油",
@@ -246,7 +246,7 @@
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
     "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 7,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -269,10 +269,10 @@
     "temp_mean_c": 23.7,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 44.44444444444444,
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 1,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "coconut::Indonesia::Kalimantan Utara::admin1::椰子油",
@@ -292,9 +292,9 @@
     "temp_max_c": 28.3,
     "temp_min_c": 20.2,
     "temp_mean_c": 23.5,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 0,
     "hot_days_count": 0
@@ -317,10 +317,10 @@
     "temp_max_c": 30.5,
     "temp_min_c": 23.5,
     "temp_mean_c": 25.9,
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 44.44444444444444,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 0,
     "hot_days_count": 1
   },
@@ -346,8 +346,8 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 7,
-    "hot_days_count": 5
+    "dry_days_count": 6,
+    "hot_days_count": 6
   },
   {
     "weather_region_id": "coconut::Indonesia::Maluku Utara::admin1::椰子油",
@@ -396,7 +396,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 11,
+    "dry_days_count": 12,
     "hot_days_count": 0
   },
   {
@@ -420,7 +420,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -446,7 +446,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 6,
+    "dry_days_count": 7,
     "hot_days_count": 2
   },
   {
@@ -472,7 +472,7 @@
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 1,
-    "hot_days_count": 5
+    "hot_days_count": 6
   },
   {
     "weather_region_id": "coconut::Indonesia::Papua Tengah::admin1::椰子油",
@@ -495,7 +495,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 1,
     "hot_days_count": 1
   },
@@ -544,9 +544,9 @@
     "temp_mean_c": 26.2,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 77.77777777777779,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 3,
+    "dry_days_count": 2,
     "hot_days_count": 0
   },
   {
@@ -570,9 +570,9 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 2,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "coconut::Indonesia::Sulawesi Selatan::admin1::椰子油",
@@ -645,7 +645,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 33.33333333333333,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 0,
     "hot_days_count": 0
   },
@@ -696,7 +696,7 @@
     "anomaly_level": "low",
     "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -745,9 +745,9 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 44.44444444444444,
-    "dry_days_count": 5,
-    "hot_days_count": 0
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 4,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "coconut::Philippines::BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO (BARMM)::admin1::椰子油",
@@ -770,7 +770,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 2,
     "hot_days_count": 0
   },
@@ -820,7 +820,7 @@
     "anomaly_label": "rainfall_low",
     "anomaly_level": "low",
     "precipitation_percentile_30d": 22.22222222222222,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 0,
     "hot_days_count": 1
   },
@@ -842,10 +842,10 @@
     "temp_max_c": 25.3,
     "temp_min_c": 20.8,
     "temp_mean_c": 22.6,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 0,
     "hot_days_count": 0
   },
@@ -867,12 +867,12 @@
     "temp_max_c": 30.6,
     "temp_min_c": 23.4,
     "temp_mean_c": 25.9,
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 3,
-    "hot_days_count": 2
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "low",
+    "precipitation_percentile_30d": 22.22222222222222,
+    "temp_max_percentile": 11.11111111111111,
+    "dry_days_count": 2,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "coconut::Philippines::REGION II (CAGAYAN VALLEY)::admin1::椰子油",
@@ -895,9 +895,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 0,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "coconut::Philippines::REGION III (CENTRAL LUZON)::admin1::椰子油",
@@ -920,9 +920,9 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 2,
-    "hot_days_count": 1
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 1,
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "coconut::Philippines::REGION IV-A (CALABARZON)::admin1::椰子油",
@@ -946,7 +946,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 2,
+    "dry_days_count": 1,
     "hot_days_count": 5
   },
   {
@@ -967,10 +967,10 @@
     "temp_max_c": 29.9,
     "temp_min_c": 25.4,
     "temp_mean_c": 27.2,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 22.22222222222222,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 0,
     "hot_days_count": 0
   },
@@ -992,10 +992,10 @@
     "temp_max_c": 30.6,
     "temp_min_c": 24.5,
     "temp_mean_c": 27.0,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "low",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 33.33333333333333,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 0,
     "hot_days_count": 0
   },
@@ -1067,10 +1067,10 @@
     "temp_max_c": 29.9,
     "temp_min_c": 25.5,
     "temp_mean_c": 27.1,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 0.0,
     "dry_days_count": 0,
     "hot_days_count": 0
   },
@@ -1092,8 +1092,8 @@
     "temp_max_c": 22.4,
     "temp_min_c": 16.7,
     "temp_mean_c": 19.4,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "medium",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 0.0,
     "dry_days_count": 0,
@@ -1145,7 +1145,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 0,
     "hot_days_count": 0
   },
@@ -1169,7 +1169,7 @@
     "temp_mean_c": 21.3,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 55.55555555555556,
+    "precipitation_percentile_30d": 66.66666666666666,
     "temp_max_percentile": 0.0,
     "dry_days_count": 2,
     "hot_days_count": 0
@@ -1219,10 +1219,10 @@
     "temp_mean_c": 20.5,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 4,
-    "hot_days_count": 3
+    "precipitation_percentile_30d": 55.55555555555556,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 3,
+    "hot_days_count": 2
   },
   {
     "weather_region_id": "palm::Indonesia::Bangka_Belitung::admin1::crude_palm_oil",
@@ -1247,7 +1247,7 @@
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 10,
-    "hot_days_count": 3
+    "hot_days_count": 4
   },
   {
     "weather_region_id": "palm::Indonesia::Banten::admin1::crude_palm_oil",
@@ -1271,7 +1271,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 13,
+    "dry_days_count": 12,
     "hot_days_count": 0
   },
   {
@@ -1322,7 +1322,7 @@
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 8,
-    "hot_days_count": 5
+    "hot_days_count": 6
   },
   {
     "weather_region_id": "palm::Indonesia::Jambi::admin1::crude_palm_oil",
@@ -1342,11 +1342,11 @@
     "temp_max_c": 31.0,
     "temp_min_c": 24.9,
     "temp_mean_c": 27.6,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "low",
+    "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -1370,9 +1370,9 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 13,
-    "hot_days_count": 0
+    "temp_max_percentile": 77.77777777777779,
+    "dry_days_count": 12,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Barat::admin1::crude_palm_oil",
@@ -1395,7 +1395,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 10,
     "hot_days_count": 0
   },
@@ -1418,11 +1418,11 @@
     "temp_min_c": 22.9,
     "temp_mean_c": 25.4,
     "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 44.44444444444444,
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 0.0,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 8,
-    "hot_days_count": 0
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Tengah::admin1::crude_palm_oil",
@@ -1446,7 +1446,7 @@
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
     "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 7,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -1469,10 +1469,10 @@
     "temp_mean_c": 23.7,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 44.44444444444444,
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 1,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "palm::Indonesia::Kalimantan_Utara::admin1::crude_palm_oil",
@@ -1492,9 +1492,9 @@
     "temp_max_c": 28.3,
     "temp_min_c": 20.2,
     "temp_mean_c": 23.5,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 0,
     "hot_days_count": 0
@@ -1517,10 +1517,10 @@
     "temp_max_c": 30.5,
     "temp_min_c": 23.5,
     "temp_mean_c": 25.9,
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 44.44444444444444,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 0,
     "hot_days_count": 1
   },
@@ -1546,8 +1546,8 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 7,
-    "hot_days_count": 5
+    "dry_days_count": 6,
+    "hot_days_count": 6
   },
   {
     "weather_region_id": "palm::Indonesia::Maluku::admin1::crude_palm_oil",
@@ -1571,7 +1571,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 11,
+    "dry_days_count": 12,
     "hot_days_count": 0
   },
   {
@@ -1646,7 +1646,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 6,
+    "dry_days_count": 7,
     "hot_days_count": 2
   },
   {
@@ -1670,7 +1670,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -1697,7 +1697,7 @@
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 1,
-    "hot_days_count": 5
+    "hot_days_count": 6
   },
   {
     "weather_region_id": "palm::Indonesia::Papua_Tengah::admin1::crude_palm_oil",
@@ -1720,7 +1720,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 1,
     "hot_days_count": 1
   },
@@ -1744,9 +1744,9 @@
     "temp_mean_c": 26.2,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 77.77777777777779,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 3,
+    "dry_days_count": 2,
     "hot_days_count": 0
   },
   {
@@ -1770,9 +1770,9 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 2,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "palm::Indonesia::Sulawesi_Selatan::admin1::crude_palm_oil",
@@ -1845,7 +1845,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 33.33333333333333,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 0,
     "hot_days_count": 0
   },
@@ -1896,7 +1896,7 @@
     "anomaly_level": "low",
     "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -1970,9 +1970,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 0,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "palm::Malaysia::Negeri_Sembilan::admin1::oil_palm",
@@ -1995,8 +1995,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 44.44444444444444,
-    "dry_days_count": 1,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 0,
     "hot_days_count": 0
   },
   {
@@ -2020,9 +2020,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 88.88888888888889,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 1,
-    "hot_days_count": 2
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "palm::Malaysia::Perak::admin1::oil_palm",
@@ -2046,7 +2046,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
     "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 0,
+    "dry_days_count": 1,
     "hot_days_count": 0
   },
   {
@@ -2070,7 +2070,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 2,
     "hot_days_count": 0
   },
@@ -2095,7 +2095,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 44.44444444444444,
+    "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 5,
     "hot_days_count": 0
   },
@@ -2144,10 +2144,10 @@
     "temp_mean_c": 25.7,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 44.44444444444444,
+    "precipitation_percentile_30d": 66.66666666666666,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 0,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "rapeseed_canola::Australia::New_South_Wales::admin1::rapeseed_canola",
@@ -2169,8 +2169,8 @@
     "temp_mean_c": 7.0,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 22.22222222222222,
+    "precipitation_percentile_30d": 33.33333333333333,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 15,
     "hot_days_count": 0
   },
@@ -2193,8 +2193,8 @@
     "temp_min_c": 13.9,
     "temp_mean_c": 20.0,
     "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 15,
     "hot_days_count": 0
@@ -2242,10 +2242,10 @@
     "temp_max_c": 11.9,
     "temp_min_c": 5.0,
     "temp_mean_c": 8.0,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "low",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 22.22222222222222,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 7,
     "hot_days_count": 1
   },
@@ -2269,8 +2269,8 @@
     "temp_mean_c": 5.6,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 22.22222222222222,
+    "precipitation_percentile_30d": 77.77777777777779,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 12,
     "hot_days_count": 0
   },
@@ -2292,9 +2292,9 @@
     "temp_max_c": 20.6,
     "temp_min_c": 7.6,
     "temp_mean_c": 13.5,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
-    "precipitation_percentile_30d": 55.55555555555556,
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "low",
+    "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 15,
     "hot_days_count": 0
@@ -2319,9 +2319,9 @@
     "temp_mean_c": 14.0,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 7,
+    "precipitation_percentile_30d": 55.55555555555556,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -2346,7 +2346,7 @@
     "anomaly_level": "low",
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -2369,7 +2369,7 @@
     "temp_mean_c": 23.3,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
+    "precipitation_percentile_30d": 55.55555555555556,
     "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 8,
     "hot_days_count": 0
@@ -2392,11 +2392,11 @@
     "temp_max_c": 19.5,
     "temp_min_c": 15.3,
     "temp_mean_c": 17.8,
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 11,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 10,
     "hot_days_count": 0
   },
   {
@@ -2420,9 +2420,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 11,
-    "hot_days_count": 0
+    "hot_days_count": 2
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
@@ -2444,10 +2444,10 @@
     "temp_mean_c": 17.8,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 6,
-    "hot_days_count": 0
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 7,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Saskatchewan::admin1::rapeseed_canola",
@@ -2467,12 +2467,12 @@
     "temp_max_c": 24.2,
     "temp_min_c": 13.6,
     "temp_mean_c": 19.2,
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 100.0,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 10,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "rapeseed_canola::Czechia::national::菜油",
@@ -2495,9 +2495,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 8,
-    "hot_days_count": 0
+    "temp_max_percentile": 77.77777777777779,
+    "dry_days_count": 9,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "rapeseed_canola::Denmark::national::菜油",
@@ -2519,10 +2519,10 @@
     "temp_mean_c": 23.3,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
+    "precipitation_percentile_30d": 44.44444444444444,
     "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 9,
-    "hot_days_count": 1
+    "hot_days_count": 2
   },
   {
     "weather_region_id": "rapeseed_canola::France::national::菜油",
@@ -2542,11 +2542,11 @@
     "temp_max_c": 29.5,
     "temp_min_c": 20.7,
     "temp_mean_c": 25.3,
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
+    "anomaly_label": "rainfall_deficit|high_temperature",
+    "anomaly_level": "high",
     "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 13,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 12,
     "hot_days_count": 2
   },
   {
@@ -2569,10 +2569,10 @@
     "temp_mean_c": 28.7,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 44.44444444444444,
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 6,
-    "hot_days_count": 0
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "rapeseed_canola::Lithuania::national::菜油",
@@ -2594,9 +2594,9 @@
     "temp_mean_c": 19.4,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 0.0,
-    "dry_days_count": 6,
+    "precipitation_percentile_30d": 77.77777777777779,
+    "temp_max_percentile": 11.11111111111111,
+    "dry_days_count": 7,
     "hot_days_count": 0
   },
   {
@@ -2620,9 +2620,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 0.0,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 8,
-    "hot_days_count": 0
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "rapeseed_canola::Romania::national::菜油",
@@ -2645,7 +2645,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 0.0,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -2669,9 +2669,9 @@
     "temp_mean_c": 21.2,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 7,
+    "precipitation_percentile_30d": 77.77777777777779,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -2696,7 +2696,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -2721,7 +2721,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 10,
+    "dry_days_count": 9,
     "hot_days_count": 0
   },
   {
@@ -2745,7 +2745,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 9,
     "hot_days_count": 1
   },
@@ -2772,7 +2772,7 @@
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 100.0,
     "dry_days_count": 6,
-    "hot_days_count": 6
+    "hot_days_count": 7
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Chuvash Republic::admin1::菜油",
@@ -2792,10 +2792,10 @@
     "temp_max_c": 19.1,
     "temp_min_c": 14.6,
     "temp_mean_c": 17.6,
-    "anomaly_label": "high_temperature",
+    "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 100.0,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 9,
     "hot_days_count": 1
   },
@@ -2817,11 +2817,11 @@
     "temp_max_c": 20.1,
     "temp_min_c": 17.8,
     "temp_mean_c": 19.2,
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
-    "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 8,
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "low",
+    "precipitation_percentile_30d": 66.66666666666666,
+    "temp_max_percentile": 77.77777777777779,
+    "dry_days_count": 7,
     "hot_days_count": 1
   },
   {
@@ -2845,7 +2845,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 22.22222222222222,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -2867,10 +2867,10 @@
     "temp_max_c": 23.1,
     "temp_min_c": 17.3,
     "temp_mean_c": 20.0,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 33.33333333333333,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 4,
     "hot_days_count": 0
   },
@@ -2895,7 +2895,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 0.0,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -2921,7 +2921,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -2944,7 +2944,7 @@
     "temp_mean_c": 20.1,
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 33.33333333333333,
+    "precipitation_percentile_30d": 44.44444444444444,
     "temp_max_percentile": 100.0,
     "dry_days_count": 8,
     "hot_days_count": 2
@@ -2970,7 +2970,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 0.0,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -2996,7 +2996,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 7,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -3020,8 +3020,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 5,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 4,
     "hot_days_count": 0
   },
   {
@@ -3042,12 +3042,12 @@
     "temp_max_c": 33.0,
     "temp_min_c": 19.7,
     "temp_mean_c": 24.8,
-    "anomaly_label": "high_temperature",
+    "anomaly_label": "rainfall_low|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 33.33333333333333,
+    "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 100.0,
     "dry_days_count": 6,
-    "hot_days_count": 5
+    "hot_days_count": 7
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kursk Oblast::admin1::菜油",
@@ -3092,8 +3092,8 @@
     "temp_max_c": 20.7,
     "temp_min_c": 13.3,
     "temp_mean_c": 16.4,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "low",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
     "dry_days_count": 9,
@@ -3117,9 +3117,9 @@
     "temp_max_c": 19.5,
     "temp_min_c": 15.0,
     "temp_mean_c": 18.2,
-    "anomaly_label": "high_temperature",
+    "anomaly_label": "excessive_rain|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 44.44444444444444,
+    "precipitation_percentile_30d": 66.66666666666666,
     "temp_max_percentile": 100.0,
     "dry_days_count": 8,
     "hot_days_count": 2
@@ -3144,8 +3144,8 @@
     "temp_mean_c": 18.6,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 11.11111111111111,
+    "precipitation_percentile_30d": 77.77777777777779,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 9,
     "hot_days_count": 0
   },
@@ -3167,10 +3167,10 @@
     "temp_max_c": 18.4,
     "temp_min_c": 15.8,
     "temp_mean_c": 17.0,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 8,
     "hot_days_count": 1
   },
@@ -3195,8 +3195,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 5,
+    "temp_max_percentile": 66.66666666666666,
+    "dry_days_count": 4,
     "hot_days_count": 0
   },
   {
@@ -3217,12 +3217,12 @@
     "temp_max_c": 31.6,
     "temp_min_c": 20.8,
     "temp_mean_c": 26.7,
-    "anomaly_label": "excessive_rain|high_temperature",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 9,
-    "hot_days_count": 4
+    "dry_days_count": 10,
+    "hot_days_count": 5
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Orenburg Oblast::admin1::菜油",
@@ -3246,7 +3246,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 12,
+    "dry_days_count": 11,
     "hot_days_count": 5
   },
   {
@@ -3267,11 +3267,11 @@
     "temp_max_c": 19.0,
     "temp_min_c": 13.6,
     "temp_mean_c": 16.3,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "low",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -3295,7 +3295,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 8,
     "hot_days_count": 1
   },
@@ -3322,7 +3322,7 @@
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 100.0,
     "dry_days_count": 9,
-    "hot_days_count": 5
+    "hot_days_count": 4
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Pskov Oblast::admin1::菜油",
@@ -3344,7 +3344,7 @@
     "temp_mean_c": 18.8,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
+    "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 9,
     "hot_days_count": 0
@@ -3370,8 +3370,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 22.22222222222222,
-    "dry_days_count": 5,
+    "temp_max_percentile": 11.11111111111111,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -3394,7 +3394,7 @@
     "temp_mean_c": 22.4,
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 100.0,
     "dry_days_count": 7,
     "hot_days_count": 4
@@ -3419,9 +3419,9 @@
     "temp_mean_c": 20.0,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
+    "precipitation_percentile_30d": 55.55555555555556,
     "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -3442,11 +3442,11 @@
     "temp_max_c": 25.0,
     "temp_min_c": 14.6,
     "temp_mean_c": 20.1,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 10,
     "hot_days_count": 0
   },
   {
@@ -3470,9 +3470,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 88.88888888888889,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 8,
-    "hot_days_count": 2
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Kalmykia::admin1::菜油",
@@ -3492,12 +3492,12 @@
     "temp_max_c": 27.7,
     "temp_min_c": 16.7,
     "temp_mean_c": 22.5,
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 100.0,
-    "dry_days_count": 12,
-    "hot_days_count": 3
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 13,
+    "hot_days_count": 2
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Republic of Khakassia::admin1::菜油",
@@ -3520,7 +3520,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 4,
     "hot_days_count": 0
   },
@@ -3543,10 +3543,10 @@
     "temp_min_c": 14.1,
     "temp_mean_c": 16.4,
     "anomaly_label": "excessive_rain",
-    "anomaly_level": "low",
-    "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 9,
+    "anomaly_level": "medium",
+    "precipitation_percentile_30d": 88.88888888888889,
+    "temp_max_percentile": 44.44444444444444,
+    "dry_days_count": 8,
     "hot_days_count": 1
   },
   {
@@ -3569,8 +3569,8 @@
     "temp_mean_c": 17.0,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 44.44444444444444,
+    "precipitation_percentile_30d": 66.66666666666666,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 6,
     "hot_days_count": 1
   },
@@ -3594,7 +3594,7 @@
     "temp_mean_c": 19.4,
     "anomaly_label": "excessive_rain|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 77.77777777777779,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 100.0,
     "dry_days_count": 7,
     "hot_days_count": 2
@@ -3619,9 +3619,9 @@
     "temp_mean_c": 20.3,
     "anomaly_label": "excessive_rain",
     "anomaly_level": "medium",
-    "precipitation_percentile_30d": 88.88888888888889,
+    "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 10,
+    "dry_days_count": 11,
     "hot_days_count": 0
   },
   {
@@ -3667,10 +3667,10 @@
     "temp_max_c": 23.0,
     "temp_min_c": 16.9,
     "temp_mean_c": 21.1,
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 100.0,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 7,
     "hot_days_count": 2
   },
@@ -3696,7 +3696,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 33.33333333333333,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 2
   },
   {
@@ -3719,8 +3719,8 @@
     "temp_mean_c": 18.3,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 11.11111111111111,
+    "precipitation_percentile_30d": 33.33333333333333,
+    "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 11,
     "hot_days_count": 0
   },
@@ -3745,8 +3745,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 4,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 5,
     "hot_days_count": 0
   },
   {
@@ -3821,7 +3821,7 @@
     "anomaly_level": "low",
     "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 8,
+    "dry_days_count": 7,
     "hot_days_count": 0
   },
   {
@@ -3846,7 +3846,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 8,
+    "dry_days_count": 7,
     "hot_days_count": 0
   },
   {
@@ -3867,11 +3867,11 @@
     "temp_max_c": 21.1,
     "temp_min_c": 16.5,
     "temp_mean_c": 19.2,
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "low",
+    "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 10,
+    "dry_days_count": 9,
     "hot_days_count": 0
   },
   {
@@ -3894,7 +3894,7 @@
     "temp_mean_c": 18.3,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 77.77777777777779,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 9,
     "hot_days_count": 0
@@ -3947,7 +3947,7 @@
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 9,
-    "hot_days_count": 4
+    "hot_days_count": 3
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Ulyanovsk Oblast::admin1::菜油",
@@ -3969,8 +3969,8 @@
     "temp_mean_c": 18.5,
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 88.88888888888889,
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 8,
     "hot_days_count": 1
   },
@@ -3992,9 +3992,9 @@
     "temp_max_c": 21.1,
     "temp_min_c": 14.7,
     "temp_mean_c": 17.2,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 77.77777777777779,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 5,
     "hot_days_count": 0
@@ -4019,8 +4019,8 @@
     "temp_mean_c": 20.8,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 77.77777777777779,
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 13,
     "hot_days_count": 2
   },
@@ -4045,8 +4045,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 44.44444444444444,
-    "dry_days_count": 8,
+    "temp_max_percentile": 33.33333333333333,
+    "dry_days_count": 7,
     "hot_days_count": 0
   },
   {
@@ -4067,11 +4067,11 @@
     "temp_max_c": 20.9,
     "temp_min_c": 13.1,
     "temp_mean_c": 16.4,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "low",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -4095,7 +4095,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 0.0,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -4121,7 +4121,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 15,
+    "dry_days_count": 14,
     "hot_days_count": 6
   },
   {
@@ -4146,7 +4146,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 66.66666666666666,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 10,
+    "dry_days_count": 9,
     "hot_days_count": 3
   },
   {
@@ -4194,9 +4194,9 @@
     "temp_mean_c": 29.3,
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 66.66666666666666,
+    "precipitation_percentile_30d": 55.55555555555556,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 10,
+    "dry_days_count": 9,
     "hot_days_count": 3
   },
   {
@@ -4217,10 +4217,10 @@
     "temp_max_c": 29.7,
     "temp_min_c": 21.0,
     "temp_mean_c": 24.3,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
-    "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 88.88888888888889,
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 66.66666666666666,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 10,
     "hot_days_count": 3
   },
@@ -4246,7 +4246,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 12,
+    "dry_days_count": 13,
     "hot_days_count": 4
   },
   {
@@ -4271,7 +4271,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 33.33333333333333,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 14,
+    "dry_days_count": 13,
     "hot_days_count": 6
   },
   {
@@ -4295,7 +4295,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 11,
     "hot_days_count": 1
   },
@@ -4370,7 +4370,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 10,
     "hot_days_count": 0
   },
@@ -4395,9 +4395,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 11,
-    "hot_days_count": 2
+    "hot_days_count": 3
   },
   {
     "weather_region_id": "soybean::Argentina::Corrientes::admin1::豆油",
@@ -4420,7 +4420,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 9,
     "hot_days_count": 1
   },
@@ -4445,7 +4445,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 9,
     "hot_days_count": 1
   },
@@ -4470,7 +4470,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 9,
     "hot_days_count": 0
   },
@@ -4495,9 +4495,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 12,
-    "hot_days_count": 2
+    "temp_max_percentile": 88.88888888888889,
+    "dry_days_count": 11,
+    "hot_days_count": 3
   },
   {
     "weather_region_id": "soybean::Argentina::Jujuy::admin1::豆油",
@@ -4517,12 +4517,12 @@
     "temp_max_c": 23.2,
     "temp_min_c": 13.2,
     "temp_mean_c": 16.7,
-    "anomaly_label": "excessive_rain",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 88.88888888888889,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 13,
-    "hot_days_count": 2
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "soybean::Argentina::Misiones::admin1::豆油",
@@ -4544,9 +4544,9 @@
     "temp_mean_c": 20.8,
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 6,
+    "precipitation_percentile_30d": 88.88888888888889,
+    "temp_max_percentile": 88.88888888888889,
+    "dry_days_count": 5,
     "hot_days_count": 3
   },
   {
@@ -4570,7 +4570,7 @@
     "anomaly_label": "rainfall_low",
     "anomaly_level": "low",
     "precipitation_percentile_30d": 22.22222222222222,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 9,
     "hot_days_count": 0
   },
@@ -4592,11 +4592,11 @@
     "temp_max_c": 22.3,
     "temp_min_c": 14.1,
     "temp_mean_c": 16.9,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 13,
+    "temp_max_percentile": 88.88888888888889,
+    "dry_days_count": 12,
     "hot_days_count": 3
   },
   {
@@ -4646,7 +4646,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 8,
+    "dry_days_count": 9,
     "hot_days_count": 0
   },
   {
@@ -4720,8 +4720,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 11.11111111111111,
-    "dry_days_count": 13,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 14,
     "hot_days_count": 0
   },
   {
@@ -4744,10 +4744,10 @@
     "temp_mean_c": 20.0,
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 77.77777777777779,
+    "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 10,
-    "hot_days_count": 2
+    "dry_days_count": 9,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "soybean::Brazil::Mato Grosso::admin1::豆油",
@@ -4771,7 +4771,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 15,
+    "dry_days_count": 14,
     "hot_days_count": 0
   },
   {
@@ -4797,7 +4797,7 @@
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 15,
-    "hot_days_count": 4
+    "hot_days_count": 3
   },
   {
     "weather_region_id": "soybean::Brazil::Paraná::admin1::豆油",
@@ -4817,12 +4817,12 @@
     "temp_max_c": 22.4,
     "temp_min_c": 13.8,
     "temp_mean_c": 17.1,
-    "anomaly_label": "excessive_rain",
+    "anomaly_label": "excessive_rain|high_temperature",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 44.44444444444444,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 10,
-    "hot_days_count": 2
+    "hot_days_count": 3
   },
   {
     "weather_region_id": "soybean::Brazil::Pará::admin1::豆油",
@@ -4844,9 +4844,9 @@
     "temp_mean_c": 26.8,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
+    "precipitation_percentile_30d": 33.33333333333333,
     "temp_max_percentile": 11.11111111111111,
-    "dry_days_count": 9,
+    "dry_days_count": 10,
     "hot_days_count": 0
   },
   {
@@ -4870,9 +4870,9 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 14,
-    "hot_days_count": 0
+    "temp_max_percentile": 88.88888888888889,
+    "dry_days_count": 15,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "soybean::Brazil::Rio Grande do Sul::admin1::豆油",
@@ -4895,7 +4895,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 6,
     "hot_days_count": 0
   },
@@ -4917,12 +4917,12 @@
     "temp_max_c": 22.1,
     "temp_min_c": 11.8,
     "temp_mean_c": 16.8,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 88.88888888888889,
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 13,
-    "hot_days_count": 2
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "soybean::Brazil::Rondônia::admin1::豆油",
@@ -4945,7 +4945,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 0.0,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 12,
     "hot_days_count": 0
   },
@@ -4970,9 +4970,9 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 7,
-    "hot_days_count": 1
+    "hot_days_count": 2
   },
   {
     "weather_region_id": "soybean::Brazil::São Paulo::admin1::豆油",
@@ -4996,7 +4996,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 11.11111111111111,
-    "dry_days_count": 12,
+    "dry_days_count": 11,
     "hot_days_count": 1
   },
   {
@@ -5021,7 +5021,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 14,
+    "dry_days_count": 15,
     "hot_days_count": 6
   },
   {
@@ -5044,9 +5044,9 @@
     "temp_mean_c": 14.0,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 7,
+    "precipitation_percentile_30d": 55.55555555555556,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -5069,7 +5069,7 @@
     "temp_mean_c": 23.3,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
+    "precipitation_percentile_30d": 55.55555555555556,
     "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 8,
     "hot_days_count": 0
@@ -5092,11 +5092,11 @@
     "temp_max_c": 19.5,
     "temp_min_c": 15.3,
     "temp_mean_c": 17.8,
-    "anomaly_label": "rainfall_deficit",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 11,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 10,
     "hot_days_count": 0
   },
   {
@@ -5121,7 +5121,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
     "temp_max_percentile": 22.22222222222222,
-    "dry_days_count": 10,
+    "dry_days_count": 9,
     "hot_days_count": 0
   },
   {
@@ -5145,9 +5145,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 11,
-    "hot_days_count": 0
+    "hot_days_count": 2
   },
   {
     "weather_region_id": "soybean::Canada::Prince_Edward_Island::admin1::soybean",
@@ -5170,8 +5170,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 11.11111111111111,
-    "dry_days_count": 11,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 10,
     "hot_days_count": 0
   },
   {
@@ -5194,10 +5194,10 @@
     "temp_mean_c": 17.8,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 6,
-    "hot_days_count": 0
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 7,
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "soybean::Canada::Saskatchewan::admin1::soybean",
@@ -5217,12 +5217,12 @@
     "temp_max_c": 24.2,
     "temp_min_c": 13.6,
     "temp_mean_c": 19.2,
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 100.0,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 10,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "soybean::Italy::national::豆油",
@@ -5245,7 +5245,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 14,
     "hot_days_count": 1
   },
@@ -5269,8 +5269,8 @@
     "temp_mean_c": 27.7,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 55.55555555555556,
+    "precipitation_percentile_30d": 55.55555555555556,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 6,
     "hot_days_count": 0
   },
@@ -5293,10 +5293,10 @@
     "temp_min_c": 24.2,
     "temp_mean_c": 29.0,
     "anomaly_label": "excessive_rain",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 88.88888888888889,
+    "anomaly_level": "low",
+    "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 8,
+    "dry_days_count": 9,
     "hot_days_count": 1
   },
   {
@@ -5319,8 +5319,8 @@
     "temp_mean_c": 23.8,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 0.0,
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 8,
     "hot_days_count": 0
   },
@@ -5345,7 +5345,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 0.0,
     "dry_days_count": 0,
     "hot_days_count": 0
   },
@@ -5370,8 +5370,8 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 6,
+    "temp_max_percentile": 44.44444444444444,
+    "dry_days_count": 7,
     "hot_days_count": 0
   },
   {
@@ -5395,7 +5395,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 33.33333333333333,
     "dry_days_count": 10,
     "hot_days_count": 0
   },
@@ -5419,8 +5419,8 @@
     "temp_mean_c": 21.6,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 0.0,
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 10,
     "hot_days_count": 0
   },
@@ -5445,7 +5445,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 8,
     "hot_days_count": 2
   },
@@ -5469,9 +5469,9 @@
     "temp_mean_c": 29.3,
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 66.66666666666666,
+    "precipitation_percentile_30d": 55.55555555555556,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 10,
+    "dry_days_count": 9,
     "hot_days_count": 3
   },
   {
@@ -5494,8 +5494,8 @@
     "temp_mean_c": 23.1,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 0.0,
+    "precipitation_percentile_30d": 66.66666666666666,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 8,
     "hot_days_count": 0
   },
@@ -5542,10 +5542,10 @@
     "temp_max_c": 27.6,
     "temp_min_c": 20.9,
     "temp_mean_c": 24.2,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 0.0,
+    "anomaly_label": "rainfall_low",
+    "anomaly_level": "low",
+    "precipitation_percentile_30d": 22.22222222222222,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -5570,7 +5570,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 44.44444444444444,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 10,
     "hot_days_count": 0
   },
@@ -5592,10 +5592,10 @@
     "temp_max_c": 29.7,
     "temp_min_c": 21.0,
     "temp_mean_c": 24.3,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
-    "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 88.88888888888889,
+    "anomaly_label": "high_temperature",
+    "anomaly_level": "high",
+    "precipitation_percentile_30d": 66.66666666666666,
+    "temp_max_percentile": 100.0,
     "dry_days_count": 10,
     "hot_days_count": 3
   },
@@ -5619,7 +5619,7 @@
     "temp_mean_c": 28.8,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
+    "precipitation_percentile_30d": 44.44444444444444,
     "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 8,
     "hot_days_count": 0
@@ -5642,11 +5642,11 @@
     "temp_max_c": 31.9,
     "temp_min_c": 20.0,
     "temp_mean_c": 25.9,
-    "anomaly_label": "rainfall_low",
-    "anomaly_level": "low",
-    "precipitation_percentile_30d": 22.22222222222222,
-    "temp_max_percentile": 44.44444444444444,
-    "dry_days_count": 9,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 33.33333333333333,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 10,
     "hot_days_count": 1
   },
   {
@@ -5671,7 +5671,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 3
   },
   {
@@ -5696,7 +5696,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
     "temp_max_percentile": 11.11111111111111,
-    "dry_days_count": 7,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -5721,7 +5721,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 22.22222222222222,
-    "dry_days_count": 7,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -5771,7 +5771,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 33.33333333333333,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 14,
+    "dry_days_count": 13,
     "hot_days_count": 6
   },
   {
@@ -5795,7 +5795,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 11,
     "hot_days_count": 0
   },
@@ -5820,7 +5820,7 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "medium",
     "precipitation_percentile_30d": 11.11111111111111,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 11,
     "hot_days_count": 1
   },
@@ -5869,9 +5869,9 @@
     "temp_mean_c": 26.9,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
+    "precipitation_percentile_30d": 44.44444444444444,
     "temp_max_percentile": 22.22222222222222,
-    "dry_days_count": 4,
+    "dry_days_count": 5,
     "hot_days_count": 0
   },
   {
@@ -5892,12 +5892,12 @@
     "temp_max_c": 29.2,
     "temp_min_c": 21.8,
     "temp_mean_c": 25.5,
-    "anomaly_label": "rainfall_deficit",
+    "anomaly_label": "rainfall_low|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 12,
-    "hot_days_count": 2
+    "precipitation_percentile_30d": 22.22222222222222,
+    "temp_max_percentile": 100.0,
+    "dry_days_count": 11,
+    "hot_days_count": 4
   },
   {
     "weather_region_id": "soybean::United_States::TENNESSEE::admin1::soybean",
@@ -5921,7 +5921,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 3,
+    "dry_days_count": 4,
     "hot_days_count": 1
   },
   {
@@ -5946,7 +5946,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 10,
+    "dry_days_count": 11,
     "hot_days_count": 0
   },
   {
@@ -5967,8 +5967,8 @@
     "temp_max_c": 31.3,
     "temp_min_c": 19.0,
     "temp_mean_c": 24.8,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 66.66666666666666,
     "temp_max_percentile": 0.0,
     "dry_days_count": 7,
@@ -5995,7 +5995,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 22.22222222222222,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -6020,9 +6020,9 @@
     "anomaly_label": "rainfall_deficit",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 0.0,
-    "temp_max_percentile": 33.33333333333333,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 13,
-    "hot_days_count": 0
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "sunflower::Canada::Alberta::admin1::sunflower_seed",
@@ -6044,9 +6044,9 @@
     "temp_mean_c": 14.0,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 7,
+    "precipitation_percentile_30d": 55.55555555555556,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -6069,7 +6069,7 @@
     "temp_mean_c": 23.3,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 66.66666666666666,
+    "precipitation_percentile_30d": 55.55555555555556,
     "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 8,
     "hot_days_count": 0
@@ -6095,9 +6095,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 11.11111111111111,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 11,
-    "hot_days_count": 0
+    "hot_days_count": 2
   },
   {
     "weather_region_id": "sunflower::Canada::Saskatchewan::admin1::sunflower_seed",
@@ -6117,12 +6117,12 @@
     "temp_max_c": 24.2,
     "temp_min_c": 13.6,
     "temp_mean_c": 19.2,
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 100.0,
+    "temp_max_percentile": 66.66666666666666,
     "dry_days_count": 10,
-    "hot_days_count": 1
+    "hot_days_count": 0
   },
   {
     "weather_region_id": "sunflower::Romania::national::葵油",
@@ -6145,7 +6145,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 0.0,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -6169,9 +6169,9 @@
     "temp_mean_c": 21.2,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 7,
+    "precipitation_percentile_30d": 77.77777777777779,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -6194,9 +6194,9 @@
     "temp_mean_c": 23.1,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 100.0,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 5,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -6221,7 +6221,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -6246,7 +6246,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 10,
+    "dry_days_count": 9,
     "hot_days_count": 0
   },
   {
@@ -6270,7 +6270,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 55.55555555555556,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 9,
     "hot_days_count": 1
   },
@@ -6297,7 +6297,7 @@
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 100.0,
     "dry_days_count": 6,
-    "hot_days_count": 6
+    "hot_days_count": 7
   },
   {
     "weather_region_id": "sunflower::Russia::Ivanovo Oblast::admin1::葵油",
@@ -6320,7 +6320,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 22.22222222222222,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -6342,10 +6342,10 @@
     "temp_max_c": 23.1,
     "temp_min_c": 17.3,
     "temp_mean_c": 20.0,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 33.33333333333333,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 4,
     "hot_days_count": 0
   },
@@ -6370,7 +6370,7 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 0.0,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 7,
     "hot_days_count": 0
   },
@@ -6395,8 +6395,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 4,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 5,
     "hot_days_count": 0
   },
   {
@@ -6421,7 +6421,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 44.44444444444444,
-    "dry_days_count": 6,
+    "dry_days_count": 5,
     "hot_days_count": 0
   },
   {
@@ -6446,7 +6446,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 7,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -6470,8 +6470,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 5,
+    "temp_max_percentile": 55.55555555555556,
+    "dry_days_count": 4,
     "hot_days_count": 0
   },
   {
@@ -6492,12 +6492,12 @@
     "temp_max_c": 33.0,
     "temp_min_c": 19.7,
     "temp_mean_c": 24.8,
-    "anomaly_label": "high_temperature",
+    "anomaly_label": "rainfall_low|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 33.33333333333333,
+    "precipitation_percentile_30d": 22.22222222222222,
     "temp_max_percentile": 100.0,
     "dry_days_count": 6,
-    "hot_days_count": 5
+    "hot_days_count": 7
   },
   {
     "weather_region_id": "sunflower::Russia::Kursk Oblast::admin1::葵油",
@@ -6542,8 +6542,8 @@
     "temp_max_c": 20.7,
     "temp_min_c": 13.3,
     "temp_mean_c": 16.4,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "low",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
     "dry_days_count": 9,
@@ -6569,8 +6569,8 @@
     "temp_mean_c": 18.6,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 11.11111111111111,
+    "precipitation_percentile_30d": 77.77777777777779,
+    "temp_max_percentile": 22.22222222222222,
     "dry_days_count": 9,
     "hot_days_count": 0
   },
@@ -6592,10 +6592,10 @@
     "temp_max_c": 18.4,
     "temp_min_c": 15.8,
     "temp_mean_c": 17.0,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "high",
     "precipitation_percentile_30d": 66.66666666666666,
-    "temp_max_percentile": 66.66666666666666,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 8,
     "hot_days_count": 1
   },
@@ -6620,8 +6620,8 @@
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 55.55555555555556,
-    "dry_days_count": 5,
+    "temp_max_percentile": 66.66666666666666,
+    "dry_days_count": 4,
     "hot_days_count": 0
   },
   {
@@ -6642,12 +6642,12 @@
     "temp_max_c": 31.6,
     "temp_min_c": 20.8,
     "temp_mean_c": 26.7,
-    "anomaly_label": "excessive_rain|high_temperature",
+    "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 9,
-    "hot_days_count": 4
+    "dry_days_count": 10,
+    "hot_days_count": 5
   },
   {
     "weather_region_id": "sunflower::Russia::Orenburg Oblast::admin1::葵油",
@@ -6671,7 +6671,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 12,
+    "dry_days_count": 11,
     "hot_days_count": 5
   },
   {
@@ -6692,11 +6692,11 @@
     "temp_max_c": 19.0,
     "temp_min_c": 13.6,
     "temp_mean_c": 16.3,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "low",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -6720,7 +6720,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 8,
     "hot_days_count": 1
   },
@@ -6747,7 +6747,7 @@
     "precipitation_percentile_30d": 77.77777777777779,
     "temp_max_percentile": 100.0,
     "dry_days_count": 9,
-    "hot_days_count": 5
+    "hot_days_count": 4
   },
   {
     "weather_region_id": "sunflower::Russia::Primorsky Krai::admin1::葵油",
@@ -6770,7 +6770,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 22.22222222222222,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 8,
     "hot_days_count": 1
   },
@@ -6795,8 +6795,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 22.22222222222222,
-    "dry_days_count": 5,
+    "temp_max_percentile": 11.11111111111111,
+    "dry_days_count": 6,
     "hot_days_count": 0
   },
   {
@@ -6819,7 +6819,7 @@
     "temp_mean_c": 22.4,
     "anomaly_label": "high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 100.0,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 100.0,
     "dry_days_count": 7,
     "hot_days_count": 4
@@ -6842,11 +6842,11 @@
     "temp_max_c": 25.0,
     "temp_min_c": 14.6,
     "temp_mean_c": 20.1,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 10,
     "hot_days_count": 0
   },
   {
@@ -6869,8 +6869,8 @@
     "temp_mean_c": 25.4,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 44.44444444444444,
-    "temp_max_percentile": 44.44444444444444,
+    "precipitation_percentile_30d": 55.55555555555556,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 12,
     "hot_days_count": 0
   },
@@ -6895,9 +6895,9 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 88.88888888888889,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 8,
-    "hot_days_count": 2
+    "hot_days_count": 1
   },
   {
     "weather_region_id": "sunflower::Russia::Republic of Mordovia::admin1::葵油",
@@ -6918,10 +6918,10 @@
     "temp_min_c": 14.1,
     "temp_mean_c": 16.4,
     "anomaly_label": "excessive_rain",
-    "anomaly_level": "low",
-    "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 66.66666666666666,
-    "dry_days_count": 9,
+    "anomaly_level": "medium",
+    "precipitation_percentile_30d": 88.88888888888889,
+    "temp_max_percentile": 44.44444444444444,
+    "dry_days_count": 8,
     "hot_days_count": 1
   },
   {
@@ -6944,8 +6944,8 @@
     "temp_mean_c": 17.0,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 55.55555555555556,
-    "temp_max_percentile": 44.44444444444444,
+    "precipitation_percentile_30d": 66.66666666666666,
+    "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 6,
     "hot_days_count": 1
   },
@@ -6969,7 +6969,7 @@
     "temp_mean_c": 19.4,
     "anomaly_label": "excessive_rain|high_temperature",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 77.77777777777779,
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 100.0,
     "dry_days_count": 7,
     "hot_days_count": 2
@@ -6994,9 +6994,9 @@
     "temp_mean_c": 20.3,
     "anomaly_label": "excessive_rain",
     "anomaly_level": "medium",
-    "precipitation_percentile_30d": 88.88888888888889,
+    "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 10,
+    "dry_days_count": 11,
     "hot_days_count": 0
   },
   {
@@ -7042,10 +7042,10 @@
     "temp_max_c": 23.0,
     "temp_min_c": 16.9,
     "temp_mean_c": 21.1,
-    "anomaly_label": "high_temperature",
-    "anomaly_level": "high",
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 100.0,
+    "temp_max_percentile": 88.88888888888889,
     "dry_days_count": 7,
     "hot_days_count": 2
   },
@@ -7071,7 +7071,7 @@
     "anomaly_level": "high",
     "precipitation_percentile_30d": 33.33333333333333,
     "temp_max_percentile": 100.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 2
   },
   {
@@ -7095,8 +7095,8 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
-    "temp_max_percentile": 33.33333333333333,
-    "dry_days_count": 4,
+    "temp_max_percentile": 22.22222222222222,
+    "dry_days_count": 5,
     "hot_days_count": 0
   },
   {
@@ -7146,7 +7146,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 8,
+    "dry_days_count": 7,
     "hot_days_count": 0
   },
   {
@@ -7172,7 +7172,7 @@
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 100.0,
     "dry_days_count": 9,
-    "hot_days_count": 4
+    "hot_days_count": 3
   },
   {
     "weather_region_id": "sunflower::Russia::Ulyanovsk Oblast::admin1::葵油",
@@ -7194,8 +7194,8 @@
     "temp_mean_c": 18.5,
     "anomaly_label": "excessive_rain",
     "anomaly_level": "high",
-    "precipitation_percentile_30d": 88.88888888888889,
-    "temp_max_percentile": 88.88888888888889,
+    "precipitation_percentile_30d": 100.0,
+    "temp_max_percentile": 77.77777777777779,
     "dry_days_count": 8,
     "hot_days_count": 1
   },
@@ -7217,9 +7217,9 @@
     "temp_max_c": 21.1,
     "temp_min_c": 14.7,
     "temp_mean_c": 17.2,
-    "anomaly_label": "excessive_rain",
-    "anomaly_level": "medium",
-    "precipitation_percentile_30d": 77.77777777777779,
+    "anomaly_label": "normal",
+    "anomaly_level": "normal",
+    "precipitation_percentile_30d": 88.88888888888889,
     "temp_max_percentile": 11.11111111111111,
     "dry_days_count": 5,
     "hot_days_count": 0
@@ -7244,8 +7244,8 @@
     "temp_mean_c": 20.8,
     "anomaly_label": "normal",
     "anomaly_level": "normal",
-    "precipitation_percentile_30d": 33.33333333333333,
-    "temp_max_percentile": 77.77777777777779,
+    "precipitation_percentile_30d": 44.44444444444444,
+    "temp_max_percentile": 55.55555555555556,
     "dry_days_count": 13,
     "hot_days_count": 2
   },
@@ -7267,11 +7267,11 @@
     "temp_max_c": 20.9,
     "temp_min_c": 13.1,
     "temp_mean_c": 16.4,
-    "anomaly_label": "normal",
-    "anomaly_level": "normal",
+    "anomaly_label": "excessive_rain",
+    "anomaly_level": "low",
     "precipitation_percentile_30d": 100.0,
     "temp_max_percentile": 0.0,
-    "dry_days_count": 9,
+    "dry_days_count": 8,
     "hot_days_count": 0
   },
   {
@@ -7295,7 +7295,7 @@
     "anomaly_label": "normal",
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 77.77777777777779,
-    "temp_max_percentile": 77.77777777777779,
+    "temp_max_percentile": 44.44444444444444,
     "dry_days_count": 8,
     "hot_days_count": 0
   },
@@ -7346,7 +7346,7 @@
     "anomaly_level": "normal",
     "precipitation_percentile_30d": 66.66666666666666,
     "temp_max_percentile": 77.77777777777779,
-    "dry_days_count": 10,
+    "dry_days_count": 9,
     "hot_days_count": 3
   }
 ]

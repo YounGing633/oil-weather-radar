@@ -140,7 +140,7 @@
     "temp_max_16d_avg": 31.11,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "降雨偏少状态有望缓解，未来7天高温维持"
+    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
   },
   {
     "weather_region_id": "coconut::Indonesia::Lampung::admin1::椰子油",
@@ -371,7 +371,7 @@
     "temp_max_16d_avg": 24.14,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION I (ILOCOS REGION)::admin1::椰子油",
@@ -426,7 +426,7 @@
     "temp_max_16d_avg": 28.94,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
@@ -437,7 +437,7 @@
     "temp_max_16d_avg": 28.94,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION VI (WESTERN VISAYAS)::admin1::椰子油",
@@ -470,7 +470,7 @@
     "temp_max_16d_avg": 30.34,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION X (NORTHERN MINDANAO)::admin1::椰子油",
@@ -481,7 +481,7 @@
     "temp_max_16d_avg": 23.65,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION XI (DAVAO REGION)::admin1::椰子油",
@@ -668,7 +668,7 @@
     "temp_max_16d_avg": 31.11,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "降雨偏少状态有望缓解，未来7天高温维持"
+    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
   },
   {
     "weather_region_id": "palm::Indonesia::Lampung::admin1::crude_palm_oil",
@@ -1240,7 +1240,7 @@
     "temp_max_16d_avg": 25.47,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
+    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Ivanovo Oblast::admin1::菜油",
@@ -1262,7 +1262,7 @@
     "temp_max_16d_avg": 27.56,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "rapeseed_canola::Russia::Kaliningrad Oblast::admin1::菜油",
@@ -2439,7 +2439,7 @@
     "temp_max_16d_avg": 31.87,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
+    "forecast_summary_cn": "降雨偏少状态有望缓解，未来7天高温维持"
   },
   {
     "weather_region_id": "soybean::United_States::MICHIGAN::admin1::soybean",
@@ -2483,7 +2483,7 @@
     "temp_max_16d_avg": 33.24,
     "rain_trend_label_cn": "降雨持平",
     "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "降雨偏少状态有望缓解，未来7天高温维持"
+    "forecast_summary_cn": "降雨持平，未来7天高温维持"
   },
   {
     "weather_region_id": "soybean::United_States::NEBRASKA::admin1::soybean",
@@ -2626,7 +2626,7 @@
     "temp_max_16d_avg": 31.79,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "未来7天高温维持",
-    "forecast_summary_cn": "偏湿风险可能延续，未来7天高温维持"
+    "forecast_summary_cn": "未来7天降雨偏多，未来7天高温维持"
   },
   {
     "weather_region_id": "soybean::United_States::WEST_VIRGINIA::admin1::soybean",
@@ -2791,7 +2791,7 @@
     "temp_max_16d_avg": 27.56,
     "rain_trend_label_cn": "未来7天降雨偏多",
     "temp_trend_label_cn": "气温持平",
-    "forecast_summary_cn": "偏湿风险可能延续，气温持平"
+    "forecast_summary_cn": "未来7天降雨偏多，气温持平"
   },
   {
     "weather_region_id": "sunflower::Russia::Kaliningrad Oblast::admin1::葵油",

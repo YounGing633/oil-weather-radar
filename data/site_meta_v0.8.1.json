@@ -1,6 +1,6 @@
 [
   {
-    "generated_at": "2026-07-31 09:44:25",
+    "generated_at": "2026-07-31 09:55:56",
     "version": "v1.0-i1",
     "baseline_period": "2017-2025",
     "baseline_method": "Open-Meteo ECMWF IFS same-calendar-day weather baseline",
@@ -42,7 +42,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 167,
-    "run_id": "daily_export_20260731_094424"
+    "total_alerts": 155,
+    "run_id": "daily_export_20260731_095555"
   }
 ]
