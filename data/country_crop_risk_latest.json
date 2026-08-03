@@ -33,9 +33,9 @@
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
     "updated_at": "2026-07-31 09:56:11",
-    "dominant_country_badge_cn": "",
+    "dominant_country_badge_cn": "过湿·播种",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
+    "operation_affected_share": 0.0004,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -44,25 +44,29 @@
       "mixed_calendar_progress": 0
     },
     "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [
+    "top_operation_risk_regions": [
       {
-        "region_name": "Buenos Aires, 阿根廷 / Argentina"
+        "region_name": "Tucumán, 阿根廷 / Argentina",
+        "risk_label_cn": "过湿·播种",
+        "risk_level": 2,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Córdoba, 阿根廷 / Argentina"
-      },
-      {
-        "region_name": "Entre Ríos, 阿根廷 / Argentina"
-      },
-      {
-        "region_name": "Santa Fe, 阿根廷 / Argentina"
+        "region_name": "Jujuy, 阿根廷 / Argentina",
+        "risk_label_cn": "过湿·播种",
+        "risk_level": 2,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
       }
     ],
+    "supportive_regions": [],
     "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "soil_temp_used_region_count": 4,
+    "soil_temp_used_share": 0.4,
+    "soil_temp_stage_summary": {
+      "OS/PE": 4
+    }
   },
   {
     "country": "Australia",
@@ -112,11 +116,9 @@
     "top_operation_risk_regions": [],
     "supportive_regions": [],
     "confidence_summary": "medium",
-    "soil_temp_used_region_count": 4,
-    "soil_temp_used_share": 0.6667,
-    "soil_temp_stage_summary": {
-      "V/FP": 4
-    }
+    "soil_temp_used_region_count": 0,
+    "soil_temp_used_share": 0.0,
+    "soil_temp_stage_summary": {}
   },
   {
     "country": "Brazil",
@@ -326,11 +328,9 @@
     "top_operation_risk_regions": [],
     "supportive_regions": [],
     "confidence_summary": "medium",
-    "soil_temp_used_region_count": 5,
-    "soil_temp_used_share": 0.625,
-    "soil_temp_stage_summary": {
-      "V/FP": 5
-    }
+    "soil_temp_used_region_count": 0,
+    "soil_temp_used_share": 0.0,
+    "soil_temp_stage_summary": {}
   },
   {
     "country": "Canada",
@@ -430,15 +430,13 @@
     },
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "Czechia / Czechia"
-      }
-    ],
+    "supportive_regions": [],
     "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "soil_temp_used_region_count": 1,
+    "soil_temp_used_share": 1.0,
+    "soil_temp_stage_summary": {
+      "OS/PE": 1
+    }
   },
   {
     "country": "Denmark",
@@ -538,15 +536,13 @@
     },
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "法国 / France"
-      }
-    ],
+    "supportive_regions": [],
     "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "soil_temp_used_region_count": 1,
+    "soil_temp_used_share": 1.0,
+    "soil_temp_stage_summary": {
+      "OS/PE": 1
+    }
   },
   {
     "country": "Germany",
@@ -594,15 +590,13 @@
     },
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "德国 / Germany"
-      }
-    ],
+    "supportive_regions": [],
     "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "soil_temp_used_region_count": 1,
+    "soil_temp_used_share": 1.0,
+    "soil_temp_stage_summary": {
+      "OS/PE": 1
+    }
   },
   {
     "country": "Indonesia",
@@ -1286,15 +1280,13 @@
     },
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "罗马尼亚 / Romania"
-      }
-    ],
+    "supportive_regions": [],
     "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "soil_temp_used_region_count": 1,
+    "soil_temp_used_share": 1.0,
+    "soil_temp_stage_summary": {
+      "OS/PE": 1
+    }
   },
   {
     "country": "Romania",
@@ -1382,9 +1374,9 @@
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
     "updated_at": "2026-07-31 09:56:11",
-    "dominant_country_badge_cn": "降雨·收获",
+    "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0624,
+    "operation_affected_share": 0.0,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -1393,36 +1385,7 @@
       "mixed_calendar_progress": 0
     },
     "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "Russia - Krasnodar Krai",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Stavropol Krai",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Republic of Adygea",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Rostov Oblast",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
+    "top_operation_risk_regions": [],
     "supportive_regions": [
       {
         "region_name": "Russia - Kaliningrad Oblast"
@@ -1583,15 +1546,13 @@
     },
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [],
-    "supportive_regions": [
-      {
-        "region_name": "United Kingdom / United Kingdom"
-      }
-    ],
+    "supportive_regions": [],
     "confidence_summary": "medium",
-    "soil_temp_used_region_count": 0,
-    "soil_temp_used_share": 0.0,
-    "soil_temp_stage_summary": {}
+    "soil_temp_used_region_count": 1,
+    "soil_temp_used_share": 1.0,
+    "soil_temp_stage_summary": {
+      "OS/PE": 1
+    }
   },
   {
     "country": "United States",
@@ -1679,9 +1640,9 @@
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
     "updated_at": "2026-07-31 09:56:11",
-    "dominant_country_badge_cn": "",
+    "dominant_country_badge_cn": "降雨·收获",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
+    "operation_affected_share": 0.1163,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -1690,8 +1651,56 @@
       "mixed_calendar_progress": 0
     },
     "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [],
+    "top_operation_risk_regions": [
+      {
+        "region_name": "MISSISSIPPI / United States",
+        "risk_label_cn": "降雨·收获",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
+        "region_name": "KANSAS / United States",
+        "risk_label_cn": "降雨·收获",
+        "risk_level": 2,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
+        "region_name": "ARKANSAS / United States",
+        "risk_label_cn": "降雨·收获",
+        "risk_level": 2,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
+        "region_name": "NORTH CAROLINA / United States",
+        "risk_label_cn": "降雨·收获",
+        "risk_level": 2,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      }
+    ],
+    "supportive_regions": [
+      {
+        "region_name": "TENNESSEE / United States"
+      },
+      {
+        "region_name": "LOUISIANA / United States"
+      },
+      {
+        "region_name": "SOUTH CAROLINA / United States"
+      },
+      {
+        "region_name": "OKLAHOMA / United States"
+      },
+      {
+        "region_name": "GEORGIA / United States"
+      },
+      {
+        "region_name": "TEXAS / United States"
+      }
+    ],
     "confidence_summary": "medium",
     "soil_temp_used_region_count": 0,
     "soil_temp_used_share": 0.0,
