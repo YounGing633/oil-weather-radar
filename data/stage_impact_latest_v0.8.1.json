@@ -435,18 +435,18 @@
     "weather_region_id": "rapeseed_canola::Canada::Ontario::admin1::rapeseed_canola",
     "current_month": 8,
     "matched_growth_stage": "开花/结荚/灌浆",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前温和、土壤水分良好，暂无异常天气影响。",
-    "web_message_cn": "当前处于开花/结荚/灌浆阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱",
+    "impact_cn": "授粉受损、结籽率下降、粒重和含油率受压",
+    "web_message_cn": "当前处于加拿大菜籽开花/结荚/灌浆敏感窗口，高温或干旱可能影响授粉和结籽。",
     "rule_id": "CA_RC_02"
   },
   {
     "weather_region_id": "rapeseed_canola::Canada::Quebec::admin1::rapeseed_canola",
     "current_month": 8,
     "matched_growth_stage": "开花/结荚/灌浆",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前温和、土壤水分良好，暂无异常天气影响。",
-    "web_message_cn": "当前处于开花/结荚/灌浆阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱",
+    "impact_cn": "授粉受损、结籽率下降、粒重和含油率受压",
+    "web_message_cn": "当前处于加拿大菜籽开花/结荚/灌浆敏感窗口，高温或干旱可能影响授粉和结籽。",
     "rule_id": "CA_RC_02"
   },
   {
@@ -786,9 +786,9 @@
     "weather_region_id": "soybean::United_States::NORTH_DAKOTA::admin1::soybean",
     "current_month": 8,
     "matched_growth_stage": "开花/结荚",
-    "matched_weather_condition": "高温、偏干、土壤墒情下降",
-    "impact_cn": "落花、结荚数量下降、单产形成受压",
-    "web_message_cn": "当前处于美国大豆开花/结荚敏感窗口，若高温偏干持续，可能影响花荚形成。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前温度适中、土壤水分充足，暂无异常天气影响。",
+    "web_message_cn": "当前处于开花/结荚阶段，天气条件基本正常。",
     "rule_id": "US_SB_02"
   },
   {
@@ -1614,18 +1614,18 @@
     "weather_region_id": "coconut::Philippines::REGION VIII (EASTERN VISAYAS)::admin1::椰子油",
     "current_month": 8,
     "matched_growth_stage": "全年生长/干旱敏感期",
-    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
-    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
-    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
     "rule_id": "PH_COCO_01"
   },
   {
     "weather_region_id": "coconut::Philippines::REGION V (BICOL REGION)::admin1::椰子油",
     "current_month": 8,
     "matched_growth_stage": "全年生长/干旱敏感期",
-    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
-    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
-    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
+    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
     "rule_id": "PH_COCO_01"
   },
   {
@@ -1677,9 +1677,9 @@
     "weather_region_id": "coconut::Philippines::REGION II (CAGAYAN VALLEY)::admin1::椰子油",
     "current_month": 8,
     "matched_growth_stage": "全年生长/干旱敏感期",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前均匀降雨、无持续干旱，暂无异常天气影响。",
-    "web_message_cn": "当前处于全年生长/干旱敏感期阶段，天气条件基本正常。",
+    "matched_weather_condition": "持续干旱（30日以上降雨显著偏少）",
+    "impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
+    "web_message_cn": "椰子为长周期作物，持续干旱可能导致开花坐果受抑和果实发育滞后，影响后续6-12个月产量。",
     "rule_id": "PH_COCO_01"
   },
   {
@@ -1911,9 +1911,9 @@
     "weather_region_id": "rapeseed_canola::Russia::Omsk Oblast::admin1::菜油",
     "current_month": 8,
     "matched_growth_stage": "播种/建苗",
-    "matched_weather_condition": "干旱或持续高温",
-    "impact_cn": "秋播建苗受压、出苗不齐",
-    "web_message_cn": "当前处于俄罗斯冬油菜播种建苗窗口，干旱或高温可能影响出苗和建苗。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前适度降雨、土壤墒情良好，暂无异常天气影响。",
+    "web_message_cn": "当前处于播种/建苗阶段，天气条件基本正常。",
     "rule_id": "RU_RP_01"
   },
   {
@@ -2091,9 +2091,9 @@
     "weather_region_id": "rapeseed_canola::Russia::Smolensk Oblast::admin1::菜油",
     "current_month": 8,
     "matched_growth_stage": "播种/建苗",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前适度降雨、土壤墒情良好，暂无异常天气影响。",
-    "web_message_cn": "当前处于播种/建苗阶段，天气条件基本正常。",
+    "matched_weather_condition": "干旱或持续高温",
+    "impact_cn": "秋播建苗受压、出苗不齐",
+    "web_message_cn": "当前处于俄罗斯冬油菜播种建苗窗口，干旱或高温可能影响出苗和建苗。",
     "rule_id": "RU_RP_01"
   },
   {
@@ -2370,9 +2370,9 @@
     "weather_region_id": "sunflower::Russia::Lipetsk Oblast::admin1::葵油",
     "current_month": 8,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前灌浆期需要温和天气，收获期需要少雨窗口。，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱影响灌浆，连续降雨影响收获和品质。",
+    "impact_cn": "灌浆/收获期异常天气可能影响籽粒成熟和收割节奏。",
+    "web_message_cn": "俄罗斯葵籽处于灌浆/收获窗口，关注干热或连续降雨。",
     "rule_id": "RU_SF_03"
   },
   {
@@ -2388,9 +2388,9 @@
     "weather_region_id": "sunflower::Russia::Nizhny Novgorod Oblast::admin1::葵油",
     "current_month": 8,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前灌浆期需要温和天气，收获期需要少雨窗口。，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱影响灌浆，连续降雨影响收获和品质。",
+    "impact_cn": "灌浆/收获期异常天气可能影响籽粒成熟和收割节奏。",
+    "web_message_cn": "俄罗斯葵籽处于灌浆/收获窗口，关注干热或连续降雨。",
     "rule_id": "RU_SF_03"
   },
   {
@@ -2424,18 +2424,18 @@
     "weather_region_id": "sunflower::Russia::Oryol Oblast::admin1::葵油",
     "current_month": 8,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前灌浆期需要温和天气，收获期需要少雨窗口。，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱影响灌浆，连续降雨影响收获和品质。",
+    "impact_cn": "灌浆/收获期异常天气可能影响籽粒成熟和收割节奏。",
+    "web_message_cn": "俄罗斯葵籽处于灌浆/收获窗口，关注干热或连续降雨。",
     "rule_id": "RU_SF_03"
   },
   {
     "weather_region_id": "sunflower::Russia::Penza Oblast::admin1::葵油",
     "current_month": 8,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "高温干旱影响灌浆，连续降雨影响收获和品质。",
-    "impact_cn": "灌浆/收获期异常天气可能影响籽粒成熟和收割节奏。",
-    "web_message_cn": "俄罗斯葵籽处于灌浆/收获窗口，关注干热或连续降雨。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前灌浆期需要温和天气，收获期需要少雨窗口。，暂无异常天气影响。",
+    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
     "rule_id": "RU_SF_03"
   },
   {
@@ -2523,9 +2523,9 @@
     "weather_region_id": "sunflower::Russia::Republic of Tatarstan::admin1::葵油",
     "current_month": 8,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "高温干旱影响灌浆，连续降雨影响收获和品质。",
-    "impact_cn": "灌浆/收获期异常天气可能影响籽粒成熟和收割节奏。",
-    "web_message_cn": "俄罗斯葵籽处于灌浆/收获窗口，关注干热或连续降雨。",
+    "matched_weather_condition": "天气条件正常",
+    "impact_cn": "当前灌浆期需要温和天气，收获期需要少雨窗口。，暂无异常天气影响。",
+    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
     "rule_id": "RU_SF_03"
   },
   {
@@ -2541,9 +2541,9 @@
     "weather_region_id": "sunflower::Russia::Ryazan Oblast::admin1::葵油",
     "current_month": 8,
     "matched_growth_stage": "灌浆/收获",
-    "matched_weather_condition": "天气条件正常",
-    "impact_cn": "当前灌浆期需要温和天气，收获期需要少雨窗口。，暂无异常天气影响。",
-    "web_message_cn": "当前处于灌浆/收获阶段，天气条件基本正常。",
+    "matched_weather_condition": "高温干旱影响灌浆，连续降雨影响收获和品质。",
+    "impact_cn": "灌浆/收获期异常天气可能影响籽粒成熟和收割节奏。",
+    "web_message_cn": "俄罗斯葵籽处于灌浆/收获窗口，关注干热或连续降雨。",
     "rule_id": "RU_SF_03"
   },
   {
