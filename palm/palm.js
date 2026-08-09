@@ -190,6 +190,17 @@
     state.selected = r; refreshMap();
     if (r.region_risk_publish_allowed === false) {
       $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${esc(r.spatial_note_cn || '行政区多点聚合区域估计。')}</p><h3>行政区多点聚合天气</h3><div class="forecast-brief">近30日区域平均降雨：${mm(r.rain_30d_mm)}；近30日最高温平均：${num(r.temp_max_30d_c) === null ? '缺测' : `${num(r.temp_max_30d_c).toFixed(1)}℃`}。<br>区域内部样点累计降雨：P10 ${mm(r.rain_30d_p10_mm)}；P50 ${mm(r.rain_30d_p50_mm)}；P90 ${mm(r.rain_30d_p90_mm)}。<br>未来7日区域平均预报降雨：${mm(r.forecast_rain_1_7d_mm)}；未来15日：${mm(r.forecast_rain_1_15d_mm)}。<br>有效覆盖率：${pc(r.observation_coverage)}；参与格点：${num(r.grid_point_count) ?? '缺测'}。<br><small>土壤、温度距平和综合供应风险尚未完成同口径区域聚合，当前不展示。</small></div>`;
+      const chartPanel = window.OilDetailCharts?.panel(r, {
+        cropName: '棕榈油', regionName: r.region, countryName: COUNTRY[r.country] || r.country,
+        riskLabel: '天气明细'
+      });
+      if (chartPanel) {
+        $('detail').innerHTML = $('detail').innerHTML.replace(
+          '土壤、温度距平和综合供应风险尚未完成同口径区域聚合，当前不展示。',
+          '综合供应风险尚未重算；以下仅展示已验证的降雨、日均温与土壤水分明细，不把 IFS 初步值标为 ERA5-Land。'
+        ) + chartPanel.html;
+        requestAnimationFrame(() => window.OilDetailCharts.render(r, state.dailyHistory.get(r.weather_region_id) || [], chartPanel.key));
+      }
       return;
     }
     const supply = window.PalmRisk.classifyPalmSupplyRisk(r, { basis: state.basis }), rainState = supply.moduleStates.rain, heatState = supply.moduleStates.heatDry, waterState = supply.moduleStates.water;
