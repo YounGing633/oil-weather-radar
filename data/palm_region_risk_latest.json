@@ -62590,7 +62590,640 @@
     "canonical_weather_latest_date": "2026-08-07",
     "risk_detail_contract": "preserved_rich_contract_weather_refreshed",
     "risk_detail_note": "Production, operation, soil and forecast detail are preserved; the displayed historical weather snapshot is the verified canonical release.",
-    "region_risk_publish_allowed": false
+    "region_risk_publish_allowed": false,
+    "soil_rootzone_percentile_90d_series": [
+      {
+        "date": "2026-05-10",
+        "soil_water_surface": 0.47294973347664926,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-11",
+        "soil_water_surface": 0.4738319808725392,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-12",
+        "soil_water_surface": 0.48563024691612583,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-13",
+        "soil_water_surface": 0.48371563046622595,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-14",
+        "soil_water_surface": 0.474988663346408,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-15",
+        "soil_water_surface": 0.4721961872919903,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-16",
+        "soil_water_surface": 0.4675051488434455,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-17",
+        "soil_water_surface": 0.45244210892743686,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-18",
+        "soil_water_surface": 0.44902744702104846,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-19",
+        "soil_water_surface": 0.46639236525464467,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-20",
+        "soil_water_surface": 0.4740516039558502,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-21",
+        "soil_water_surface": 0.4644201214897724,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-22",
+        "soil_water_surface": 0.4461862341828877,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-23",
+        "soil_water_surface": 0.43063209048305745,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-24",
+        "soil_water_surface": 0.42682399840349505,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-25",
+        "soil_water_surface": 0.42270085321866946,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-26",
+        "soil_water_surface": 0.4555480158638201,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-27",
+        "soil_water_surface": 0.4428895298755078,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-28",
+        "soil_water_surface": 0.42698158774597905,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-29",
+        "soil_water_surface": 0.4294914555080109,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-30",
+        "soil_water_surface": 0.43911751220546674,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-31",
+        "soil_water_surface": 0.4298150480105262,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-01",
+        "soil_water_surface": 0.44619069657912436,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-02",
+        "soil_water_surface": 0.47458274866288885,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-03",
+        "soil_water_surface": 0.47097158220149016,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-04",
+        "soil_water_surface": 0.46790725945356876,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-05",
+        "soil_water_surface": 0.4536823057980155,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-06",
+        "soil_water_surface": 0.4386722865268659,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-07",
+        "soil_water_surface": 0.4448859194421399,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-08",
+        "soil_water_surface": 0.44977625954710976,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-09",
+        "soil_water_surface": 0.4487191117218008,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-10",
+        "soil_water_surface": 0.46369253170646685,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-11",
+        "soil_water_surface": 0.4586046187799413,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-12",
+        "soil_water_surface": 0.45635194732426454,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-13",
+        "soil_water_surface": 0.4670969246575124,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-14",
+        "soil_water_surface": 0.4748392739776113,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-15",
+        "soil_water_surface": 0.47276957433980893,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-16",
+        "soil_water_surface": 0.47100508064708746,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-17",
+        "soil_water_surface": 0.4644606493262631,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-18",
+        "soil_water_surface": 0.4585455521955864,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-19",
+        "soil_water_surface": 0.47266928508336226,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-20",
+        "soil_water_surface": 0.4734434185903103,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-21",
+        "soil_water_surface": 0.47961947368983526,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-22",
+        "soil_water_surface": 0.47867867279800597,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-23",
+        "soil_water_surface": 0.4791191663099067,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-24",
+        "soil_water_surface": 0.46891135235215753,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-25",
+        "soil_water_surface": 0.47386172280733835,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-26",
+        "soil_water_surface": 0.4685686619565832,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-27",
+        "soil_water_surface": 0.48060090514317577,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-28",
+        "soil_water_surface": 0.48003003732113286,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-29",
+        "soil_water_surface": 0.4613476752103349,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-30",
+        "soil_water_surface": 0.4692687089906765,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-01",
+        "soil_water_surface": 0.46872831395483305,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-02",
+        "soil_water_surface": 0.46742842529630213,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-03",
+        "soil_water_surface": 0.46025530466362485,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-04",
+        "soil_water_surface": 0.4528845109174874,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-05",
+        "soil_water_surface": 0.44840544331301024,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-06",
+        "soil_water_surface": 0.42856909049616065,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-07",
+        "soil_water_surface": 0.41808714157103666,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-08",
+        "soil_water_surface": 0.43610402568460266,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-09",
+        "soil_water_surface": 0.4413940534984466,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-10",
+        "soil_water_surface": 0.42881851773517593,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-11",
+        "soil_water_surface": 0.41994979030309143,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-12",
+        "soil_water_surface": 0.4100785764008209,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-13",
+        "soil_water_surface": 0.40742169022753605,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-14",
+        "soil_water_surface": 0.4340277978693403,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-15",
+        "soil_water_surface": 0.4533131690581309,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-16",
+        "soil_water_surface": 0.4513189768698658,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-17",
+        "soil_water_surface": 0.47091772094825807,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-18",
+        "soil_water_surface": 0.46949977515511176,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-19",
+        "soil_water_surface": 0.46348782839213254,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-20",
+        "soil_water_surface": 0.4652904274743741,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-21",
+        "soil_water_surface": 0.4617879358090654,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-22",
+        "soil_water_surface": 0.4539018038276931,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-23",
+        "soil_water_surface": 0.4509095708987863,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-24",
+        "soil_water_surface": 0.4695065208097,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-25",
+        "soil_water_surface": 0.46843550917982407,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-26",
+        "soil_water_surface": 0.46333296385216893,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-27",
+        "soil_water_surface": 0.4499748433263214,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-28",
+        "soil_water_surface": 0.4397312126501983,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-29",
+        "soil_water_surface": 0.4677301892713045,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-30",
+        "soil_water_surface": 0.45555488210439965,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-31",
+        "soil_water_surface": 0.45581441817071233,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-01",
+        "soil_water_surface": 0.4450272218837601,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-02",
+        "soil_water_surface": 0.4332146403724494,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-03",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-04",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-05",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-06",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-07",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      }
+    ],
+    "soil_chart_note": "Surface soil moisture is ERA5-Land/IFS swvl1; root-zone series is unavailable for this region."
   },
   {
     "weather_region_id": "palm::Malaysia::Kelantan::admin1::oil_palm",
@@ -64926,7 +65559,640 @@
     "canonical_weather_latest_date": "2026-08-07",
     "risk_detail_contract": "preserved_rich_contract_weather_refreshed",
     "risk_detail_note": "Production, operation, soil and forecast detail are preserved; the displayed historical weather snapshot is the verified canonical release.",
-    "region_risk_publish_allowed": false
+    "region_risk_publish_allowed": false,
+    "soil_rootzone_percentile_90d_series": [
+      {
+        "date": "2026-05-10",
+        "soil_water_surface": 0.48699623234030526,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-11",
+        "soil_water_surface": 0.47541799726313816,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-12",
+        "soil_water_surface": 0.48071921215204855,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-13",
+        "soil_water_surface": 0.4748709253507002,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-14",
+        "soil_water_surface": 0.47059065410865053,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-15",
+        "soil_water_surface": 0.4806754083676955,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-16",
+        "soil_water_surface": 0.4854005585279042,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-17",
+        "soil_water_surface": 0.4732995935196383,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-18",
+        "soil_water_surface": 0.4630465297790019,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-19",
+        "soil_water_surface": 0.4507261329141891,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-20",
+        "soil_water_surface": 0.44252969077949017,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-21",
+        "soil_water_surface": 0.43449985157902804,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-22",
+        "soil_water_surface": 0.4205958549267029,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-23",
+        "soil_water_surface": 0.41234247561276954,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-24",
+        "soil_water_surface": 0.4147225300400972,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-25",
+        "soil_water_surface": 0.4272241266816339,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-26",
+        "soil_water_surface": 0.41818949265874517,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-27",
+        "soil_water_surface": 0.41677493525557285,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-28",
+        "soil_water_surface": 0.4137942040062321,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-29",
+        "soil_water_surface": 0.40556844126968983,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-30",
+        "soil_water_surface": 0.39763551168850436,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-31",
+        "soil_water_surface": 0.3966468896909888,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-01",
+        "soil_water_surface": 0.3975997546121885,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-02",
+        "soil_water_surface": 0.38952298994780865,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-03",
+        "soil_water_surface": 0.3866965704937187,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-04",
+        "soil_water_surface": 0.3857492073044735,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-05",
+        "soil_water_surface": 0.39626983953405215,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-06",
+        "soil_water_surface": 0.40428152993173727,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-07",
+        "soil_water_surface": 0.4554017796553908,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-08",
+        "soil_water_surface": 0.45599389132844104,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-09",
+        "soil_water_surface": 0.45540187306678787,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-10",
+        "soil_water_surface": 0.4358944992024788,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-11",
+        "soil_water_surface": 0.4374493858723692,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-12",
+        "soil_water_surface": 0.4413370834317688,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-13",
+        "soil_water_surface": 0.4277757330174917,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-14",
+        "soil_water_surface": 0.45846568025867673,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-15",
+        "soil_water_surface": 0.4782829014183679,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-16",
+        "soil_water_surface": 0.47782965902904045,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-17",
+        "soil_water_surface": 0.4793116182056419,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-18",
+        "soil_water_surface": 0.47173043554228605,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-19",
+        "soil_water_surface": 0.4849050883511191,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-20",
+        "soil_water_surface": 0.4532228309425031,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-21",
+        "soil_water_surface": 0.4841268685662206,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-22",
+        "soil_water_surface": 0.4898696297555399,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-23",
+        "soil_water_surface": 0.4777699191373981,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-24",
+        "soil_water_surface": 0.46384903899578356,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-25",
+        "soil_water_surface": 0.4619724642148047,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-26",
+        "soil_water_surface": 0.4598945008605678,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-27",
+        "soil_water_surface": 0.445849867792862,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-28",
+        "soil_water_surface": 0.4502164251465731,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-29",
+        "soil_water_surface": 0.48740027213977516,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-30",
+        "soil_water_surface": 0.4810261523086119,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-01",
+        "soil_water_surface": 0.4752940950386908,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-02",
+        "soil_water_surface": 0.4784685290087579,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-03",
+        "soil_water_surface": 0.4741554987953266,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-04",
+        "soil_water_surface": 0.4787190551975644,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-05",
+        "soil_water_surface": 0.4833159623037547,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-06",
+        "soil_water_surface": 0.47943772960611253,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-07",
+        "soil_water_surface": 0.4723295778003104,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-08",
+        "soil_water_surface": 0.47591892367273964,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-09",
+        "soil_water_surface": 0.47718679696155053,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-10",
+        "soil_water_surface": 0.4621420183679281,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-11",
+        "soil_water_surface": 0.4705528068637041,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-12",
+        "soil_water_surface": 0.4537381241040911,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-13",
+        "soil_water_surface": 0.4489392621626016,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-14",
+        "soil_water_surface": 0.4441372901016555,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-15",
+        "soil_water_surface": 0.4433685466245795,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-16",
+        "soil_water_surface": 0.4423304287901589,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-17",
+        "soil_water_surface": 0.46545694690876704,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-18",
+        "soil_water_surface": 0.477913949894879,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-19",
+        "soil_water_surface": 0.47509988367365996,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-20",
+        "soil_water_surface": 0.4799885406289833,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-21",
+        "soil_water_surface": 0.4842988274492733,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-22",
+        "soil_water_surface": 0.47158280723829643,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-23",
+        "soil_water_surface": 0.4649494056596024,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-24",
+        "soil_water_surface": 0.4702395890361639,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-25",
+        "soil_water_surface": 0.47579832780422926,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-26",
+        "soil_water_surface": 0.4838859351329624,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-27",
+        "soil_water_surface": 0.4762064266393219,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-28",
+        "soil_water_surface": 0.47036083040703053,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-29",
+        "soil_water_surface": 0.4661047664254645,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-30",
+        "soil_water_surface": 0.48701988860942547,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-31",
+        "soil_water_surface": 0.47492782081565804,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-01",
+        "soil_water_surface": 0.4782739373264129,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-02",
+        "soil_water_surface": 0.4615973510573581,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-03",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-04",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-05",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-06",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-07",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      }
+    ],
+    "soil_chart_note": "Surface soil moisture is ERA5-Land/IFS swvl1; root-zone series is unavailable for this region."
   },
   {
     "weather_region_id": "palm::Malaysia::Negeri_Sembilan::admin1::oil_palm",
@@ -69562,7 +70828,640 @@
     "canonical_weather_latest_date": "2026-08-07",
     "risk_detail_contract": "preserved_rich_contract_weather_refreshed",
     "risk_detail_note": "Production, operation, soil and forecast detail are preserved; the displayed historical weather snapshot is the verified canonical release.",
-    "region_risk_publish_allowed": false
+    "region_risk_publish_allowed": false,
+    "soil_rootzone_percentile_90d_series": [
+      {
+        "date": "2026-05-10",
+        "soil_water_surface": 0.4736624030697141,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-11",
+        "soil_water_surface": 0.47198026479460714,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-12",
+        "soil_water_surface": 0.48516714779137915,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-13",
+        "soil_water_surface": 0.4768719338958981,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-14",
+        "soil_water_surface": 0.4803256994815266,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-15",
+        "soil_water_surface": 0.47802480444047224,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-16",
+        "soil_water_surface": 0.45966165714519647,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-17",
+        "soil_water_surface": 0.4475595128742896,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-18",
+        "soil_water_surface": 0.4488920461442036,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-19",
+        "soil_water_surface": 0.4681122562631185,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-20",
+        "soil_water_surface": 0.48265452942088594,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-21",
+        "soil_water_surface": 0.4726030311137591,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-22",
+        "soil_water_surface": 0.4515281029701271,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-23",
+        "soil_water_surface": 0.44279166365293193,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-24",
+        "soil_water_surface": 0.4602515133771874,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-25",
+        "soil_water_surface": 0.4443596545880684,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-26",
+        "soil_water_surface": 0.4778694921825239,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-27",
+        "soil_water_surface": 0.4690432298363913,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-28",
+        "soil_water_surface": 0.4521749231512748,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-29",
+        "soil_water_surface": 0.4424037488430716,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-30",
+        "soil_water_surface": 0.44436754596663125,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-31",
+        "soil_water_surface": 0.4403290677344247,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-01",
+        "soil_water_surface": 0.45296746102759483,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-02",
+        "soil_water_surface": 0.4824531286508077,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-03",
+        "soil_water_surface": 0.4795247022756855,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-04",
+        "soil_water_surface": 0.4798366616156274,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-05",
+        "soil_water_surface": 0.46329870311626414,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-06",
+        "soil_water_surface": 0.4434623245837493,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-07",
+        "soil_water_surface": 0.45033601332306805,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-08",
+        "soil_water_surface": 0.4621107926951613,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-09",
+        "soil_water_surface": 0.4621730416004883,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-10",
+        "soil_water_surface": 0.47338632447236106,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-11",
+        "soil_water_surface": 0.4539861240706121,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-12",
+        "soil_water_surface": 0.4605184837283169,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-13",
+        "soil_water_surface": 0.4803931023668294,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-14",
+        "soil_water_surface": 0.47783833846049206,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-15",
+        "soil_water_surface": 0.48136907084747665,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-16",
+        "soil_water_surface": 0.4702221973467126,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-17",
+        "soil_water_surface": 0.4756105844239093,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-18",
+        "soil_water_surface": 0.46480735904389137,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-19",
+        "soil_water_surface": 0.4740742215528111,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-20",
+        "soil_water_surface": 0.484798013925259,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-21",
+        "soil_water_surface": 0.489716526381043,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-22",
+        "soil_water_surface": 0.48552452982475924,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-23",
+        "soil_water_surface": 0.48699519338018993,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-24",
+        "soil_water_surface": 0.4618993961883915,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-25",
+        "soil_water_surface": 0.4614148911864988,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-26",
+        "soil_water_surface": 0.46196423129617026,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-27",
+        "soil_water_surface": 0.4851237326678951,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-28",
+        "soil_water_surface": 0.4866271669008063,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-29",
+        "soil_water_surface": 0.47241574764055816,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-30",
+        "soil_water_surface": 0.4739919809280922,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-01",
+        "soil_water_surface": 0.4693789634085853,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-02",
+        "soil_water_surface": 0.4587223992887167,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-03",
+        "soil_water_surface": 0.4470615196064356,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-04",
+        "soil_water_surface": 0.44836982492645355,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-05",
+        "soil_water_surface": 0.4652549856470678,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-06",
+        "soil_water_surface": 0.4425190042678491,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-07",
+        "soil_water_surface": 0.4303886581040243,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-08",
+        "soil_water_surface": 0.4521305971553704,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-09",
+        "soil_water_surface": 0.4548350275473746,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-10",
+        "soil_water_surface": 0.43613438494451084,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-11",
+        "soil_water_surface": 0.424006564601145,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-12",
+        "soil_water_surface": 0.4124481966076019,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-13",
+        "soil_water_surface": 0.4021091036161659,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-14",
+        "soil_water_surface": 0.40366560386677247,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-15",
+        "soil_water_surface": 0.41645354728928946,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-16",
+        "soil_water_surface": 0.4276494466091561,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-17",
+        "soil_water_surface": 0.4726814355369834,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-18",
+        "soil_water_surface": 0.4802462806049443,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-19",
+        "soil_water_surface": 0.4612714292574349,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-20",
+        "soil_water_surface": 0.48074284334554696,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-21",
+        "soil_water_surface": 0.472812120425453,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-22",
+        "soil_water_surface": 0.47071277972768866,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-23",
+        "soil_water_surface": 0.45942269741124536,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-24",
+        "soil_water_surface": 0.48086069661780384,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-25",
+        "soil_water_surface": 0.47704152958421325,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-26",
+        "soil_water_surface": 0.46159013487050726,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-27",
+        "soil_water_surface": 0.4490396344103071,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-28",
+        "soil_water_surface": 0.43101698779269093,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-29",
+        "soil_water_surface": 0.4594105398285067,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-30",
+        "soil_water_surface": 0.45026154668791074,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-31",
+        "soil_water_surface": 0.45229754363049496,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-01",
+        "soil_water_surface": 0.4332031105337229,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-02",
+        "soil_water_surface": 0.4156048679632189,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-03",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-04",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-05",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-06",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-07",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      }
+    ],
+    "soil_chart_note": "Surface soil moisture is ERA5-Land/IFS swvl1; root-zone series is unavailable for this region."
   },
   {
     "weather_region_id": "palm::Malaysia::Perak::admin1::oil_palm",
@@ -71898,7 +73797,640 @@
     "canonical_weather_latest_date": "2026-08-07",
     "risk_detail_contract": "preserved_rich_contract_weather_refreshed",
     "risk_detail_note": "Production, operation, soil and forecast detail are preserved; the displayed historical weather snapshot is the verified canonical release.",
-    "region_risk_publish_allowed": false
+    "region_risk_publish_allowed": false,
+    "soil_rootzone_percentile_90d_series": [
+      {
+        "date": "2026-05-10",
+        "soil_water_surface": 0.4578940091753579,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-11",
+        "soil_water_surface": 0.44610396696268734,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-12",
+        "soil_water_surface": 0.4660770905225587,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-13",
+        "soil_water_surface": 0.4738845237511854,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-14",
+        "soil_water_surface": 0.4842352436237899,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-15",
+        "soil_water_surface": 0.46609895697033016,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-16",
+        "soil_water_surface": 0.45689066130650235,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-17",
+        "soil_water_surface": 0.43974057865655797,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-18",
+        "soil_water_surface": 0.4448039676751725,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-19",
+        "soil_water_surface": 0.46331835274861166,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-20",
+        "soil_water_surface": 0.483510087554609,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-21",
+        "soil_water_surface": 0.48266325394170867,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-22",
+        "soil_water_surface": 0.4597420133562516,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-23",
+        "soil_water_surface": 0.4374883798422055,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-24",
+        "soil_water_surface": 0.4278008419622151,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-25",
+        "soil_water_surface": 0.42526113368439095,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-26",
+        "soil_water_surface": 0.43847820610426547,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-27",
+        "soil_water_surface": 0.4224117769051372,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-28",
+        "soil_water_surface": 0.3925555617767636,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-29",
+        "soil_water_surface": 0.3742878432296852,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-30",
+        "soil_water_surface": 0.3604861690367324,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-05-31",
+        "soil_water_surface": 0.3726717452538123,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-01",
+        "soil_water_surface": 0.406561994024428,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-02",
+        "soil_water_surface": 0.47070975682338395,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-03",
+        "soil_water_surface": 0.48242412586860245,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-04",
+        "soil_water_surface": 0.4834676929639882,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-05",
+        "soil_water_surface": 0.46501617057575595,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-06",
+        "soil_water_surface": 0.4484518916122541,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-07",
+        "soil_water_surface": 0.4528417260935581,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-08",
+        "soil_water_surface": 0.46966517599796853,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-09",
+        "soil_water_surface": 0.46949268635720043,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-10",
+        "soil_water_surface": 0.47253954888645733,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-11",
+        "soil_water_surface": 0.45291136719975994,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-12",
+        "soil_water_surface": 0.4555187011310768,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-13",
+        "soil_water_surface": 0.4575878765252501,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-14",
+        "soil_water_surface": 0.48001866062504056,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-15",
+        "soil_water_surface": 0.4835250495371595,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-16",
+        "soil_water_surface": 0.4684716623714396,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-17",
+        "soil_water_surface": 0.47689519414122217,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-18",
+        "soil_water_surface": 0.48047304000706204,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-19",
+        "soil_water_surface": 0.4792179134339734,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-20",
+        "soil_water_surface": 0.47030646255570185,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-21",
+        "soil_water_surface": 0.4847263408436022,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-22",
+        "soil_water_surface": 0.47272031652264523,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-23",
+        "soil_water_surface": 0.4866663511451297,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-24",
+        "soil_water_surface": 0.4789445764032937,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-25",
+        "soil_water_surface": 0.4911512691251214,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-26",
+        "soil_water_surface": 0.4731848407532168,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-27",
+        "soil_water_surface": 0.48067097588490276,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-28",
+        "soil_water_surface": 0.487535619639563,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-29",
+        "soil_water_surface": 0.4720140259700722,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-06-30",
+        "soil_water_surface": 0.47790441337595113,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-01",
+        "soil_water_surface": 0.4734885974518408,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-02",
+        "soil_water_surface": 0.48332789256471287,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-03",
+        "soil_water_surface": 0.4754187155034885,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-04",
+        "soil_water_surface": 0.46512290129505524,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-05",
+        "soil_water_surface": 0.45404469480094417,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-06",
+        "soil_water_surface": 0.42913660098745465,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-07",
+        "soil_water_surface": 0.4140366577095557,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-08",
+        "soil_water_surface": 0.4595994328504473,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-09",
+        "soil_water_surface": 0.4676024960496056,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-10",
+        "soil_water_surface": 0.45158086195443853,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-11",
+        "soil_water_surface": 0.4277476284868554,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-12",
+        "soil_water_surface": 0.4084374019878828,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-13",
+        "soil_water_surface": 0.4401696568144855,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-14",
+        "soil_water_surface": 0.47025005307160417,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-15",
+        "soil_water_surface": 0.47821632374885514,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-16",
+        "soil_water_surface": 0.4686886268632851,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-17",
+        "soil_water_surface": 0.4871640371856756,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-18",
+        "soil_water_surface": 0.48320440120672103,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-19",
+        "soil_water_surface": 0.4827067612807556,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-20",
+        "soil_water_surface": 0.47838407243217856,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-21",
+        "soil_water_surface": 0.47674483072679597,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-22",
+        "soil_water_surface": 0.46372661315352887,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-23",
+        "soil_water_surface": 0.46257682148953516,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-24",
+        "soil_water_surface": 0.4812815573389134,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-25",
+        "soil_water_surface": 0.48341837820043637,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-26",
+        "soil_water_surface": 0.49250746064621387,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-27",
+        "soil_water_surface": 0.4728204944924657,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-28",
+        "soil_water_surface": 0.4706553483123595,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-29",
+        "soil_water_surface": 0.4998265418837245,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-30",
+        "soil_water_surface": 0.4893296619535446,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-07-31",
+        "soil_water_surface": 0.47838858064418915,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-01",
+        "soil_water_surface": 0.4666160657887088,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-02",
+        "soil_water_surface": 0.4584621345099424,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-03",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-04",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-05",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-06",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      },
+      {
+        "date": "2026-08-07",
+        "soil_water_surface": null,
+        "soil_water_rootzone": null,
+        "surface_normal": null,
+        "rootzone_normal": null
+      }
+    ],
+    "soil_chart_note": "Surface soil moisture is ERA5-Land/IFS swvl1; root-zone series is unavailable for this region."
   },
   {
     "weather_region_id": "palm::Malaysia::Selangor::admin1::oil_palm",
