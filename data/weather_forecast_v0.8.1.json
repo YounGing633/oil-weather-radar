@@ -17064,6 +17064,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::Canada::Manitoba::admin1::rapeseed_canola",
+    "forecast_date": "2026-08-09",
+    "target_date": "2026-08-23",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::Canada::New_Brunswick::admin1::rapeseed_canola",
     "forecast_date": "2026-08-09",
     "target_date": "2026-08-09",
@@ -29820,6 +29832,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::United States of America::national::菜油",
+    "forecast_date": "2026-08-09",
+    "target_date": "2026-08-23",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::United_States::IDAHO::admin1::canola",
     "forecast_date": "2026-08-09",
     "target_date": "2026-08-09",
@@ -30156,6 +30180,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::United_States::KANSAS::admin1::canola",
+    "forecast_date": "2026-08-09",
+    "target_date": "2026-08-23",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::United_States::MINNESOTA::admin1::canola",
     "forecast_date": "2026-08-09",
     "target_date": "2026-08-09",
@@ -30320,6 +30356,18 @@
     "temp_max_c": 27.1,
     "temp_min_c": 19.8,
     "temp_mean_c": 24.0,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::United_States::MINNESOTA::admin1::canola",
+    "forecast_date": "2026-08-09",
+    "target_date": "2026-08-23",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
@@ -30660,6 +30708,18 @@
     "data_source": "open_meteo_ecmwf_ifs"
   },
   {
+    "weather_region_id": "rapeseed_canola::United_States::NORTH_DAKOTA::admin1::canola",
+    "forecast_date": "2026-08-09",
+    "target_date": "2026-08-23",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
     "weather_region_id": "rapeseed_canola::United_States::OKLAHOMA::admin1::canola",
     "forecast_date": "2026-08-09",
     "target_date": "2026-08-09",
@@ -30824,6 +30884,18 @@
     "temp_max_c": 37.1,
     "temp_min_c": 26.9,
     "temp_mean_c": 31.4,
+    "precipitation_probability": null,
+    "data_source": "open_meteo_ecmwf_ifs"
+  },
+  {
+    "weather_region_id": "rapeseed_canola::United_States::OKLAHOMA::admin1::canola",
+    "forecast_date": "2026-08-09",
+    "target_date": "2026-08-23",
+    "horizon_day": 15,
+    "precipitation_mm": null,
+    "temp_max_c": null,
+    "temp_min_c": null,
+    "temp_mean_c": null,
     "precipitation_probability": null,
     "data_source": "open_meteo_ecmwf_ifs"
   },
