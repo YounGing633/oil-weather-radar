@@ -183,6 +183,10 @@
     }));
   }
   function buildPalmTooltip(r) {
+    const rain30 = rain30Value(r), temp30 = temp30Value(r);
+    if (r.region_risk_publish_allowed === false) {
+      return `<b>${esc(r.region)}</b><br>近30日有源日累计降雨：${rain30.value === null ? '缺测' : `${mm(rain30.value)}（有源${rain30.days}/30日）`}<br>近30日有源日均温：${temp30.value === null ? '缺测' : `${temp30.value.toFixed(1)}℃（有源${temp30.days}/30日）`}<br><small>综合供应风险尚未重算；缺失日不填充。</small>`;
+    }
     if (r.region_risk_publish_allowed === false) {
       return `<b>${esc(r.region)}</b><br>行政区多点聚合近30日降雨：${mm(r.rain_30d_mm)}<br>样点范围：P10 ${mm(r.rain_30d_p10_mm)} / P50 ${mm(r.rain_30d_p50_mm)} / P90 ${mm(r.rain_30d_p90_mm)}<br><small>综合供应风险待土壤、温度与预报完成区域聚合后再发布。</small>`;
     }
@@ -234,6 +238,16 @@
     state.selected = r; refreshMap();
     if (r.region_risk_publish_allowed === false) {
       $('detail').innerHTML = `<h2>${esc(r.region)}</h2><p class="detail-note">${esc(r.spatial_note_cn || '行政区多点聚合区域估计。')}</p><h3>行政区多点聚合天气</h3><div class="forecast-brief">近30日区域平均降雨：${mm(r.rain_30d_mm)}；近30日最高温平均：${num(r.temp_max_30d_c) === null ? '缺测' : `${num(r.temp_max_30d_c).toFixed(1)}℃`}。<br>区域内部样点累计降雨：P10 ${mm(r.rain_30d_p10_mm)}；P50 ${mm(r.rain_30d_p50_mm)}；P90 ${mm(r.rain_30d_p90_mm)}。<br>未来7日区域平均预报降雨：${mm(r.forecast_rain_1_7d_mm)}；未来15日：${mm(r.forecast_rain_1_15d_mm)}。<br>有效覆盖率：${pc(r.observation_coverage)}；参与格点：${num(r.grid_point_count) ?? '缺测'}。<br><small>土壤、温度距平和综合供应风险尚未完成同口径区域聚合，当前不展示。</small></div>`;
+      const rain30 = rain30Value(r), temp30 = temp30Value(r);
+      const sourceDays = recentRows(r).filter(day => [day.precipitation_mm, day.temperature_mean_c ?? day.temp_mean_c, day.soil_moisture_layer1].some(x => num(x) !== null)).length;
+      const oldSummary = `近30日区域平均降雨：${mm(r.rain_30d_mm)}；近30日最高温平均：${num(r.temp_max_30d_c) === null ? '缺测' : `${num(r.temp_max_30d_c).toFixed(1)}℃`}。`;
+      const newSummary = `近30日有源日累计降雨：${rain30.value === null ? '缺测' : `${mm(rain30.value)}（有源${rain30.days}/30日）`}；近30日有源日均温：${temp30.value === null ? '缺测' : `${temp30.value.toFixed(1)}℃（有源${temp30.days}/30日）`}。`;
+      const oldQuantiles = `区域内部样点累计降雨：P10 ${mm(r.rain_30d_p10_mm)}；P50 ${mm(r.rain_30d_p50_mm)}；P90 ${mm(r.rain_30d_p90_mm)}。`;
+      const oldCoverage = `有效覆盖率：${pc(r.observation_coverage)}；参与格点：${num(r.grid_point_count) ?? '缺测'}。`;
+      $('detail').innerHTML = $('detail').innerHTML
+        .replace(oldSummary, newSummary)
+        .replace(oldQuantiles, '区域内部 P10/P50/P90：当前没有完整 30 日同口径样点序列，保留为缺测。')
+        .replace(oldCoverage, `有效有源日：${sourceDays}/30；参与格点：${num(r.grid_point_count) ?? '缺测'}。`);
       const chartPanel = window.OilDetailCharts?.panel(r, {
         cropName: '棕榈油', regionName: r.region, countryName: COUNTRY[r.country] || r.country,
         riskLabel: '天气明细'
