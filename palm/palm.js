@@ -251,6 +251,11 @@
       if (detailBrief) {
         detailBrief.innerHTML = '近30日有源日累计降雨：' + (rain30.value === null ? '缺测' : mm(rain30.value) + '（有源' + rain30.days + '/30日）') + '；近30日有源日均温：' + (temp30.value === null ? '缺测' : temp30.value.toFixed(1) + '℃（有源' + temp30.days + '/30日）') + '。<br>区域内部 P10/P50/P90：当前没有完整 30 日同口径样点序列，保留为缺测。<br>未来7日区域平均预报降雨：' + mm(r.forecast_rain_1_7d_mm) + '；未来15日：' + mm(r.forecast_rain_1_15d_mm) + '。<br>有效有源日：' + sourceDays + '/30；参与格点：' + (num(r.grid_point_count) ?? '缺测') + '。<br><small>综合供应风险尚未重算；以下仅展示已验证的降雨、日均温与土壤水分明细，不把 IFS 初步值标为 ERA5-Land。</small>';
       }
+      const forecast7 = future(r, 'f7').rain, forecast15 = future(r, 'f15').rain;
+      if (detailBrief) detailBrief.innerHTML = detailBrief.innerHTML.replace(
+        /未来7日区域平均预报降雨：.*?。<br>/,
+        `未来7日区域平均预报降雨：${mm(forecast7)}；未来15日：${mm(forecast15)}。<br>`
+      );
       const chartPanel = window.OilDetailCharts?.panel(r, {
         cropName: '棕榈油', regionName: r.region, countryName: COUNTRY[r.country] || r.country,
         riskLabel: '天气明细'
