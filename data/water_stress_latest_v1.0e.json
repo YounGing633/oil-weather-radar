@@ -23,13 +23,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3675,
-      "soil_water_rootzone_m3m3": 0.3339,
-      "surface_percentile_90d": 46.5,
-      "rootzone_percentile_90d": 60.3,
+      "soil_water_surface_m3m3": 0.3495,
+      "soil_water_rootzone_m3m3": 0.3311,
+      "surface_percentile_90d": 49.0,
+      "rootzone_percentile_90d": 59.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -59,13 +59,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.0674,
-      "soil_water_rootzone_m3m3": 0.0925,
+      "soil_water_surface_m3m3": 0.0667,
+      "soil_water_rootzone_m3m3": 0.0914,
       "surface_percentile_90d": 2.3,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -94,13 +94,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2888,
-      "soil_water_rootzone_m3m3": 0.3011,
-      "surface_percentile_90d": 2.9,
+      "soil_water_surface_m3m3": 0.298,
+      "soil_water_rootzone_m3m3": 0.3013,
+      "surface_percentile_90d": 5.5,
       "rootzone_percentile_90d": 5.5,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -130,13 +130,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2885,
-      "soil_water_rootzone_m3m3": 0.3224,
-      "surface_percentile_90d": 13.6,
+      "soil_water_surface_m3m3": 0.2921,
+      "soil_water_rootzone_m3m3": 0.3202,
+      "surface_percentile_90d": 13.9,
       "rootzone_percentile_90d": 18.1,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -166,13 +166,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1381,
-      "soil_water_rootzone_m3m3": 0.2517,
+      "soil_water_surface_m3m3": 0.1352,
+      "soil_water_rootzone_m3m3": 0.2497,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -202,13 +202,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.201,
-      "soil_water_rootzone_m3m3": 0.2829,
-      "surface_percentile_90d": 9.0,
+      "soil_water_surface_m3m3": 0.1893,
+      "soil_water_rootzone_m3m3": 0.2795,
+      "surface_percentile_90d": 7.4,
       "rootzone_percentile_90d": 3.5,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -238,13 +238,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1836,
-      "soil_water_rootzone_m3m3": 0.2485,
-      "surface_percentile_90d": 5.8,
+      "soil_water_surface_m3m3": 0.1857,
+      "soil_water_rootzone_m3m3": 0.2473,
+      "surface_percentile_90d": 6.5,
       "rootzone_percentile_90d": 9.0,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -274,13 +274,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3421,
-      "soil_water_rootzone_m3m3": 0.2756,
-      "surface_percentile_90d": 7.1,
-      "rootzone_percentile_90d": 1.3,
+      "soil_water_surface_m3m3": 0.3245,
+      "soil_water_rootzone_m3m3": 0.2745,
+      "surface_percentile_90d": 12.9,
+      "rootzone_percentile_90d": 1.9,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -310,13 +310,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3154,
-      "soil_water_rootzone_m3m3": 0.3138,
-      "surface_percentile_90d": 6.5,
-      "rootzone_percentile_90d": 2.6,
+      "soil_water_surface_m3m3": 0.3015,
+      "soil_water_rootzone_m3m3": 0.311,
+      "surface_percentile_90d": 8.7,
+      "rootzone_percentile_90d": 2.9,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -346,13 +346,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1065,
-      "soil_water_rootzone_m3m3": 0.128,
+      "soil_water_surface_m3m3": 0.1034,
+      "soil_water_rootzone_m3m3": 0.1266,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -382,13 +382,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.394,
-      "soil_water_rootzone_m3m3": 0.3943,
-      "surface_percentile_90d": 22.6,
-      "rootzone_percentile_90d": 20.0,
+      "soil_water_surface_m3m3": 0.3899,
+      "soil_water_rootzone_m3m3": 0.3922,
+      "surface_percentile_90d": 23.6,
+      "rootzone_percentile_90d": 20.3,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -417,13 +417,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4869,
-      "soil_water_rootzone_m3m3": 0.4924,
-      "surface_percentile_90d": 38.7,
-      "rootzone_percentile_90d": 90.3,
+      "soil_water_surface_m3m3": 0.4816,
+      "soil_water_rootzone_m3m3": 0.4885,
+      "surface_percentile_90d": 54.2,
+      "rootzone_percentile_90d": 92.3,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -453,13 +453,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3819,
-      "soil_water_rootzone_m3m3": 0.3681,
+      "soil_water_surface_m3m3": 0.3731,
+      "soil_water_rootzone_m3m3": 0.3643,
       "surface_percentile_90d": 68.7,
-      "rootzone_percentile_90d": 45.8,
+      "rootzone_percentile_90d": 46.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -489,13 +489,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3071,
-      "soil_water_rootzone_m3m3": 0.3412,
-      "surface_percentile_90d": 0.7,
+      "soil_water_surface_m3m3": 0.3359,
+      "soil_water_rootzone_m3m3": 0.3426,
+      "surface_percentile_90d": 3.5,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -525,13 +525,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.181,
-      "soil_water_rootzone_m3m3": 0.2422,
+      "soil_water_surface_m3m3": 0.1751,
+      "soil_water_rootzone_m3m3": 0.2401,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -561,13 +561,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2881,
-      "soil_water_rootzone_m3m3": 0.3143,
+      "soil_water_surface_m3m3": 0.2903,
+      "soil_water_rootzone_m3m3": 0.3132,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -596,13 +596,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2884,
-      "soil_water_rootzone_m3m3": 0.3321,
+      "soil_water_surface_m3m3": 0.2859,
+      "soil_water_rootzone_m3m3": 0.3302,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -632,13 +632,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4095,
-      "soil_water_rootzone_m3m3": 0.3824,
+      "soil_water_surface_m3m3": 0.4488,
+      "soil_water_rootzone_m3m3": 0.3908,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -668,13 +668,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2432,
-      "soil_water_rootzone_m3m3": 0.2849,
+      "soil_water_surface_m3m3": 0.2498,
+      "soil_water_rootzone_m3m3": 0.2833,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -704,13 +704,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3904,
-      "soil_water_rootzone_m3m3": 0.3807,
-      "surface_percentile_90d": 0.0,
+      "soil_water_surface_m3m3": 0.3892,
+      "soil_water_rootzone_m3m3": 0.3844,
+      "surface_percentile_90d": 1.6,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -740,13 +740,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4186,
-      "soil_water_rootzone_m3m3": 0.4165,
+      "soil_water_surface_m3m3": 0.4259,
+      "soil_water_rootzone_m3m3": 0.4252,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -776,13 +776,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3877,
-      "soil_water_rootzone_m3m3": 0.3924,
-      "surface_percentile_90d": 86.8,
-      "rootzone_percentile_90d": 93.5,
+      "soil_water_surface_m3m3": 0.392,
+      "soil_water_rootzone_m3m3": 0.3906,
+      "surface_percentile_90d": 84.5,
+      "rootzone_percentile_90d": 92.9,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -812,13 +812,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3706,
-      "soil_water_rootzone_m3m3": 0.3432,
-      "surface_percentile_90d": 2.6,
+      "soil_water_surface_m3m3": 0.3644,
+      "soil_water_rootzone_m3m3": 0.3418,
+      "surface_percentile_90d": 3.5,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -853,7 +853,7 @@
       "rootzone_percentile_90d": null,
       "soil_status_cn": "未知",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -883,13 +883,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.355,
-      "soil_water_rootzone_m3m3": 0.3333,
-      "surface_percentile_90d": 2.3,
+      "soil_water_surface_m3m3": 0.3418,
+      "soil_water_rootzone_m3m3": 0.3313,
+      "surface_percentile_90d": 2.6,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -918,13 +918,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2729,
-      "soil_water_rootzone_m3m3": 0.2741,
+      "soil_water_surface_m3m3": 0.2494,
+      "soil_water_rootzone_m3m3": 0.2712,
       "surface_percentile_90d": 4.5,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -953,13 +953,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4298,
-      "soil_water_rootzone_m3m3": 0.405,
-      "surface_percentile_90d": 77.7,
+      "soil_water_surface_m3m3": 0.418,
+      "soil_water_rootzone_m3m3": 0.4023,
+      "surface_percentile_90d": 74.5,
       "rootzone_percentile_90d": 45.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -988,13 +988,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.255,
-      "soil_water_rootzone_m3m3": 0.3132,
-      "surface_percentile_90d": 22.6,
+      "soil_water_surface_m3m3": 0.2502,
+      "soil_water_rootzone_m3m3": 0.3116,
+      "surface_percentile_90d": 21.3,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1023,13 +1023,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4281,
-      "soil_water_rootzone_m3m3": 0.4331,
-      "surface_percentile_90d": 96.8,
-      "rootzone_percentile_90d": 92.3,
+      "soil_water_surface_m3m3": 0.4175,
+      "soil_water_rootzone_m3m3": 0.4285,
+      "surface_percentile_90d": 93.2,
+      "rootzone_percentile_90d": 92.6,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1059,13 +1059,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.411,
-      "soil_water_rootzone_m3m3": 0.3932,
-      "surface_percentile_90d": 2.3,
-      "rootzone_percentile_90d": 1.9,
+      "soil_water_surface_m3m3": 0.3988,
+      "soil_water_rootzone_m3m3": 0.3909,
+      "surface_percentile_90d": 4.2,
+      "rootzone_percentile_90d": 2.3,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1094,13 +1094,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4152,
-      "soil_water_rootzone_m3m3": 0.4088,
-      "surface_percentile_90d": 45.5,
-      "rootzone_percentile_90d": 48.7,
+      "soil_water_surface_m3m3": 0.4008,
+      "soil_water_rootzone_m3m3": 0.405,
+      "surface_percentile_90d": 42.3,
+      "rootzone_percentile_90d": 46.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1112,7 +1112,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "正常",
+    "soil_moisture_status": "略偏干",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "正常",
@@ -1127,13 +1127,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4317,
-      "soil_water_rootzone_m3m3": 0.4222,
-      "surface_percentile_90d": 46.5,
-      "rootzone_percentile_90d": 36.1,
-      "soil_status_cn": "正常",
+      "soil_water_surface_m3m3": 0.4305,
+      "soil_water_rootzone_m3m3": 0.4189,
+      "surface_percentile_90d": 29.4,
+      "rootzone_percentile_90d": 24.5,
+      "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1162,13 +1162,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4251,
-      "soil_water_rootzone_m3m3": 0.426,
-      "surface_percentile_90d": 79.7,
-      "rootzone_percentile_90d": 84.8,
+      "soil_water_surface_m3m3": 0.4215,
+      "soil_water_rootzone_m3m3": 0.4259,
+      "surface_percentile_90d": 72.9,
+      "rootzone_percentile_90d": 82.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1180,7 +1180,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "明显偏湿",
+    "soil_moisture_status": "严重偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
@@ -1197,13 +1197,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4385,
-      "soil_water_rootzone_m3m3": 0.4403,
-      "surface_percentile_90d": 81.0,
-      "rootzone_percentile_90d": 85.2,
-      "soil_status_cn": "明显偏湿",
+      "soil_water_surface_m3m3": 0.4327,
+      "soil_water_rootzone_m3m3": 0.4393,
+      "surface_percentile_90d": 87.1,
+      "rootzone_percentile_90d": 91.0,
+      "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1232,13 +1232,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4223,
-      "soil_water_rootzone_m3m3": 0.4191,
-      "surface_percentile_90d": 48.1,
-      "rootzone_percentile_90d": 10.0,
+      "soil_water_surface_m3m3": 0.4232,
+      "soil_water_rootzone_m3m3": 0.4212,
+      "surface_percentile_90d": 49.7,
+      "rootzone_percentile_90d": 14.8,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1267,13 +1267,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3939,
-      "soil_water_rootzone_m3m3": 0.299,
-      "surface_percentile_90d": 33.9,
+      "soil_water_surface_m3m3": 0.3891,
+      "soil_water_rootzone_m3m3": 0.2992,
+      "surface_percentile_90d": 31.6,
       "rootzone_percentile_90d": 1.6,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1302,13 +1302,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4168,
-      "soil_water_rootzone_m3m3": 0.4082,
-      "surface_percentile_90d": 81.3,
-      "rootzone_percentile_90d": 43.9,
+      "soil_water_surface_m3m3": 0.4097,
+      "soil_water_rootzone_m3m3": 0.406,
+      "surface_percentile_90d": 75.2,
+      "rootzone_percentile_90d": 48.7,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1337,13 +1337,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4124,
-      "soil_water_rootzone_m3m3": 0.423,
-      "surface_percentile_90d": 74.8,
-      "rootzone_percentile_90d": 56.5,
+      "soil_water_surface_m3m3": 0.4147,
+      "soil_water_rootzone_m3m3": 0.4258,
+      "surface_percentile_90d": 62.9,
+      "rootzone_percentile_90d": 63.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1360,10 +1360,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P95），排水不畅风险",
+    "water_stress_explanation_cn": "表层土壤过湿（P90），排水不畅风险",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P95），排水不畅风险",
+    "risk_reason_cn": "表层土壤过湿（P90），排水不畅风险",
     "risk_components": [
       "waterlogged_soil"
     ],
@@ -1372,13 +1372,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.463,
-      "soil_water_rootzone_m3m3": 0.4649,
-      "surface_percentile_90d": 95.2,
-      "rootzone_percentile_90d": 27.4,
+      "soil_water_surface_m3m3": 0.4743,
+      "soil_water_rootzone_m3m3": 0.4656,
+      "surface_percentile_90d": 90.3,
+      "rootzone_percentile_90d": 28.1,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1413,7 +1413,7 @@
       "rootzone_percentile_90d": null,
       "soil_status_cn": "未知",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1425,7 +1425,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "极端偏湿",
+    "soil_moisture_status": "明显偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
@@ -1442,13 +1442,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4851,
-      "soil_water_rootzone_m3m3": 0.5013,
-      "surface_percentile_90d": 21.9,
-      "rootzone_percentile_90d": 95.2,
-      "soil_status_cn": "极端偏湿",
+      "soil_water_surface_m3m3": 0.4891,
+      "soil_water_rootzone_m3m3": 0.4869,
+      "surface_percentile_90d": 36.5,
+      "rootzone_percentile_90d": 89.0,
+      "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1460,7 +1460,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "正常",
+    "soil_moisture_status": "略偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
@@ -1477,13 +1477,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.476,
-      "soil_water_rootzone_m3m3": 0.5009,
-      "surface_percentile_90d": 40.0,
-      "rootzone_percentile_90d": 69.0,
-      "soil_status_cn": "正常",
+      "soil_water_surface_m3m3": 0.4901,
+      "soil_water_rootzone_m3m3": 0.5044,
+      "surface_percentile_90d": 43.2,
+      "rootzone_percentile_90d": 77.7,
+      "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1495,30 +1495,28 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "明显偏干",
+    "soil_moisture_status": "略偏干",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
-    "water_stress_label_cn": "轻微异常",
+    "water_stress_label_cn": "正常",
     "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P13），需关注降水补充",
+    "water_stress_explanation_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
-    "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P13），需关注降水补充",
-    "risk_components": [
-      "dry_soil"
-    ],
+    "risk_level_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
+    "risk_components": [],
     "et0_30d_avg_mm": null,
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4268,
-      "soil_water_rootzone_m3m3": 0.4111,
-      "surface_percentile_90d": 70.3,
-      "rootzone_percentile_90d": 13.2,
-      "soil_status_cn": "明显偏干",
+      "soil_water_surface_m3m3": 0.4233,
+      "soil_water_rootzone_m3m3": 0.418,
+      "surface_percentile_90d": 82.3,
+      "rootzone_percentile_90d": 23.9,
+      "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1547,13 +1545,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4599,
-      "soil_water_rootzone_m3m3": 0.4663,
-      "surface_percentile_90d": 83.5,
-      "rootzone_percentile_90d": 67.1,
+      "soil_water_surface_m3m3": 0.4574,
+      "soil_water_rootzone_m3m3": 0.4615,
+      "surface_percentile_90d": 74.8,
+      "rootzone_percentile_90d": 69.7,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1565,7 +1563,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "正常",
+    "soil_moisture_status": "略偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "正常",
@@ -1580,13 +1578,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4679,
-      "soil_water_rootzone_m3m3": 0.4975,
-      "surface_percentile_90d": 38.7,
-      "rootzone_percentile_90d": 60.3,
-      "soil_status_cn": "正常",
+      "soil_water_surface_m3m3": 0.4738,
+      "soil_water_rootzone_m3m3": 0.4947,
+      "surface_percentile_90d": 34.2,
+      "rootzone_percentile_90d": 71.3,
+      "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1615,13 +1613,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4062,
-      "soil_water_rootzone_m3m3": 0.4056,
-      "surface_percentile_90d": 67.4,
+      "soil_water_surface_m3m3": 0.3909,
+      "soil_water_rootzone_m3m3": 0.3999,
+      "surface_percentile_90d": 70.7,
       "rootzone_percentile_90d": 77.4,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1650,13 +1648,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4333,
-      "soil_water_rootzone_m3m3": 0.4359,
-      "surface_percentile_90d": 98.1,
-      "rootzone_percentile_90d": 98.4,
+      "soil_water_surface_m3m3": 0.4195,
+      "soil_water_rootzone_m3m3": 0.4296,
+      "surface_percentile_90d": 97.7,
+      "rootzone_percentile_90d": 98.7,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1685,13 +1683,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2721,
-      "soil_water_rootzone_m3m3": 0.3268,
-      "surface_percentile_90d": 59.7,
-      "rootzone_percentile_90d": 39.0,
+      "soil_water_surface_m3m3": 0.272,
+      "soil_water_rootzone_m3m3": 0.3264,
+      "surface_percentile_90d": 57.4,
+      "rootzone_percentile_90d": 38.4,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1718,13 +1716,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3675,
-      "soil_water_rootzone_m3m3": 0.3339,
-      "surface_percentile_90d": 46.5,
-      "rootzone_percentile_90d": 60.3,
+      "soil_water_surface_m3m3": 0.3495,
+      "soil_water_rootzone_m3m3": 0.3311,
+      "surface_percentile_90d": 49.0,
+      "rootzone_percentile_90d": 59.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1754,13 +1752,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.0674,
-      "soil_water_rootzone_m3m3": 0.0925,
+      "soil_water_surface_m3m3": 0.0667,
+      "soil_water_rootzone_m3m3": 0.0914,
       "surface_percentile_90d": 2.3,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1789,13 +1787,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2888,
-      "soil_water_rootzone_m3m3": 0.3011,
-      "surface_percentile_90d": 2.9,
+      "soil_water_surface_m3m3": 0.298,
+      "soil_water_rootzone_m3m3": 0.3013,
+      "surface_percentile_90d": 5.5,
       "rootzone_percentile_90d": 5.5,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1825,13 +1823,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2885,
-      "soil_water_rootzone_m3m3": 0.3224,
-      "surface_percentile_90d": 13.6,
+      "soil_water_surface_m3m3": 0.2921,
+      "soil_water_rootzone_m3m3": 0.3202,
+      "surface_percentile_90d": 13.9,
       "rootzone_percentile_90d": 18.1,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1861,13 +1859,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1381,
-      "soil_water_rootzone_m3m3": 0.2517,
+      "soil_water_surface_m3m3": 0.1352,
+      "soil_water_rootzone_m3m3": 0.2497,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1897,13 +1895,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.201,
-      "soil_water_rootzone_m3m3": 0.2829,
-      "surface_percentile_90d": 9.0,
+      "soil_water_surface_m3m3": 0.1893,
+      "soil_water_rootzone_m3m3": 0.2795,
+      "surface_percentile_90d": 7.4,
       "rootzone_percentile_90d": 3.5,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1933,13 +1931,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1836,
-      "soil_water_rootzone_m3m3": 0.2485,
-      "surface_percentile_90d": 5.8,
+      "soil_water_surface_m3m3": 0.1857,
+      "soil_water_rootzone_m3m3": 0.2473,
+      "surface_percentile_90d": 6.5,
       "rootzone_percentile_90d": 9.0,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -1969,13 +1967,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3421,
-      "soil_water_rootzone_m3m3": 0.2756,
-      "surface_percentile_90d": 7.1,
-      "rootzone_percentile_90d": 1.3,
+      "soil_water_surface_m3m3": 0.3245,
+      "soil_water_rootzone_m3m3": 0.2745,
+      "surface_percentile_90d": 12.9,
+      "rootzone_percentile_90d": 1.9,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2005,13 +2003,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3154,
-      "soil_water_rootzone_m3m3": 0.3138,
-      "surface_percentile_90d": 6.5,
-      "rootzone_percentile_90d": 2.6,
+      "soil_water_surface_m3m3": 0.3015,
+      "soil_water_rootzone_m3m3": 0.311,
+      "surface_percentile_90d": 8.7,
+      "rootzone_percentile_90d": 2.9,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2041,13 +2039,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1065,
-      "soil_water_rootzone_m3m3": 0.128,
+      "soil_water_surface_m3m3": 0.1034,
+      "soil_water_rootzone_m3m3": 0.1266,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2077,13 +2075,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.394,
-      "soil_water_rootzone_m3m3": 0.3943,
-      "surface_percentile_90d": 22.6,
-      "rootzone_percentile_90d": 20.0,
+      "soil_water_surface_m3m3": 0.3899,
+      "soil_water_rootzone_m3m3": 0.3922,
+      "surface_percentile_90d": 23.6,
+      "rootzone_percentile_90d": 20.3,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2112,13 +2110,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4869,
-      "soil_water_rootzone_m3m3": 0.4924,
-      "surface_percentile_90d": 38.7,
-      "rootzone_percentile_90d": 90.3,
+      "soil_water_surface_m3m3": 0.4816,
+      "soil_water_rootzone_m3m3": 0.4885,
+      "surface_percentile_90d": 54.2,
+      "rootzone_percentile_90d": 92.3,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2148,13 +2146,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3819,
-      "soil_water_rootzone_m3m3": 0.3681,
+      "soil_water_surface_m3m3": 0.3731,
+      "soil_water_rootzone_m3m3": 0.3643,
       "surface_percentile_90d": 68.7,
-      "rootzone_percentile_90d": 45.8,
+      "rootzone_percentile_90d": 46.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2184,13 +2182,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3071,
-      "soil_water_rootzone_m3m3": 0.3412,
-      "surface_percentile_90d": 0.7,
+      "soil_water_surface_m3m3": 0.3359,
+      "soil_water_rootzone_m3m3": 0.3426,
+      "surface_percentile_90d": 3.5,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2220,13 +2218,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2881,
-      "soil_water_rootzone_m3m3": 0.3143,
+      "soil_water_surface_m3m3": 0.2903,
+      "soil_water_rootzone_m3m3": 0.3132,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2256,13 +2254,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.181,
-      "soil_water_rootzone_m3m3": 0.2422,
+      "soil_water_surface_m3m3": 0.1751,
+      "soil_water_rootzone_m3m3": 0.2401,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2292,13 +2290,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4186,
-      "soil_water_rootzone_m3m3": 0.4165,
+      "soil_water_surface_m3m3": 0.4259,
+      "soil_water_rootzone_m3m3": 0.4252,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2328,13 +2326,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4095,
-      "soil_water_rootzone_m3m3": 0.3824,
+      "soil_water_surface_m3m3": 0.4488,
+      "soil_water_rootzone_m3m3": 0.3908,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2363,13 +2361,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2884,
-      "soil_water_rootzone_m3m3": 0.3321,
+      "soil_water_surface_m3m3": 0.2859,
+      "soil_water_rootzone_m3m3": 0.3302,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2399,13 +2397,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2432,
-      "soil_water_rootzone_m3m3": 0.2849,
+      "soil_water_surface_m3m3": 0.2498,
+      "soil_water_rootzone_m3m3": 0.2833,
       "surface_percentile_90d": 0.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2435,13 +2433,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3904,
-      "soil_water_rootzone_m3m3": 0.3807,
-      "surface_percentile_90d": 0.0,
+      "soil_water_surface_m3m3": 0.3892,
+      "soil_water_rootzone_m3m3": 0.3844,
+      "surface_percentile_90d": 1.6,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2471,13 +2469,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3877,
-      "soil_water_rootzone_m3m3": 0.3924,
-      "surface_percentile_90d": 86.8,
-      "rootzone_percentile_90d": 93.5,
+      "soil_water_surface_m3m3": 0.392,
+      "soil_water_rootzone_m3m3": 0.3906,
+      "surface_percentile_90d": 84.5,
+      "rootzone_percentile_90d": 92.9,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2507,13 +2505,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3706,
-      "soil_water_rootzone_m3m3": 0.3432,
-      "surface_percentile_90d": 2.6,
+      "soil_water_surface_m3m3": 0.3644,
+      "soil_water_rootzone_m3m3": 0.3418,
+      "surface_percentile_90d": 3.5,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2548,7 +2546,7 @@
       "rootzone_percentile_90d": null,
       "soil_status_cn": "未知",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2578,13 +2576,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.355,
-      "soil_water_rootzone_m3m3": 0.3333,
-      "surface_percentile_90d": 2.3,
+      "soil_water_surface_m3m3": 0.3418,
+      "soil_water_rootzone_m3m3": 0.3313,
+      "surface_percentile_90d": 2.6,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2613,13 +2611,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2729,
-      "soil_water_rootzone_m3m3": 0.2741,
+      "soil_water_surface_m3m3": 0.2494,
+      "soil_water_rootzone_m3m3": 0.2712,
       "surface_percentile_90d": 4.5,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2648,13 +2646,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4298,
-      "soil_water_rootzone_m3m3": 0.405,
-      "surface_percentile_90d": 77.7,
+      "soil_water_surface_m3m3": 0.418,
+      "soil_water_rootzone_m3m3": 0.4023,
+      "surface_percentile_90d": 74.5,
       "rootzone_percentile_90d": 45.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2683,13 +2681,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.255,
-      "soil_water_rootzone_m3m3": 0.3132,
-      "surface_percentile_90d": 22.6,
+      "soil_water_surface_m3m3": 0.2502,
+      "soil_water_rootzone_m3m3": 0.3116,
+      "surface_percentile_90d": 21.3,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2718,13 +2716,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4281,
-      "soil_water_rootzone_m3m3": 0.4331,
-      "surface_percentile_90d": 96.8,
-      "rootzone_percentile_90d": 92.3,
+      "soil_water_surface_m3m3": 0.4175,
+      "soil_water_rootzone_m3m3": 0.4285,
+      "surface_percentile_90d": 93.2,
+      "rootzone_percentile_90d": 92.6,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2754,13 +2752,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4829,
-      "soil_water_rootzone_m3m3": 0.4725,
-      "surface_percentile_90d": 96.5,
-      "rootzone_percentile_90d": 83.9,
+      "soil_water_surface_m3m3": 0.4885,
+      "soil_water_rootzone_m3m3": 0.4715,
+      "surface_percentile_90d": 98.1,
+      "rootzone_percentile_90d": 84.5,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2790,13 +2788,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4627,
-      "soil_water_rootzone_m3m3": 0.5002,
-      "surface_percentile_90d": 52.6,
-      "rootzone_percentile_90d": 95.2,
+      "soil_water_surface_m3m3": 0.4799,
+      "soil_water_rootzone_m3m3": 0.4978,
+      "surface_percentile_90d": 46.8,
+      "rootzone_percentile_90d": 96.1,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2825,13 +2823,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4793,
-      "soil_water_rootzone_m3m3": 0.4789,
-      "surface_percentile_90d": 94.2,
-      "rootzone_percentile_90d": 88.4,
+      "soil_water_surface_m3m3": 0.4732,
+      "soil_water_rootzone_m3m3": 0.4766,
+      "surface_percentile_90d": 93.5,
+      "rootzone_percentile_90d": 87.4,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2843,7 +2841,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏少",
     "temp_7d_status": "高温显著",
-    "soil_moisture_status": "严重偏湿",
+    "soil_moisture_status": "极端偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
@@ -2861,13 +2859,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4666,
-      "soil_water_rootzone_m3m3": 0.4953,
-      "surface_percentile_90d": 92.9,
-      "rootzone_percentile_90d": 93.5,
-      "soil_status_cn": "严重偏湿",
+      "soil_water_surface_m3m3": 0.4857,
+      "soil_water_rootzone_m3m3": 0.4931,
+      "surface_percentile_90d": 92.6,
+      "rootzone_percentile_90d": 95.5,
+      "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2896,13 +2894,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4653,
-      "soil_water_rootzone_m3m3": 0.4609,
+      "soil_water_surface_m3m3": 0.4624,
+      "soil_water_rootzone_m3m3": 0.459,
       "surface_percentile_90d": 78.4,
       "rootzone_percentile_90d": 92.9,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2931,13 +2929,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4584,
-      "soil_water_rootzone_m3m3": 0.4232,
-      "surface_percentile_90d": 82.9,
-      "rootzone_percentile_90d": 35.5,
+      "soil_water_surface_m3m3": 0.4571,
+      "soil_water_rootzone_m3m3": 0.4212,
+      "surface_percentile_90d": 83.9,
+      "rootzone_percentile_90d": 36.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -2966,13 +2964,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3915,
-      "soil_water_rootzone_m3m3": 0.3617,
-      "surface_percentile_90d": 51.0,
-      "rootzone_percentile_90d": 33.5,
+      "soil_water_surface_m3m3": 0.3901,
+      "soil_water_rootzone_m3m3": 0.3595,
+      "surface_percentile_90d": 61.0,
+      "rootzone_percentile_90d": 36.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3001,13 +2999,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4304,
-      "soil_water_rootzone_m3m3": 0.4363,
-      "surface_percentile_90d": 83.9,
-      "rootzone_percentile_90d": 91.3,
+      "soil_water_surface_m3m3": 0.42,
+      "soil_water_rootzone_m3m3": 0.4327,
+      "surface_percentile_90d": 78.7,
+      "rootzone_percentile_90d": 90.3,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3037,13 +3035,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4822,
-      "soil_water_rootzone_m3m3": 0.4972,
-      "surface_percentile_90d": 90.7,
-      "rootzone_percentile_90d": 98.7,
+      "soil_water_surface_m3m3": 0.4719,
+      "soil_water_rootzone_m3m3": 0.4993,
+      "surface_percentile_90d": 95.2,
+      "rootzone_percentile_90d": 99.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3072,13 +3070,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2747,
-      "soil_water_rootzone_m3m3": 0.3048,
-      "surface_percentile_90d": 30.0,
-      "rootzone_percentile_90d": 49.7,
+      "soil_water_surface_m3m3": 0.2705,
+      "soil_water_rootzone_m3m3": 0.3039,
+      "surface_percentile_90d": 29.4,
+      "rootzone_percentile_90d": 48.7,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3107,13 +3105,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.0665,
-      "soil_water_rootzone_m3m3": 0.1987,
-      "surface_percentile_90d": 31.0,
+      "soil_water_surface_m3m3": 0.0666,
+      "soil_water_rootzone_m3m3": 0.1985,
+      "surface_percentile_90d": 31.3,
       "rootzone_percentile_90d": 57.7,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3140,13 +3138,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.0884,
-      "soil_water_rootzone_m3m3": 0.1546,
-      "surface_percentile_90d": 41.3,
-      "rootzone_percentile_90d": 67.1,
+      "soil_water_surface_m3m3": 0.0877,
+      "soil_water_rootzone_m3m3": 0.1545,
+      "surface_percentile_90d": 38.4,
+      "rootzone_percentile_90d": 67.4,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3175,13 +3173,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.327,
-      "soil_water_rootzone_m3m3": 0.3083,
-      "surface_percentile_90d": 30.6,
-      "rootzone_percentile_90d": 36.1,
+      "soil_water_surface_m3m3": 0.3224,
+      "soil_water_rootzone_m3m3": 0.3077,
+      "surface_percentile_90d": 27.1,
+      "rootzone_percentile_90d": 34.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3210,13 +3208,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3228,
-      "soil_water_rootzone_m3m3": 0.3084,
-      "surface_percentile_90d": 24.5,
-      "rootzone_percentile_90d": 83.2,
+      "soil_water_surface_m3m3": 0.3174,
+      "soil_water_rootzone_m3m3": 0.3072,
+      "surface_percentile_90d": 22.9,
+      "rootzone_percentile_90d": 82.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3245,13 +3243,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.0258,
-      "soil_water_rootzone_m3m3": 0.1413,
-      "surface_percentile_90d": 29.4,
-      "rootzone_percentile_90d": 49.0,
+      "soil_water_surface_m3m3": 0.0256,
+      "soil_water_rootzone_m3m3": 0.1412,
+      "surface_percentile_90d": 28.4,
+      "rootzone_percentile_90d": 48.7,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3278,13 +3276,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3598,
-      "soil_water_rootzone_m3m3": 0.3677,
-      "surface_percentile_90d": 67.7,
-      "rootzone_percentile_90d": 65.8,
+      "soil_water_surface_m3m3": 0.3467,
+      "soil_water_rootzone_m3m3": 0.3632,
+      "surface_percentile_90d": 69.0,
+      "rootzone_percentile_90d": 65.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3296,15 +3294,15 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "略偏湿",
+    "soil_moisture_status": "明显偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P97），排水不畅风险",
+    "water_stress_explanation_cn": "表层土壤过湿（P98），排水不畅风险",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P97），排水不畅风险",
+    "risk_reason_cn": "表层土壤过湿（P98），排水不畅风险",
     "risk_components": [
       "waterlogged_soil"
     ],
@@ -3313,13 +3311,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4669,
-      "soil_water_rootzone_m3m3": 0.4633,
-      "surface_percentile_90d": 97.4,
-      "rootzone_percentile_90d": 79.0,
-      "soil_status_cn": "略偏湿",
+      "soil_water_surface_m3m3": 0.4681,
+      "soil_water_rootzone_m3m3": 0.4678,
+      "surface_percentile_90d": 97.7,
+      "rootzone_percentile_90d": 82.3,
+      "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3352,7 +3350,7 @@
       "rootzone_percentile_90d": 50.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3381,13 +3379,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2546,
-      "soil_water_rootzone_m3m3": 0.2862,
-      "surface_percentile_90d": 9.0,
-      "rootzone_percentile_90d": 35.8,
+      "soil_water_surface_m3m3": 0.2637,
+      "soil_water_rootzone_m3m3": 0.2863,
+      "surface_percentile_90d": 8.4,
+      "rootzone_percentile_90d": 32.3,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3416,13 +3414,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.5204,
-      "soil_water_rootzone_m3m3": 0.57,
-      "surface_percentile_90d": 17.4,
-      "rootzone_percentile_90d": 19.0,
+      "soil_water_surface_m3m3": 0.5095,
+      "soil_water_rootzone_m3m3": 0.5673,
+      "surface_percentile_90d": 13.9,
+      "rootzone_percentile_90d": 16.4,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3452,13 +3450,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2213,
-      "soil_water_rootzone_m3m3": 0.2225,
-      "surface_percentile_90d": 18.1,
-      "rootzone_percentile_90d": 28.1,
+      "soil_water_surface_m3m3": 0.2458,
+      "soil_water_rootzone_m3m3": 0.2227,
+      "surface_percentile_90d": 14.8,
+      "rootzone_percentile_90d": 24.2,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3485,13 +3483,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1926,
-      "soil_water_rootzone_m3m3": 0.2326,
-      "surface_percentile_90d": 69.0,
-      "rootzone_percentile_90d": 96.1,
+      "soil_water_surface_m3m3": 0.1851,
+      "soil_water_rootzone_m3m3": 0.2297,
+      "surface_percentile_90d": 66.8,
+      "rootzone_percentile_90d": 95.8,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3521,13 +3519,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1716,
-      "soil_water_rootzone_m3m3": 0.1822,
-      "surface_percentile_90d": 15.8,
+      "soil_water_surface_m3m3": 0.1981,
+      "soil_water_rootzone_m3m3": 0.1827,
+      "surface_percentile_90d": 14.8,
       "rootzone_percentile_90d": 7.1,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3562,7 +3560,7 @@
       "rootzone_percentile_90d": null,
       "soil_status_cn": "未知",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3592,13 +3590,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.171,
-      "soil_water_rootzone_m3m3": 0.1732,
-      "surface_percentile_90d": 6.1,
+      "soil_water_surface_m3m3": 0.1575,
+      "soil_water_rootzone_m3m3": 0.1718,
+      "surface_percentile_90d": 9.0,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3625,13 +3623,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1602,
-      "soil_water_rootzone_m3m3": 0.1754,
-      "surface_percentile_90d": 28.1,
-      "rootzone_percentile_90d": 21.9,
+      "soil_water_surface_m3m3": 0.1959,
+      "soil_water_rootzone_m3m3": 0.1773,
+      "surface_percentile_90d": 28.4,
+      "rootzone_percentile_90d": 21.6,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3660,13 +3658,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3184,
-      "soil_water_rootzone_m3m3": 0.3064,
-      "surface_percentile_90d": 62.9,
-      "rootzone_percentile_90d": 78.4,
+      "soil_water_surface_m3m3": 0.327,
+      "soil_water_rootzone_m3m3": 0.3046,
+      "surface_percentile_90d": 61.0,
+      "rootzone_percentile_90d": 77.1,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3695,13 +3693,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2605,
-      "soil_water_rootzone_m3m3": 0.2279,
-      "surface_percentile_90d": 73.2,
-      "rootzone_percentile_90d": 43.9,
+      "soil_water_surface_m3m3": 0.2536,
+      "soil_water_rootzone_m3m3": 0.2252,
+      "surface_percentile_90d": 61.3,
+      "rootzone_percentile_90d": 39.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3730,13 +3728,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1808,
-      "soil_water_rootzone_m3m3": 0.2098,
-      "surface_percentile_90d": 72.3,
-      "rootzone_percentile_90d": 63.2,
+      "soil_water_surface_m3m3": 0.1699,
+      "soil_water_rootzone_m3m3": 0.2062,
+      "surface_percentile_90d": 68.1,
+      "rootzone_percentile_90d": 62.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3753,10 +3751,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P93），排水不畅风险",
+    "water_stress_explanation_cn": "表层土壤过湿（P92），排水不畅风险",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P93），排水不畅风险",
+    "risk_reason_cn": "表层土壤过湿（P92），排水不畅风险",
     "risk_components": [
       "waterlogged_soil"
     ],
@@ -3765,13 +3763,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3827,
-      "soil_water_rootzone_m3m3": 0.2695,
-      "surface_percentile_90d": 92.9,
-      "rootzone_percentile_90d": 59.4,
+      "soil_water_surface_m3m3": 0.3595,
+      "soil_water_rootzone_m3m3": 0.2675,
+      "surface_percentile_90d": 92.3,
+      "rootzone_percentile_90d": 61.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3786,27 +3784,27 @@
     "soil_moisture_status": "略偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P91），排水不畅风险",
+    "water_stress_label_cn": "轻微异常",
+    "water_stress_level": "normal",
+    "water_stress_explanation_cn": "单一指标轻微异常，未来可能缓解",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P91），排水不畅风险",
+    "risk_level_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解",
     "risk_components": [
-      "waterlogged_soil"
+      "mild_anomaly"
     ],
     "et0_30d_avg_mm": null,
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3739,
-      "soil_water_rootzone_m3m3": 0.3095,
-      "surface_percentile_90d": 90.7,
-      "rootzone_percentile_90d": 72.9,
+      "soil_water_surface_m3m3": 0.3471,
+      "soil_water_rootzone_m3m3": 0.3059,
+      "surface_percentile_90d": 88.7,
+      "rootzone_percentile_90d": 71.9,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3835,13 +3833,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2912,
-      "soil_water_rootzone_m3m3": 0.2497,
-      "surface_percentile_90d": 55.5,
-      "rootzone_percentile_90d": 69.0,
+      "soil_water_surface_m3m3": 0.2641,
+      "soil_water_rootzone_m3m3": 0.2458,
+      "surface_percentile_90d": 56.8,
+      "rootzone_percentile_90d": 67.7,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3868,13 +3866,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.206,
-      "soil_water_rootzone_m3m3": 0.2631,
-      "surface_percentile_90d": 78.4,
+      "soil_water_surface_m3m3": 0.1939,
+      "soil_water_rootzone_m3m3": 0.2596,
+      "surface_percentile_90d": 74.5,
       "rootzone_percentile_90d": 94.8,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3903,13 +3901,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3445,
-      "soil_water_rootzone_m3m3": 0.38,
-      "surface_percentile_90d": 58.7,
-      "rootzone_percentile_90d": 89.7,
+      "soil_water_surface_m3m3": 0.3748,
+      "soil_water_rootzone_m3m3": 0.3806,
+      "surface_percentile_90d": 55.8,
+      "rootzone_percentile_90d": 88.7,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3938,13 +3936,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3837,
-      "soil_water_rootzone_m3m3": 0.2798,
-      "surface_percentile_90d": 89.7,
-      "rootzone_percentile_90d": 65.5,
+      "soil_water_surface_m3m3": 0.3696,
+      "soil_water_rootzone_m3m3": 0.2782,
+      "surface_percentile_90d": 90.3,
+      "rootzone_percentile_90d": 70.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3973,13 +3971,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1659,
-      "soil_water_rootzone_m3m3": 0.1528,
-      "surface_percentile_90d": 8.4,
-      "rootzone_percentile_90d": 47.4,
+      "soil_water_surface_m3m3": 0.2453,
+      "soil_water_rootzone_m3m3": 0.159,
+      "surface_percentile_90d": 13.6,
+      "rootzone_percentile_90d": 46.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -3991,15 +3989,15 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "略偏湿",
+    "soil_moisture_status": "明显偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P95），排水不畅风险",
+    "water_stress_explanation_cn": "表层土壤过湿（P96），排水不畅风险",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P95），排水不畅风险",
+    "risk_reason_cn": "表层土壤过湿（P96），排水不畅风险",
     "risk_components": [
       "waterlogged_soil"
     ],
@@ -4008,13 +4006,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3981,
-      "soil_water_rootzone_m3m3": 0.2838,
-      "surface_percentile_90d": 95.2,
-      "rootzone_percentile_90d": 77.7,
-      "soil_status_cn": "略偏湿",
+      "soil_water_surface_m3m3": 0.3695,
+      "soil_water_rootzone_m3m3": 0.2818,
+      "surface_percentile_90d": 95.5,
+      "rootzone_percentile_90d": 82.9,
+      "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4043,13 +4041,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3529,
-      "soil_water_rootzone_m3m3": 0.3601,
-      "surface_percentile_90d": 89.3,
-      "rootzone_percentile_90d": 93.2,
+      "soil_water_surface_m3m3": 0.339,
+      "soil_water_rootzone_m3m3": 0.3552,
+      "surface_percentile_90d": 87.4,
+      "rootzone_percentile_90d": 92.6,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4078,13 +4076,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3275,
-      "soil_water_rootzone_m3m3": 0.3295,
-      "surface_percentile_90d": 86.1,
+      "soil_water_surface_m3m3": 0.3645,
+      "soil_water_rootzone_m3m3": 0.3318,
+      "surface_percentile_90d": 85.8,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4113,13 +4111,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3489,
-      "soil_water_rootzone_m3m3": 0.2769,
-      "surface_percentile_90d": 56.8,
-      "rootzone_percentile_90d": 59.0,
+      "soil_water_surface_m3m3": 0.3216,
+      "soil_water_rootzone_m3m3": 0.2729,
+      "surface_percentile_90d": 61.6,
+      "rootzone_percentile_90d": 59.7,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4146,13 +4144,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4552,
-      "soil_water_rootzone_m3m3": 0.4054,
-      "surface_percentile_90d": 72.6,
-      "rootzone_percentile_90d": 80.3,
+      "soil_water_surface_m3m3": 0.4354,
+      "soil_water_rootzone_m3m3": 0.4024,
+      "surface_percentile_90d": 72.9,
+      "rootzone_percentile_90d": 81.0,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4181,13 +4179,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2891,
-      "soil_water_rootzone_m3m3": 0.18,
-      "surface_percentile_90d": 94.5,
-      "rootzone_percentile_90d": 65.8,
+      "soil_water_surface_m3m3": 0.2587,
+      "soil_water_rootzone_m3m3": 0.1789,
+      "surface_percentile_90d": 95.2,
+      "rootzone_percentile_90d": 66.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4216,13 +4214,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3026,
-      "soil_water_rootzone_m3m3": 0.3328,
-      "surface_percentile_90d": 89.3,
+      "soil_water_surface_m3m3": 0.288,
+      "soil_water_rootzone_m3m3": 0.3299,
+      "surface_percentile_90d": 88.4,
       "rootzone_percentile_90d": 95.5,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4251,13 +4249,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4217,
-      "soil_water_rootzone_m3m3": 0.3584,
+      "soil_water_surface_m3m3": 0.3984,
+      "soil_water_rootzone_m3m3": 0.3609,
       "surface_percentile_90d": 84.8,
-      "rootzone_percentile_90d": 66.1,
+      "rootzone_percentile_90d": 66.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4286,13 +4284,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2578,
-      "soil_water_rootzone_m3m3": 0.2483,
-      "surface_percentile_90d": 46.8,
-      "rootzone_percentile_90d": 67.1,
+      "soil_water_surface_m3m3": 0.3152,
+      "soil_water_rootzone_m3m3": 0.2514,
+      "surface_percentile_90d": 47.7,
+      "rootzone_percentile_90d": 66.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4321,13 +4319,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.415,
-      "soil_water_rootzone_m3m3": 0.3471,
-      "surface_percentile_90d": 66.1,
-      "rootzone_percentile_90d": 71.6,
+      "soil_water_surface_m3m3": 0.3841,
+      "soil_water_rootzone_m3m3": 0.3434,
+      "surface_percentile_90d": 74.2,
+      "rootzone_percentile_90d": 73.5,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4356,13 +4354,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3612,
-      "soil_water_rootzone_m3m3": 0.2695,
-      "surface_percentile_90d": 99.3,
+      "soil_water_surface_m3m3": 0.3332,
+      "soil_water_rootzone_m3m3": 0.2657,
+      "surface_percentile_90d": 99.7,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4389,13 +4387,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3371,
-      "soil_water_rootzone_m3m3": 0.2533,
-      "surface_percentile_90d": 80.7,
-      "rootzone_percentile_90d": 46.5,
+      "soil_water_surface_m3m3": 0.3147,
+      "soil_water_rootzone_m3m3": 0.2515,
+      "surface_percentile_90d": 77.7,
+      "rootzone_percentile_90d": 46.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4424,13 +4422,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3464,
-      "soil_water_rootzone_m3m3": 0.3053,
-      "surface_percentile_90d": 68.4,
-      "rootzone_percentile_90d": 76.8,
+      "soil_water_surface_m3m3": 0.3164,
+      "soil_water_rootzone_m3m3": 0.301,
+      "surface_percentile_90d": 71.6,
+      "rootzone_percentile_90d": 78.4,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4457,13 +4455,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3945,
-      "soil_water_rootzone_m3m3": 0.2557,
-      "surface_percentile_90d": 82.6,
-      "rootzone_percentile_90d": 37.4,
+      "soil_water_surface_m3m3": 0.3579,
+      "soil_water_rootzone_m3m3": 0.257,
+      "surface_percentile_90d": 86.1,
+      "rootzone_percentile_90d": 43.2,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4492,13 +4490,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2456,
-      "soil_water_rootzone_m3m3": 0.2065,
-      "surface_percentile_90d": 66.5,
-      "rootzone_percentile_90d": 26.4,
+      "soil_water_surface_m3m3": 0.2264,
+      "soil_water_rootzone_m3m3": 0.2041,
+      "surface_percentile_90d": 70.7,
+      "rootzone_percentile_90d": 27.4,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4510,7 +4508,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "正常",
+    "soil_moisture_status": "略偏干",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
@@ -4527,13 +4525,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.17,
-      "soil_water_rootzone_m3m3": 0.185,
-      "surface_percentile_90d": 30.6,
-      "rootzone_percentile_90d": 31.3,
-      "soil_status_cn": "正常",
+      "soil_water_surface_m3m3": 0.1666,
+      "soil_water_rootzone_m3m3": 0.1831,
+      "surface_percentile_90d": 24.2,
+      "rootzone_percentile_90d": 29.7,
+      "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4562,13 +4560,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2563,
-      "soil_water_rootzone_m3m3": 0.2874,
-      "surface_percentile_90d": 66.5,
-      "rootzone_percentile_90d": 99.7,
+      "soil_water_surface_m3m3": 0.2605,
+      "soil_water_rootzone_m3m3": 0.2865,
+      "surface_percentile_90d": 64.5,
+      "rootzone_percentile_90d": 98.4,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4597,13 +4595,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3488,
-      "soil_water_rootzone_m3m3": 0.2818,
-      "surface_percentile_90d": 75.2,
-      "rootzone_percentile_90d": 80.7,
+      "soil_water_surface_m3m3": 0.3234,
+      "soil_water_rootzone_m3m3": 0.2778,
+      "surface_percentile_90d": 80.0,
+      "rootzone_percentile_90d": 82.3,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4632,13 +4630,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3289,
-      "soil_water_rootzone_m3m3": 0.256,
-      "surface_percentile_90d": 91.0,
-      "rootzone_percentile_90d": 81.3,
+      "soil_water_surface_m3m3": 0.3105,
+      "soil_water_rootzone_m3m3": 0.2543,
+      "surface_percentile_90d": 91.3,
+      "rootzone_percentile_90d": 81.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4667,13 +4665,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3264,
-      "soil_water_rootzone_m3m3": 0.3109,
-      "surface_percentile_90d": 66.1,
-      "rootzone_percentile_90d": 83.2,
+      "soil_water_surface_m3m3": 0.3916,
+      "soil_water_rootzone_m3m3": 0.3234,
+      "surface_percentile_90d": 70.3,
+      "rootzone_percentile_90d": 82.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4702,13 +4700,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2915,
-      "soil_water_rootzone_m3m3": 0.3071,
-      "surface_percentile_90d": 61.3,
+      "soil_water_surface_m3m3": 0.3078,
+      "soil_water_rootzone_m3m3": 0.3063,
+      "surface_percentile_90d": 55.8,
       "rootzone_percentile_90d": 70.7,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4735,13 +4733,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1623,
-      "soil_water_rootzone_m3m3": 0.221,
-      "surface_percentile_90d": 82.9,
+      "soil_water_surface_m3m3": 0.1462,
+      "soil_water_rootzone_m3m3": 0.2174,
+      "surface_percentile_90d": 81.9,
       "rootzone_percentile_90d": 87.1,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4770,13 +4768,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3821,
-      "soil_water_rootzone_m3m3": 0.3933,
-      "surface_percentile_90d": 61.0,
-      "rootzone_percentile_90d": 84.8,
+      "soil_water_surface_m3m3": 0.4332,
+      "soil_water_rootzone_m3m3": 0.3966,
+      "surface_percentile_90d": 61.9,
+      "rootzone_percentile_90d": 84.2,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4805,13 +4803,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2568,
-      "soil_water_rootzone_m3m3": 0.1932,
-      "surface_percentile_90d": 41.6,
-      "rootzone_percentile_90d": 67.7,
+      "soil_water_surface_m3m3": 0.286,
+      "soil_water_rootzone_m3m3": 0.1967,
+      "surface_percentile_90d": 49.7,
+      "rootzone_percentile_90d": 66.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4840,13 +4838,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2071,
-      "soil_water_rootzone_m3m3": 0.2054,
-      "surface_percentile_90d": 97.1,
+      "soil_water_surface_m3m3": 0.1917,
+      "soil_water_rootzone_m3m3": 0.2021,
+      "surface_percentile_90d": 95.5,
       "rootzone_percentile_90d": 81.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4875,13 +4873,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2706,
-      "soil_water_rootzone_m3m3": 0.3142,
-      "surface_percentile_90d": 84.2,
-      "rootzone_percentile_90d": 87.7,
+      "soil_water_surface_m3m3": 0.2572,
+      "soil_water_rootzone_m3m3": 0.3108,
+      "surface_percentile_90d": 81.9,
+      "rootzone_percentile_90d": 87.1,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4908,13 +4906,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1415,
-      "soil_water_rootzone_m3m3": 0.1828,
-      "surface_percentile_90d": 35.8,
+      "soil_water_surface_m3m3": 0.138,
+      "soil_water_rootzone_m3m3": 0.1819,
+      "surface_percentile_90d": 40.0,
       "rootzone_percentile_90d": 75.2,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4931,10 +4929,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
-    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P99）",
+    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P100）",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P99）",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P100）",
     "risk_components": [
       "excess_rain",
       "waterlogged_soil"
@@ -4944,13 +4942,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3407,
-      "soil_water_rootzone_m3m3": 0.2061,
-      "surface_percentile_90d": 99.3,
-      "rootzone_percentile_90d": 81.9,
+      "soil_water_surface_m3m3": 0.3708,
+      "soil_water_rootzone_m3m3": 0.2111,
+      "surface_percentile_90d": 99.7,
+      "rootzone_percentile_90d": 86.8,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4979,13 +4977,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.34,
-      "soil_water_rootzone_m3m3": 0.2614,
+      "soil_water_surface_m3m3": 0.3207,
+      "soil_water_rootzone_m3m3": 0.2595,
       "surface_percentile_90d": 97.1,
-      "rootzone_percentile_90d": 84.5,
+      "rootzone_percentile_90d": 84.8,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -4997,7 +4995,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏少",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "严重偏湿",
+    "soil_moisture_status": "明显偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "轻微异常",
@@ -5014,13 +5012,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.373,
-      "soil_water_rootzone_m3m3": 0.3891,
-      "surface_percentile_90d": 61.0,
-      "rootzone_percentile_90d": 91.3,
-      "soil_status_cn": "严重偏湿",
+      "soil_water_surface_m3m3": 0.3594,
+      "soil_water_rootzone_m3m3": 0.384,
+      "surface_percentile_90d": 53.2,
+      "rootzone_percentile_90d": 87.7,
+      "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5049,13 +5047,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2459,
-      "soil_water_rootzone_m3m3": 0.169,
-      "surface_percentile_90d": 68.4,
-      "rootzone_percentile_90d": 57.7,
+      "soil_water_surface_m3m3": 0.2318,
+      "soil_water_rootzone_m3m3": 0.1692,
+      "surface_percentile_90d": 69.7,
+      "rootzone_percentile_90d": 56.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5072,10 +5070,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P100），排水不畅风险",
+    "water_stress_explanation_cn": "表层土壤过湿（P99），排水不畅风险",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P100），排水不畅风险",
+    "risk_reason_cn": "表层土壤过湿（P99），排水不畅风险",
     "risk_components": [
       "waterlogged_soil"
     ],
@@ -5084,13 +5082,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3539,
-      "soil_water_rootzone_m3m3": 0.3289,
-      "surface_percentile_90d": 99.7,
-      "rootzone_percentile_90d": 83.5,
+      "soil_water_surface_m3m3": 0.3388,
+      "soil_water_rootzone_m3m3": 0.3259,
+      "surface_percentile_90d": 99.3,
+      "rootzone_percentile_90d": 84.8,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5119,13 +5117,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4882,
-      "soil_water_rootzone_m3m3": 0.4503,
+      "soil_water_surface_m3m3": 0.4705,
+      "soil_water_rootzone_m3m3": 0.4473,
       "surface_percentile_90d": 100.0,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5154,13 +5152,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3229,
-      "soil_water_rootzone_m3m3": 0.2742,
-      "surface_percentile_90d": 78.4,
+      "soil_water_surface_m3m3": 0.3102,
+      "soil_water_rootzone_m3m3": 0.2737,
+      "surface_percentile_90d": 80.7,
       "rootzone_percentile_90d": 81.6,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5189,13 +5187,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2714,
-      "soil_water_rootzone_m3m3": 0.329,
-      "surface_percentile_90d": 39.0,
-      "rootzone_percentile_90d": 65.8,
+      "soil_water_surface_m3m3": 0.2668,
+      "soil_water_rootzone_m3m3": 0.328,
+      "surface_percentile_90d": 43.9,
+      "rootzone_percentile_90d": 67.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5225,13 +5223,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2789,
-      "soil_water_rootzone_m3m3": 0.2672,
-      "surface_percentile_90d": 35.8,
-      "rootzone_percentile_90d": 43.9,
+      "soil_water_surface_m3m3": 0.2581,
+      "soil_water_rootzone_m3m3": 0.2633,
+      "surface_percentile_90d": 33.5,
+      "rootzone_percentile_90d": 42.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5260,13 +5258,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2067,
-      "soil_water_rootzone_m3m3": 0.2452,
-      "surface_percentile_90d": 79.0,
-      "rootzone_percentile_90d": 82.6,
+      "soil_water_surface_m3m3": 0.1899,
+      "soil_water_rootzone_m3m3": 0.2415,
+      "surface_percentile_90d": 76.1,
+      "rootzone_percentile_90d": 82.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5295,13 +5293,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3781,
-      "soil_water_rootzone_m3m3": 0.3639,
-      "surface_percentile_90d": 82.9,
+      "soil_water_surface_m3m3": 0.4252,
+      "soil_water_rootzone_m3m3": 0.3832,
+      "surface_percentile_90d": 87.7,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5331,13 +5329,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3679,
-      "soil_water_rootzone_m3m3": 0.2754,
+      "soil_water_surface_m3m3": 0.3456,
+      "soil_water_rootzone_m3m3": 0.2738,
       "surface_percentile_90d": 98.7,
-      "rootzone_percentile_90d": 90.3,
+      "rootzone_percentile_90d": 93.5,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5366,13 +5364,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2436,
-      "soil_water_rootzone_m3m3": 0.214,
-      "surface_percentile_90d": 66.8,
-      "rootzone_percentile_90d": 42.6,
+      "soil_water_surface_m3m3": 0.2214,
+      "soil_water_rootzone_m3m3": 0.2111,
+      "surface_percentile_90d": 69.0,
+      "rootzone_percentile_90d": 44.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5401,13 +5399,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3416,
-      "soil_water_rootzone_m3m3": 0.2665,
-      "surface_percentile_90d": 78.7,
-      "rootzone_percentile_90d": 59.4,
+      "soil_water_surface_m3m3": 0.3137,
+      "soil_water_rootzone_m3m3": 0.2627,
+      "surface_percentile_90d": 82.3,
+      "rootzone_percentile_90d": 61.3,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5419,7 +5417,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "略偏干",
+    "soil_moisture_status": "正常",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "正常",
@@ -5434,13 +5432,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3488,
-      "soil_water_rootzone_m3m3": 0.1734,
-      "surface_percentile_90d": 54.8,
-      "rootzone_percentile_90d": 27.4,
-      "soil_status_cn": "略偏干",
+      "soil_water_surface_m3m3": 0.3093,
+      "soil_water_rootzone_m3m3": 0.1755,
+      "surface_percentile_90d": 68.7,
+      "rootzone_percentile_90d": 38.1,
+      "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5469,13 +5467,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3512,
-      "soil_water_rootzone_m3m3": 0.2962,
-      "surface_percentile_90d": 47.4,
-      "rootzone_percentile_90d": 58.4,
+      "soil_water_surface_m3m3": 0.3283,
+      "soil_water_rootzone_m3m3": 0.2919,
+      "surface_percentile_90d": 53.5,
+      "rootzone_percentile_90d": 61.3,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5502,13 +5500,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2524,
-      "soil_water_rootzone_m3m3": 0.263,
-      "surface_percentile_90d": 55.5,
-      "rootzone_percentile_90d": 79.0,
+      "soil_water_surface_m3m3": 0.3333,
+      "soil_water_rootzone_m3m3": 0.2693,
+      "surface_percentile_90d": 58.4,
+      "rootzone_percentile_90d": 77.7,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5535,13 +5533,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4252,
-      "soil_water_rootzone_m3m3": 0.3877,
-      "surface_percentile_90d": 67.1,
+      "soil_water_surface_m3m3": 0.4324,
+      "soil_water_rootzone_m3m3": 0.3882,
+      "surface_percentile_90d": 71.6,
       "rootzone_percentile_90d": 91.6,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5570,13 +5568,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3044,
-      "soil_water_rootzone_m3m3": 0.2372,
-      "surface_percentile_90d": 78.4,
-      "rootzone_percentile_90d": 79.3,
+      "soil_water_surface_m3m3": 0.2814,
+      "soil_water_rootzone_m3m3": 0.2358,
+      "surface_percentile_90d": 79.0,
+      "rootzone_percentile_90d": 79.0,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5605,13 +5603,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4075,
-      "soil_water_rootzone_m3m3": 0.3392,
+      "soil_water_surface_m3m3": 0.379,
+      "soil_water_rootzone_m3m3": 0.3363,
       "surface_percentile_90d": 100.0,
-      "rootzone_percentile_90d": 92.9,
+      "rootzone_percentile_90d": 93.9,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5640,13 +5638,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2223,
-      "soil_water_rootzone_m3m3": 0.2376,
-      "surface_percentile_90d": 36.5,
-      "rootzone_percentile_90d": 34.8,
+      "soil_water_surface_m3m3": 0.2196,
+      "soil_water_rootzone_m3m3": 0.2372,
+      "surface_percentile_90d": 38.4,
+      "rootzone_percentile_90d": 36.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5673,13 +5671,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3494,
-      "soil_water_rootzone_m3m3": 0.2987,
-      "surface_percentile_90d": 83.2,
-      "rootzone_percentile_90d": 63.9,
+      "soil_water_surface_m3m3": 0.3243,
+      "soil_water_rootzone_m3m3": 0.2943,
+      "surface_percentile_90d": 81.9,
+      "rootzone_percentile_90d": 64.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5708,13 +5706,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3912,
-      "soil_water_rootzone_m3m3": 0.3055,
+      "soil_water_surface_m3m3": 0.3663,
+      "soil_water_rootzone_m3m3": 0.3017,
       "surface_percentile_90d": 100.0,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5743,13 +5741,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3602,
-      "soil_water_rootzone_m3m3": 0.2771,
-      "surface_percentile_90d": 87.4,
-      "rootzone_percentile_90d": 54.2,
+      "soil_water_surface_m3m3": 0.3321,
+      "soil_water_rootzone_m3m3": 0.2735,
+      "surface_percentile_90d": 88.4,
+      "rootzone_percentile_90d": 59.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5779,13 +5777,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1205,
-      "soil_water_rootzone_m3m3": 0.2042,
-      "surface_percentile_90d": 0.0,
+      "soil_water_surface_m3m3": 0.118,
+      "soil_water_rootzone_m3m3": 0.2029,
+      "surface_percentile_90d": 0.3,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5802,10 +5800,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "轻微异常",
     "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P8），需关注降水补充",
+    "water_stress_explanation_cn": "根区土壤偏干（P7），需关注降水补充",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P8），需关注降水补充",
+    "risk_reason_cn": "根区土壤偏干（P7），需关注降水补充",
     "risk_components": [
       "dry_soil"
     ],
@@ -5814,13 +5812,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2441,
-      "soil_water_rootzone_m3m3": 0.1671,
-      "surface_percentile_90d": 67.1,
-      "rootzone_percentile_90d": 7.7,
+      "soil_water_surface_m3m3": 0.2175,
+      "soil_water_rootzone_m3m3": 0.1648,
+      "surface_percentile_90d": 59.7,
+      "rootzone_percentile_90d": 6.8,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5849,13 +5847,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3108,
-      "soil_water_rootzone_m3m3": 0.311,
-      "surface_percentile_90d": 97.1,
-      "rootzone_percentile_90d": 95.5,
+      "soil_water_surface_m3m3": 0.2953,
+      "soil_water_rootzone_m3m3": 0.3079,
+      "surface_percentile_90d": 94.8,
+      "rootzone_percentile_90d": 95.8,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5884,13 +5882,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1602,
-      "soil_water_rootzone_m3m3": 0.1567,
-      "surface_percentile_90d": 20.0,
-      "rootzone_percentile_90d": 3.2,
+      "soil_water_surface_m3m3": 0.1518,
+      "soil_water_rootzone_m3m3": 0.1559,
+      "surface_percentile_90d": 16.4,
+      "rootzone_percentile_90d": 2.9,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5919,13 +5917,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1915,
-      "soil_water_rootzone_m3m3": 0.1698,
-      "surface_percentile_90d": 12.3,
-      "rootzone_percentile_90d": 51.3,
+      "soil_water_surface_m3m3": 0.2268,
+      "soil_water_rootzone_m3m3": 0.1785,
+      "surface_percentile_90d": 16.4,
+      "rootzone_percentile_90d": 51.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5954,13 +5952,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2842,
-      "soil_water_rootzone_m3m3": 0.3349,
-      "surface_percentile_90d": 48.1,
-      "rootzone_percentile_90d": 74.2,
+      "soil_water_surface_m3m3": 0.2693,
+      "soil_water_rootzone_m3m3": 0.3312,
+      "surface_percentile_90d": 42.3,
+      "rootzone_percentile_90d": 71.3,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -5990,13 +5988,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1523,
-      "soil_water_rootzone_m3m3": 0.1956,
-      "surface_percentile_90d": 13.2,
-      "rootzone_percentile_90d": 29.4,
+      "soil_water_surface_m3m3": 0.1491,
+      "soil_water_rootzone_m3m3": 0.1937,
+      "surface_percentile_90d": 11.9,
+      "rootzone_percentile_90d": 28.1,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6026,13 +6024,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1381,
-      "soil_water_rootzone_m3m3": 0.2294,
-      "surface_percentile_90d": 14.5,
-      "rootzone_percentile_90d": 25.8,
+      "soil_water_surface_m3m3": 0.1406,
+      "soil_water_rootzone_m3m3": 0.2281,
+      "surface_percentile_90d": 8.1,
+      "rootzone_percentile_90d": 25.2,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6061,13 +6059,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.0242,
-      "soil_water_rootzone_m3m3": 0.2329,
-      "surface_percentile_90d": 7.1,
-      "rootzone_percentile_90d": 16.1,
+      "soil_water_surface_m3m3": 0.024,
+      "soil_water_rootzone_m3m3": 0.2325,
+      "surface_percentile_90d": 2.9,
+      "rootzone_percentile_90d": 15.8,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6094,13 +6092,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1457,
-      "soil_water_rootzone_m3m3": 0.2279,
-      "surface_percentile_90d": 14.8,
-      "rootzone_percentile_90d": 26.8,
+      "soil_water_surface_m3m3": 0.145,
+      "soil_water_rootzone_m3m3": 0.2271,
+      "surface_percentile_90d": 13.6,
+      "rootzone_percentile_90d": 26.1,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6127,13 +6125,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4374,
-      "soil_water_rootzone_m3m3": 0.3621,
-      "surface_percentile_90d": 59.4,
-      "rootzone_percentile_90d": 36.1,
+      "soil_water_surface_m3m3": 0.4573,
+      "soil_water_rootzone_m3m3": 0.385,
+      "surface_percentile_90d": 61.6,
+      "rootzone_percentile_90d": 43.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6160,13 +6158,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2334,
-      "soil_water_rootzone_m3m3": 0.2393,
-      "surface_percentile_90d": 64.5,
-      "rootzone_percentile_90d": 70.7,
+      "soil_water_surface_m3m3": 0.2887,
+      "soil_water_rootzone_m3m3": 0.2447,
+      "surface_percentile_90d": 65.5,
+      "rootzone_percentile_90d": 70.3,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6195,13 +6193,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4619,
-      "soil_water_rootzone_m3m3": 0.4793,
-      "surface_percentile_90d": 98.4,
-      "rootzone_percentile_90d": 98.7,
+      "soil_water_surface_m3m3": 0.4676,
+      "soil_water_rootzone_m3m3": 0.4871,
+      "surface_percentile_90d": 99.3,
+      "rootzone_percentile_90d": 99.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6228,13 +6226,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.245,
-      "soil_water_rootzone_m3m3": 0.2277,
-      "surface_percentile_90d": 72.6,
-      "rootzone_percentile_90d": 52.9,
+      "soil_water_surface_m3m3": 0.2582,
+      "soil_water_rootzone_m3m3": 0.2283,
+      "surface_percentile_90d": 73.2,
+      "rootzone_percentile_90d": 53.2,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6263,13 +6261,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4177,
-      "soil_water_rootzone_m3m3": 0.4078,
-      "surface_percentile_90d": 50.6,
-      "rootzone_percentile_90d": 59.7,
+      "soil_water_surface_m3m3": 0.4644,
+      "soil_water_rootzone_m3m3": 0.4311,
+      "surface_percentile_90d": 54.8,
+      "rootzone_percentile_90d": 60.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6296,13 +6294,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3915,
-      "soil_water_rootzone_m3m3": 0.4372,
-      "surface_percentile_90d": 81.9,
-      "rootzone_percentile_90d": 85.8,
+      "soil_water_surface_m3m3": 0.4165,
+      "soil_water_rootzone_m3m3": 0.4367,
+      "surface_percentile_90d": 78.7,
+      "rootzone_percentile_90d": 85.5,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6331,13 +6329,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3636,
-      "soil_water_rootzone_m3m3": 0.3479,
-      "surface_percentile_90d": 71.9,
-      "rootzone_percentile_90d": 77.1,
+      "soil_water_surface_m3m3": 0.3538,
+      "soil_water_rootzone_m3m3": 0.3471,
+      "surface_percentile_90d": 72.3,
+      "rootzone_percentile_90d": 75.8,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6354,10 +6352,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
-    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P93）",
+    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P92）",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P93）",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P92）",
     "risk_components": [
       "excess_rain",
       "waterlogged_soil"
@@ -6367,13 +6365,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4658,
-      "soil_water_rootzone_m3m3": 0.4834,
-      "surface_percentile_90d": 92.9,
-      "rootzone_percentile_90d": 96.5,
+      "soil_water_surface_m3m3": 0.4602,
+      "soil_water_rootzone_m3m3": 0.4802,
+      "surface_percentile_90d": 91.9,
+      "rootzone_percentile_90d": 95.2,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6402,13 +6400,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3542,
-      "soil_water_rootzone_m3m3": 0.4085,
-      "surface_percentile_90d": 36.8,
+      "soil_water_surface_m3m3": 0.4758,
+      "soil_water_rootzone_m3m3": 0.4328,
+      "surface_percentile_90d": 44.2,
       "rootzone_percentile_90d": 60.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6425,10 +6423,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P92），排水不畅风险",
+    "water_stress_explanation_cn": "表层土壤过湿（P94），排水不畅风险",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P92），排水不畅风险",
+    "risk_reason_cn": "表层土壤过湿（P94），排水不畅风险",
     "risk_components": [
       "waterlogged_soil"
     ],
@@ -6437,13 +6435,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3976,
-      "soil_water_rootzone_m3m3": 0.3879,
-      "surface_percentile_90d": 91.9,
-      "rootzone_percentile_90d": 92.3,
+      "soil_water_surface_m3m3": 0.3962,
+      "soil_water_rootzone_m3m3": 0.387,
+      "surface_percentile_90d": 94.2,
+      "rootzone_percentile_90d": 92.9,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6472,13 +6470,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1491,
-      "soil_water_rootzone_m3m3": 0.1606,
-      "surface_percentile_90d": 13.9,
-      "rootzone_percentile_90d": 66.5,
+      "soil_water_surface_m3m3": 0.1474,
+      "soil_water_rootzone_m3m3": 0.1602,
+      "surface_percentile_90d": 11.3,
+      "rootzone_percentile_90d": 65.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6507,13 +6505,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1481,
-      "soil_water_rootzone_m3m3": 0.2909,
-      "surface_percentile_90d": 59.7,
+      "soil_water_surface_m3m3": 0.1471,
+      "soil_water_rootzone_m3m3": 0.2905,
+      "surface_percentile_90d": 51.0,
       "rootzone_percentile_90d": 10.0,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6543,12 +6541,12 @@
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.215,
-      "soil_water_rootzone_m3m3": 0.3227,
-      "surface_percentile_90d": 74.5,
-      "rootzone_percentile_90d": 62.9,
+      "soil_water_rootzone_m3m3": 0.3221,
+      "surface_percentile_90d": 74.8,
+      "rootzone_percentile_90d": 61.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6577,13 +6575,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1983,
-      "soil_water_rootzone_m3m3": 0.2691,
-      "surface_percentile_90d": 53.5,
-      "rootzone_percentile_90d": 58.4,
+      "soil_water_surface_m3m3": 0.1982,
+      "soil_water_rootzone_m3m3": 0.2686,
+      "surface_percentile_90d": 51.9,
+      "rootzone_percentile_90d": 58.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6612,13 +6610,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1695,
-      "soil_water_rootzone_m3m3": 0.2701,
-      "surface_percentile_90d": 96.8,
-      "rootzone_percentile_90d": 26.1,
+      "soil_water_surface_m3m3": 0.168,
+      "soil_water_rootzone_m3m3": 0.2694,
+      "surface_percentile_90d": 96.5,
+      "rootzone_percentile_90d": 25.8,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6647,13 +6645,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3162,
-      "soil_water_rootzone_m3m3": 0.3449,
-      "surface_percentile_90d": 79.7,
-      "rootzone_percentile_90d": 80.0,
+      "soil_water_surface_m3m3": 0.3034,
+      "soil_water_rootzone_m3m3": 0.3426,
+      "surface_percentile_90d": 78.4,
+      "rootzone_percentile_90d": 79.3,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6682,13 +6680,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2801,
-      "soil_water_rootzone_m3m3": 0.3178,
-      "surface_percentile_90d": 91.3,
+      "soil_water_surface_m3m3": 0.2799,
+      "soil_water_rootzone_m3m3": 0.3174,
+      "surface_percentile_90d": 90.7,
       "rootzone_percentile_90d": 47.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6717,13 +6715,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2481,
-      "soil_water_rootzone_m3m3": 0.3028,
-      "surface_percentile_90d": 78.1,
+      "soil_water_surface_m3m3": 0.248,
+      "soil_water_rootzone_m3m3": 0.3024,
+      "surface_percentile_90d": 73.9,
       "rootzone_percentile_90d": 90.0,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6740,10 +6738,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
-    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P96）",
+    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P94）",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P96）",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P94）",
     "risk_components": [
       "excess_rain",
       "waterlogged_soil"
@@ -6753,13 +6751,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.457,
-      "soil_water_rootzone_m3m3": 0.4605,
-      "surface_percentile_90d": 96.5,
-      "rootzone_percentile_90d": 99.7,
+      "soil_water_surface_m3m3": 0.4483,
+      "soil_water_rootzone_m3m3": 0.4566,
+      "surface_percentile_90d": 93.5,
+      "rootzone_percentile_90d": 99.3,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6786,13 +6784,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2591,
-      "soil_water_rootzone_m3m3": 0.3321,
+      "soil_water_surface_m3m3": 0.2563,
+      "soil_water_rootzone_m3m3": 0.3306,
       "surface_percentile_90d": 35.8,
-      "rootzone_percentile_90d": 43.9,
+      "rootzone_percentile_90d": 42.6,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6821,13 +6819,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1511,
-      "soil_water_rootzone_m3m3": 0.1722,
-      "surface_percentile_90d": 86.5,
-      "rootzone_percentile_90d": 22.6,
+      "soil_water_surface_m3m3": 0.151,
+      "soil_water_rootzone_m3m3": 0.1719,
+      "surface_percentile_90d": 81.0,
+      "rootzone_percentile_90d": 21.6,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6844,26 +6842,25 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
-    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P94）",
+    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P94）",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著",
     "risk_components": [
-      "excess_rain",
-      "waterlogged_soil"
+      "excess_rain"
     ],
     "et0_30d_avg_mm": null,
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4441,
-      "soil_water_rootzone_m3m3": 0.4887,
-      "surface_percentile_90d": 93.5,
-      "rootzone_percentile_90d": 98.4,
+      "soil_water_surface_m3m3": 0.4374,
+      "soil_water_rootzone_m3m3": 0.4842,
+      "surface_percentile_90d": 88.1,
+      "rootzone_percentile_90d": 98.1,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6892,13 +6889,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3542,
-      "soil_water_rootzone_m3m3": 0.378,
-      "surface_percentile_90d": 70.3,
-      "rootzone_percentile_90d": 44.5,
+      "soil_water_surface_m3m3": 0.3483,
+      "soil_water_rootzone_m3m3": 0.3768,
+      "surface_percentile_90d": 56.8,
+      "rootzone_percentile_90d": 43.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6927,13 +6924,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3039,
-      "soil_water_rootzone_m3m3": 0.3297,
-      "surface_percentile_90d": 91.3,
-      "rootzone_percentile_90d": 79.7,
+      "soil_water_surface_m3m3": 0.3023,
+      "soil_water_rootzone_m3m3": 0.3287,
+      "surface_percentile_90d": 89.7,
+      "rootzone_percentile_90d": 78.1,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6945,7 +6942,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "高温偏强",
-    "soil_moisture_status": "极端偏湿",
+    "soil_moisture_status": "严重偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "过湿压力",
@@ -6962,13 +6959,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4491,
-      "soil_water_rootzone_m3m3": 0.4783,
-      "surface_percentile_90d": 78.1,
-      "rootzone_percentile_90d": 95.5,
-      "soil_status_cn": "极端偏湿",
+      "soil_water_surface_m3m3": 0.4364,
+      "soil_water_rootzone_m3m3": 0.4735,
+      "surface_percentile_90d": 71.9,
+      "rootzone_percentile_90d": 94.2,
+      "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -6997,13 +6994,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1172,
-      "soil_water_rootzone_m3m3": 0.1592,
-      "surface_percentile_90d": 95.5,
-      "rootzone_percentile_90d": 84.5,
+      "soil_water_surface_m3m3": 0.108,
+      "soil_water_rootzone_m3m3": 0.1573,
+      "surface_percentile_90d": 92.3,
+      "rootzone_percentile_90d": 84.2,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7033,12 +7030,12 @@
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.2116,
-      "soil_water_rootzone_m3m3": 0.3133,
-      "surface_percentile_90d": 79.7,
-      "rootzone_percentile_90d": 53.5,
+      "soil_water_rootzone_m3m3": 0.3129,
+      "surface_percentile_90d": 70.3,
+      "rootzone_percentile_90d": 53.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7065,13 +7062,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3598,
-      "soil_water_rootzone_m3m3": 0.3677,
-      "surface_percentile_90d": 67.7,
-      "rootzone_percentile_90d": 65.8,
+      "soil_water_surface_m3m3": 0.3467,
+      "soil_water_rootzone_m3m3": 0.3632,
+      "surface_percentile_90d": 69.0,
+      "rootzone_percentile_90d": 65.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7104,7 +7101,7 @@
       "rootzone_percentile_90d": 50.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7133,13 +7130,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2546,
-      "soil_water_rootzone_m3m3": 0.2862,
-      "surface_percentile_90d": 9.0,
-      "rootzone_percentile_90d": 35.8,
+      "soil_water_surface_m3m3": 0.2637,
+      "soil_water_rootzone_m3m3": 0.2863,
+      "surface_percentile_90d": 8.4,
+      "rootzone_percentile_90d": 32.3,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7168,13 +7165,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.392,
-      "soil_water_rootzone_m3m3": 0.3375,
-      "surface_percentile_90d": 81.9,
-      "rootzone_percentile_90d": 65.5,
+      "soil_water_surface_m3m3": 0.3911,
+      "soil_water_rootzone_m3m3": 0.3381,
+      "surface_percentile_90d": 84.2,
+      "rootzone_percentile_90d": 66.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7203,13 +7200,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.5204,
-      "soil_water_rootzone_m3m3": 0.57,
-      "surface_percentile_90d": 17.4,
-      "rootzone_percentile_90d": 19.0,
+      "soil_water_surface_m3m3": 0.5095,
+      "soil_water_rootzone_m3m3": 0.5673,
+      "surface_percentile_90d": 13.9,
+      "rootzone_percentile_90d": 16.4,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7242,7 +7239,7 @@
       "rootzone_percentile_90d": null,
       "soil_status_cn": "未知",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7272,13 +7269,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2213,
-      "soil_water_rootzone_m3m3": 0.2225,
-      "surface_percentile_90d": 18.1,
-      "rootzone_percentile_90d": 28.1,
+      "soil_water_surface_m3m3": 0.2458,
+      "soil_water_rootzone_m3m3": 0.2227,
+      "surface_percentile_90d": 14.8,
+      "rootzone_percentile_90d": 24.2,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7305,13 +7302,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1926,
-      "soil_water_rootzone_m3m3": 0.2326,
-      "surface_percentile_90d": 69.0,
-      "rootzone_percentile_90d": 96.1,
+      "soil_water_surface_m3m3": 0.1851,
+      "soil_water_rootzone_m3m3": 0.2297,
+      "surface_percentile_90d": 66.8,
+      "rootzone_percentile_90d": 95.8,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7341,13 +7338,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1218,
-      "soil_water_rootzone_m3m3": 0.1855,
+      "soil_water_surface_m3m3": 0.1176,
+      "soil_water_rootzone_m3m3": 0.1848,
       "surface_percentile_90d": 80.3,
       "rootzone_percentile_90d": 14.2,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7374,13 +7371,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3322,
-      "soil_water_rootzone_m3m3": 0.379,
-      "surface_percentile_90d": 41.9,
-      "rootzone_percentile_90d": 85.5,
+      "soil_water_surface_m3m3": 0.4316,
+      "soil_water_rootzone_m3m3": 0.3933,
+      "surface_percentile_90d": 47.7,
+      "rootzone_percentile_90d": 85.8,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7407,13 +7404,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2933,
-      "soil_water_rootzone_m3m3": 0.3431,
-      "surface_percentile_90d": 15.2,
-      "rootzone_percentile_90d": 46.1,
+      "soil_water_surface_m3m3": 0.2965,
+      "soil_water_rootzone_m3m3": 0.3413,
+      "surface_percentile_90d": 14.8,
+      "rootzone_percentile_90d": 45.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7442,13 +7439,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3194,
-      "soil_water_rootzone_m3m3": 0.2912,
+      "soil_water_surface_m3m3": 0.3076,
+      "soil_water_rootzone_m3m3": 0.2885,
       "surface_percentile_90d": 17.4,
       "rootzone_percentile_90d": 0.0,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7477,13 +7474,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2885,
-      "soil_water_rootzone_m3m3": 0.2404,
-      "surface_percentile_90d": 26.1,
-      "rootzone_percentile_90d": 8.1,
+      "soil_water_surface_m3m3": 0.2909,
+      "soil_water_rootzone_m3m3": 0.2436,
+      "surface_percentile_90d": 43.9,
+      "rootzone_percentile_90d": 8.4,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7512,13 +7509,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1548,
-      "soil_water_rootzone_m3m3": 0.167,
-      "surface_percentile_90d": 6.8,
-      "rootzone_percentile_90d": 27.7,
+      "soil_water_surface_m3m3": 0.1962,
+      "soil_water_rootzone_m3m3": 0.1692,
+      "surface_percentile_90d": 9.0,
+      "rootzone_percentile_90d": 23.9,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7535,10 +7532,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "轻微异常",
     "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P6），需关注降水补充",
+    "water_stress_explanation_cn": "根区土壤偏干（P8），需关注降水补充",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P6），需关注降水补充",
+    "risk_reason_cn": "根区土壤偏干（P8），需关注降水补充",
     "risk_components": [
       "dry_soil"
     ],
@@ -7547,13 +7544,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1875,
-      "soil_water_rootzone_m3m3": 0.2172,
-      "surface_percentile_90d": 6.8,
-      "rootzone_percentile_90d": 6.1,
+      "soil_water_surface_m3m3": 0.3684,
+      "soil_water_rootzone_m3m3": 0.2372,
+      "surface_percentile_90d": 20.6,
+      "rootzone_percentile_90d": 8.1,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7582,13 +7579,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3116,
-      "soil_water_rootzone_m3m3": 0.3138,
-      "surface_percentile_90d": 86.1,
-      "rootzone_percentile_90d": 95.2,
+      "soil_water_surface_m3m3": 0.3577,
+      "soil_water_rootzone_m3m3": 0.3181,
+      "surface_percentile_90d": 88.1,
+      "rootzone_percentile_90d": 95.5,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7600,7 +7597,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "正常",
+    "soil_moisture_status": "略偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "过湿压力",
@@ -7617,13 +7614,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3512,
-      "soil_water_rootzone_m3m3": 0.2993,
-      "surface_percentile_90d": 46.1,
-      "rootzone_percentile_90d": 66.5,
-      "soil_status_cn": "正常",
+      "soil_water_surface_m3m3": 0.4158,
+      "soil_water_rootzone_m3m3": 0.3397,
+      "surface_percentile_90d": 60.6,
+      "rootzone_percentile_90d": 73.2,
+      "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7652,13 +7649,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1602,
-      "soil_water_rootzone_m3m3": 0.1567,
-      "surface_percentile_90d": 20.0,
-      "rootzone_percentile_90d": 3.2,
+      "soil_water_surface_m3m3": 0.1518,
+      "soil_water_rootzone_m3m3": 0.1559,
+      "surface_percentile_90d": 16.4,
+      "rootzone_percentile_90d": 2.9,
       "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7685,13 +7682,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2957,
-      "soil_water_rootzone_m3m3": 0.3064,
-      "surface_percentile_90d": 56.8,
-      "rootzone_percentile_90d": 73.5,
+      "soil_water_surface_m3m3": 0.2896,
+      "soil_water_rootzone_m3m3": 0.3034,
+      "surface_percentile_90d": 53.5,
+      "rootzone_percentile_90d": 72.9,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7720,13 +7717,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1603,
-      "soil_water_rootzone_m3m3": 0.257,
-      "surface_percentile_90d": 11.3,
-      "rootzone_percentile_90d": 55.5,
+      "soil_water_surface_m3m3": 0.1549,
+      "soil_water_rootzone_m3m3": 0.2522,
+      "surface_percentile_90d": 9.7,
+      "rootzone_percentile_90d": 53.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7753,13 +7750,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3135,
-      "soil_water_rootzone_m3m3": 0.2941,
-      "surface_percentile_90d": 35.5,
-      "rootzone_percentile_90d": 25.5,
+      "soil_water_surface_m3m3": 0.3004,
+      "soil_water_rootzone_m3m3": 0.2907,
+      "surface_percentile_90d": 34.8,
+      "rootzone_percentile_90d": 24.8,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7771,7 +7768,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "略偏干",
+    "soil_moisture_status": "明显偏干",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "轻微异常",
@@ -7788,13 +7785,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1754,
-      "soil_water_rootzone_m3m3": 0.1531,
-      "surface_percentile_90d": 21.6,
-      "rootzone_percentile_90d": 20.0,
-      "soil_status_cn": "略偏干",
+      "soil_water_surface_m3m3": 0.237,
+      "soil_water_rootzone_m3m3": 0.1578,
+      "surface_percentile_90d": 31.0,
+      "rootzone_percentile_90d": 19.7,
+      "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7823,13 +7820,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1915,
-      "soil_water_rootzone_m3m3": 0.1698,
-      "surface_percentile_90d": 12.3,
-      "rootzone_percentile_90d": 51.3,
+      "soil_water_surface_m3m3": 0.2268,
+      "soil_water_rootzone_m3m3": 0.1785,
+      "surface_percentile_90d": 16.4,
+      "rootzone_percentile_90d": 51.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7841,7 +7838,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "略偏湿",
+    "soil_moisture_status": "正常",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "正常",
@@ -7856,13 +7853,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3628,
-      "soil_water_rootzone_m3m3": 0.3957,
-      "surface_percentile_90d": 21.6,
-      "rootzone_percentile_90d": 71.9,
-      "soil_status_cn": "略偏湿",
+      "soil_water_surface_m3m3": 0.3527,
+      "soil_water_rootzone_m3m3": 0.3928,
+      "surface_percentile_90d": 19.7,
+      "rootzone_percentile_90d": 70.0,
+      "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7889,13 +7886,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3456,
-      "soil_water_rootzone_m3m3": 0.3649,
-      "surface_percentile_90d": 49.7,
+      "soil_water_surface_m3m3": 0.4581,
+      "soil_water_rootzone_m3m3": 0.3745,
+      "surface_percentile_90d": 51.0,
       "rootzone_percentile_90d": 50.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7912,10 +7909,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
-    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P91）",
+    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P92）",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P91）",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P92）",
     "risk_components": [
       "excess_rain",
       "waterlogged_soil"
@@ -7925,13 +7922,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3432,
-      "soil_water_rootzone_m3m3": 0.2043,
-      "surface_percentile_90d": 91.0,
-      "rootzone_percentile_90d": 36.5,
+      "soil_water_surface_m3m3": 0.2911,
+      "soil_water_rootzone_m3m3": 0.201,
+      "surface_percentile_90d": 91.6,
+      "rootzone_percentile_90d": 38.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7960,13 +7957,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2155,
-      "soil_water_rootzone_m3m3": 0.1501,
-      "surface_percentile_90d": 34.5,
+      "soil_water_surface_m3m3": 0.1928,
+      "soil_water_rootzone_m3m3": 0.1468,
+      "surface_percentile_90d": 37.4,
       "rootzone_percentile_90d": 19.0,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -7978,7 +7975,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "略偏干",
+    "soil_moisture_status": "正常",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
@@ -7995,13 +7992,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2732,
-      "soil_water_rootzone_m3m3": 0.2059,
-      "surface_percentile_90d": 48.1,
-      "rootzone_percentile_90d": 21.9,
-      "soil_status_cn": "略偏干",
+      "soil_water_surface_m3m3": 0.2495,
+      "soil_water_rootzone_m3m3": 0.2023,
+      "surface_percentile_90d": 59.4,
+      "rootzone_percentile_90d": 36.1,
+      "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8013,31 +8010,30 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "略偏湿",
+    "soil_moisture_status": "正常",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "过湿压力",
     "water_stress_level": "high",
-    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P91）",
+    "water_stress_explanation_cn": "降雨严重偏多，过湿/积水风险显著",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "stress",
-    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著，表层土壤过湿（P91）",
+    "risk_reason_cn": "降雨严重偏多，过湿/积水风险显著",
     "risk_components": [
-      "excess_rain",
-      "waterlogged_soil"
+      "excess_rain"
     ],
     "et0_30d_avg_mm": null,
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4273,
-      "soil_water_rootzone_m3m3": 0.4241,
-      "surface_percentile_90d": 90.7,
-      "rootzone_percentile_90d": 72.6,
-      "soil_status_cn": "略偏湿",
+      "soil_water_surface_m3m3": 0.4134,
+      "soil_water_rootzone_m3m3": 0.4201,
+      "surface_percentile_90d": 74.5,
+      "rootzone_percentile_90d": 69.0,
+      "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8067,13 +8063,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1523,
-      "soil_water_rootzone_m3m3": 0.1956,
-      "surface_percentile_90d": 13.2,
-      "rootzone_percentile_90d": 29.4,
+      "soil_water_surface_m3m3": 0.1491,
+      "soil_water_rootzone_m3m3": 0.1937,
+      "surface_percentile_90d": 11.9,
+      "rootzone_percentile_90d": 28.1,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8102,13 +8098,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2689,
-      "soil_water_rootzone_m3m3": 0.2685,
-      "surface_percentile_90d": 24.8,
+      "soil_water_surface_m3m3": 0.2752,
+      "soil_water_rootzone_m3m3": 0.2671,
+      "surface_percentile_90d": 27.1,
       "rootzone_percentile_90d": 40.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8138,13 +8134,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1381,
-      "soil_water_rootzone_m3m3": 0.2294,
-      "surface_percentile_90d": 14.5,
-      "rootzone_percentile_90d": 25.8,
+      "soil_water_surface_m3m3": 0.1406,
+      "soil_water_rootzone_m3m3": 0.2281,
+      "surface_percentile_90d": 8.1,
+      "rootzone_percentile_90d": 25.2,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8156,15 +8152,15 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "明显偏干",
+    "soil_moisture_status": "略偏干",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "轻微异常",
     "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P19），需关注降水补充",
+    "water_stress_explanation_cn": "根区土壤偏干（P20），需关注降水补充",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P19），需关注降水补充",
+    "risk_reason_cn": "根区土壤偏干（P20），需关注降水补充",
     "risk_components": [
       "dry_soil"
     ],
@@ -8173,13 +8169,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2817,
-      "soil_water_rootzone_m3m3": 0.2658,
-      "surface_percentile_90d": 33.9,
-      "rootzone_percentile_90d": 18.7,
-      "soil_status_cn": "明显偏干",
+      "soil_water_surface_m3m3": 0.2627,
+      "soil_water_rootzone_m3m3": 0.2628,
+      "surface_percentile_90d": 37.4,
+      "rootzone_percentile_90d": 20.0,
+      "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8191,15 +8187,15 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "严重偏干",
+    "soil_moisture_status": "极端偏干",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "轻微异常",
     "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P7），需关注降水补充",
+    "water_stress_explanation_cn": "根区土壤偏干（P4），需关注降水补充",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P7），需关注降水补充",
+    "risk_reason_cn": "根区土壤偏干（P4），需关注降水补充",
     "risk_components": [
       "dry_soil"
     ],
@@ -8208,13 +8204,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.0864,
-      "soil_water_rootzone_m3m3": 0.0847,
-      "surface_percentile_90d": 35.5,
-      "rootzone_percentile_90d": 7.4,
-      "soil_status_cn": "严重偏干",
+      "soil_water_surface_m3m3": 0.0769,
+      "soil_water_rootzone_m3m3": 0.0817,
+      "surface_percentile_90d": 21.9,
+      "rootzone_percentile_90d": 4.5,
+      "soil_status_cn": "极端偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8243,13 +8239,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4529,
-      "soil_water_rootzone_m3m3": 0.3125,
-      "surface_percentile_90d": 56.8,
-      "rootzone_percentile_90d": 12.3,
+      "soil_water_surface_m3m3": 0.41,
+      "soil_water_rootzone_m3m3": 0.3106,
+      "surface_percentile_90d": 66.5,
+      "rootzone_percentile_90d": 14.8,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8278,13 +8274,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3304,
-      "soil_water_rootzone_m3m3": 0.3597,
-      "surface_percentile_90d": 81.6,
+      "soil_water_surface_m3m3": 0.345,
+      "soil_water_rootzone_m3m3": 0.3575,
+      "surface_percentile_90d": 79.0,
       "rootzone_percentile_90d": 96.1,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8314,12 +8310,12 @@
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
       "soil_water_surface_m3m3": 0.145,
-      "soil_water_rootzone_m3m3": 0.2134,
-      "surface_percentile_90d": 87.7,
+      "soil_water_rootzone_m3m3": 0.2106,
+      "surface_percentile_90d": 84.2,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8346,13 +8342,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3923,
-      "soil_water_rootzone_m3m3": 0.3586,
-      "surface_percentile_90d": 67.7,
-      "rootzone_percentile_90d": 58.1,
+      "soil_water_surface_m3m3": 0.3789,
+      "soil_water_rootzone_m3m3": 0.3555,
+      "surface_percentile_90d": 63.5,
+      "rootzone_percentile_90d": 52.3,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8381,13 +8377,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3345,
-      "soil_water_rootzone_m3m3": 0.3217,
-      "surface_percentile_90d": 65.2,
-      "rootzone_percentile_90d": 60.6,
+      "soil_water_surface_m3m3": 0.3154,
+      "soil_water_rootzone_m3m3": 0.3166,
+      "surface_percentile_90d": 58.4,
+      "rootzone_percentile_90d": 59.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8416,13 +8412,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2087,
-      "soil_water_rootzone_m3m3": 0.2254,
-      "surface_percentile_90d": 9.7,
-      "rootzone_percentile_90d": 16.1,
+      "soil_water_surface_m3m3": 0.3439,
+      "soil_water_rootzone_m3m3": 0.237,
+      "surface_percentile_90d": 18.1,
+      "rootzone_percentile_90d": 16.4,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8449,13 +8445,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3598,
-      "soil_water_rootzone_m3m3": 0.3677,
-      "surface_percentile_90d": 67.7,
-      "rootzone_percentile_90d": 65.8,
+      "soil_water_surface_m3m3": 0.3467,
+      "soil_water_rootzone_m3m3": 0.3632,
+      "surface_percentile_90d": 69.0,
+      "rootzone_percentile_90d": 65.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8488,7 +8484,7 @@
       "rootzone_percentile_90d": 50.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8517,13 +8513,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.5204,
-      "soil_water_rootzone_m3m3": 0.57,
-      "surface_percentile_90d": 17.4,
-      "rootzone_percentile_90d": 19.0,
+      "soil_water_surface_m3m3": 0.5095,
+      "soil_water_rootzone_m3m3": 0.5673,
+      "surface_percentile_90d": 13.9,
+      "rootzone_percentile_90d": 16.4,
       "soil_status_cn": "明显偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8550,13 +8546,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1926,
-      "soil_water_rootzone_m3m3": 0.2326,
-      "surface_percentile_90d": 69.0,
-      "rootzone_percentile_90d": 96.1,
+      "soil_water_surface_m3m3": 0.1851,
+      "soil_water_rootzone_m3m3": 0.2297,
+      "surface_percentile_90d": 66.8,
+      "rootzone_percentile_90d": 95.8,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8585,13 +8581,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1808,
-      "soil_water_rootzone_m3m3": 0.2098,
-      "surface_percentile_90d": 72.3,
-      "rootzone_percentile_90d": 63.2,
+      "soil_water_surface_m3m3": 0.1699,
+      "soil_water_rootzone_m3m3": 0.2062,
+      "surface_percentile_90d": 68.1,
+      "rootzone_percentile_90d": 62.9,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8603,41 +8599,6 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "高温偏强",
-    "soil_moisture_status": "正常",
-    "et0_status": "数据待积累",
-    "vpd_status": "数据待积累",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P93），排水不畅风险",
-    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P93），排水不畅风险",
-    "risk_components": [
-      "waterlogged_soil"
-    ],
-    "et0_30d_avg_mm": null,
-    "vpd_30d_avg_kpa": null,
-    "et0_7d_avg_mm": null,
-    "vpd_7d_avg_kpa": null,
-    "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3827,
-      "soil_water_rootzone_m3m3": 0.2695,
-      "surface_percentile_90d": 92.9,
-      "rootzone_percentile_90d": 59.4,
-      "soil_status_cn": "正常",
-      "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
-    }
-  },
-  {
-    "weather_region_id": "sunflower::Russia::Amur Oblast::admin1::葵油",
-    "crop_group": "sunflower",
-    "country": "Russia",
-    "admin1": "Amur Oblast",
-    "admin2": null,
-    "latest_date": "2026-08-07",
-    "precipitation_30d_status": "正常",
-    "temp_7d_status": "正常",
     "soil_moisture_status": "正常",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
@@ -8655,13 +8616,48 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4198,
-      "soil_water_rootzone_m3m3": 0.3578,
-      "surface_percentile_90d": 91.6,
-      "rootzone_percentile_90d": 67.4,
+      "soil_water_surface_m3m3": 0.3595,
+      "soil_water_rootzone_m3m3": 0.2675,
+      "surface_percentile_90d": 92.3,
+      "rootzone_percentile_90d": 61.0,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
+    }
+  },
+  {
+    "weather_region_id": "sunflower::Russia::Amur Oblast::admin1::葵油",
+    "crop_group": "sunflower",
+    "country": "Russia",
+    "admin1": "Amur Oblast",
+    "admin2": null,
+    "latest_date": "2026-08-07",
+    "precipitation_30d_status": "正常",
+    "temp_7d_status": "正常",
+    "soil_moisture_status": "正常",
+    "et0_status": "数据待积累",
+    "vpd_status": "数据待积累",
+    "water_stress_label_cn": "水分压力",
+    "water_stress_level": "medium",
+    "water_stress_explanation_cn": "表层土壤过湿（P90），排水不畅风险",
+    "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
+    "risk_level_v2": "attention",
+    "risk_reason_cn": "表层土壤过湿（P90），排水不畅风险",
+    "risk_components": [
+      "waterlogged_soil"
+    ],
+    "et0_30d_avg_mm": null,
+    "vpd_30d_avg_kpa": null,
+    "et0_7d_avg_mm": null,
+    "vpd_7d_avg_kpa": null,
+    "era5_land_soil_moisture": {
+      "soil_water_surface_m3m3": 0.3923,
+      "soil_water_rootzone_m3m3": 0.3581,
+      "surface_percentile_90d": 90.0,
+      "rootzone_percentile_90d": 68.1,
+      "soil_status_cn": "正常",
+      "baseline_method": "era5_land_doy_climatology",
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8676,27 +8672,27 @@
     "soil_moisture_status": "略偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P91），排水不畅风险",
+    "water_stress_label_cn": "轻微异常",
+    "water_stress_level": "normal",
+    "water_stress_explanation_cn": "单一指标轻微异常，未来可能缓解",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P91），排水不畅风险",
+    "risk_level_v2": "watch",
+    "risk_reason_cn": "单一指标轻微异常，未来可能缓解",
     "risk_components": [
-      "waterlogged_soil"
+      "mild_anomaly"
     ],
     "et0_30d_avg_mm": null,
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3739,
-      "soil_water_rootzone_m3m3": 0.3095,
-      "surface_percentile_90d": 90.7,
-      "rootzone_percentile_90d": 72.9,
+      "soil_water_surface_m3m3": 0.3471,
+      "soil_water_rootzone_m3m3": 0.3059,
+      "surface_percentile_90d": 88.7,
+      "rootzone_percentile_90d": 71.9,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8725,13 +8721,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2912,
-      "soil_water_rootzone_m3m3": 0.2497,
-      "surface_percentile_90d": 55.5,
-      "rootzone_percentile_90d": 69.0,
+      "soil_water_surface_m3m3": 0.2641,
+      "soil_water_rootzone_m3m3": 0.2458,
+      "surface_percentile_90d": 56.8,
+      "rootzone_percentile_90d": 67.7,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8758,13 +8754,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.206,
-      "soil_water_rootzone_m3m3": 0.2631,
-      "surface_percentile_90d": 78.4,
+      "soil_water_surface_m3m3": 0.1939,
+      "soil_water_rootzone_m3m3": 0.2596,
+      "surface_percentile_90d": 74.5,
       "rootzone_percentile_90d": 94.8,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8793,13 +8789,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3445,
-      "soil_water_rootzone_m3m3": 0.38,
-      "surface_percentile_90d": 58.7,
-      "rootzone_percentile_90d": 89.7,
+      "soil_water_surface_m3m3": 0.3748,
+      "soil_water_rootzone_m3m3": 0.3806,
+      "surface_percentile_90d": 55.8,
+      "rootzone_percentile_90d": 88.7,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8811,15 +8807,15 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "正常",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "略偏湿",
+    "soil_moisture_status": "明显偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P95），排水不畅风险",
+    "water_stress_explanation_cn": "表层土壤过湿（P96），排水不畅风险",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P95），排水不畅风险",
+    "risk_reason_cn": "表层土壤过湿（P96），排水不畅风险",
     "risk_components": [
       "waterlogged_soil"
     ],
@@ -8828,13 +8824,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3981,
-      "soil_water_rootzone_m3m3": 0.2838,
-      "surface_percentile_90d": 95.2,
-      "rootzone_percentile_90d": 77.7,
-      "soil_status_cn": "略偏湿",
+      "soil_water_surface_m3m3": 0.3695,
+      "soil_water_rootzone_m3m3": 0.2818,
+      "surface_percentile_90d": 95.5,
+      "rootzone_percentile_90d": 82.9,
+      "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8863,13 +8859,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3529,
-      "soil_water_rootzone_m3m3": 0.3601,
-      "surface_percentile_90d": 89.3,
-      "rootzone_percentile_90d": 93.2,
+      "soil_water_surface_m3m3": 0.339,
+      "soil_water_rootzone_m3m3": 0.3552,
+      "surface_percentile_90d": 87.4,
+      "rootzone_percentile_90d": 92.6,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8898,13 +8894,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3275,
-      "soil_water_rootzone_m3m3": 0.3295,
-      "surface_percentile_90d": 86.1,
+      "soil_water_surface_m3m3": 0.3645,
+      "soil_water_rootzone_m3m3": 0.3318,
+      "surface_percentile_90d": 85.8,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8931,13 +8927,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2956,
-      "soil_water_rootzone_m3m3": 0.3039,
+      "soil_water_surface_m3m3": 0.2806,
+      "soil_water_rootzone_m3m3": 0.2994,
       "surface_percentile_90d": 84.8,
-      "rootzone_percentile_90d": 77.7,
+      "rootzone_percentile_90d": 78.4,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -8966,13 +8962,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3362,
-      "soil_water_rootzone_m3m3": 0.2586,
+      "soil_water_surface_m3m3": 0.3526,
+      "soil_water_rootzone_m3m3": 0.2606,
       "surface_percentile_90d": 93.9,
-      "rootzone_percentile_90d": 82.9,
+      "rootzone_percentile_90d": 83.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9001,13 +8997,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3026,
-      "soil_water_rootzone_m3m3": 0.3328,
-      "surface_percentile_90d": 89.3,
+      "soil_water_surface_m3m3": 0.288,
+      "soil_water_rootzone_m3m3": 0.3299,
+      "surface_percentile_90d": 88.4,
       "rootzone_percentile_90d": 95.5,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9036,13 +9032,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4217,
-      "soil_water_rootzone_m3m3": 0.3584,
+      "soil_water_surface_m3m3": 0.3984,
+      "soil_water_rootzone_m3m3": 0.3609,
       "surface_percentile_90d": 84.8,
-      "rootzone_percentile_90d": 66.1,
+      "rootzone_percentile_90d": 66.5,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9071,13 +9067,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2578,
-      "soil_water_rootzone_m3m3": 0.2483,
-      "surface_percentile_90d": 46.8,
-      "rootzone_percentile_90d": 67.1,
+      "soil_water_surface_m3m3": 0.3152,
+      "soil_water_rootzone_m3m3": 0.2514,
+      "surface_percentile_90d": 47.7,
+      "rootzone_percentile_90d": 66.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9106,13 +9102,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.415,
-      "soil_water_rootzone_m3m3": 0.3471,
-      "surface_percentile_90d": 66.1,
-      "rootzone_percentile_90d": 71.6,
+      "soil_water_surface_m3m3": 0.3841,
+      "soil_water_rootzone_m3m3": 0.3434,
+      "surface_percentile_90d": 74.2,
+      "rootzone_percentile_90d": 73.5,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9141,13 +9137,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3612,
-      "soil_water_rootzone_m3m3": 0.2695,
-      "surface_percentile_90d": 99.3,
+      "soil_water_surface_m3m3": 0.3332,
+      "soil_water_rootzone_m3m3": 0.2657,
+      "surface_percentile_90d": 99.7,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9176,13 +9172,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3464,
-      "soil_water_rootzone_m3m3": 0.3053,
-      "surface_percentile_90d": 68.4,
-      "rootzone_percentile_90d": 76.8,
+      "soil_water_surface_m3m3": 0.3164,
+      "soil_water_rootzone_m3m3": 0.301,
+      "surface_percentile_90d": 71.6,
+      "rootzone_percentile_90d": 78.4,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9209,13 +9205,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3945,
-      "soil_water_rootzone_m3m3": 0.2557,
-      "surface_percentile_90d": 82.6,
-      "rootzone_percentile_90d": 37.4,
+      "soil_water_surface_m3m3": 0.3579,
+      "soil_water_rootzone_m3m3": 0.257,
+      "surface_percentile_90d": 86.1,
+      "rootzone_percentile_90d": 43.2,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9244,13 +9240,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2456,
-      "soil_water_rootzone_m3m3": 0.2065,
-      "surface_percentile_90d": 66.5,
-      "rootzone_percentile_90d": 26.4,
+      "soil_water_surface_m3m3": 0.2264,
+      "soil_water_rootzone_m3m3": 0.2041,
+      "surface_percentile_90d": 70.7,
+      "rootzone_percentile_90d": 27.4,
       "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9262,7 +9258,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏多",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "正常",
+    "soil_moisture_status": "略偏干",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
@@ -9279,13 +9275,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.17,
-      "soil_water_rootzone_m3m3": 0.185,
-      "surface_percentile_90d": 30.6,
-      "rootzone_percentile_90d": 31.3,
-      "soil_status_cn": "正常",
+      "soil_water_surface_m3m3": 0.1666,
+      "soil_water_rootzone_m3m3": 0.1831,
+      "surface_percentile_90d": 24.2,
+      "rootzone_percentile_90d": 29.7,
+      "soil_status_cn": "略偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9314,13 +9310,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2563,
-      "soil_water_rootzone_m3m3": 0.2874,
-      "surface_percentile_90d": 66.5,
-      "rootzone_percentile_90d": 99.7,
+      "soil_water_surface_m3m3": 0.2605,
+      "soil_water_rootzone_m3m3": 0.2865,
+      "surface_percentile_90d": 64.5,
+      "rootzone_percentile_90d": 98.4,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9349,13 +9345,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3488,
-      "soil_water_rootzone_m3m3": 0.2818,
-      "surface_percentile_90d": 75.2,
-      "rootzone_percentile_90d": 80.7,
+      "soil_water_surface_m3m3": 0.3234,
+      "soil_water_rootzone_m3m3": 0.2778,
+      "surface_percentile_90d": 80.0,
+      "rootzone_percentile_90d": 82.3,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9384,13 +9380,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3289,
-      "soil_water_rootzone_m3m3": 0.256,
-      "surface_percentile_90d": 91.0,
-      "rootzone_percentile_90d": 81.3,
+      "soil_water_surface_m3m3": 0.3105,
+      "soil_water_rootzone_m3m3": 0.2543,
+      "surface_percentile_90d": 91.3,
+      "rootzone_percentile_90d": 81.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9419,13 +9415,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3264,
-      "soil_water_rootzone_m3m3": 0.3109,
-      "surface_percentile_90d": 66.1,
-      "rootzone_percentile_90d": 83.2,
+      "soil_water_surface_m3m3": 0.3916,
+      "soil_water_rootzone_m3m3": 0.3234,
+      "surface_percentile_90d": 70.3,
+      "rootzone_percentile_90d": 82.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9460,7 +9456,7 @@
       "rootzone_percentile_90d": null,
       "soil_status_cn": "未知",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9487,13 +9483,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1623,
-      "soil_water_rootzone_m3m3": 0.221,
-      "surface_percentile_90d": 82.9,
+      "soil_water_surface_m3m3": 0.1462,
+      "soil_water_rootzone_m3m3": 0.2174,
+      "surface_percentile_90d": 81.9,
       "rootzone_percentile_90d": 87.1,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9522,13 +9518,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3821,
-      "soil_water_rootzone_m3m3": 0.3933,
-      "surface_percentile_90d": 61.0,
-      "rootzone_percentile_90d": 84.8,
+      "soil_water_surface_m3m3": 0.4332,
+      "soil_water_rootzone_m3m3": 0.3966,
+      "surface_percentile_90d": 61.9,
+      "rootzone_percentile_90d": 84.2,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9557,13 +9553,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2071,
-      "soil_water_rootzone_m3m3": 0.2054,
-      "surface_percentile_90d": 97.1,
+      "soil_water_surface_m3m3": 0.1917,
+      "soil_water_rootzone_m3m3": 0.2021,
+      "surface_percentile_90d": 95.5,
       "rootzone_percentile_90d": 81.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9578,27 +9574,25 @@
     "soil_moisture_status": "极端偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
-    "water_stress_label_cn": "水分压力",
-    "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P91），排水不畅风险",
+    "water_stress_label_cn": "正常",
+    "water_stress_level": "normal",
+    "water_stress_explanation_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
-    "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P91），排水不畅风险",
-    "risk_components": [
-      "waterlogged_soil"
-    ],
+    "risk_level_v2": "normal",
+    "risk_reason_cn": "无明显降雨/温度/蒸散/土壤湿度复合压力",
+    "risk_components": [],
     "et0_30d_avg_mm": null,
     "vpd_30d_avg_kpa": null,
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4059,
-      "soil_water_rootzone_m3m3": 0.4357,
-      "surface_percentile_90d": 90.7,
+      "soil_water_surface_m3m3": 0.4042,
+      "soil_water_rootzone_m3m3": 0.4343,
+      "surface_percentile_90d": 84.2,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9627,13 +9621,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2706,
-      "soil_water_rootzone_m3m3": 0.3142,
-      "surface_percentile_90d": 84.2,
-      "rootzone_percentile_90d": 87.7,
+      "soil_water_surface_m3m3": 0.2572,
+      "soil_water_rootzone_m3m3": 0.3108,
+      "surface_percentile_90d": 81.9,
+      "rootzone_percentile_90d": 87.1,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9662,13 +9656,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.34,
-      "soil_water_rootzone_m3m3": 0.2614,
+      "soil_water_surface_m3m3": 0.3207,
+      "soil_water_rootzone_m3m3": 0.2595,
       "surface_percentile_90d": 97.1,
-      "rootzone_percentile_90d": 84.5,
+      "rootzone_percentile_90d": 84.8,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9680,7 +9674,7 @@
     "latest_date": "2026-08-07",
     "precipitation_30d_status": "30日降雨偏少",
     "temp_7d_status": "正常",
-    "soil_moisture_status": "严重偏湿",
+    "soil_moisture_status": "明显偏湿",
     "et0_status": "数据待积累",
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "轻微异常",
@@ -9697,13 +9691,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.373,
-      "soil_water_rootzone_m3m3": 0.3891,
-      "surface_percentile_90d": 61.0,
-      "rootzone_percentile_90d": 91.3,
-      "soil_status_cn": "严重偏湿",
+      "soil_water_surface_m3m3": 0.3594,
+      "soil_water_rootzone_m3m3": 0.384,
+      "surface_percentile_90d": 53.2,
+      "rootzone_percentile_90d": 87.7,
+      "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9732,13 +9726,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2459,
-      "soil_water_rootzone_m3m3": 0.169,
-      "surface_percentile_90d": 68.4,
-      "rootzone_percentile_90d": 57.7,
+      "soil_water_surface_m3m3": 0.2318,
+      "soil_water_rootzone_m3m3": 0.1692,
+      "surface_percentile_90d": 69.7,
+      "rootzone_percentile_90d": 56.8,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9755,10 +9749,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "水分压力",
     "water_stress_level": "medium",
-    "water_stress_explanation_cn": "表层土壤过湿（P100），排水不畅风险",
+    "water_stress_explanation_cn": "表层土壤过湿（P99），排水不畅风险",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "attention",
-    "risk_reason_cn": "表层土壤过湿（P100），排水不畅风险",
+    "risk_reason_cn": "表层土壤过湿（P99），排水不畅风险",
     "risk_components": [
       "waterlogged_soil"
     ],
@@ -9767,13 +9761,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3539,
-      "soil_water_rootzone_m3m3": 0.3289,
-      "surface_percentile_90d": 99.7,
-      "rootzone_percentile_90d": 83.5,
+      "soil_water_surface_m3m3": 0.3388,
+      "soil_water_rootzone_m3m3": 0.3259,
+      "surface_percentile_90d": 99.3,
+      "rootzone_percentile_90d": 84.8,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9802,13 +9796,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4882,
-      "soil_water_rootzone_m3m3": 0.4503,
+      "soil_water_surface_m3m3": 0.4705,
+      "soil_water_rootzone_m3m3": 0.4473,
       "surface_percentile_90d": 100.0,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9837,13 +9831,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3229,
-      "soil_water_rootzone_m3m3": 0.2742,
-      "surface_percentile_90d": 78.4,
+      "soil_water_surface_m3m3": 0.3102,
+      "soil_water_rootzone_m3m3": 0.2737,
+      "surface_percentile_90d": 80.7,
       "rootzone_percentile_90d": 81.6,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9872,13 +9866,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2714,
-      "soil_water_rootzone_m3m3": 0.329,
-      "surface_percentile_90d": 39.0,
-      "rootzone_percentile_90d": 65.8,
+      "soil_water_surface_m3m3": 0.2668,
+      "soil_water_rootzone_m3m3": 0.328,
+      "surface_percentile_90d": 43.9,
+      "rootzone_percentile_90d": 67.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9907,13 +9901,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2067,
-      "soil_water_rootzone_m3m3": 0.2452,
-      "surface_percentile_90d": 79.0,
-      "rootzone_percentile_90d": 82.6,
+      "soil_water_surface_m3m3": 0.1899,
+      "soil_water_rootzone_m3m3": 0.2415,
+      "surface_percentile_90d": 76.1,
+      "rootzone_percentile_90d": 82.9,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9943,13 +9937,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3679,
-      "soil_water_rootzone_m3m3": 0.2754,
+      "soil_water_surface_m3m3": 0.3456,
+      "soil_water_rootzone_m3m3": 0.2738,
       "surface_percentile_90d": 98.7,
-      "rootzone_percentile_90d": 90.3,
+      "rootzone_percentile_90d": 93.5,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -9978,13 +9972,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3416,
-      "soil_water_rootzone_m3m3": 0.2665,
-      "surface_percentile_90d": 78.7,
-      "rootzone_percentile_90d": 59.4,
+      "soil_water_surface_m3m3": 0.3137,
+      "soil_water_rootzone_m3m3": 0.2627,
+      "surface_percentile_90d": 82.3,
+      "rootzone_percentile_90d": 61.3,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -10011,13 +10005,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4252,
-      "soil_water_rootzone_m3m3": 0.3877,
-      "surface_percentile_90d": 67.1,
+      "soil_water_surface_m3m3": 0.4324,
+      "soil_water_rootzone_m3m3": 0.3882,
+      "surface_percentile_90d": 71.6,
       "rootzone_percentile_90d": 91.6,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -10046,13 +10040,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3044,
-      "soil_water_rootzone_m3m3": 0.2372,
-      "surface_percentile_90d": 78.4,
-      "rootzone_percentile_90d": 79.3,
+      "soil_water_surface_m3m3": 0.2814,
+      "soil_water_rootzone_m3m3": 0.2358,
+      "surface_percentile_90d": 79.0,
+      "rootzone_percentile_90d": 79.0,
       "soil_status_cn": "略偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -10081,13 +10075,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4075,
-      "soil_water_rootzone_m3m3": 0.3392,
+      "soil_water_surface_m3m3": 0.379,
+      "soil_water_rootzone_m3m3": 0.3363,
       "surface_percentile_90d": 100.0,
-      "rootzone_percentile_90d": 92.9,
+      "rootzone_percentile_90d": 93.9,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -10116,13 +10110,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2223,
-      "soil_water_rootzone_m3m3": 0.2376,
-      "surface_percentile_90d": 36.5,
-      "rootzone_percentile_90d": 34.8,
+      "soil_water_surface_m3m3": 0.2196,
+      "soil_water_rootzone_m3m3": 0.2372,
+      "surface_percentile_90d": 38.4,
+      "rootzone_percentile_90d": 36.1,
       "soil_status_cn": "正常",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -10151,13 +10145,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.3912,
-      "soil_water_rootzone_m3m3": 0.3055,
+      "soil_water_surface_m3m3": 0.3663,
+      "soil_water_rootzone_m3m3": 0.3017,
       "surface_percentile_90d": 100.0,
       "rootzone_percentile_90d": 100.0,
       "soil_status_cn": "极端偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -10186,13 +10180,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.4111,
-      "soil_water_rootzone_m3m3": 0.3218,
-      "surface_percentile_90d": 86.5,
+      "soil_water_surface_m3m3": 0.391,
+      "soil_water_rootzone_m3m3": 0.321,
+      "surface_percentile_90d": 87.7,
       "rootzone_percentile_90d": 90.0,
       "soil_status_cn": "明显偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -10221,13 +10215,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.1563,
-      "soil_water_rootzone_m3m3": 0.2186,
+      "soil_water_surface_m3m3": 0.1465,
+      "soil_water_rootzone_m3m3": 0.2169,
       "surface_percentile_90d": 100.0,
       "rootzone_percentile_90d": 94.8,
       "soil_status_cn": "严重偏湿",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   },
   {
@@ -10244,10 +10238,10 @@
     "vpd_status": "数据待积累",
     "water_stress_label_cn": "轻微异常",
     "water_stress_level": "normal",
-    "water_stress_explanation_cn": "根区土壤偏干（P8），需关注降水补充",
+    "water_stress_explanation_cn": "根区土壤偏干（P7），需关注降水补充",
     "data_completeness_note": "基于单一 Open-Meteo ECMWF IFS 降雨温度 + ERA5-Land 土壤湿度辅助层 综合判断",
     "risk_level_v2": "watch",
-    "risk_reason_cn": "根区土壤偏干（P8），需关注降水补充",
+    "risk_reason_cn": "根区土壤偏干（P7），需关注降水补充",
     "risk_components": [
       "dry_soil"
     ],
@@ -10256,13 +10250,13 @@
     "et0_7d_avg_mm": null,
     "vpd_7d_avg_kpa": null,
     "era5_land_soil_moisture": {
-      "soil_water_surface_m3m3": 0.2441,
-      "soil_water_rootzone_m3m3": 0.1671,
-      "surface_percentile_90d": 67.1,
-      "rootzone_percentile_90d": 7.7,
+      "soil_water_surface_m3m3": 0.2175,
+      "soil_water_rootzone_m3m3": 0.1648,
+      "surface_percentile_90d": 59.7,
+      "rootzone_percentile_90d": 6.8,
       "soil_status_cn": "严重偏干",
       "baseline_method": "era5_land_doy_climatology",
-      "data_date": "2026-07-31"
+      "data_date": "2026-08-01"
     }
   }
 ]
