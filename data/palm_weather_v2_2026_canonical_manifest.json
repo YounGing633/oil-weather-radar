@@ -1,0 +1,37 @@
+{
+  "status": "PUBLISHED",
+  "publication_status": "PUBLISHED",
+  "source_parquet": "artifacts\\weather_v2\\palm_2026_dual_layer\\weather_admin_daily.parquet",
+  "source_sha256": "4f92ea27ce6fcb6104900c417e1cb62d965a9aedf958b189b136775ac2a84440",
+  "period": [
+    "2026-01-01",
+    "2026-08-07"
+  ],
+  "formal_latest_date": "2026-08-04",
+  "preliminary_period": [
+    "2026-08-05",
+    "2026-08-07"
+  ],
+  "admins": 39,
+  "gate": {
+    "expected_rows": 34164,
+    "actual_rows": 34164,
+    "duplicate_rows": 0,
+    "missing_keys": 0,
+    "source_missing_rows": 9180,
+    "non_source_missing_rows": 0,
+    "canonical_rows": 33696,
+    "preliminary_rows": 468,
+    "formal_latest_date": "2026-08-04",
+    "canonical_period": [
+      "2026-07-01",
+      "2026-08-04"
+    ],
+    "preliminary_period": [
+      "2026-08-05",
+      "2026-08-07"
+    ],
+    "passed": true
+  },
+  "generated_at": "2026-08-09T06:55:59Z"
+}

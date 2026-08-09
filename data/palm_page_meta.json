@@ -1,1 +1,60 @@
-{"version":"palm-admin-area-v2.2-cds-canonical","generated_at":"2026-08-09T13:15:37","spatial_method":"admin_area_equal_grid_v1","weight_source":"admin1_boundary_equal_area_sample","daily_source":"CDS ERA5-Land historical + Open-Meteo ECMWF IFS latest","baseline_source":"CDS ERA5-Land 2017-2025 same-calendar-day windows","regions":38,"region_risk_publish_allowed":false,"notes":{"rainfall":"已发布行政区边界内多格点等面积聚合降雨；不使用未经核验的油棕掩膜权重。","anomaly":"当前30日降雨距平按2017-2025同期完整日历窗口计算；CDS未覆盖的行政区不伪造历史基准。","withheld":"土壤、温度距平和综合供应风险尚未完成同口径区域聚合，仍从棕榈油区域页面禁用。"}}
+{
+  "version": "palm-weather-v2-2026-dual-layer",
+  "generated_at": "2026-08-09T06:55:59Z",
+  "latest_observation_date": "2026-08-07",
+  "period": [
+    "2026-01-01",
+    "2026-08-07"
+  ],
+  "formal_latest_date": "2026-08-04",
+  "formal_period": [
+    "2026-07-01",
+    "2026-08-04"
+  ],
+  "preliminary_period": [
+    "2026-08-05",
+    "2026-08-07"
+  ],
+  "spatial_method": "admin_area_equal_grid_v1",
+  "weight_source": "weather_v2-palm-admin-grid-weight-v1",
+  "daily_source": "EDH ERA5-Land 2026-01-01..2026-06-30; ERA5-Land ARCO/CDS 2026-07-01..2026-08-04; IFS PRELIMINARY 2026-08-05..2026-08-07",
+  "regions": 39,
+  "variables": [
+    "tp",
+    "t2m",
+    "d2m",
+    "swvl1"
+  ],
+  "canonical_gate": {
+    "expected_rows": 34164,
+    "actual_rows": 34164,
+    "duplicate_rows": 0,
+    "missing_keys": 0,
+    "source_missing_rows": 9180,
+    "non_source_missing_rows": 0,
+    "canonical_rows": 33696,
+    "preliminary_rows": 468,
+    "formal_latest_date": "2026-08-04",
+    "canonical_period": [
+      "2026-07-01",
+      "2026-08-04"
+    ],
+    "preliminary_period": [
+      "2026-08-05",
+      "2026-08-07"
+    ],
+    "passed": true
+  },
+  "open_meteo_new_requests": 0,
+  "draft_status": "CANONICAL_PUBLISHED",
+  "publication_status": "PUBLISHED",
+  "region_risk_publish_allowed": false,
+  "website_publish_allowed": true,
+  "notes": {
+    "scope": "39 verified producing ADM1s only: Indonesia 26 and Malaysia 13.",
+    "canonical": "ERA5-Land CANONICAL through 2026-08-04.",
+    "preliminary": "IFS PRELIMINARY 2026-08-05..2026-08-07; it is not represented as ERA5-Land.",
+    "missing": "Source-data gaps remain null and are never silently filled.",
+    "risk": "Composite risk remains unavailable until its dedicated recalculation contract runs."
+  }
+}
