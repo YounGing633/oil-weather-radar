@@ -1,17 +1,17 @@
 [
   {
-    "generated_at": "2026-08-09 13:12:09",
+    "generated_at": "2026-08-10 09:35:01",
     "version": "v1.0-i1",
     "baseline_period": "2017-2025",
     "baseline_method": "Open-Meteo ECMWF IFS same-calendar-day weather baseline",
-    "latest_observation_date": "2026-08-08",
+    "latest_observation_date": "2026-08-09",
     "observation_data_note": "Observations and weather normals use Open-Meteo ECMWF IFS; 2017-2025 is the same-calendar-day reference period",
     "data_sources": [
       "Open-Meteo ECMWF IFS (observations + forecast + 2017-2025 baseline)"
     ],
-    "baseline_ready_points": 294,
+    "baseline_ready_points": 295,
     "baseline_pending_points": 0,
-    "active_points": 294,
+    "active_points": 295,
     "excluded_faostat_points": 38,
     "countries": [
       "Argentina",
@@ -42,7 +42,7 @@
       "soybean",
       "sunflower"
     ],
-    "total_alerts": 146,
-    "run_id": "daily_export_20260809_131208"
+    "total_alerts": 145,
+    "run_id": "daily_export_20260810_093501"
   }
 ]
