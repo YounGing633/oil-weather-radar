@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="豆油、棕榈油、菜油 P1/P5 采购风险雷达">
+  <title>三大油脂采购风险雷达</title>
+  <link rel="stylesheet" href="./procurement.css?v=1">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <a class="back" href="../">全球油脂研究</a>
+      <div><h1>采购风险雷达</h1><p>豆油 · 棕榈油 · 菜油 P1/P5 建仓观察</p></div>
+    </div>
+    <div class="asof"><span class="live-dot"></span><span id="asOf">读取最新数据…</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">MARKET PROCUREMENT BRIEF</p>
+        <h2 id="heroTitle">今日油脂采购优先级</h2>
+        <p id="heroCopy" class="hero-copy">正在计算等待上涨与当前买贵的相对风险。</p>
+      </div>
+      <div class="hero-score"><span>最高等待风险</span><strong id="topRisk">—</strong><small id="topRiskName">—</small></div>
+    </section>
+
+    <section id="oilOverview" class="oil-overview" aria-label="三大油脂风险总览"></section>
+
+    <section class="workspace">
+      <nav class="oil-tabs" id="oilTabs" aria-label="选择油脂品种"></nav>
+      <div class="workspace-grid">
+        <article class="panel decision-panel">
+          <div class="panel-heading"><div><span class="kicker">采购判断</span><h3 id="decisionTitle">—</h3></div><span id="stageBadge" class="stage-badge">—</span></div>
+          <p id="decisionCopy" class="decision-copy">—</p>
+          <div id="riskBars" class="risk-bars"></div>
+          <div class="guardrail"><b>执行边界</b><span>本页用于判断采购时点，不代表自动下单。价格过热或买贵风险较高时，应拆分执行。</span></div>
+        </article>
+
+        <article class="panel chart-panel">
+          <div class="panel-heading"><div><span class="kicker">合约走势</span><h3>P1 / P5 收盘价</h3></div><div id="chartLegend" class="chart-legend"></div></div>
+          <div class="chart-wrap"><canvas id="priceChart" aria-label="P1与P5历史价格走势图"></canvas><div id="chartEmpty" class="chart-empty" hidden>暂无足够历史数据</div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="comparison-grid">
+      <article class="panel"><div class="panel-heading"><div><span class="kicker">期限结构</span><h3>P1 / P5 对比</h3></div></div><div id="contractCompare" class="contract-compare"></div></article>
+      <article class="panel"><div class="panel-heading"><div><span class="kicker">评分依据</span><h3>信号拆解</h3></div></div><div id="signalList" class="signal-list"></div></article>
+    </section>
+
+    <section class="panel table-panel">
+      <div class="panel-heading"><div><span class="kicker">全市场快照</span><h3>三油目标合约</h3></div><button id="downloadBtn" class="ghost-btn">导出当前表格</button></div>
+      <div class="table-scroll"><table><thead><tr><th>品种</th><th>合约</th><th>收盘</th><th>5日</th><th>20日</th><th>持仓变化</th><th>月差</th><th>等待风险</th><th>买贵风险</th><th>建议</th></tr></thead><tbody id="marketTable"></tbody></table></div>
+    </section>
+
+    <footer><span id="methodText">透明规则版</span><span>数据源：交易所公开行情；异常时使用免费具体合约日线兜底</span></footer>
+  </main>
+  <script src="./procurement.js?v=1"></script>
+</body>
+</html>

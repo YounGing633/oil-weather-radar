@@ -1,1 +1,60 @@
-{"version":"palm-page-data-v1.1","generated_at":"2026-08-12 07:39:22","source_files":["admin_region_risk_latest.json","country_crop_risk_latest.json","region_history_90d_v1.0d.json","soil_moisture_latest.json","water_stress_latest_v1.0e.json","region_forecast_summary_v1.0d.json","site_meta.json"],"countries":["Indonesia","Malaysia"],"regions":0,"notes":{"risk_model":"Existing risk_level_v3/risk_label_v4 frontend exports are reused; no palm-specific risk model is recalculated.","et0_vpd":"ET0/VPD fields are passed through only when existing exports contain reliable values.","rain_90d":"90-day rainfall is a display aggregation from existing daily region history."}}
+{
+  "version": "palm-weather-v2-2026-dual-layer",
+  "generated_at": "2026-08-12T09:04:49Z",
+  "latest_observation_date": "2026-08-07",
+  "period": [
+    "2026-01-01",
+    "2026-08-07"
+  ],
+  "formal_latest_date": "2026-08-04",
+  "formal_period": [
+    "2026-07-01",
+    "2026-08-04"
+  ],
+  "preliminary_period": [
+    "2026-08-05",
+    "2026-08-07"
+  ],
+  "spatial_method": "admin_area_equal_grid_v1",
+  "weight_source": "weather_v2-palm-admin-grid-weight-v1",
+  "daily_source": "EDH ERA5-Land 2026-01-01..2026-06-30; ERA5-Land ARCO/CDS 2026-07-01..2026-08-04; IFS PRELIMINARY 2026-08-05..2026-08-07",
+  "regions": 39,
+  "variables": [
+    "tp",
+    "t2m",
+    "d2m",
+    "swvl1"
+  ],
+  "canonical_gate": {
+    "expected_rows": 34164,
+    "actual_rows": 34164,
+    "duplicate_rows": 0,
+    "missing_keys": 0,
+    "source_missing_rows": 9180,
+    "non_source_missing_rows": 0,
+    "canonical_rows": 33696,
+    "preliminary_rows": 468,
+    "formal_latest_date": "2026-08-04",
+    "canonical_period": [
+      "2026-07-01",
+      "2026-08-04"
+    ],
+    "preliminary_period": [
+      "2026-08-05",
+      "2026-08-07"
+    ],
+    "passed": true
+  },
+  "open_meteo_new_requests": 0,
+  "draft_status": "CANONICAL_PUBLISHED",
+  "publication_status": "PUBLISHED",
+  "region_risk_publish_allowed": false,
+  "website_publish_allowed": true,
+  "notes": {
+    "scope": "39 verified producing ADM1s only: Indonesia 26 and Malaysia 13.",
+    "canonical": "ERA5-Land CANONICAL through 2026-08-04.",
+    "preliminary": "IFS PRELIMINARY 2026-08-05..2026-08-07; it is not represented as ERA5-Land.",
+    "missing": "Source-data gaps remain null and are never silently filled.",
+    "risk": "Composite risk remains unavailable until its dedicated recalculation contract runs."
+  }
+}
