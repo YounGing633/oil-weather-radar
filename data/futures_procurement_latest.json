@@ -1,116 +1,116 @@
 {
   "meta": {
-    "trade_date": "2026-07-15",
-    "generated_at": "2026-07-15T23:09:02",
+    "trade_date": "2026-08-13",
+    "generated_at": "2026-08-14T15:33:30",
     "version": "procurement-radar-v1",
     "method": "透明规则版：趋势、均线乖离、持仓变化与 P1-P5 月差"
   },
   "items": [
     {
-      "trade_date": "2026-07-15T00:00:00.000",
+      "trade_date": "2026-08-13T00:00:00.000",
       "品种": "棕榈油",
       "variety": "P",
       "合约桶": "P1",
       "具体合约": "P2701",
       "交割年月": "2027-01",
-      "收盘价": 9573.0,
-      "5日涨跌幅%": -0.4264614104,
-      "20日涨跌幅%": -0.3020204124,
-      "相对20日均线%": 0.1700368849,
-      "5日持仓变化%": 4.8937817947,
-      "P1-P5月差": -37.0,
-      "等待上涨风险": 48.9,
-      "买贵风险": 43.9,
+      "收盘价": 9735.0,
+      "5日涨跌幅%": 0.485136251,
+      "20日涨跌幅%": 1.1954261954,
+      "相对20日均线%": 1.4041374138,
+      "5日持仓变化%": 41.1305291369,
+      "P1-P5月差": -203.0,
+      "等待上涨风险": 58.4,
+      "买贵风险": 60.5,
       "采购档位": 2,
       "建议": "可少量试建"
     },
     {
-      "trade_date": "2026-07-15T00:00:00.000",
+      "trade_date": "2026-08-13T00:00:00.000",
       "品种": "棕榈油",
       "variety": "P",
       "合约桶": "P5",
       "具体合约": "P2705",
       "交割年月": "2027-05",
-      "收盘价": 9610.0,
-      "5日涨跌幅%": 0.0520562207,
-      "20日涨跌幅%": -0.1143332294,
-      "相对20日均线%": 0.5640376304,
-      "5日持仓变化%": 48.181011535,
-      "P1-P5月差": -37.0,
-      "等待上涨风险": 58.0,
-      "买贵风险": 51.1,
-      "采购档位": 2,
-      "建议": "可少量试建"
+      "收盘价": 9938.0,
+      "5日涨跌幅%": 1.5532393215,
+      "20日涨跌幅%": 3.5639849937,
+      "相对20日均线%": 2.9503169933,
+      "5日持仓变化%": 42.9936517654,
+      "P1-P5月差": -203.0,
+      "等待上涨风险": 72.7,
+      "买贵风险": 68.7,
+      "采购档位": 3,
+      "建议": "建议分批建仓"
     },
     {
-      "trade_date": "2026-07-15T00:00:00.000",
+      "trade_date": "2026-08-13T00:00:00.000",
       "品种": "豆油",
       "variety": "Y",
       "合约桶": "P1",
       "具体合约": "Y2701",
       "交割年月": "2027-01",
-      "收盘价": 8586.0,
-      "5日涨跌幅%": -0.1511803698,
-      "20日涨跌幅%": 3.346172364,
-      "相对20日均线%": 1.7208186476,
-      "5日持仓变化%": -0.4947034956,
-      "P1-P5月差": 309.0,
-      "等待上涨风险": 62.1,
-      "买贵风险": 58.5,
+      "收盘价": 8485.0,
+      "5日涨跌幅%": 0.5212652529,
+      "20日涨跌幅%": 0.7241215575,
+      "相对20日均线%": 0.0389072945,
+      "5日持仓变化%": 9.965172132,
+      "P1-P5月差": 199.0,
+      "等待上涨风险": 67.4,
+      "买贵风险": 41.4,
       "采购档位": 3,
       "建议": "建议分批建仓"
     },
     {
-      "trade_date": "2026-07-15T00:00:00.000",
+      "trade_date": "2026-08-13T00:00:00.000",
       "品种": "豆油",
       "variety": "Y",
       "合约桶": "P5",
       "具体合约": "Y2705",
       "交割年月": "2027-05",
-      "收盘价": 8277.0,
-      "5日涨跌幅%": 0.0604448743,
-      "20日涨跌幅%": 3.1273361575,
-      "相对20日均线%": 1.9171807469,
-      "5日持仓变化%": 13.4032120732,
-      "P1-P5月差": 309.0,
-      "等待上涨风险": 66.1,
-      "买贵风险": 59.8,
+      "收盘价": 8286.0,
+      "5日涨跌幅%": 1.0611050128,
+      "20日涨跌幅%": 2.7529761905,
+      "相对20日均线%": 1.1159856246,
+      "5日持仓变化%": 14.2371493534,
+      "P1-P5月差": 199.0,
+      "等待上涨风险": 70.2,
+      "买贵风险": 57.1,
       "采购档位": 3,
       "建议": "建议分批建仓"
     },
     {
-      "trade_date": "2026-07-15T00:00:00.000",
+      "trade_date": "2026-08-13T00:00:00.000",
       "品种": "菜油",
       "variety": "OI",
       "合约桶": "P1",
       "具体合约": "OI2701",
       "交割年月": "2027-01",
-      "收盘价": 9839.0,
-      "5日涨跌幅%": 0.9749589491,
-      "20日涨跌幅%": 0.1424936387,
-      "相对20日均线%": 1.6845804051,
-      "5日持仓变化%": 13.5815209968,
-      "P1-P5月差": 100.0,
-      "等待上涨风险": 67.9,
-      "买贵风险": 64.5,
-      "采购档位": 3,
-      "建议": "建议分批建仓"
+      "收盘价": 9996.0,
+      "5日涨跌幅%": 0.9493031711,
+      "20日涨跌幅%": 3.2431315844,
+      "相对20日均线%": 2.121921069,
+      "5日持仓变化%": 48.9035455053,
+      "P1-P5月差": 155.0,
+      "等待上涨风险": 75.9,
+      "买贵风险": 61.6,
+      "采购档位": 4,
+      "建议": "提高建仓优先级"
     },
     {
-      "trade_date": "2026-07-15T00:00:00.000",
+      "trade_date": "2026-08-13T00:00:00.000",
       "品种": "菜油",
       "variety": "OI",
       "合约桶": "P5",
       "具体合约": "OI2705",
       "交割年月": "2027-05",
-      "收盘价": 9739.0,
-      "5日涨跌幅%": 0.9118226091,
-      "20日涨跌幅%": -0.1947120312,
-      "相对20日均线%": 1.4637703808,
-      "5日持仓变化%": 10.1337696083,
-      "P1-P5月差": 100.0,
-      "等待上涨风险": 62.1,
-      "买贵风险": 63.8,
+      "收盘价": 9841.0,
+      "5日涨跌幅%": 0.8092603975,
+      "20日涨跌幅%": 2.3504940198,
+      "相对20日均线%": 1.680029757,
+      "5日持仓变化%": 20.6136083544,
+      "P1-P5月差": 155.0,
+      "等待上涨风险": 67.9,
+      "买贵风险": 60.6,
       "采购档位": 3,
       "建议": "建议分批建仓"
     }
@@ -178,16 +178,6 @@
     },
     {
       "trade_date": "2026-05-19T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9767.0,
-      "settle": 9630.0,
-      "volume": 6161.0,
-      "open_interest": 11088.0
-    },
-    {
-      "trade_date": "2026-05-19T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2701",
       "合约桶": "P1",
@@ -207,14 +197,44 @@
       "open_interest": 106879.0
     },
     {
-      "trade_date": "2026-05-20T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
+      "trade_date": "2026-05-19T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
       "合约桶": "P1",
-      "close": 8588.0,
-      "settle": 8568.0,
-      "volume": 65531.0,
-      "open_interest": 120578.0
+      "close": 9767.0,
+      "settle": 9630.0,
+      "volume": 6161.0,
+      "open_interest": 11088.0
+    },
+    {
+      "trade_date": "2026-05-20T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9859.0,
+      "settle": 9805.0,
+      "volume": 7750.0,
+      "open_interest": 12262.0
+    },
+    {
+      "trade_date": "2026-05-20T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9817.0,
+      "settle": 9758.0,
+      "volume": 5.0,
+      "open_interest": 3.0
+    },
+    {
+      "trade_date": "2026-05-20T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9822.0,
+      "settle": 9834.0,
+      "volume": 97414.0,
+      "open_interest": 98979.0
     },
     {
       "trade_date": "2026-05-20T00:00:00.000",
@@ -229,42 +249,22 @@
     {
       "trade_date": "2026-05-20T00:00:00.000",
       "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8588.0,
+      "settle": 8568.0,
+      "volume": 65531.0,
+      "open_interest": 120578.0
+    },
+    {
+      "trade_date": "2026-05-20T00:00:00.000",
+      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8390.0,
       "settle": 8361.0,
       "volume": 2222.0,
       "open_interest": 1593.0
-    },
-    {
-      "trade_date": "2026-05-20T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9817.0,
-      "settle": 9758.0,
-      "volume": 5.0,
-      "open_interest": 3.0
-    },
-    {
-      "trade_date": "2026-05-20T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9859.0,
-      "settle": 9805.0,
-      "volume": 7750.0,
-      "open_interest": 12262.0
-    },
-    {
-      "trade_date": "2026-05-20T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9822.0,
-      "settle": 9834.0,
-      "volume": 97414.0,
-      "open_interest": 98979.0
     },
     {
       "trade_date": "2026-05-21T00:00:00.000",
@@ -278,6 +278,16 @@
     },
     {
       "trade_date": "2026-05-21T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8271.0,
+      "settle": 8329.0,
+      "volume": 986.0,
+      "open_interest": 2246.0
+    },
+    {
+      "trade_date": "2026-05-21T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2705",
       "合约桶": "P5",
@@ -288,13 +298,13 @@
     },
     {
       "trade_date": "2026-05-21T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8271.0,
-      "settle": 8329.0,
-      "volume": 986.0,
-      "open_interest": 2246.0
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9686.0,
+      "settle": 9789.0,
+      "volume": 109523.0,
+      "open_interest": 100893.0
     },
     {
       "trade_date": "2026-05-21T00:00:00.000",
@@ -315,16 +325,6 @@
       "settle": 9779.0,
       "volume": 7506.0,
       "open_interest": 13165.0
-    },
-    {
-      "trade_date": "2026-05-21T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9686.0,
-      "settle": 9789.0,
-      "volume": 109523.0,
-      "open_interest": 100893.0
     },
     {
       "trade_date": "2026-05-22T00:00:00.000",
@@ -389,22 +389,22 @@
     {
       "trade_date": "2026-05-25T00:00:00.000",
       "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8404.0,
-      "settle": 8414.0,
-      "volume": 34681.0,
-      "open_interest": 138251.0
-    },
-    {
-      "trade_date": "2026-05-25T00:00:00.000",
-      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8200.0,
       "settle": 8210.0,
       "volume": 1122.0,
       "open_interest": 3719.0
+    },
+    {
+      "trade_date": "2026-05-25T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8404.0,
+      "settle": 8414.0,
+      "volume": 34681.0,
+      "open_interest": 138251.0
     },
     {
       "trade_date": "2026-05-25T00:00:00.000",
@@ -418,13 +418,13 @@
     },
     {
       "trade_date": "2026-05-25T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
+      "variety": "OI",
+      "standard_contract": "OI2701",
       "合约桶": "P1",
-      "close": 9645.0,
-      "settle": 9627.0,
-      "volume": 69573.0,
-      "open_interest": 109509.0
+      "close": 9632.0,
+      "settle": 9646.0,
+      "volume": 4151.0,
+      "open_interest": 13306.0
     },
     {
       "trade_date": "2026-05-25T00:00:00.000",
@@ -438,53 +438,13 @@
     },
     {
       "trade_date": "2026-05-25T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9632.0,
-      "settle": 9646.0,
-      "volume": 4151.0,
-      "open_interest": 13306.0
-    },
-    {
-      "trade_date": "2026-05-26T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9630.0,
-      "settle": 9641.0,
-      "volume": 4059.0,
-      "open_interest": 12887.0
-    },
-    {
-      "trade_date": "2026-05-26T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9590.0,
-      "settle": 9596.0,
-      "volume": 27.0,
-      "open_interest": 53.0
-    },
-    {
-      "trade_date": "2026-05-26T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2701",
       "合约桶": "P1",
-      "close": 9627.0,
-      "settle": 9679.0,
-      "volume": 73440.0,
-      "open_interest": 117640.0
-    },
-    {
-      "trade_date": "2026-05-26T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2705",
-      "合约桶": "P5",
-      "close": 9584.0,
-      "settle": 9626.0,
-      "volume": 557.0,
-      "open_interest": 1444.0
+      "close": 9645.0,
+      "settle": 9627.0,
+      "volume": 69573.0,
+      "open_interest": 109509.0
     },
     {
       "trade_date": "2026-05-26T00:00:00.000",
@@ -507,14 +467,74 @@
       "open_interest": 5938.0
     },
     {
-      "trade_date": "2026-05-27T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
+      "trade_date": "2026-05-26T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9584.0,
+      "settle": 9626.0,
+      "volume": 557.0,
+      "open_interest": 1444.0
+    },
+    {
+      "trade_date": "2026-05-26T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
       "合约桶": "P1",
-      "close": 8417.0,
-      "settle": 8431.0,
-      "volume": 36570.0,
-      "open_interest": 145188.0
+      "close": 9627.0,
+      "settle": 9679.0,
+      "volume": 73440.0,
+      "open_interest": 117640.0
+    },
+    {
+      "trade_date": "2026-05-26T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9590.0,
+      "settle": 9596.0,
+      "volume": 27.0,
+      "open_interest": 53.0
+    },
+    {
+      "trade_date": "2026-05-26T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9630.0,
+      "settle": 9641.0,
+      "volume": 4059.0,
+      "open_interest": 12887.0
+    },
+    {
+      "trade_date": "2026-05-27T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9671.0,
+      "settle": 9673.0,
+      "volume": 6612.0,
+      "open_interest": 13477.0
+    },
+    {
+      "trade_date": "2026-05-27T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9605.0,
+      "settle": 9628.0,
+      "volume": 21.0,
+      "open_interest": 54.0
+    },
+    {
+      "trade_date": "2026-05-27T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9719.0,
+      "settle": 9714.0,
+      "volume": 67235.0,
+      "open_interest": 123717.0
     },
     {
       "trade_date": "2026-05-27T00:00:00.000",
@@ -529,6 +549,16 @@
     {
       "trade_date": "2026-05-27T00:00:00.000",
       "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8417.0,
+      "settle": 8431.0,
+      "volume": 36570.0,
+      "open_interest": 145188.0
+    },
+    {
+      "trade_date": "2026-05-27T00:00:00.000",
+      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8204.0,
@@ -537,34 +567,14 @@
       "open_interest": 9064.0
     },
     {
-      "trade_date": "2026-05-27T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
+      "trade_date": "2026-05-28T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
       "合约桶": "P5",
-      "close": 9605.0,
-      "settle": 9628.0,
-      "volume": 21.0,
-      "open_interest": 54.0
-    },
-    {
-      "trade_date": "2026-05-27T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9671.0,
-      "settle": 9673.0,
-      "volume": 6612.0,
-      "open_interest": 13477.0
-    },
-    {
-      "trade_date": "2026-05-27T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9719.0,
-      "settle": 9714.0,
-      "volume": 67235.0,
-      "open_interest": 123717.0
+      "close": 8234.0,
+      "settle": 8234.0,
+      "volume": 6879.0,
+      "open_interest": 13689.0
     },
     {
       "trade_date": "2026-05-28T00:00:00.000",
@@ -588,13 +598,13 @@
     },
     {
       "trade_date": "2026-05-28T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8234.0,
-      "settle": 8234.0,
-      "volume": 6879.0,
-      "open_interest": 13689.0
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9826.0,
+      "settle": 9751.0,
+      "volume": 19884.0,
+      "open_interest": 16283.0
     },
     {
       "trade_date": "2026-05-28T00:00:00.000",
@@ -608,16 +618,6 @@
     },
     {
       "trade_date": "2026-05-28T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9826.0,
-      "settle": 9751.0,
-      "volume": 19884.0,
-      "open_interest": 16283.0
-    },
-    {
-      "trade_date": "2026-05-28T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2701",
       "合约桶": "P1",
@@ -625,46 +625,6 @@
       "settle": 9754.0,
       "volume": 51557.0,
       "open_interest": 125661.0
-    },
-    {
-      "trade_date": "2026-05-29T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9867.0,
-      "settle": 9837.0,
-      "volume": 9789.0,
-      "open_interest": 17635.0
-    },
-    {
-      "trade_date": "2026-05-29T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9780.0,
-      "settle": 9782.0,
-      "volume": 127.0,
-      "open_interest": 96.0
-    },
-    {
-      "trade_date": "2026-05-29T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9797.0,
-      "settle": 9795.0,
-      "volume": 68443.0,
-      "open_interest": 127720.0
-    },
-    {
-      "trade_date": "2026-05-29T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2705",
-      "合约桶": "P5",
-      "close": 9708.0,
-      "settle": 9708.0,
-      "volume": 796.0,
-      "open_interest": 2603.0
     },
     {
       "trade_date": "2026-05-29T00:00:00.000",
@@ -687,14 +647,74 @@
       "open_interest": 15808.0
     },
     {
-      "trade_date": "2026-06-01T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
+      "trade_date": "2026-05-29T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9708.0,
+      "settle": 9708.0,
+      "volume": 796.0,
+      "open_interest": 2603.0
+    },
+    {
+      "trade_date": "2026-05-29T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
       "合约桶": "P1",
-      "close": 8563.0,
-      "settle": 8549.0,
-      "volume": 61794.0,
-      "open_interest": 163759.0
+      "close": 9797.0,
+      "settle": 9795.0,
+      "volume": 68443.0,
+      "open_interest": 127720.0
+    },
+    {
+      "trade_date": "2026-05-29T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9780.0,
+      "settle": 9782.0,
+      "volume": 127.0,
+      "open_interest": 96.0
+    },
+    {
+      "trade_date": "2026-05-29T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9867.0,
+      "settle": 9837.0,
+      "volume": 9789.0,
+      "open_interest": 17635.0
+    },
+    {
+      "trade_date": "2026-06-01T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9897.0,
+      "settle": 9892.0,
+      "volume": 15274.0,
+      "open_interest": 21143.0
+    },
+    {
+      "trade_date": "2026-06-01T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9828.0,
+      "settle": 9821.0,
+      "volume": 116.0,
+      "open_interest": 117.0
+    },
+    {
+      "trade_date": "2026-06-01T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9960.0,
+      "settle": 9903.0,
+      "volume": 100472.0,
+      "open_interest": 148865.0
     },
     {
       "trade_date": "2026-06-01T00:00:00.000",
@@ -709,42 +729,22 @@
     {
       "trade_date": "2026-06-01T00:00:00.000",
       "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8563.0,
+      "settle": 8549.0,
+      "volume": 61794.0,
+      "open_interest": 163759.0
+    },
+    {
+      "trade_date": "2026-06-01T00:00:00.000",
+      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8306.0,
       "settle": 8286.0,
       "volume": 4716.0,
       "open_interest": 17316.0
-    },
-    {
-      "trade_date": "2026-06-01T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9828.0,
-      "settle": 9821.0,
-      "volume": 116.0,
-      "open_interest": 117.0
-    },
-    {
-      "trade_date": "2026-06-01T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9897.0,
-      "settle": 9892.0,
-      "volume": 15274.0,
-      "open_interest": 21143.0
-    },
-    {
-      "trade_date": "2026-06-01T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9960.0,
-      "settle": 9903.0,
-      "volume": 100472.0,
-      "open_interest": 148865.0
     },
     {
       "trade_date": "2026-06-02T00:00:00.000",
@@ -998,16 +998,6 @@
     },
     {
       "trade_date": "2026-06-08T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2705",
-      "合约桶": "P5",
-      "close": 9711.0,
-      "settle": 9666.0,
-      "volume": 2884.0,
-      "open_interest": 9071.0
-    },
-    {
-      "trade_date": "2026-06-08T00:00:00.000",
       "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
@@ -1018,13 +1008,13 @@
     },
     {
       "trade_date": "2026-06-08T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
+      "variety": "P",
+      "standard_contract": "P2705",
       "合约桶": "P5",
-      "close": 9844.0,
-      "settle": 9861.0,
-      "volume": 314.0,
-      "open_interest": 348.0
+      "close": 9711.0,
+      "settle": 9666.0,
+      "volume": 2884.0,
+      "open_interest": 9071.0
     },
     {
       "trade_date": "2026-06-08T00:00:00.000",
@@ -1035,6 +1025,16 @@
       "settle": 9672.0,
       "volume": 123695.0,
       "open_interest": 169533.0
+    },
+    {
+      "trade_date": "2026-06-08T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9844.0,
+      "settle": 9861.0,
+      "volume": 314.0,
+      "open_interest": 348.0
     },
     {
       "trade_date": "2026-06-08T00:00:00.000",
@@ -1169,12 +1169,12 @@
     {
       "trade_date": "2026-06-11T00:00:00.000",
       "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8066.0,
-      "settle": 8062.0,
-      "volume": 6547.0,
-      "open_interest": 41717.0
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8345.0,
+      "settle": 8336.0,
+      "volume": 52719.0,
+      "open_interest": 200214.0
     },
     {
       "trade_date": "2026-06-11T00:00:00.000",
@@ -1189,22 +1189,22 @@
     {
       "trade_date": "2026-06-11T00:00:00.000",
       "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8345.0,
-      "settle": 8336.0,
-      "volume": 52719.0,
-      "open_interest": 200214.0
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8066.0,
+      "settle": 8062.0,
+      "volume": 6547.0,
+      "open_interest": 41717.0
     },
     {
       "trade_date": "2026-06-11T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9670.0,
-      "settle": 9645.0,
-      "volume": 80804.0,
-      "open_interest": 178750.0
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9850.0,
+      "settle": 9850.0,
+      "volume": 502.0,
+      "open_interest": 1036.0
     },
     {
       "trade_date": "2026-06-11T00:00:00.000",
@@ -1218,43 +1218,23 @@
     },
     {
       "trade_date": "2026-06-11T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9850.0,
-      "settle": 9850.0,
-      "volume": 502.0,
-      "open_interest": 1036.0
-    },
-    {
-      "trade_date": "2026-06-12T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9842.0,
-      "settle": 9858.0,
-      "volume": 13527.0,
-      "open_interest": 37356.0
-    },
-    {
-      "trade_date": "2026-06-12T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9792.0,
-      "settle": 9786.0,
-      "volume": 283.0,
-      "open_interest": 1112.0
-    },
-    {
-      "trade_date": "2026-06-12T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2701",
       "合约桶": "P1",
-      "close": 9592.0,
-      "settle": 9626.0,
-      "volume": 75178.0,
-      "open_interest": 183835.0
+      "close": 9670.0,
+      "settle": 9645.0,
+      "volume": 80804.0,
+      "open_interest": 178750.0
+    },
+    {
+      "trade_date": "2026-06-12T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8330.0,
+      "settle": 8331.0,
+      "volume": 46495.0,
+      "open_interest": 206376.0
     },
     {
       "trade_date": "2026-06-12T00:00:00.000",
@@ -1269,16 +1249,6 @@
     {
       "trade_date": "2026-06-12T00:00:00.000",
       "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8330.0,
-      "settle": 8331.0,
-      "volume": 46495.0,
-      "open_interest": 206376.0
-    },
-    {
-      "trade_date": "2026-06-12T00:00:00.000",
-      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8059.0,
@@ -1287,34 +1257,34 @@
       "open_interest": 43686.0
     },
     {
-      "trade_date": "2026-06-15T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
+      "trade_date": "2026-06-12T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
       "合约桶": "P5",
-      "close": 8042.0,
-      "settle": 8034.0,
-      "volume": 8118.0,
-      "open_interest": 45747.0
+      "close": 9792.0,
+      "settle": 9786.0,
+      "volume": 283.0,
+      "open_interest": 1112.0
     },
     {
-      "trade_date": "2026-06-15T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
+      "trade_date": "2026-06-12T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
       "合约桶": "P1",
-      "close": 8288.0,
-      "settle": 8290.0,
-      "volume": 74360.0,
-      "open_interest": 215746.0
+      "close": 9842.0,
+      "settle": 9858.0,
+      "volume": 13527.0,
+      "open_interest": 37356.0
     },
     {
-      "trade_date": "2026-06-15T00:00:00.000",
+      "trade_date": "2026-06-12T00:00:00.000",
       "variety": "P",
-      "standard_contract": "P2705",
-      "合约桶": "P5",
-      "close": 9519.0,
-      "settle": 9547.0,
-      "volume": 4936.0,
-      "open_interest": 12286.0
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9592.0,
+      "settle": 9626.0,
+      "volume": 75178.0,
+      "open_interest": 183835.0
     },
     {
       "trade_date": "2026-06-15T00:00:00.000",
@@ -1347,6 +1317,36 @@
       "open_interest": 183610.0
     },
     {
+      "trade_date": "2026-06-15T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9519.0,
+      "settle": 9547.0,
+      "volume": 4936.0,
+      "open_interest": 12286.0
+    },
+    {
+      "trade_date": "2026-06-15T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8288.0,
+      "settle": 8290.0,
+      "volume": 74360.0,
+      "open_interest": 215746.0
+    },
+    {
+      "trade_date": "2026-06-15T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8042.0,
+      "settle": 8034.0,
+      "volume": 8118.0,
+      "open_interest": 45747.0
+    },
+    {
       "trade_date": "2026-06-16T00:00:00.000",
       "variety": "Y",
       "standard_contract": "Y2701",
@@ -1355,16 +1355,6 @@
       "settle": 8279.0,
       "volume": 61803.0,
       "open_interest": 224172.0
-    },
-    {
-      "trade_date": "2026-06-16T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8026.0,
-      "settle": 8010.0,
-      "volume": 9458.0,
-      "open_interest": 49619.0
     },
     {
       "trade_date": "2026-06-16T00:00:00.000",
@@ -1378,6 +1368,16 @@
     },
     {
       "trade_date": "2026-06-16T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8026.0,
+      "settle": 8010.0,
+      "volume": 9458.0,
+      "open_interest": 49619.0
+    },
+    {
+      "trade_date": "2026-06-16T00:00:00.000",
       "variety": "OI",
       "standard_contract": "OI2705",
       "合约桶": "P5",
@@ -1388,16 +1388,6 @@
     },
     {
       "trade_date": "2026-06-16T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9602.0,
-      "settle": 9519.0,
-      "volume": 119516.0,
-      "open_interest": 189008.0
-    },
-    {
-      "trade_date": "2026-06-16T00:00:00.000",
       "variety": "OI",
       "standard_contract": "OI2701",
       "合约桶": "P1",
@@ -1405,6 +1395,16 @@
       "settle": 9770.0,
       "volume": 14853.0,
       "open_interest": 36426.0
+    },
+    {
+      "trade_date": "2026-06-16T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9602.0,
+      "settle": 9519.0,
+      "volume": 119516.0,
+      "open_interest": 189008.0
     },
     {
       "trade_date": "2026-06-17T00:00:00.000",
@@ -1498,6 +1498,16 @@
     },
     {
       "trade_date": "2026-06-18T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9572.0,
+      "settle": 9585.0,
+      "volume": 116894.0,
+      "open_interest": 193998.0
+    },
+    {
+      "trade_date": "2026-06-18T00:00:00.000",
       "variety": "OI",
       "standard_contract": "OI2701",
       "合约桶": "P1",
@@ -1515,46 +1525,6 @@
       "settle": 9623.0,
       "volume": 389.0,
       "open_interest": 1452.0
-    },
-    {
-      "trade_date": "2026-06-18T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9572.0,
-      "settle": 9585.0,
-      "volume": 116894.0,
-      "open_interest": 193998.0
-    },
-    {
-      "trade_date": "2026-06-22T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8319.0,
-      "settle": 8331.0,
-      "volume": 45689.0,
-      "open_interest": 243928.0
-    },
-    {
-      "trade_date": "2026-06-22T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8034.0,
-      "settle": 8048.0,
-      "volume": 4723.0,
-      "open_interest": 51463.0
-    },
-    {
-      "trade_date": "2026-06-22T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2705",
-      "合约桶": "P5",
-      "close": 9633.0,
-      "settle": 9636.0,
-      "volume": 4840.0,
-      "open_interest": 15996.0
     },
     {
       "trade_date": "2026-06-22T00:00:00.000",
@@ -1587,14 +1557,64 @@
       "open_interest": 198812.0
     },
     {
-      "trade_date": "2026-06-23T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
+      "trade_date": "2026-06-22T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9633.0,
+      "settle": 9636.0,
+      "volume": 4840.0,
+      "open_interest": 15996.0
+    },
+    {
+      "trade_date": "2026-06-22T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
       "合约桶": "P1",
-      "close": 9619.0,
-      "settle": 9642.0,
-      "volume": 13116.0,
-      "open_interest": 42256.0
+      "close": 8319.0,
+      "settle": 8331.0,
+      "volume": 45689.0,
+      "open_interest": 243928.0
+    },
+    {
+      "trade_date": "2026-06-22T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8034.0,
+      "settle": 8048.0,
+      "volume": 4723.0,
+      "open_interest": 51463.0
+    },
+    {
+      "trade_date": "2026-06-23T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8304.0,
+      "settle": 8315.0,
+      "volume": 67020.0,
+      "open_interest": 251725.0
+    },
+    {
+      "trade_date": "2026-06-23T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8012.0,
+      "settle": 8033.0,
+      "volume": 6629.0,
+      "open_interest": 52339.0
+    },
+    {
+      "trade_date": "2026-06-23T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9580.0,
+      "settle": 9640.0,
+      "volume": 6626.0,
+      "open_interest": 17751.0
     },
     {
       "trade_date": "2026-06-23T00:00:00.000",
@@ -1618,33 +1638,53 @@
     },
     {
       "trade_date": "2026-06-23T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9619.0,
+      "settle": 9642.0,
+      "volume": 13116.0,
+      "open_interest": 42256.0
+    },
+    {
+      "trade_date": "2026-06-24T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9700.0,
+      "settle": 9674.0,
+      "volume": 10838.0,
+      "open_interest": 42628.0
+    },
+    {
+      "trade_date": "2026-06-24T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9635.0,
+      "settle": 9608.0,
+      "volume": 266.0,
+      "open_interest": 1440.0
+    },
+    {
+      "trade_date": "2026-06-24T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9611.0,
+      "settle": 9599.0,
+      "volume": 96908.0,
+      "open_interest": 198747.0
+    },
+    {
+      "trade_date": "2026-06-24T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2705",
       "合约桶": "P5",
-      "close": 9580.0,
-      "settle": 9640.0,
-      "volume": 6626.0,
-      "open_interest": 17751.0
-    },
-    {
-      "trade_date": "2026-06-23T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8304.0,
-      "settle": 8315.0,
-      "volume": 67020.0,
-      "open_interest": 251725.0
-    },
-    {
-      "trade_date": "2026-06-23T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8012.0,
-      "settle": 8033.0,
-      "volume": 6629.0,
-      "open_interest": 52339.0
+      "close": 9606.0,
+      "settle": 9600.0,
+      "volume": 4761.0,
+      "open_interest": 18447.0
     },
     {
       "trade_date": "2026-06-24T00:00:00.000",
@@ -1665,46 +1705,6 @@
       "settle": 8027.0,
       "volume": 5943.0,
       "open_interest": 52768.0
-    },
-    {
-      "trade_date": "2026-06-24T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2705",
-      "合约桶": "P5",
-      "close": 9606.0,
-      "settle": 9600.0,
-      "volume": 4761.0,
-      "open_interest": 18447.0
-    },
-    {
-      "trade_date": "2026-06-24T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9635.0,
-      "settle": 9608.0,
-      "volume": 266.0,
-      "open_interest": 1440.0
-    },
-    {
-      "trade_date": "2026-06-24T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9700.0,
-      "settle": 9674.0,
-      "volume": 10838.0,
-      "open_interest": 42628.0
-    },
-    {
-      "trade_date": "2026-06-24T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9611.0,
-      "settle": 9599.0,
-      "volume": 96908.0,
-      "open_interest": 198747.0
     },
     {
       "trade_date": "2026-06-25T00:00:00.000",
@@ -1769,22 +1769,22 @@
     {
       "trade_date": "2026-06-26T00:00:00.000",
       "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8394.0,
-      "settle": 8368.0,
-      "volume": 78564.0,
-      "open_interest": 275263.0
-    },
-    {
-      "trade_date": "2026-06-26T00:00:00.000",
-      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8039.0,
       "settle": 8023.0,
       "volume": 9270.0,
       "open_interest": 55218.0
+    },
+    {
+      "trade_date": "2026-06-26T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8394.0,
+      "settle": 8368.0,
+      "volume": 78564.0,
+      "open_interest": 275263.0
     },
     {
       "trade_date": "2026-06-26T00:00:00.000",
@@ -1795,16 +1795,6 @@
       "settle": 9512.0,
       "volume": 3974.0,
       "open_interest": 16962.0
-    },
-    {
-      "trade_date": "2026-06-26T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9565.0,
-      "settle": 9519.0,
-      "volume": 128593.0,
-      "open_interest": 193884.0
     },
     {
       "trade_date": "2026-06-26T00:00:00.000",
@@ -1825,6 +1815,26 @@
       "settle": 9563.0,
       "volume": 13456.0,
       "open_interest": 43050.0
+    },
+    {
+      "trade_date": "2026-06-26T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9565.0,
+      "settle": 9519.0,
+      "volume": 128593.0,
+      "open_interest": 193884.0
+    },
+    {
+      "trade_date": "2026-06-29T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8064.0,
+      "settle": 8051.0,
+      "volume": 7178.0,
+      "open_interest": 55346.0
     },
     {
       "trade_date": "2026-06-29T00:00:00.000",
@@ -1877,46 +1887,6 @@
       "open_interest": 277205.0
     },
     {
-      "trade_date": "2026-06-29T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8064.0,
-      "settle": 8051.0,
-      "volume": 7178.0,
-      "open_interest": 55346.0
-    },
-    {
-      "trade_date": "2026-06-30T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2705",
-      "合约桶": "P5",
-      "close": 9521.0,
-      "settle": 9558.0,
-      "volume": 2306.0,
-      "open_interest": 17774.0
-    },
-    {
-      "trade_date": "2026-06-30T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9530.0,
-      "settle": 9570.0,
-      "volume": 87063.0,
-      "open_interest": 205123.0
-    },
-    {
-      "trade_date": "2026-06-30T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8400.0,
-      "settle": 8408.0,
-      "volume": 57519.0,
-      "open_interest": 284930.0
-    },
-    {
       "trade_date": "2026-06-30T00:00:00.000",
       "variety": "OI",
       "standard_contract": "OI2701",
@@ -1935,6 +1905,36 @@
       "settle": 9593.0,
       "volume": 992.0,
       "open_interest": 2099.0
+    },
+    {
+      "trade_date": "2026-06-30T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9530.0,
+      "settle": 9570.0,
+      "volume": 87063.0,
+      "open_interest": 205123.0
+    },
+    {
+      "trade_date": "2026-06-30T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9521.0,
+      "settle": 9558.0,
+      "volume": 2306.0,
+      "open_interest": 17774.0
+    },
+    {
+      "trade_date": "2026-06-30T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8400.0,
+      "settle": 8408.0,
+      "volume": 57519.0,
+      "open_interest": 284930.0
     },
     {
       "trade_date": "2026-06-30T00:00:00.000",
@@ -1978,16 +1978,6 @@
     },
     {
       "trade_date": "2026-07-01T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9527.0,
-      "settle": 9506.0,
-      "volume": 93991.0,
-      "open_interest": 211432.0
-    },
-    {
-      "trade_date": "2026-07-01T00:00:00.000",
       "variety": "OI",
       "standard_contract": "OI2705",
       "合约桶": "P5",
@@ -2005,6 +1995,16 @@
       "settle": 9531.0,
       "volume": 26720.0,
       "open_interest": 49846.0
+    },
+    {
+      "trade_date": "2026-07-01T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9527.0,
+      "settle": 9506.0,
+      "volume": 93991.0,
+      "open_interest": 211432.0
     },
     {
       "trade_date": "2026-07-02T00:00:00.000",
@@ -2129,22 +2129,22 @@
     {
       "trade_date": "2026-07-06T00:00:00.000",
       "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8474.0,
-      "settle": 8445.0,
-      "volume": 78667.0,
-      "open_interest": 315718.0
-    },
-    {
-      "trade_date": "2026-07-06T00:00:00.000",
-      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8145.0,
       "settle": 8128.0,
       "volume": 11004.0,
       "open_interest": 62754.0
+    },
+    {
+      "trade_date": "2026-07-06T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8474.0,
+      "settle": 8445.0,
+      "volume": 78667.0,
+      "open_interest": 315718.0
     },
     {
       "trade_date": "2026-07-06T00:00:00.000",
@@ -2159,22 +2159,22 @@
     {
       "trade_date": "2026-07-06T00:00:00.000",
       "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9646.0,
-      "settle": 9611.0,
-      "volume": 33206.0,
-      "open_interest": 60057.0
-    },
-    {
-      "trade_date": "2026-07-06T00:00:00.000",
-      "variety": "OI",
       "standard_contract": "OI2705",
       "合约桶": "P5",
       "close": 9564.0,
       "settle": 9540.0,
       "volume": 1788.0,
       "open_interest": 7206.0
+    },
+    {
+      "trade_date": "2026-07-06T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9646.0,
+      "settle": 9611.0,
+      "volume": 33206.0,
+      "open_interest": 60057.0
     },
     {
       "trade_date": "2026-07-06T00:00:00.000",
@@ -2248,26 +2248,6 @@
     },
     {
       "trade_date": "2026-07-08T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8599.0,
-      "settle": 8582.0,
-      "volume": 74090.0,
-      "open_interest": 330501.0
-    },
-    {
-      "trade_date": "2026-07-08T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8272.0,
-      "settle": 8257.0,
-      "volume": 12212.0,
-      "open_interest": 68118.0
-    },
-    {
-      "trade_date": "2026-07-08T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2705",
       "合约桶": "P5",
@@ -2288,13 +2268,13 @@
     },
     {
       "trade_date": "2026-07-08T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9651.0,
-      "settle": 9678.0,
-      "volume": 2161.0,
-      "open_interest": 10391.0
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8599.0,
+      "settle": 8582.0,
+      "volume": 74090.0,
+      "open_interest": 330501.0
     },
     {
       "trade_date": "2026-07-08T00:00:00.000",
@@ -2307,44 +2287,24 @@
       "open_interest": 65891.0
     },
     {
-      "trade_date": "2026-07-09T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9789.0,
-      "settle": 9797.0,
-      "volume": 29366.0,
-      "open_interest": 66868.0
-    },
-    {
-      "trade_date": "2026-07-09T00:00:00.000",
+      "trade_date": "2026-07-08T00:00:00.000",
       "variety": "OI",
       "standard_contract": "OI2705",
       "合约桶": "P5",
-      "close": 9708.0,
-      "settle": 9703.0,
-      "volume": 1538.0,
-      "open_interest": 10647.0
+      "close": 9651.0,
+      "settle": 9678.0,
+      "volume": 2161.0,
+      "open_interest": 10391.0
     },
     {
-      "trade_date": "2026-07-09T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9630.0,
-      "settle": 9662.0,
-      "volume": 113759.0,
-      "open_interest": 217093.0
-    },
-    {
-      "trade_date": "2026-07-09T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2705",
+      "trade_date": "2026-07-08T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
       "合约桶": "P5",
-      "close": 9613.0,
-      "settle": 9641.0,
-      "volume": 6674.0,
-      "open_interest": 25745.0
+      "close": 8272.0,
+      "settle": 8257.0,
+      "volume": 12212.0,
+      "open_interest": 68118.0
     },
     {
       "trade_date": "2026-07-09T00:00:00.000",
@@ -2367,14 +2327,74 @@
       "open_interest": 69603.0
     },
     {
-      "trade_date": "2026-07-10T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
+      "trade_date": "2026-07-09T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9613.0,
+      "settle": 9641.0,
+      "volume": 6674.0,
+      "open_interest": 25745.0
+    },
+    {
+      "trade_date": "2026-07-09T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
       "合约桶": "P1",
-      "close": 8533.0,
-      "settle": 8553.0,
-      "volume": 78085.0,
-      "open_interest": 333258.0
+      "close": 9630.0,
+      "settle": 9662.0,
+      "volume": 113759.0,
+      "open_interest": 217093.0
+    },
+    {
+      "trade_date": "2026-07-09T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9708.0,
+      "settle": 9703.0,
+      "volume": 1538.0,
+      "open_interest": 10647.0
+    },
+    {
+      "trade_date": "2026-07-09T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9789.0,
+      "settle": 9797.0,
+      "volume": 29366.0,
+      "open_interest": 66868.0
+    },
+    {
+      "trade_date": "2026-07-10T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9792.0,
+      "settle": 9786.0,
+      "volume": 27605.0,
+      "open_interest": 67798.0
+    },
+    {
+      "trade_date": "2026-07-10T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9700.0,
+      "settle": 9691.0,
+      "volume": 1943.0,
+      "open_interest": 11026.0
+    },
+    {
+      "trade_date": "2026-07-10T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9516.0,
+      "settle": 9568.0,
+      "volume": 122234.0,
+      "open_interest": 217284.0
     },
     {
       "trade_date": "2026-07-10T00:00:00.000",
@@ -2389,6 +2409,16 @@
     {
       "trade_date": "2026-07-10T00:00:00.000",
       "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8533.0,
+      "settle": 8553.0,
+      "volume": 78085.0,
+      "open_interest": 333258.0
+    },
+    {
+      "trade_date": "2026-07-10T00:00:00.000",
+      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8231.0,
@@ -2397,44 +2427,34 @@
       "open_interest": 72056.0
     },
     {
-      "trade_date": "2026-07-10T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9700.0,
-      "settle": 9691.0,
-      "volume": 1943.0,
-      "open_interest": 11026.0
-    },
-    {
-      "trade_date": "2026-07-10T00:00:00.000",
+      "trade_date": "2026-07-13T00:00:00.000",
       "variety": "OI",
       "standard_contract": "OI2701",
       "合约桶": "P1",
-      "close": 9792.0,
-      "settle": 9786.0,
-      "volume": 27605.0,
-      "open_interest": 67798.0
-    },
-    {
-      "trade_date": "2026-07-10T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9516.0,
-      "settle": 9568.0,
-      "volume": 122234.0,
-      "open_interest": 217284.0
+      "close": 9770.0,
+      "settle": 9797.0,
+      "volume": 48427.0,
+      "open_interest": 73414.0
     },
     {
       "trade_date": "2026-07-13T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2701",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9657.0,
+      "settle": 9682.0,
+      "volume": 3841.0,
+      "open_interest": 11198.0
+    },
+    {
+      "trade_date": "2026-07-13T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
       "合约桶": "P1",
-      "close": 8561.0,
-      "settle": 8566.0,
-      "volume": 88802.0,
-      "open_interest": 334473.0
+      "close": 9509.0,
+      "settle": 9555.0,
+      "volume": 96927.0,
+      "open_interest": 216901.0
     },
     {
       "trade_date": "2026-07-13T00:00:00.000",
@@ -2449,6 +2469,16 @@
     {
       "trade_date": "2026-07-13T00:00:00.000",
       "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8561.0,
+      "settle": 8566.0,
+      "volume": 88802.0,
+      "open_interest": 334473.0
+    },
+    {
+      "trade_date": "2026-07-13T00:00:00.000",
+      "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
       "close": 8258.0,
@@ -2457,74 +2487,14 @@
       "open_interest": 73610.0
     },
     {
-      "trade_date": "2026-07-13T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
+      "trade_date": "2026-07-14T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
       "合约桶": "P5",
-      "close": 9657.0,
-      "settle": 9682.0,
-      "volume": 3841.0,
-      "open_interest": 11198.0
-    },
-    {
-      "trade_date": "2026-07-13T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9770.0,
-      "settle": 9797.0,
-      "volume": 48427.0,
-      "open_interest": 73414.0
-    },
-    {
-      "trade_date": "2026-07-13T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9509.0,
-      "settle": 9555.0,
-      "volume": 96927.0,
-      "open_interest": 216901.0
-    },
-    {
-      "trade_date": "2026-07-14T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2701",
-      "合约桶": "P1",
-      "close": 9833.0,
-      "settle": 9817.0,
-      "volume": 35214.0,
-      "open_interest": 75889.0
-    },
-    {
-      "trade_date": "2026-07-14T00:00:00.000",
-      "variety": "OI",
-      "standard_contract": "OI2705",
-      "合约桶": "P5",
-      "close": 9729.0,
-      "settle": 9715.0,
-      "volume": 1257.0,
-      "open_interest": 11194.0
-    },
-    {
-      "trade_date": "2026-07-14T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2701",
-      "合约桶": "P1",
-      "close": 9638.0,
-      "settle": 9579.0,
-      "volume": 120173.0,
-      "open_interest": 220241.0
-    },
-    {
-      "trade_date": "2026-07-14T00:00:00.000",
-      "variety": "P",
-      "standard_contract": "P2705",
-      "合约桶": "P5",
-      "close": 9654.0,
-      "settle": 9613.0,
-      "volume": 12600.0,
-      "open_interest": 31529.0
+      "close": 8282.0,
+      "settle": 8277.0,
+      "volume": 9676.0,
+      "open_interest": 75527.0
     },
     {
       "trade_date": "2026-07-14T00:00:00.000",
@@ -2538,43 +2508,53 @@
     },
     {
       "trade_date": "2026-07-14T00:00:00.000",
-      "variety": "Y",
-      "standard_contract": "Y2705",
-      "合约桶": "P5",
-      "close": 8282.0,
-      "settle": 8277.0,
-      "volume": 9676.0,
-      "open_interest": 75527.0
-    },
-    {
-      "trade_date": "2026-07-15T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2705",
       "合约桶": "P5",
-      "close": 9610.0,
-      "settle": 9622.0,
-      "volume": 14607.0,
-      "open_interest": 36740.0
+      "close": 9654.0,
+      "settle": 9613.0,
+      "volume": 12600.0,
+      "open_interest": 31529.0
     },
     {
-      "trade_date": "2026-07-15T00:00:00.000",
+      "trade_date": "2026-07-14T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9729.0,
+      "settle": 9715.0,
+      "volume": 1257.0,
+      "open_interest": 11194.0
+    },
+    {
+      "trade_date": "2026-07-14T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9833.0,
+      "settle": 9817.0,
+      "volume": 35214.0,
+      "open_interest": 75889.0
+    },
+    {
+      "trade_date": "2026-07-14T00:00:00.000",
       "variety": "P",
       "standard_contract": "P2701",
       "合约桶": "P1",
-      "close": 9573.0,
-      "settle": 9594.0,
-      "volume": 95266.0,
-      "open_interest": 226194.0
+      "close": 9638.0,
+      "settle": 9579.0,
+      "volume": 120173.0,
+      "open_interest": 220241.0
     },
     {
       "trade_date": "2026-07-15T00:00:00.000",
       "variety": "Y",
-      "standard_contract": "Y2701",
-      "合约桶": "P1",
-      "close": 8586.0,
-      "settle": 8589.0,
-      "volume": 60329.0,
-      "open_interest": 328866.0
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8277.0,
+      "settle": 8272.0,
+      "volume": 9394.0,
+      "open_interest": 77248.0
     },
     {
       "trade_date": "2026-07-15T00:00:00.000",
@@ -2598,13 +2578,513 @@
     },
     {
       "trade_date": "2026-07-15T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9573.0,
+      "settle": 9594.0,
+      "volume": 95266.0,
+      "open_interest": 226194.0
+    },
+    {
+      "trade_date": "2026-07-15T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9610.0,
+      "settle": 9622.0,
+      "volume": 14607.0,
+      "open_interest": 36740.0
+    },
+    {
+      "trade_date": "2026-07-15T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8586.0,
+      "settle": 8589.0,
+      "volume": 60329.0,
+      "open_interest": 328866.0
+    },
+    {
+      "trade_date": "2026-08-04T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9864.0,
+      "settle": 9825.0,
+      "volume": 80140.0,
+      "open_interest": 127145.0
+    },
+    {
+      "trade_date": "2026-08-04T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9725.0,
+      "settle": 9678.0,
+      "volume": 4153.0,
+      "open_interest": 14490.0
+    },
+    {
+      "trade_date": "2026-08-04T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9594.0,
+      "settle": 9581.0,
+      "volume": 126041.0,
+      "open_interest": 290675.0
+    },
+    {
+      "trade_date": "2026-08-04T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9687.0,
+      "settle": 9675.0,
+      "volume": 18060.0,
+      "open_interest": 62845.0
+    },
+    {
+      "trade_date": "2026-08-04T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8440.0,
+      "settle": 8430.0,
+      "volume": 145028.0,
+      "open_interest": 439770.0
+    },
+    {
+      "trade_date": "2026-08-04T00:00:00.000",
       "variety": "Y",
       "standard_contract": "Y2705",
       "合约桶": "P5",
-      "close": 8277.0,
-      "settle": 8272.0,
-      "volume": 9394.0,
-      "open_interest": 77248.0
+      "close": 8187.0,
+      "settle": 8185.0,
+      "volume": 16009.0,
+      "open_interest": 122862.0
+    },
+    {
+      "trade_date": "2026-08-05T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8424.0,
+      "settle": 8417.0,
+      "volume": 203571.0,
+      "open_interest": 479880.0
+    },
+    {
+      "trade_date": "2026-08-05T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8191.0,
+      "settle": 8181.0,
+      "volume": 22844.0,
+      "open_interest": 130410.0
+    },
+    {
+      "trade_date": "2026-08-05T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9781.0,
+      "settle": 9757.0,
+      "volume": 27434.0,
+      "open_interest": 71592.0
+    },
+    {
+      "trade_date": "2026-08-05T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9690.0,
+      "settle": 9653.0,
+      "volume": 208352.0,
+      "open_interest": 307745.0
+    },
+    {
+      "trade_date": "2026-08-05T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9735.0,
+      "settle": 9701.0,
+      "volume": 3766.0,
+      "open_interest": 15023.0
+    },
+    {
+      "trade_date": "2026-08-05T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9876.0,
+      "settle": 9843.0,
+      "volume": 51337.0,
+      "open_interest": 134527.0
+    },
+    {
+      "trade_date": "2026-08-06T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9902.0,
+      "settle": 9875.0,
+      "volume": 54243.0,
+      "open_interest": 143280.0
+    },
+    {
+      "trade_date": "2026-08-06T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9762.0,
+      "settle": 9736.0,
+      "volume": 2394.0,
+      "open_interest": 15417.0
+    },
+    {
+      "trade_date": "2026-08-06T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9688.0,
+      "settle": 9685.0,
+      "volume": 136877.0,
+      "open_interest": 321637.0
+    },
+    {
+      "trade_date": "2026-08-06T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9786.0,
+      "settle": 9772.0,
+      "volume": 13132.0,
+      "open_interest": 75139.0
+    },
+    {
+      "trade_date": "2026-08-06T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8441.0,
+      "settle": 8420.0,
+      "volume": 162776.0,
+      "open_interest": 490699.0
+    },
+    {
+      "trade_date": "2026-08-06T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8199.0,
+      "settle": 8178.0,
+      "volume": 19786.0,
+      "open_interest": 136783.0
+    },
+    {
+      "trade_date": "2026-08-07T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8199.0,
+      "settle": 8200.0,
+      "volume": 12866.0,
+      "open_interest": 136547.0
+    },
+    {
+      "trade_date": "2026-08-07T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8443.0,
+      "settle": 8434.0,
+      "volume": 185278.0,
+      "open_interest": 495228.0
+    },
+    {
+      "trade_date": "2026-08-07T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9787.0,
+      "settle": 9780.0,
+      "volume": 20797.0,
+      "open_interest": 77798.0
+    },
+    {
+      "trade_date": "2026-08-07T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9908.0,
+      "settle": 9909.0,
+      "volume": 43576.0,
+      "open_interest": 147632.0
+    },
+    {
+      "trade_date": "2026-08-07T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9763.0,
+      "settle": 9761.0,
+      "volume": 2882.0,
+      "open_interest": 16163.0
+    },
+    {
+      "trade_date": "2026-08-07T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9662.0,
+      "settle": 9662.0,
+      "volume": 231248.0,
+      "open_interest": 346233.0
+    },
+    {
+      "trade_date": "2026-08-10T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8445.0,
+      "settle": 8456.0,
+      "volume": 193344.0,
+      "open_interest": 512098.0
+    },
+    {
+      "trade_date": "2026-08-10T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8208.0,
+      "settle": 8213.0,
+      "volume": 24891.0,
+      "open_interest": 138921.0
+    },
+    {
+      "trade_date": "2026-08-10T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9842.0,
+      "settle": 9835.0,
+      "volume": 22461.0,
+      "open_interest": 84619.0
+    },
+    {
+      "trade_date": "2026-08-10T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9710.0,
+      "settle": 9700.0,
+      "volume": 279393.0,
+      "open_interest": 384319.0
+    },
+    {
+      "trade_date": "2026-08-10T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9785.0,
+      "settle": 9790.0,
+      "volume": 2328.0,
+      "open_interest": 16585.0
+    },
+    {
+      "trade_date": "2026-08-10T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9931.0,
+      "settle": 9934.0,
+      "volume": 67004.0,
+      "open_interest": 167098.0
+    },
+    {
+      "trade_date": "2026-08-11T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9983.0,
+      "settle": 9961.0,
+      "volume": 64009.0,
+      "open_interest": 182673.0
+    },
+    {
+      "trade_date": "2026-08-11T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9826.0,
+      "settle": 9805.0,
+      "volume": 3611.0,
+      "open_interest": 18235.0
+    },
+    {
+      "trade_date": "2026-08-11T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9744.0,
+      "settle": 9743.0,
+      "volume": 272650.0,
+      "open_interest": 409098.0
+    },
+    {
+      "trade_date": "2026-08-11T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9880.0,
+      "settle": 9872.0,
+      "volume": 17494.0,
+      "open_interest": 89201.0
+    },
+    {
+      "trade_date": "2026-08-11T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8468.0,
+      "settle": 8460.0,
+      "volume": 159652.0,
+      "open_interest": 515994.0
+    },
+    {
+      "trade_date": "2026-08-11T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8230.0,
+      "settle": 8225.0,
+      "volume": 18986.0,
+      "open_interest": 144106.0
+    },
+    {
+      "trade_date": "2026-08-12T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9945.0,
+      "settle": 9935.0,
+      "volume": 68662.0,
+      "open_interest": 196476.0
+    },
+    {
+      "trade_date": "2026-08-12T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9800.0,
+      "settle": 9786.0,
+      "volume": 2623.0,
+      "open_interest": 18539.0
+    },
+    {
+      "trade_date": "2026-08-12T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9691.0,
+      "settle": 9696.0,
+      "volume": 332450.0,
+      "open_interest": 430333.0
+    },
+    {
+      "trade_date": "2026-08-12T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9878.0,
+      "settle": 9859.0,
+      "volume": 33197.0,
+      "open_interest": 95495.0
+    },
+    {
+      "trade_date": "2026-08-12T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8442.0,
+      "settle": 8443.0,
+      "volume": 193827.0,
+      "open_interest": 526321.0
+    },
+    {
+      "trade_date": "2026-08-12T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8239.0,
+      "settle": 8218.0,
+      "volume": 28590.0,
+      "open_interest": 151181.0
+    },
+    {
+      "trade_date": "2026-08-13T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2705",
+      "合约桶": "P5",
+      "close": 9938.0,
+      "settle": 9914.0,
+      "volume": 67095.0,
+      "open_interest": 107444.0
+    },
+    {
+      "trade_date": "2026-08-13T00:00:00.000",
+      "variety": "P",
+      "standard_contract": "P2701",
+      "合约桶": "P1",
+      "close": 9735.0,
+      "settle": 9699.0,
+      "volume": 423451.0,
+      "open_interest": 453928.0
+    },
+    {
+      "trade_date": "2026-08-13T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2701",
+      "合约桶": "P1",
+      "close": 8485.0,
+      "settle": 8453.0,
+      "volume": 249282.0,
+      "open_interest": 539598.0
+    },
+    {
+      "trade_date": "2026-08-13T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2701",
+      "合约桶": "P1",
+      "close": 9996.0,
+      "settle": 9969.0,
+      "volume": 74099.0,
+      "open_interest": 213349.0
+    },
+    {
+      "trade_date": "2026-08-13T00:00:00.000",
+      "variety": "OI",
+      "standard_contract": "OI2705",
+      "合约桶": "P5",
+      "close": 9841.0,
+      "settle": 9815.0,
+      "volume": 1813.0,
+      "open_interest": 18595.0
+    },
+    {
+      "trade_date": "2026-08-13T00:00:00.000",
+      "variety": "Y",
+      "standard_contract": "Y2705",
+      "合约桶": "P5",
+      "close": 8286.0,
+      "settle": 8257.0,
+      "volume": 32172.0,
+      "open_interest": 156257.0
     }
   ]
 }
