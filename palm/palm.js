@@ -316,8 +316,9 @@
           production_share_se_asia: num(r.production_share_se_asia) ?? (production !== null && observedTotal ? production / observedTotal : null),
         };
       });
-      $('status').textContent = `最新行政区多点聚合降雨：${state.rows[0]?.date_end || '缺测'} ｜ 数据更新时间：${meta.generated_at || '缺测'} ｜ 当前地图：近30日区域平均降雨`;
-      $('method').textContent = '历史天气使用 EDH/ERA5-Land；最新尾段明确标记为 IFS PRELIMINARY，不冒充 ERA5-Land。所有值在行政区边界内按多点等面积聚合。由于目前没有经核验的区内油棕面积分布，不使用推测性作物权重。近30日指标显示截止日此前有源日的实际累计/均值，缺失日不填充；覆盖率不足的区域标记为部分样点参考。';
+      const pointFallback = meta.data_quality === 'current_point_refresh_quota_fallback' || state.rows[0]?.spatial_method === 'regional_representative_point_v1';
+      $('status').textContent = `${pointFallback ? '最新 ECMWF IFS 行政区代表点降雨' : '最新行政区多点聚合降雨'}：${state.rows[0]?.date_end || '缺测'} ｜ 数据更新时间：${meta.generated_at || '缺测'} ｜ 当前地图：${pointFallback ? '近30日代表点降雨' : '近30日区域平均降雨'}`;
+      $('method').textContent = pointFallback ? '本次最新尾段使用 ECMWF IFS 行政区代表点，不把代表点值冒充行政区内部多格点聚合；上游多格点 API 配额恢复后再补齐 P10/P50/P90。综合供应风险继续禁用。' : '历史天气使用 EDH/ERA5-Land；最新尾段明确标记为 IFS PRELIMINARY，不冒充 ERA5-Land。所有值在行政区边界内按多点等面积聚合。由于目前没有经核验的区内油棕面积分布，不使用推测性作物权重。近30日指标显示截止日此前有源日的实际累计/均值，缺失日不填充；覆盖率不足的区域标记为部分样点参考。';
       updateControlRow(); controls(); updateSummary(); await buildMap(); regionDetail([...state.rows].sort((a,b) => (b.production_tonnes || 0) - (a.production_tonnes || 0))[0]);
     } catch (e) { console.error(e); $('status').textContent = `数据加载失败：${e?.message || '未知错误'}。`; }
   }
