@@ -1,1 +1,34 @@
-[{"country":"Indonesia","crop_group":"palm","palm_regions_count":26,"rain_30d_crop_mask_weighted_mm":98.68,"spatial_method":"admin_area_equal_grid_v1","quality_status":"canonical_v2_readonly","region_risk_publish_allowed":false},{"country":"Malaysia","crop_group":"palm","palm_regions_count":13,"rain_30d_crop_mask_weighted_mm":179.46,"spatial_method":"admin_area_equal_grid_v1","quality_status":"canonical_v2_readonly","region_risk_publish_allowed":false}]
+[
+  {
+    "country": "Indonesia",
+    "crop_group": "palm",
+    "palm_regions_count": 26,
+    "rain_30d_crop_mask_weighted_mm": 107.17,
+    "spatial_method": "regional_representative_point_v1",
+    "quality_status": "current_point_refresh_quota_fallback",
+    "region_risk_publish_allowed": false,
+    "date_end": "2026-09-20",
+    "latest_observation_date": "2026-09-20",
+    "rain_30d_baseline_2017_2025_mm": 249.363,
+    "rain_30d_anomaly_mm_2017_2025": -142.193,
+    "rain_30d_ratio_2017_2025": 41.128,
+    "forecast_rain_1_7d_mm": 56.196,
+    "forecast_rain_1_15d_mm": 89.003
+  },
+  {
+    "country": "Malaysia",
+    "crop_group": "palm",
+    "palm_regions_count": 13,
+    "rain_30d_crop_mask_weighted_mm": 166.565,
+    "spatial_method": "regional_representative_point_v1",
+    "quality_status": "current_point_refresh_quota_fallback",
+    "region_risk_publish_allowed": false,
+    "date_end": "2026-09-20",
+    "latest_observation_date": "2026-09-20",
+    "rain_30d_baseline_2017_2025_mm": 275.458,
+    "rain_30d_anomaly_mm_2017_2025": -108.892,
+    "rain_30d_ratio_2017_2025": 61.862,
+    "forecast_rain_1_7d_mm": 71.541,
+    "forecast_rain_1_15d_mm": 135.011
+  }
+]

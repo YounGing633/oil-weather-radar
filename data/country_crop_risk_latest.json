@@ -15,27 +15,27 @@
     "source_valid_for_frontend": true,
     "region_count": 10,
     "total_regions_with_weather": 10,
-    "disturbed_production_tonnes": 7317854.0,
-    "disturbed_share": 0.6648,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 2.665,
+    "disturbed_production_tonnes": 6076959.0,
+    "disturbed_share": 0.5521,
+    "weighted_risk_level": "watch",
+    "weighted_risk_level_cn": "一般关注",
+    "weighted_risk_score": 1.769,
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "近30天降雨明显不足且未来7天补水不足",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年29%，降雨距平-43.5mm，最高温距平-3.3℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P56.8，surface P37.1",
+    "weather_condition_summary_cn": "近30天降雨为常年39%，降雨距平-36.7mm，最高温距平-0.8℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P51.6，surface P22.6",
     "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨4.6mm，未来16天累计降雨28.6mm，短期补水不足，水分压力可能维持",
+    "forecast_summary_cn": "未来7天累计降雨0.7mm，未来16天累计降雨11.3mm，短期补水不足，水分压力可能维持",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "过湿·播种",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
+    "operation_affected_share": 0.0013,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -46,7 +46,14 @@
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [
       {
-        "region_name": "Jujuy, 阿根廷 / Argentina",
+        "region_name": "Formosa, 阿根廷 / Argentina",
+        "risk_label_cn": "过湿·播种",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
+        "region_name": "Chaco, 阿根廷 / Argentina",
         "risk_label_cn": "过湿·播种",
         "risk_level": 3,
         "confidence": "low",
@@ -77,24 +84,24 @@
     "source_valid_for_frontend": true,
     "region_count": 6,
     "total_regions_with_weather": 6,
-    "disturbed_production_tonnes": 4920806.0,
-    "disturbed_share": 0.7222,
+    "disturbed_production_tonnes": 5368808.0,
+    "disturbed_share": 0.788,
     "weighted_risk_level": "pressure",
     "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 2.955,
+    "weighted_risk_score": 3.086,
     "dominant_risk_type": "wetness_waterlogging",
     "dominant_risk_reason_cn": "表层土壤高分位叠加30日降雨显著偏多，过湿/积水压力突出",
     "current_growth_stage_cn": "开花",
-    "weather_condition_summary_cn": "近30天降雨为常年727%，降雨距平+52.5mm，最高温距平-2.2℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P57.4，surface P93.2",
+    "weather_condition_summary_cn": "近30天降雨为常年736%，降雨距平+47.8mm，最高温距平+1.8℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P58.4，surface P95.5",
     "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨1.4mm，未来16天累计降雨5.0mm",
+    "forecast_summary_cn": "未来7天累计降雨35.0mm，未来16天累计降雨39.4mm，过湿或田间作业压力可能延续",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -134,19 +141,19 @@
     "weighted_risk_level": "pressure",
     "weighted_risk_level_cn": "重点压力",
     "weighted_risk_score": 3.0,
-    "dominant_risk_type": "drought_water_deficit",
-    "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间",
+    "dominant_risk_type": "wetness_waterlogging",
+    "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年687%，降雨距平+19.8mm，最高温距平-0.4℃",
-    "soil_condition_summary_cn": "土壤状态偏干，rootzone P7.2，surface P23.9",
-    "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨0.1mm，未来16天累计降雨1.9mm，短期补水不足，水分压力可能维持",
+    "weather_condition_summary_cn": "近30天降雨为常年408%，降雨距平+19.5mm，最高温距平+0.7℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P53.9，surface P35.0",
+    "production_impact_cn": "过湿可能影响根系环境和田间作业。",
+    "forecast_summary_cn": "未来7天累计降雨3.9mm，未来16天累计降雨32.5mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -187,25 +194,25 @@
     "total_regions_with_weather": 17,
     "disturbed_production_tonnes": 156098200.0,
     "disturbed_share": 1.0,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 3.376,
+    "weighted_risk_level": "severe",
+    "weighted_risk_level_cn": "显著压力",
+    "weighted_risk_score": 3.765,
     "dominant_risk_type": "wetness_waterlogging",
-    "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
+    "dominant_risk_reason_cn": "表层土壤高分位叠加30日降雨显著偏多，过湿/积水压力突出",
     "current_growth_stage_cn": "播种/出苗",
-    "weather_condition_summary_cn": "近30天降雨为常年250%，降雨距平+11.5mm，最高温距平-2.1℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P41.6，surface P67.4",
+    "weather_condition_summary_cn": "近30天降雨为常年183%，降雨距平+10.2mm，最高温距平-0.4℃",
+    "soil_condition_summary_cn": "土壤状态略偏湿，rootzone P71.3，surface P86.5",
     "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨1.9mm，未来16天累计降雨22.7mm",
+    "forecast_summary_cn": "未来7天累计降雨16.2mm，未来16天累计降雨43.4mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "过湿·播种",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.2005,
+    "operation_affected_share": 0.0664,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -216,16 +223,16 @@
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [
       {
-        "region_name": "Goiás, 巴西 / Brazil",
+        "region_name": "Piauí, 巴西 / Brazil",
         "risk_label_cn": "过湿·播种",
         "risk_level": 3,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Mato Grosso do Sul, 巴西 / Brazil",
+        "region_name": "Bahia, 巴西 / Brazil",
         "risk_label_cn": "过湿·播种",
-        "risk_level": 3,
+        "risk_level": 2,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       }
@@ -255,27 +262,27 @@
     "source_valid_for_frontend": true,
     "region_count": 7,
     "total_regions_with_weather": 7,
-    "disturbed_production_tonnes": 21806434.0,
-    "disturbed_share": 0.9999,
-    "weighted_risk_level": "severe",
-    "weighted_risk_level_cn": "显著压力",
-    "weighted_risk_score": 3.564,
+    "disturbed_production_tonnes": 18719095.0,
+    "disturbed_share": 0.8584,
+    "weighted_risk_level": "pressure",
+    "weighted_risk_level_cn": "重点压力",
+    "weighted_risk_score": 3.282,
     "dominant_risk_type": "wetness_waterlogging",
     "dominant_risk_reason_cn": "表层土壤高分位叠加30日降雨显著偏多，过湿/积水压力突出",
     "current_growth_stage_cn": "成熟/收获",
-    "weather_condition_summary_cn": "近30天降雨为常年327%，降雨距平+87.0mm，最高温距平-3.4℃",
+    "weather_condition_summary_cn": "近30天降雨为常年261%，降雨距平+72.1mm，最高温距平+0.2℃",
     "soil_condition_summary_cn": "土壤状态极端偏湿，rootzone P100.0，surface P100.0",
     "production_impact_cn": "收获延误、质量风险",
-    "forecast_summary_cn": "未来7天累计降雨1.8mm，未来16天累计降雨7.2mm",
+    "forecast_summary_cn": "未来7天累计降雨0.4mm，未来16天累计降雨7.0mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
-    "dominant_country_badge_cn": "降雨·收获",
+    "updated_at": "2026-09-21 09:39:36",
+    "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.1432,
+    "operation_affected_share": 0.0,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -284,28 +291,19 @@
       "mixed_calendar_progress": 0
     },
     "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "Manitoba / Canada",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Ontario / Canada",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
+    "top_operation_risk_regions": [],
     "supportive_regions": [
       {
         "region_name": "Saskatchewan / Canada"
       },
       {
         "region_name": "Alberta / Canada"
+      },
+      {
+        "region_name": "Manitoba / Canada"
+      },
+      {
+        "region_name": "Ontario / Canada"
       }
     ],
     "confidence_summary": "medium",
@@ -329,27 +327,27 @@
     "source_valid_for_frontend": true,
     "region_count": 8,
     "total_regions_with_weather": 8,
-    "disturbed_production_tonnes": 6787611.0,
-    "disturbed_share": 0.999,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 3.013,
+    "disturbed_production_tonnes": 3710111.0,
+    "disturbed_share": 0.546,
+    "weighted_risk_level": "watch",
+    "weighted_risk_level_cn": "一般关注",
+    "weighted_risk_score": 2.281,
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年132%，降雨距平+27.6mm，最高温距平+0.2℃",
-    "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P0.0，surface P11.0",
+    "weather_condition_summary_cn": "近30天降雨为常年120%，降雨距平+18.5mm，最高温距平-2.9℃",
+    "soil_condition_summary_cn": "土壤状态严重偏干，rootzone P5.2，surface P31.3",
     "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨4.0mm，未来16天累计降雨6.0mm，短期补水不足，水分压力可能维持",
+    "forecast_summary_cn": "未来7天累计降雨0.2mm，未来16天累计降雨3.0mm，短期补水不足，水分压力可能维持",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "降雨·收获",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.8099,
+    "operation_affected_share": 0.0054,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -360,28 +358,14 @@
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [
       {
-        "region_name": "Manitoba / Canada",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Nova Scotia / Canada",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Ontario / Canada",
+        "region_name": "Prince Edward Island / Canada",
         "risk_label_cn": "降雨·收获",
         "risk_level": 2,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Prince Edward Island / Canada",
+        "region_name": "Nova Scotia / Canada",
         "risk_label_cn": "降雨·收获",
         "risk_level": 2,
         "confidence": "low",
@@ -390,7 +374,16 @@
     ],
     "supportive_regions": [
       {
+        "region_name": "Ontario / Canada"
+      },
+      {
+        "region_name": "Manitoba / Canada"
+      },
+      {
         "region_name": "Saskatchewan / Canada"
+      },
+      {
+        "region_name": "New Brunswick / Canada"
       },
       {
         "region_name": "Alberta / Canada"
@@ -417,27 +410,27 @@
     "source_valid_for_frontend": true,
     "region_count": 4,
     "total_regions_with_weather": 4,
-    "disturbed_production_tonnes": 80063.0,
-    "disturbed_share": 1.0,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 3.052,
+    "disturbed_production_tonnes": 13513.0,
+    "disturbed_share": 0.1688,
+    "weighted_risk_level": "mild",
+    "weighted_risk_level_cn": "轻度异常",
+    "weighted_risk_score": 1.39,
     "dominant_risk_type": "wetness_waterlogging",
-    "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
+    "dominant_risk_reason_cn": "表层土壤高分位叠加30日降雨显著偏多，过湿/积水压力突出",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年137%，降雨距平+24.7mm，最高温距平-1.6℃",
+    "weather_condition_summary_cn": "近30天降雨为常年120%，降雨距平+15.8mm，最高温距平-2.1℃",
     "soil_condition_summary_cn": "土壤状态正常，rootzone P50.0，surface P50.0",
-    "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨3.1mm，未来16天累计降雨6.3mm",
+    "production_impact_cn": "",
+    "forecast_summary_cn": "未来7天累计降雨2.8mm，未来16天累计降雨2.8mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
-    "dominant_country_badge_cn": "降雨·收获",
+    "updated_at": "2026-09-21 09:39:36",
+    "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.8312,
+    "operation_affected_share": 0.0,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -446,16 +439,11 @@
       "mixed_calendar_progress": 0
     },
     "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [
-      {
-        "region_name": "Manitoba / Canada",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      }
-    ],
+    "top_operation_risk_regions": [],
     "supportive_regions": [
+      {
+        "region_name": "Manitoba / Canada"
+      },
       {
         "region_name": "Saskatchewan / Canada"
       },
@@ -492,16 +480,16 @@
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年137%，降雨距平+28.1mm，最高温距平-1.6℃",
-    "soil_condition_summary_cn": "土壤状态严重偏干，rootzone P8.4，surface P37.1",
+    "weather_condition_summary_cn": "近30天降雨为常年120%，降雨距平+14.0mm，最高温距平+1.6℃",
+    "soil_condition_summary_cn": "土壤状态严重偏干，rootzone P5.5，surface P36.8",
     "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨10.7mm，未来16天累计降雨12.7mm，短期补水不足，水分压力可能维持",
+    "forecast_summary_cn": "未来7天累计降雨8.3mm，未来16天累计降雨9.3mm，短期补水不足，水分压力可能维持",
     "has_boundary": false,
     "boundary_level": "country",
     "boundary_file": null,
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -546,16 +534,16 @@
     "dominant_risk_type": "wetness_waterlogging",
     "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年153%，降雨距平+34.1mm，最高温距平-0.1℃",
+    "weather_condition_summary_cn": "近30天降雨为常年176%，降雨距平+44.5mm，最高温距平-0.1℃",
     "soil_condition_summary_cn": "土壤状态未知",
     "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨21.7mm，未来16天累计降雨23.5mm",
+    "forecast_summary_cn": "未来7天累计降雨11.2mm，未来16天累计降雨13.2mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -592,22 +580,22 @@
     "total_regions_with_weather": 1,
     "disturbed_production_tonnes": 4631130.0,
     "disturbed_share": 1.0,
-    "weighted_risk_level": "severe",
-    "weighted_risk_level_cn": "显著压力",
-    "weighted_risk_score": 4.0,
-    "dominant_risk_type": "heat_drydown",
-    "dominant_risk_reason_cn": "高温叠加根区偏干，未来短期补水不足，失墒压力显著",
+    "weighted_risk_level": "pressure",
+    "weighted_risk_level_cn": "重点压力",
+    "weighted_risk_score": 3.0,
+    "dominant_risk_type": "drought_water_deficit",
+    "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年102%，降雨距平+1.3mm，最高温距平+3.2℃",
-    "soil_condition_summary_cn": "土壤状态严重偏干，rootzone P8.7，surface P47.1",
-    "production_impact_cn": "高温失墒可能加快水分消耗并压制作物生长。",
-    "forecast_summary_cn": "未来7天累计降雨2.1mm，未来16天累计降雨3.3mm，短期补水不足，水分压力可能维持",
+    "weather_condition_summary_cn": "近30天降雨为常年104%，降雨距平+2.4mm，最高温距平+2.7℃",
+    "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P1.0，surface P21.9",
+    "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
+    "forecast_summary_cn": "未来7天累计降雨0.0mm，未来16天累计降雨0.0mm，短期补水不足，水分压力可能维持",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -652,16 +640,16 @@
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "存在单项天气或土壤异常，暂未形成显著复合压力",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年118%，降雨距平+8.0mm，最高温距平-0.8℃",
-    "soil_condition_summary_cn": "土壤状态略偏干，rootzone P22.6，surface P48.4",
+    "weather_condition_summary_cn": "近30天降雨为常年110%，降雨距平+4.1mm，最高温距平+0.0℃",
+    "soil_condition_summary_cn": "土壤状态略偏干，rootzone P23.2，surface P47.7",
     "production_impact_cn": "",
-    "forecast_summary_cn": "未来7天累计降雨16.6mm，未来16天累计降雨19.8mm",
+    "forecast_summary_cn": "未来7天累计降雨3.2mm，未来16天累计降雨7.6mm，短期补水不足，水分压力可能维持",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -698,27 +686,27 @@
     "source_valid_for_frontend": true,
     "region_count": 30,
     "total_regions_with_weather": 30,
-    "disturbed_production_tonnes": 9301695.0,
-    "disturbed_share": 1.0,
+    "disturbed_production_tonnes": 9299287.0,
+    "disturbed_share": 0.9997,
     "weighted_risk_level": "severe",
     "weighted_risk_level_cn": "显著压力",
-    "weighted_risk_score": 3.797,
+    "weighted_risk_score": 3.747,
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "根区土壤处于偏干低分位，近30天降雨不足且未来7天补水有限",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年12%，降雨距平-275.4mm，最高温距平+1.4℃",
+    "weather_condition_summary_cn": "近30天降雨为常年16%，降雨距平-255.4mm，最高温距平+0.5℃",
     "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P0.0，surface P0.0",
     "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨41.0mm，未来16天累计降雨96.2mm，短期补水不足，水分压力可能维持",
+    "forecast_summary_cn": "未来7天累计降雨46.2mm，未来16天累计降雨96.4mm，短期补水不足，水分压力可能维持",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "强雨·运输",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0137,
+    "operation_affected_share": 0.029,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -732,40 +720,51 @@
         "region_name": "Aceh, 印度尼西亚 / Indonesia",
         "risk_label_cn": "强雨·运输",
         "risk_level": 3,
-        "confidence": "medium",
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
+        "region_name": "Sumatera Selatan, 印度尼西亚 / Indonesia",
+        "risk_label_cn": "强雨·运输",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
+        "region_name": "Papua, 印度尼西亚 / Indonesia",
+        "risk_label_cn": "强雨·运输",
+        "risk_level": 3,
+        "confidence": "low",
         "remaining_harvest_weight": 1.0
       }
     ],
     "supportive_regions": [
       {
-        "region_name": "Riau, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Maluku Utara, 印度尼西亚 / Indonesia"
-      },
-      {
         "region_name": "Sulawesi Tengah, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Jambi, 印度尼西亚 / Indonesia"
       },
       {
         "region_name": "Maluku, 印度尼西亚 / Indonesia"
       },
       {
-        "region_name": "Sumatera Utara, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Jawa Barat, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Lampung, 印度尼西亚 / Indonesia"
-      },
-      {
-        "region_name": "Sumatera Barat, 印度尼西亚 / Indonesia"
-      },
-      {
         "region_name": "Sulawesi Selatan, 印度尼西亚 / Indonesia"
+      },
+      {
+        "region_name": "Gorontalo, 印度尼西亚 / Indonesia"
+      },
+      {
+        "region_name": "Sulawesi Tenggara, 印度尼西亚 / Indonesia"
+      },
+      {
+        "region_name": "Kalimantan Selatan, 印度尼西亚 / Indonesia"
+      },
+      {
+        "region_name": "Papua Barat Daya, 印度尼西亚 / Indonesia"
+      },
+      {
+        "region_name": "Bangka Belitung, 印度尼西亚 / Indonesia"
+      },
+      {
+        "region_name": "Papua Barat, 印度尼西亚 / Indonesia"
       }
     ],
     "confidence_summary": "medium",
@@ -789,27 +788,27 @@
     "source_valid_for_frontend": true,
     "region_count": 26,
     "total_regions_with_weather": 26,
-    "disturbed_production_tonnes": 9519662.0,
-    "disturbed_share": 0.5571,
+    "disturbed_production_tonnes": 5904107.0,
+    "disturbed_share": 0.3455,
     "weighted_risk_level": "watch",
     "weighted_risk_level_cn": "一般关注",
-    "weighted_risk_score": 2.267,
+    "weighted_risk_score": 2.246,
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间；未来7/16天预报显示前期缺口可能部分修复",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年30%，降雨距平-147.8mm，最高温距平+1.4℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P30.6，surface P47.2",
+    "weather_condition_summary_cn": "近30天降雨为常年39%，降雨距平-129.6mm，最高温距平+1.3℃",
+    "soil_condition_summary_cn": "土壤状态略偏干，rootzone P25.0，surface P52.8",
     "production_impact_cn": "",
-    "forecast_summary_cn": "未来7天累计降雨47.0mm，未来16天累计降雨128.4mm，降雨缺口与土壤/预报信号分化，短期水分压力证据不足",
+    "forecast_summary_cn": "未来7天累计降雨64.7mm，未来16天累计降雨105.5mm，前期水分缺口可能部分修复",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "强雨·运输",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.1151,
+    "operation_affected_share": 0.1474,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -820,50 +819,47 @@
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [
       {
-        "region_name": "West Kalimantan",
+        "region_name": "South Sumatra",
         "risk_label_cn": "强雨·运输",
         "risk_level": 3,
-        "confidence": "low",
+        "confidence": "medium",
         "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Aceh",
-        "risk_label_cn": "过湿·采收",
-        "risk_level": 2,
-        "confidence": "low",
+        "region_name": "Bengkulu",
+        "risk_label_cn": "强雨·运输",
+        "risk_level": 3,
+        "confidence": "medium",
         "remaining_harvest_weight": 1.0
       }
     ],
     "supportive_regions": [
       {
-        "region_name": "Riau"
-      },
-      {
-        "region_name": "South Sumatra"
-      },
-      {
-        "region_name": "Jambi"
-      },
-      {
         "region_name": "Central Kalimantan"
-      },
-      {
-        "region_name": "Bengkulu"
       },
       {
         "region_name": "Central Sulawesi"
       },
       {
-        "region_name": "West Sulawesi"
-      },
-      {
         "region_name": "South Kalimantan"
       },
       {
-        "region_name": "Lampung"
+        "region_name": "Bangka-Belitung Islands"
       },
       {
-        "region_name": "Bangka-Belitung Islands"
+        "region_name": "West Papua"
+      },
+      {
+        "region_name": "South Sulawesi"
+      },
+      {
+        "region_name": "Southeast Sulawesi"
+      },
+      {
+        "region_name": "Gorontalo"
+      },
+      {
+        "region_name": "Riau Islands"
       }
     ],
     "confidence_summary": "medium",
@@ -893,18 +889,18 @@
     "weighted_risk_level_cn": "重点压力",
     "weighted_risk_score": 3.0,
     "dominant_risk_type": "drought_water_deficit",
-    "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间",
+    "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间；未来7/16天预报显示前期缺口可能部分修复",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年102%，降雨距平+1.4mm，最高温距平+0.6℃",
-    "soil_condition_summary_cn": "土壤状态严重偏干，rootzone P8.1，surface P6.8",
+    "weather_condition_summary_cn": "近30天降雨为常年80%，降雨距平-16.0mm，最高温距平+0.7℃",
+    "soil_condition_summary_cn": "土壤状态明显偏干，rootzone P10.0，surface P35.5",
     "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨15.2mm，未来16天累计降雨15.2mm",
+    "forecast_summary_cn": "未来7天累计降雨21.6mm，未来16天累计降雨22.2mm，前期水分缺口可能部分修复",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -951,16 +947,16 @@
     "dominant_risk_type": "wetness_waterlogging",
     "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年146%，降雨距平+34.4mm，最高温距平-0.4℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P56.5，surface P80.7",
+    "weather_condition_summary_cn": "近30天降雨为常年132%，降雨距平+22.8mm，最高温距平+0.9℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P58.7，surface P87.1",
     "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨23.1mm，未来16天累计降雨34.7mm",
+    "forecast_summary_cn": "未来7天累计降雨83.4mm，未来16天累计降雨91.4mm，过湿或田间作业压力可能延续",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -997,27 +993,27 @@
     "source_valid_for_frontend": true,
     "region_count": 13,
     "total_regions_with_weather": 13,
-    "disturbed_production_tonnes": 987145.0,
-    "disturbed_share": 0.0499,
+    "disturbed_production_tonnes": 4776079.0,
+    "disturbed_share": 0.2414,
     "weighted_risk_level": "watch",
     "weighted_risk_level_cn": "一般关注",
-    "weighted_risk_score": 1.695,
+    "weighted_risk_score": 1.664,
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间；未来7/16天预报显示前期缺口可能部分修复",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年44%，降雨距平-230.8mm，最高温距平+2.9℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P30.6，surface P75.0",
+    "weather_condition_summary_cn": "近30天降雨为常年50%，降雨距平-193.0mm，最高温距平+0.9℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P57.2，surface P57.2",
     "production_impact_cn": "",
-    "forecast_summary_cn": "未来7天累计降雨111.2mm，未来16天累计降雨219.6mm，降雨缺口与土壤/预报信号分化，短期水分压力证据不足",
+    "forecast_summary_cn": "未来7天累计降雨76.2mm，未来16天累计降雨145.2mm，降雨缺口与土壤/预报信号分化，短期水分压力证据不足",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
-    "dominant_country_badge_cn": "",
+    "updated_at": "2026-09-21 09:39:36",
+    "dominant_country_badge_cn": "强雨·运输",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0,
+    "operation_affected_share": 0.2624,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -1026,24 +1022,37 @@
       "mixed_calendar_progress": 0
     },
     "top_yield_risk_regions": [],
-    "top_operation_risk_regions": [],
-    "supportive_regions": [
+    "top_operation_risk_regions": [
       {
-        "region_name": "Sabah"
+        "region_name": "Pahang",
+        "risk_label_cn": "强雨·运输",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Pahang"
+        "region_name": "Negeri Sembilan",
+        "risk_label_cn": "强雨·运输",
+        "risk_level": 3,
+        "confidence": "medium",
+        "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Negeri Sembilan"
+        "region_name": "Selangor",
+        "risk_label_cn": "强雨·运输",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Selangor"
-      },
-      {
-        "region_name": "Malacca"
+        "region_name": "Kelantan",
+        "risk_label_cn": "强雨·运输",
+        "risk_level": 3,
+        "confidence": "medium",
+        "remaining_harvest_weight": 1.0
       }
     ],
+    "supportive_regions": [],
     "confidence_summary": "medium",
     "soil_temp_used_region_count": 0,
     "soil_temp_used_share": 0.0,
@@ -1065,27 +1074,27 @@
     "source_valid_for_frontend": true,
     "region_count": 17,
     "total_regions_with_weather": 17,
-    "disturbed_production_tonnes": 2595704.46,
-    "disturbed_share": 0.8153,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 3.357,
+    "disturbed_production_tonnes": 2861432.22,
+    "disturbed_share": 0.8988,
+    "weighted_risk_level": "severe",
+    "weighted_risk_level_cn": "显著压力",
+    "weighted_risk_score": 3.607,
     "dominant_risk_type": "drought_water_deficit",
-    "dominant_risk_reason_cn": "根区土壤显著偏干且处于水分敏感生长期",
+    "dominant_risk_reason_cn": "根区土壤显著偏干且处于水分敏感生长期；未来7/16天预报显示前期缺口可能部分修复",
     "current_growth_stage_cn": "全年生长/干旱敏感期",
-    "weather_condition_summary_cn": "近30天降雨为常年32%，降雨距平-162.8mm，最高温距平+1.1℃",
+    "weather_condition_summary_cn": "近30天降雨为常年43%，降雨距平-133.0mm，最高温距平-0.2℃",
     "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P0.0，surface P0.0",
     "production_impact_cn": "开花坐果受抑、果实发育滞后、产量下降",
-    "forecast_summary_cn": "未来7天累计降雨55.7mm，未来16天累计降雨73.3mm",
+    "forecast_summary_cn": "未来7天累计降雨60.4mm，未来16天累计降雨135.2mm，前期水分缺口可能部分修复",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "过湿·采收",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.0688,
+    "operation_affected_share": 0.0835,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -1096,14 +1105,18 @@
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [
       {
-        "region_name": "Philippines - REGION VIII (EASTERN VISAYAS)",
+        "region_name": "Philippines - REGION IV-A (CALABARZON)",
         "risk_label_cn": "过湿·采收",
         "risk_level": 2,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       }
     ],
-    "supportive_regions": [],
+    "supportive_regions": [
+      {
+        "region_name": "Philippines - REGION XI (DAVAO REGION)"
+      }
+    ],
     "confidence_summary": "medium",
     "soil_temp_used_region_count": 0,
     "soil_temp_used_share": 0.0,
@@ -1125,24 +1138,24 @@
     "source_valid_for_frontend": true,
     "region_count": 1,
     "total_regions_with_weather": 1,
-    "disturbed_production_tonnes": 3473300.0,
-    "disturbed_share": 1.0,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 3.0,
-    "dominant_risk_type": "wetness_waterlogging",
-    "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
+    "disturbed_production_tonnes": 0,
+    "disturbed_share": 0.0,
+    "weighted_risk_level": "mild",
+    "weighted_risk_level_cn": "轻度异常",
+    "weighted_risk_score": 1.0,
+    "dominant_risk_type": "no_clear_pressure",
+    "dominant_risk_reason_cn": "指标轻度偏离常态，维持监控",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年119%，降雨距平+14.5mm，最高温距平-2.2℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P62.3，surface P81.0",
-    "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨15.1mm，未来16天累计降雨23.1mm",
+    "weather_condition_summary_cn": "近30天降雨为常年80%，降雨距平-14.2mm，最高温距平+0.8℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P61.0，surface P73.9",
+    "production_impact_cn": "",
+    "forecast_summary_cn": "未来7天累计降雨13.1mm，未来16天累计降雨30.9mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -1187,16 +1200,16 @@
     "dominant_risk_type": "no_clear_pressure",
     "dominant_risk_reason_cn": "指标轻度偏离常态，维持监控",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年88%，降雨距平-4.0mm，最高温距平-1.2℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P41.0，surface P19.0",
+    "weather_condition_summary_cn": "近30天降雨为常年82%，降雨距平-6.3mm，最高温距平+0.1℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P35.2，surface P10.7",
     "production_impact_cn": "",
-    "forecast_summary_cn": "未来7天累计降雨9.0mm，未来16天累计降雨9.2mm",
+    "forecast_summary_cn": "未来7天累计降雨4.9mm，未来16天累计降雨4.9mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -1241,16 +1254,16 @@
     "dominant_risk_type": "no_clear_pressure",
     "dominant_risk_reason_cn": "指标轻度偏离常态，维持监控",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年88%，降雨距平-4.0mm，最高温距平-1.2℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P41.0，surface P19.0",
+    "weather_condition_summary_cn": "近30天降雨为常年82%，降雨距平-6.3mm，最高温距平+0.1℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P35.2，surface P10.7",
     "production_impact_cn": "",
-    "forecast_summary_cn": "未来7天累计降雨9.0mm，未来16天累计降雨9.2mm",
+    "forecast_summary_cn": "未来7天累计降雨4.9mm，未来16天累计降雨4.9mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -1289,27 +1302,27 @@
     "source_valid_for_frontend": true,
     "region_count": 58,
     "total_regions_with_weather": 58,
-    "disturbed_production_tonnes": 3251581.564,
-    "disturbed_share": 0.6338,
+    "disturbed_production_tonnes": 2889779.423,
+    "disturbed_share": 0.5633,
     "weighted_risk_level": "watch",
     "weighted_risk_level_cn": "一般关注",
-    "weighted_risk_score": 2.412,
+    "weighted_risk_score": 2.202,
     "dominant_risk_type": "wetness_waterlogging",
     "dominant_risk_reason_cn": "表层土壤高分位叠加30日降雨显著偏多，过湿/积水压力突出",
     "current_growth_stage_cn": "播种/建苗",
-    "weather_condition_summary_cn": "近30天降雨为常年67%，降雨距平-17.3mm，最高温距平+9.4℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P50.0，surface P60.3",
-    "production_impact_cn": "秋播建苗受压、出苗不齐",
-    "forecast_summary_cn": "未来7天累计降雨26.2mm，未来16天累计降雨27.0mm，降雨缺口与土壤/预报信号分化，短期水分压力证据不足",
+    "weather_condition_summary_cn": "近30天降雨为常年92%，降雨距平-3.9mm，最高温距平+1.9℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P40.0，surface P35.2",
+    "production_impact_cn": "",
+    "forecast_summary_cn": "未来7天累计降雨4.9mm，未来16天累计降雨4.9mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "降雨·收获",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.2322,
+    "operation_affected_share": 0.2607,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -1320,6 +1333,13 @@
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [
       {
+        "region_name": "Russia - Novosibirsk Oblast",
+        "risk_label_cn": "降雨·收获",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
         "region_name": "Russia - Omsk Oblast",
         "risk_label_cn": "降雨·收获",
         "risk_level": 3,
@@ -1327,63 +1347,28 @@
         "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Russia - Lipetsk Oblast",
+        "region_name": "Russia - Tomsk Oblast",
         "risk_label_cn": "降雨·收获",
         "risk_level": 3,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "Russia - Kurgan Oblast",
+        "region_name": "Russia - Krasnoyarsk Krai",
         "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Kursk Oblast",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Tyumen Oblast",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Tambov Oblast",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Orenburg Oblast",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
+        "risk_level": 2,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       },
       {
         "region_name": "Russia - Voronezh Oblast",
         "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
+        "risk_level": 2,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       },
       {
         "region_name": "Russia - Belgorod Oblast",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Republic of Tatarstan",
         "risk_label_cn": "降雨·收获",
         "risk_level": 2,
         "confidence": "low",
@@ -1395,28 +1380,31 @@
         "region_name": "Russia - Altai Krai"
       },
       {
-        "region_name": "Russia - Krasnoyarsk Krai"
-      },
-      {
-        "region_name": "Russia - Novosibirsk Oblast"
-      },
-      {
         "region_name": "Russia - Oryol Oblast"
+      },
+      {
+        "region_name": "Russia - Republic of Tatarstan"
+      },
+      {
+        "region_name": "Russia - Lipetsk Oblast"
       },
       {
         "region_name": "Russia - Republic of Bashkortostan"
       },
       {
-        "region_name": "Russia - Irkutsk Oblast"
+        "region_name": "Russia - Kurgan Oblast"
       },
       {
-        "region_name": "Russia - Tomsk Oblast"
+        "region_name": "Russia - Kursk Oblast"
+      },
+      {
+        "region_name": "Russia - Tyumen Oblast"
+      },
+      {
+        "region_name": "Russia - Tambov Oblast"
       },
       {
         "region_name": "Russia - Penza Oblast"
-      },
-      {
-        "region_name": "Russia - Samara Oblast"
       }
     ],
     "confidence_summary": "low",
@@ -1442,27 +1430,27 @@
     "source_valid_for_frontend": true,
     "region_count": 46,
     "total_regions_with_weather": 46,
-    "disturbed_production_tonnes": 14161731.975,
-    "disturbed_share": 0.8098,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 2.74,
+    "disturbed_production_tonnes": 12573605.034,
+    "disturbed_share": 0.719,
+    "weighted_risk_level": "watch",
+    "weighted_risk_level_cn": "一般关注",
+    "weighted_risk_score": 2.489,
     "dominant_risk_type": "wetness_waterlogging",
     "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
     "current_growth_stage_cn": "灌浆/收获",
-    "weather_condition_summary_cn": "近30天降雨为常年154%，降雨距平+11.8mm，最高温距平-1.9℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P44.5，surface P24.2",
+    "weather_condition_summary_cn": "近30天降雨为常年151%，降雨距平+12.1mm，最高温距平+0.2℃",
+    "soil_condition_summary_cn": "土壤状态正常，rootzone P61.6，surface P74.2",
     "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨3.1mm，未来16天累计降雨19.5mm",
+    "forecast_summary_cn": "未来7天累计降雨16.8mm，未来16天累计降雨28.2mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "降雨·收获",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.3064,
+    "operation_affected_share": 0.0719,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -1475,33 +1463,15 @@
       {
         "region_name": "Russia - Voronezh Oblast",
         "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Rostov Oblast",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Krasnodar Krai",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "Russia - Saratov Oblast",
-        "risk_label_cn": "降雨·收获",
         "risk_level": 2,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       }
     ],
     "supportive_regions": [
+      {
+        "region_name": "Russia - Saratov Oblast"
+      },
       {
         "region_name": "Russia - Altai Krai"
       },
@@ -1510,6 +1480,12 @@
       },
       {
         "region_name": "Russia - Samara Oblast"
+      },
+      {
+        "region_name": "Russia - Rostov Oblast"
+      },
+      {
+        "region_name": "Russia - Krasnodar Krai"
       }
     ],
     "confidence_summary": "low",
@@ -1535,22 +1511,22 @@
     "total_regions_with_weather": 1,
     "disturbed_production_tonnes": 2233210.0,
     "disturbed_share": 1.0,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 3.0,
+    "weighted_risk_level": "severe",
+    "weighted_risk_level_cn": "显著压力",
+    "weighted_risk_score": 4.0,
     "dominant_risk_type": "wetness_waterlogging",
-    "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险；未来7/16天预报显示前期缺口可能部分修复",
+    "dominant_risk_reason_cn": "表层土壤高分位叠加30日降雨显著偏多，过湿/积水压力突出",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年92%，降雨距平-1.2mm，最高温距平+1.2℃",
-    "soil_condition_summary_cn": "土壤状态明显偏湿，rootzone P88.7，surface P65.2",
+    "weather_condition_summary_cn": "近30天降雨为常年276%，降雨距平+19.1mm，最高温距平-3.8℃",
+    "soil_condition_summary_cn": "土壤状态明显偏湿，rootzone P85.2，surface P32.3",
     "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨26.8mm，未来16天累计降雨29.4mm，过湿或田间作业压力可能延续",
+    "forecast_summary_cn": "未来7天累计降雨5.1mm，未来16天累计降雨5.1mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -1593,16 +1569,16 @@
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年142%，降雨距平+20.6mm，最高温距平+1.1℃",
-    "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P0.0，surface P29.7",
+    "weather_condition_summary_cn": "近30天降雨为常年131%，降雨距平+15.3mm，最高温距平+0.5℃",
+    "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P1.3，surface P42.6",
     "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨7.1mm，未来16天累计降雨22.9mm，短期补水不足，水分压力可能维持",
+    "forecast_summary_cn": "未来7天累计降雨2.5mm，未来16天累计降雨15.7mm，短期补水不足，水分压力可能维持",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -1639,24 +1615,24 @@
     "source_valid_for_frontend": true,
     "region_count": 8,
     "total_regions_with_weather": 8,
-    "disturbed_production_tonnes": 2031738.358,
-    "disturbed_share": 0.9615,
-    "weighted_risk_level": "pressure",
-    "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 3.017,
+    "disturbed_production_tonnes": 1913337.238,
+    "disturbed_share": 0.9055,
+    "weighted_risk_level": "severe",
+    "weighted_risk_level_cn": "显著压力",
+    "weighted_risk_score": 3.7,
     "dominant_risk_type": "wetness_waterlogging",
-    "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
+    "dominant_risk_reason_cn": "表层土壤高分位叠加30日降雨显著偏多，过湿/积水压力突出",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年178%，降雨距平+38.2mm，最高温距平-2.5℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P45.8，surface P73.5",
+    "weather_condition_summary_cn": "近30天降雨为常年192%，降雨距平+42.9mm，最高温距平-3.2℃",
+    "soil_condition_summary_cn": "土壤状态略偏湿，rootzone P72.6，surface P83.2",
     "production_impact_cn": "过湿可能影响根系环境和田间作业。",
-    "forecast_summary_cn": "未来7天累计降雨2.4mm，未来16天累计降雨3.4mm",
+    "forecast_summary_cn": "未来7天累计降雨13.9mm，未来16天累计降雨30.3mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -1691,27 +1667,27 @@
     "source_valid_for_frontend": true,
     "region_count": 31,
     "total_regions_with_weather": 31,
-    "disturbed_production_tonnes": 86384664.119,
-    "disturbed_share": 0.7444,
+    "disturbed_production_tonnes": 102082673.381,
+    "disturbed_share": 0.8797,
     "weighted_risk_level": "pressure",
     "weighted_risk_level_cn": "重点压力",
-    "weighted_risk_score": 2.864,
+    "weighted_risk_score": 3.167,
     "dominant_risk_type": "wetness_waterlogging",
     "dominant_risk_reason_cn": "土壤或降雨信号偏湿，需关注过湿和田间作业风险",
     "current_growth_stage_cn": "成熟/收获",
-    "weather_condition_summary_cn": "近30天降雨为常年61%，降雨距平-21.9mm，最高温距平-0.3℃",
-    "soil_condition_summary_cn": "土壤状态正常，rootzone P34.2，surface P18.4",
-    "production_impact_cn": "",
-    "forecast_summary_cn": "未来7天累计降雨32.9mm，未来16天累计降雨53.1mm，降雨缺口与土壤/预报信号分化，短期水分压力证据不足",
+    "weather_condition_summary_cn": "近30天降雨为常年167%，降雨距平+33.5mm，最高温距平-1.7℃",
+    "soil_condition_summary_cn": "土壤状态略偏干，rootzone P29.7，surface P17.7",
+    "production_impact_cn": "收获延误、质量风险",
+    "forecast_summary_cn": "未来7天累计降雨0.4mm，未来16天累计降雨38.8mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "medium",
     "aggregation_note_cn": "按地区产量权重聚合。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "降雨·收获",
     "yield_risk_affected_share": 0.0,
-    "operation_affected_share": 0.5426,
+    "operation_affected_share": 0.5551,
     "progress_used_region_count": 0,
     "progress_used_share": 0.0,
     "progress_stage_source_summary": {
@@ -1722,7 +1698,28 @@
     "top_yield_risk_regions": [],
     "top_operation_risk_regions": [
       {
+        "region_name": "ILLINOIS / United States",
+        "risk_label_cn": "降雨·收获",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
         "region_name": "IOWA / United States",
+        "risk_label_cn": "降雨·收获",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
+        "region_name": "INDIANA / United States",
+        "risk_label_cn": "降雨·收获",
+        "risk_level": 3,
+        "confidence": "low",
+        "remaining_harvest_weight": 1.0
+      },
+      {
+        "region_name": "OHIO / United States",
         "risk_label_cn": "降雨·收获",
         "risk_level": 3,
         "confidence": "low",
@@ -1736,13 +1733,6 @@
         "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "KANSAS / United States",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 3,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
         "region_name": "WISCONSIN / United States",
         "risk_label_cn": "降雨·收获",
         "risk_level": 3,
@@ -1750,42 +1740,14 @@
         "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "MICHIGAN / United States",
+        "region_name": "TEXAS / United States",
         "risk_label_cn": "降雨·收获",
         "risk_level": 3,
         "confidence": "low",
         "remaining_harvest_weight": 1.0
       },
       {
-        "region_name": "MINNESOTA / United States",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "OHIO / United States",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "NORTH DAKOTA / United States",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "ARKANSAS / United States",
-        "risk_label_cn": "降雨·收获",
-        "risk_level": 2,
-        "confidence": "low",
-        "remaining_harvest_weight": 1.0
-      },
-      {
-        "region_name": "KENTUCKY / United States",
+        "region_name": "KANSAS / United States",
         "risk_label_cn": "降雨·收获",
         "risk_level": 2,
         "confidence": "low",
@@ -1794,13 +1756,19 @@
     ],
     "supportive_regions": [
       {
-        "region_name": "INDIANA / United States"
-      },
-      {
-        "region_name": "NEBRASKA / United States"
+        "region_name": "MINNESOTA / United States"
       },
       {
         "region_name": "MISSOURI / United States"
+      },
+      {
+        "region_name": "NORTH DAKOTA / United States"
+      },
+      {
+        "region_name": "ARKANSAS / United States"
+      },
+      {
+        "region_name": "MICHIGAN / United States"
       },
       {
         "region_name": "MISSISSIPPI / United States"
@@ -1812,16 +1780,10 @@
         "region_name": "NORTH CAROLINA / United States"
       },
       {
+        "region_name": "LOUISIANA / United States"
+      },
+      {
         "region_name": "SOUTH CAROLINA / United States"
-      },
-      {
-        "region_name": "ALABAMA / United States"
-      },
-      {
-        "region_name": "OKLAHOMA / United States"
-      },
-      {
-        "region_name": "TEXAS / United States"
       }
     ],
     "confidence_summary": "medium",
@@ -1853,16 +1815,16 @@
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年184%，降雨距平+42.8mm，最高温距平-0.4℃",
-    "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P0.0，surface P1.0",
+    "weather_condition_summary_cn": "近30天降雨为常年186%，降雨距平+45.0mm，最高温距平-1.4℃",
+    "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P0.0，surface P11.6",
     "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨10.9mm，未来16天累计降雨12.5mm，短期补水不足，水分压力可能维持",
+    "forecast_summary_cn": "未来7天累计降雨81.2mm，未来16天累计降雨99.8mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
@@ -1905,16 +1867,16 @@
     "dominant_risk_type": "drought_water_deficit",
     "dominant_risk_reason_cn": "根区土壤分位低于20%，水分压力进入重点关注区间",
     "current_growth_stage_cn": null,
-    "weather_condition_summary_cn": "近30天降雨为常年184%，降雨距平+42.8mm，最高温距平-0.4℃",
-    "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P0.0，surface P1.0",
+    "weather_condition_summary_cn": "近30天降雨为常年186%，降雨距平+45.0mm，最高温距平-1.4℃",
+    "soil_condition_summary_cn": "土壤状态极端偏干，rootzone P0.0，surface P11.6",
     "production_impact_cn": "水分压力上升，敏感阶段可能影响单产形成。",
-    "forecast_summary_cn": "未来7天累计降雨10.9mm，未来16天累计降雨12.5mm，短期补水不足，水分压力可能维持",
+    "forecast_summary_cn": "未来7天累计降雨81.2mm，未来16天累计降雨99.8mm",
     "has_boundary": true,
     "boundary_level": "country",
     "boundary_file": "countries.geo.json",
     "aggregation_confidence": "low",
     "aggregation_note_cn": "national proxy，受扰产量代表该 national proxy 风险暴露，置信度低。",
-    "updated_at": "2026-09-16 16:02:49",
+    "updated_at": "2026-09-21 09:39:36",
     "dominant_country_badge_cn": "",
     "yield_risk_affected_share": 0.0,
     "operation_affected_share": 0.0,
